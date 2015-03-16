@@ -1,0 +1,76 @@
+This is TeX, Version 3.1415926 (TeX Live 2009/Debian) (format=tex 2012.12.12)  2 DEC 2014 09:50
+**manual.tex
+(./manual.tex (./gapmacro.tex
+(/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.tex
+(/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.def
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+Running TeX
+\pagewidth=\dimen16
+\pageheight=\dimen17
+\colwidth=\dimen18
+\partialpage=\box16
+\origvsize=\dimen19
+\manindent=\dimen20
+\smallmanindent=\dimen21
+\msbfam=\fam11
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\labelin=\read0
+\indexin=\read1
+\tocin=\read2
+\citein=\read3
+\secno=\count26
+\subsecno=\count27
+\exno=\count28
+\indentno=\count29
+\chapnum=\count30
+\ortoks=\toks12
+) (../VERSION) [1]
+\makelabel{LiePRing:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}
+}
+Chapter `Contents' .
+(./manual.toc) [2.1
+\chapcontents {\tocstrut }{Contents}{2}
+] (./manual.lab)
+\openout3 = `manual.toc'.
+
+\openout0 = `manual.lab'.
+
+\openout1 = `manual.idx'.
+
+\openout2 = `manual.six'.
+
+\openout4 = `manual.aux'.
+
+ (./intro.tex
+Chapter `Preamble' .
+[3.1]
+Chapter `Lie p-rings' .
+Reference `Khu' undefined.
+) (./lierings.tex [4.2]
+Chapter `LiePRings in GAP' .
+[5.3] [6.3] [7.3] [8.3] [9.3] [10.3]) (./database.tex [11.3]
+Chapter `The Database' .
+[12.4] [13.4] [14.4] [15.4] [16.4]) [17.4]
+Chapter `Bibliography' .
+(./manual.bbl) [18.5]
+Chapter `Index' .
+No file manual.ind.
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## There were undefined labels or references.
+## Labels have changed, run again. (Or they were multiply defined.)
+##
+[19.6] )
+Output written on manual.dvi (19 pages, 44996 bytes).

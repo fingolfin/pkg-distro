@@ -1,0 +1,109 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdftex 2009.2.16)  16 FEB 2010 11:44
+entering extended mode
+ %&-line parsing enabled.
+**manual
+(./manual.tex (../../../doc/gapmacro.tex
+(/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.tex
+(/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.def
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+Running PDFTeX
+\pagewidth=\dimen16
+\pageheight=\dimen17
+\colwidth=\dimen18
+\partialpage=\box16
+\origvsize=\dimen19
+\manindent=\dimen20
+\smallmanindent=\dimen21
+\msbfam=\fam11
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\labelin=\read0
+\indexin=\read1
+\tocin=\read2
+\citein=\read3
+\secno=\count26
+\subsecno=\count27
+\exno=\count28
+\indentno=\count29
+\chapnum=\count30
+\ortoks=\toks12
+)
+No file ../../../doc/ext/manual.lab.
+No file ../../../doc/ref/manual.lab.
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\makelabel{autpgrp:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+
+Chapter `Contents' .
+(./manual.toc) [2.1
+\chapcontents {\tocstrut }{Contents}{2}
+] (./manual.lab)
+\openout3 = `manual.toc'.
+
+\openout0 = `manual.lab'.
+
+\openout1 = `manual.idx'.
+
+\openout2 = `manual.six'.
+
+\openout4 = `manual.aux'.
+
+ (./autpgrp.tex
+Chapter `Introduction' .
+) (./method.tex [3.1]
+Chapter `The automorphism group method' .
+Label `ref:Groups of Automorphisms' undefined.
+
+Overfull \hbox (10.04774pt too wide) in paragraph at lines 12--15
+[]\tenrm The \sf AutP-Grp \tenrm pack-age in-stalls a method for \tentt Au-to-m
+or-phis-m-Group \tenrm for a fi-nite $\tenit p$\tenrm -group (see also Sec-tion
+ \ref:groups|
+
+\hbox(7.5+2.5)x468.0, glue set - 1.0
+.\hbox(0.0+0.0)x0.0
+.\tenrm T
+.\tenrm h
+.\tenrm e
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.etc.
+
+Label `ref:Info Functions' undefined.
+[4.2]) (./underl.tex [5.2]
+Chapter `The underlying function' .
+[6.3]) (./influen.tex [7.3]
+Chapter `Influencing the algorithm' .
+[8.4] [9.4] [10.4]) (./additional.tex [11.4]
+Chapter `Additional Features of the Package' .
+) [12.5]
+Chapter `Index' .
+(./manual.ind) [13.6]
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## There were undefined labels or references.
+##
+ )</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf
+-texlive/fonts/type1/bluesky/cm/cminch.pfb></usr/share/texmf-texlive/fonts/type
+1/bluesky/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr10.
+pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf
+-texlive/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/
+bluesky/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmssdc10
+.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/te
+xmf-texlive/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/bluesky/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt
+10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/ams/msam7.pfb>
+Output written on manual.pdf (13 pages, 118597 bytes).
+PDF statistics:
+ 188 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 131072)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+

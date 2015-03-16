@@ -1,0 +1,51 @@
+C intro.tex 1. Preamble
+C intro.tex 2. Lie p-rings
+C lierings.tex 3. LiePRings in GAP
+S 3.1. Ordinary Lie p-rings
+F 3.1. LiePRingBySCTable
+F 3.1. LiePRingBySCTableNC
+F 3.1. CheckIsLiePRing
+S 3.2. Generic Lie p-rings
+F 3.2. IndeterminateByName
+S 3.3. Specialising Lie $p$-rings
+F 3.3. SpecialiseLiePRing
+F 3.3. SpecialisePrimeOfLiePRing
+F 3.3. LiePValues
+S 3.4. Subrings of Lie p-rings
+F 3.4. LiePSubring
+F 3.4. LiePIdeal
+F 3.4. LiePQuotient
+S 3.5. Elementary functions
+F 3.5. PrimeOfLiePRing
+F 3.5. BasisOfLiePRing
+F 3.5. DimensionOfLiePRing
+F 3.5. ParametersOfLiePRing
+F 3.5. ViewPCPresentation
+S 3.6. Series of subrings
+F 3.6. LiePLowerCentralSeries
+F 3.6. LiePLowerPCentralSeries
+F 3.6. LiePDerivedSeries
+F 3.6. LiePMinimalGeneratingSet
+S 3.7. The Lazard correspondence
+F 3.7. PGroupByLiePRing
+C database.tex 4. The Database
+S 4.1. Accessing Lie p-rings
+F 4.1. LiePRingsByLibrary
+F 4.1. LiePRingsByLibrary
+F 4.1. LiePRingsByLibrary
+F 4.1. LiePRingsByLibrary
+S 4.2. Numbers of Lie p-rings
+F 4.2. NumberOfLiePRings
+F 4.2. NumberOfLiePRings
+F 4.2. NumberOfLiePRingsInFamily
+S 4.3. Searching the database
+F 4.3. LiePRingsInFamily
+S 4.4. More details
+F 4.4. LibraryName
+F 4.4. ShortPresentation
+F 4.4. LibraryConditions
+F 4.4. MinimalGeneratorNumberOfLiePRing
+F 4.4. PClassOfLiePRing
+S 4.5. Special functions for dimension $7$
+F 4.5. LiePRingsDim7ByFile
+F 4.5. LiePRingsDim7ByFile

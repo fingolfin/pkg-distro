@@ -1,0 +1,2168 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.5.5)  22 MAY 2012 15:34
+entering extended mode
+ %&-line parsing enabled.
+**guava
+(./guava.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/share/texmf-texlive/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write3
+\openout3 = `guava.idx'.
+
+
+Writing index file guava.idx
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count88
+))
+(/usr/share/texmf-texlive/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz) (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\FV@CodeLineNo=\count89
+\FV@InFile=\read1
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count90
+\FV@StepNumber=\count91
+\FV@OutFile=\write4
+)
+(/usr/share/texmf-texlive/tex/latex/pslatex/pslatex.sty
+Package: pslatex 1996/07/24 v1.2 pslatex emulation (DPC)
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 65.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ptmcm/m/n on input line 65.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptmcm/m/n on input line 65.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 66.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ptmcm/m/it on input line 66.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ptmcm/m/it on input line 66.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 67.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/pzccm/m/n on input line 67.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/pzccm/m/n on input line 67.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 68.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 68.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 68.
+\symbold=\mathgroup6
+\symitalic=\mathgroup7
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 74.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 74.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 74.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 75.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 75.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
+)
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
+\@linkdim=\dimen103
+\Hy@linkcounter=\count92
+\Hy@pagecounter=\count93
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+))
+Package hyperref Info: Option `bookmarks' set `false' on input line 2864.
+Package hyperref Info: Option `colorlinks' set `true' on input line 2864.
+Package hyperref Info: Option `breaklinks' set `true' on input line 2864.
+
+
+Package hyperref Warning: Option `pagecolor' is not available anymore.
+
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing ON on input line 2993.
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks OFF on input line 3197.
+(/usr/share/texmf-texlive/tex/latex/hyperref/backref.sty
+Package: backref 2006/09/05 v1.28 Bibliographical back referencing
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3428.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)))
+\Fld@menulength=\count94
+\Field@Width=\dimen104
+\Fld@charsize=\dimen105
+\Field@toks=\toks18
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing ON on input line 4390.
+Package hyperref Info: Link coloring ON on input line 4395.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count95
+\c@Item=\count96
+\c@Hfootnote=\count97
+)
+*hyperref using driver hpdftex*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
+\Fld@listcount=\count98
+)
+\pagenrlog=\write5
+\openout5 = `guava.pnr'.
+
+
+(/usr/share/texmf-texlive/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2009/05/18 v2.2 Customized lists
+\enit@toks=\toks19
+\labelindent=\skip43
+\enit@outerparindent=\dimen106
+\enitdp@desc=\count99
+) (./guava.aux
+
+LaTeX Warning: Label `+' multiply defined.
+
+
+LaTeX Warning: Label `=' multiply defined.
+
+
+LaTeX Warning: Label `+' multiply defined.
+
+
+LaTeX Warning: Label `*' multiply defined.
+
+)
+\openout1 = `guava.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 47.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 47
+.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/omspzccm.fd
+File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
+)
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count100
+\scratchdimen=\dimen107
+\scratchbox=\box27
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen108
+\MPnumerator=\count104
+\everyMPtoPDFconversion=\toks21
+)
+Package hyperref Info: Link coloring ON on input line 47.
+ (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count105
+)
+LaTeX Info: Redefining \ref on input line 47.
+LaTeX Info: Redefining \pageref on input line 47.
+\AtBeginShipoutBox=\box28
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 22.39185pt on input line 51.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 54.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 54.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
+
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 87.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 87.
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--125
+
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 150--151
+\OT1/ptm/m/n/10 Cur-rently known bugs and sug-gested \OT1/phv/m/n/10 GUAVA \OT1
+/ptm/m/n/10 projects are listed on the bugs and projects web page
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 7.19995pt on input line 156.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+[3] (./guava.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 2.
+
+ (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptmcm.fd
+File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 2.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlptmcm.fd
+File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 2.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omxpsycm.fd
+File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 9.85492pt on input line 5.
+ [4
+
+] [5] [6] [7] [8]
+[9] [10])
+\tf@toc=\write6
+\openout6 = `guava.toc'.
+
+ [11]
+Chapter 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 166.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 178.
+
+[12
+
+] [13]
+Chapter 2.
+[14
+
+] [15] [16]
+Chapter 3.
+[17
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 456--459
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 525--528
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 553--556
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--586
+
+ []
+
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 597.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 597.
+ [20]
+Underfull \hbox (badness 10000) in paragraph at lines 633--636
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--662
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--674
+
+ []
+
+[21pdfTeX warning (ext4): destination with the same identifier (name{L.X7F27034
+17F270341}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.689 ...5,?] randomly generated code over GF(2) ]
+                                                  ]
+Underfull \hbox (badness 10000) in paragraph at lines 730--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--752
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 774--777
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 800--803
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 836--839
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--862
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 883--886
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 912--915
+
+ []
+
+[25]
+Chapter 4.
+[26
+
+] [27]pdfTeX warning (ext4): destination with the same identifier (name{L.X806A
+4814806A4814}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1031 \hyperdef{L}{X806A4814806A4814}{}
+                                        
+Underfull \hbox (badness 10000) in paragraph at lines 1032--1035
+
+ []
+
+[28]pdfTeX warning (ext4): destination with the same identifier (name{L.X7F2703
+417F270341}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1072 \hyperdef{L}{X7F2703417F270341}{}
+                                        
+Underfull \hbox (badness 10000) in paragraph at lines 1073--1076
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1096--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1117--1120
+
+ []
+
+[29pdfTeX warning (ext4): destination with the same identifier (name{L.X7857704
+878577048}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1136 \end{Verbatim}
+                     ]
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1181--1184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1202--1205
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1243--1246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1268--1271
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1296
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1323--1326
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1347--1350
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1373--1376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1398
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1424--1427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1450--1453
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1484--1487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1506--1509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1529--1532
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1560--1563
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1589--1592
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 1614--1617
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1653--1656
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1685--1688
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1702--1705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1722--1725
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 1744--1747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1768--1771
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 1802--1805
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1841--1844
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1864--1867
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 1891--1894
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1929--1932
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 1964--1967
+
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 1999--2002
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2023--2026
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2049--2052
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 2083--2086
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2105--2108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2128--2131
+
+ []
+
+[44]
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 2141.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2172--2175
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 2209--2212
+
+ []
+
+[46] [47] [48]
+Underfull \hbox (badness 10000) in paragraph at lines 2342--2345
+
+ []
+
+
+Underfull \hbox (badness 2042) in paragraph at lines 2352--2354
+[]\OT1/ptm/m/n/10.95 The re-sult re-turned is a record with two fields; the fir
+st, \OT1/pcr/m/n/10.95 mindist\OT1/ptm/m/n/10.95 , gives the low-est
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 2352--2354
+\OT1/ptm/m/n/10.95 rectly, so the com-mand was only found af-ter read-ing all t
+he \OT1/ptm/m/it/10.95 *.gi \OT1/ptm/m/n/10.95 files in the \OT1/phv/m/n/10.95 
+GUAVA \OT1/ptm/m/n/10.95 li-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2376--2379
+
+ []
+
+[49] [50]
+Underfull \hbox (badness 10000) in paragraph at lines 2452--2455
+
+ []
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 2509--2512
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2541--2544
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2566--2569
+
+ []
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 2591--2594
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2614--2617
+
+ []
+
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 2637--2640
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2671--2674
+
+ []
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 2717--2720
+
+ []
+
+[55]
+Underfull \hbox (badness 10000) in paragraph at lines 2770--2773
+
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 2778--2780
+[]\OT1/ptm/m/n/10.95 For long codes, this method is faster in prac-tice than th
+e in-ter-po-la-tion method used in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2803--2806
+
+ []
+
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 2854--2857
+
+ []
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 2887--2890
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2928--2931
+
+ []
+
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 2970--2973
+
+ []
+
+[59]
+Underfull \hbox (badness 10000) in paragraph at lines 2999--3002
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3033--3036
+
+ []
+
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 3057--3060
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3065--3067
+[]\OT1/ptm/m/n/10.95 This uses \OT1/pcr/m/n/10.95 AutomorphismGroup \OT1/ptm/m/
+n/10.95 in the bi-nary case, and (the slower)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3103--3106
+
+ []
+
+[61]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3153--3156
+
+ []
+
+[62
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 3178--3181
+
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 3183--3184
+[]\OT1/ptm/m/n/10.95 The four forms this com-mand can take are \OT1/pcr/m/n/10.
+95 HadamardCode(H,t)\OT1/ptm/m/n/10.95 , \OT1/pcr/m/n/10.95 HadamardCode(H)\OT1
+/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3220--3223
+
+ []
+
+[63]
+Underfull \hbox (badness 10000) in paragraph at lines 3250--3253
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3285--3288
+
+ []
+
+[64]
+Underfull \hbox (badness 1546) in paragraph at lines 3292--3293
+[]\OT1/ptm/m/n/10.95 The func-tion \OT1/pcr/m/n/10.95 RandomLinearCode \OT1/ptm
+/m/n/10.95 re-turns a ran-dom lin-ear code (see \OT1/pcr/m/n/10.95 RandomLinear
+Code
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3310--3313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3329--3332
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3356--3359
+
+ []
+
+[65]
+Underfull \hbox (badness 1430) in paragraph at lines 3390--3392
+[]\OT1/ptm/m/n/10.95 The next func-tions we de-scribe gen-er-ate some well-know
+n codes, like Ham-ming codes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3403--3406
+
+ []
+
+[66]
+Underfull \hbox (badness 10000) in paragraph at lines 3432--3435
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3444--3447
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3473--3476
+
+ []
+
+[67]
+Underfull \hbox (badness 10000) in paragraph at lines 3496--3499
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3513--3516
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3533--3536
+
+ []
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 3572--3575
+
+ []
+
+[69]
+Underfull \hbox (badness 10000) in paragraph at lines 3593--3596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3619--3622
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3639--3642
+
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 3690--3693
+
+ []
+
+[71]
+Underfull \hbox (badness 10000) in paragraph at lines 3714--3717
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3729--3732
+
+ []
+
+[72] [73]
+Underfull \hbox (badness 10000) in paragraph at lines 3828--3831
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3840--3843
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3852--3855
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3864--3867
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3876--3879
+
+ []
+
+[74]
+Underfull \hbox (badness 10000) in paragraph at lines 3911--3914
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3934--3937
+
+ []
+
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 3961--3964
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3982--3985
+
+ []
+
+[76]
+Underfull \hbox (badness 1194) in paragraph at lines 4034--4035
+[]\OT1/ptm/m/n/10.95 Finally we de-scribe the triv-ial codes (see \OT1/pcr/m/n/
+10.95 WholeSpaceCode \OT1/ptm/m/n/10.95 ([][]5.5.11[][]), \OT1/pcr/m/n/10.95 Nu
+llCode \OT1/ptm/m/n/10.95 ([][]5.5.12[][]),
+ []
+
+
+Underfull \hbox (badness 3668) in paragraph at lines 4034--4035
+\OT1/pcr/m/n/10.95 RepetitionCode \OT1/ptm/m/n/10.95 ([][]5.5.13[][])), and the
+ com-mand \OT1/pcr/m/n/10.95 CyclicCodes \OT1/ptm/m/n/10.95 which lists all cyc
+lic codes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4039--4042
+
+ []
+
+[77]
+Underfull \hbox (badness 10000) in paragraph at lines 4067--4070
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4093--4096
+
+ []
+
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 4129--4132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4169--4172
+
+ []
+
+[79]
+Underfull \hbox (badness 10000) in paragraph at lines 4195--4198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4215--4218
+
+ []
+
+[80]
+Underfull \hbox (badness 10000) in paragraph at lines 4247--4250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4259--4262
+
+ []
+
+[81]
+Underfull \hbox (badness 10000) in paragraph at lines 4302--4305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4330--4333
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4347--4350
+
+ []
+
+[82]
+Underfull \hbox (badness 10000) in paragraph at lines 4366--4369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4389--4392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4410--4413
+
+ []
+
+[83]
+Underfull \hbox (badness 10000) in paragraph at lines 4442--4445
+
+ []
+
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 4509--4512
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4537--4540
+
+ []
+
+[85] [86]
+Underfull \hbox (badness 10000) in paragraph at lines 4597--4600
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4616--4619
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4626--4627
+[]\OT1/ptm/m/n/10.95 This com-mand re-turns a "record" ob-ject \OT1/pcr/m/n/10.
+95 C \OT1/ptm/m/n/10.95 with sev-eral ex-tra com-po-nents (type
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4651--4654
+
+ []
+
+[87]
+Underfull \hbox (badness 10000) in paragraph at lines 4661--4662
+[]\OT1/ptm/m/n/10.95 This com-mand re-turns a "record" ob-ject \OT1/pcr/m/n/10.
+95 C \OT1/ptm/m/n/10.95 with sev-eral ex-tra com-po-nents (type
+ []
+
+
+Underfull \hbox (badness 1158) in paragraph at lines 4661--4662
+\OT1/pcr/m/n/10.95 NamesOfComponents(C) \OT1/ptm/m/n/10.95 to see them all): \O
+T1/pcr/m/n/10.95 C!.points \OT1/ptm/m/n/10.95 (namely []), \OT1/pcr/m/n/10.95 C
+!.degree \OT1/ptm/m/n/10.95 (namely []),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4667--4668
+[]\OT1/ptm/m/n/10.95 The weighted ver-sion has im-ple-mented with the op-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4693--4696
+
+ []
+
+[88]
+Underfull \hbox (badness 10000) in paragraph at lines 4700--4701
+[]\OT1/ptm/m/n/10.95 This com-mand re-turns a "record" ob-ject \OT1/pcr/m/n/10.
+95 C \OT1/ptm/m/n/10.95 with sev-eral ex-tra com-po-nents (type
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4717--4720
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4738--4741
+
+ []
+
+[89]
+Underfull \hbox (badness 10000) in paragraph at lines 4767--4770
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4818--4821
+
+ []
+
+[90]
+Underfull \hbox (badness 10000) in paragraph at lines 4843--4846
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4873--4876
+
+ []
+
+[91] [92]
+Underfull \hbox (badness 10000) in paragraph at lines 4947--4950
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4985--4988
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4997--5000
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5009--5012
+
+ []
+
+[93]
+Underfull \hbox (badness 10000) in paragraph at lines 5021--5024
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5033--5036
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5045--5048
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5057--5060
+
+ []
+
+[94]
+Underfull \hbox (badness 10000) in paragraph at lines 5134--5137
+
+ []
+
+[95]
+Underfull \hbox (badness 10000) in paragraph at lines 5146--5149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5198--5201
+
+ []
+
+[96] [97]
+Underfull \hbox (badness 10000) in paragraph at lines 5259--5262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5271--5274
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5283--5286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5296--5299
+
+ []
+
+[98]
+Underfull \hbox (badness 10000) in paragraph at lines 5344--5347
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5382--5385
+
+ []
+
+[99]
+Underfull \hbox (badness 10000) in paragraph at lines 5446--5449
+
+ []
+
+[100]
+Underfull \hbox (badness 10000) in paragraph at lines 5484--5487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5501--5504
+
+ []
+
+[101]
+Underfull \hbox (badness 10000) in paragraph at lines 5553--5556
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5563--5564
+[]\OT1/ptm/m/n/10.95 This com-mand re-turns a "record" ob-ject \OT1/pcr/m/n/10.
+95 C \OT1/ptm/m/n/10.95 with sev-eral ex-tra com-po-nents (type
+ []
+
+[102] [103]
+Underfull \hbox (badness 10000) in paragraph at lines 5623--5626
+
+ []
+
+[104] [105]
+Chapter 6.
+
+Underfull \hbox (badness 1127) in paragraph at lines 5724--5726
+\OT1/ptm/m/n/10.95 ([][]6.1.6[][]), \OT1/pcr/m/n/10.95 RemovedElementsCode \OT1
+/ptm/m/n/10.95 ([][]6.1.7[][]), \OT1/pcr/m/n/10.95 AddedElementsCode \OT1/ptm/m
+/n/10.95 ([][]6.1.8[][]), \OT1/pcr/m/n/10.95 ShortenedCode \OT1/ptm/m/n/10.95 (
+[][]6.1.9[][]),
+ []
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 5724--5726
+\OT1/pcr/m/n/10.95 LengthenedCode \OT1/ptm/m/n/10.95 ([][]6.1.10[][]), \OT1/pcr
+/m/n/10.95 ResidueCode \OT1/ptm/m/n/10.95 ([][]6.1.12[][]), \OT1/pcr/m/n/10.95 
+ConstructionBCode \OT1/ptm/m/n/10.95 ([][]6.1.13[][]), \OT1/pcr/m/n/10.95 DualC
+ode
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5734--5737
+
+ []
+
+[106
+
+]
+Underfull \hbox (badness 5578) in paragraph at lines 5762--5764
+\OT1/ptm/m/n/10.95 To undo ex-tend-ing, call \OT1/pcr/m/n/10.95 PuncturedCode \
+OT1/ptm/m/n/10.95 (see \OT1/pcr/m/n/10.95 PuncturedCode \OT1/ptm/m/n/10.95 ([][
+]6.1.2[][])). The func-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5768--5771
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5801--5804
+
+ []
+
+[107]
+Underfull \hbox (badness 10000) in paragraph at lines 5829--5832
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5858--5861
+
+ []
+
+[108]
+Underfull \hbox (badness 10000) in paragraph at lines 5884--5887
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5919--5922
+
+ []
+
+[109]
+Underfull \hbox (badness 10000) in paragraph at lines 5944--5947
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5969--5972
+
+ []
+
+[110]
+Underfull \hbox (badness 10000) in paragraph at lines 6011--6014
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6032--6035
+
+ []
+
+[111]
+Underfull \hbox (badness 10000) in paragraph at lines 6062--6065
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6086--6089
+
+ []
+
+[112]
+Underfull \hbox (badness 10000) in paragraph at lines 6121--6124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6151--6154
+
+ []
+
+[113]
+Underfull \hbox (badness 10000) in paragraph at lines 6179--6182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6208--6211
+
+ []
+
+[114]
+Underfull \hbox (badness 10000) in paragraph at lines 6236--6239
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6270--6273
+
+ []
+
+[115]
+Underfull \hbox (badness 10000) in paragraph at lines 6306--6309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6344--6347
+
+ []
+
+[116]
+Underfull \hbox (badness 10000) in paragraph at lines 6372--6375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6402--6405
+
+ []
+
+[117]
+Underfull \hbox (badness 10000) in paragraph at lines 6425--6428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6453--6456
+
+ []
+
+[118]
+Underfull \hbox (badness 10000) in paragraph at lines 6482--6485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6512--6515
+
+ []
+
+[119]
+Underfull \hbox (badness 10000) in paragraph at lines 6549--6552
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6577--6580
+
+ []
+
+[120]
+Underfull \hbox (badness 10000) in paragraph at lines 6626--6629
+
+ []
+
+[121]
+Underfull \hbox (badness 10000) in paragraph at lines 6681--6684
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6699--6702
+
+ []
+
+[122] [123]
+Chapter 7.
+
+Underfull \hbox (badness 3514) in paragraph at lines 6775--6777
+[]\OT1/ptm/m/n/10.95 Firstly, we de-scribe func-tions that com-pute spe-cific u
+p-per bounds on the code size
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6790--6793
+
+ []
+
+[124
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 6813--6816
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6837--6840
+
+ []
+
+[125]
+Underfull \hbox (badness 10000) in paragraph at lines 6858--6861
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6886--6889
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6909--6912
+
+ []
+
+[126]
+Underfull \hbox (badness 10000) in paragraph at lines 6934--6937
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6955--6958
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6975--6978
+
+ []
+
+[127]
+Underfull \hbox (badness 10000) in paragraph at lines 6999--7002
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7027--7030
+
+ []
+
+[128]
+Underfull \hbox (badness 10000) in paragraph at lines 7047--7050
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7072--7075
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7085--7086
+[]\OT1/ptm/m/n/10.95 The re-sult-ing record can be used in the func-tion \OT1/p
+cr/m/n/10.95 BestKnownLinearCode \OT1/ptm/m/n/10.95 (see
+ []
+
+[129]
+Underfull \hbox (badness 10000) in paragraph at lines 7118--7121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7126--7127
+[]\OT1/ptm/m/n/10.95 If the cov-er-ing ra-dius of [] is known, a list of length
+ 1 is re-turned.
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 7126--7127
+\OT1/pcr/m/n/10.95 BoundsCoveringRadius \OT1/ptm/m/n/10.95 makes use of the fun
+c-tions \OT1/pcr/m/n/10.95 GeneralLowerBoundCoveringRadius
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7140--7143
+
+ []
+
+[130]
+Underfull \hbox (badness 10000) in paragraph at lines 7221--7224
+
+ []
+
+[131]
+Underfull \hbox (badness 10000) in paragraph at lines 7245--7248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7268--7271
+
+ []
+
+[132]
+Underfull \hbox (badness 10000) in paragraph at lines 7290--7293
+
+ []
+
+
+Overfull \hbox (8.54312pt too wide) in paragraph at lines 7295--7296
+[]\OT1/ptm/m/n/10.95 This com-mand can also be called us-ing the syn-tax \OT1/p
+cr/m/n/10.95 LowerBoundCoveringRadiusSphereCovering(
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7320--7323
+
+ []
+
+[133]
+Underfull \hbox (badness 10000) in paragraph at lines 7354--7357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7390--7393
+
+ []
+
+[134]
+Underfull \hbox (badness 10000) in paragraph at lines 7427--7430
+
+ []
+
+
+Underfull \hbox (badness 3396) in paragraph at lines 7432--7434
+[]\OT1/ptm/m/n/10.95 This com-mand can also be called with \OT1/pcr/m/n/10.95 L
+owerBoundCoveringRadiusEmbedded1( n, r
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7441--7442
+[]\OT1/ptm/m/n/10.95 Sometimes \OT1/pcr/m/n/10.95 LowerBoundCoveringRadiusEmbed
+ded1 \OT1/ptm/m/n/10.95 is bet-ter than
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7462--7465
+
+ []
+
+[135]
+Underfull \hbox (badness 3396) in paragraph at lines 7467--7469
+[]\OT1/ptm/m/n/10.95 This com-mand can also be called with \OT1/pcr/m/n/10.95 L
+owerBoundCoveringRadiusEmbedded2( n, r
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7476--7477
+[]\OT1/ptm/m/n/10.95 Sometimes \OT1/pcr/m/n/10.95 LowerBoundCoveringRadiusEmbed
+ded1 \OT1/ptm/m/n/10.95 is bet-ter than
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7497--7500
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7527--7530
+
+ []
+
+[136]
+Underfull \hbox (badness 10000) in paragraph at lines 7549--7552
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7572--7575
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7597--7600
+
+ []
+
+[137]
+Underfull \hbox (badness 10000) in paragraph at lines 7621--7624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7659--7662
+
+ []
+
+[138]
+Underfull \hbox (badness 10000) in paragraph at lines 7687--7690
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7713--7716
+
+ []
+
+[139]
+Underfull \hbox (badness 10000) in paragraph at lines 7736--7739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7766--7769
+
+ []
+
+[140]
+Underfull \hbox (badness 10000) in paragraph at lines 7789--7792
+
+ []
+
+[141]
+Underfull \hbox (badness 10000) in paragraph at lines 7840--7843
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7863--7866
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7884--7887
+
+ []
+
+[142]
+Underfull \hbox (badness 10000) in paragraph at lines 7916--7919
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7949--7952
+
+ []
+
+[143]
+Underfull \hbox (badness 10000) in paragraph at lines 7990--7993
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8009--8012
+
+ []
+
+[144]
+Underfull \hbox (badness 10000) in paragraph at lines 8041--8044
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8060--8063
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8078--8081
+
+ []
+
+[145]
+Underfull \hbox (badness 10000) in paragraph at lines 8096--8099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8117--8120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8149--8152
+
+ []
+
+[146]
+Underfull \hbox (badness 10000) in paragraph at lines 8171--8174
+
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 8180--8181
+[]\OT1/ptm/m/n/10.95 If [] is a code-word, then \OT1/pcr/m/n/10.95 CodeDistance
+Enumerator \OT1/ptm/m/n/10.95 re-turns the same poly-no-mial as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8194--8197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8213--8216
+
+ []
+
+[147]
+Underfull \hbox (badness 10000) in paragraph at lines 8234--8237
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8261--8264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8281--8284
+
+ []
+
+[148]
+Underfull \hbox (badness 10000) in paragraph at lines 8302--8305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8322--8325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8340--8343
+
+ []
+
+[149]
+Underfull \hbox (badness 10000) in paragraph at lines 8368--8371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8396--8399
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8419--8422
+
+ []
+
+[150]
+Underfull \hbox (badness 10000) in paragraph at lines 8451--8454
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8472--8475
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8492--8495
+
+ []
+
+[151]
+Underfull \hbox (badness 10000) in paragraph at lines 8512--8515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8538--8541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8550--8553
+
+ []
+
+[152]
+Underfull \hbox (badness 10000) in paragraph at lines 8576--8579
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8602--8605
+
+ []
+
+[153]
+Underfull \hbox (badness 10000) in paragraph at lines 8646--8649
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8680--8683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8698--8701
+
+ []
+
+[154]
+Underfull \hbox (badness 10000) in paragraph at lines 8722--8725
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8745--8748
+
+ []
+
+[155]
+Underfull \hbox (badness 10000) in paragraph at lines 8781--8784
+
+ []
+
+[156]
+Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 8836--8839
+
+ []
+
+[157
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 8871--8874
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8897--8900
+
+ []
+
+[158]
+Underfull \hbox (badness 10000) in paragraph at lines 8922--8925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8947--8950
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8965--8968
+
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 8971--8974
+\OT1/ptm/m/n/10.95 This is also called the (Ham-ming) dis-tance be-tween $\OML/
+ptmcm/m/it/10.95 v \OT1/ptmcm/m/n/10.95 = (\OML/ptmcm/m/it/10.95 v[]; :::; v[]\
+OT1/ptmcm/m/n/10.95 )$ \OT1/ptm/m/n/10.95 and $\OML/ptmcm/m/it/10.95 w \OT1/ptm
+cm/m/n/10.95 = (\OML/ptmcm/m/it/10.95 w[]; :::; w[]\OT1/ptmcm/m/n/10.95 )$\OT1/
+ptm/m/n/10.95 .
+ []
+
+[159]
+Underfull \hbox (badness 10000) in paragraph at lines 8999--9002
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9025--9028
+
+ []
+
+[160] [161]
+Chapter 9.
+[162
+
+] [163] [164] [165] [166] (./guava.bbl (./guava.brf)
+\tf@brf=\write7
+\openout7 = `guava.brf'.
+
+ [167]
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]\OT1/ptm/m/n/10.95 A. E. Brouwer.  Bounds on the min-i-mum dis-tance of lin-e
+ar codes.
+ []
+
+[168
+
+]) (./guava.ind [169]
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+[]\OT1/pcr/m/n/10.95 AClosest\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Vector\OT1/
+ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Comb..\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 
+Mat\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 F\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.
+95 F\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 E\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10
+.95 Vec\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 F\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n
+/10.95 F\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 E\OT1/ptm/m/n/10.95 -\OT1/pcr/m/
+n/10.95 Coords\OT1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+[]\OT1/pcr/m/n/10.95 AClosest\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Vector\OT1/
+ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Combinations\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/
+10.95 Mat\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 F\OT1/ptm/m/n/10.95 -\OT1/pcr/m
+/n/10.95 F\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 E\OT1/ptm/m/n/10.95 -\OT1/pcr/
+m/n/10.95 VecFFE\OT1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+[]\OT1/pcr/m/n/10.95 Action\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Moebius\OT1/p
+tm/m/n/10.95 -\OT1/pcr/m/n/10.95 Transformation\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n
+/10.95 On\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 DivisorP1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--24
+[]\OT1/pcr/m/n/10.95 Action\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Moebius\OT1/p
+tm/m/n/10.95 -\OT1/pcr/m/n/10.95 Transformation\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n
+/10.95 On\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Function \OT1/ptm/m/n/10.95 ,
+ []
+
+[170
+
+] [171]
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
+[]\OT1/pcr/m/n/10.95 IsAction\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Moebius\OT1
+/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Transformation\OT1/ptm/m/n/10.95 -\OT1/pcr/m
+/n/10.95 On\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Divisor\OT1/ptm/m/n/10.95 -
+ []
+
+[172]
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
+[]\OT1/pcr/m/n/10.95 Lower\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Bound\OT1/ptm/
+m/n/10.95 -\OT1/pcr/m/n/10.95 Covering\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Ra
+dius\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Counting\OT1/ptm/m/n/10.95 -\OT1/pcr
+/m/n/10.95 Excess\OT1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--301
+[]\OT1/pcr/m/n/10.95 Lower\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Bound\OT1/ptm/
+m/n/10.95 -\OT1/pcr/m/n/10.95 Covering\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Ra
+dius\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Sphere\OT1/ptm/m/n/10.95 -\OT1/pcr/m
+/n/10.95 Covering\OT1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--313
+[]\OT1/pcr/m/n/10.95 Matrix\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Representatio
+n\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 On\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.9
+5 Riemann\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Roch\OT1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--315
+[]\OT1/pcr/m/n/10.95 Matrix\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Transformatio
+n\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 On\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.9
+5 Multivariate\OT1/ptm/m/n/10.95 -
+ []
+
+[173]
+Underfull \hbox (badness 10000) in paragraph at lines 441--443
+[]\OT1/pcr/m/n/10.95 Upper\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Bound\OT1/ptm/
+m/n/10.95 -\OT1/pcr/m/n/10.95 Covering\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Ra
+dius\OT1/ptm/m/n/10.95 -\OT1/pcr/m/n/10.95 Griesmer\OT1/ptm/m/n/10.95 -\OT1/pcr
+/m/n/10.95 Like\OT1/ptm/m/n/10.95 ,
+ []
+
+[174]) (./guava.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6612 strings out of 495061
+ 97326 string characters out of 1182622
+ 173989 words of memory out of 3000000
+ 8804 multiletter control sequences out of 15000+50000
+ 57369 words of font info for 106 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 38i,7n,27p,1328b,594s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sh
+are/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/
+fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/h
+elvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pf
+b></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/te
+xmf-texlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.
+pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on guava.pdf (174 pages, 968019 bytes).
+PDF statistics:
+ 2748 PDF objects out of 2984 (max. 8388607)
+ 847 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

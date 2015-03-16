@@ -1,0 +1,169 @@
+<html><head><title>[ModIsom] 2 Tables</title></head>
+<body text="#000000" bgcolor="#ffffff">
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<h1>2 Tables</h1><p>
+<P>
+<H3>Sections</H3>
+<oL>
+<li> <A HREF="CHAP002.htm#SECT001">Nilpotent tables</a>
+<li> <A HREF="CHAP002.htm#SECT002">Algebras in the GAP sense</a>
+</ol><p>
+<p>
+Finite dimensional algebras can be described by structure contants tables.
+For nilpotent algebras it is not neccessary to store a full structure 
+contants table. To use this feature, we introduce <strong>nilpotent structure
+constants tables</strong> or just <strong>nilpotent tables</strong> for short. These are used 
+heavily throughout the package.
+<p>
+<p>
+<h2><a name="SECT001">2.1 Nilpotent tables</a></h2>
+<p><p>
+Let <var>A</var> be a finite-dimensional nilpotent associative algebra over a 
+field <var>F</var>. Let <var>(b<sub>1</sub>, ..., b<sub>d</sub>)</var> be a <strong>weighted basis</strong> of <var>A</var>; that
+is, a basis with weights <var>(w<sub>1</sub>, ..., w<sub>d</sub>)</var> satifying that <var>A<sup>j</sup> = 
+langleb<sub>i</sub> midw<sub>i</sub> geqj rangle</var>. Let
+<p><var> b<sub>i</sub> b<sub>j</sub> = sum<sub>k</sub> a<sub>i,j,k</sub> b<sub>k</sub>.<p></var>
+The nilpotent table <var>T</var> for <var>A</var> (with respect to the basis <var>(b<sub>1</sub>,
+..., b<sub>d</sub>)</var>) is a record with the following entries.
+<p>
+<p>
+<dl compact>
+<dt><var>dim</var> <dd> 
+   the dimension <var>d</var> of <var>A</var>;
+<p>
+<dt><var>fld</var> <dd> 
+   the field <var>F</var> of <var>A</var>;
+<p>
+<dt><var>wgs</var> <dd> 
+   the weights <var>(w<sub>1</sub>, ..., w<sub>d</sub>)</var>;
+<p>
+<dt><var>rnk</var> <dd>
+   the rank <var>e</var> of <var>A</var> (i.e. the dimension of <var>A/A<sup>2</sup></var>).
+<p>
+<dt><var>wds</var> <dd> 
+   a list of length <var>d</var> with holes; If the <var>i</var>th entry is bounded, then 
+   it is of the form <var>[k,l]</var>. In this case, <var>w<sub>i</sub> &gt; 1</var> and <var>b<sub>i</sub> = b<sub>k</sub> b<sub>l</sub></var> 
+   and <var>w<sub>k</sub> = 1</var> and <var>w<sub>l</sub> = w<sub>i</sub>-1</var> holds.
+<p>
+<dt><var>tab</var> <dd>
+   a partial structure contants table for <var>A</var>; If <var>tab[i][j][k]</var> is bounded,
+   then it is <var>a<sub>i,j,k</sub></var>. Note that either a full vector <var>tab[i][j]</var> is
+   given or <var>tab[i][j]</var> is unbounded. The entry <var>tab[i][j][k]</var> is available
+   for <var>1 leqi,j leqe</var> and if <var>wds[i]</var> is unbounded. 
+<p>
+<dt><var>com</var> <dd>
+   optional; If this is bounded, then it is a boolean. If this boolean
+   is true, then the algebra is assumed to be commutative.
+<p>
+</dl>
+<p>
+In a nilpotent table not all structure contants are readily available.
+The following function determines the structure constants for the
+product <var>b<sub>i</sub> b<sub>j</sub></var>. If the global variable <var>STORE</var> is true, then the
+function stores the computed entry in the table.
+<p>
+<a name = "SSEC001.1"></a>
+<li><code>GetEntryTable( T, i, j ) F</code>
+<p>
+We consider two nilpotent tables as equal, if they would be equal if
+the full set of structure constants tables would be bound. The following
+function provides an effective check for this.
+<p>
+<a name = "SSEC001.2"></a>
+<li><code>CompareTables( T1, T2 ) F</code>
+<p>
+A nilpotent table contains redundant information and hence can be 
+inconsistent. The next functions can be used to check this to some
+extend. 
+<p>
+<a name = "SSEC001.3"></a>
+<li><code>CheckAssociativity( T ) F</code>
+<p>
+Checks that <var>(b<sub>i</sub> b<sub>j</sub>) b<sub>k</sub> = b<sub>i</sub> (b<sub>j</sub> b<sub>k</sub>)</var> for all <var>i,j,k</var>. Note that this
+may be time-consuming.
+<p>
+<a name = "SSEC001.4"></a>
+<li><code>CheckCommutativity( T ) F</code>
+<p>
+Checks whether <var>T</var> defines a commutative algebra and sets the entry <var>com</var>
+accordingly.
+<p>
+<a name = "SSEC001.5"></a>
+<li><code>CheckConsistency( T ) F</code>
+<p>
+Checks that <var>wds</var> and <var>tab</var> are compatible. This assumes that 
+CheckAssociativity returns true.
+<p>
+All later described algorithms of this package assume that the tables 
+considered are fully consistent.
+<p>
+<pre>
+gap&gt; T := rec( dim := 3, 
+               fld := GF(2), 
+               rnk := 2, 
+               wgs := [ 1, 1, 2 ],
+               wds := [ ,, [ 2, 1 ] ],
+               tab := [] );;
+gap&gt; T.tab[1] := [[0,0,0],[0,0,1]] * One(T.fld);;
+gap&gt; T.tab[2] := [[0,0,1],[0,0,0]] * One(T.fld);;
+gap&gt; GetEntryTable( T, 3, 1 );
+[ 0*Z(2), 0*Z(2), 0*Z(2) ]
+</pre>
+<p>
+<p>
+<h2><a name="SECT002">2.2 Algebras in the GAP sense</a></h2>
+<p><p>
+We provide functions to convert back and forth between algebras in the GAP
+sense and nilpotent tables.
+<p>
+<a name = "SSEC002.1"></a>
+<li><code>AlgebraByTable( T ) F</code>
+<a name = "SSEC002.1"></a>
+<li><code>NilpotentTable( A ) F</code>
+<p>
+Note that the second function fails if <var>A</var> is not nilpotent.
+<p>
+For modular group algebras of <var>p</var>-groups, the group algebra itself is
+not nilpotent (as it contains a unit), but its Jacobson radial is. The
+following function determines a nilpotent table for the Jacobson radical.
+<p>
+<a name = "SSEC002.2"></a>
+<li><code>NilpotentTableOfRad( FG ) F</code>
+<p>
+<pre>
+gap&gt; A := GroupRing(GF(2), SmallGroup(8,3));
+&lt;algebra-with-one over GF(2), with 3 generators&gt;
+gap&gt; NilpotentTableOfRad(A);
+rec( dim := 7, fld := GF(2), rnk := 2, 
+  tab := 
+    [ 
+      [ [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ] ], 
+      [ [ 0*Z(2), 0*Z(2), Z(2)^0, Z(2)^0, Z(2)^0, Z(2)^0, Z(2)^0 ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, Z(2)^0 ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ] ],, 
+      [ [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+          [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ] ] ], 
+  wds := [ ,, [ 1, 2 ],, [ 1, 4 ], [ 2, 4 ], [ 1, 6 ] ], 
+  wgs := [ 1, 1, 2, 2, 3, 3, 4 ] )
+</pre>
+<p>
+<p>
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<P>
+<address>ModIsom manual<br>October 2014
+</address></body></html>

@@ -1,0 +1,83 @@
+This is TeX, Version 3.141592 (Web2C 7.5.6) (format=tex 2008.10.7)  21 APR 2009 13:23
+**manual
+(./manual.tex (./epsf.tex
+This is `epsf.tex' v2.7.3 <23 July 2005>
+\epsffilein=\read0
+\epsfframemargin=\dimen16
+\epsfframethickness=\dimen17
+\epsfrsize=\dimen18
+\epsftmp=\dimen19
+\epsftsize=\dimen20
+\epsfxsize=\dimen21
+\epsfysize=\dimen22
+\pspoints=\dimen23
+) (../../../doc/gapmacro.tex
+(/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.tex
+(/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.def
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+Running TeX
+\pagewidth=\dimen24
+\pageheight=\dimen25
+\colwidth=\dimen26
+\partialpage=\box16
+\origvsize=\dimen27
+\manindent=\dimen28
+\smallmanindent=\dimen29
+\msbfam=\fam11
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\labelin=\read1
+\indexin=\read2
+\tocin=\read3
+\citein=\read4
+\secno=\count26
+\subsecno=\count27
+\exno=\count28
+\indentno=\count29
+\chapnum=\count30
+\ortoks=\toks12
+) (../../../doc/ref/manual.lab) (../VERSION) [1]
+\makelabel{Fwtree:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+Chapter `Contents' .
+(./manual.toc) [2.1
+\chapcontents {\tocstrut }{Contents}{2}
+] (./manual.lab)
+\openout3 = `manual.toc'.
+
+\openout0 = `manual.lab'.
+
+\openout1 = `manual.idx'.
+
+\openout2 = `manual.six'.
+
+\openout4 = `manual.aux'.
+
+ (./intro.tex
+Chapter `Introduction' .
+) (./main.tex [3.1]
+Chapter `Methods and functions' .
+[4.2] [5.2]
+(branch.ps
+)
+) [6.2]
+Chapter `Bibliography' .
+(./manual.bbl) [7.3]
+Chapter `Index' .
+(./manual.ind) [8.4]
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## Labels have changed, run again. (Or they were multiply defined.)
+##
+ )
+Output written on manual.dvi (8 pages, 12700 bytes).

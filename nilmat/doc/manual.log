@@ -1,0 +1,71 @@
+This is pdfTeX, Version 3.141592-1.11b (MiKTeX 2.4) (preloaded format=plain 2004.3.16)  12 JUN 2007 13:54
+**manual.tex
+(manual.tex{pdftex.cfg} (c:/gap4r4/doc/gapmacro.tex
+(C:\texmf\tex\plain\amsfonts\amssym.tex (C:\texmf\tex\plain\amsfonts\amssym.def
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+Running PDFTeX
+\pagewidth=\dimen16
+\pageheight=\dimen17
+\colwidth=\dimen18
+\partialpage=\box16
+\origvsize=\dimen19
+\manindent=\dimen20
+\smallmanindent=\dimen21
+\msbfam=\fam11
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\labelin=\read0
+\indexin=\read1
+\tocin=\read2
+\citein=\read3
+\secno=\count26
+\subsecno=\count27
+\exno=\count28
+\indentno=\count29
+\chapnum=\count30
+\ortoks=\toks12
+)
+No file ../../../doc/ext/manual.lab.
+No file ../../../doc/ref/manual.lab.
+No file ../../gapdoc/doc/manual.lab.
+[1{psfonts.map}]
+\makelabel{nilmat:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+Chapter `Contents' .
+(manual.toc) [2.1
+\chapcontents {\tocstrut }{Contents}{2}
+] (manual.lab) (introduction.tex
+Chapter `Introduction' .
+Reference `DF04,DF05b,DF06,DF07' undefined.
+Reference `Sup76,Weh73' undefined.
+Reference `DF06,DF07' undefined.
+Reference `AE05,AE07' undefined.
+) (computing.tex [3.1]
+Chapter `Computing with nilpotent linear groups' .
+[4.2] [5.2]) (examples.tex [6.2]
+Chapter `Examples' .
+[7.3] [8.3]) (installation.tex [9.3]
+Chapter `Installation' .
+) [10.4]
+Chapter `Bibliography' .
+(manual.bbl) [11.5]
+Chapter `Index' .
+(manual.ind) [12.6]
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## There were undefined labels or references.
+##
+ )<cmsl10.pfb><cmr7.pfb><cmsy10.pfb><msam7.pfb><cmr8.pfb><cmmi10.pfb><cmss10.pf
+b><cmti10.pfb><msbm10.pfb><cminch.pfb><cmbx10.pfb><cmtt10.pfb><cmr10.pfb><cmssd
+c10.pfb>
+Output written on manual.pdf (12 pages, 153141 bytes).

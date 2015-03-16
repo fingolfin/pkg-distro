@@ -1,0 +1,72 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=tex 1999.9.25)  24 APR 2001 14:31
+**manual
+(manual.tex (../../../doc/gapmacro.tex
+(/usr/share/texmf/tex/plain/amsfonts/amssym.tex
+(/usr/share/texmf/tex/plain/amsfonts/amssym.def
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+\pagewidth=\dimen16
+\pageheight=\dimen17
+\colwidth=\dimen18
+\partialpage=\box16
+\origvsize=\dimen19
+\manindent=\dimen20
+\smallmanindent=\dimen21
+\msbfam=\fam11
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\labelin=\read0
+\indexin=\read1
+\tocin=\read2
+\citein=\read3
+\secno=\count26
+\subsecno=\count27
+\exno=\count28
+)
+No file ../../../doc/ext/manual.lab.
+No file ../../../doc/ref/manual.lab.
+[1]
+\makelabel {finsemi:}{1}
+(preface.tex) [2.1
+\chapcontents {\tocstrut }{}{2}
+]
+\makelabel {finsemi:contents}{2}
+(manual.toc) [3.2
+\chapcontents {\tocstrut }{Contents}{3}
+] (manual.lab)
+\makelabel {finsemi:bibliography}{3}
+(manual.bbl)
+\openout3 = `manual.toc'.
+
+\openout0 = `manual.lab'.
+
+\openout1 = `manual.idx'.
+
+\openout2 = `manual.six'.
+
+\openout4 = `manual.aux'.
+
+ [4.2] (basics.tex [5.1] [6.1]) (kernels.tex [7.1] [8.2] [9.2])
+(pids.tex [10.2]
+Label `finsemi:product' undefined.
+Label `finsemi:power' undefined.
+Label `finsemi:omegapower' undefined.
+Label `finsemi:power' undefined.
+Label `finsemi:omegapower' undefined.
+[11.3] [12.3]) [13.3] (manual.bbl) [14.1] (manual.ind) [15.2]
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## There were undefined labels or references.
+##
+ )
+Output written on manual.dvi (15 pages, 23008 bytes).

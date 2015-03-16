@@ -1,0 +1,328 @@
+\indexentry{Semigroups@\textsf{Semigroups} package overview|hyperpage}{6}
+\indexentry{SemigroupsMakeDoc@\texttt  {SemigroupsMakeDoc}|hyperpage}{8}
+\indexentry{SemigroupsTestInstall@\texttt  {SemigroupsTestInstall}|hyperpage}{9}
+\indexentry{SemigroupsTestManualExamples@\texttt  {SemigroupsTestManualExamples}|hyperpage}{9}
+\indexentry{SemigroupsTestAll@\texttt  {SemigroupsTestAll}|hyperpage}{9}
+\indexentry{InfoSemigroups@\texttt  {InfoSemigroups}|hyperpage}{9}
+\indexentry{SemigroupsDir@\texttt  {SemigroupsDir}|hyperpage}{10}
+\indexentry{ReadGenerators@\texttt  {ReadGenerators}|hyperpage}{10}
+\indexentry{WriteGenerators@\texttt  {WriteGenerators}|hyperpage}{10}
+\indexentry{IteratorFromGeneratorsFile@\texttt  {IteratorFromGeneratorsFile}|hyperpage}{11}
+\indexentry{RandomInverseMonoid@\texttt  {RandomInverseMonoid}|hyperpage}{12}
+\indexentry{RandomInverseSemigroup@\texttt  {RandomInverseSemigroup}|hyperpage}{12}
+\indexentry{RandomTransformationMonoid@\texttt  {RandomTransformationMonoid}|hyperpage}{12}
+\indexentry{RandomTransformationSemigroup@\texttt  {RandomTransformationSemigroup}|hyperpage}{12}
+\indexentry{RandomPartialPermMonoid@\texttt  {RandomPartialPermMonoid}|hyperpage}{13}
+\indexentry{RandomPartialPermSemigroup@\texttt  {RandomPartialPermSemigroup}|hyperpage}{13}
+\indexentry{RandomBinaryRelationMonoid@\texttt  {RandomBinaryRelationMonoid}|hyperpage}{13}
+\indexentry{RandomBinaryRelationSemigroup@\texttt  {RandomBinaryRelationSemigroup}|hyperpage}{13}
+\indexentry{RandomBipartitionSemigroup@\texttt  {RandomBipartitionSemigroup}|hyperpage}{13}
+\indexentry{RandomBipartitionMonoid@\texttt  {RandomBipartitionMonoid}|hyperpage}{13}
+\indexentry{ClosureInverseSemigroup@\texttt  {ClosureInverseSemigroup}|hyperpage}{13}
+\indexentry{ClosureSemigroup@\texttt  {ClosureSemigroup}|hyperpage}{14}
+\indexentry{SubsemigroupByProperty@\texttt  {SubsemigroupByProperty}!for a semigroup and function|hyperpage}{14}
+\indexentry{SubsemigroupByProperty@\texttt  {SubsemigroupByProperty}!for a semigroup, function, and limit on the size of the subsemigroup|hyperpage}{14}
+\indexentry{InverseSubsemigroupByProperty@\texttt  {InverseSubsemigroupByProperty}|hyperpage}{15}
+\indexentry{SemigroupsOptionsRec@\texttt  {SemigroupsOptionsRec}|hyperpage}{17}
+\indexentry{AsTransformationSemigroup@\texttt  {AsTransformationSemigroup}|hyperpage}{18}
+\indexentry{AsPartialPermSemigroup@\texttt  {AsPartialPermSemigroup}|hyperpage}{18}
+\indexentry{AsBipartitionSemigroup@\texttt  {AsBipartitionSemigroup}|hyperpage}{18}
+\indexentry{AsBlockBijectionSemigroup@\texttt  {AsBlockBijectionSemigroup}|hyperpage}{18}
+\indexentry{IsomorphismPermGroup@\texttt  {IsomorphismPermGroup}|hyperpage}{18}
+\indexentry{IsomorphismBipartitionSemigroup@\texttt  {IsomorphismBipartitionSemigroup}|hyperpage}{19}
+\indexentry{IsomorphismBipartitionMonoid@\texttt  {IsomorphismBipartitionMonoid}|hyperpage}{19}
+\indexentry{IsomorphismBlockBijectionSemigroup@\texttt  {IsomorphismBlockBijectionSemigroup}|hyperpage}{20}
+\indexentry{IsomorphismBlockBijectionMonoid@\texttt  {IsomorphismBlockBijectionMonoid}|hyperpage}{20}
+\indexentry{EndomorphismsPartition@\texttt  {EndomorphismsPartition}|hyperpage}{20}
+\indexentry{PartitionMonoid@\texttt  {PartitionMonoid}|hyperpage}{21}
+\indexentry{SingularPartitionMonoid@\texttt  {SingularPartitionMonoid}|hyperpage}{21}
+\indexentry{BrauerMonoid@\texttt  {BrauerMonoid}|hyperpage}{21}
+\indexentry{SingularBrauerMonoid@\texttt  {SingularBrauerMonoid}|hyperpage}{21}
+\indexentry{JonesMonoid@\texttt  {JonesMonoid}|hyperpage}{21}
+\indexentry{TemperleyLiebMonoid@\texttt  {TemperleyLiebMonoid}|hyperpage}{21}
+\indexentry{SingularJonesMonoid@\texttt  {SingularJonesMonoid}|hyperpage}{21}
+\indexentry{FactorisableDualSymmetricInverseSemigroup@\texttt  {Factorisable}\discretionary {-}{}{}\texttt  {Dual}\discretionary {-}{}{}\texttt  {Symmetric}\discretionary {-}{}{}\texttt  {Inverse}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{22}
+\indexentry{SingularFactorisableDualSymmetricInverseSemigroup@\texttt  {Singular}\discretionary {-}{}{}\texttt  {Factorisable}\discretionary {-}{}{}\texttt  {Dual}\discretionary {-}{}{}\texttt  {Symmetric}\discretionary {-}{}{}\texttt  {Inverse}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{22}
+\indexentry{DualSymmetricInverseSemigroup@\texttt  {DualSymmetricInverseSemigroup}|hyperpage}{22}
+\indexentry{DualSymmetricInverseMonoid@\texttt  {DualSymmetricInverseMonoid}|hyperpage}{22}
+\indexentry{SingularDualSymmetricInverseSemigroup@\texttt  {Singular}\discretionary {-}{}{}\texttt  {Dual}\discretionary {-}{}{}\texttt  {Symmetric}\discretionary {-}{}{}\texttt  {Inverse}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{22}
+\indexentry{PartialTransformationSemigroup@\texttt  {PartialTransformationSemigroup}|hyperpage}{23}
+\indexentry{FullMatrixSemigroup@\texttt  {FullMatrixSemigroup}|hyperpage}{23}
+\indexentry{GeneralLinearSemigroup@\texttt  {GeneralLinearSemigroup}|hyperpage}{23}
+\indexentry{IsFullMatrixSemigroup@\texttt  {IsFullMatrixSemigroup}|hyperpage}{23}
+\indexentry{IsGeneralLinearSemigroup@\texttt  {IsGeneralLinearSemigroup}|hyperpage}{23}
+\indexentry{MunnSemigroup@\texttt  {MunnSemigroup}|hyperpage}{24}
+\indexentry{OrderEndomorphisms@\texttt  {OrderEndomorphisms}!monoid of order preserving transformations|hyperpage}{24}
+\indexentry{POI@\texttt  {POI}!monoid of order preserving partial perms|hyperpage}{24}
+\indexentry{POPI@\texttt  {POPI}!monoid of orientation preserving partial perms|hyperpage}{24}
+\indexentry{SingularTransformationSemigroup@\texttt  {SingularTransformationSemigroup}|hyperpage}{25}
+\indexentry{SingularTransformationMonoid@\texttt  {SingularTransformationMonoid}|hyperpage}{25}
+\indexentry{RegularBinaryRelationSemigroup@\texttt  {RegularBinaryRelationSemigroup}|hyperpage}{25}
+\indexentry{SemigroupIdeal@\texttt  {SemigroupIdeal}|hyperpage}{27}
+\indexentry{GeneratorsOfSemigroupIdeal@\texttt  {GeneratorsOfSemigroupIdeal}|hyperpage}{28}
+\indexentry{MinimalIdealGeneratingSet@\texttt  {MinimalIdealGeneratingSet}|hyperpage}{28}
+\indexentry{SupersemigroupOfIdeal@\texttt  {SupersemigroupOfIdeal}|hyperpage}{29}
+\indexentry{EvaluateWord@\texttt  {EvaluateWord}|hyperpage}{30}
+\indexentry{Factorization@\texttt  {Factorization}|hyperpage}{31}
+\indexentry{DClassOfHClass@\texttt  {DClassOfHClass}|hyperpage}{32}
+\indexentry{DClassOfLClass@\texttt  {DClassOfLClass}|hyperpage}{32}
+\indexentry{DClassOfRClass@\texttt  {DClassOfRClass}|hyperpage}{32}
+\indexentry{LClassOfHClass@\texttt  {LClassOfHClass}|hyperpage}{32}
+\indexentry{RClassOfHClass@\texttt  {RClassOfHClass}|hyperpage}{32}
+\indexentry{GreensDClassOfElement@\texttt  {GreensDClassOfElement}|hyperpage}{33}
+\indexentry{DClass@\texttt  {DClass}|hyperpage}{33}
+\indexentry{GreensHClassOfElement@\texttt  {GreensHClassOfElement}|hyperpage}{33}
+\indexentry{GreensHClassOfElement@\texttt  {GreensHClassOfElement}!for a Rees matrix semigroup|hyperpage}{33}
+\indexentry{HClass@\texttt  {HClass}|hyperpage}{33}
+\indexentry{HClass@\texttt  {HClass}!for a Rees matrix semigroup|hyperpage}{33}
+\indexentry{GreensLClassOfElement@\texttt  {GreensLClassOfElement}|hyperpage}{33}
+\indexentry{LClass@\texttt  {LClass}|hyperpage}{33}
+\indexentry{GreensRClassOfElement@\texttt  {GreensRClassOfElement}|hyperpage}{33}
+\indexentry{RClass@\texttt  {RClass}|hyperpage}{33}
+\indexentry{GreensDClassOfElementNC@\texttt  {GreensDClassOfElementNC}|hyperpage}{34}
+\indexentry{DClassNC@\texttt  {DClassNC}|hyperpage}{34}
+\indexentry{GreensHClassOfElementNC@\texttt  {GreensHClassOfElementNC}|hyperpage}{34}
+\indexentry{HClassNC@\texttt  {HClassNC}|hyperpage}{34}
+\indexentry{GreensLClassOfElementNC@\texttt  {GreensLClassOfElementNC}|hyperpage}{34}
+\indexentry{LClassNC@\texttt  {LClassNC}|hyperpage}{34}
+\indexentry{GreensRClassOfElementNC@\texttt  {GreensRClassOfElementNC}|hyperpage}{34}
+\indexentry{RClassNC@\texttt  {RClassNC}|hyperpage}{34}
+\indexentry{GroupHClass@\texttt  {GroupHClass}|hyperpage}{35}
+\indexentry{GreensDClasses@\texttt  {GreensDClasses}|hyperpage}{36}
+\indexentry{DClasses@\texttt  {DClasses}|hyperpage}{36}
+\indexentry{GreensHClasses@\texttt  {GreensHClasses}|hyperpage}{36}
+\indexentry{HClasses@\texttt  {HClasses}|hyperpage}{36}
+\indexentry{GreensJClasses@\texttt  {GreensJClasses}|hyperpage}{36}
+\indexentry{JClasses@\texttt  {JClasses}|hyperpage}{36}
+\indexentry{GreensLClasses@\texttt  {GreensLClasses}|hyperpage}{36}
+\indexentry{LClasses@\texttt  {LClasses}|hyperpage}{36}
+\indexentry{GreensRClasses@\texttt  {GreensRClasses}|hyperpage}{36}
+\indexentry{RClasses@\texttt  {RClasses}|hyperpage}{36}
+\indexentry{IteratorOfDClassReps@\texttt  {IteratorOfDClassReps}|hyperpage}{38}
+\indexentry{IteratorOfHClassReps@\texttt  {IteratorOfHClassReps}|hyperpage}{38}
+\indexentry{IteratorOfLClassReps@\texttt  {IteratorOfLClassReps}|hyperpage}{38}
+\indexentry{IteratorOfRClassReps@\texttt  {IteratorOfRClassReps}|hyperpage}{38}
+\indexentry{IteratorOfDClasses@\texttt  {IteratorOfDClasses}|hyperpage}{38}
+\indexentry{IteratorOfHClasses@\texttt  {IteratorOfHClasses}|hyperpage}{38}
+\indexentry{IteratorOfLClasses@\texttt  {IteratorOfLClasses}|hyperpage}{38}
+\indexentry{IteratorOfRClasses@\texttt  {IteratorOfRClasses}|hyperpage}{38}
+\indexentry{DClassReps@\texttt  {DClassReps}|hyperpage}{40}
+\indexentry{HClassReps@\texttt  {HClassReps}|hyperpage}{40}
+\indexentry{LClassReps@\texttt  {LClassReps}|hyperpage}{40}
+\indexentry{RClassReps@\texttt  {RClassReps}|hyperpage}{40}
+\indexentry{<@\texttt  {\texttt  {\char 92\relax }{\textless }}!for Green's classes|hyperpage}{41}
+\indexentry{InjectionPrincipalFactor@\texttt  {InjectionPrincipalFactor}|hyperpage}{42}
+\indexentry{IsomorphismReesMatrixSemigroup@\texttt  {IsomorphismReesMatrixSemigroup}|hyperpage}{42}
+\indexentry{PrincipalFactor@\texttt  {PrincipalFactor}|hyperpage}{43}
+\indexentry{IsRegularClass@\texttt  {IsRegularClass}|hyperpage}{43}
+\indexentry{NrRegularDClasses@\texttt  {NrRegularDClasses}|hyperpage}{44}
+\indexentry{RegularDClasses@\texttt  {RegularDClasses}|hyperpage}{44}
+\indexentry{NrDClasses@\texttt  {NrDClasses}|hyperpage}{45}
+\indexentry{NrHClasses@\texttt  {NrHClasses}|hyperpage}{45}
+\indexentry{NrLClasses@\texttt  {NrLClasses}|hyperpage}{45}
+\indexentry{NrRClasses@\texttt  {NrRClasses}|hyperpage}{45}
+\indexentry{PartialOrderOfDClasses@\texttt  {PartialOrderOfDClasses}|hyperpage}{46}
+\indexentry{SchutzenbergerGroup@\texttt  {SchutzenbergerGroup}|hyperpage}{47}
+\indexentry{MinimalDClass@\texttt  {MinimalDClass}|hyperpage}{48}
+\indexentry{MaximalDClasses@\texttt  {MaximalDClasses}|hyperpage}{48}
+\indexentry{StructureDescriptionSchutzenbergerGroups@\texttt  {Structure}\discretionary {-}{}{}\texttt  {Description}\discretionary {-}{}{}\texttt  {Schutzenberger}\discretionary {-}{}{}\texttt  {Groups}|hyperpage}{48}
+\indexentry{StructureDescriptionMaximalSubgroups@\texttt  {Structure}\discretionary {-}{}{}\texttt  {Description}\discretionary {-}{}{}\texttt  {Maximal}\discretionary {-}{}{}\texttt  {Subgroups}|hyperpage}{49}
+\indexentry{MultiplicativeNeutralElement@\texttt  {MultiplicativeNeutralElement}!for an H-class|hyperpage}{49}
+\indexentry{IsGreensClassNC@\texttt  {IsGreensClassNC}|hyperpage}{50}
+\indexentry{IsTransformationSemigroupGreensClass@\texttt  {IsTransformation}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Greens}\discretionary {-}{}{}\texttt  {Class}|hyperpage}{50}
+\indexentry{IsBipartitionSemigroupGreensClass@\texttt  {IsBipartitionSemigroupGreensClass}|hyperpage}{50}
+\indexentry{IsPartialPermSemigroupGreensClass@\texttt  {IsPartialPermSemigroupGreensClass}|hyperpage}{50}
+\indexentry{StructureDescription@\texttt  {StructureDescription}!for an H-class|hyperpage}{50}
+\indexentry{IsGreensDLeq@\texttt  {IsGreensDLeq}|hyperpage}{51}
+\indexentry{Generators@\texttt  {Generators}|hyperpage}{52}
+\indexentry{GroupOfUnits@\texttt  {GroupOfUnits}|hyperpage}{53}
+\indexentry{Idempotents@\texttt  {Idempotents}|hyperpage}{53}
+\indexentry{NrIdempotents@\texttt  {NrIdempotents}|hyperpage}{54}
+\indexentry{IdempotentGeneratedSubsemigroup@\texttt  {IdempotentGeneratedSubsemigroup}|hyperpage}{55}
+\indexentry{IrredundantGeneratingSubset@\texttt  {IrredundantGeneratingSubset}|hyperpage}{56}
+\indexentry{MaximalSubsemigroups@\texttt  {MaximalSubsemigroups}!for an acting semigroup|hyperpage}{57}
+\indexentry{MaximalSubsemigroups@\texttt  {MaximalSubsemigroups}!for a Rees (0-)matrix semigroup, and a group|hyperpage}{58}
+\indexentry{IsMaximalSubsemigroup@\texttt  {IsMaximalSubsemigroup}|hyperpage}{59}
+\indexentry{MinimalIdeal@\texttt  {MinimalIdeal}|hyperpage}{59}
+\indexentry{MultiplicativeZero@\texttt  {MultiplicativeZero}|hyperpage}{60}
+\indexentry{Random@\texttt  {Random}!for a semigroup|hyperpage}{60}
+\indexentry{SmallGeneratingSet@\texttt  {SmallGeneratingSet}|hyperpage}{60}
+\indexentry{SmallSemigroupGeneratingSet@\texttt  {SmallSemigroupGeneratingSet}|hyperpage}{60}
+\indexentry{SmallMonoidGeneratingSet@\texttt  {SmallMonoidGeneratingSet}|hyperpage}{61}
+\indexentry{SmallInverseSemigroupGeneratingSet@\texttt  {SmallInverseSemigroupGeneratingSet}|hyperpage}{61}
+\indexentry{SmallInverseMonoidGeneratingSet@\texttt  {SmallInverseMonoidGeneratingSet}|hyperpage}{61}
+\indexentry{ComponentRepsOfTransformationSemigroup@\texttt  {Component}\discretionary {-}{}{}\texttt  {Reps}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Transformation}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{62}
+\indexentry{ComponentsOfTransformationSemigroup@\texttt  {ComponentsOfTransformationSemigroup}|hyperpage}{62}
+\indexentry{CyclesOfTransformationSemigroup@\texttt  {CyclesOfTransformationSemigroup}|hyperpage}{62}
+\indexentry{IsTransitive@\texttt  {IsTransitive}!for a transformation semigroup and a set|hyperpage}{63}
+\indexentry{IsTransitive@\texttt  {IsTransitive}!for a transformation semigroup and a pos int|hyperpage}{63}
+\indexentry{ComponentRepsOfPartialPermSemigroup@\texttt  {ComponentRepsOfPartialPermSemigroup}|hyperpage}{63}
+\indexentry{ComponentsOfPartialPermSemigroup@\texttt  {ComponentsOfPartialPermSemigroup}|hyperpage}{63}
+\indexentry{CyclesOfPartialPerm@\texttt  {CyclesOfPartialPerm}|hyperpage}{64}
+\indexentry{CyclesOfPartialPermSemigroup@\texttt  {CyclesOfPartialPermSemigroup}|hyperpage}{64}
+\indexentry{Normalizer@\texttt  {Normalizer}!for a perm group, semigroup, record|hyperpage}{64}
+\indexentry{Normalizer@\texttt  {Normalizer}!for a semigroup, record|hyperpage}{64}
+\indexentry{SmallestElementSemigroup@\texttt  {SmallestElementSemigroup}|hyperpage}{65}
+\indexentry{LargestElementSemigroup@\texttt  {LargestElementSemigroup}|hyperpage}{65}
+\indexentry{GeneratorsSmallest@\texttt  {GeneratorsSmallest}!for a transformation semigroup|hyperpage}{66}
+\indexentry{IsBand@\texttt  {IsBand}|hyperpage}{66}
+\indexentry{IsBlockGroup@\texttt  {IsBlockGroup}|hyperpage}{67}
+\indexentry{IsSemigroupWithCommutingIdempotents@\texttt  {IsSemigroupWithCommutingIdempotents}|hyperpage}{67}
+\indexentry{IsCommutativeSemigroup@\texttt  {IsCommutativeSemigroup}|hyperpage}{68}
+\indexentry{IsCompletelyRegularSemigroup@\texttt  {IsCompletelyRegularSemigroup}|hyperpage}{68}
+\indexentry{IsCongruenceFreeSemigroup@\texttt  {IsCongruenceFreeSemigroup}|hyperpage}{69}
+\indexentry{IsGroupAsSemigroup@\texttt  {IsGroupAsSemigroup}|hyperpage}{69}
+\indexentry{IsIdempotentGenerated@\texttt  {IsIdempotentGenerated}|hyperpage}{70}
+\indexentry{IsSemiBand@\texttt  {IsSemiBand}|hyperpage}{70}
+\indexentry{IsLeftSimple@\texttt  {IsLeftSimple}|hyperpage}{70}
+\indexentry{IsRightSimple@\texttt  {IsRightSimple}|hyperpage}{70}
+\indexentry{IsLeftZeroSemigroup@\texttt  {IsLeftZeroSemigroup}|hyperpage}{71}
+\indexentry{IsMonogenicSemigroup@\texttt  {IsMonogenicSemigroup}|hyperpage}{71}
+\indexentry{IsMonoidAsSemigroup@\texttt  {IsMonoidAsSemigroup}|hyperpage}{72}
+\indexentry{IsOrthodoxSemigroup@\texttt  {IsOrthodoxSemigroup}|hyperpage}{73}
+\indexentry{IsRectangularBand@\texttt  {IsRectangularBand}|hyperpage}{73}
+\indexentry{IsRegularSemigroup@\texttt  {IsRegularSemigroup}|hyperpage}{73}
+\indexentry{IsRightZeroSemigroup@\texttt  {IsRightZeroSemigroup}|hyperpage}{74}
+\indexentry{IsRTrivial@\texttt  {IsRTrivial}|hyperpage}{74}
+\indexentry{IsLTrivial@\texttt  {IsLTrivial}|hyperpage}{74}
+\indexentry{IsHTrivial@\texttt  {IsHTrivial}|hyperpage}{74}
+\indexentry{IsDTrivial@\texttt  {IsDTrivial}|hyperpage}{74}
+\indexentry{IsAperiodicSemigroup@\texttt  {IsAperiodicSemigroup}|hyperpage}{74}
+\indexentry{IsCombinatorialSemigroup@\texttt  {IsCombinatorialSemigroup}|hyperpage}{74}
+\indexentry{IsSemilatticeAsSemigroup@\texttt  {IsSemilatticeAsSemigroup}|hyperpage}{75}
+\indexentry{IsSimpleSemigroup@\texttt  {IsSimpleSemigroup}|hyperpage}{75}
+\indexentry{IsCompletelySimpleSemigroup@\texttt  {IsCompletelySimpleSemigroup}|hyperpage}{75}
+\indexentry{IsSynchronizingSemigroup@\texttt  {IsSynchronizingSemigroup}|hyperpage}{76}
+\indexentry{IsZeroGroup@\texttt  {IsZeroGroup}|hyperpage}{76}
+\indexentry{IsZeroRectangularBand@\texttt  {IsZeroRectangularBand}|hyperpage}{77}
+\indexentry{IsZeroSemigroup@\texttt  {IsZeroSemigroup}|hyperpage}{77}
+\indexentry{IsZeroSimpleSemigroup@\texttt  {IsZeroSimpleSemigroup}|hyperpage}{78}
+\indexentry{IsCliffordSemigroup@\texttt  {IsCliffordSemigroup}|hyperpage}{79}
+\indexentry{IsBrandtSemigroup@\texttt  {IsBrandtSemigroup}|hyperpage}{79}
+\indexentry{IsEUnitaryInverseSemigroup@\texttt  {IsEUnitaryInverseSemigroup}|hyperpage}{80}
+\indexentry{IsFactorisableSemigroup@\texttt  {IsFactorisableSemigroup}|hyperpage}{80}
+\indexentry{IsJoinIrreducible@\texttt  {IsJoinIrreducible}|hyperpage}{81}
+\indexentry{IsMajorantlyClosed@\texttt  {IsMajorantlyClosed}|hyperpage}{82}
+\indexentry{IsMonogenicInverseSemigroup@\texttt  {IsMonogenicInverseSemigroup}|hyperpage}{82}
+\indexentry{JoinIrreducibleDClasses@\texttt  {JoinIrreducibleDClasses}|hyperpage}{83}
+\indexentry{MajorantClosure@\texttt  {MajorantClosure}|hyperpage}{83}
+\indexentry{Minorants@\texttt  {Minorants}|hyperpage}{84}
+\indexentry{PrimitiveIdempotents@\texttt  {PrimitiveIdempotents}|hyperpage}{84}
+\indexentry{RightCosetsOfInverseSemigroup@\texttt  {RightCosetsOfInverseSemigroup}|hyperpage}{85}
+\indexentry{SameMinorantsSubgroup@\texttt  {SameMinorantsSubgroup}|hyperpage}{86}
+\indexentry{SmallerDegreePartialPermRepresentation@\texttt  {Smaller}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Partial}\discretionary {-}{}{}\texttt  {Perm}\discretionary {-}{}{}\texttt  {Representation}|hyperpage}{86}
+\indexentry{VagnerPrestonRepresentation@\texttt  {VagnerPrestonRepresentation}|hyperpage}{87}
+\indexentry{CharacterTableOfInverseSemigroup@\texttt  {CharacterTableOfInverseSemigroup}|hyperpage}{88}
+\indexentry{Splash@\texttt  {Splash}|hyperpage}{89}
+\indexentry{DotDClasses@\texttt  {DotDClasses}!for a semigroup|hyperpage}{90}
+\indexentry{DotDClasses@\texttt  {DotDClasses}|hyperpage}{90}
+\indexentry{DotSemilatticeOfIdempotents@\texttt  {DotSemilatticeOfIdempotents}|hyperpage}{91}
+\indexentry{IsBipartition@\texttt  {IsBipartition}|hyperpage}{93}
+\indexentry{IsBipartitionCollection@\texttt  {IsBipartitionCollection}|hyperpage}{93}
+\indexentry{BipartitionFamily@\texttt  {BipartitionFamily}|hyperpage}{93}
+\indexentry{Bipartition@\texttt  {Bipartition}|hyperpage}{93}
+\indexentry{BipartitionByIntRep@\texttt  {BipartitionByIntRep}|hyperpage}{94}
+\indexentry{IdentityBipartition@\texttt  {IdentityBipartition}|hyperpage}{94}
+\indexentry{LeftOne@\texttt  {LeftOne}!for a bipartition|hyperpage}{94}
+\indexentry{LeftProjection@\texttt  {LeftProjection}|hyperpage}{94}
+\indexentry{RightOne@\texttt  {RightOne}!for a bipartition|hyperpage}{95}
+\indexentry{RightProjection@\texttt  {RightProjection}|hyperpage}{95}
+\indexentry{StarOp@\texttt  {StarOp}|hyperpage}{95}
+\indexentry{Star@\texttt  {Star}|hyperpage}{95}
+\indexentry{RandomBipartition@\texttt  {RandomBipartition}|hyperpage}{96}
+\indexentry{AsBipartition@\texttt  {AsBipartition}|hyperpage}{96}
+\indexentry{AsBlockBijection@\texttt  {AsBlockBijection}|hyperpage}{98}
+\indexentry{AsTransformation@\texttt  {AsTransformation}!for a bipartition|hyperpage}{98}
+\indexentry{AsPartialPerm@\texttt  {AsPartialPerm}!for a bipartition|hyperpage}{99}
+\indexentry{AsPermutation@\texttt  {AsPermutation}!for a bipartition|hyperpage}{99}
+\indexentry{*@\texttt{*} (for bipartitions)|hyperpage}{99}
+\indexentry{<@\texttt{{\textless}} (for bipartitions)|hyperpage}{99}
+\indexentry{=@\texttt{=} (for bipartitions)|hyperpage}{100}
+\indexentry{PartialPermLeqBipartition@\texttt  {PartialPermLeqBipartition}|hyperpage}{100}
+\indexentry{NaturalLeqPartialPermBipartition@\texttt  {NaturalLeqPartialPermBipartition}|hyperpage}{100}
+\indexentry{NaturalLeqBlockBijection@\texttt  {NaturalLeqBlockBijection}|hyperpage}{100}
+\indexentry{PermLeftQuoBipartition@\texttt  {PermLeftQuoBipartition}|hyperpage}{101}
+\indexentry{OnRightBlocksBipartitionByPerm@\texttt  {OnRightBlocksBipartitionByPerm}|hyperpage}{101}
+\indexentry{DegreeOfBipartition@\texttt  {DegreeOfBipartition}|hyperpage}{101}
+\indexentry{DegreeOfBipartitionCollection@\texttt  {DegreeOfBipartitionCollection}|hyperpage}{101}
+\indexentry{RankOfBipartition@\texttt  {RankOfBipartition}|hyperpage}{102}
+\indexentry{NrTransverseBlocks@\texttt  {NrTransverseBlocks}!for a bipartition|hyperpage}{102}
+\indexentry{ExtRepOfBipartition@\texttt  {ExtRepOfBipartition}|hyperpage}{102}
+\indexentry{RightBlocks@\texttt  {RightBlocks}|hyperpage}{102}
+\indexentry{LeftBlocks@\texttt  {LeftBlocks}|hyperpage}{103}
+\indexentry{NrLeftBlocks@\texttt  {NrLeftBlocks}|hyperpage}{103}
+\indexentry{NrRightBlocks@\texttt  {NrRightBlocks}|hyperpage}{104}
+\indexentry{NrBlocks@\texttt  {NrBlocks}!for blocks|hyperpage}{104}
+\indexentry{NrBlocks@\texttt  {NrBlocks}!for a bipartition|hyperpage}{104}
+\indexentry{IsTransBipartition@\texttt  {IsTransBipartition}|hyperpage}{104}
+\indexentry{IsDualTransBipartition@\texttt  {IsDualTransBipartition}|hyperpage}{105}
+\indexentry{IsPermBipartition@\texttt  {IsPermBipartition}|hyperpage}{105}
+\indexentry{IsPartialPermBipartition@\texttt  {IsPartialPermBipartition}|hyperpage}{105}
+\indexentry{IsBlockBijection@\texttt  {IsBlockBijection}|hyperpage}{106}
+\indexentry{IsUniformBlockBijection@\texttt  {IsUniformBlockBijection}|hyperpage}{106}
+\indexentry{BlocksNC@\texttt  {BlocksNC}|hyperpage}{107}
+\indexentry{ExtRepOfBlocks@\texttt  {ExtRepOfBlocks}|hyperpage}{107}
+\indexentry{RankOfBlocks@\texttt  {RankOfBlocks}|hyperpage}{107}
+\indexentry{NrTransverseBlocks@\texttt  {NrTransverseBlocks}!for blocks|hyperpage}{107}
+\indexentry{DegreeOfBlocks@\texttt  {DegreeOfBlocks}|hyperpage}{108}
+\indexentry{OnRightBlocks@\texttt  {OnRightBlocks}|hyperpage}{108}
+\indexentry{OnLeftBlocks@\texttt  {OnLeftBlocks}|hyperpage}{108}
+\indexentry{PermRightBlocks@\texttt  {PermRightBlocks}|hyperpage}{109}
+\indexentry{PermLeftBlocks@\texttt  {PermLeftBlocks}|hyperpage}{109}
+\indexentry{InverseRightBlocks@\texttt  {InverseRightBlocks}|hyperpage}{109}
+\indexentry{InverseLeftBlocks@\texttt  {InverseLeftBlocks}|hyperpage}{109}
+\indexentry{TikzBipartition@\texttt  {TikzBipartition}|hyperpage}{110}
+\indexentry{TikzBlocks@\texttt  {TikzBlocks}|hyperpage}{111}
+\indexentry{IsBipartitionSemigroup@\texttt  {IsBipartitionSemigroup}|hyperpage}{111}
+\indexentry{IsBipartitionMonoid@\texttt  {IsBipartitionMonoid}|hyperpage}{111}
+\indexentry{IsBlockBijectionSemigroup@\texttt  {IsBlockBijectionSemigroup}|hyperpage}{112}
+\indexentry{IsBlockBijectionMonoid@\texttt  {IsBlockBijectionMonoid}|hyperpage}{112}
+\indexentry{IsPartialPermBipartitionSemigroup@\texttt  {IsPartialPermBipartitionSemigroup}|hyperpage}{112}
+\indexentry{IsPartialPermBipartitionMonoid@\texttt  {IsPartialPermBipartitionMonoid}|hyperpage}{112}
+\indexentry{IsPermBipartitionGroup@\texttt  {IsPermBipartitionGroup}|hyperpage}{113}
+\indexentry{DegreeOfBipartitionSemigroup@\texttt  {DegreeOfBipartitionSemigroup}|hyperpage}{113}
+\indexentry{FreeInverseSemigroup@\texttt  {FreeInverseSemigroup}!for a given rank|hyperpage}{115}
+\indexentry{FreeInverseSemigroup@\texttt  {FreeInverseSemigroup}!for a list of names|hyperpage}{115}
+\indexentry{FreeInverseSemigroup@\texttt  {FreeInverseSemigroup}!for various names|hyperpage}{115}
+\indexentry{IsFreeInverseSemigroupCategory@\texttt  {IsFreeInverseSemigroupCategory}|hyperpage}{115}
+\indexentry{IsFreeInverseSemigroup@\texttt  {IsFreeInverseSemigroup}|hyperpage}{115}
+\indexentry{IsFreeInverseSemigroupElement@\texttt  {IsFreeInverseSemigroupElement}|hyperpage}{115}
+\indexentry{CanonicalForm@\texttt  {CanonicalForm}!for a free inverse semigroup element|hyperpage}{116}
+\indexentry{MinimalWord@\texttt  {MinimalWord}!for free inverse semigroup element|hyperpage}{117}
+\indexentry{FreeBand@\texttt  {FreeBand}!for a given rank|hyperpage}{117}
+\indexentry{FreeBand@\texttt  {FreeBand}!for a list of names|hyperpage}{117}
+\indexentry{FreeBand@\texttt  {FreeBand}!for various names|hyperpage}{117}
+\indexentry{IsFreeBandCategory@\texttt  {IsFreeBandCategory}|hyperpage}{118}
+\indexentry{IsFreeBand@\texttt  {IsFreeBand}!for a given semigroup|hyperpage}{118}
+\indexentry{IsFreeBandElement@\texttt  {IsFreeBandElement}|hyperpage}{118}
+\indexentry{IsFreeBandSubsemigroup@\texttt  {IsFreeBandSubsemigroup}|hyperpage}{118}
+\indexentry{GreensDClassOfElement@\texttt  {GreensDClassOfElement}!for a free band and a free band element|hyperpage}{119}
+\indexentry{SemigroupCongruence@\texttt  {SemigroupCongruence}|hyperpage}{120}
+\indexentry{CongruenceClassOfElement@\texttt  {CongruenceClassOfElement}|hyperpage}{121}
+\indexentry{CongruenceClasses@\texttt  {CongruenceClasses}|hyperpage}{121}
+\indexentry{NrCongruenceClasses@\texttt  {NrCongruenceClasses}|hyperpage}{121}
+\indexentry{CongruencesOfSemigroup@\texttt  {CongruencesOfSemigroup}|hyperpage}{121}
+\indexentry{RMSCongruenceByLinkedTriple@\texttt  {RMSCongruenceByLinkedTriple}|hyperpage}{123}
+\indexentry{RZMSCongruenceByLinkedTriple@\texttt  {RZMSCongruenceByLinkedTriple}|hyperpage}{123}
+\indexentry{RMSCongruenceClassByLinkedTriple@\texttt  {RMSCongruenceClassByLinkedTriple}|hyperpage}{123}
+\indexentry{RZMSCongruenceClassByLinkedTriple@\texttt  {RZMSCongruenceClassByLinkedTriple}|hyperpage}{123}
+\indexentry{IsLinkedTriple@\texttt  {IsLinkedTriple}|hyperpage}{124}
+\indexentry{CanonicalRepresentative@\texttt  {CanonicalRepresentative}|hyperpage}{124}
+\indexentry{AsSemigroupCongruenceByGeneratingPairs@\texttt  {AsSemigroup}\discretionary {-}{}{}\texttt  {Congruence}\discretionary {-}{}{}\texttt  {By}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {Pairs}|hyperpage}{125}
+\indexentry{AsRMSCongruenceByLinkedTriple@\texttt  {AsRMSCongruenceByLinkedTriple}|hyperpage}{125}
+\indexentry{AsRZMSCongruenceByLinkedTriple@\texttt  {AsRZMSCongruenceByLinkedTriple}|hyperpage}{125}
+\indexentry{MeetSemigroupCongruences@\texttt  {MeetSemigroupCongruences}|hyperpage}{125}
+\indexentry{JoinSemigroupCongruences@\texttt  {JoinSemigroupCongruences}|hyperpage}{126}
+\indexentry{UniversalSemigroupCongruence@\texttt  {UniversalSemigroupCongruence}|hyperpage}{126}
+\indexentry{IsIsomorphicSemigroup@\texttt  {IsIsomorphicSemigroup}|hyperpage}{127}
+\indexentry{SmallestMultiplicationTable@\texttt  {SmallestMultiplicationTable}|hyperpage}{127}
+\indexentry{IsomorphismSemigroups@\texttt  {IsomorphismSemigroups}|hyperpage}{128}
+\indexentry{EnumeratePosition@\texttt  {EnumeratePosition}|hyperpage}{129}
+\indexentry{LookForInOrb@\texttt  {LookForInOrb}|hyperpage}{129}
+\indexentry{OrbSCC@\texttt  {OrbSCC}|hyperpage}{130}
+\indexentry{OrbSCCLookup@\texttt  {OrbSCCLookup}|hyperpage}{130}
+\indexentry{OrbSCCTruthTable@\texttt  {OrbSCCTruthTable}|hyperpage}{130}
+\indexentry{ReverseSchreierTreeOfSCC@\texttt  {ReverseSchreierTreeOfSCC}|hyperpage}{131}
+\indexentry{SchreierTreeOfSCC@\texttt  {SchreierTreeOfSCC}|hyperpage}{132}
+\indexentry{TraceSchreierTreeOfSCCBack@\texttt  {TraceSchreierTreeOfSCCBack}|hyperpage}{132}
+\indexentry{TraceSchreierTreeOfSCCForward@\texttt  {TraceSchreierTreeOfSCCForward}|hyperpage}{133}

@@ -1,0 +1,78 @@
+This is TeX, Version 3.1415926 (MiKTeX 2.9 64-bit) (preloaded format=tex 2011.7.1)  9 JUL 2012 09:29
+**manual.tex
+(C:\gap4r5\pkg\loops\doc\manual.tex (C:\gap4r5\pkg\loops\doc\gapmacro.tex
+("C:\Program Files\MiKTeX 2.9\tex\plain\amsfonts\amssym.tex"
+("C:\Program Files\MiKTeX 2.9\tex\plain\amsfonts\amssym.def"
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+Running TeX
+\pagewidth=\dimen16
+\pageheight=\dimen17
+\colwidth=\dimen18
+\partialpage=\box16
+\origvsize=\dimen19
+\manindent=\dimen20
+\smallmanindent=\dimen21
+\msbfam=\fam11
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\labelin=\read0
+\indexin=\read1
+\tocin=\read2
+\citein=\read3
+\secno=\count26
+\subsecno=\count27
+\exno=\count28
+\indentno=\count29
+\chapnum=\count30
+\ortoks=\toks12
+) [1]
+\makelabel{loops:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+Chapter `Contents' .
+(C:\gap4r5\pkg\loops\doc\manual.toc [2.1
+\chapcontents {\tocstrut }{Contents}{2}
+]) [3.1] (C:\gap4r5\pkg\loops\doc\manual.lab) [4.1]
+(C:\gap4r5\pkg\loops\doc\intro.tex
+Chapter `Introduction' .
+) (C:\gap4r5\pkg\loops\doc\mathback.tex [5.1]
+Chapter `Mathematical background' .
+[6.2]) (C:\gap4r5\pkg\loops\doc\how.tex [7.2]
+Chapter `How the package works' .
+[8.3] [9.3]) (C:\gap4r5\pkg\loops\doc\create.tex [10.3]
+Chapter `Creating quasigroups and loops' .
+[11.4] [12.4] [13.4] [14.4] [15.4]) (C:\gap4r5\pkg\loops\doc\basic.tex [16.4]
+Chapter `Basic methods and attributes' .
+[17.5]) (C:\gap4r5\pkg\loops\doc\perm.tex [18.5]
+Chapter `Methods based on permutation groups' .
+[19.6] [20.6] [21.6] [22.6] [23.6] [24.6])
+(C:\gap4r5\pkg\loops\doc\testprop.tex [25.6]
+Chapter `Testing properties of quasigroups and loops' .
+[26.7] [27.7] [28.7]) (C:\gap4r5\pkg\loops\doc\specific.tex [29.7]
+Chapter `Specific methods' .
+[30.8]) (C:\gap4r5\pkg\loops\doc\lib.tex [31.8]
+Chapter `Libraries of small loops' .
+[32.9] [33.9] [34.9]) [35.9] (C:\gap4r5\pkg\loops\doc\files.tex
+Chapter `Files' .
+) (C:\gap4r5\pkg\loops\doc\filters.tex [36.10]
+Chapter `Filters built into the package' .
+[37.11] [38.11]) [39.11]
+Chapter `Bibliography' .
+(C:\gap4r5\pkg\loops\doc\manual.bbl) [40.12]
+Chapter `Index' .
+No file manual.ind.
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## Labels have changed, run again. (Or they were multiply defined.)
+##
+[41.13] )
+Output written on manual.dvi (41 pages, 153416 bytes).

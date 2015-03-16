@@ -1,0 +1,137 @@
+This is TeX, Version 3.1415926 (TeX Live 2010) (format=tex 2010.7.21)  4 NOV 2011 14:27
+**manual.tex
+(./manual.tex (./gapmacro.tex
+(/usr/local/texlive/2010/texmf-dist/tex/plain/amsfonts/amssym.tex
+(/usr/local/texlive/2010/texmf-dist/tex/plain/amsfonts/amssym.def
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+Running TeX
+\pagewidth=\dimen16
+\pageheight=\dimen17
+\colwidth=\dimen18
+\partialpage=\box16
+\origvsize=\dimen19
+\manindent=\dimen20
+\smallmanindent=\dimen21
+\itfam=\fam11
+\slfam=\fam12
+\bffam=\fam13
+\ttfam=\fam14
+\msbfam=\fam15
+\ttindent=\dimen22
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\exampleout=\write6
+\labelin=\read0
+\indexin=\read1
+\tocin=\read2
+\citein=\read3
+\secno=\count26
+\subsecno=\count27
+\exno=\count28
+\indentno=\count29
+\chapnum=\count30
+\ortoks=\toks12
+\bibindent=\dimen23
+) (../../../doc/ref/manual.lab) [1]
+\makelabel{format:}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+Chapter `' .
+[2.1
+\chapcontents {\tocstrut }{}{2}
+]
+\makelabel{format:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+Chapter `Contents' .
+No file manual.toc.
+[3.2
+\chapcontents {\tocstrut }{Contents}{3}
+]
+No file manual.lab.
+\openout3 = `manual.toc'.
+
+\openout0 = `manual.lab'.
+
+\openout1 = `manual.idx'.
+
+\openout2 = `manual.six'.
+
+\openout4 = `manual.aux'.
+
+[4.2] (./intro.tex
+Chapter `Introduction to FORMAT' .
+Reference `EW' undefined.
+Reference `DH' undefined.
+Reference `EW' undefined.
+Label `format:Other Applications' undefined.
+Reference `DH' undefined.
+Reference `G' undefined.
+Reference `CH' undefined.
+Label `format:Formations in GAP' undefined.
+Label `format:Residual Functions' undefined.
+Label `format:FNormalizers' undefined.
+Label `format:Covering Subgroups' undefined.
+Label `format:Formation Examples' undefined.
+Label `format:Other Applications' undefined.
+) (./forms.tex [5.1]
+Chapter `Formations in GAP' .
+Label `format:Other Applications' undefined.
+[6.2]
+Label `format:Formation Examples' undefined.
+) (./resid.tex [7.2] [8.2]
+Chapter `Residual Functions' .
+) (./norm.tex [9.3]
+Chapter `FNormalizers' .
+Label `format:Other Applications' undefined.
+) (./cover.tex [10.4]
+Chapter `Covering Subgroups' .
+Reference `DH' undefined.
+
+Overfull \hbox (25.43515pt too wide) in paragraph at lines 55--58
+\tenrm The com-mand \tentt Carter-Sub-group( \tenit G \tentt ) \tenrm is equiv-
+a-lent to \tentt Cov-er-ing-Sub-group-Wrt-For-ma-tion( \tenit G\tentt , For-ma-
+tion( "Nilpo-|
+
+\hbox(6.94444+2.22223)x468.0, glue set - 1.0
+.\tenrm T
+.\tenrm h
+.\tenrm e
+.\glue 2.5 plus 1.49998 minus 0.59998
+.\tenrm c
+.etc.
+
+) (./examples.tex [11.5]
+Chapter `Formation Examples' .
+Reference `EW' undefined.
+\openout6 = `manual.example-6.tst'.
+
+[12.6] [13.6] [14.6]) (./others.tex [15.6]
+Chapter `Other Applications' .
+Reference `CH' undefined.
+Reference `WA' undefined.
+Reference `WB' undefined.
+Reference `EW' undefined.
+\openout6 = `manual.example-7.tst'.
+
+) [16.7]
+Chapter `Bibliography' .
+No file manual.bbl.
+[17.8]
+Chapter `Index' .
+No file manual.ind.
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## Examples written to manual.example-XX.tst.
+## There were undefined labels or references.
+## Labels have changed, run again. (Or they were multiply defined.)
+##
+[18.9] )
+Output written on manual.dvi (18 pages, 34956 bytes).

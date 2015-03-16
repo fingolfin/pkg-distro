@@ -1,0 +1,13 @@
+This is TeX, Version 3.141592 (Web2C 7.5.6) (format=tex 2008.10.7)  17 APR 2009 10:45
+**main.tex
+(./main.tex
+! Undefined control sequence.
+l.4 \Chapter
+            {Methods and functions}
+? 
+! Emergency stop.
+l.4 \Chapter
+            {Methods and functions}
+End of file on the terminal!
+
+No pages of output.
