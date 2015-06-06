@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.8.8)  24 AUG 2014 22:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.10.6)  29 APR 2015 14:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **AutoDoc
 (./AutoDoc.tex
-LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 79 languages loaded.
 (/usr/share/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size11.clo
@@ -42,7 +42,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
@@ -267,12 +267,12 @@ Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 
 Writing index file AutoDoc.idx
 (/usr/share/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
 (/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 137.
 
 (/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -290,7 +290,7 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz) (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
 \FV@CodeLineNo=\count89
@@ -601,7 +601,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen104
@@ -855,12 +855,12 @@ Package rerunfilecheck Info: File `AutoDoc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1079.
  ) 
 Here is how much of TeX's memory you used:
- 7384 strings out of 493315
- 106427 string characters out of 6143705
- 187158 words of memory out of 5000000
- 10569 multiletter control sequences out of 15000+600000
+ 7384 strings out of 493108
+ 106434 string characters out of 6140725
+ 188064 words of memory out of 5000000
+ 10581 multiletter control sequences out of 15000+600000
  76695 words of font info for 99 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  32i,7n,28p,364b,762s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
 exmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public
@@ -876,7 +876,7 @@ bol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/shar
 e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type
 1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on AutoDoc.pdf (21 pages, 284841 bytes).
+Output written on AutoDoc.pdf (21 pages, 284819 bytes).
 PDF statistics:
  396 PDF objects out of 1000 (max. 8388607)
  354 compressed objects within 4 object streams

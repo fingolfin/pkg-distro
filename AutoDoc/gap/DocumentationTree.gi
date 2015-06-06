@@ -588,6 +588,15 @@ InstallMethod( IsEmptyNode,
     
 end );
 
+InstallMethod( IsEmptyNode,
+               [ IsTreeForDocumentationNodeForManItemRep ],
+               
+  function( node )
+    
+    return false;
+    
+end );
+
 ####################################
 ##
 ## Add functions
@@ -805,7 +814,7 @@ InstallMethod( WriteDocumentation,
         
     fi;
     
-    AppendTo( filestream, " ", text, "\n" );
+    AppendTo( filestream, text, "\n" );
     
 end );
 

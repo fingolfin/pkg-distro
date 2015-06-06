@@ -1,21 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2013.2.26)  13 MAR 2013 15:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.10.6)  16 MAR 2015 10:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PolymakeInterface
 (./PolymakeInterface.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 79 languages loaded.
 (/usr/share/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size11.clo
@@ -41,18 +31,18 @@ Package: a4wide 1994/08/30
 Package: a4 2004/04/15 v1.2g A4 based page layout
 ))
 (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
@@ -277,12 +267,12 @@ Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 
 Writing index file PolymakeInterface.idx
 (/usr/share/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
 (/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 137.
 
 (/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -300,7 +290,7 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz) (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
 \FV@CodeLineNo=\count89
@@ -611,7 +601,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen104
@@ -715,13 +705,6 @@ LaTeX Info: Redefining \nameref on input line 87.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <50> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 93.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
-File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-)
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <50> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
@@ -735,129 +718,121 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 111.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--118
-
- []
-
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 11
-8.
-(/usr/share/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 11
-8.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 11
-8.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 11
-8.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 118.
-
-
-(/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 125.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 125.
-
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 117.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 117.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 122--139
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--140
 
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 145--148
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.151 \newpage
-               [2] (./PolymakeInterface.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./PolymakeInterface.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 2.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 2.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 2.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 2.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 2.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 )
 \tf@toc=\write7
 \openout7 = `PolymakeInterface.toc'.
 
- [3
+ [2
 
 ]
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 159.
-[4
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 151.
+[3
 
 ]
 Chapter 2.
-[5
+[4
 
 ]
 Chapter 3.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 223.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 214.
 
-Underfull \hbox (badness 6204) in paragraph at lines 223--223
+Underfull \hbox (badness 6204) in paragraph at lines 214--214
 [][]\T1/ptm/b/n/12 POLYMAKE_SKETCH_WITH_OPTIONS (for IsEx-ter-nalPoly-makeOb-je
 ct,
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 244--244
+Underfull \hbox (badness 6204) in paragraph at lines 235--235
 [][]\T1/ptm/b/n/12 POLYMAKE_SKETCH_WITH_OPTIONS (for IsEx-ter-nalPoly-makeOb-je
 ct,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 253--253
 [][]\T1/ptm/b/n/12 POLYMAKE_CREATE_TIKZ_FILE (for IsEx-ter-nalPoly-makeOb-ject,
  Is-
  []
 
-[6
+[5
 
-] [7] (./PolymakeInterface.ind [8
+] (./PolymakeInterface.bbl (./PolymakeInterface.brf)
+\tf@brf=\write8
+\openout8 = `PolymakeInterface.brf'.
+
+ [6]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [7
+
+] (./PolymakeInterface.ind
+LaTeX Font Info:    Try loading font information for T1+phv on input line 3.
+ (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+) [8
 
 
 
@@ -874,32 +849,32 @@ Package rerunfilecheck Warning: File `PolymakeInterface.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `PolymakeInterface.out':
-(rerunfilecheck)             Before: C953D379F899873809481176F573F506;413
-(rerunfilecheck)             After:  30C55D8381ACEBCEF77D120E6FFC61BA;454.
+(rerunfilecheck)             Before: A5EE41CB00D856C3E808B2FFCCE0099F;459
+(rerunfilecheck)             After:  BA63CD682137C58EBCE472CE521A4CE5;500.
+Package rerunfilecheck Info: File `PolymakeInterface.brf' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 333.
  ) 
 Here is how much of TeX's memory you used:
- 7177 strings out of 493488
- 104124 string characters out of 3146892
- 177982 words of memory out of 3000000
- 10324 multiletter control sequences out of 15000+200000
- 71760 words of font info for 82 fonts, out of 3000000 for 9000
- 957 hyphenation exceptions out of 8191
- 32i,6n,28p,883b,415s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 7177 strings out of 493108
+ 104028 string characters out of 6140725
+ 182547 words of memory out of 5000000
+ 10480 multiletter control sequences out of 15000+600000
+ 61306 words of font info for 77 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 32i,6n,28p,883b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fon
 ts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfst
 1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/
 share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dis
-t/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/he
-lvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><
-/usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/ut
-mri8a.pfb>
-Output written on PolymakeInterface.pdf (9 pages, 129091 bytes).
+t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ti
+mes/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
+are/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on PolymakeInterface.pdf (8 pages, 118128 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
+ 159 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
  38 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

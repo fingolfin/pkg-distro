@@ -293,7 +293,7 @@
   ends at the end of the file. You can also end a system with @EndChunk.[133X
   
   [4X[32X[104X
-    [4X#! @Chunk MyChunk[104X
+    [4X#! @BeginChunk MyChunk[104X
     [4X#! This is some text.[104X
     [4X#! @EndChunk[104X
     [4X[104X

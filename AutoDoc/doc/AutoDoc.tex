@@ -98,8 +98,8 @@
 {\Huge \textbf{ Generate documentation from \textsf{GAP} source code \mbox{}}}\\
 \vfill
 
-{\Huge  2014.08.21 \mbox{}}\\[1cm]
-{ 21/08/2014 \mbox{}}\\[1cm]
+{\Huge  2015.04.29 \mbox{}}\\[1cm]
+{ 29/04/2015 \mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{ Sebastian Gutsche\\
     \mbox{}}}\\
@@ -622,7 +622,7 @@ documentation at it's point in the file, but at the point where the
 specific point in the documentation. A normal chunk ends at the end of the
 file. You can also end a system with @EndChunk. 
 \begin{Verbatim}[fontsize=\small,frame=single,label=]
-  #! @Chunk MyChunk
+  #! @BeginChunk MyChunk
   #! This is some text.
   #! @EndChunk
   
@@ -939,7 +939,7 @@ AutoDoc parser. }
 \label{AutoDoc}
 }\hfill{\scriptsize (function)}}\\
 \textbf{\indent Returns:\ }
- nothing 
+nothing 
 
 
 
@@ -991,7 +991,7 @@ XML element names, and the values of the components are outputted as content
 of these XML elements. For example, you could pass the following record to set
 a custom acknowledgements text: 
 \begin{Verbatim}[fontsize=\small,frame=single,label=]
-   rec( Acknowledgements := "Many thanks to ..." )
+  rec( Acknowledgements := "Many thanks to ..." )
 \end{Verbatim}
  For a list of valid entries in the titlepage, please refer to the \textsf{GAPDoc} manual, specifically section  (\textbf{GAPDoc: Title}) and following. 
 \item[{\mbox{\texttt{\mdseries\slshape document{\textunderscore}class}}}]  Sets the document class of the resulting pdf. The value can either be a string
