@@ -4,16 +4,17 @@
 ##  Call this with GAP.
 ##
 
-LoadPackage( "AutoDoc" );
 
 PrintTo( "VERSION", PackageInfo( "ToolsForHomalg" )[1].Version );
+
+LoadPackage( "AutoDoc" );
+
 
 AutoDoc(
     "ToolsForHomalg" : 
     autodoc := true,
     scaffold := false
 );
-
 
 
 QUIT;

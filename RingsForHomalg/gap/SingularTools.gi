@@ -194,7 +194,14 @@ InstallValue( CommonHomalgTableForSingularTools,
                MulMat :=
                  function( a, A )
                    
-                   return homalgSendBlocking( [ A, "*(", a, ")" ], [ "matrix" ], HOMALG_IO.Pictograms.MulMat );
+                   return homalgSendBlocking( [ "(", a, ")*", A ], [ "matrix" ], HOMALG_IO.Pictograms.MulMat );
+                   
+                 end,
+               
+               MulMatRight :=
+                 function( A, a )
+                   
+                   return homalgSendBlocking( [ A, "*(", a, ")" ], [ "matrix" ], HOMALG_IO.Pictograms.MulMatRight );
                    
                  end,
                
@@ -736,7 +743,7 @@ InstallValue( CommonHomalgTableForSingularTools,
                    
                  end,
                
-               NumeratorAndDenominatorOfPolynomial :=    
+               NumeratorAndDenominatorOfPolynomial :=
                  function( p )
                    local R, v, numer, denom;
                    

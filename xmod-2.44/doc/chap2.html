@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (XMod) - Chapter 2: 2d-groups : crossed modules and cat1-groups</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2_mj.html">[MathJax on]</a></p>
+<p><a id="X87474A3F785F9E38" name="X87474A3F785F9E38"></a></p>
+<div class="ChapSects"><a href="chap2.html#X87474A3F785F9E38">2 <span class="Heading">2d-groups : crossed modules and cat1-groups</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7BAD9A7F7AFEEC89">2.1 <span class="Heading">Constructions for crossed modules</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C8175AE7F76B586">2.1-1 XMod</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7DE8173F80E07AB1">2.1-2 Source</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X858ADA3B7A684421">2.1-3 Size</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7E77E6B881B1CE50">2.1-4 IsXMod</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7884284383284A87">2.1-5 SubXMod</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7D435B6279032D4D">2.2 <span class="Heading">Pre-crossed modules</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8487BE427858C5C9">2.2-1 PreXModByBoundaryAndAction</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8527F4C07A8F359E">2.2-2 PeifferSubgroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7F868C2181018D0C">2.3 <span class="Heading">Cat1-groups and pre-cat1-groups</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7DE8173F80E07AB1">2.3-1 Source</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F4221DF83D1B6D8">2.3-2 Cat1</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7EB380BA7AC52D53">2.3-3 Cat1OfXMod</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7B38B960782937EB">2.4 <span class="Heading">Selection of a small cat1-group</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7B8E67D880E380C8">2.4-1 Cat1Select</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7A081F9D826621DA">2.4-2 AllCat1sBasic</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7DFE950E7DBA9A37">2.5 <span class="Heading">More functions for crossed modules and cat1-groups</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X78D480357BE559AD">2.5-1 IdGroup</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">2d-groups : crossed modules and cat1-groups</span></h3>
+
+<p><a id="X7BAD9A7F7AFEEC89" name="X7BAD9A7F7AFEEC89"></a></p>
+
+<h4>2.1 <span class="Heading">Constructions for crossed modules</span></h4>
+
+<p>A crossed module (of groups) <span class="SimpleMath">mathcalX = (∂ : S -&gt; R )</span> consists of a group homomorphism <span class="SimpleMath">∂</span>, called the <em>boundary</em> of <span class="SimpleMath">mathcalX</span>, with <em>source</em> <span class="SimpleMath">S</span> and <em>range</em> <span class="SimpleMath">R</span>. The group <span class="SimpleMath">R</span> acts on itself by conjugation, and on <span class="SimpleMath">S</span> by an action <span class="SimpleMath">α : R -&gt; Aut(S)</span> such that, for all <span class="SimpleMath">s,s_1,s_2 ∈ S</span> and <span class="SimpleMath">r ∈ R</span>,</p>
+
+<p class="pcenter">
+{\bf XMod\ 1}  :   \partial(s^r) 
+   = r^{-1} (\partial s) r
+   = (\partial s)^r,
+\qquad
+{\bf XMod\ 2}  :   s_1^{\partial s_2} 
+   = s_2^{-1}s_1 s_2
+   = {s_1}^{s_2}.
+</p>
+
+<p>When only the first of these axioms is satisfied, the resulting structure is a <em>pre-crossed module</em> (see section <a href="chap2.html#X7D435B6279032D4D"><span class="RefLink">2.2</span></a>). (Much of the literature on crossed modules uses left actions, but we have chosen to use right actions in this package since that is the standard choice for group actions in <strong class="pkg">GAP</strong>.)</p>
+
+<p>The kernel of <span class="SimpleMath">∂</span> is abelian.</p>
+
+<p>There are a variety of constructors for crossed modules:</p>
+
+<p><a id="X7C8175AE7F76B586" name="X7C8175AE7F76B586"></a></p>
+
+<h5>2.1-1 XMod</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XMod</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByBoundaryAndAction</code>( <var class="Arg">bdy</var>, <var class="Arg">act</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByTrivialAction</code>( <var class="Arg">bdy</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByNormalSubgroup</code>( <var class="Arg">G</var>, <var class="Arg">N</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByCentralExtension</code>( <var class="Arg">bdy</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByAutomorphismGroup</code>( <var class="Arg">grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByInnerAutomorphismGroup</code>( <var class="Arg">grp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByGroupOfAutomorphisms</code>( <var class="Arg">G</var>, <var class="Arg">A</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByAbelianModule</code>( <var class="Arg">abmod</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DirectProduct</code>( <var class="Arg">X1</var>, <var class="Arg">X2</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>The global function <code class="code">XMod</code> implements one of the following standard constructions:</p>
+
+
+<ul>
+<li><p>A <em>trivial action crossed module</em> <span class="SimpleMath">(∂ : S -&gt; R)</span> has <span class="SimpleMath">s^r = s</span> for all <span class="SimpleMath">s ∈ S, r ∈ R</span>, the source is abelian and the image lies in the centre of the range.</p>
+
+</li>
+<li><p>A <em>conjugation crossed module</em> is the inclusion of a normal subgroup <span class="SimpleMath">S ⊴ R</span>, where <span class="SimpleMath">R</span> acts on <span class="SimpleMath">S</span> by conjugation.</p>
+
+</li>
+<li><p>A <em>central extension crossed module</em> has as boundary a surjection <span class="SimpleMath">∂ : S -&gt; R</span>, with central kernel, where <span class="SimpleMath">r ∈ R</span> acts on <span class="SimpleMath">S</span> by conjugation with <span class="SimpleMath">∂^-1r</span>.</p>
+
+</li>
+<li><p>An <em>automorphism crossed module</em> has as range a subgroup <span class="SimpleMath">R</span> of the automorphism group Aut<span class="SimpleMath">(S)</span> of <span class="SimpleMath">S</span> which contains the inner automorphism group of <span class="SimpleMath">S</span>. The boundary maps <span class="SimpleMath">s ∈ S</span> to the inner automorphism of <span class="SimpleMath">S</span> by <span class="SimpleMath">s</span>.</p>
+
+</li>
+<li><p>A <em>crossed abelian module</em> has an abelian module as source and the zero map as boundary.</p>
+
+</li>
+<li><p>The direct product <span class="SimpleMath">mathcalX_1 × mathcalX_2</span> of two crossed modules has source <span class="SimpleMath">S_1 × S_2</span>, range <span class="SimpleMath">R_1 × R_2</span> and boundary <span class="SimpleMath">∂_1 × ∂_2</span>, with <span class="SimpleMath">R_1, R_2</span> acting trivially on <span class="SimpleMath">S_2, S_1</span> respectively.</p>
+
+</li>
+</ul>
+<p><a id="X7DE8173F80E07AB1" name="X7DE8173F80E07AB1"></a></p>
+
+<h5>2.1-2 Source</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Source</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Range</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Boundary</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutoGroup</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModAction</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>The following attributes are used in the construction of a crossed module <code class="code">X0</code>.</p>
+
+
+<ul>
+<li><p><code class="code">Source(X0)</code> and <code class="code">Range(X0)</code> are the source <span class="SimpleMath">S</span> and range <span class="SimpleMath">R</span> of <span class="SimpleMath">∂</span>, the boundary <code class="code">Boundary(X0)</code>;</p>
+
+</li>
+<li><p><code class="code">AutoGroup(X0)</code> is a group of automorphisms of <span class="SimpleMath">S</span>;</p>
+
+</li>
+<li><p><code class="code">XModAction(X0)</code> is a homomorphism from <span class="SimpleMath">R</span> to <code class="code">AutoGroup(X0)</code>.</p>
+
+</li>
+</ul>
+<p><a id="X858ADA3B7A684421" name="X858ADA3B7A684421"></a></p>
+
+<h5>2.1-3 Size</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Size</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Name</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdGroup</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ExternalSetXMod</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>More familiar attributes are <code class="code">Name</code>, <code class="code">Size</code> and <code class="code">IdGroup</code>. The name is formed by concatenating the names of the source and range (if these exist). <code class="code">Size</code> and <code class="code">IdGroup</code> return two-element lists.</p>
+
+<p>The <code class="code">ExternalSetXMod"</code> for a crossed module is the source group considered as a G-set of the range group using the crossed module action.</p>
+
+<p>The <code class="code">Display</code> function is used to print details of 2d-groups.</p>
+
+<p>In the simple example below, <code class="code">X1</code> is an automorphism crossed module, using a cyclic group of size five. The <code class="code">Print</code> statements at the end list the <strong class="pkg">GAP</strong> representations, properties and attributes of <code class="code">X1</code>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c5 := Group( (5,6,7,8,9) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( c5, "c5" );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">X1 := XModByAutomorphismGroup( c5 );</span>
+[c5 -&gt; PAut(c5)] 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( X1 );</span>
+Crossed module [c5 -&gt; PAut(c5)] :-
+: Source group c5 has generators:
+  [ (5,6,7,8,9) ]
+: Range group PAut(c5) has generators:
+  [ (1,2,3,4) ]
+: Boundary homomorphism maps source generators to:
+  [ () ]
+: Action homomorphism maps range generators to automorphisms:
+  (1,2,3,4) --&gt; { source gens --&gt; [ (5,7,9,6,8) ] }
+  This automorphism generates the group of automorphisms.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size( X1 );  IdGroup( X1 ); </span>
+[ 5, 4 ]
+[ [ 5, 1 ], [ 4, 1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ext := ExternalSetXMod( X1 ); </span>
+&lt;xset:[ (), (5,6,7,8,9), (5,7,9,6,8), (5,8,6,9,7), (5,9,8,7,6) ]&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Orbits( ext );</span>
+[ [ () ], [ (5,6,7,8,9), (5,7,9,6,8), (5,9,8,7,6), (5,8,6,9,7) ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RepresentationsOfObject( X1 );</span>
+[ "IsComponentObjectRep", "IsAttributeStoringRep", "IsPreXModObj" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownPropertiesOfObject( X1 );</span>
+[ "IsEmpty", "IsTrivial", "IsNonTrivial", "IsFinite", 
+  "CanEasilyCompareElements", "CanEasilySortElements", "IsDuplicateFree", 
+  "IsGeneratorsOfSemigroup", "IsPreXModDomain", "IsPerm2dGroup", "IsPreXMod", 
+  "IsXMod", "IsAutomorphismGroup2dGroup" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownAttributesOfObject( X1);</span>
+[ "Name", "Size", "Range", "Source", "IdGroup", "Boundary", "AutoGroup", 
+  "XModAction", "ExternalSetXMod" ]
+
+</pre></div>
+
+<p><a id="X7E77E6B881B1CE50" name="X7E77E6B881B1CE50"></a></p>
+
+<h5>2.1-4 IsXMod</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsXMod</code>( <var class="Arg">X0</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPreXMod</code>( <var class="Arg">X0</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPerm2dGroup</code>( <var class="Arg">X0</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPc2dGroup</code>( <var class="Arg">X0</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFp2dGroup</code>( <var class="Arg">X0</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<p>The underlying category structures for the objects constructed in this chapter follow the sequence <code class="code">Is2dDomain</code>; <code class="code">Is2dMagma</code>; <code class="code">Is2dMagmaWithOne</code>; <code class="code">Is2dMagmaWithInverses</code>, mirroring the situation for (one-dimensional) groups. From these we construct <code class="code">Is2dSemigroup</code>, <code class="code">Is2dMonoid</code> and <code class="code">Is2dGroup</code>.</p>
+
+<p>A structure which has <code class="code">IsPerm2dGroup</code> is a precrossed module or a pre-cat1-group (see section <a href="chap2.html#X7F868C2181018D0C"><span class="RefLink">2.3</span></a>) whose source and range are both permutation groups. The properties <code class="code">IsPc2dGroup</code>, <code class="code">IsFp2dGroup</code> are defined similarly. We see in the previous example that <code class="code">X1</code> has <code class="code">IsPreXMod</code>, <code class="code">IsXMod</code> and <code class="code">IsPerm2dGroup</code>. There are also properties corresponding to the various construction methods listed in section <a href="chap2.html#X7BAD9A7F7AFEEC89"><span class="RefLink">2.1</span></a>: <code class="code">IsTrivialAction2dGroup</code>; <code class="code">IsNormalSubgroup2dGroup</code>; <code class="code">IsCentralExtension2dGroup</code>; <code class="code">IsAutomorphismGroup2dGroup</code>; <code class="code">IsAbelianModule2dGroup</code>.</p>
+
+<p><a id="X7884284383284A87" name="X7884284383284A87"></a></p>
+
+<h5>2.1-5 SubXMod</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubXMod</code>( <var class="Arg">X0</var>, <var class="Arg">src</var>, <var class="Arg">rng</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TrivialSubXMod</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NormalSubXMods</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>With the standard crossed module constructors listed above as building blocks, sub-crossed modules, normal sub-crossed modules <span class="SimpleMath">mathcalN ⊲ mathcalX</span>, and also quotients <span class="SimpleMath">mathcalX/mathcalN</span> may be constructed. A sub-crossed module <span class="SimpleMath">mathcalS = (δ : N -&gt; M)</span> is <em>normal</em> in <span class="SimpleMath">mathcalX = (∂ : S -&gt; R)</span> if</p>
+
+
+<ul>
+<li><p><span class="SimpleMath">N,M</span> are normal subgroups of <span class="SimpleMath">S,R</span> respectively,</p>
+
+</li>
+<li><p><span class="SimpleMath">δ</span> is the restriction of <span class="SimpleMath">∂</span>,</p>
+
+</li>
+<li><p><span class="SimpleMath">n^r ∈ N</span> for all <span class="SimpleMath">n ∈ N,~r ∈ R</span>,</p>
+
+</li>
+<li><p><span class="SimpleMath">(s^-1)^ms ∈ N</span> for all <span class="SimpleMath">m ∈ M,~s ∈ S</span>.</p>
+
+</li>
+</ul>
+<p>These conditions ensure that <span class="SimpleMath">M ⋉ N</span> is normal in the semidirect product <span class="SimpleMath">R ⋉ S</span>. (Note that <span class="SimpleMath">⟨ s,m ⟩ = (s^-1)^ms</span> is a displacement: see <code class="func">Displacement</code> (<a href="chap4.html#X7E20208279038BB8"><span class="RefLink">4.1-3</span></a>).)</p>
+
+<p>A method for <code class="code">IsNormal</code> for crossed modules is provided. See section <a href="chap4.html#X7E373BF3836B3A9C"><span class="RefLink">4.1</span></a> for quotient crossed modules and natural homomorphisms.</p>
+
+<p>The five normal subcrossed modules of <code class="code">X4</code> found in the following example are <code class="code">[id,id], [k4,k4], [k4,a4], [a4,a4]</code> and <code class="code">X4</code> itself.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s4 := Group( (1,2), (2,3), (3,4) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a4 := Subgroup( s4, [ (1,2,3), (2,3,4) ] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">k4 := Subgroup( a4, [ (1,2)(3,4), (1,3)(2,4) ] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName(s4,"s4");  SetName(a4,"a4");  SetName(k4,"k4"); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">X4 := XModByNormalSubgroup( s4, a4 );</span>
+[a4-&gt;s4]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Y4 := SubXMod( X4, k4, a4 ); </span>
+[k4-&gt;a4]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNormal(X4,Y4);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NX4 := NormalSubXMods( X4 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length( NX4 ); </span>
+5
+
+</pre></div>
+
+<p><a id="X7D435B6279032D4D" name="X7D435B6279032D4D"></a></p>
+
+<h4>2.2 <span class="Heading">Pre-crossed modules</span></h4>
+
+<p><a id="X8487BE427858C5C9" name="X8487BE427858C5C9"></a></p>
+
+<h5>2.2-1 PreXModByBoundaryAndAction</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PreXModByBoundaryAndAction</code>( <var class="Arg">bdy</var>, <var class="Arg">act</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubPreXMod</code>( <var class="Arg">X0</var>, <var class="Arg">src</var>, <var class="Arg">rng</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>If axiom <span class="SimpleMath">XMod 2</span> is <em>not</em> satisfied, the corresponding structure is known as a <em>pre-crossed module</em>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b1 := (11,12,13,14,15,16,17,18);;  b2 := (12,18)(13,17)(14,16);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d16 := Group( b1, b2 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">sk4 := Subgroup( d16, [ b1^4, b2 ] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( d16, "d16" );  SetName( sk4, "sk4" );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">bdy16 := GroupHomomorphismByImages( d16, sk4, [b1,b2], [b1^4,b2] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">aut1 := GroupHomomorphismByImages( d16, d16, [b1,b2], [b1^5,b2] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">aut2 := GroupHomomorphismByImages( d16, d16, [b1,b2], [b1,b2^4*b2] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">aut16 := Group( [ aut1, aut2 ] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">act16 := GroupHomomorphismByImages( sk4, aut16, [b1^4,b2], [aut1,aut2] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">P16 := PreXModByBoundaryAndAction( bdy16, act16 );</span>
+[d16-&gt;sk4]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsXMod(P16);</span>
+false
+
+</pre></div>
+
+<p><a id="X8527F4C07A8F359E" name="X8527F4C07A8F359E"></a></p>
+
+<h5>2.2-2 PeifferSubgroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PeifferSubgroup</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModByPeifferQuotient</code>( <var class="Arg">prexmod</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>The <em>Peiffer subgroup</em> of a pre-crossed module <span class="SimpleMath">P</span> of <span class="SimpleMath">S</span> is the subgroup of <span class="SimpleMath">ker(∂)</span> generated by <em>Peiffer commutators</em></p>
+
+<p class="pcenter">
+\lfloor s_1,s_2 \rfloor ~=~ 
+(s_1^{-1})^{\partial s_2}~s_2^{-1}~s_1~s_2 ~=~ 
+\langle \partial s_2, s_1 \rangle\ [s_1,s_2]~.
+</p>
+
+<p>Then <span class="SimpleMath">mathcalP = (0 : P -&gt; {1_R})</span> is a normal sub-pre-crossed module of <span class="SimpleMath">mathcalX</span> and <span class="SimpleMath">mathcalX/mathcalP = (∂ : S/P -&gt; R)</span> is a crossed module.</p>
+
+<p>In the following example the Peiffer subgroup is cyclic of size <span class="SimpleMath">4</span>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">P := PeifferSubgroup( P16 );</span>
+Group( [ (11,15)(12,16)(13,17)(14,18), (11,17,15,13)(12,18,16,14) ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">X16 := XModByPeifferQuotient( P16 );</span>
+[D16/P-&gt;sk4]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( X16 );</span>
+Crossed module [D16/P-&gt;sk4] :-
+: Source group has generators:
+  [ f1, f2 ]
+: Range group has generators:
+  [ (11,15)(12,16)(13,17)(14,18), (12,18)(13,17)(14,16) ]
+: Boundary homomorphism maps source generators to:
+  [ (12,18)(13,17)(14,16), (11,15)(12,16)(13,17)(14,18) ]
+  The automorphism group is trivial
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso16 := IsomorphismPermGroup( Source( X16 ) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S16 := Image( iso16 );</span>
+Group([ (1,2), (3,4) ])   
+
+</pre></div>
+
+<p><a id="X7F868C2181018D0C" name="X7F868C2181018D0C"></a></p>
+
+<h4>2.3 <span class="Heading">Cat1-groups and pre-cat1-groups</span></h4>
+
+<p><a id="X7DE8173F80E07AB1" name="X7DE8173F80E07AB1"></a></p>
+
+<h5>2.3-1 Source</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Source</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Range</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TailMap</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeadMap</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RangeEmbedding</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KernelEmbedding</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Boundary</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Name</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Size</code>( <var class="Arg">C</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>These are the attributes of a cat1-group <span class="SimpleMath">mathcalC</span> in this implementation.</p>
+
+<p>In <a href="chapBib.html#biBL1">[Lod82]</a>, Loday reformulated the notion of a crossed module as a cat1-group, namely a group <span class="SimpleMath">G</span> with a pair of homomorphisms <span class="SimpleMath">t,h : G -&gt; G</span> having a common image <span class="SimpleMath">R</span> and satisfying certain axioms. We find it convenient to define a cat1-group <span class="SimpleMath">mathcalC = (e;t,h : G -&gt; R )</span> as having source group <span class="SimpleMath">G</span>, range group <span class="SimpleMath">R</span>, and three homomorphisms: two surjections <span class="SimpleMath">t,h : G -&gt; R</span> and an embedding <span class="SimpleMath">e : R -&gt; G</span> satisfying:</p>
+
+<p class="pcenter">
+{\bf Cat\ 1}  :  ~t \circ e ~=~ h \circ e = {\rm id}_R,
+\qquad
+{\bf Cat\ 2}  :  ~[\ker t, \ker h] ~=~ \{ 1_G \}.
+</p>
+
+<p>It follows that <span class="SimpleMath">~t ∘ e ∘ h = h</span>,~ <span class="SimpleMath">h ∘ e ∘ t = t</span>, <span class="SimpleMath">~t ∘ e ∘ t = t</span>,~ <span class="SimpleMath">h ∘ e ∘ h = h</span>.</p>
+
+<p>The maps <span class="SimpleMath">t,h</span> are often referred to as the <em>source</em> and <em>target</em>, but we choose to call them the <em>tail</em> and <em>head</em> of <span class="SimpleMath">mathcalC</span>, because <em>source</em> is the <strong class="pkg">GAP</strong> term for the domain of a function. The <code class="code">RangeEmbedding</code> is the embedding of <code class="code">R</code> in <code class="code">G</code>, the <code class="code">KernelEmbedding</code> is the inclusion of the kernel of <code class="code">t</code> in <code class="code">G</code>, and the <code class="code">Boundary</code> is the restriction of <code class="code">h</code> to the kernel of <code class="code">t</code>.</p>
+
+<p><a id="X7F4221DF83D1B6D8" name="X7F4221DF83D1B6D8"></a></p>
+
+<h5>2.3-2 Cat1</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cat1</code>( <var class="Arg">args</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PreCat1ByTailHeadEmbedding</code>( <var class="Arg">t</var>, <var class="Arg">h</var>, <var class="Arg">e</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PreCat1ByEndomorphisms</code>( <var class="Arg">t</var>, <var class="Arg">h</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PreCat1ByNormalSubgroup</code>( <var class="Arg">G</var>, <var class="Arg">N</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cat1ByPeifferQuotient</code>( <var class="Arg">P</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Reverse</code>( <var class="Arg">C0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>These are some of the constructors for pre-cat1-groups and cat1-groups. The following listing shows an example of a cat1-group of pc-groups of size <span class="SimpleMath">[28,12]</span>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G2 := SmallGroup( 288, 956 );  SetName( G2, "G2" );</span>
+&lt;pc group of size 288 with 7 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d12 := DihedralGroup( 12 );  SetName( d12, "d12" );</span>
+&lt;pc group of size 12 with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a1 := d12.1;;  a2 := d12.2;;  a3 := d12.3;;  a0 := One( d12 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gensG2 := GeneratorsOfGroup( G2 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t2 := GroupHomomorphismByImages( G2, d12, gensG2,</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">          [ a0, a1*a3, a2*a3, a0, a0, a3, a0 ] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h2 := GroupHomomorphismByImages( G2, d12, gensG2,</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">          [ a1*a2*a3, a0, a0, a2*a3, a0, a0, a3^2 ] );;                   </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e2 := GroupHomomorphismByImages( d12, G2, [a1,a2,a3],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">       [ G2.1*G2.2*G2.4*G2.6^2, G2.3*G2.4*G2.6^2*G2.7, G2.6*G2.7^2 ] );</span>
+[ f1, f2, f3 ] -&gt; [ f1*f2*f4*f6^2, f3*f4*f6^2*f7, f6*f7^2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C2 := PreCat1ByTailHeadEmbedding( t2, h2, e2 );</span>
+[G2=&gt;d12]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCat1( C2 );</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(C2);</span>
+
+Cat1-group [G2=&gt;d12] :- 
+: Source group G2 has generators:
+  [ f1, f2, f3, f4, f5, f6, f7 ]
+: Range group d12 has generators:
+  [ f1, f2, f3 ]
+: tail homomorphism maps source generators to:
+  [ &lt;identity&gt; of ..., f1*f3, f2*f3, &lt;identity&gt; of ..., &lt;identity&gt; of ..., 
+  f3, &lt;identity&gt; of ... ]
+: head homomorphism maps source generators to:
+  [ f1*f2*f3, &lt;identity&gt; of ..., &lt;identity&gt; of ..., f2*f3, &lt;identity&gt; of ..., 
+  &lt;identity&gt; of ..., f3^2 ]
+: range embedding maps range generators to:
+  [ f1*f2*f4*f6^2, f3*f4*f6^2*f7, f6*f7^2 ]
+: kernel has generators:
+  [ f1, f4, f5, f7 ]
+: boundary homomorphism maps generators of kernel to:
+  [ f1*f2*f3, f2*f3, &lt;identity&gt; of ..., f3^2 ]
+: kernel embedding maps generators of kernel to:
+  [ f1, f4, f5, f7 ]
+
+
+</pre></div>
+
+<p><a id="X7EB380BA7AC52D53" name="X7EB380BA7AC52D53"></a></p>
+
+<h5>2.3-3 Cat1OfXMod</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cat1OfXMod</code>( <var class="Arg">X0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; XModOfCat1</code>( <var class="Arg">C0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PreCat1OfPreXMod</code>( <var class="Arg">P0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PreXModOfPreCat1</code>( <var class="Arg">P0</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>The category of crossed modules is equivalent to the category of cat1-groups, and the functors between these two categories may be described as follows. Starting with the crossed module <span class="SimpleMath">mathcalX = (∂ : S -&gt; R)</span> the group <span class="SimpleMath">G</span> is defined as the semidirect product <span class="SimpleMath">G = R ⋉ S</span> using the action from <span class="SimpleMath">mathcalX</span>, with multiplication rule</p>
+
+<p class="pcenter">
+(r_1,s_1)(r_2,s_2) ~=~ (r_1r_2,{s_1}^{r_2}s_2).
+</p>
+
+<p>The structural morphisms are given by</p>
+
+<p class="pcenter">
+t(r,s) = r, \quad h(r,s) = r (\partial s), \quad er = (r,1).
+</p>
+
+<p>On the other hand, starting with a cat1-group <span class="SimpleMath">mathcalC = (e;t,h : G -&gt; R)</span>, we define <span class="SimpleMath">S = ker t</span>, the range <span class="SimpleMath">R</span> is unchanged, and <span class="SimpleMath">∂ = h∣_S</span>. The action of <span class="SimpleMath">R</span> on <span class="SimpleMath">S</span> is conjugation in <span class="SimpleMath">G</span> via the embedding of <span class="SimpleMath">R</span> in <span class="SimpleMath">G</span>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">X2 := XModOfCat1( C2 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( X2 );</span>
+
+Crossed module X([G2=&gt;d12]) :- 
+: Source group has generators:
+  [ f1, f4, f5, f7 ]
+: Range group d12 has generators:
+  [ f1, f2, f3 ]
+: Boundary homomorphism maps source generators to:
+  [ f1*f2*f3, f2*f3, &lt;identity&gt; of ..., f3^2 ]
+: Action homomorphism maps range generators to automorphisms:
+  f1 --&gt; { source gens --&gt; [ f1*f5, f4*f5, f5, f7^2 ] }
+  f2 --&gt; { source gens --&gt; [ f1*f5*f7^2, f4, f5, f7 ] }
+  f3 --&gt; { source gens --&gt; [ f1*f7, f4, f5, f7 ] }
+  These 3 automorphisms generate the group of automorphisms.
+: associated cat1-group is [G2=&gt;d12]
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StructureDescription(X2);</span>
+[ "D24", "D12" ]
+
+
+</pre></div>
+
+<p><a id="X7B38B960782937EB" name="X7B38B960782937EB"></a></p>
+
+<h4>2.4 <span class="Heading">Selection of a small cat1-group</span></h4>
+
+<p>The <code class="code">Cat1</code> function may also be used to select a cat1-group from a data file. All cat1-structures on groups of size up to <span class="SimpleMath">70</span> (ordered according to the <strong class="pkg">GAP</strong> 4 numbering of small groups) are stored in a list in file <code class="file">cat1data.g</code>. Global variables <code class="code">CAT1_LIST_MAX_SIZE := 70</code> and <code class="code">CAT1_LIST_CLASS_SIZES</code> are also stored. The data is read into the list <code class="code">CAT1_LIST</code> only when this function is called.</p>
+
+<p><a id="X7B8E67D880E380C8" name="X7B8E67D880E380C8"></a></p>
+
+<h5>2.4-1 Cat1Select</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Cat1Select</code>( <var class="Arg">size</var>, <var class="Arg">gpnum</var>, <var class="Arg">num</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>The function <code class="code">Cat1Select</code> may be used in three ways. <code class="code">Cat1Select( size )</code> returns the names of the groups with this size, while <code class="code">Cat1Select( size, gpnum )</code> prints a list of cat1-structures for this chosen group. <code class="code">Cat1Select( size, gpnum, num )</code> returns the chosen cat1-group.</p>
+
+<p>The example below is the first case in which <span class="SimpleMath">t ≠ h</span> and the associated conjugation crossed module is given by the normal subgroup <code class="code">c3</code> of <code class="code">s3</code>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## check the number of groups of size 18</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L18 := Cat1Select( 18 ); </span>
+Usage:  Cat1Select( size, gpnum, num );
+[ "D18", "C18", "C3 x S3", "(C3 x C3) : C2", "C6 x C3" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## check the number of cat1-structrues on the fourth of these</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Cat1Select( 18, 4 );</span>
+Usage:  Cat1Select( size, gpnum, num );
+There are 4 cat1-structures for the group (C3 x C3) : C2.
+Using small generating set [ f1, f2, f2*f3 ] for source of homs.
+[ [range gens], [tail genimages], [head genimages] ] :-
+(1)  [ [ f1 ], [ f1, &lt;identity&gt; of ..., &lt;identity&gt; of ... ], 
+  [ f1, &lt;identity&gt; of ..., &lt;identity&gt; of ... ] ]
+(2)  [ [ f1, f3 ], [ f1, &lt;identity&gt; of ..., f3 ], 
+  [ f1, &lt;identity&gt; of ..., f3 ] ]
+(3)  [ [ f1, f3 ], [ f1, &lt;identity&gt; of ..., f3 ], 
+  [ f1, f3^2, &lt;identity&gt; of ... ] ]
+(4)  [ [ f1, f2, f2*f3 ],  tail = head = identity mapping ]
+4
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## select the third of these cat1-structures </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C18 := Cat1( 18, 4, 3 );</span>
+[(C3 x C3) : C2=&gt;Group( [ f1, &lt;identity&gt; of ..., f3 ] )]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## convert from a pc-cat1-group to a permutation cat1-group</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso18 := IsomorphismPermObject( C18 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PC18 := Image( iso18 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( PC18 );                     </span>
+Cat1-group :- 
+: Source group has generators:
+  [ (2,3)(5,6), (4,5,6), (1,2,3) ]
+: Range group has generators:
+  [ (2,3), (), (1,2,3) ]
+: tail homomorphism maps source generators to:
+  [ (2,3), (), (1,2,3) ]
+: head homomorphism maps source generators to:
+  [ (2,3), (1,3,2), (1,2,3) ]
+: range embedding maps range generators to:
+  [ (2,3)(5,6), (), (1,2,3) ]
+: kernel has generators:
+  [ (4,5,6) ]
+: boundary homomorphism maps generators of kernel to:
+  [ (1,3,2) ]
+: kernel embedding maps generators of kernel to:
+  [ (4,5,6) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">convert the result to the associated permutation crossed module </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">X18 := XModByCat1( PC18 );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( X18 ); </span>
+Crossed module:- 
+: Source group has generators:
+  [ (4,5,6) ]
+: Range group has generators:
+  [ (2,3), (), (1,2,3) ]
+: Boundary homomorphism maps source generators to:
+  [ (1,3,2) ]
+: Action homomorphism maps range generators to automorphisms:
+  (2,3) --&gt; { source gens --&gt; [ (4,6,5) ] }
+  () --&gt; { source gens --&gt; [ (4,5,6) ] }
+  (1,2,3) --&gt; { source gens --&gt; [ (4,5,6) ] }
+  These 3 automorphisms generate the group of automorphisms.
+: associated cat1-group is [..=&gt;..]
+
+</pre></div>
+
+<p><a id="X7A081F9D826621DA" name="X7A081F9D826621DA"></a></p>
+
+<h5>2.4-2 AllCat1sBasic</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllCat1sBasic</code>( <var class="Arg">gp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>For a group <span class="SimpleMath">G</span> of size greater than <span class="SimpleMath">70</span> which is reasonably straightforward this function may be used to construct a list of all cat1-group structures on <span class="SimpleMath">G</span>. The operation also attempts to write output to a file in the folder <code class="file">xmod/lib</code>. (Other operations in the file <code class="file">cat1data.gi</code> have been used to deal with the more complicated groups of size up to <span class="SimpleMath">70</span>, but these are not described here.)</p>
+
+<p>Van Luyen Le has a more efficient algorithm, extending the data up to groups of size 171, which is expected to appear in a future release of <strong class="pkg">HAP</strong>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gp := SmallGroup( 102, 2 ); </span>
+&lt;pc group of size 102 with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StructureDescription( gp ); </span>
+"C3 x D34"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">all := AllCat1sBasic( gp );</span>
+#I Edit last line of .../xmod/lib/nn.kk.out to end with ] ] ] ] ]
+[ [Group( [ f1, f2, f3 ] )=&gt;Group( [ f1, &lt;identity&gt; of ..., &lt;identity&gt; of ... 
+     ] )], [Group( [ f1, f2, f3 ] )=&gt;Group( [ f1, f2, &lt;identity&gt; of ... ] )], 
+  [Group( [ f1, f2, f3 ] )=&gt;Group( [ f1, &lt;identity&gt; of ..., f3 ] )], 
+  [Group( [ f1, f2, f3 ] )=&gt;Group( [ f1, f2, f3 ] )] ]
+
+</pre></div>
+
+<p><a id="X7DFE950E7DBA9A37" name="X7DFE950E7DBA9A37"></a></p>
+
+<h4>2.5 <span class="Heading">More functions for crossed modules and cat1-groups</span></h4>
+
+<p>Chapter <a href="chap4.html#X802AFE8E7EDB435E"><span class="RefLink">4</span></a> contains functions for quotient crossed modules; centre of a crossed module; commutator and derived subcrossed modules; etc.</p>
+
+<p>Here we mention two functions for groups which have been extended to the two-dimensional case.</p>
+
+<p><a id="X78D480357BE559AD" name="X78D480357BE559AD"></a></p>
+
+<h5>2.5-1 IdGroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdGroup</code>( <var class="Arg">2dgroup</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StructureDescription</code>( <var class="Arg">2dgroup</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>These functions return two-element lists formed by applying the function to the source and range of the 2d-group.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup( X16 );</span>
+[ [ 8, 3 ], [ 16, 7 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StructureDescription( C2 );</span>
+[ "(S3 x d24) : C2", "d12" ]
+
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

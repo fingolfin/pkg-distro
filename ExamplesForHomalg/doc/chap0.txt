@@ -6,10 +6,10 @@
                       [1XExamples for the [5XGAP[105X package [5Xhomalg[105X[101X
   
   
-                               Version 2013.07.06
+                               Version 2015.11.06
   
   
-                                   July 2013
+                                   June 2015
   
   
                                 Mohamed Barakat
@@ -57,7 +57,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2008-2013 by Mohamed Barakat, Simon Goertzen, Markus Lange-Hegermann[133X
+  [33X[0;0Y© 2008-2015 by Mohamed Barakat, Simon Goertzen, Markus Lange-Hegermann[133X
   
   [33X[0;0YThis  package  may  be distributed under the terms and conditions of the GNU
   Public License Version 2.[133X

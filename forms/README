@@ -3,8 +3,9 @@
          Forms  --- Sesquilinear and Quadratic
 
                         John Bamberg
+            (The University of Western Australia)
                         Jan De Beule
-                     (Ghent University)              
+                (Vrije Universiteit Brussel)
 
 This package provides:
 
@@ -53,7 +54,7 @@ extra option '-l ";MYGAPDIR"'.
 For questions or comments on the "Forms" package, write to John Bamberg or Jan
 De Beule at
 
-   bamberg@maths.uwa.edu.au or jdebeule@cage.ugent.be
+   bamberg@maths.uwa.edu.au or jan@debeule.eu
 
 Have a lot of fun!
 

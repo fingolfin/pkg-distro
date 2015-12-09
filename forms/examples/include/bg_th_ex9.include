@@ -1,10 +1,11 @@
-gap> mat := [ [ Z(2^2), Z(2^2), Z(2^2), Z(2^2), Z(2^2) ], 
 >    [ 0*Z(2), Z(2^2), Z(2^2)^2, 0*Z(2), Z(2)^0 ], 
 >    [ 0*Z(2), 0*Z(2), Z(2)^0, Z(2)^0, Z(2)^0 ], 
 >    [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, Z(2)^0 ], 
 >    [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ] ];;
 gap> qform := QuadraticFormByMatrix(mat,GF(4));
 &lt; quadratic form >
+gap> IsSingularForm(qform);
+false
 gap> IsDegenerateForm(qform);
 #I  Testing degeneracy of the *associated bilinear form*
 true

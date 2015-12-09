@@ -2,7 +2,7 @@
 ##
 #W  libnr.gi             library near-rings                   Christof N"obauer
 ##
-#H  @(#)$Id: libnr.gi,v 1.15 2007-07-19 22:43:43 stein Exp $
+#H  @(#)$Id: libnr.gi,v 1.15 2007/07/19 22:43:43 stein Exp $
 ##
 #Y  Copyright (C)
 ##
@@ -10,7 +10,7 @@
 ##  13.01.00  N!.multiplication ersetzt, PM
 ##
 libnr_gi:=
-  "@(#)$Id: libnr.gi,v 1.15 2007-07-19 22:43:43 stein Exp $";
+  "@(#)$Id: libnr.gi,v 1.15 2007/07/19 22:43:43 stein Exp $";
 
 ##############################################################################
 ##

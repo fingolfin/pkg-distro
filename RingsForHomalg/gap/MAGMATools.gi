@@ -94,9 +94,18 @@ InstallValue( CommonHomalgTableForMAGMATools,
                
                CopyMatrix :=
                  function( C, R )
-
+                   local S;
+                   
+                   S := HomalgRing( C );
+                   
+                   if HasRelativeIndeterminatesOfPolynomialRing( R ) and
+                      HasCoefficientsRing( S ) and
+                      HasIsFieldForHomalg( CoefficientsRing( S ) ) and IsFieldForHomalg( CoefficientsRing( S ) ) then
+                       return Eval( ConvertHomalgMatrixViaFile( C, R ) );
+                   fi;
+                   
                    return homalgSendBlocking( [ "imap(", C, R, ")" ], HOMALG_IO.Pictograms.CopyMatrix );
-
+                   
                  end,
 
                
@@ -172,6 +181,13 @@ InstallValue( CommonHomalgTableForMAGMATools,
                  function( a, A )
                    
                    return homalgSendBlocking( [ "(", a, ")*", A ], HOMALG_IO.Pictograms.MulMat );
+                   
+                 end,
+               
+               MulMatRight :=
+                 function( A, a )
+                   
+                   return homalgSendBlocking( [ A, "*(", a, ")" ], HOMALG_IO.Pictograms.MulMatRight );
                    
                  end,
                
@@ -497,10 +513,90 @@ InstallValue( CommonHomalgTableForMAGMATools,
                    
                  end,
                
+               Coefficients :=
+                 function( poly, var )
+                   local R, y, vars, coeffs, d;
+                   
+                   R := HomalgRing( poly );
+                   
+                   if HasRelativeIndeterminatesOfPolynomialRing( R ) then
+                       y := RelativeIndeterminatesOfPolynomialRing( R );
+                       if y <> [ var ] then
+                           Error( "the list of given variables does not coincide with the list of relative indeterminates\n" );
+                       elif Length( y ) > 1 then
+                           Error( "this table entry can only handle univariate polynomial rings over some base ring\n" );
+                       fi;
+                       y := y[1];
+                       
+                       vars := homalgSendBlocking( [ "Reverse(MonomialsUnivariate(", poly, y, "))" ], R, HOMALG_IO.Pictograms.Coefficients );
+                       coeffs := homalgSendBlocking( [ "Reverse(Coefficients(", poly, y, "))" ], R, HOMALG_IO.Pictograms.Coefficients );
+                       
+                   else
+                       
+                       vars := homalgSendBlocking( [ "Monomials(", poly, ")" ], R, HOMALG_IO.Pictograms.Coefficients );
+                       coeffs := homalgSendBlocking( [ "Coefficients(", poly, ")" ], R, HOMALG_IO.Pictograms.Coefficients );
+                       
+                   fi;
+                   
+                   d := Int( homalgSendBlocking( [ "#", coeffs ], "need_output", R, HOMALG_IO.Pictograms.Coefficients ) );
+                   
+                   homalgSendBlocking( [ coeffs, ":=Matrix(", R, d, 1, coeffs, ")" ], "need_command", R, HOMALG_IO.Pictograms.Coefficients );
+                   
+                   coeffs := HomalgMatrix( coeffs, d, 1, R );
+                   
+                   d := NonZeroRows( coeffs );
+                   
+                   coeffs := Eval( CertainRows( coeffs, d ) );
+                   
+                   homalgSendBlocking( [ vars, ":=Matrix(", R, Length( d ), 1, vars, ")" ], "need_command", R, HOMALG_IO.Pictograms.Coefficients );
+                   
+                   return [ vars, coeffs ];
+                   
+                 end,
+               
                DegreeOfRingElement :=
                  function( r, R )
+                   local y;
+                   
+                   if HasRelativeIndeterminatesOfPolynomialRing( R ) then
+                       y := RelativeIndeterminatesOfPolynomialRing( R );
+                       if Length( y ) > 1 then
+                           Error( "this table entry can only handle univariate polynomial rings over some base ring\n" );
+                       fi;
+                       y := y[1];
+                       
+                       return Int( homalgSendBlocking( [ "Deg2(", r, R, y, ")" ], "need_output", HOMALG_IO.Pictograms.DegreeOfRingElement ) );
+                   fi;
                    
                    return Int( homalgSendBlocking( [ "Deg(", r, R, ")" ], "need_output", HOMALG_IO.Pictograms.DegreeOfRingElement ) );
+                   
+                 end,
+               
+               CoefficientsOfUnivariatePolynomial :=
+                 function( r, var )
+                   local R, y, coeffs, d;
+                   
+                   R := HomalgRing( r );
+                   
+                   if HasRelativeIndeterminatesOfPolynomialRing( R ) then
+                       y := RelativeIndeterminatesOfPolynomialRing( R );
+                       if y <> [ var ] then
+                           Error( "the list of given variables does not coincide with the list of relative indeterminates\n" );
+                       elif Length( y ) > 1 then
+                           Error( "this table entry can only handle univariate polynomial rings over some base ring\n" );
+                       fi;
+                       y := y[1];
+                   else
+                       y := var;
+                   fi;
+                   
+                   coeffs := homalgSendBlocking( [ "Coefficients(", r, y, ")" ], R, HOMALG_IO.Pictograms.Coefficients );
+                   
+                   d := Int( homalgSendBlocking( [ "#", coeffs ], "need_output", R, HOMALG_IO.Pictograms.Coefficients ) );
+                   
+                   homalgSendBlocking( [ coeffs, ":=Matrix(", R, 1, d, coeffs, ")" ], "need_command", R, HOMALG_IO.Pictograms.Coefficients );
+                   
+                   return coeffs;
                    
                  end,
                
@@ -519,6 +615,35 @@ InstallValue( CommonHomalgTableForMAGMATools,
                  function( i, vars, R )
                    
                    return homalgSendBlocking( [ "Matrix(1,MonomialsOfDegree(", R, i, ",{", R, ".i : i in [ 1 .. Rank(", R, ")]} diff {", vars, "}))" ], "break_lists", HOMALG_IO.Pictograms.MonomialMatrix );
+                   
+                 end,
+               
+               Evaluate :=
+                 function( p, L )
+                   
+                   if Length( L ) > 2 then
+                       Error( "MAGMA only supports Evaluate( p, var1, val1, var2, val2, ...)\n" );
+                   fi;
+                   
+                   return homalgSendBlocking( [ "Evaluate(", p, L, ")" ], "break_lists", HOMALG_IO.Pictograms.Evaluate );
+                   
+                 end,
+               
+               NumeratorAndDenominatorOfPolynomial :=
+                 function( p )
+                   local R, numer, denom;
+                   
+                   R := HomalgRing( p );
+                   
+                   #numer := homalgSendBlocking( [ "Numerator(", p, ")" ], R, HOMALG_IO.Pictograms.Numerator );
+                   denom := homalgSendBlocking( [ "Denominator(", p, ")" ], R, HOMALG_IO.Pictograms.Numerator );
+                   
+                   #numer := HomalgExternalRingElement( numer, R );
+                   denom := HomalgExternalRingElement( denom, R );
+                   
+                   numer := p * denom;
+                   
+                   return [ numer, denom ];
                    
                  end,
                

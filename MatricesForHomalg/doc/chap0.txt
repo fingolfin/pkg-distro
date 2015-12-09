@@ -6,10 +6,10 @@
                         [1XMatrices for the [5Xhomalg[105X project[101X
   
   
-                               Version 2015.02.03
+                               Version 2015.11.06
   
   
-                                 February 2015
+                                   June 2015
   
   
                                 Mohamed Barakat

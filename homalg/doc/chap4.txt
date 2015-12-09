@@ -102,9 +102,9 @@
   [33X[0;0YCheck  if  [3Xphi[103X  is  a  well-defined  map,  i.e.  independent of all involved
   presentations.[133X
   
-  [1X4.3-2 IsGeneralizedMorphism[101X
+  [1X4.3-2 IsGeneralizedMorphismWithFullDomain[101X
   
-  [29X[2XIsGeneralizedMorphism[102X( [3Xphi[103X ) [32X property
+  [29X[2XIsGeneralizedMorphismWithFullDomain[102X( [3Xphi[103X ) [32X property
   [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X or [10Xfalse[110X[133X
   
   [33X[0;0YCheck if [3Xphi[103X is a generalized morphism.[133X
@@ -265,9 +265,9 @@
   [33X[0;0YThe morphism aid map of a true generalized map.[133X
   [33X[0;0Y(no method installed)[133X
   
-  [1X4.4-11 GeneralizedInverse[101X
+  [1X4.4-11 InverseOfGeneralizedMorphismWithFullDomain[101X
   
-  [29X[2XGeneralizedInverse[102X( [3Xphi[103X ) [32X attribute
+  [29X[2XInverseOfGeneralizedMorphismWithFullDomain[102X( [3Xphi[103X ) [32X attribute
   [6XReturns:[106X  [33X[0;10Ya [5Xhomalg[105X morphism[133X
   
   [33X[0;0YThe generalized inverse of the epimorphism [3Xphi[103X (cf. [Bar, Cor. 4.8])).[133X

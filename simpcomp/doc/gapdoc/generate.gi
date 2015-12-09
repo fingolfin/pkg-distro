@@ -31,12 +31,14 @@
 ## [SimplicialComplex
 ## 
 ##  Properties known: BoundaryEx, Dim, FacetsEx, HasBoundary, 
-##                    IsPseudoManifold, Name, SkelExs[], Vertices.
+##                    IsPseudoManifold, IsPure, Name, SkelExs[], 
+##                    Vertices.
 ## 
 ##  Name="complex from generators under unknown group"
 ##  Dim=2
 ##  HasBoundary=false
 ##  IsPseudoManifold=true
+##  IsPure=true
 ## 
 ## /SimplicialComplex]
 ## </Example>
@@ -362,7 +364,7 @@
 ## 
 ##  Name="S^1_3xS^2_4"
 ##  Dim=3
-##  TopologicalType="S^1xS^1"
+##  TopologicalType="S^1xS^2"
 ## 
 ## /SimplicialComplex]
 ## gap&gt; c3.Homology;
@@ -610,38 +612,29 @@
 ## <Meth Name="SCStronglyConnectedComponents" Arg="complex"/>
 ## <Returns> a list of simplicial complexes of type <C>SCSimplicialComplex</C> upon success, <K>fail</K> otherwise.</Returns>
 ## <Description>
-## Computes all strongly connected components of an arbitrary simplicial complex.
+## Computes all strongly connected components of a pure simplicial complex.
 ## <Example>
-## gap&gt; c:=SC([[1,2,3],[3,4,5],[4,5,6,7,8,9],[6,7,8,9,10,11]]);;
+## gap&gt; c:=SC([[1,2,3],[2,3,4],[4,5,6],[5,6,7]]);;
 ## gap&gt; comps:=SCStronglyConnectedComponents(c);
 ## [ [SimplicialComplex
 ##     
 ##      Properties known: Dim, FacetsEx, Name, Vertices.
 ##     
-##      Name="Strongly connected component #1 of unnamed complex 74"
+##      Name="Strongly connected component #1 of unnamed complex 82"
 ##      Dim=2
 ##     
 ##     /SimplicialComplex], [SimplicialComplex
 ##     
 ##      Properties known: Dim, FacetsEx, Name, Vertices.
 ##     
-##      Name="Strongly connected component #2 of unnamed complex 74"
-##      Dim=5
-##     
-##     /SimplicialComplex], [SimplicialComplex
-##     
-##      Properties known: Dim, FacetsEx, Name, Vertices.
-##     
-##      Name="Strongly connected component #3 of unnamed complex 74"
-##      Dim=5
+##      Name="Strongly connected component #2 of unnamed complex 82"
+##      Dim=2
 ##     
 ##     /SimplicialComplex] ]
 ## gap&gt; comps[1].Facets;
-## [ [ 1, 2, 3 ] ]
+## [ [ 1, 2, 3 ], [ 2, 3, 4 ] ]
 ## gap&gt; comps[2].Facets;
-## [ [ 3, 4, 5 ], [ 4, 5, 6, 7, 8, 9 ] ]
-## gap&gt; comps[3].Facets;
-## [ [ 6, 7, 8, 9, 10, 11 ] ]
+## [ [ 4, 5, 6 ], [ 5, 6, 7 ] ]
 ## </Example>
 ## </Description>
 ## </ManSection>
@@ -766,9 +759,8 @@
 ## /SimplicialComplex]
 ## gap&gt; SCFVector(s2s2);
 ## [ 12, 60, 160, 180, 72 ]
-## gap&gt; SCAutormophismGroup(s2s2); 
-## Error, Variable: 'SCAutormophismGroup' must have a value
-## not in any function at line 194 of *stdin*
+## gap&gt; SCAutomorphismGroup(s2s2); 
+## TransitiveGroup(12,28) = D(4)[x]S(3)
 ## gap&gt; SCIsManifold(s2s2); 
 ## true
 ## gap&gt; SCHomology(s2s2);
@@ -913,9 +905,9 @@
 ## gap&gt; Mminus:=SCSpan(c,[1,2,3,4,9,10,11,12]);;                  
 ## gap&gt; Mplus:=SCSpan(c,[5,6,7,8,13,14,15,16]);;                  
 ## gap&gt; SCCollapseGreedy(Mminus).Facets;
-## [ [ 9, 10 ], [ 9, 12 ], [ 10, 11 ], [ 11, 12 ] ]
+## [ [ 1, 2 ], [ 1, 12 ], [ 2, 10 ], [ 10, 11 ], [ 11, 12 ] ]
 ## gap&gt; SCCollapseGreedy(Mplus).Facets; 
-## [ [ 13, 14 ], [ 13, 16 ], [ 14, 15 ], [ 15, 16 ] ]
+## [ [ 6, 7 ], [ 6, 14 ], [ 7, 16 ], [ 13, 14 ], [ 13, 16 ] ]
 ## </Example>
 ## </Description>
 ## </ManSection>
@@ -1012,14 +1004,15 @@
 ## [SimplicialComplex
 ## 
 ##  Properties known: BoundaryEx, Dim, FacetsEx, HasBoundary, 
-##                    IsOrientable, IsPseudoManifold, Name, SkelExs[], 
-##                    TopologicalType, Vertices.
+##                    IsOrientable, IsPseudoManifold, IsPure, Name, 
+##                    SkelExs[], TopologicalType, Vertices.
 ## 
 ##  Name="Sphere bundle S^1 x S^1"
 ##  Dim=2
 ##  HasBoundary=false
 ##  IsOrientable=true
 ##  IsPseudoManifold=true
+##  IsPure=true
 ##  TopologicalType="S^1 x S^1"
 ## 
 ## /SimplicialComplex]

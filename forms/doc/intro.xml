@@ -5,8 +5,9 @@
                                                                and Jan De Beule
                                                                   
 
-  Copyright (C) 2011, Ghent University
-  Copyright (C) 2011, The University of Western Australia
+  Copyright (C) 2015, The University of Western Australia
+  Copyright (C) 2015, Ghent University
+  Copyright (C) 2015, Vrije Universiteit Brussel
 
 This chapter gives a short introduction to the package.
 
@@ -71,9 +72,16 @@ is described completely in Section <Ref Sect="trivialform"/>. We gratefully
 acknowledge the useful feedback of Alice Niemeyer. 
 <P/>
 In version 1.2.2 of <Package>Forms</Package> a minor bug, pointed out by John Bamberg, 
-in the code of <C>IsTotallyIsotropicSubspace</C> is repaired. On the occasion of the release
-of GAP4r5, we changed the names of some global functions such that a name clash becomes unlikely.
-Version 1.2.2 of <Package>Forms</Package> is compatible with GAP4r4 and GAP4r5.
+in the code of <F>IsTotallyIsotropicSubspace</F> is repaired. On the occasion of the release
+of the first beta versions of GAP4r5, we changed the names of some global functions such that 
+a name clash becomes unlikely. Version 1.2.2 of <Package>Forms</Package> is compatible with GAP4r4 
+and GAP4r5.
+<P/>Version 1.2.3 contains a new operation <F>TypeOfForm</F>. Together with this addition, some parts of
+the documentation, especially concerning degenerate and singular forms, have been edited. A bug found
+in the methods for <F>\^</F> applicable on a pair of vectors and a hermitian form, and a pair of matrices
+and a hermitian form has been fixed. A series of test files is now included in the tst directory.
+Alexander Konovalov pointed out the the init.g and read.g files had windows line breaks, this is also
+fixed. Finally, the documentation has been recompiled with the MathJax option.
 </Section>
 <!-- ############################################################ -->
 

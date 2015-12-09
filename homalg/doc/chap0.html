@@ -27,9 +27,9 @@
 
 <h2>A homological algebra meta-package for computable Abelian categories</h2>
 
-<p>Version 2015.03.31</p>
+<p>Version 2015.11.05</p>
 
-<p>March 2015</p>
+<p>September 2015</p>
 
 </div>
 <p>(<em>this manual is still under construction</em>)
@@ -85,11 +85,11 @@
 <h3>Acknowledgements</h3>
 <p><span class="URL"><a href="http://www-groups.mcs.st-and.ac.uk/~neunhoef/">Max Neunhöffer</a></span> not only taught me the philosophy of object-oriented programming in <strong class="pkg">GAP4</strong>, but also to what extent this philosophy is still unique among programming languages (--&gt; <a href="chapB.html#X7AC59CBE796EBEB1"><span class="RefLink">Why GAP4?</span></a>). The slides (in German) to his talk in our seminar on 30.10.2006 can be found on <span class="URL"><a href="http://www-groups.mcs.st-and.ac.uk/~neunhoef/Publications/talks.html">his homepage</a></span>.</p>
 
-<p>He, <span class="URL"><a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/">Frank Lübeck</a></span>, and <span class="URL"><a href="http://www.math.rwth-aachen.de/~Thomas.Breuer/">Thomas Breuer</a></span> patiently answered trillions of specific questions, even those I was too lazy to look up in the excellent <a href="/Users/mo/software/gap/gap_current/doc/ref/chap1_mj.html#X874E1D45845007FE"><span class="RefLink">reference manual</span></a>. Without their continuous and tireless help and advice, not only this package but the as a whole <span class="URL"><a href="http://homalg.math.rwth-aachen.de/">homalg project</a></span> would have remained on my todo list.</p>
+<p>He, <span class="URL"><a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/">Frank Lübeck</a></span>, and <span class="URL"><a href="http://www.math.rwth-aachen.de/~Thomas.Breuer/">Thomas Breuer</a></span> patiently answered trillions of specific questions, even those I was too lazy to look up in the excellent <a href="/home/sebastian/gap4r5/doc/ref/chap1.html#X874E1D45845007FE"><span class="RefLink">reference manual</span></a>. Without their continuous and tireless help and advice, not only this package but the as a whole <span class="URL"><a href="http://homalg.math.rwth-aachen.de/">homalg project</a></span> would have remained on my todo list.</p>
 
 <p>A lot of <a href="chap1.html#X7DFB63A97E67C0A1"><span class="RefLink">ideas</span></a> that make up this package and the whole <strong class="pkg">homalg</strong> project came out of intensive discussions with <span class="URL"><a href="http://wwwb.math.rwth-aachen.de/~daniel/">Daniel Robertz</a></span> during our early collaboration, where we developed our philosophy of a meta package for homological algebra and <span class="URL"><a href="http://homalg.math.rwth-aachen.de/maple/">implemented</a></span> it in <strong class="pkg">Maple</strong>.</p>
 
-<p>In the fall of 2007 I began collaborating with <span class="URL"><a href="http://wwwb.math.rwth-aachen.de/goertzen/">Simon Görtzen</a></span> to further pursue and extend these <a href="/Users/mo/software/gap/gap_current/local/pkg/Modules/doc/chap1.html#X8583D47D7E570356"><span class="RefLink">ideas</span></a> preparing the transition to <strong class="pkg">GAP4</strong>. With his help <strong class="pkg">homalg</strong> became an extendable multi-package project.</p>
+<p>In the fall of 2007 I began collaborating with <span class="URL"><a href="http://wwwb.math.rwth-aachen.de/goertzen/">Simon Görtzen</a></span> to further pursue and extend these <a href="/home/sebastian/gap4r5/local/pkg/homalg_project/Modules/doc/chap1.html#X8583D47D7E570356"><span class="RefLink">ideas</span></a> preparing the transition to <strong class="pkg">GAP4</strong>. With his help <strong class="pkg">homalg</strong> became an extendable multi-package project.</p>
 
 <p>Max Neunhöffer convinced me to use his wonderful <strong class="pkg">IO</strong> package to start communicating with external computer algebra systems. This was crucial to remedy the yet missing support for important rings in <strong class="pkg">GAP</strong>. Max provided the first piece of code to access the computer algebra system <strong class="pkg">Singular</strong>. This was the starting point of the packages <strong class="pkg">HomalgToCAS</strong> and <strong class="pkg">IO_ForHomalg</strong>, which were further abstracted by Simon and myself enabling <strong class="pkg">homalg</strong> to communicate with virtually any external (computer algebra) system.</p>
 
@@ -97,7 +97,7 @@
 
 <p>The basic support for <strong class="pkg">Sage</strong> was added by Simon, and the support for <strong class="pkg">Singular</strong> was initiated by <span class="URL"><a href="http://wwwb.math.rwth-aachen.de/~markus/">Markus Lange-Hegermann</a></span> and continued by him and Simon, while <span class="URL"><a href="http://www.math.rwth-aachen.de/~Markus.Kirschmer/">Markus Kirschmer</a></span> contributed the complete support for <strong class="pkg">MAGMA</strong>. This formed the beginning of the <strong class="pkg">RingsForHomalg</strong> package. Recently, Daniel added the support for <strong class="pkg">Macaulay2</strong>.</p>
 
-<p>My concerns about how to handle the garbage collection in the external computer algebra systems were evaporated with the idea of Thomas Breuer using the so-called <a href="/Users/mo/software/gap/gap_current/doc/ref/chap86_mj.html#X86390538806F67CF"><span class="RefLink">weak pointers</span></a> in <strong class="pkg">GAP4</strong> to keep track of all the external objects that became obsolete for <strong class="pkg">homalg</strong>. This idea took shape in a discussion with him and Frank Lübeck and finally found its way into the package <strong class="pkg">HomalgToCAS</strong>.</p>
+<p>My concerns about how to handle the garbage collection in the external computer algebra systems were evaporated with the idea of Thomas Breuer using the so-called <a href="/home/sebastian/gap4r5/doc/ref/chap86.html#X86390538806F67CF"><span class="RefLink">weak pointers</span></a> in <strong class="pkg">GAP4</strong> to keep track of all the external objects that became obsolete for <strong class="pkg">homalg</strong>. This idea took shape in a discussion with him and Frank Lübeck and finally found its way into the package <strong class="pkg">HomalgToCAS</strong>.</p>
 
 <p>My gratitude to all with whom I worked together to develop extension packages and those who developed their own packages within the <strong class="pkg">homalg</strong> project (--&gt; Appendix <a href="chapE.html#X849691F37C7AC1B4"><span class="RefLink">E</span></a>). Without their contributions the package <strong class="pkg">homalg</strong> would have remained a core without a body:</p>
 
@@ -258,7 +258,7 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F66120A814DC16B">4.3-1 IsMorphism</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F210D987C9DCC11">4.3-2 IsGeneralizedMorphism</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7B7206EC7F584F25">4.3-2 IsGeneralizedMorphismWithFullDomain</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7AD32A427B247366">4.3-3 IsGeneralizedEpimorphism</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X83C68AEA7FE4AA29">4.3-4 IsGeneralizedMonomorphism</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X83F05F467DA5EA4D">4.3-5 IsGeneralizedIsomorphism</a></span>
@@ -284,7 +284,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85FA7C19800F72B2">4.4-8 ImageObjectEmb</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X86E3E1BA7BCE4D66">4.4-9 ImageObjectEpi</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X823682157C6B4D63">4.4-10 MorphismAid</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8569D5BE8405F643">4.4-11 GeneralizedInverse</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85F22F4084EA7D31">4.4-11 InverseOfGeneralizedMorphismWithFullDomain</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8500C49A784C8EDC">4.4-12 DegreeOfMorphism</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X789623548056F7B7">4.5 <span class="Heading">Morphisms: Operations and Functions</span></a>
@@ -381,7 +381,7 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X798B6A897FE4FF12">7.3-1 IsMorphism</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X80AA0BFD824FD611">7.3-2 IsGeneralizedMorphism</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X8194427F8423EB00">7.3-2 IsGeneralizedMorphismWithFullDomain</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X84FE6CFD85AB7B73">7.3-3 IsGeneralizedEpimorphism</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7C7A07FD795C903E">7.3-4 IsGeneralizedMonomorphism</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7D686DF9832AE258">7.3-5 IsGeneralizedIsomorphism</a></span>

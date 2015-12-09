@@ -118,9 +118,9 @@
 ## <Description>
 ## Recreates the index of a given repository (either via a repository object or a base path of a repository <Arg>repository</Arg>) by scanning the base path for all <C>.sc</C> files containing simplicial complexes of the repository. Returns a repository object with the newly created index on success or <K>fail</K> in case of an error. The optional boolean argument <Arg>recalc</Arg> forces <Package>simpcomp</Package> to recompute all the indexed properties (such as f-vector, homology, etc.) of the simplicial complexes in the repository if set to <K>true</K>. 
 ## <Example>
-## gap&gt; myRepository:=SCLibInit("~/repository");;
+## gap&gt; myRepository:=SCLibInit("/tmp/repository");;
 ## gap&gt; SCLibUpdate(myRepository);
-## #I  SCLibUpdate: rebuilding index for /home/jonathan/repository/.
+## #I  SCLibUpdate: rebuilding index for /tmp/repository/.
 ## #I  SCLibUpdate: rebuilding index done.
 ## [Simplicial complex library. Properties:
 ## CalculateIndexAttributes=true
@@ -128,7 +128,7 @@
 ## IndexAttributes=[ "Name", "Dim", "F", "G", "H", "Chi", "Homology", "IsPM", 
 ##   "IsManifold" ]
 ## Loaded=true
-## Path="/home/jonathan/repository/"
+## Path="/tmp/repository/"
 ## ]
 ## </Example>
 ## </Description>
@@ -161,20 +161,23 @@
 ## <Description>
 ## Adds a given simplicial complex <Arg>complex</Arg> to a given repository <Arg>repository</Arg> of type <C>SCIsLibRepository</C>. <Arg>complex</Arg> is saved to a file with suffix <C>.sc</C> in the repositories base path, where the file name is either formed from the optional argument <Arg>name</Arg> and the current time or taken from the name of the complex, if it is named. 
 ## <Example>
-## gap&gt; myRepository:=SCLibInit("~/myrepository");
+## gap&gt; info:=InfoLevel(InfoSimpcomp);;
+## gap&gt; SCInfoLevel(0);;
+## gap&gt; myRepository:=SCLibInit("/tmp/repository");
 ## [Simplicial complex library. Properties:
 ## CalculateIndexAttributes=true
-## Number of complexes in library=3
+## Number of complexes in library=0
 ## IndexAttributes=[ "Name", "Dim", "F", "G", "H", "Chi", "Homology", "IsPM", 
 ##   "IsManifold" ]
 ## Loaded=true
-## Path="/home/jonathan/myrepository/"
+## Path="/tmp/repository/"
 ## ]
-## gap&gt; complex:=SCBdCrossPolytope(4);;
-## gap&gt; SCLibAdd(myRepository,complex);
-## #I  SCLibAdd: saving complex to file "complex_2013-11-28_01-37-17.scb".
+## gap&gt; complex1:=SCBdCrossPolytope(4);;
+## gap&gt; SCLibAdd(myRepository,complex1);
 ## true
-## gap&gt; myRepository.Add(complex);; # alternative syntax
+## gap&gt; complex2:=SCBdCrossPolytope(4);;
+## gap&gt; myRepository.Add(complex2);; # alternative syntax
+## gap&gt; SCInfoLevel(info);;
 ## </Example>
 ## </Description>
 ## </ManSection>
@@ -188,19 +191,14 @@
 ## <Description>
 ## Deletes the simplicial complex with the given id <Arg>id</Arg> from the given repository <Arg>repository</Arg>. Apart from deleting the complexes' index entry, the associated <C>.sc</C> file is also deleted.
 ## <Example>
-## gap&gt; myRepository:=SCLibInit("~/myrepository");
-## Found a self-reference to an unknown object!
-## #I  IO_Unpicklers.SCLR: Error while unpicking library repository. Delete file complexes.idx and complexes.idxb and recreate them with SCLibInit.
-## #I  SCIntFunc.SCLibInit: error loading binary index  -- trying to reconstruct it.
-## #I  SCLibUpdate: rebuilding index for /home/jonathan/myrepository/.
-## #I  SCLibUpdate: rebuilding index done.
+## gap&gt; myRepository:=SCLibInit("/tmp/repository");
 ## [Simplicial complex library. Properties:
 ## CalculateIndexAttributes=true
-## Number of complexes in library=4
+## Number of complexes in library=2
 ## IndexAttributes=[ "Name", "Dim", "F", "G", "H", "Chi", "Homology", "IsPM", 
 ##   "IsManifold" ]
 ## Loaded=true
-## Path="/home/jonathan/myrepository/"
+## Path="/tmp/repository/"
 ## ]
 ## gap&gt; SCLibAdd(myRepository,SCSimplex(2));;
 ## gap&gt; SCLibDelete(myRepository,1);
@@ -216,9 +214,11 @@
 ## <Func Name="SCLibFlush" Arg="repository, confirm"/>
 ## <Returns><K>true</K> upon success, <K>fail</K> otherwise.</Returns>
 ## <Description>
-## Completely empties a given repository <Arg>repository</Arg>. The index and all simplicial complexes in this repository are deleted. The second argument, <Arg>confirm</Arg>, must be the string <C>"yes"</C> in order to confirm the deletion. 
+## Completely empties a given repository <Arg>repository</Arg>. The index and all 
+## simplicial complexes in this repository are deleted. The second argument, 
+## <Arg>confirm</Arg>, must be the string <C>"yes"</C> in order to confirm the deletion. 
 ## <Example>
-## gap&gt; myRepository:=SCLibInit("~/repository");;
+## gap&gt; myRepository:=SCLibInit("/tmp/repository");;
 ## gap&gt; SCLibFlush(myRepository,"yes");
 ## #I  SCLibInit: invalid parameters.
 ## true
@@ -305,12 +305,14 @@
 ## [SimplicialComplex
 ## 
 ##  Properties known: BoundaryEx, Dim, FacetsEx, HasBoundary, 
-##                    IsPseudoManifold, Name, SkelExs[], Vertices.
+##                    IsPseudoManifold, IsPure, Name, SkelExs[], 
+##                    Vertices.
 ## 
-##  Name="unnamed complex 32"
+##  Name="unnamed complex 167"
 ##  Dim=2
 ##  HasBoundary=false
 ##  IsPseudoManifold=true
+##  IsPure=true
 ## 
 ## /SimplicialComplex]
 ## </Example>
@@ -329,14 +331,18 @@
 ## The function first tries to load the repository index for the given directory to rebuild it (by calling <C>SCLibUpdate</C>) if loading the index fails.
 ## The library index of a library repository is stored in its base path in the XML file <C>complexes.idx</C>, the complexes are stored in files with suffix <C>.sc</C>, also in XML format.
 ## <Example>
-## gap&gt; myRepository:=SCLibInit("~/myrepository");
+## gap&gt; myRepository:=SCLibInit("/tmp/repository");
+## #I  SCLibInit: made directory "/tmp/repository/" for user library.
+## #I  SCIntFunc.SCLibInit: index not found -- trying to reconstruct it.
+## #I  SCLibUpdate: rebuilding index for /tmp/repository/.
+## #I  SCLibUpdate: rebuilding index done.
 ## [Simplicial complex library. Properties:
 ## CalculateIndexAttributes=true
-## Number of complexes in library=4
+## Number of complexes in library=0
 ## IndexAttributes=[ "Name", "Dim", "F", "G", "H", "Chi", "Homology", "IsPM", 
 ##   "IsManifold" ]
 ## Loaded=true
-## Path="/home/jonathan/myrepository/"
+## Path="/tmp/repository/"
 ## ]
 ## </Example>
 ## </Description>

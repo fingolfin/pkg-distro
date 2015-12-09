@@ -67,8 +67,8 @@
 ## gap&gt; SCMailIsEnabled();
 ## true
 ## gap&gt; SCMailSend("Hello, this is simpcomp.");
-## WARNING: gnome-keyring:: couldn't connect to: /tmp/keyring-1ChErV/pkcs11: No such file or directory
-## true
+## mail: cannot send message: Process exited with a non-zero status
+## false
 ## </Example>
 ## </Description>
 ## </ManSection>
@@ -84,7 +84,8 @@
 ## Tries to send a pending email of the <Package>simpcomp</Package> email notification system. Returns <K>true</K> on success or if there was no mail pending.
 ## <Example>
 ## gap&gt; SCMailSendPending();
-## true
+## mail: cannot send message: Process exited with a non-zero status
+## false
 ## </Example>
 ## </Description>
 ## </ManSection>
@@ -99,7 +100,7 @@
 ## Returns <K>true</K> when an email of the <Package>simpcomp</Package> email notification system is pending, <K>false</K> otherwise.
 ## <Example>
 ## gap&gt; SCMailIsPending();
-## false
+## true
 ## </Example>
 ## </Description>
 ## </ManSection>
@@ -146,10 +147,10 @@
 ## Test whether the package <Package>simpcomp</Package> is functional by calling <C>ReadTest("GAPROOT/pkg/simpcomp/tst/simpcomp.tst");</C>. The returned value of GAP4stones is a measure of your system performance and differs from system to system.
 ## <Example>
 ## gap&gt; SCRunTest();
-## Line 1075 : 
+## Line 1220 : 
 ## + simpcomp package test
-## Line 1076 : 
-## + GAP4stones: 99314
+## Line 1221 : 
+## + GAP4stones: 65445
 ## true
 ## </Example>
 ## </Description>

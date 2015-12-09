@@ -891,6 +891,37 @@ InstallMethod( Eval,
     return a * Eval( A );
     
 end );
+
+InstallMethod( Eval,
+        "for homalg matrices (HasEvalMulMatRight)",
+        [ IsHomalgMatrix and HasEvalMulMatRight ],
+        
+  function( C )
+    local R, RP, e, A, a;
+    
+    R := HomalgRing( C );
+    
+    RP := homalgTable( R );
+    
+    e :=  EvalMulMatRight( C );
+    
+    A := e[1];
+    a := e[2];
+    
+    if IsBound(RP!.MulMatRight) then
+        return RP!.MulMatRight( A, a );
+    fi;
+    
+    if not IsHomalgInternalMatrixRep( C ) then
+        Error( "could not find a procedure called MulMatRight ",
+               "in the homalgTable of the non-internal ring\n" );
+    fi;
+    
+    #=====# can only work for homalg internal matrices #=====#
+    
+    return Eval( A ) * a;
+    
+end );
 ##  ]]></Listing>
 ##    </Description>
 ##  </ManSection>
@@ -4257,7 +4288,7 @@ InstallMethod( Inequalities,
     RP := homalgTable( R );
     
     if not IsBound(RP!.Inequalities) then
-        Error( "could not find a procedure called ZeroSets in the homalgTable\n" );
+        Error( "could not find a procedure called Inequalities in the homalgTable\n" );
     fi;
     
     J := RP!.Inequalities( R );
@@ -4283,5 +4314,46 @@ InstallMethod( Inequalities,
     R!.Inequalities := J;
     
     return J;
+    
+end );
+
+##
+InstallMethod( ClearDenominatorsRowWise,
+        "for a homalg matrix",
+        [ IsHomalgMatrix ],
+        
+  function( M )
+    local R, RP, m, n, coeffs;
+    
+    if IsZero( M ) then
+        return M;
+    elif IsOne( M ) then
+        return M;
+    fi;
+    
+    R := HomalgRing( M );
+    
+    RP := homalgTable( R );
+    
+    m := NrRows( M );
+    n := NrColumns( M );
+    
+    if IsBound(RP!.ClearDenominatorsRowWise) then
+        return HomalgMatrix( RP!.ClearDenominatorsRowWise( M ), m, n, R ); ## the external object
+    fi;
+    
+    #=====# begin of the core procedure #=====#
+    
+    coeffs := EntriesOfHomalgMatrixAsListList( M );
+    
+    coeffs := List( coeffs, a -> Concatenation( List( a, b -> EntriesOfHomalgMatrix( Coefficients( b ) ) ) ) );
+    
+    coeffs := List( coeffs, a -> List( a, b -> DenominatorRat( Rat( String( b ) ) ) ) );
+    
+    coeffs := List( coeffs, Lcm );
+    
+    coeffs := HomalgDiagonalMatrix( List( coeffs, a -> a / R ) );
+    
+    return coeffs * M;
     
 end );

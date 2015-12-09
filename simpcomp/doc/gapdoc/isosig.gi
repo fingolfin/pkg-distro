@@ -41,7 +41,7 @@
 ## 4
 ## gap&gt; s:=SCExportIsoSig(c); time;
 ## "deefgaf.hbi.gbh.eaiaeaicg.g.ibf.heg.iff.hggcfffgg"
-## 12
+## 16
 ## </Example>
 ## </Description>
 ## </ManSection>

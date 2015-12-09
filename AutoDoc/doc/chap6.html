@@ -52,6 +52,26 @@
 <dd><p>This adds an author to the document.</p>
 
 </dd>
+<dt><strong class="Mark">Dependency <var class="Arg">packagename</var>, <var class="Arg">version</var></strong></dt>
+<dd><p>This adds a dependency to the worksheet which will be checked at compile time. If your GAP does not provide the correct <var class="Arg">version</var> of the package <var class="Arg">packagename</var> the command will give an error. If you only want to compile the worksheet, you can continue. A possible <var class="Arg">version</var> is &gt;=20.</p>
+
+</dd>
+<dt><strong class="Mark">Date <var class="Arg">date</var></strong></dt>
+<dd><p>Adds the string <var class="Arg">date</var> as a date to the titlepage of the pdf.</p>
+
+</dd>
+<dt><strong class="Mark">Abstract</strong></dt>
+<dd><p>Adds the following lines as abstract to the title of the worksheet.</p>
+
+</dd>
+<dt><strong class="Mark">Acknowledgement</strong></dt>
+<dd><p>Adds the following lines as acknowledgement to the title of the worksheet.</p>
+
+</dd>
+<dt><strong class="Mark">URL <var class="Arg">url</var></strong></dt>
+<dd><p>Adds the URL <var class="Arg">url</var> as a link to the titlepage of the worksheet. This is done in the TitleComment section of the TitlePage.</p>
+
+</dd>
 </dl>
 <p>Note that some commands have no effect, i.e. the level command. The options are as follows.</p>
 
@@ -62,7 +82,11 @@
 
 </dd>
 <dt><strong class="Mark">TestFile</strong></dt>
-<dd><p>If TestFile is set to false, no testfile is produced. If TestFile is a string, then it is used as name of the testfile. If nothing is given, the testfile will be maketest.g</p>
+<dd><p>If TestFile is set to false, no testfile is produced. If TestFile is a string, then it is used as name of the testfile. If nothing is given, the testfile will be maketest.g.</p>
+
+</dd>
+<dt><strong class="Mark">TestFileOutputFolder</strong></dt>
+<dd><p>Defines an output folder for a testfile. If the string "current" is given, the current folder will be used to output the testfile. If nothing is given, OutputFolder will be used.</p>
 
 </dd>
 <dt><strong class="Mark">OutputFolder</strong></dt>
@@ -75,6 +99,14 @@
 </dd>
 <dt><strong class="Mark">Bibliography</strong></dt>
 <dd><p>Path to a bibliography file.</p>
+
+</dd>
+<dt><strong class="Mark">CreateIndex</strong></dt>
+<dd><p>Enables the index if set to true. Please enable it only if you have something to index. It will create an error otherwise.</p>
+
+</dd>
+<dt><strong class="Mark">EntityList</strong></dt>
+<dd><p>Works like the entities part in the AutoDoc command.</p>
 
 </dd>
 </dl>

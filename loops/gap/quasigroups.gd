@@ -2,7 +2,7 @@
 ##
 #W  quasigroups.gd  Representing, creating and displaying quasigroups [loops]
 ##
-#H  @(#)$Id: quasigroups.gd, v 2.0.0 2008/01/21 gap Exp $
+#H  @(#)$Id: quasigroups.gd, v 3.1.0 2015/10/28 gap Exp $
 ##
 #Y  Copyright (C)  2004,  G. P. Nagy (University of Szeged, Hungary),
 #Y                        P. Vojtechovsky (University of Denver, USA)
@@ -69,8 +69,8 @@ DeclareOperation( "QuasigroupByLeftSection", [ IsPermCollection ] );
 DeclareOperation( "LoopByLeftSection", [ IsPermCollection ] );
 DeclareOperation( "QuasigroupByRightSection", [ IsPermCollection ] );
 DeclareOperation( "LoopByRightSection", [ IsPermCollection ] );
-# There are also versions of QuasigroupByRightSection and LoopByRightSection
-# for [ IsGroup, IsGroup, IsMultiplicativeElementCollection ]
+DeclareOperation( "QuasigroupByRightFolder", [ IsGroup, IsGroup, IsMultiplicativeElementCollection ] );
+DeclareOperation( "LoopByRightFolder", [ IsGroup, IsGroup, IsMultiplicativeElementCollection ] );
 
 #############################################################################
 ##  CONVERSIONS
@@ -92,4 +92,12 @@ DeclareOperation( "IntoGroup", [ IsMagma ] );
 ## OPPOSITE QUASIGROUPS AND LOOPS
 ## --------------------------------------------------------------------------
 
-DeclareOperation( "Opposite", [ IsQuasigroup ] );
+DeclareOperation( "OppositeQuasigroup", [ IsQuasigroup ] );
+DeclareOperation( "OppositeLoop", [ IsLoop ] );
+DeclareAttribute( "Opposite", IsQuasigroup );
+
+#############################################################################
+## AUXILIARY
+## --------------------------------------------------------------------------
+DeclareGlobalFunction( "LOOPS_ReadCayleyTableFromFile" );
+DeclareGlobalFunction( "LOOPS_CayleyTableByRightFolder" );

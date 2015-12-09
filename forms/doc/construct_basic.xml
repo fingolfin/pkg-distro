@@ -1,9 +1,11 @@
 <!--
-  functionality.xml    Forms package documentation
-                                                                   John Bamberg
+  construct_basic.xml    Forms package documentation
+                                                                  John Bamberg
                                                                and Jan De Beule
-                                                           
-  Copyright (C) 2008, Ghent University
+                                                                
+  Copyright (C) 2015, The University of Western Australia
+  Copyright (C) 2015, Ghent University
+  Copyright (C) 2015, Vrije Universiteit Brussel
 
 This is the chapter of the documentation describing all of the functions of forms.
 -->

@@ -8,17 +8,13 @@ Subtitle := "Generate documentation from GAP source code",
 Version := Maximum( [
   "2015.04.29", ## Sebas' version
 ## This line prevents merge conflicts
-  "2014.03.27", ## Max' version
+  "2015.09.30", ## Max' version
 ## This line prevents merge conflicts
   "2013.11.01", ## Mohamed's version
 ] ),
 
 Date := ~.Version{[ 1 .. 10 ]},
 Date := Concatenation( ~.Date{[ 9, 10 ]}, "/", ~.Date{[ 6, 7 ]}, "/", ~.Date{[ 1 .. 4 ]} ),
-
-ArchiveURL := Concatenation( "http://wwwb.math.rwth-aachen.de/~gutsche/gap_packages/AutoDoc/AutoDoc-", ~.Version ),
-
-ArchiveFormats := ".tar.gz",
 
 Persons := [
   rec(
@@ -57,15 +53,16 @@ Persons := [
 ],
 
 Status := "deposited",
+PackageWWWHome := "http://gap-packages.github.io/AutoDoc/",
 
-README_URL := 
-  "http://wwwb.math.rwth-aachen.de/~gutsche/gap_packages/AutoDoc/README.AutoDoc",
-PackageInfoURL := 
-  "http://wwwb.math.rwth-aachen.de/~gutsche/gap_packages/AutoDoc/PackageInfo.g",
+ArchiveFormats := ".tar.gz",
+
+ArchiveURL     := Concatenation( ~.PackageWWWHome, "AutoDoc-", ~.Version ),
+README_URL     := Concatenation( ~.PackageWWWHome, "README" ),
+PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 
 AbstractHTML := 
   "",
-PackageWWWHome := "http://wwwb.math.rwth-aachen.de/~gutsche/gap_packages/AutoDoc",
 PackageDoc := rec(
   BookName  := "AutoDoc",
   ArchiveURLSubset := ["doc"],

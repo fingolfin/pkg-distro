@@ -1,469 +1,1215 @@
-C intro.tex 1. Introduction
-S 1.1. Installation
-S 1.2. Documentation
-S 1.3. Test files
-S 1.4. Feedback
-S 1.5. Acknowledgement
-C mathback.tex 2. Mathematical background
-S 2.1. Quasigroups and loops
-I 2.1. groupoid
-I 2.1. magma
-I 2.1. semigroup
-I 2.1. neutral element
-I 2.1. identity element
-I 2.1. monoid
-I 2.1. inverse!two-sided
-I 2.1. group
-I 2.1. quasigroup
-I 2.1. Latin square
-I 2.1. loop
-S 2.2. Translations
-I 2.2. translation!left
-I 2.2. translation!right
-I 2.2. section!left
-I 2.2. section!right
-I 2.2. multiplication group!left
-I 2.2. multiplication group!right
-I 2.2. multiplication group
-S 2.3. Homomorphisms and homotopisms
-I 2.3. homomorphism
-I 2.3. isomorphism
-I 2.3. homotopism
-I 2.3. isotopism
-I 2.3. isotopism!principal
-I 2.3. loop isotope!principal
-S 2.4. Extensions
-I 2.4. extension
-I 2.4. extension!nuclear
-I 2.4. cocycle
-C how.tex 3. How the package works
-S 3.1. Representing quasigroups
-S 3.2. Conversions between magmas, quasigroups, loops and groups
-S 3.3. Calculating with quasigroups
-I 3.3. Bol loop
-I 3.3. loop!Bol
-I 3.3. simple loop
-I 3.3. loop!simple
-S 3.4. Naming, viewing and printing quasigroups and their elements
-F 3.4. SetQuasigroupElmName
-F 3.4. SetLoopElmName
-C create.tex 4. Creating quasigroups and loops
-S 4.1. About Cayley tables
-I 4.1. table!Cayley
-I 4.1. Cayley table
-I 4.1. table!multiplication
-I 4.1. multiplication table
-I 4.1. table!quasigroup
-I 4.1. quasigroup!table
-I 4.1. Latin square
-I 4.1. table!loop
-I 4.1. loop!table
-S 4.2. Testing Cayley tables
-F 4.2. IsQuasigroupTable
-F 4.2. IsQuasigroupCayleyTable
-F 4.2. IsLoopTable
-F 4.2. IsLoopCayleyTable
-S 4.3. Canonical and normalized Cayley tables
-F 4.3. CanonicalCayleyTable
-F 4.3. NormalizedQuasigroupTable
-S 4.4. Creating quasigroups and loops manually
-F 4.4. QuasigroupByCayleyTable
-F 4.4. LoopByCayleyTable
-S 4.5. Creating quasigroups and loops from a file
-F 4.5. QuasigroupFromFile
-F 4.5. LoopFromFile
-S 4.6. Creating quasigroups and loops by sections
-F 4.6. CayleyTableByPerms
-F 4.6. QuasigroupByLeftSection
-F 4.6. LoopByLeftSection
-F 4.6. QuasigroupByRightSection
-F 4.6. LoopByRightSection
-I 4.6. transversal
-F 4.6. QuasigroupByRightSection
-F 4.6. LoopByRightSection
-I 4.6. Bol loop!simple
-I 4.6. simple loop!Bol
-S 4.7. Creating quasigroups and loops by extensions
-F 4.7. NuclearExtension
-F 4.7. LoopByExtension
-S 4.8. Random quasigroups and loops
-I 4.8. Latin square!random
-I 4.8. random!loop
-I 4.8. loop!random
-F 4.8. RandomLoop
-F 4.8. RandomLoop
-I 4.8. quasigroup!random
-I 4.8. random!quasigroup
-F 4.8. RandomQuasigroup
-F 4.8. RandomQuasigroup
-F 4.8. RandomNilpotentLoop
-I 4.8. nilpotent loop!random
-I 4.8. random!nilpotent loop
-S 4.9. Conversions
-F 4.9. IntoQuasigroup
-F 4.9. PrincipalLoopIsotope
-F 4.9. IntoLoop
-F 4.9. IntoGroup
-S 4.10. Products of loops
-F 4.10. DirectProduct
-S 4.11. Opposite quasigroups and loops
-I 4.11. opposite quasigroup
-I 4.11. quasigroup!opposite
-F 4.11. Opposite
-C create.tex 5. Basic methods and attributes
-S 5.1. Basic attributes
-F 5.1. Elements
-F 5.1. CayleyTable
-F 5.1. One
-F 5.1. MultiplicativeNeutralElement
-F 5.1. Size
-I 5.1. power associative!loop
-I 5.1. loop!power associative
-I 5.1. exponent
-F 5.1. Exponent
-S 5.2. Basic arithmetic operations
-I 5.2. division!left
-I 5.2. division!right
-F 5.2. LeftDivision
-F 5.2. RightDivision
-F 5.2. LeftDivision
-F 5.2. LeftDivision
-F 5.2. RightDivision
-F 5.2. RightDivision
-F 5.2. LeftDivisionCayleyTable
-F 5.2. RightDivisionCayleyTable
-S 5.3. Powers and inverses
-I 5.3. power associative!quasigroup
-I 5.3. quasigroup!power associative
-I 5.3. inverse!left
-I 5.3. inverse!right
-I 5.3. inverse
-F 5.3. LeftInverse
-F 5.3. RightInverse
-F 5.3. Inverse
-S 5.4. Associators and commutators
-I 5.4. associator
-I 5.4. commutator
-F 5.4. Associator
-F 5.4. Commutator
-S 5.5. Generators
-F 5.5. GeneratorsOfQuasigroup
-F 5.5. GeneratorsOfLoop
-F 5.5. GeneratorsSmallest
-C perm.tex 6. Methods based on permutation groups
-S 6.1. Parent of a quasigroup
-F 6.1. Parent
-F 6.1. Position
-F 6.1. PosInParent
-S 6.2. Comparing quasigroups with common parent
-S 6.3. Subquasigroups and subloops
-F 6.3. Subquasigroup
-F 6.3. Subloop
-F 6.3. IsSubquasigroup
-F 6.3. IsSubloop
-F 6.3. AllSubloops
-I 6.3. coset
-F 6.3. RightCosets
-I 6.3. transversal
-F 6.3. RightTransversal
-S 6.4. Translations and sections
-F 6.4. LeftTranslation
-F 6.4. RightTranslation
-F 6.4. LeftSection
-F 6.4. RightSection
-S 6.5. Multiplication groups
-F 6.5. LeftMultiplicationGroup
-F 6.5. RightMultiplicationGroup
-F 6.5. MultiplicationGroup
-I 6.5. multiplication group!relative left
-I 6.5. multiplication group!relative right
-I 6.5. multiplication group!relative
-F 6.5. RelativeLeftMultiplicationGroup
-F 6.5. RelativeRightMultiplicationGroup
-F 6.5. RelativeMultiplicationGroup
-S 6.6. Inner mapping groups
-I 6.6. inner mapping group
-I 6.6. inner mapping group!left
-I 6.6. inner mapping group!right
-I 6.6. inner mapping!left
-I 6.6. inner mapping!right
-I 6.6. conjugation
-I 6.6. inner mapping!middle
-I 6.6. inner mapping group!middle
-F 6.6. LeftInnerMapping
-F 6.6. MiddleInnerMapping
-F 6.6. RightInnerMapping
-F 6.6. LeftInnerMappingGroup
-F 6.6. MiddleInnerMappingGroup
-F 6.6. RightInnerMappingGroup
-F 6.6. InnerMappingGroup
-S 6.7. Nuclei, commutant, center, and associator subloop
-I 6.7. nucleus!left
-I 6.7. nucleus!middle
-I 6.7. nucleus!right
-I 6.7. nucleus
-F 6.7. LeftNucleus
-F 6.7. MiddleNucleus
-F 6.7. RightNucleus
-F 6.7. Nuc
-F 6.7. NucleusOfLoop
-F 6.7. NucleusOfQuasigroup
-I 6.7. commutant
-F 6.7. Commutant
-F 6.7. Center
-I 6.7. associator!subloop
-I 6.7. subloop!associator
-F 6.7. AssociatorSubloop
-S 6.8. Normal subloops
-I 6.8. normal!subloop
-I 6.8. subloop!normal
-F 6.8. IsNormal
-I 6.8. normal!closure
-F 6.8. NormalClosure
-I 6.8. simple loop
-I 6.8. loop!simple
-F 6.8. IsSimple
-S 6.9. Factor loops
-F 6.9. FactorLoop
-F 6.9. NaturalHomomorphismByNormalSubloop
-S 6.10. Nilpotency and central series
-F 6.10. NilpotencyClassOfLoop
-F 6.10. IsNilpotent
-I 6.10. strongly nilpotent loop
-I 6.10. nilpotent loop!strongly
-I 6.10. loop!strongly nilpotent
-F 6.10. IsStronglyNilpotent
-I 6.10. center!iterated
-I 6.10. central series!upper
-F 6.10. UpperCentralSeries
-I 6.10. central series!lower
-F 6.10. LowerCentralSeries
-S 6.11. Solvability
-F 6.11. IsSolvable
-F 6.11. DerivedSubloop
-F 6.11. DerivedLength
-F 6.11. FrattiniSubloop
-F 6.11. FrattinifactorSize
-S 6.12. Isomorphisms and automorphisms
-F 6.12. IsomorphismLoops
-F 6.12. LoopsUpToIsomorphism
-F 6.12. AutomorphismGroup
-F 6.12. IsomorphicCopyByPerm
-F 6.12. IsomorphicCopyByNormalSubloop
-S 6.13. How are isomorphisms computed
-F 6.13. Discriminator
-F 6.13. AreEqualDiscriminators
-S 6.14. Isotopisms
-F 6.14. IsotopismLoops
-F 6.14. LoopsUpToIsotopism
-C testprop.tex 7. Testing properties of quasigroups and loops
-S 7.1. Associativity, commutativity and generalizations
-F 7.1. IsAssociative
-F 7.1. IsCommutative
-I 7.1. power associative!loop
-I 7.1. loop!power associative
-I 7.1. diassociative loop
-I 7.1. loop!diassociative
-F 7.1. IsPowerAssociative
-F 7.1. IsDiassociative
-S 7.2. Inverse properties
-I 7.2. inverse property!left
-I 7.2. inverse property!right
-I 7.2. inverse property
-I 7.2. inverse!two-sided
-F 7.2. HasLeftInverseProperty
-F 7.2. HasRightInverseProperty
-F 7.2. HasInverseProperty
-F 7.2. HasTwosidedInverses
-I 7.2. inverse property!weak
-F 7.2. HasWeakInverseProperty
-I 7.2. inverse property!automorphic
-I 7.2. inverse property!antiautomorphic
-F 7.2. HasAutomorphicInverseProperty
-F 7.2. HasAntiautomorphicInverseProperty
-S 7.3. Some properties of quasigroups
-I 7.3. semisymmetric quasigroup
-I 7.3. quasigroup!semisymmetric
-I 7.3. totally symmetric quasigroup
-I 7.3. quasigroup!totally symmetric
-F 7.3. IsSemisymmetric
-F 7.3. IsTotallySymmetric
-I 7.3. idempotent quasigroup
-I 7.3. quasigroup!idempotent
-I 7.3. Steiner!quasigroup
-I 7.3. quasigroup!Steiner
-I 7.3. unipotent quasigroup
-I 7.3. quasigroup!unipotent
-F 7.3. IsIdempotent
-F 7.3. IsSteinerQuasigroup
-F 7.3. IsUnipotent
-I 7.3. distributive quasigroup!left
-I 7.3. distributive quasigroup!right
-I 7.3. distributive quasigroup
-I 7.3. quasigroup!distributive
-I 7.3. entropic quasigroup
-I 7.3. quasigroup!entropic
-I 7.3. medial quasigroup
-I 7.3. quasigroup!medial
-F 7.3. IsLeftDistributive
-F 7.3. IsRightDistributive
-F 7.3. IsDistributive
-F 7.3. IsEntropic
-F 7.3. IsMedial
-F 7.3. IsLDistributive
-F 7.3. IsRDistributive
-S 7.4. Loops of Bol-Moufang type
-I 7.4. loop!of Bol-Moufang type
-I 7.4. identity of Bol-Moufang type
-I 7.4. alternative loop!left
-I 7.4. alternative loop!right
-I 7.4. nuclear square loop!left
-I 7.4. nuclear square loop!middle
-I 7.4. nuclear square loop!right
-I 7.4. flexible loop
-I 7.4. loop!flexible
-I 7.4. Bol loop!left
-I 7.4. loop!Bol
-I 7.4. Bol loop!right
-I 7.4. LC-loop
-I 7.4. loop!LC
-I 7.4. RC-loop
-I 7.4. loop!RC
-I 7.4. Moufang loop
-I 7.4. loop!Moufang
-I 7.4. C-loop
-I 7.4. loop!C
-I 7.4. extra loop
-I 7.4. loop!extra
-I 7.4. alternative loop
-I 7.4. loop!alternative
-I 7.4. nuclear square loop
-I 7.4. loop!nuclear square
-F 7.4. IsExtraLoop
-F 7.4. IsMoufangLoop
-F 7.4. IsCLoop
-F 7.4. IsLeftBolLoop
-F 7.4. IsRightBolLoop
-F 7.4. IsLCLoop
-F 7.4. IsRCLoop
-F 7.4. IsLeftNuclearSquareLoop
-F 7.4. IsMiddleNuclearSquareLoop
-F 7.4. IsRightNuclearSquareLoop
-F 7.4. IsNuclearSquareLoop
-F 7.4. IsFlexible
-F 7.4. IsLeftAlternative
-F 7.4. IsRightAlternative
-F 7.4. IsAlternative
-S 7.5. Power alternative loops
-I 7.5. power alternative loop!left
-I 7.5. power alternative loop!right
-I 7.5. power alternative loop
-I 7.5. loop!power alternative
-F 7.5. IsLeftPowerAlternative
-F 7.5. IsRightPowerAlternative
-F 7.5. IsPowerAlternative
-S 7.6. Conjugacy closed loops and related properties
-I 7.6. conjugacy closed loop!left
-I 7.6. conjugacy closed loop!right
-I 7.6. conjugacy closed loop
-I 7.6. loop!conjugacy closed
-F 7.6. IsLCCLoop
-F 7.6. IsRCCLoop
-F 7.6. IsCCLoop
-I 7.6. Osborn loop
-I 7.6. loop!Osborn
-F 7.6. IsOsbornLoop
-S 7.7. Additional varieties of loops
-I 7.7. code loop
-I 7.7. loop!code
-F 7.7. IsCodeLoop
-I 7.7. Steiner!loop
-I 7.7. loop!Steiner
-F 7.7. IsSteinerLoop
-I 7.7. Bruck loop!left
-I 7.7. Bruck loop!right
-I 7.7. Bruck loop
-I 7.7. loop!Bruck
-I 7.7. K-loop
-I 7.7. loop!K
-F 7.7. IsLeftBruckLoop
-F 7.7. IsLeftKLoop
-F 7.7. IsRightBruckLoop
-F 7.7. IsRightKLoop
-I 7.7. automorphic loop!left
-I 7.7. automorphic loop!middle
-I 7.7. automorphic loop!right
-I 7.7. automorphic loop
-I 7.7. loop!automorphic
-F 7.7. IsLeftAutomorphicLoop
-F 7.7. IsMiddleAutomorphicLoop
-F 7.7. IsRightAutomorphicLoop
-F 7.7. IsAutomorphicLoop
-I 7.7. A-loop
-I 7.7. loop!A
-F 7.7. IsLeftALoop
-F 7.7. IsMiddleALoop
-F 7.7. IsRightALoop
-F 7.7. IsALoop
-C specific.tex 8. Specific methods
-S 8.1. Core methods for Bol loops
-I 8.1. Bol loop!left
-I 8.1. loop!Bol
-I 8.1. Bruck loop!associated left
-I 8.1. loop!associated Bruck
-F 8.1. AssociatedLeftBruckLoop
-S 8.2. Moufang modifications
-I 8.2. modification!Moufang
-I 8.2. modification!cyclic
-F 8.2. LoopByCyclicModification
-I 8.2. modification!dihedral
-F 8.2. LoopByDihedralModification
-F 8.2. LoopMG2
-S 8.3. Triality for Moufang loops
-I 8.3. group with triality
-F 8.3. TrialityPermGroup
-F 8.3. TrialityPcGroup
-S 8.4. Realizing groups as multiplication groups of loops
-F 8.4. AllLoopTablesInGroup
-F 8.4. AllProperLoopTablesInGroup
-F 8.4. OneLoopTableInGroup
-F 8.4. OneProperLoopTableInGroup
-F 8.4. AllLoopsWithMltGroup
-F 8.4. OneLoopWithMltGroup
-C lib.tex 9. Libraries of small loops
-S 9.1. A typical library
-F 9.1. MyLibraryLoop
-F 9.1. LibraryLoop
-F 9.1. DisplayLibraryInfo
-S 9.2. Left Bol loops
-F 9.2. LeftBolLoop
-S 9.3. Moufang loops
-F 9.3. MoufangLoop
-I 9.3. octonion loop
-I 9.3. loop!octonion
-S 9.4. Code loops
-F 9.4. CodeLoop
-S 9.5. Steiner loops
-F 9.5. SteinerLoop
-S 9.6. CC-loops
-I 9.6. conjugacy closed loop
-I 9.6. loop!conjugacy closed
-F 9.6. CCLoop
-S 9.7. Small loops
-F 9.7. SmallLoop
-S 9.8. Paige loops
-I 9.8. Paige loop
-I 9.8. loop!Paige
-F 9.8. PaigeLoop
-S 9.9. Nilpotent loops
-F 9.9. NilpotentLoop
-S 9.10. Automorphic loops
-F 9.10. AutomorphicLoop
-S 9.11. Interesting loops
-I 9.11. sedenion loop
-I 9.11. loop!sedenion
-F 9.11. InterestingLoop
-S 9.12. Libraries of loops up to isotopism
-F 9.12. ItpSmallLoop
-C files.tex 10. Files
-C filters.tex 11. Filters built into the package
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "loops",
+entries :=
+[ [ "Title page", ".", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" ],
+  [ "Copyright", ".-1", [ 0, 0, 1 ], 30, 2, "copyright", "X81488B807F2A1CF1" ]
+    , [ "Table of Contents", ".-2", [ 0, 0, 2 ], 35, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YIntroduction\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 6, "introduction", "X7DFB63A97E67C0A1" ], 
+  [ "\033[1X\033[33X\033[0;-2YLicense\033[133X\033[101X", "1.1", [ 1, 1, 0 ], 
+      13, 6, "license", "X861E5DF986F89AE2" ], 
+  [ "\033[1X\033[33X\033[0;-2YInstallation\033[133X\033[101X", "1.2", 
+      [ 1, 2, 0 ], 20, 6, "installation", "X8360C04082558A12" ], 
+  [ "\033[1X\033[33X\033[0;-2YDocumentation\033[133X\033[101X", "1.3", 
+      [ 1, 3, 0 ], 43, 6, "documentation", "X7F4F8D6F7CD6B765" ], 
+  [ "\033[1X\033[33X\033[0;-2YTest Files\033[133X\033[101X", "1.4", 
+      [ 1, 4, 0 ], 61, 7, "test files", "X801051CC86594630" ], 
+  [ "\033[1X\033[33X\033[0;-2YMemory Management\033[133X\033[101X", "1.5", 
+      [ 1, 5, 0 ], 68, 7, "memory management", "X79342B4E7E55FD0F" ], 
+  [ "\033[1X\033[33X\033[0;-2YFeedback\033[133X\033[101X", "1.6", 
+      [ 1, 6, 0 ], 76, 7, "feedback", "X80D704CC7EBFDF7A" ], 
+  [ "\033[1X\033[33X\033[0;-2YAcknowledgment\033[133X\033[101X", "1.7", 
+      [ 1, 7, 0 ], 83, 7, "acknowledgment", "X811B08C07BD79486" ], 
+  [ "\033[1X\033[33X\033[0;-2YMathematical Background\033[133X\033[101X", 
+      "2", [ 2, 0, 0 ], 1, 8, "mathematical background", "X7EF1B6708069B0C7" ]
+    , [ "\033[1X\033[33X\033[0;-2YQuasigroups and Loops\033[133X\033[101X", 
+      "2.1", [ 2, 1, 0 ], 11, 8, "quasigroups and loops", "X80243DE5826583B8" 
+     ], [ "\033[1X\033[33X\033[0;-2YTranslations\033[133X\033[101X", "2.2", 
+      [ 2, 2, 0 ], 37, 8, "translations", "X7EC01B437CC2B2C9" ], 
+  [ "\033[1X\033[33X\033[0;-2YSubquasigroups and Subloops\033[133X\033[101X", 
+      "2.3", [ 2, 3, 0 ], 62, 9, "subquasigroups and subloops", 
+      "X83EDF04F7952143F" ], 
+  [ "\033[1X\033[33X\033[0;-2YNilpotence and Solvability\033[133X\033[101X", 
+      "2.4", [ 2, 4, 0 ], 81, 9, "nilpotence and solvability", 
+      "X869CBCE381E2C422" ], 
+  [ "\033[1X\033[33X\033[0;-2YAssociators and Commutators\033[133X\033[101X", 
+      "2.5", [ 2, 5, 0 ], 95, 9, "associators and commutators", 
+      "X7E0849977869E53D" ], 
+  [ "\033[1X\033[33X\033[0;-2YHomomorphism and Homotopisms\033[133X\033[101X",
+      "2.6", [ 2, 6, 0 ], 110, 9, "homomorphism and homotopisms", 
+      "X791066ED7DD9F254" ], 
+  [ "\033[1X\033[33X\033[0;-2YHow the Package Works\033[133X\033[101X", "3", 
+      [ 3, 0, 0 ], 1, 11, "how the package works", "X7A6DF65E826B8CFF" ], 
+  [ "\033[1X\033[33X\033[0;-2YRepresenting Quasigroups\033[133X\033[101X", 
+      "3.1", [ 3, 1, 0 ], 18, 11, "representing quasigroups", 
+      "X86F02BBD87FEA1C6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YConversions between magmas, quasigroups, loops an\
+d groups\033[133X\033[101X", "3.2", [ 3, 2, 0 ], 48, 12, 
+      "conversions between magmas quasigroups loops and groups", 
+      "X807D76EF81B9D061" ], 
+  [ "\033[1X\033[33X\033[0;-2YCalculating with Quasigroups\033[133X\033[101X",
+      "3.3", [ 3, 3, 0 ], 80, 12, "calculating with quasigroups", 
+      "X87E49ED884FA6DC4" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YNaming, Viewing and Printing Quasigroups and thei\
+r Elements\033[133X\033[101X", "3.4", [ 3, 4, 0 ], 118, 13, 
+      "naming viewing and printing quasigroups and their elements", 
+      "X7D75C7A6787AF72A" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSetQuasigroupElmName and SetLoopElmName\033[133X\\
+033[101X", "3.4-1", [ 3, 4, 1 ], 139, 13, 
+      "setquasigroupelmname and setloopelmname", "X7A7EB1B579273D07" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCreating Quasigroups and Loops\033[133X\033[101X"
+        , "4", [ 4, 0, 0 ], 1, 14, "creating quasigroups and loops", 
+      "X7AA4B9C0877550ED" ], 
+  [ "\033[1X\033[33X\033[0;-2YAbout Cayley Tables\033[133X\033[101X", "4.1", 
+      [ 4, 1, 0 ], 7, 14, "about cayley tables", "X7DE8405B82BC36A9" ], 
+  [ "\033[1X\033[33X\033[0;-2YTesting Cayley Tables\033[133X\033[101X", 
+      "4.2", [ 4, 2, 0 ], 32, 14, "testing cayley tables", 
+      "X7827BF877AA87246" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIsQuasigroupTable and IsQuasigroupCayleyTable\\
+033[133X\033[101X", "4.2-1", [ 4, 2, 1 ], 35, 14, 
+      "isquasigrouptable and isquasigroupcayleytable", "X81179355869B9DFE" ], 
+  [ "\033[1X\033[33X\033[0;-2YIsLoopTable and IsLoopCayleyTable\033[133X\033[1\
+01X", "4.2-2", [ 4, 2, 2 ], 42, 14, "islooptable and isloopcayleytable", 
+      "X7AAE48507A471069" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCanonical and Normalized Cayley Tables\033[133X\\
+033[101X", "4.3", [ 4, 3, 0 ], 52, 15, 
+      "canonical and normalized cayley tables", "X7BA749CA7DB4EA87" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCreating Quasigroups and Loops From Cayley Tables\
+\033[133X\033[101X", "4.4", [ 4, 4, 0 ], 76, 15, 
+      "creating quasigroups and loops from cayley tables", 
+      "X7C2372BB8739C5A2" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YQuasigroupByCayleyTable and LoopByCayleyTable\\
+033[133X\033[101X", "4.4-1", [ 4, 4, 1 ], 79, 15, 
+      "quasigroupbycayleytable and loopbycayleytable", "X860135BB85F2DB19" ], 
+  [ "\033[1X\033[33X\033[0;-2YCreating Quasigroups and Loops from a File\033[1\
+33X\033[101X", "4.5", [ 4, 5, 0 ], 102, 15, 
+      "creating quasigroups and loops from a file", "X849944F17E2B37F8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YQuasigroupFromFile and LoopFromFile\033[133X\033[\
+101X", "4.5-1", [ 4, 5, 1 ], 170, 16, "quasigroupfromfile and loopfromfile", 
+      "X81A1DB918057933E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCreating Quasigroups and Loops From Sections\033[\
+133X\033[101X", "4.6", [ 4, 6, 0 ], 179, 17, 
+      "creating quasigroups and loops from sections", "X820E67F88319C38B" ], 
+  [ "\033[1X\033[33X\033[0;-2YQuasigroupByLeftSection and LoopByLeftSection\
+\033[133X\033[101X", "4.6-2", [ 4, 6, 2 ], 195, 17, 
+      "quasigroupbyleftsection and loopbyleftsection", "X7EC1EB0D7B8382A1" ], 
+  [ "\033[1X\033[33X\033[0;-2YQuasigroupByRightSection and LoopByRightSection\
+\033[133X\033[101X", "4.6-3", [ 4, 6, 3 ], 209, 17, 
+      "quasigroupbyrightsection and loopbyrightsection", "X80B436ED7CC0749E" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCreating Quasigroups and Loops From Folders\033[1\
+33X\033[101X", "4.7", [ 4, 7, 0 ], 228, 17, 
+      "creating quasigroups and loops from folders", "X85ABE99E84E5B0E8" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YQuasigroupByRightFolder and LoopByRightFolder\\
+033[133X\033[101X", "4.7-1", [ 4, 7, 1 ], 240, 18, 
+      "quasigroupbyrightfolder and loopbyrightfolder", "X83168E62861F70AB" ], 
+  [ "\033[1X\033[33X\033[0;-2YCreating Quasigroups and Loops By Nuclear Extens\
+ions\033[133X\033[101X", "4.8", [ 4, 8, 0 ], 260, 18, 
+      "creating quasigroups and loops by nuclear extensions", 
+      "X8759431780AC81A9" ], 
+  [ "\033[1X\033[33X\033[0;-2YRandom Quasigroups and Loops\033[133X\033[101X",
+      "4.9", [ 4, 9, 0 ], 304, 19, "random quasigroups and loops", 
+      "X7AE29A1A7AA5C25A" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YRandomQuasigroup and RandomLoop\033[133X\033[101X\
+", "4.9-1", [ 4, 9, 1 ], 329, 19, "randomquasigroup and randomloop", 
+      "X8271C0F5786B6FA9" ], 
+  [ "\033[1X\033[33X\033[0;-2YConversions\033[133X\033[101X", "4.10", 
+      [ 4, 10, 0 ], 358, 19, "conversions", "X7BC2D8877A943D74" ], 
+  [ "\033[1X\033[33X\033[0;-2YProducts of Loops\033[133X\033[101X", "4.11", 
+      [ 4, 11, 0 ], 416, 20, "products of loops", "X8328348F855B1482" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YOpposite Quasigroups and Loops\033[133X\033[101X"
+        , "4.12", [ 4, 12, 0 ], 426, 21, "opposite quasigroups and loops", 
+      "X7865FC8D7854C2E3" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YOpposite, OppositeQuasigroup and OppositeLoop\\
+033[133X\033[101X", "4.12-1", [ 4, 12, 1 ], 433, 21, 
+      "opposite oppositequasigroup and oppositeloop", "X87B6AED47EE2BCD3" ], 
+  [ "\033[1X\033[33X\033[0;-2YBasic Methods And Attributes\033[133X\033[101X",
+      "5", [ 5, 0, 0 ], 1, 22, "basic methods and attributes", 
+      "X7B9F619279641FAA" ], 
+  [ "\033[1X\033[33X\033[0;-2YBasic Attributes\033[133X\033[101X", "5.1", 
+      [ 5, 1, 0 ], 7, 22, "basic attributes", "X8373A7348161DB23" ], 
+  [ "\033[1X\033[33X\033[0;-2YBasic Arithmetic Operations\033[133X\033[101X", 
+      "5.2", [ 5, 2, 0 ], 52, 23, "basic arithmetic operations", 
+      "X82F2CA4A848ABD2B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLeftDivision and RightDivision\033[133X\033[101X"
+        , "5.2-1", [ 5, 2, 1 ], 66, 23, "leftdivision and rightdivision", 
+      "X7D5956967BCC1834" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLeftDivisionCayleyTable and RightDivisionCayleyTa\
+ble\033[133X\033[101X", "5.2-2", [ 5, 2, 2 ], 85, 23, 
+      "leftdivisioncayleytable and rightdivisioncayleytable", 
+      "X804F67C8796A0EB3" ], 
+  [ "\033[1X\033[33X\033[0;-2YPowers and Inverses\033[133X\033[101X", "5.3", 
+      [ 5, 3, 0 ], 93, 23, "powers and inverses", "X810850247ADB4EE9" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLeftInverse, RightInverse and Inverse\033[133X\\
+033[101X", "5.3-1", [ 5, 3, 1 ], 108, 24, 
+      "leftinverse rightinverse and inverse", "X805781838020CF44" ], 
+  [ "\033[1X\033[33X\033[0;-2YAssociators and Commutators\033[133X\033[101X", 
+      "5.4", [ 5, 4, 0 ], 130, 24, "associators and commutators", 
+      "X7E0849977869E53D" ], 
+  [ "\033[1X\033[33X\033[0;-2YGenerators\033[133X\033[101X", "5.5", 
+      [ 5, 5, 0 ], 145, 24, "generators", "X7BD5B55C802805B4" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGeneratorsOfQuasigroup and GeneratorsOfLoop\033[1\
+33X\033[101X", "5.5-1", [ 5, 5, 1 ], 148, 24, 
+      "generatorsofquasigroup and generatorsofloop", "X83944A777D161D10" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YMethods Based on Permutation Groups\033[133X\033[\
+101X", "6", [ 6, 0, 0 ], 1, 26, "methods based on permutation groups", 
+      "X794A04C5854D352B" ], 
+  [ "\033[1X\033[33X\033[0;-2YParent of a Quasigroup\033[133X\033[101X", 
+      "6.1", [ 6, 1, 0 ], 11, 26, "parent of a quasigroup", 
+      "X8731D818827C08F3" ], 
+  [ "\033[1X\033[33X\033[0;-2YSubquasigroups and Subloops\033[133X\033[101X", 
+      "6.2", [ 6, 2, 0 ], 62, 27, "subquasigroups and subloops", 
+      "X83EDF04F7952143F" ], 
+  [ "\033[1X\033[33X\033[0;-2YIsSubquasigroup and IsSubloop\033[133X\033[101X"
+        , "6.2-3", [ 6, 2, 3 ], 90, 27, "issubquasigroup and issubloop", 
+      "X87AC8B7E80CE9260" ], 
+  [ "\033[1X\033[33X\033[0;-2YTranslations and Sections\033[133X\033[101X", 
+      "6.3", [ 6, 3, 0 ], 125, 28, "translations and sections", 
+      "X78AA3D177CCA49FF" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLeftTranslation and RightTranslation\033[133X\\
+033[101X", "6.3-1", [ 6, 3, 1 ], 135, 28, 
+      "lefttranslation and righttranslation", "X7B45B48C7C4D6061" ], 
+  [ "\033[1X\033[33X\033[0;-2YLeftSection and RightSection\033[133X\033[101X",
+      "6.3-2", [ 6, 3, 2 ], 143, 28, "leftsection and rightsection", 
+      "X7EB9197C80FB4664" ], 
+  [ "\033[1X\033[33X\033[0;-2YMultiplication Groups\033[133X\033[101X", 
+      "6.4", [ 6, 4, 0 ], 182, 29, "multiplication groups", 
+      "X78ED50F578A88046" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLeftMutliplicationGroup, RightMultiplicationGroup\
+ and MultiplicationGroup\033[133X\033[101X", "6.4-1", [ 6, 4, 1 ], 185, 29, 
+      "leftmutliplicationgroup rightmultiplicationgroup and multiplicationgrou\
+p", "X87302BE983A5FC61" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YRelativeLeftMultiplicationGroup, RelativeRightMul\
+tiplicationGroup and RelativeMultiplicationGroup\033[133X\033[101X", "6.4-2", 
+      [ 6, 4, 2 ], 195, 29, 
+      "relativeleftmultiplicationgroup relativerightmultiplicationgroup and re\
+lativemultiplicationgroup", "X847256B779E1E7E5" ], 
+  [ "\033[1X\033[33X\033[0;-2YInner Mapping Groups\033[133X\033[101X", "6.5", 
+      [ 6, 5, 0 ], 212, 29, "inner mapping groups", "X8740D61178ACD217" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLeftInnerMapping, RightInnerMapping, MiddleInnerM\
+apping\033[133X\033[101X", "6.5-1", [ 6, 5, 1 ], 223, 30, 
+      "leftinnermapping rightinnermapping middleinnermapping", 
+      "X7EE1E78C856C6F7C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLeftInnerMappingGroup, RightInnerMappingGroup, Mi\
+ddleInnerMappingGroup\033[133X\033[101X", "6.5-2", [ 6, 5, 2 ], 232, 30, 
+      "leftinnermappinggroup rightinnermappinggroup middleinnermappinggroup", 
+      "X79CDA09A7D48BF2B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YNuclei, Commutant, Center, and Associator Subloop\
+\033[133X\033[101X", "6.6", [ 6, 6, 0 ], 260, 30, 
+      "nuclei commutant center and associator subloop", "X7B45C2AF7C2E28AB" ],
+  [ "\033[1X\033[33X\033[0;-2YLeftNucles, MiddleNucleus, and RightNucleus\033[\
+133X\033[101X", "6.6-1", [ 6, 6, 1 ], 265, 30, 
+      "leftnucles middlenucleus and rightnucleus", "X7DF536FC85BBD1D2" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YNuc, NucleusOfQuasigroup and NucleusOfLoop\033[13\
+3X\033[101X", "6.6-2", [ 6, 6, 2 ], 274, 30, 
+      "nuc nucleusofquasigroup and nucleusofloop", "X84D389677A91C290" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YNormal Subloops and Simple Loops\033[133X\033[101\
+X", "6.7", [ 6, 7, 0 ], 312, 31, "normal subloops and simple loops", 
+      "X85B650D284FE39F3" ], 
+  [ "\033[1X\033[33X\033[0;-2YFactor Loops\033[133X\033[101X", "6.8", 
+      [ 6, 8, 0 ], 338, 32, "factor loops", "X87F66DB383C29A4A" ], 
+  [ "\033[1X\033[33X\033[0;-2YNilpotency and Central Series\033[133X\033[101X"
+        , "6.9", [ 6, 9, 0 ], 365, 32, "nilpotency and central series", 
+      "X821F40748401D698" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSolvability, Derived Series and Frattini Subloop\\
+033[133X\033[101X", "6.10", [ 6, 10, 0 ], 403, 33, 
+      "solvability derived series and frattini subloop", "X83A38A6C7EDBCA63" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2YFrattiniSubloop and FrattinifactorSize\033[133X\\
+033[101X", "6.10-4", [ 6, 10, 4 ], 424, 33, 
+      "frattinisubloop and frattinifactorsize", "X85BD2C517FA7A47E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIsomorphisms and Automorphisms\033[133X\033[101X"
+        , "6.11", [ 6, 11, 0 ], 436, 33, "isomorphisms and automorphisms", 
+      "X81F3496578EAA74E" ], 
+  [ "\033[1X\033[33X\033[0;-2YIsotopisms\033[133X\033[101X", "6.12", 
+      [ 6, 12, 0 ], 508, 35, "isotopisms", "X7E996BDD81E594F9" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YTesting Properties of Quasigroups and Loops\033[1\
+33X\033[101X", "7", [ 7, 0, 0 ], 1, 36, 
+      "testing properties of quasigroups and loops", "X7910E575825C713E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAssociativity, Commutativity and Generalizations\\
+033[133X\033[101X", "7.1", [ 7, 1, 0 ], 16, 36, 
+      "associativity commutativity and generalizations", "X7960E3FB7A7F0F00" ]
+    , [ "\033[1X\033[33X\033[0;-2YInverse Propeties\033[133X\033[101X", 
+      "7.2", [ 7, 2, 0 ], 45, 37, "inverse propeties", "X853841C5820BFEA4" ], 
+  [ "\033[1X\033[33X\033[0;-2YHasLeftInverseProperty, HasRightInverseProperty \
+and HasInverseProperty\033[133X\033[101X", "7.2-1", [ 7, 2, 1 ], 52, 37, 
+      "hasleftinverseproperty hasrightinverseproperty and hasinverseproperty",
+      "X85EDD10586596458" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSome Properties of Quasigroups\033[133X\033[101X"
+        , "7.3", [ 7, 3, 0 ], 101, 38, "some properties of quasigroups", 
+      "X7D8CB6DA828FD744" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIsLeftDistributive, IsRightDistributive, IsDistri\
+butive\033[133X\033[101X", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "isleftdistributive isrightdistributive isdistributive", 
+      "X7B76FD6E878ED4F1" ], 
+  [ "\033[1X\033[33X\033[0;-2YIsEntropic and IsMedial\033[133X\033[101X", 
+      "7.3-7", [ 7, 3, 7 ], 159, 39, "isentropic and ismedial", 
+      "X7F23D4D97A38D223" ], 
+  [ "\033[1X\033[33X\033[0;-2YLoops of Bol Moufang Type\033[133X\033[101X", 
+      "7.4", [ 7, 4, 0 ], 169, 39, "loops of bol moufang type", 
+      "X780D907986EBA6C7" ], 
+  [ "\033[1X\033[33X\033[0;-2YPower Alternative Loops\033[133X\033[101X", 
+      "7.5", [ 7, 5, 0 ], 323, 42, "power alternative loops", 
+      "X83A501387E1AC371" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIsLeftPowerAlternative, IsRightPowerAlternative a\
+nd IsPowerAlternative\033[133X\033[101X", "7.5-1", [ 7, 5, 1 ], 336, 42, 
+      "isleftpoweralternative isrightpoweralternative and ispoweralternative",
+      "X875C3DF681B3FAE2" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YConjugacy Closed Loops and Related Properties\\
+033[133X\033[101X", "7.6", [ 7, 6, 0 ], 345, 42, 
+      "conjugacy closed loops and related properties", "X8176B2C47A4629CD" ], 
+  [ "\033[1X\033[33X\033[0;-2YAutomorphic Loops\033[133X\033[101X", "7.7", 
+      [ 7, 7, 0 ], 383, 43, "automorphic loops", "X793B22EA8643C667" ], 
+  [ "\033[1X\033[33X\033[0;-2YAdditonal Varieties of Loops\033[133X\033[101X",
+      "7.8", [ 7, 8, 0 ], 425, 43, "additonal varieties of loops", 
+      "X846F363879BAB349" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIsLeftBruckLoop and IsLeftKLoop\033[133X\033[101X\
+", "7.8-3", [ 7, 8, 3 ], 444, 44, "isleftbruckloop and isleftkloop", 
+      "X85F1BD4280E44F5B" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIsRightBruckLoop and IsRightKLoop\033[133X\033[10\
+1X", "7.8-4", [ 7, 8, 4 ], 454, 44, "isrightbruckloop and isrightkloop", 
+      "X857B373E7B4E0519" ], 
+  [ "\033[1X\033[33X\033[0;-2YSpecific Methods\033[133X\033[101X", "8", 
+      [ 8, 0, 0 ], 1, 45, "specific methods", "X85AFC9C47FD3C03F" ], 
+  [ "\033[1X\033[33X\033[0;-2YCore Methods for Bol Loops\033[133X\033[101X", 
+      "8.1", [ 8, 1, 0 ], 7, 45, "core methods for bol loops", 
+      "X7990F2F880E717EE" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAssociatedLeftBruckLoop and AssociatedRightBruckL\
+oop\033[133X\033[101X", "8.1-1", [ 8, 1, 1 ], 10, 45, 
+      "associatedleftbruckloop and associatedrightbruckloop", 
+      "X8664CA927DD73DBE" ], 
+  [ "\033[1X\033[33X\033[0;-2YMoufang Modifications\033[133X\033[101X", 
+      "8.2", [ 8, 2, 0 ], 47, 46, "moufang modifications", 
+      "X819F82737C2A860D" ], 
+  [ "\033[1X\033[33X\033[0;-2YTriality for Moufang Loops\033[133X\033[101X", 
+      "8.3", [ 8, 3, 0 ], 98, 46, "triality for moufang loops", 
+      "X83E73A767D79FAFD" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YRealizing Groups as Multiplication Groups of Loop\
+s\033[133X\033[101X", "8.4", [ 8, 4, 0 ], 127, 47, 
+      "realizing groups as multiplication groups of loops", 
+      "X841ED66B8084AA73" ], 
+  [ "\033[1X\033[33X\033[0;-2YLibraries of Loops\033[133X\033[101X", "9", 
+      [ 9, 0, 0 ], 1, 49, "libraries of loops", "X7BF3EE6E7953560D" ], 
+  [ "\033[1X\033[33X\033[0;-2YA Typical Library\033[133X\033[101X", "9.1", 
+      [ 9, 1, 0 ], 7, 49, "a typical library", "X874DFEAA79B3377C" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLeft Bol Loops and Right Bol Loops\033[133X\033[1\
+01X", "9.2", [ 9, 2, 0 ], 54, 50, "left bol loops and right bol loops", 
+      "X7DF21BD685FBF258" ], 
+  [ "\033[1X\033[33X\033[0;-2YMoufang Loops\033[133X\033[101X", "9.3", 
+      [ 9, 3, 0 ], 80, 50, "moufang loops", "X7953702D84E60AF4" ], 
+  [ "\033[1X\033[33X\033[0;-2YCode Loops\033[133X\033[101X", "9.4", 
+      [ 9, 4, 0 ], 109, 51, "code loops", "X7BCA6BCB847F79DC" ], 
+  [ "\033[1X\033[33X\033[0;-2YSteiner Loops\033[133X\033[101X", "9.5", 
+      [ 9, 5, 0 ], 122, 51, "steiner loops", "X84E941EE7846D3EE" ], 
+  [ "\033[1X\033[33X\033[0;-2YConjugacy Closed Loops\033[133X\033[101X", 
+      "9.6", [ 9, 6, 0 ], 149, 51, "conjugacy closed loops", 
+      "X867E5F0783FEB8B5" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YRCCLoop and RightConjugacyClosedLoop\033[133X\\
+033[101X", "9.6-1", [ 9, 6, 1 ], 173, 52, 
+      "rccloop and rightconjugacyclosedloop", "X806B2DE67990E42F" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLCCLoop and LeftConjugacyClosedLoop\033[133X\033[\
+101X", "9.6-2", [ 9, 6, 2 ], 180, 52, "lccloop and leftconjugacyclosedloop", 
+      "X80AB8B107D55FB19" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCCLoop and ConjugacyClosedLoop\033[133X\033[101X"
+        , "9.6-3", [ 9, 6, 3 ], 217, 52, "ccloop and conjugacyclosedloop", 
+      "X798BC601843E8916" ], 
+  [ "\033[1X\033[33X\033[0;-2YSmall Loops\033[133X\033[101X", "9.7", 
+      [ 9, 7, 0 ], 224, 52, "small loops", "X7E3A8F2C790F2CA1" ], 
+  [ "\033[1X\033[33X\033[0;-2YPaige Loops\033[133X\033[101X", "9.8", 
+      [ 9, 8, 0 ], 235, 53, "paige loops", "X8135C8FD8714C606" ], 
+  [ "\033[1X\033[33X\033[0;-2YNilpotent Loops\033[133X\033[101X", "9.9", 
+      [ 9, 9, 0 ], 250, 53, "nilpotent loops", "X86695C577A4D1784" ], 
+  [ "\033[1X\033[33X\033[0;-2YAutomorphic Loops\033[133X\033[101X", "9.10", 
+      [ 9, 10, 0 ], 266, 53, "automorphic loops", "X793B22EA8643C667" ], 
+  [ "\033[1X\033[33X\033[0;-2YInteresting Loops\033[133X\033[101X", "9.11", 
+      [ 9, 11, 0 ], 278, 53, "interesting loops", "X843BD73F788049F7" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YLibraries of Loops Up To Isotopism\033[133X\033[1\
+01X", "9.12", [ 9, 12, 0 ], 293, 54, "libraries of loops up to isotopism", 
+      "X864839227D5C0A90" ], 
+  [ "\033[1X\033[33X\033[0;-2YFiles\033[133X\033[101X", "a", [ "A", 0, 0 ], 
+      1, 55, "files", "X7BC4571A79FFB7D0" ], 
+  [ "\033[1X\033[33X\033[0;-2YFilters\033[133X\033[101X", "b", [ "B", 0, 0 ], 
+      1, 57, "filters", "X84EFA4C07D4277BB" ], 
+  [ "Bibliography", "bib", [ "Bib", 0, 0 ], 1, 60, "bibliography", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "References", "bib", [ "Bib", 0, 0 ], 1, 60, "references", 
+      "X7A6F98FD85F02BFE" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 62, "index", "X83A0356F839C696F" ], 
+  [ "groupoid", "2.1", [ 2, 1, 0 ], 11, 8, "groupoid", "X80243DE5826583B8" ], 
+  [ "magma", "2.1", [ 2, 1, 0 ], 11, 8, "magma", "X80243DE5826583B8" ], 
+  [ "neutral element", "2.1", [ 2, 1, 0 ], 11, 8, "neutral element", 
+      "X80243DE5826583B8" ], 
+  [ "identity element", "2.1", [ 2, 1, 0 ], 11, 8, "identity element", 
+      "X80243DE5826583B8" ], 
+  [ "inverse two-sided", "2.1", [ 2, 1, 0 ], 11, 8, "inverse two-sided", 
+      "X80243DE5826583B8" ], 
+  [ "group", "2.1", [ 2, 1, 0 ], 11, 8, "group", "X80243DE5826583B8" ], 
+  [ "quasigroup", "2.1", [ 2, 1, 0 ], 11, 8, "quasigroup", 
+      "X80243DE5826583B8" ], 
+  [ "latin square", "2.1", [ 2, 1, 0 ], 11, 8, "latin square", 
+      "X80243DE5826583B8" ], 
+  [ "loop", "2.1", [ 2, 1, 0 ], 11, 8, "loop", "X80243DE5826583B8" ], 
+  [ "translation left", "2.2", [ 2, 2, 0 ], 37, 8, "translation left", 
+      "X7EC01B437CC2B2C9" ], 
+  [ "translation right", "2.2", [ 2, 2, 0 ], 37, 8, "translation right", 
+      "X7EC01B437CC2B2C9" ], 
+  [ "division left", "2.2", [ 2, 2, 0 ], 37, 8, "division left", 
+      "X7EC01B437CC2B2C9" ], 
+  [ "division right", "2.2", [ 2, 2, 0 ], 37, 8, "division right", 
+      "X7EC01B437CC2B2C9" ], 
+  [ "section left", "2.2", [ 2, 2, 0 ], 37, 8, "section left", 
+      "X7EC01B437CC2B2C9" ], 
+  [ "section right", "2.2", [ 2, 2, 0 ], 37, 8, "section right", 
+      "X7EC01B437CC2B2C9" ], 
+  [ "multiplication group left", "2.2", [ 2, 2, 0 ], 37, 8, 
+      "multiplication group left", "X7EC01B437CC2B2C9" ], 
+  [ "multiplication group right", "2.2", [ 2, 2, 0 ], 37, 8, 
+      "multiplication group right", "X7EC01B437CC2B2C9" ], 
+  [ "multiplication group", "2.2", [ 2, 2, 0 ], 37, 8, "multiplication group",
+      "X7EC01B437CC2B2C9" ], 
+  [ "inner mapping group left", "2.2", [ 2, 2, 0 ], 37, 8, 
+      "inner mapping group left", "X7EC01B437CC2B2C9" ], 
+  [ "inner mapping group right", "2.2", [ 2, 2, 0 ], 37, 8, 
+      "inner mapping group right", "X7EC01B437CC2B2C9" ], 
+  [ "inner mapping group", "2.2", [ 2, 2, 0 ], 37, 8, "inner mapping group", 
+      "X7EC01B437CC2B2C9" ], 
+  [ "subquasigroup", "2.3", [ 2, 3, 0 ], 62, 9, "subquasigroup", 
+      "X83EDF04F7952143F" ], 
+  [ "subloop", "2.3", [ 2, 3, 0 ], 62, 9, "subloop", "X83EDF04F7952143F" ], 
+  [ "nucleus left", "2.3", [ 2, 3, 0 ], 62, 9, "nucleus left", 
+      "X83EDF04F7952143F" ], 
+  [ "nucleus middle", "2.3", [ 2, 3, 0 ], 62, 9, "nucleus middle", 
+      "X83EDF04F7952143F" ], 
+  [ "nucleus right", "2.3", [ 2, 3, 0 ], 62, 9, "nucleus right", 
+      "X83EDF04F7952143F" ], 
+  [ "nucleus", "2.3", [ 2, 3, 0 ], 62, 9, "nucleus", "X83EDF04F7952143F" ], 
+  [ "commutant", "2.3", [ 2, 3, 0 ], 62, 9, "commutant", "X83EDF04F7952143F" ]
+    , [ "center", "2.3", [ 2, 3, 0 ], 62, 9, "center", "X83EDF04F7952143F" ], 
+  [ "subloop normal", "2.3", [ 2, 3, 0 ], 62, 9, "subloop normal", 
+      "X83EDF04F7952143F" ], 
+  [ "nilpotence class", "2.4", [ 2, 4, 0 ], 81, 9, "nilpotence class", 
+      "X869CBCE381E2C422" ], 
+  [ "nilpotent loop", "2.4", [ 2, 4, 0 ], 81, 9, "nilpotent loop", 
+      "X869CBCE381E2C422" ], 
+  [ "loop nilpotent", "2.4", [ 2, 4, 0 ], 81, 9, "loop nilpotent", 
+      "X869CBCE381E2C422" ], 
+  [ "central series upper", "2.4", [ 2, 4, 0 ], 81, 9, "central series upper",
+      "X869CBCE381E2C422" ], 
+  [ "derived subloop", "2.4", [ 2, 4, 0 ], 81, 9, "derived subloop", 
+      "X869CBCE381E2C422" ], 
+  [ "solvability class", "2.4", [ 2, 4, 0 ], 81, 9, "solvability class", 
+      "X869CBCE381E2C422" ], 
+  [ "solvable loop", "2.4", [ 2, 4, 0 ], 81, 9, "solvable loop", 
+      "X869CBCE381E2C422" ], 
+  [ "loop solvable", "2.4", [ 2, 4, 0 ], 81, 9, "loop solvable", 
+      "X869CBCE381E2C422" ], 
+  [ "derived series", "2.4", [ 2, 4, 0 ], 81, 9, "derived series", 
+      "X869CBCE381E2C422" ], 
+  [ "commutator", "2.5", [ 2, 5, 0 ], 95, 9, "commutator", 
+      "X7E0849977869E53D" ], 
+  [ "associator", "2.5", [ 2, 5, 0 ], 95, 9, "associator", 
+      "X7E0849977869E53D" ], 
+  [ "associator subloop", "2.5", [ 2, 5, 0 ], 95, 9, "associator subloop", 
+      "X7E0849977869E53D" ], 
+  [ "homomorphism", "2.6", [ 2, 6, 0 ], 110, 9, "homomorphism", 
+      "X791066ED7DD9F254" ], 
+  [ "isomorphism", "2.6", [ 2, 6, 0 ], 110, 9, "isomorphism", 
+      "X791066ED7DD9F254" ], 
+  [ "homotopism", "2.6", [ 2, 6, 0 ], 110, 9, "homotopism", 
+      "X791066ED7DD9F254" ], 
+  [ "isotopism", "2.6", [ 2, 6, 0 ], 110, 9, "isotopism", "X791066ED7DD9F254" 
+     ], 
+  [ "isotopism principal", "2.6", [ 2, 6, 0 ], 110, 9, "isotopism principal", 
+      "X791066ED7DD9F254" ], 
+  [ "loop isotope principal", "2.6", [ 2, 6, 0 ], 110, 9, 
+      "loop isotope principal", "X791066ED7DD9F254" ], 
+  [ "IsQuasigroupElement", "3.1", [ 3, 1, 0 ], 18, 11, "isquasigroupelement", 
+      "X86F02BBD87FEA1C6" ], 
+  [ "IsLoopElement", "3.1", [ 3, 1, 0 ], 18, 11, "isloopelement", 
+      "X86F02BBD87FEA1C6" ], 
+  [ "IsQuasigroup", "3.1", [ 3, 1, 0 ], 18, 11, "isquasigroup", 
+      "X86F02BBD87FEA1C6" ], 
+  [ "IsLoop", "3.1", [ 3, 1, 0 ], 18, 11, "isloop", "X86F02BBD87FEA1C6" ], 
+  [ "Bol loop left", "3.3", [ 3, 3, 0 ], 80, 12, "bol loop left", 
+      "X87E49ED884FA6DC4" ], 
+  [ "loop left Bol", "3.3", [ 3, 3, 0 ], 80, 12, "loop left bol", 
+      "X87E49ED884FA6DC4" ], 
+  [ "simple loop", "3.3", [ 3, 3, 0 ], 80, 12, "simple loop", 
+      "X87E49ED884FA6DC4" ], 
+  [ "loop simple", "3.3", [ 3, 3, 0 ], 80, 12, "loop simple", 
+      "X87E49ED884FA6DC4" ], 
+  [ "\033[2XSetQuasigroupElmName\033[102X", "3.4-1", [ 3, 4, 1 ], 139, 13, 
+      "setquasigroupelmname", "X7A7EB1B579273D07" ], 
+  [ "\033[2XSetLoopElmName\033[102X", "3.4-1", [ 3, 4, 1 ], 139, 13, 
+      "setloopelmname", "X7A7EB1B579273D07" ], 
+  [ "Cayley table", "4.1", [ 4, 1, 0 ], 7, 14, "cayley table", 
+      "X7DE8405B82BC36A9" ], 
+  [ "multiplication table", "4.1", [ 4, 1, 0 ], 7, 14, "multiplication table",
+      "X7DE8405B82BC36A9" ], 
+  [ "quasigroup table", "4.1", [ 4, 1, 0 ], 7, 14, "quasigroup table", 
+      "X7DE8405B82BC36A9" ], 
+  [ "latin square", "4.1", [ 4, 1, 0 ], 7, 14, "latin square", 
+      "X7DE8405B82BC36A9" ], 
+  [ "loop table", "4.1", [ 4, 1, 0 ], 7, 14, "loop table", 
+      "X7DE8405B82BC36A9" ], 
+  [ "\033[2XIsQuasigroupTable\033[102X", "4.2-1", [ 4, 2, 1 ], 35, 14, 
+      "isquasigrouptable", "X81179355869B9DFE" ], 
+  [ "\033[2XIsQuasigroupCayleyTable\033[102X", "4.2-1", [ 4, 2, 1 ], 35, 14, 
+      "isquasigroupcayleytable", "X81179355869B9DFE" ], 
+  [ "\033[2XIsLoopTable\033[102X", "4.2-2", [ 4, 2, 2 ], 42, 14, 
+      "islooptable", "X7AAE48507A471069" ], 
+  [ "\033[2XIsLoopCayleyTable\033[102X", "4.2-2", [ 4, 2, 2 ], 42, 14, 
+      "isloopcayleytable", "X7AAE48507A471069" ], 
+  [ "\033[2XCanonicalCayleyTable\033[102X", "4.3-1", [ 4, 3, 1 ], 55, 15, 
+      "canonicalcayleytable", "X7971CCB87DAFF7B9" ], 
+  [ "Cayley table canonical", "4.3-1", [ 4, 3, 1 ], 55, 15, 
+      "cayley table canonical", "X7971CCB87DAFF7B9" ], 
+  [ "\033[2XNormalizedQuasigroupTable\033[102X", "4.3-2", [ 4, 3, 2 ], 65, 
+      15, "normalizedquasigrouptable", "X821A2F9E85FAD8BF" ], 
+  [ "\033[2XQuasigroupByCayleyTable\033[102X", "4.4-1", [ 4, 4, 1 ], 79, 15, 
+      "quasigroupbycayleytable", "X860135BB85F2DB19" ], 
+  [ "\033[2XLoopByCayleyTable\033[102X", "4.4-1", [ 4, 4, 1 ], 79, 15, 
+      "loopbycayleytable", "X860135BB85F2DB19" ], 
+  [ "\033[2XQuasigroupFromFile\033[102X", "4.5-1", [ 4, 5, 1 ], 170, 16, 
+      "quasigroupfromfile", "X81A1DB918057933E" ], 
+  [ "\033[2XLoopFromFile\033[102X", "4.5-1", [ 4, 5, 1 ], 170, 16, 
+      "loopfromfile", "X81A1DB918057933E" ], 
+  [ "\033[2XCayleyTableByPerms\033[102X", "4.6-1", [ 4, 6, 1 ], 182, 17, 
+      "cayleytablebyperms", "X7F94C8DD7E1A3470" ], 
+  [ "\033[2XQuasigroupByLeftSection\033[102X", "4.6-2", [ 4, 6, 2 ], 195, 17, 
+      "quasigroupbyleftsection", "X7EC1EB0D7B8382A1" ], 
+  [ "\033[2XLoopByLeftSection\033[102X", "4.6-2", [ 4, 6, 2 ], 195, 17, 
+      "loopbyleftsection", "X7EC1EB0D7B8382A1" ], 
+  [ "\033[2XQuasigroupByRightSection\033[102X", "4.6-3", [ 4, 6, 3 ], 209, 
+      17, "quasigroupbyrightsection", "X80B436ED7CC0749E" ], 
+  [ "\033[2XLoopByRightSection\033[102X", "4.6-3", [ 4, 6, 3 ], 209, 17, 
+      "loopbyrightsection", "X80B436ED7CC0749E" ], 
+  [ "folder quasigroup", "4.7", [ 4, 7, 0 ], 228, 17, "folder quasigroup", 
+      "X85ABE99E84E5B0E8" ], 
+  [ "\033[2XQuasigroupByRightFolder\033[102X", "4.7-1", [ 4, 7, 1 ], 240, 18, 
+      "quasigroupbyrightfolder", "X83168E62861F70AB" ], 
+  [ "\033[2XLoopByRightFolder\033[102X", "4.7-1", [ 4, 7, 1 ], 240, 18, 
+      "loopbyrightfolder", "X83168E62861F70AB" ], 
+  [ "extension", "4.8", [ 4, 8, 0 ], 260, 18, "extension", 
+      "X8759431780AC81A9" ], 
+  [ "extension nuclear", "4.8", [ 4, 8, 0 ], 260, 18, "extension nuclear", 
+      "X8759431780AC81A9" ], 
+  [ "cocycle", "4.8", [ 4, 8, 0 ], 260, 18, "cocycle", "X8759431780AC81A9" ], 
+  [ "\033[2XNuclearExtension\033[102X", "4.8-1", [ 4, 8, 1 ], 274, 18, 
+      "nuclearextension", "X784733C67AA6B2FA" ], 
+  [ "\033[2XLoopByExtension\033[102X", "4.8-2", [ 4, 8, 2 ], 285, 18, 
+      "loopbyextension", "X79AEE93E7E15B802" ], 
+  [ "latin square random", "4.9", [ 4, 9, 0 ], 304, 19, "latin square random",
+      "X7AE29A1A7AA5C25A" ], 
+  [ "\033[2XRandomQuasigroup\033[102X", "4.9-1", [ 4, 9, 1 ], 329, 19, 
+      "randomquasigroup", "X8271C0F5786B6FA9" ], 
+  [ "\033[2XRandomLoop\033[102X", "4.9-1", [ 4, 9, 1 ], 329, 19, 
+      "randomloop", "X8271C0F5786B6FA9" ], 
+  [ "\033[2XRandomNilpotentLoop\033[102X", "4.9-2", [ 4, 9, 2 ], 341, 19, 
+      "randomnilpotentloop", "X817132C887D3FD3A" ], 
+  [ "loop nilpotent", "4.9-2", [ 4, 9, 2 ], 341, 19, "loop nilpotent", 
+      "X817132C887D3FD3A" ], 
+  [ "\033[2XIntoQuasigroup\033[102X", "4.10-1", [ 4, 10, 1 ], 373, 20, 
+      "intoquasigroup", "X84575A4B78CC545E" ], 
+  [ "\033[2XPrincipalLoopIsotope\033[102X", "4.10-2", [ 4, 10, 2 ], 380, 20, 
+      "principalloopisotope", "X79CEA57C850C7070" ], 
+  [ "\033[2XIntoLoop\033[102X", "4.10-3", [ 4, 10, 3 ], 392, 20, "intoloop", 
+      "X7A59C36683118E5A" ], 
+  [ "\033[2XIntoGroup\033[102X", "4.10-4", [ 4, 10, 4 ], 407, 20, 
+      "intogroup", "X7B5C6C64831B866E" ], 
+  [ "\033[2XDirectProduct\033[102X", "4.11-1", [ 4, 11, 1 ], 419, 20, 
+      "directproduct", "X861BA02C7902A4F4" ], 
+  [ "opposite quasigroup", "4.12", [ 4, 12, 0 ], 426, 21, 
+      "opposite quasigroup", "X7865FC8D7854C2E3" ], 
+  [ "quasigroup opposite", "4.12", [ 4, 12, 0 ], 426, 21, 
+      "quasigroup opposite", "X7865FC8D7854C2E3" ], 
+  [ "\033[2XOpposite\033[102X", "4.12-1", [ 4, 12, 1 ], 433, 21, "opposite", 
+      "X87B6AED47EE2BCD3" ], 
+  [ "\033[2XOppositeQuasigroup\033[102X", "4.12-1", [ 4, 12, 1 ], 433, 21, 
+      "oppositequasigroup", "X87B6AED47EE2BCD3" ], 
+  [ "\033[2XOppositeLoop\033[102X", "4.12-1", [ 4, 12, 1 ], 433, 21, 
+      "oppositeloop", "X87B6AED47EE2BCD3" ], 
+  [ "\033[2XElements\033[102X", "5.1-1", [ 5, 1, 1 ], 14, 22, "elements", 
+      "X79B130FC7906FB4C" ], 
+  [ "\033[2XCayleyTable\033[102X", "5.1-2", [ 5, 1, 2 ], 21, 22, 
+      "cayleytable", "X85457FA27DE7114D" ], 
+  [ "\033[2XOne\033[102X", "5.1-3", [ 5, 1, 3 ], 28, 22, "one", 
+      "X8129A6877FFD804B" ], 
+  [ "\033[2XSize\033[102X", "5.1-4", [ 5, 1, 4 ], 37, 22, "size", 
+      "X858ADA3B7A684421" ], 
+  [ "\033[2XExponent\033[102X", "5.1-5", [ 5, 1, 5 ], 42, 23, "exponent", 
+      "X7D44470C7DA59C1C" ], 
+  [ "loop power associative", "5.1-5", [ 5, 1, 5 ], 42, 23, 
+      "loop power associative", "X7D44470C7DA59C1C" ], 
+  [ "power associative loop", "5.1-5", [ 5, 1, 5 ], 42, 23, 
+      "power associative loop", "X7D44470C7DA59C1C" ], 
+  [ "exponent", "5.1-5", [ 5, 1, 5 ], 42, 23, "exponent", "X7D44470C7DA59C1C" 
+     ], [ "\033[2XLeftDivision\033[102X", "5.2-1", [ 5, 2, 1 ], 66, 23, 
+      "leftdivision", "X7D5956967BCC1834" ], 
+  [ "\033[2XRightDivision\033[102X", "5.2-1", [ 5, 2, 1 ], 66, 23, 
+      "rightdivision", "X7D5956967BCC1834" ], 
+  [ "\033[2XLeftDivision\033[102X", "5.2-1", [ 5, 2, 1 ], 66, 23, 
+      "leftdivision", "X7D5956967BCC1834" ], 
+  [ "\033[2XLeftDivision\033[102X", "5.2-1", [ 5, 2, 1 ], 66, 23, 
+      "leftdivision", "X7D5956967BCC1834" ], 
+  [ "\033[2XRightDivision\033[102X", "5.2-1", [ 5, 2, 1 ], 66, 23, 
+      "rightdivision", "X7D5956967BCC1834" ], 
+  [ "\033[2XRightDivision\033[102X", "5.2-1", [ 5, 2, 1 ], 66, 23, 
+      "rightdivision", "X7D5956967BCC1834" ], 
+  [ "\033[2XLeftDivisionCayleyTable\033[102X", "5.2-2", [ 5, 2, 2 ], 85, 23, 
+      "leftdivisioncayleytable", "X804F67C8796A0EB3" ], 
+  [ "\033[2XRightDivisionCayleyTable\033[102X", "5.2-2", [ 5, 2, 2 ], 85, 23, 
+      "rightdivisioncayleytable", "X804F67C8796A0EB3" ], 
+  [ "inverse left", "5.3", [ 5, 3, 0 ], 93, 23, "inverse left", 
+      "X810850247ADB4EE9" ], 
+  [ "inverse right", "5.3", [ 5, 3, 0 ], 93, 23, "inverse right", 
+      "X810850247ADB4EE9" ], 
+  [ "inverse", "5.3", [ 5, 3, 0 ], 93, 23, "inverse", "X810850247ADB4EE9" ], 
+  [ "\033[2XLeftInverse\033[102X", "5.3-1", [ 5, 3, 1 ], 108, 24, 
+      "leftinverse", "X805781838020CF44" ], 
+  [ "\033[2XRightInverse\033[102X", "5.3-1", [ 5, 3, 1 ], 108, 24, 
+      "rightinverse", "X805781838020CF44" ], 
+  [ "\033[2XInverse\033[102X", "5.3-1", [ 5, 3, 1 ], 108, 24, "inverse", 
+      "X805781838020CF44" ], 
+  [ "\033[2XAssociator\033[102X", "5.4-1", [ 5, 4, 1 ], 135, 24, 
+      "associator", "X82B7448879B91F7B" ], 
+  [ "\033[2XCommutator\033[102X", "5.4-2", [ 5, 4, 2 ], 140, 24, 
+      "commutator", "X7D624A9587FB1FE5" ], 
+  [ "\033[2XGeneratorsOfQuasigroup\033[102X", "5.5-1", [ 5, 5, 1 ], 148, 24, 
+      "generatorsofquasigroup", "X83944A777D161D10" ], 
+  [ "\033[2XGeneratorsOfLoop\033[102X", "5.5-1", [ 5, 5, 1 ], 148, 24, 
+      "generatorsofloop", "X83944A777D161D10" ], 
+  [ "\033[2XGeneratorsSmallest\033[102X", "5.5-2", [ 5, 5, 2 ], 160, 25, 
+      "generatorssmallest", "X82FD78AF7F80A0E2" ], 
+  [ "\033[2XParent\033[102X", "6.1-1", [ 6, 1, 1 ], 19, 26, "parent", 
+      "X7BC856CC7F116BB0" ], 
+  [ "\033[2XPosition\033[102X", "6.1-2", [ 6, 1, 2 ], 29, 26, "position", 
+      "X79975EC6783B4293" ], 
+  [ "\033[2XPosInParent\033[102X", "6.1-3", [ 6, 1, 3 ], 48, 27, 
+      "posinparent", "X832295DE866E44EE" ], 
+  [ "\033[2XSubquasigroup\033[102X", "6.2-1", [ 6, 2, 1 ], 65, 27, 
+      "subquasigroup", "X7DD511FF864FCDFF" ], 
+  [ "\033[2XSubloop\033[102X", "6.2-2", [ 6, 2, 2 ], 84, 27, "subloop", 
+      "X84E6744E804AE830" ], 
+  [ "\033[2XIsSubquasigroup\033[102X", "6.2-3", [ 6, 2, 3 ], 90, 27, 
+      "issubquasigroup", "X87AC8B7E80CE9260" ], 
+  [ "\033[2XIsSubloop\033[102X", "6.2-3", [ 6, 2, 3 ], 90, 27, "issubloop", 
+      "X87AC8B7E80CE9260" ], 
+  [ "\033[2XAllSubloops\033[102X", "6.2-4", [ 6, 2, 4 ], 100, 27, 
+      "allsubloops", "X81EF252585592001" ], 
+  [ "\033[2XRightCosets\033[102X", "6.2-5", [ 6, 2, 5 ], 105, 28, 
+      "rightcosets", "X835F48248571364F" ], 
+  [ "coset", "6.2-5", [ 6, 2, 5 ], 105, 28, "coset", "X835F48248571364F" ], 
+  [ "\033[2XRightTransversal\033[102X", "6.2-6", [ 6, 2, 6 ], 115, 28, 
+      "righttransversal", "X85C65D06822E716F" ], 
+  [ "transversal", "6.2-6", [ 6, 2, 6 ], 115, 28, "transversal", 
+      "X85C65D06822E716F" ], 
+  [ "\033[2XLeftTranslation\033[102X", "6.3-1", [ 6, 3, 1 ], 135, 28, 
+      "lefttranslation", "X7B45B48C7C4D6061" ], 
+  [ "\033[2XRightTranslation\033[102X", "6.3-1", [ 6, 3, 1 ], 135, 28, 
+      "righttranslation", "X7B45B48C7C4D6061" ], 
+  [ "\033[2XLeftSection\033[102X", "6.3-2", [ 6, 3, 2 ], 143, 28, 
+      "leftsection", "X7EB9197C80FB4664" ], 
+  [ "\033[2XRightSection\033[102X", "6.3-2", [ 6, 3, 2 ], 143, 28, 
+      "rightsection", "X7EB9197C80FB4664" ], 
+  [ "\033[2XLeftMultiplicationGroup\033[102X", "6.4-1", [ 6, 4, 1 ], 185, 29, 
+      "leftmultiplicationgroup", "X87302BE983A5FC61" ], 
+  [ "\033[2XRightMultiplicationGroup\033[102X", "6.4-1", [ 6, 4, 1 ], 185, 
+      29, "rightmultiplicationgroup", "X87302BE983A5FC61" ], 
+  [ "\033[2XMultiplicationGroup\033[102X", "6.4-1", [ 6, 4, 1 ], 185, 29, 
+      "multiplicationgroup", "X87302BE983A5FC61" ], 
+  [ "\033[2XRelativeLeftMultiplicationGroup\033[102X", "6.4-2", [ 6, 4, 2 ], 
+      195, 29, "relativeleftmultiplicationgroup", "X847256B779E1E7E5" ], 
+  [ "\033[2XRelativeRightMultiplicationGroup\033[102X", "6.4-2", [ 6, 4, 2 ], 
+      195, 29, "relativerightmultiplicationgroup", "X847256B779E1E7E5" ], 
+  [ "\033[2XRelativeMultiplicationGroup\033[102X", "6.4-2", [ 6, 4, 2 ], 195, 
+      29, "relativemultiplicationgroup", "X847256B779E1E7E5" ], 
+  [ "multiplication group relative left", "6.4-2", [ 6, 4, 2 ], 195, 29, 
+      "multiplication group relative left", "X847256B779E1E7E5" ], 
+  [ "multiplication group relative right ", "6.4-2", [ 6, 4, 2 ], 195, 29, 
+      "multiplication group relative right", "X847256B779E1E7E5" ], 
+  [ "multiplication group relative", "6.4-2", [ 6, 4, 2 ], 195, 29, 
+      "multiplication group relative", "X847256B779E1E7E5" ], 
+  [ "inner mapping left", "6.5", [ 6, 5, 0 ], 212, 29, "inner mapping left", 
+      "X8740D61178ACD217" ], 
+  [ "inner mapping right", "6.5", [ 6, 5, 0 ], 212, 29, "inner mapping right",
+      "X8740D61178ACD217" ], 
+  [ "conjugation", "6.5", [ 6, 5, 0 ], 212, 29, "conjugation", 
+      "X8740D61178ACD217" ], 
+  [ "inner mapping middle", "6.5", [ 6, 5, 0 ], 212, 29, 
+      "inner mapping middle", "X8740D61178ACD217" ], 
+  [ "inner mapping group middle", "6.5", [ 6, 5, 0 ], 212, 29, 
+      "inner mapping group middle", "X8740D61178ACD217" ], 
+  [ "\033[2XLeftInnerMapping\033[102X", "6.5-1", [ 6, 5, 1 ], 223, 30, 
+      "leftinnermapping", "X7EE1E78C856C6F7C" ], 
+  [ "\033[2XRightInnerMapping\033[102X", "6.5-1", [ 6, 5, 1 ], 223, 30, 
+      "rightinnermapping", "X7EE1E78C856C6F7C" ], 
+  [ "\033[2XMiddleInnerMapping\033[102X", "6.5-1", [ 6, 5, 1 ], 223, 30, 
+      "middleinnermapping", "X7EE1E78C856C6F7C" ], 
+  [ "\033[2XLeftInnerMappingGroup\033[102X", "6.5-2", [ 6, 5, 2 ], 232, 30, 
+      "leftinnermappinggroup", "X79CDA09A7D48BF2B" ], 
+  [ "\033[2XRightInnerMappingGroup\033[102X", "6.5-2", [ 6, 5, 2 ], 232, 30, 
+      "rightinnermappinggroup", "X79CDA09A7D48BF2B" ], 
+  [ "\033[2XMiddleInnerMappingGroup\033[102X", "6.5-2", [ 6, 5, 2 ], 232, 30, 
+      "middleinnermappinggroup", "X79CDA09A7D48BF2B" ], 
+  [ "\033[2XInnerMappingGroup\033[102X", "6.5-3", [ 6, 5, 3 ], 241, 30, 
+      "innermappinggroup", "X82513A3B7C3A6420" ], 
+  [ "\033[2XLeftNucleus\033[102X", "6.6-1", [ 6, 6, 1 ], 265, 30, 
+      "leftnucleus", "X7DF536FC85BBD1D2" ], 
+  [ "\033[2XMiddleNucleus\033[102X", "6.6-1", [ 6, 6, 1 ], 265, 30, 
+      "middlenucleus", "X7DF536FC85BBD1D2" ], 
+  [ "\033[2XRightNucleus\033[102X", "6.6-1", [ 6, 6, 1 ], 265, 30, 
+      "rightnucleus", "X7DF536FC85BBD1D2" ], 
+  [ "\033[2XNuc\033[102X", "6.6-2", [ 6, 6, 2 ], 274, 30, "nuc", 
+      "X84D389677A91C290" ], 
+  [ "\033[2XNucleusOfQuasigroup\033[102X", "6.6-2", [ 6, 6, 2 ], 274, 30, 
+      "nucleusofquasigroup", "X84D389677A91C290" ], 
+  [ "\033[2XNucleusOfLoop\033[102X", "6.6-2", [ 6, 6, 2 ], 274, 30, 
+      "nucleusofloop", "X84D389677A91C290" ], 
+  [ "\033[2XCommutant\033[102X", "6.6-3", [ 6, 6, 3 ], 290, 31, "commutant", 
+      "X7C8428DE791F3CE1" ], 
+  [ "\033[2XCenter\033[102X", "6.6-4", [ 6, 6, 4 ], 295, 31, "center", 
+      "X7C1FBE7A84DD4873" ], 
+  [ "\033[2XAssociatorSubloop\033[102X", "6.6-5", [ 6, 6, 5 ], 303, 31, 
+      "associatorsubloop", "X7F7FDE82780EDD7E" ], 
+  [ "\033[2XIsNormal\033[102X", "6.7-1", [ 6, 7, 1 ], 315, 31, "isnormal", 
+      "X838186F9836F678C" ], 
+  [ "subloop normal", "6.7-1", [ 6, 7, 1 ], 315, 31, "subloop normal", 
+      "X838186F9836F678C" ], 
+  [ "normal subloop", "6.7-1", [ 6, 7, 1 ], 315, 31, "normal subloop", 
+      "X838186F9836F678C" ], 
+  [ "\033[2XNormalClosure\033[102X", "6.7-2", [ 6, 7, 2 ], 323, 31, 
+      "normalclosure", "X7BDEA0A98720D1BB" ], 
+  [ "normal closure", "6.7-2", [ 6, 7, 2 ], 323, 31, "normal closure", 
+      "X7BDEA0A98720D1BB" ], 
+  [ "\033[2XIsSimple\033[102X", "6.7-3", [ 6, 7, 3 ], 331, 31, "issimple", 
+      "X7D8E63A7824037CC" ], 
+  [ "simple loop", "6.7-3", [ 6, 7, 3 ], 331, 31, "simple loop", 
+      "X7D8E63A7824037CC" ], 
+  [ "loop simple", "6.7-3", [ 6, 7, 3 ], 331, 31, "loop simple", 
+      "X7D8E63A7824037CC" ], 
+  [ "\033[2XFactorLoop\033[102X", "6.8-1", [ 6, 8, 1 ], 341, 32, 
+      "factorloop", "X83E1953980E2DE2F" ], 
+  [ "\033[2XNaturalHomomorphismByNormalSubloop\033[102X", "6.8-2", 
+      [ 6, 8, 2 ], 347, 32, "naturalhomomorphismbynormalsubloop", 
+      "X870FCB497AECC730" ], 
+  [ "\033[2XIsNilpotent\033[102X", "6.9-1", [ 6, 9, 1 ], 370, 32, 
+      "isnilpotent", "X78A4B93781C96AAE" ], 
+  [ "\033[2XNilpotencyClassOfLoop\033[102X", "6.9-2", [ 6, 9, 2 ], 375, 32, 
+      "nilpotencyclassofloop", "X7D5FC62581A99482" ], 
+  [ "\033[2XIsStronglyNilpotent\033[102X", "6.9-3", [ 6, 9, 3 ], 381, 32, 
+      "isstronglynilpotent", "X7E7C2D117B55F6A0" ], 
+  [ "strongly nilpotent loop", "6.9-3", [ 6, 9, 3 ], 381, 32, 
+      "strongly nilpotent loop", "X7E7C2D117B55F6A0" ], 
+  [ "nilpotent loop strongly", "6.9-3", [ 6, 9, 3 ], 381, 32, 
+      "nilpotent loop strongly", "X7E7C2D117B55F6A0" ], 
+  [ "loop strongly nilpotent", "6.9-3", [ 6, 9, 3 ], 381, 32, 
+      "loop strongly nilpotent", "X7E7C2D117B55F6A0" ], 
+  [ "\033[2XUpperCentralSeries\033[102X", "6.9-4", [ 6, 9, 4 ], 389, 32, 
+      "uppercentralseries", "X7ED37AA07BEE79E0" ], 
+  [ "\033[2XLowerCentralSeries\033[102X", "6.9-5", [ 6, 9, 5 ], 395, 33, 
+      "lowercentralseries", "X817BDBC2812992ED" ], 
+  [ "central series lower", "6.9-5", [ 6, 9, 5 ], 395, 33, 
+      "central series lower", "X817BDBC2812992ED" ], 
+  [ "\033[2XIsSolvable\033[102X", "6.10-1", [ 6, 10, 1 ], 408, 33, 
+      "issolvable", "X79B10B337A3B1C6E" ], 
+  [ "\033[2XDerivedSubloop\033[102X", "6.10-2", [ 6, 10, 2 ], 413, 33, 
+      "derivedsubloop", "X7A82DC4680DAD67C" ], 
+  [ "\033[2XDerivedLength\033[102X", "6.10-3", [ 6, 10, 3 ], 418, 33, 
+      "derivedlength", "X7A9AA1577CEC891F" ], 
+  [ "\033[2XFrattiniSubloop\033[102X", "6.10-4", [ 6, 10, 4 ], 424, 33, 
+      "frattinisubloop", "X85BD2C517FA7A47E" ], 
+  [ "Frattini subloop", "6.10-4", [ 6, 10, 4 ], 424, 33, "frattini subloop", 
+      "X85BD2C517FA7A47E" ], 
+  [ "\033[2XFrattinifactorSize\033[102X", "6.10-5", [ 6, 10, 5 ], 433, 33, 
+      "frattinifactorsize", "X855286367A2D5A54" ], 
+  [ "\033[2XIsomorphismLoops\033[102X", "6.11-1", [ 6, 11, 1 ], 439, 33, 
+      "isomorphismloops", "X7D7B10D6836FCA9F" ], 
+  [ "\033[2XLoopsUpToIsomorphism\033[102X", "6.11-2", [ 6, 11, 2 ], 450, 34, 
+      "loopsuptoisomorphism", "X8308F38283C61B20" ], 
+  [ "\033[2XAutomorphismGroup\033[102X", "6.11-3", [ 6, 11, 3 ], 456, 34, 
+      "automorphismgroup", "X87677B0787B4461A" ], 
+  [ "\033[2XIsomorphicCopyByPerm\033[102X", "6.11-4", [ 6, 11, 4 ], 470, 34, 
+      "isomorphiccopybyperm", "X85B3E22679FD8D81" ], 
+  [ "\033[2XIsomorphicCopyByNormalSubloop\033[102X", "6.11-5", [ 6, 11, 5 ], 
+      480, 34, "isomorphiccopybynormalsubloop", "X8121DE3A78795040" ], 
+  [ "\033[2XDiscriminator\033[102X", "6.11-6", [ 6, 11, 6 ], 493, 34, 
+      "discriminator", "X7D09D8957E4A0973" ], 
+  [ "\033[2XAreEqualDiscriminators\033[102X", "6.11-7", [ 6, 11, 7 ], 502, 
+      35, "areequaldiscriminators", "X812F0DEE7C896E18" ], 
+  [ "\033[2XIsotopismLoops\033[102X", "6.12-1", [ 6, 12, 1 ], 518, 35, 
+      "isotopismloops", "X84C5ADE77F910F63" ], 
+  [ "\033[2XLoopsUpToIsotopism\033[102X", "6.12-2", [ 6, 12, 2 ], 524, 35, 
+      "loopsuptoisotopism", "X841E540B7A7EF29F" ], 
+  [ "\033[2XIsAssociative\033[102X", "7.1-1", [ 7, 1, 1 ], 19, 36, 
+      "isassociative", "X7C83B5A47FD18FB7" ], 
+  [ "\033[2XIsCommutative\033[102X", "7.1-2", [ 7, 1, 2 ], 24, 36, 
+      "iscommutative", "X830A4A4C795FBC2D" ], 
+  [ "\033[2XIsPowerAssociative\033[102X", "7.1-3", [ 7, 1, 3 ], 29, 36, 
+      "ispowerassociative", "X7D53EA947F1CDA69" ], 
+  [ "loop power associative", "7.1-3", [ 7, 1, 3 ], 29, 36, 
+      "loop power associative", "X7D53EA947F1CDA69" ], 
+  [ "power associative loop", "7.1-3", [ 7, 1, 3 ], 29, 36, 
+      "power associative loop", "X7D53EA947F1CDA69" ], 
+  [ "\033[2XIsDiassociative\033[102X", "7.1-4", [ 7, 1, 4 ], 37, 36, 
+      "isdiassociative", "X872DCA027E1A4A1D" ], 
+  [ "loop diassociative", "7.1-4", [ 7, 1, 4 ], 37, 36, "loop diassociative", 
+      "X872DCA027E1A4A1D" ], 
+  [ "diassociative loop", "7.1-4", [ 7, 1, 4 ], 37, 36, "diassociative loop", 
+      "X872DCA027E1A4A1D" ], 
+  [ "inverse left", "7.2", [ 7, 2, 0 ], 45, 37, "inverse left", 
+      "X853841C5820BFEA4" ], 
+  [ "inverse right", "7.2", [ 7, 2, 0 ], 45, 37, "inverse right", 
+      "X853841C5820BFEA4" ], 
+  [ "\033[2XHasLeftInverseProperty\033[102X", "7.2-1", [ 7, 2, 1 ], 52, 37, 
+      "hasleftinverseproperty", "X85EDD10586596458" ], 
+  [ "\033[2XHasRightInverseProperty\033[102X", "7.2-1", [ 7, 2, 1 ], 52, 37, 
+      "hasrightinverseproperty", "X85EDD10586596458" ], 
+  [ "\033[2XHasInverseProperty\033[102X", "7.2-1", [ 7, 2, 1 ], 52, 37, 
+      "hasinverseproperty", "X85EDD10586596458" ], 
+  [ "inverse property left", "7.2-1", [ 7, 2, 1 ], 52, 37, 
+      "inverse property left", "X85EDD10586596458" ], 
+  [ "inverse property right", "7.2-1", [ 7, 2, 1 ], 52, 37, 
+      "inverse property right", "X85EDD10586596458" ], 
+  [ "inverse property", "7.2-1", [ 7, 2, 1 ], 52, 37, "inverse property", 
+      "X85EDD10586596458" ], 
+  [ "\033[2XHasTwosidedInverses\033[102X", "7.2-2", [ 7, 2, 2 ], 66, 37, 
+      "hastwosidedinverses", "X86B93E1B7AEA6EDA" ], 
+  [ "inverse two-sided", "7.2-2", [ 7, 2, 2 ], 66, 37, "inverse two-sided", 
+      "X86B93E1B7AEA6EDA" ], 
+  [ "\033[2XHasWeakInverseProperty\033[102X", "7.2-3", [ 7, 2, 3 ], 73, 37, 
+      "hasweakinverseproperty", "X793909B780761EA8" ], 
+  [ "inverse property weak", "7.2-3", [ 7, 2, 3 ], 73, 37, 
+      "inverse property weak", "X793909B780761EA8" ], 
+  [ "\033[2XHasAutomorphicInverseProperty\033[102X", "7.2-4", [ 7, 2, 4 ], 
+      81, 37, "hasautomorphicinverseproperty", "X7F46CE6B7D387158" ], 
+  [ "automorphic inverse property", "7.2-4", [ 7, 2, 4 ], 81, 37, 
+      "automorphic inverse property", "X7F46CE6B7D387158" ], 
+  [ "inverse property automorphic", "7.2-4", [ 7, 2, 4 ], 81, 37, 
+      "inverse property automorphic", "X7F46CE6B7D387158" ], 
+  [ "\033[2XHasAntiautomorphicInverseProperty\033[102X", "7.2-5", 
+      [ 7, 2, 5 ], 90, 37, "hasantiautomorphicinverseproperty", 
+      "X8538D4638232DB51" ], 
+  [ "antiautomorphic inverse property", "7.2-5", [ 7, 2, 5 ], 90, 37, 
+      "antiautomorphic inverse property", "X8538D4638232DB51" ], 
+  [ "inverse property antiautomorphic", "7.2-5", [ 7, 2, 5 ], 90, 37, 
+      "inverse property antiautomorphic", "X8538D4638232DB51" ], 
+  [ "\033[2XIsSemisymmetric\033[102X", "7.3-1", [ 7, 3, 1 ], 104, 38, 
+      "issemisymmetric", "X834848ED85F9012B" ], 
+  [ "semisymmetric quasigroup", "7.3-1", [ 7, 3, 1 ], 104, 38, 
+      "semisymmetric quasigroup", "X834848ED85F9012B" ], 
+  [ "quasigroup semisymmetric", "7.3-1", [ 7, 3, 1 ], 104, 38, 
+      "quasigroup semisymmetric", "X834848ED85F9012B" ], 
+  [ "\033[2XIsTotallySymmetric\033[102X", "7.3-2", [ 7, 3, 2 ], 112, 38, 
+      "istotallysymmetric", "X834F809B8060B754" ], 
+  [ "totally symmetric quasigroup", "7.3-2", [ 7, 3, 2 ], 112, 38, 
+      "totally symmetric quasigroup", "X834F809B8060B754" ], 
+  [ "quasigroup totally symmetric", "7.3-2", [ 7, 3, 2 ], 112, 38, 
+      "quasigroup totally symmetric", "X834F809B8060B754" ], 
+  [ "\033[2XIsIdempotent\033[102X", "7.3-3", [ 7, 3, 3 ], 121, 38, 
+      "isidempotent", "X7CB5896082D29173" ], 
+  [ "idempotent quasigroup", "7.3-3", [ 7, 3, 3 ], 121, 38, 
+      "idempotent quasigroup", "X7CB5896082D29173" ], 
+  [ "quasigroup idempotent", "7.3-3", [ 7, 3, 3 ], 121, 38, 
+      "quasigroup idempotent", "X7CB5896082D29173" ], 
+  [ "\033[2XIsSteinerQuasigroup\033[102X", "7.3-4", [ 7, 3, 4 ], 128, 38, 
+      "issteinerquasigroup", "X83DE7DD77C056C1F" ], 
+  [ "Steiner quasigroup", "7.3-4", [ 7, 3, 4 ], 128, 38, "steiner quasigroup",
+      "X83DE7DD77C056C1F" ], 
+  [ "quasigroup Steiner", "7.3-4", [ 7, 3, 4 ], 128, 38, "quasigroup steiner",
+      "X83DE7DD77C056C1F" ], 
+  [ "unipotent quasigroup", "7.3-5", [ 7, 3, 5 ], 135, 38, 
+      "unipotent quasigroup", "X7CA3DCA07B6CB9BD" ], 
+  [ "quasigroup unipotent", "7.3-5", [ 7, 3, 5 ], 135, 38, 
+      "quasigroup unipotent", "X7CA3DCA07B6CB9BD" ], 
+  [ "\033[2XIsUnipotent\033[102X", "7.3-5", [ 7, 3, 5 ], 135, 38, 
+      "isunipotent", "X7CA3DCA07B6CB9BD" ], 
+  [ "\033[2XIsLeftDistributive\033[102X", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "isleftdistributive", "X7B76FD6E878ED4F1" ], 
+  [ "\033[2XIsRightDistributive\033[102X", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "isrightdistributive", "X7B76FD6E878ED4F1" ], 
+  [ "\033[2XIsDistributive\033[102X", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "isdistributive", "X7B76FD6E878ED4F1" ], 
+  [ "quasigroup left distributive", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "quasigroup left distributive", "X7B76FD6E878ED4F1" ], 
+  [ "distributive quasigroup left", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "distributive quasigroup left", "X7B76FD6E878ED4F1" ], 
+  [ "quasigroup right distributive", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "quasigroup right distributive", "X7B76FD6E878ED4F1" ], 
+  [ "distributive quasigroup right", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "distributive quasigroup right", "X7B76FD6E878ED4F1" ], 
+  [ "quasigroup distributive", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "quasigroup distributive", "X7B76FD6E878ED4F1" ], 
+  [ "distributive quasigroup", "7.3-6", [ 7, 3, 6 ], 142, 38, 
+      "distributive quasigroup", "X7B76FD6E878ED4F1" ], 
+  [ "\033[2XIsEntropic\033[102X", "7.3-7", [ 7, 3, 7 ], 159, 39, 
+      "isentropic", "X7F23D4D97A38D223" ], 
+  [ "\033[2XIsMedial\033[102X", "7.3-7", [ 7, 3, 7 ], 159, 39, "ismedial", 
+      "X7F23D4D97A38D223" ], 
+  [ "entropic quasigroup", "7.3-7", [ 7, 3, 7 ], 159, 39, 
+      "entropic quasigroup", "X7F23D4D97A38D223" ], 
+  [ "quasigroup entropic", "7.3-7", [ 7, 3, 7 ], 159, 39, 
+      "quasigroup entropic", "X7F23D4D97A38D223" ], 
+  [ "medial quasigroup", "7.3-7", [ 7, 3, 7 ], 159, 39, "medial quasigroup", 
+      "X7F23D4D97A38D223" ], 
+  [ "quasigroup medial", "7.3-7", [ 7, 3, 7 ], 159, 39, "quasigroup medial", 
+      "X7F23D4D97A38D223" ], 
+  [ "loop of Bol-Moufang type", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "loop of bol-moufang type", "X780D907986EBA6C7" ], 
+  [ "identity of Bol-Moufang type", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "identity of bol-moufang type", "X780D907986EBA6C7" ], 
+  [ "alternative loop left", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "alternative loop left", "X780D907986EBA6C7" ], 
+  [ "loop left alternative", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "loop left alternative", "X780D907986EBA6C7" ], 
+  [ "alternative loop right", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "alternative loop right", "X780D907986EBA6C7" ], 
+  [ "loop right alternative", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "loop right alternative", "X780D907986EBA6C7" ], 
+  [ "nuclear square loop left", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "nuclear square loop left", "X780D907986EBA6C7" ], 
+  [ "loop left nuclear square", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "loop left nuclear square", "X780D907986EBA6C7" ], 
+  [ "nuclear square loop middle", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "nuclear square loop middle", "X780D907986EBA6C7" ], 
+  [ "loop middle nuclear square", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "loop middle nuclear square", "X780D907986EBA6C7" ], 
+  [ "nuclear square loop right", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "nuclear square loop right", "X780D907986EBA6C7" ], 
+  [ "loop right nuclear square", "7.4", [ 7, 4, 0 ], 169, 39, 
+      "loop right nuclear square", "X780D907986EBA6C7" ], 
+  [ "flexible loop", "7.4", [ 7, 4, 0 ], 169, 39, "flexible loop", 
+      "X780D907986EBA6C7" ], 
+  [ "loop flexible", "7.4", [ 7, 4, 0 ], 169, 39, "loop flexible", 
+      "X780D907986EBA6C7" ], 
+  [ "Bol loop left", "7.4", [ 7, 4, 0 ], 169, 39, "bol loop left", 
+      "X780D907986EBA6C7" ], 
+  [ "loop left Bol", "7.4", [ 7, 4, 0 ], 169, 39, "loop left bol", 
+      "X780D907986EBA6C7" ], 
+  [ "Bol loop right", "7.4", [ 7, 4, 0 ], 169, 39, "bol loop right", 
+      "X780D907986EBA6C7" ], 
+  [ "loop right Bol", "7.4", [ 7, 4, 0 ], 169, 39, "loop right bol", 
+      "X780D907986EBA6C7" ], 
+  [ "LC loop", "7.4", [ 7, 4, 0 ], 169, 39, "lc loop", "X780D907986EBA6C7" ], 
+  [ "loop LC", "7.4", [ 7, 4, 0 ], 169, 39, "loop lc", "X780D907986EBA6C7" ], 
+  [ "RC loop", "7.4", [ 7, 4, 0 ], 169, 39, "rc loop", "X780D907986EBA6C7" ], 
+  [ "loop RC", "7.4", [ 7, 4, 0 ], 169, 39, "loop rc", "X780D907986EBA6C7" ], 
+  [ "Moufang loop", "7.4", [ 7, 4, 0 ], 169, 39, "moufang loop", 
+      "X780D907986EBA6C7" ], 
+  [ "loop Moufang", "7.4", [ 7, 4, 0 ], 169, 39, "loop moufang", 
+      "X780D907986EBA6C7" ], 
+  [ "C loop", "7.4", [ 7, 4, 0 ], 169, 39, "c loop", "X780D907986EBA6C7" ], 
+  [ "loop C", "7.4", [ 7, 4, 0 ], 169, 39, "loop c", "X780D907986EBA6C7" ], 
+  [ "extra loop", "7.4", [ 7, 4, 0 ], 169, 39, "extra loop", 
+      "X780D907986EBA6C7" ], 
+  [ "loop extra", "7.4", [ 7, 4, 0 ], 169, 39, "loop extra", 
+      "X780D907986EBA6C7" ], 
+  [ "alternative loop", "7.4", [ 7, 4, 0 ], 169, 39, "alternative loop", 
+      "X780D907986EBA6C7" ], 
+  [ "loop alternative", "7.4", [ 7, 4, 0 ], 169, 39, "loop alternative", 
+      "X780D907986EBA6C7" ], 
+  [ "nuclear square loop", "7.4", [ 7, 4, 0 ], 169, 39, "nuclear square loop",
+      "X780D907986EBA6C7" ], 
+  [ "loop nuclear square", "7.4", [ 7, 4, 0 ], 169, 39, "loop nuclear square",
+      "X780D907986EBA6C7" ], 
+  [ "\033[2XIsExtraLoop\033[102X", "7.4-1", [ 7, 4, 1 ], 222, 40, 
+      "isextraloop", "X7988AFE27D06ACB5" ], 
+  [ "\033[2XIsMoufangLoop\033[102X", "7.4-2", [ 7, 4, 2 ], 227, 40, 
+      "ismoufangloop", "X7F1C151484C97E61" ], 
+  [ "\033[2XIsCLoop\033[102X", "7.4-3", [ 7, 4, 3 ], 232, 40, "iscloop", 
+      "X866F04DC7AE54B7C" ], 
+  [ "\033[2XIsLeftBolLoop\033[102X", "7.4-4", [ 7, 4, 4 ], 237, 40, 
+      "isleftbolloop", "X801DAAE8834A1A65" ], 
+  [ "\033[2XIsRightBolLoop\033[102X", "7.4-5", [ 7, 4, 5 ], 242, 40, 
+      "isrightbolloop", "X79279F9787E72566" ], 
+  [ "\033[2XIsLCLoop\033[102X", "7.4-6", [ 7, 4, 6 ], 247, 40, "islcloop", 
+      "X789E0A6979697C4C" ], 
+  [ "\033[2XIsRCLoop\033[102X", "7.4-7", [ 7, 4, 7 ], 252, 40, "isrcloop", 
+      "X7B03CC577802F4AB" ], 
+  [ "\033[2XIsLeftNuclearSquareLoop\033[102X", "7.4-8", [ 7, 4, 8 ], 257, 40, 
+      "isleftnuclearsquareloop", "X819F285887B5EB9E" ], 
+  [ "\033[2XIsMiddleNuclearSquareLoop\033[102X", "7.4-9", [ 7, 4, 9 ], 262, 
+      40, "ismiddlenuclearsquareloop", "X8474F55681244A8A" ], 
+  [ "\033[2XIsRightNuclearSquareLoop\033[102X", "7.4-10", [ 7, 4, 10 ], 267, 
+      40, "isrightnuclearsquareloop", "X807B3B21825E3076" ], 
+  [ "\033[2XIsNuclearSquareLoop\033[102X", "7.4-11", [ 7, 4, 11 ], 272, 41, 
+      "isnuclearsquareloop", "X796650088213229B" ], 
+  [ "\033[2XIsFlexible\033[102X", "7.4-12", [ 7, 4, 12 ], 277, 41, 
+      "isflexible", "X7C32851A7AF1C45F" ], 
+  [ "\033[2XIsLeftAlternative\033[102X", "7.4-13", [ 7, 4, 13 ], 282, 41, 
+      "isleftalternative", "X7DF0196786B9CE08" ], 
+  [ "\033[2XIsRightAlternative\033[102X", "7.4-14", [ 7, 4, 14 ], 287, 41, 
+      "isrightalternative", "X8416FAD87F148F5D" ], 
+  [ "\033[2XIsAlternative\033[102X", "7.4-15", [ 7, 4, 15 ], 292, 41, 
+      "isalternative", "X8379356E82DB5DDA" ], 
+  [ "power alternative loop left", "7.5", [ 7, 5, 0 ], 323, 42, 
+      "power alternative loop left", "X83A501387E1AC371" ], 
+  [ "loop left power alternative", "7.5", [ 7, 5, 0 ], 323, 42, 
+      "loop left power alternative", "X83A501387E1AC371" ], 
+  [ "power alternative loop right", "7.5", [ 7, 5, 0 ], 323, 42, 
+      "power alternative loop right", "X83A501387E1AC371" ], 
+  [ "loop right power alternative", "7.5", [ 7, 5, 0 ], 323, 42, 
+      "loop right power alternative", "X83A501387E1AC371" ], 
+  [ "power alternative loop", "7.5", [ 7, 5, 0 ], 323, 42, 
+      "power alternative loop", "X83A501387E1AC371" ], 
+  [ "loop power alternative", "7.5", [ 7, 5, 0 ], 323, 42, 
+      "loop power alternative", "X83A501387E1AC371" ], 
+  [ "\033[2XIsLeftPowerAlternative\033[102X", "7.5-1", [ 7, 5, 1 ], 336, 42, 
+      "isleftpoweralternative", "X875C3DF681B3FAE2" ], 
+  [ "\033[2XIsRightPowerAlternative\033[102X", "7.5-1", [ 7, 5, 1 ], 336, 42, 
+      "isrightpoweralternative", "X875C3DF681B3FAE2" ], 
+  [ "\033[2XIsPowerAlternative\033[102X", "7.5-1", [ 7, 5, 1 ], 336, 42, 
+      "ispoweralternative", "X875C3DF681B3FAE2" ], 
+  [ "conjugacy closed loop left", "7.6", [ 7, 6, 0 ], 345, 42, 
+      "conjugacy closed loop left", "X8176B2C47A4629CD" ], 
+  [ "loop left conjugacy closed", "7.6", [ 7, 6, 0 ], 345, 42, 
+      "loop left conjugacy closed", "X8176B2C47A4629CD" ], 
+  [ "conjugacy closed loop right", "7.6", [ 7, 6, 0 ], 345, 42, 
+      "conjugacy closed loop right", "X8176B2C47A4629CD" ], 
+  [ "loop right conjugacy closed", "7.6", [ 7, 6, 0 ], 345, 42, 
+      "loop right conjugacy closed", "X8176B2C47A4629CD" ], 
+  [ "conjugacy closed loop", "7.6", [ 7, 6, 0 ], 345, 42, 
+      "conjugacy closed loop", "X8176B2C47A4629CD" ], 
+  [ "loop conjugacy closed", "7.6", [ 7, 6, 0 ], 345, 42, 
+      "loop conjugacy closed", "X8176B2C47A4629CD" ], 
+  [ "\033[2XIsLCCLoop\033[102X", "7.6-1", [ 7, 6, 1 ], 357, 42, "islccloop", 
+      "X784E08CD7B710AF4" ], 
+  [ "\033[2XIsLeftConjugacyClosedLoop\033[102X", "7.6-1", [ 7, 6, 1 ], 357, 
+      42, "isleftconjugacyclosedloop", "X784E08CD7B710AF4" ], 
+  [ "\033[2XIsRCCLoop\033[102X", "7.6-2", [ 7, 6, 2 ], 363, 42, "isrccloop", 
+      "X7B3016B47A1A8213" ], 
+  [ "\033[2XIsRightConjugacyClosedLoop\033[102X", "7.6-2", [ 7, 6, 2 ], 363, 
+      42, "isrightconjugacyclosedloop", "X7B3016B47A1A8213" ], 
+  [ "\033[2XIsCCLoop\033[102X", "7.6-3", [ 7, 6, 3 ], 369, 42, "isccloop", 
+      "X878B614479DCB83F" ], 
+  [ "\033[2XIsConjugacyClosedLoop\033[102X", "7.6-3", [ 7, 6, 3 ], 369, 42, 
+      "isconjugacyclosedloop", "X878B614479DCB83F" ], 
+  [ "\033[2XIsOsbornLoop\033[102X", "7.6-4", [ 7, 6, 4 ], 375, 42, 
+      "isosbornloop", "X8655956878205FC1" ], 
+  [ "Osborn loop", "7.6-4", [ 7, 6, 4 ], 375, 42, "osborn loop", 
+      "X8655956878205FC1" ], 
+  [ "loop Osborn", "7.6-4", [ 7, 6, 4 ], 375, 42, "loop osborn", 
+      "X8655956878205FC1" ], 
+  [ "automorphic loop left", "7.7", [ 7, 7, 0 ], 383, 43, 
+      "automorphic loop left", "X793B22EA8643C667" ], 
+  [ "loop left automorphic", "7.7", [ 7, 7, 0 ], 383, 43, 
+      "loop left automorphic", "X793B22EA8643C667" ], 
+  [ "automorphic loop middle", "7.7", [ 7, 7, 0 ], 383, 43, 
+      "automorphic loop middle", "X793B22EA8643C667" ], 
+  [ "loop middle automorphic", "7.7", [ 7, 7, 0 ], 383, 43, 
+      "loop middle automorphic", "X793B22EA8643C667" ], 
+  [ "automorphic loop right", "7.7", [ 7, 7, 0 ], 383, 43, 
+      "automorphic loop right", "X793B22EA8643C667" ], 
+  [ "loop right automorphic", "7.7", [ 7, 7, 0 ], 383, 43, 
+      "loop right automorphic", "X793B22EA8643C667" ], 
+  [ "automorphic loop", "7.7", [ 7, 7, 0 ], 383, 43, "automorphic loop", 
+      "X793B22EA8643C667" ], 
+  [ "loop automorphic", "7.7", [ 7, 7, 0 ], 383, 43, "loop automorphic", 
+      "X793B22EA8643C667" ], 
+  [ "\033[2XIsLeftAutomorphicLoop\033[102X", "7.7-1", [ 7, 7, 1 ], 399, 43, 
+      "isleftautomorphicloop", "X7F063914804659F1" ], 
+  [ "\033[2XIsLeftALoop\033[102X", "7.7-1", [ 7, 7, 1 ], 399, 43, 
+      "isleftaloop", "X7F063914804659F1" ], 
+  [ "\033[2XIsMiddleAutomorphicLoop\033[102X", "7.7-2", [ 7, 7, 2 ], 405, 43, 
+      "ismiddleautomorphicloop", "X7DFE830584A769E5" ], 
+  [ "\033[2XIsMiddleALoop\033[102X", "7.7-2", [ 7, 7, 2 ], 405, 43, 
+      "ismiddlealoop", "X7DFE830584A769E5" ], 
+  [ "\033[2XIsRightAutomorphicLoop\033[102X", "7.7-3", [ 7, 7, 3 ], 411, 43, 
+      "isrightautomorphicloop", "X7EA9165A87F99E35" ], 
+  [ "\033[2XIsRightALoop\033[102X", "7.7-3", [ 7, 7, 3 ], 411, 43, 
+      "isrightaloop", "X7EA9165A87F99E35" ], 
+  [ "\033[2XIsAutomorphicLoop\033[102X", "7.7-4", [ 7, 7, 4 ], 417, 43, 
+      "isautomorphicloop", "X7899603184CF13FD" ], 
+  [ "\033[2XIsALoop\033[102X", "7.7-4", [ 7, 7, 4 ], 417, 43, "isaloop", 
+      "X7899603184CF13FD" ], 
+  [ "\033[2XIsCodeLoop\033[102X", "7.8-1", [ 7, 8, 1 ], 428, 43, 
+      "iscodeloop", "X790FA1188087D5C1" ], 
+  [ "code loop", "7.8-1", [ 7, 8, 1 ], 428, 43, "code loop", 
+      "X790FA1188087D5C1" ], 
+  [ "loop code", "7.8-1", [ 7, 8, 1 ], 428, 43, "loop code", 
+      "X790FA1188087D5C1" ], 
+  [ "\033[2XIsSteinerLoop\033[102X", "7.8-2", [ 7, 8, 2 ], 436, 44, 
+      "issteinerloop", "X793600C9801F4F62" ], 
+  [ "Steiner loop", "7.8-2", [ 7, 8, 2 ], 436, 44, "steiner loop", 
+      "X793600C9801F4F62" ], 
+  [ "loop Steiner", "7.8-2", [ 7, 8, 2 ], 436, 44, "loop steiner", 
+      "X793600C9801F4F62" ], 
+  [ "\033[2XIsLeftBruckLoop\033[102X", "7.8-3", [ 7, 8, 3 ], 444, 44, 
+      "isleftbruckloop", "X85F1BD4280E44F5B" ], 
+  [ "\033[2XIsLeftKLoop\033[102X", "7.8-3", [ 7, 8, 3 ], 444, 44, 
+      "isleftkloop", "X85F1BD4280E44F5B" ], 
+  [ "Bruck loop left", "7.8-3", [ 7, 8, 3 ], 444, 44, "bruck loop left", 
+      "X85F1BD4280E44F5B" ], 
+  [ "loop left Bruck", "7.8-3", [ 7, 8, 3 ], 444, 44, "loop left bruck", 
+      "X85F1BD4280E44F5B" ], 
+  [ "K loop left", "7.8-3", [ 7, 8, 3 ], 444, 44, "k loop left", 
+      "X85F1BD4280E44F5B" ], 
+  [ "loop left K", "7.8-3", [ 7, 8, 3 ], 444, 44, "loop left k", 
+      "X85F1BD4280E44F5B" ], 
+  [ "\033[2XIsRightBruckLoop\033[102X", "7.8-4", [ 7, 8, 4 ], 454, 44, 
+      "isrightbruckloop", "X857B373E7B4E0519" ], 
+  [ "\033[2XIsRightKLoop\033[102X", "7.8-4", [ 7, 8, 4 ], 454, 44, 
+      "isrightkloop", "X857B373E7B4E0519" ], 
+  [ "Bruck loop right", "7.8-4", [ 7, 8, 4 ], 454, 44, "bruck loop right", 
+      "X857B373E7B4E0519" ], 
+  [ "loop right Bruck", "7.8-4", [ 7, 8, 4 ], 454, 44, "loop right bruck", 
+      "X857B373E7B4E0519" ], 
+  [ "K loop right", "7.8-4", [ 7, 8, 4 ], 454, 44, "k loop right", 
+      "X857B373E7B4E0519" ], 
+  [ "loop right K", "7.8-4", [ 7, 8, 4 ], 454, 44, "loop right k", 
+      "X857B373E7B4E0519" ], 
+  [ "\033[2XAssociatedLeftBruckLoop\033[102X", "8.1-1", [ 8, 1, 1 ], 10, 45, 
+      "associatedleftbruckloop", "X8664CA927DD73DBE" ], 
+  [ "\033[2XAssociatedRightBruckLoop\033[102X", "8.1-1", [ 8, 1, 1 ], 10, 45, 
+      "associatedrightbruckloop", "X8664CA927DD73DBE" ], 
+  [ "loop left Bol", "8.1-1", [ 8, 1, 1 ], 10, 45, "loop left bol", 
+      "X8664CA927DD73DBE" ], 
+  [ "Bol loop left", "8.1-1", [ 8, 1, 1 ], 10, 45, "bol loop left", 
+      "X8664CA927DD73DBE" ], 
+  [ "Bruck loop associated left", "8.1-1", [ 8, 1, 1 ], 10, 45, 
+      "bruck loop associated left", "X8664CA927DD73DBE" ], 
+  [ "loop associated left Bruck", "8.1-1", [ 8, 1, 1 ], 10, 45, 
+      "loop associated left bruck", "X8664CA927DD73DBE" ], 
+  [ "\033[2XIsExactGroupFactorization\033[102X", "8.1-2", [ 8, 1, 2 ], 26, 
+      45, "isexactgroupfactorization", "X82FC16F386CE11F1" ], 
+  [ "exact group factorization", "8.1-2", [ 8, 1, 2 ], 26, 45, 
+      "exact group factorization", "X82FC16F386CE11F1" ], 
+  [ "\033[2XRightBolLoopByExactGroupFactorization\033[102X", "8.1-3", 
+      [ 8, 1, 3 ], 35, 45, "rightbolloopbyexactgroupfactorization", 
+      "X7DCA64807F899127" ], 
+  [ "modification Moufang", "8.2", [ 8, 2, 0 ], 47, 46, 
+      "modification moufang", "X819F82737C2A860D" ], 
+  [ "\033[2XLoopByCyclicModification\033[102X", "8.2-1", [ 8, 2, 1 ], 57, 46, 
+      "loopbycyclicmodification", "X7B3165C083709831" ], 
+  [ "modification cyclic", "8.2-1", [ 8, 2, 1 ], 57, 46, 
+      "modification cyclic", "X7B3165C083709831" ], 
+  [ "\033[2XLoopByDihedralModification\033[102X", "8.2-2", [ 8, 2, 2 ], 70, 
+      46, "loopbydihedralmodification", "X7D7717C587BC2D1E" ], 
+  [ "modification dihedral", "8.2-2", [ 8, 2, 2 ], 70, 46, 
+      "modification dihedral", "X7D7717C587BC2D1E" ], 
+  [ "\033[2XLoopMG2\033[102X", "8.2-3", [ 8, 2, 3 ], 86, 46, "loopmg2", 
+      "X7CC6CDB786E9BBA0" ], 
+  [ "Chein loop", "8.2-3", [ 8, 2, 3 ], 86, 46, "chein loop", 
+      "X7CC6CDB786E9BBA0" ], 
+  [ "loop Chein", "8.2-3", [ 8, 2, 3 ], 86, 46, "loop chein", 
+      "X7CC6CDB786E9BBA0" ], 
+  [ "group with triality", "8.3", [ 8, 3, 0 ], 98, 46, "group with triality", 
+      "X83E73A767D79FAFD" ], 
+  [ "\033[2XTrialityPermGroup\033[102X", "8.3-1", [ 8, 3, 1 ], 113, 47, 
+      "trialitypermgroup", "X7DB4DE647F6F56F0" ], 
+  [ "\033[2XTrialityPcGroup\033[102X", "8.3-2", [ 8, 3, 2 ], 120, 47, 
+      "trialitypcgroup", "X82CC977085DFDFE8" ], 
+  [ "\033[2XAllLoopTablesInGroup\033[102X", "8.4-1", [ 8, 4, 1 ], 146, 47, 
+      "alllooptablesingroup", "X804F40087DD1225D" ], 
+  [ "\033[2XAllProperLoopTablesInGroup\033[102X", "8.4-2", [ 8, 4, 2 ], 152, 
+      47, "allproperlooptablesingroup", "X7854C8E382DC8E8B" ], 
+  [ "\033[2XOneLoopTableInGroup\033[102X", "8.4-3", [ 8, 4, 3 ], 158, 47, 
+      "onelooptableingroup", "X7BFFC66A824BA6AA" ], 
+  [ "\033[2XOneProperLoopTableInGroup\033[102X", "8.4-4", [ 8, 4, 4 ], 164, 
+      48, "oneproperlooptableingroup", "X84C5A76585B335FF" ], 
+  [ "\033[2XAllLoopsWithMltGroup\033[102X", "8.4-5", [ 8, 4, 5 ], 170, 48, 
+      "allloopswithmltgroup", "X7E5F1C2879358EEF" ], 
+  [ "\033[2XOneLoopWithMltGroup\033[102X", "8.4-6", [ 8, 4, 6 ], 176, 48, 
+      "oneloopwithmltgroup", "X8266DE05824226E6" ], 
+  [ "\033[2XLibraryLoop\033[102X", "9.1-1", [ 9, 1, 1 ], 31, 49, 
+      "libraryloop", "X849865D6786EEF9B" ], 
+  [ "\033[2XMyLibraryLoop\033[102X", "9.1-2", [ 9, 1, 2 ], 36, 49, 
+      "mylibraryloop", "X78C4B8757902D49F" ], 
+  [ "\033[2XDisplayLibraryInfo\033[102X", "9.1-3", [ 9, 1, 3 ], 46, 50, 
+      "displaylibraryinfo", "X7A64372E81E713B4" ], 
+  [ "\033[2XLeftBolLoop\033[102X", "9.2-1", [ 9, 2, 1 ], 67, 50, 
+      "leftbolloop", "X7EE99F647C537994" ], 
+  [ "\033[2XRightBolLoop\033[102X", "9.2-2", [ 9, 2, 2 ], 72, 50, 
+      "rightbolloop", "X8774304282654C58" ], 
+  [ "\033[2XMoufangLoop\033[102X", "9.3-1", [ 9, 3, 1 ], 86, 50, 
+      "moufangloop", "X81E82098822543EE" ], 
+  [ "octonion loop", "9.3-1", [ 9, 3, 1 ], 86, 50, "octonion loop", 
+      "X81E82098822543EE" ], 
+  [ "loop octonion", "9.3-1", [ 9, 3, 1 ], 86, 50, "loop octonion", 
+      "X81E82098822543EE" ], 
+  [ "\033[2XCodeLoop\033[102X", "9.4-1", [ 9, 4, 1 ], 117, 51, "codeloop", 
+      "X7DB4D3B27BB4D7EE" ], 
+  [ "\033[2XSteinerLoop\033[102X", "9.5-1", [ 9, 5, 1 ], 144, 51, 
+      "steinerloop", "X87C235457E859AF4" ], 
+  [ "\033[2XRCCLoop\033[102X", "9.6-1", [ 9, 6, 1 ], 173, 52, "rccloop", 
+      "X806B2DE67990E42F" ], 
+  [ "\033[2XRightConjugacyClosedLoop\033[102X", "9.6-1", [ 9, 6, 1 ], 173, 
+      52, "rightconjugacyclosedloop", "X806B2DE67990E42F" ], 
+  [ "\033[2XLCCLoop\033[102X", "9.6-2", [ 9, 6, 2 ], 180, 52, "lccloop", 
+      "X80AB8B107D55FB19" ], 
+  [ "\033[2XLeftConjugacyClosedLoop\033[102X", "9.6-2", [ 9, 6, 2 ], 180, 52, 
+      "leftconjugacyclosedloop", "X80AB8B107D55FB19" ], 
+  [ "\033[2XCCLoop\033[102X", "9.6-3", [ 9, 6, 3 ], 217, 52, "ccloop", 
+      "X798BC601843E8916" ], 
+  [ "\033[2XConjugacyClosedLoop\033[102X", "9.6-3", [ 9, 6, 3 ], 217, 52, 
+      "conjugacyclosedloop", "X798BC601843E8916" ], 
+  [ "\033[2XSmallLoop\033[102X", "9.7-1", [ 9, 7, 1 ], 230, 53, "smallloop", 
+      "X7C6EE23E84CD87D3" ], 
+  [ "Paige loop", "9.8", [ 9, 8, 0 ], 235, 53, "paige loop", 
+      "X8135C8FD8714C606" ], 
+  [ "loop Paige", "9.8", [ 9, 8, 0 ], 235, 53, "loop paige", 
+      "X8135C8FD8714C606" ], 
+  [ "\033[2XPaigeLoop\033[102X", "9.8-1", [ 9, 8, 1 ], 244, 53, "paigeloop", 
+      "X7FCF4D6B7AD66D74" ], 
+  [ "\033[2XNilpotentLoop\033[102X", "9.9-1", [ 9, 9, 1 ], 261, 53, 
+      "nilpotentloop", "X7A9C960D86E2AD28" ], 
+  [ "\033[2XAutomorphicLoop\033[102X", "9.10-1", [ 9, 10, 1 ], 273, 53, 
+      "automorphicloop", "X784FFA9E7FDA9F43" ], 
+  [ "sedenion loop", "9.11", [ 9, 11, 0 ], 278, 53, "sedenion loop", 
+      "X843BD73F788049F7" ], 
+  [ "loop sedenion", "9.11", [ 9, 11, 0 ], 278, 53, "loop sedenion", 
+      "X843BD73F788049F7" ], 
+  [ "\033[2XInterestingLoop\033[102X", "9.11-1", [ 9, 11, 1 ], 288, 54, 
+      "interestingloop", "X87F24AD3811910D3" ], 
+  [ "\033[2XItpSmallLoop\033[102X", "9.12-1", [ 9, 12, 1 ], 301, 54, 
+      "itpsmallloop", "X850C4C01817A098D" ] ]
+);

@@ -21,13 +21,26 @@
 ##<#GAPDoc Label="SCBlowup">
 ## <ManSection>
 ## <Prop Name="SCBlowup" Arg="pseudomanifold,singularity[,mappingCyl]"/>
-## <Returns> simplicial complex of type <C>SCSimplicialComplex</C> upon success, <K>fail</K> otherwise.</Returns>
+## <Returns> simplicial complex of type <C>SCSimplicialComplex</C> upon 
+## success, <K>fail</K> otherwise.</Returns>
 ## <Description>
-## If <C>singularity</C> is an ordinary double point of a combinatorial <M>4</M>-pseudomanifold <Arg>pseudomanifold</Arg> (lk(<C>singularity</C><M>) = \mathbb{R}P^3</M>) the blowup of <C>pseudomanifold</C> at <C>singularity</C> is computed. If it is a singularity of type <M>S^2 \times S^1</M>, <M>S^2 \dtimes S^1</M> or <M>L(k,1)</M>, <M>k \leq 4</M>, the canonical resolution of <C>singularity</C> is computed using the bounded complexes provided in the source code below. <P/>
+## If <C>singularity</C> is an ordinary double point of a combinatorial 
+## <M>4</M>-pseudomanifold <Arg>pseudomanifold</Arg> 
+## (lk(<C>singularity</C><M>) = \mathbb{R}P^3</M>) the blowup of 
+## <C>pseudomanifold</C> at <C>singularity</C> is computed. If it is a 
+## singularity of type <M>S^2 \times S^1</M>, <M>S^2 \dtimes S^1</M> or 
+## <M>L(k,1)</M>, <M>k \leq 4</M>, the canonical resolution of 
+## <C>singularity</C> is computed using the bounded complexes provided in 
+## the source code below. <P/>
 ##
-## If the optional argument <C>mappingCyl</C> of type <C>SCIsSimplicialComplex</C> is given, this complex will be used to to resolve the singularity <C>singularity</C>.<P/>
+## If the optional argument <C>mappingCyl</C> of type 
+## <C>SCIsSimplicialComplex</C> is given, this complex will be used to to 
+## resolve the singularity <C>singularity</C>.<P/>
 ##
-## Note that bistellar moves do not necessarily preserve any orientation. Thus, the orientation of the blowup has to be checked in order to verify which type of blowup was performed. Normally, repeated computation results in both versions.
+## Note that bistellar moves do not necessarily preserve any orientation. 
+## Thus, the orientation of the blowup has to be checked in order to verify 
+## which type of blowup was performed. Normally, repeated computation results 
+## in both versions.
 ## <Example>
 ## gap&gt; SCLib.SearchByName("Kummer variety");
 ## [ [ 7493, "4-dimensional Kummer variety (VT)" ] ]
@@ -42,10 +55,10 @@
 ## #I  SCBlowup: map boundaries...
 ## #I  SCBlowup: boundaries not isomorphic, initializing bistellar moves...
 ## #I  SCBlowup: found complex with smaller boundary: f = [ 15, 74, 118, 59 ].
-## #I  SCBlowup: found complex with smaller boundary: f = [ 15, 73, 116, 58 ].
-## #I  SCBlowup: found complex with smaller boundary: f = [ 15, 72, 114, 57 ].
-## #I  SCBlowup: found complex with smaller boundary: f = [ 14, 68, 108, 54 ].
+## #I  SCBlowup: found complex with smaller boundary: f = [ 14, 70, 112, 56 ].
 ## #I  SCBlowup: found complex with smaller boundary: f = [ 14, 67, 106, 53 ].
+## #I  SCBlowup: found complex with smaller boundary: f = [ 13, 65, 104, 52 ].
+## #I  SCBlowup: found complex with smaller boundary: f = [ 13, 64, 102, 51 ].
 ## #I  SCBlowup: found complex with smaller boundary: f = [ 13, 63, 100, 50 ].
 ## #I  SCBlowup: found complex with smaller boundary: f = [ 13, 62, 98, 49 ].
 ## #I  SCBlowup: found complex with smaller boundary: f = [ 12, 58, 92, 46 ].
@@ -63,8 +76,8 @@
 ## 
 ##  Properties known: Dim, FacetsEx, Name, Vertices.
 ## 
-##  Name="unnamed complex 3122 \ star([ 1 ]) in unnamed complex 3122 cup unnamed \
-## complex 3126 cup unnamed complex 3124"
+##  Name="unnamed complex 4084 \ star([ 1 ]) in unnamed complex 4084 cup unnamed \
+## complex 4088 cup unnamed complex 4086"
 ##  Dim=4
 ## 
 ## /SimplicialComplex]
@@ -95,9 +108,13 @@
 ##<#GAPDoc Label="SCMappingCylinder">
 ## <ManSection>
 ## <Func Name="SCMappingCylinder" Arg="k"/>
-## <Returns> simplicial complex of type <C>SCSimplicialComplex</C> upon success, <K>fail</K> otherwise.</Returns>
+## <Returns> simplicial complex of type <C>SCSimplicialComplex</C> upon 
+## success, <K>fail</K> otherwise.</Returns>
 ## <Description>
-## Generates a bounded version of <M>\mathbb{C}P^2</M> (a so-called mapping cylinder for a simplicial blowup, compare <Cite Key="Spreer09CombPorpsOfK3"/>) with boundary <M>L(</M><C>k</C><M>,1)</M>.
+## Generates a bounded version of <M>\mathbb{C}P^2</M> (a so-called mapping 
+## cylinder for a simplicial blowup, compare 
+## <Cite Key="Spreer09CombPorpsOfK3"/>) with boundary 
+## <M>L(</M><C>k</C><M>,1)</M>.
 ## <Example>
 ## gap&gt; mapCyl:=SCMappingCylinder(3);;
 ## gap&gt; mapCyl.Homology;              

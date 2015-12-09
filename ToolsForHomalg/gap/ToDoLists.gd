@@ -10,6 +10,9 @@
 ##
 #############################################################################
 
+DeclareInfoClass( "InfoToDoList" );
+SetInfoLevel( InfoToDoList, 1 );
+
 #! @Description
 #!  This is the category of ToDo-lists.
 #!  Every ToDo-list is an object of this category,
@@ -70,7 +73,7 @@ DeclareAttribute( "ProcessToDoList",
                   IsObject );
 
 DeclareOperation( "ProcessToDoList_Real",
-                  [ IsObject ] );
+                  [ IsObject, IsObject ] );
 
 #! @Chapter ToDo-list
 #! @Section Proof tracking
@@ -102,7 +105,7 @@ DeclareGlobalVariable( "TODO_LISTS" );
 
 DeclareFilter( "CanHaveAToDoList", IsObject );
 
-DeclareProperty( "MaintainanceMethodForToDoLists", IsObject );
+DeclareProperty( "MaintenanceMethodForToDoLists", IsObject );
 
 #! @Description
 #!  This operation activates ToDoLists for the argument.

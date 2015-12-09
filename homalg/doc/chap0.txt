@@ -6,10 +6,10 @@
       [1XA homological algebra meta-package for computable Abelian categories[101X
   
   
-                               Version 2015.03.31
+                               Version 2015.11.05
   
   
-                                   March 2015
+                                 September 2015
   
   
                                 Mohamed Barakat
@@ -224,7 +224,7 @@
     4.2 [33X[0;0YMorphisms: Constructors[133X
     4.3 [33X[0;0YMorphisms: Properties[133X
       4.3-1 IsMorphism
-      4.3-2 IsGeneralizedMorphism
+      4.3-2 IsGeneralizedMorphismWithFullDomain
       4.3-3 IsGeneralizedEpimorphism
       4.3-4 IsGeneralizedMonomorphism
       4.3-5 IsGeneralizedIsomorphism
@@ -247,7 +247,7 @@
       4.4-8 ImageObjectEmb
       4.4-9 ImageObjectEpi
       4.4-10 MorphismAid
-      4.4-11 GeneralizedInverse
+      4.4-11 InverseOfGeneralizedMorphismWithFullDomain
       4.4-12 DegreeOfMorphism
     4.5 [33X[0;0YMorphisms: Operations and Functions[133X
       4.5-1 ByASmallerPresentation
@@ -300,7 +300,7 @@
       7.2-1 HomalgChainMorphism
     7.3 [33X[0;0YChain Morphisms: Properties[133X
       7.3-1 IsMorphism
-      7.3-2 IsGeneralizedMorphism
+      7.3-2 IsGeneralizedMorphismWithFullDomain
       7.3-3 IsGeneralizedEpimorphism
       7.3-4 IsGeneralizedMonomorphism
       7.3-5 IsGeneralizedIsomorphism

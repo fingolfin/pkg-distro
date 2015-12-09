@@ -39,7 +39,6 @@
   [2Xfunctor_Kernel[102X  11.4-1
   [2XGeneralizedEmbeddingsInTotalDefects[102X  10.3-2
   [2XGeneralizedEmbeddingsInTotalObjects[102X  10.3-1
-  [2XGeneralizedInverse[102X  4.4-11
   [2XGenesis[102X  11.3-3
   [2XGrade[102X  3.4-17
   [2XHasConstantRank[102X  3.3-16
@@ -67,6 +66,7 @@
   [2XInsertObjectInMultiFunctor[102X (constructor for functors given a multi-functor and an object)  11.2-2
   [2XInstallDeltaFunctor[102X  11.7-2
   [2XInstallFunctor[102X  11.7-1
+  [2XInverseOfGeneralizedMorphismWithFullDomain[102X  4.4-11
   [2XIsAcyclic[102X  6.3-3
   [2XIsArtinian[102X  3.3-10
   [2XIsAutomorphism[102X  4.3-13
@@ -97,8 +97,8 @@
   [2XIsGeneralizedIsomorphism[102X (for chain morphisms)  7.3-5
   [2XIsGeneralizedMonomorphism[102X  4.3-4
   [2XIsGeneralizedMonomorphism[102X (for chain morphisms)  7.3-4
-  [2XIsGeneralizedMorphism[102X  4.3-2
-  [2XIsGeneralizedMorphism[102X (for chain morphisms)  7.3-2
+  [2XIsGeneralizedMorphismWithFullDomain[102X  4.3-2
+  [2XIsGeneralizedMorphismWithFullDomain[102X (for chain morphisms)  7.3-2
   [2XIsGorenstein[102X  3.3-14
   [2XIsGradedMorphism[102X (for chain morphisms)  7.3-13
   [2XIsGradedObject[102X  6.3-6

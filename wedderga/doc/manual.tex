@@ -98,8 +98,8 @@
 {\Huge \textbf{Wedderburn Decomposition of Group Algebras\mbox{}}}\\
 \vfill
 
-{\Huge Version 4.7.2\mbox{}}\\[1cm]
-{24 November 2014\mbox{}}\\[1cm]
+{\Huge Version 4.7.3\mbox{}}\\[1cm]
+{18 September 2015\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{Osnel Broche Cristo   \mbox{}}}\\
 {\Large \textbf{Allen Herman    \mbox{}}}\\
@@ -183,7 +183,7 @@ action and twisting. \mbox{}}\\[1cm]
 {\small 
 \section*{Copyright}
 \logpage{[ 0, 0, 2 ]}
- {\copyright} 2006-2014 by Osnel Broche Cristo, Allen Herman, Alexander
+ {\copyright} 2006-2015 by Osnel Broche Cristo, Allen Herman, Alexander
 Konovalov, Aurora Olivieri, Gabriela Olteanu, {\a'A}ngel del R{\a'\i}o and
 Inneke Van Gelder.
 
@@ -196,7 +196,7 @@ details, see the FSF's own site \href{http://www.gnu.org/licenses/gpl.html} {\te
 you publish a result which was partially obtained with the usage of \textsf{Wedderga}, please cite it in the following form:
 
  O. Broche Cristo, A. Herman, A. Konovalov, A. Olivieri, G. Olteanu, {\a'A}.
-del R{\a'\i}o and I. Van Gelder. \emph{Wedderga --- Wedderburn Decomposition of Group Algebras, Version 4.7.2;} 2014 (\href{http://www.cs.st-andrews.ac.uk/~alexk/wedderga} {\texttt{http://www.cs.st-andrews.ac.uk/\texttt{\symbol{126}}alexk/wedderga}}). \mbox{}}\\[1cm]
+del R{\a'\i}o and I. Van Gelder. \emph{Wedderga --- Wedderburn Decomposition of Group Algebras, Version 4.7.3;} 2015 (\href{http://www.cs.st-andrews.ac.uk/~alexk/wedderga} {\texttt{http://www.cs.st-andrews.ac.uk/\texttt{\symbol{126}}alexk/wedderga}}). \mbox{}}\\[1cm]
 {\small 
 \section*{Acknowledgements}
 \logpage{[ 0, 0, 3 ]}
@@ -1156,7 +1156,7 @@ cyclotomic classes}}\label{PI}
 \subsection{\textcolor{Chapter }{PrimitiveIdempotentsNilpotent}}
 \logpage{[ 4, 4, 1 ]}\nobreak
 \hyperdef{L}{X7E95CDF17C4D54DB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveIdempotentsNilpotent({\mdseries\slshape FG, H, K, C, arg})\index{PrimitiveIdempotentsNilpotent@\texttt{PrimitiveIdempotentsNilpotent}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveIdempotentsNilpotent({\mdseries\slshape FG, H, K, C, args})\index{PrimitiveIdempotentsNilpotent@\texttt{PrimitiveIdempotentsNilpotent}}
 \label{PrimitiveIdempotentsNilpotent}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
@@ -1164,7 +1164,7 @@ cyclotomic classes}}\label{PI}
 
 
 
- The input \mbox{\texttt{\mdseries\slshape FG}} should be a semisimple group algebra of a finite nilpotent group $G$ whose coefficient field $F$ is a finite field. \mbox{\texttt{\mdseries\slshape H}} and \mbox{\texttt{\mdseries\slshape K}} should form a strong Shoda pair $(H,K)$ of $G$. \mbox{\texttt{\mdseries\slshape arg}} is a list containing an epimorphism map \mbox{\texttt{\mdseries\slshape epi}} from $N_G(K)$ to $N_G(K)/K$ and a generator \mbox{\texttt{\mdseries\slshape gq}} of $H/K$. $C$ is the $|F|$-cyclotomic class modulo $[H:K]$ (w.r.t. the generator $gq$ of $H/K$) 
+ The input \mbox{\texttt{\mdseries\slshape FG}} should be a semisimple group algebra of a finite nilpotent group $G$ whose coefficient field $F$ is a finite field. \mbox{\texttt{\mdseries\slshape H}} and \mbox{\texttt{\mdseries\slshape K}} should form a strong Shoda pair $(H,K)$ of $G$. \mbox{\texttt{\mdseries\slshape args}} is a list containing an epimorphism map \mbox{\texttt{\mdseries\slshape epi}} from $N_G(K)$ to $N_G(K)/K$ and a generator \mbox{\texttt{\mdseries\slshape gq}} of $H/K$. $C$ is the $|F|$-cyclotomic class modulo $[H:K]$ (w.r.t. the generator $gq$ of $H/K$) 
 
  The output is a complete set of orthogonal primitive idempotents of the simple
 algebra $FGe_C(G,H,K)$ (\ref{TheoryPI}). 
@@ -1199,7 +1199,7 @@ algebra $FGe_C(G,H,K)$ (\ref{TheoryPI}).
 \subsection{\textcolor{Chapter }{PrimitiveIdempotentsTrivialTwisting}}
 \logpage{[ 4, 4, 2 ]}\nobreak
 \hyperdef{L}{X8784570980B9B750}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveIdempotentsTrivialTwisting({\mdseries\slshape FG, H, K, C, arg})\index{PrimitiveIdempotentsTrivialTwisting@\texttt{PrimitiveIdempotentsTrivialTwisting}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveIdempotentsTrivialTwisting({\mdseries\slshape FG, H, K, C, args})\index{PrimitiveIdempotentsTrivialTwisting@\texttt{PrimitiveIdempotentsTrivialTwisting}}
 \label{PrimitiveIdempotentsTrivialTwisting}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
@@ -1207,7 +1207,7 @@ algebra $FGe_C(G,H,K)$ (\ref{TheoryPI}).
 
 
 
- The input \mbox{\texttt{\mdseries\slshape FG}} should be a semisimple group algebra of a finite group $G$ whose coefficient field $F$ is a finite field. \mbox{\texttt{\mdseries\slshape H}} and \mbox{\texttt{\mdseries\slshape K}} should form a strong Shoda pair $(H,K)$ of $G$. \mbox{\texttt{\mdseries\slshape arg}} is a list containing an epimorphism map \mbox{\texttt{\mdseries\slshape epi}} from $N_G(K)$ to $N_G(K)/K$ and a generator \mbox{\texttt{\mdseries\slshape gq}} of $H/K$. $C$ is the $|F|$-cyclotomic class modulo $[H:K]$ (w.r.t. the generator $gq$ of $H/K$). The input parameters should be such that the simple component $FGe_C(G,H,K)$ has a trivial twisting. 
+ The input \mbox{\texttt{\mdseries\slshape FG}} should be a semisimple group algebra of a finite group $G$ whose coefficient field $F$ is a finite field. \mbox{\texttt{\mdseries\slshape H}} and \mbox{\texttt{\mdseries\slshape K}} should form a strong Shoda pair $(H,K)$ of $G$. \mbox{\texttt{\mdseries\slshape args}} is a list containing an epimorphism map \mbox{\texttt{\mdseries\slshape epi}} from $N_G(K)$ to $N_G(K)/K$ and a generator \mbox{\texttt{\mdseries\slshape gq}} of $H/K$. $C$ is the $|F|$-cyclotomic class modulo $[H:K]$ (w.r.t. the generator $gq$ of $H/K$). The input parameters should be such that the simple component $FGe_C(G,H,K)$ has a trivial twisting. 
 
  The output is a complete set of orthogonal primitive idempotents of the simple
 algebra $FGe_C(G,H,K)$ (\ref{TheoryPI}). 

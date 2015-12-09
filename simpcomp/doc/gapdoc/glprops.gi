@@ -488,14 +488,24 @@
 ##<#/GAPDoc>
 ################################################################################
 ################################################################################
-##<#GAPDoc Label="SCHomology">
+##<#GAPDoc Label="SCHomologyClassic">
 ## <ManSection>
-## <Meth Name="SCHomology" Arg="complex"/>
+## <Func Name="SCHomologyClassic" Arg="complex"/>
 ## <Returns> a list of pairs of the form <C>[ integer, list ]</C>.</Returns>
 ## <Description>
-## Computes the integral simplicial homology groups of a simplicial complex <Arg>complex</Arg> (internally calls the function <C>SimplicialHomology(complex.FacetsEx)</C> from the <Package>homology</Package> package, version 1.4.2., see <Cite Key="Dumas04Homology" />).<P/>
-## If the <Package>homology</Package> package is not available, this function call falls back to <Ref Meth="SCHomologyInternal" />.
-## The output is a list of homology groups of the form <M>[H_0,....,H_d]</M>, where <M>d</M> is the dimension of <Arg>complex</Arg>. The format of the homology groups <M>H_i</M> is given in terms of their maximal cyclic subgroups, i.e. a homology group <M>H_i\cong \mathbb{Z}^f + \mathbb{Z} / t_1 \mathbb{Z} \times \dots \times \mathbb{Z} / t_n \mathbb{Z}</M> is returned in form of a list <M>[ f, [t_1,...,t_n] ]</M>, where <M>f</M> is the (integer) free part of <M>H_i</M> and <M>t_i</M> denotes the torsion parts of <M>H_i</M> ordered in weakly increasing size.
+## Computes the integral simplicial homology groups of a simplicial complex <Arg>complex</Arg> 
+## (internally calls the function <C>SimplicialHomology(complex.FacetsEx)</C> from the 
+## <Package>homology</Package> package, see <Cite Key="Dumas04Homology" />).<P/>
+##
+## If the <Package>homology</Package> package is not available, this function call 
+## falls back to <Ref Func="SCHomologyInternal" />.
+## The output is a list of homology groups of the form <M>[H_0,....,H_d]</M>, where 
+## <M>d</M> is the dimension of <Arg>complex</Arg>. The format of the homology groups 
+## <M>H_i</M> is given in terms of their maximal cyclic subgroups, i.e. a homology group 
+## <M>H_i\cong \mathbb{Z}^f + \mathbb{Z} / t_1 \mathbb{Z} \times \dots \times \mathbb{Z} / t_n \mathbb{Z}</M> 
+## is returned in form of a list <M>[ f, [t_1,...,t_n] ]</M>, where <M>f</M> is the (integer) 
+## free part of <M>H_i</M> and <M>t_i</M> denotes the torsion parts of <M>H_i</M> ordered in 
+## weakly increasing size.<P/>
 ## <Example>
 ## gap&gt; SCLib.SearchByName("K^2");
 ## [ [ 17, "K^2 (VT)" ], [ 571, "K^2 (VT)" ] ]
@@ -967,12 +977,15 @@
 ## gap&gt; c;  
 ## [SimplicialComplex
 ## 
-##  Properties known: BoundaryEx, Dim, FacetsEx, HasBoundary, Name, 
-##                    SkelExs[], Vertices.
+##  Properties known: BoundaryEx, Dim, FacetsEx, HasBoundary, 
+##                    IsPseudoManifold, IsPure, Name, SkelExs[], 
+##                    Vertices.
 ## 
 ##  Name="unnamed complex 52"
 ##  Dim=3
 ##  HasBoundary=true
+##  IsPseudoManifold=true
+##  IsPure=true
 ## 
 ## /SimplicialComplex]
 ## </Example>

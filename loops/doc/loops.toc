@@ -1,0 +1,236 @@
+\contentsline {chapter}{\numberline {1}\leavevmode {\color {Chapter }Introduction}}{6}{chapter.1}
+\contentsline {section}{\numberline {1.1}\leavevmode {\color {Chapter }License}}{6}{section.1.1}
+\contentsline {section}{\numberline {1.2}\leavevmode {\color {Chapter }Installation}}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}\leavevmode {\color {Chapter }Documentation}}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}\leavevmode {\color {Chapter }Test Files}}{7}{section.1.4}
+\contentsline {section}{\numberline {1.5}\leavevmode {\color {Chapter }Memory Management}}{7}{section.1.5}
+\contentsline {section}{\numberline {1.6}\leavevmode {\color {Chapter }Feedback}}{7}{section.1.6}
+\contentsline {section}{\numberline {1.7}\leavevmode {\color {Chapter }Acknowledgment}}{7}{section.1.7}
+\contentsline {chapter}{\numberline {2}\leavevmode {\color {Chapter }Mathematical Background}}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}\leavevmode {\color {Chapter }Quasigroups and Loops}}{8}{section.2.1}
+\contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Translations}}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}\leavevmode {\color {Chapter }Subquasigroups and Subloops}}{9}{section.2.3}
+\contentsline {section}{\numberline {2.4}\leavevmode {\color {Chapter }Nilpotence and Solvability}}{9}{section.2.4}
+\contentsline {section}{\numberline {2.5}\leavevmode {\color {Chapter }Associators and Commutators}}{9}{section.2.5}
+\contentsline {section}{\numberline {2.6}\leavevmode {\color {Chapter }Homomorphism and Homotopisms}}{9}{section.2.6}
+\contentsline {chapter}{\numberline {3}\leavevmode {\color {Chapter }How the Package Works}}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}\leavevmode {\color {Chapter }Representing Quasigroups}}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Conversions between magmas, quasigroups, loops and groups}}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Calculating with Quasigroups}}{12}{section.3.3}
+\contentsline {section}{\numberline {3.4}\leavevmode {\color {Chapter }Naming, Viewing and Printing Quasigroups and their Elements}}{13}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}\leavevmode {\color {Chapter }SetQuasigroupElmName and SetLoopElmName}}{13}{subsection.3.4.1}
+\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Creating Quasigroups and Loops}}{14}{chapter.4}
+\contentsline {section}{\numberline {4.1}\leavevmode {\color {Chapter }About Cayley Tables}}{14}{section.4.1}
+\contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }Testing Cayley Tables}}{14}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}\leavevmode {\color {Chapter }IsQuasigroupTable and IsQuasigroupCayleyTable}}{14}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }IsLoopTable and IsLoopCayleyTable}}{14}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}\leavevmode {\color {Chapter }Canonical and Normalized Cayley Tables}}{15}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}\leavevmode {\color {Chapter }CanonicalCayleyTable}}{15}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}\leavevmode {\color {Chapter }NormalizedQuasigroupTable}}{15}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}\leavevmode {\color {Chapter }Creating Quasigroups and Loops From Cayley Tables}}{15}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}\leavevmode {\color {Chapter }QuasigroupByCayleyTable and LoopByCayleyTable}}{15}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}\leavevmode {\color {Chapter }Creating Quasigroups and Loops from a File}}{15}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}\leavevmode {\color {Chapter }QuasigroupFromFile and LoopFromFile}}{16}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}\leavevmode {\color {Chapter }Creating Quasigroups and Loops From Sections}}{17}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}\leavevmode {\color {Chapter }CayleyTableByPerms}}{17}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}\leavevmode {\color {Chapter }QuasigroupByLeftSection and LoopByLeftSection}}{17}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}\leavevmode {\color {Chapter }QuasigroupByRightSection and LoopByRightSection}}{17}{subsection.4.6.3}
+\contentsline {section}{\numberline {4.7}\leavevmode {\color {Chapter }Creating Quasigroups and Loops From Folders}}{17}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}\leavevmode {\color {Chapter }QuasigroupByRightFolder and LoopByRightFolder}}{18}{subsection.4.7.1}
+\contentsline {section}{\numberline {4.8}\leavevmode {\color {Chapter }Creating Quasigroups and Loops By Nuclear Extensions}}{18}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}\leavevmode {\color {Chapter }NuclearExtension}}{18}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}\leavevmode {\color {Chapter }LoopByExtension}}{18}{subsection.4.8.2}
+\contentsline {section}{\numberline {4.9}\leavevmode {\color {Chapter }Random Quasigroups and Loops}}{19}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}\leavevmode {\color {Chapter }RandomQuasigroup and RandomLoop}}{19}{subsection.4.9.1}
+\contentsline {subsection}{\numberline {4.9.2}\leavevmode {\color {Chapter }RandomNilpotentLoop}}{19}{subsection.4.9.2}
+\contentsline {section}{\numberline {4.10}\leavevmode {\color {Chapter }Conversions}}{19}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}\leavevmode {\color {Chapter }IntoQuasigroup}}{20}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}\leavevmode {\color {Chapter }PrincipalLoopIsotope}}{20}{subsection.4.10.2}
+\contentsline {subsection}{\numberline {4.10.3}\leavevmode {\color {Chapter }IntoLoop}}{20}{subsection.4.10.3}
+\contentsline {subsection}{\numberline {4.10.4}\leavevmode {\color {Chapter }IntoGroup}}{20}{subsection.4.10.4}
+\contentsline {section}{\numberline {4.11}\leavevmode {\color {Chapter }Products of Loops}}{20}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}\leavevmode {\color {Chapter }DirectProduct}}{20}{subsection.4.11.1}
+\contentsline {section}{\numberline {4.12}\leavevmode {\color {Chapter }Opposite Quasigroups and Loops}}{21}{section.4.12}
+\contentsline {subsection}{\numberline {4.12.1}\leavevmode {\color {Chapter }Opposite, OppositeQuasigroup and OppositeLoop}}{21}{subsection.4.12.1}
+\contentsline {chapter}{\numberline {5}\leavevmode {\color {Chapter }Basic Methods And Attributes}}{22}{chapter.5}
+\contentsline {section}{\numberline {5.1}\leavevmode {\color {Chapter }Basic Attributes}}{22}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}\leavevmode {\color {Chapter }Elements}}{22}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}\leavevmode {\color {Chapter }CayleyTable}}{22}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}\leavevmode {\color {Chapter }One}}{22}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}\leavevmode {\color {Chapter }Size}}{22}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}\leavevmode {\color {Chapter }Exponent}}{23}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}\leavevmode {\color {Chapter }Basic Arithmetic Operations}}{23}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}\leavevmode {\color {Chapter }LeftDivision and RightDivision}}{23}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}\leavevmode {\color {Chapter }LeftDivisionCayleyTable and RightDivisionCayleyTable}}{23}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}\leavevmode {\color {Chapter }Powers and Inverses}}{23}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}\leavevmode {\color {Chapter }LeftInverse, RightInverse and Inverse}}{24}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}\leavevmode {\color {Chapter }Associators and Commutators}}{24}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}\leavevmode {\color {Chapter }Associator}}{24}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}\leavevmode {\color {Chapter }Commutator}}{24}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}\leavevmode {\color {Chapter }Generators}}{24}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}\leavevmode {\color {Chapter }GeneratorsOfQuasigroup and GeneratorsOfLoop}}{24}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}\leavevmode {\color {Chapter }GeneratorsSmallest}}{25}{subsection.5.5.2}
+\contentsline {chapter}{\numberline {6}\leavevmode {\color {Chapter }Methods Based on Permutation Groups}}{26}{chapter.6}
+\contentsline {section}{\numberline {6.1}\leavevmode {\color {Chapter }Parent of a Quasigroup}}{26}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}\leavevmode {\color {Chapter }Parent}}{26}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}\leavevmode {\color {Chapter }Position}}{26}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}\leavevmode {\color {Chapter }PosInParent}}{27}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}\leavevmode {\color {Chapter }Subquasigroups and Subloops}}{27}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}\leavevmode {\color {Chapter }Subquasigroup}}{27}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}\leavevmode {\color {Chapter }Subloop}}{27}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}\leavevmode {\color {Chapter }IsSubquasigroup and IsSubloop}}{27}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}\leavevmode {\color {Chapter }AllSubloops}}{27}{subsection.6.2.4}
+\contentsline {subsection}{\numberline {6.2.5}\leavevmode {\color {Chapter }RightCosets}}{28}{subsection.6.2.5}
+\contentsline {subsection}{\numberline {6.2.6}\leavevmode {\color {Chapter }RightTransversal}}{28}{subsection.6.2.6}
+\contentsline {section}{\numberline {6.3}\leavevmode {\color {Chapter }Translations and Sections}}{28}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}\leavevmode {\color {Chapter }LeftTranslation and RightTranslation}}{28}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}\leavevmode {\color {Chapter }LeftSection and RightSection}}{28}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}\leavevmode {\color {Chapter }Multiplication Groups}}{29}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}\leavevmode {\color {Chapter }LeftMutliplicationGroup, RightMultiplicationGroup and MultiplicationGroup}}{29}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}\leavevmode {\color {Chapter }RelativeLeftMultiplicationGroup, RelativeRightMultiplicationGroup and RelativeMultiplicationGroup}}{29}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}\leavevmode {\color {Chapter }Inner Mapping Groups}}{29}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}\leavevmode {\color {Chapter }LeftInnerMapping, RightInnerMapping, MiddleInnerMapping}}{30}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}\leavevmode {\color {Chapter }LeftInnerMappingGroup, RightInnerMappingGroup, MiddleInnerMappingGroup}}{30}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {6.5.3}\leavevmode {\color {Chapter }InnerMappingGroup}}{30}{subsection.6.5.3}
+\contentsline {section}{\numberline {6.6}\leavevmode {\color {Chapter }Nuclei, Commutant, Center, and Associator Subloop}}{30}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}\leavevmode {\color {Chapter }LeftNucles, MiddleNucleus, and RightNucleus}}{30}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}\leavevmode {\color {Chapter }Nuc, NucleusOfQuasigroup and NucleusOfLoop}}{30}{subsection.6.6.2}
+\contentsline {subsection}{\numberline {6.6.3}\leavevmode {\color {Chapter }Commutant}}{31}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.6.4}\leavevmode {\color {Chapter }Center}}{31}{subsection.6.6.4}
+\contentsline {subsection}{\numberline {6.6.5}\leavevmode {\color {Chapter }AssociatorSubloop}}{31}{subsection.6.6.5}
+\contentsline {section}{\numberline {6.7}\leavevmode {\color {Chapter }Normal Subloops and Simple Loops}}{31}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}\leavevmode {\color {Chapter }IsNormal}}{31}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}\leavevmode {\color {Chapter }NormalClosure}}{31}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.3}\leavevmode {\color {Chapter }IsSimple}}{31}{subsection.6.7.3}
+\contentsline {section}{\numberline {6.8}\leavevmode {\color {Chapter }Factor Loops}}{32}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}\leavevmode {\color {Chapter }FactorLoop}}{32}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}\leavevmode {\color {Chapter }NaturalHomomorphismByNormalSubloop}}{32}{subsection.6.8.2}
+\contentsline {section}{\numberline {6.9}\leavevmode {\color {Chapter }Nilpotency and Central Series}}{32}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}\leavevmode {\color {Chapter }IsNilpotent}}{32}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}\leavevmode {\color {Chapter }NilpotencyClassOfLoop}}{32}{subsection.6.9.2}
+\contentsline {subsection}{\numberline {6.9.3}\leavevmode {\color {Chapter }IsStronglyNilpotent}}{32}{subsection.6.9.3}
+\contentsline {subsection}{\numberline {6.9.4}\leavevmode {\color {Chapter }UpperCentralSeries}}{32}{subsection.6.9.4}
+\contentsline {subsection}{\numberline {6.9.5}\leavevmode {\color {Chapter }LowerCentralSeries}}{33}{subsection.6.9.5}
+\contentsline {section}{\numberline {6.10}\leavevmode {\color {Chapter }Solvability, Derived Series and Frattini Subloop}}{33}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}\leavevmode {\color {Chapter }IsSolvable}}{33}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}\leavevmode {\color {Chapter }DerivedSubloop}}{33}{subsection.6.10.2}
+\contentsline {subsection}{\numberline {6.10.3}\leavevmode {\color {Chapter }DerivedLength}}{33}{subsection.6.10.3}
+\contentsline {subsection}{\numberline {6.10.4}\leavevmode {\color {Chapter }FrattiniSubloop and FrattinifactorSize}}{33}{subsection.6.10.4}
+\contentsline {subsection}{\numberline {6.10.5}\leavevmode {\color {Chapter }FrattinifactorSize}}{33}{subsection.6.10.5}
+\contentsline {section}{\numberline {6.11}\leavevmode {\color {Chapter }Isomorphisms and Automorphisms}}{33}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}\leavevmode {\color {Chapter }IsomorphismLoops}}{33}{subsection.6.11.1}
+\contentsline {subsection}{\numberline {6.11.2}\leavevmode {\color {Chapter }LoopsUpToIsomorphism}}{34}{subsection.6.11.2}
+\contentsline {subsection}{\numberline {6.11.3}\leavevmode {\color {Chapter }AutomorphismGroup}}{34}{subsection.6.11.3}
+\contentsline {subsection}{\numberline {6.11.4}\leavevmode {\color {Chapter }IsomorphicCopyByPerm}}{34}{subsection.6.11.4}
+\contentsline {subsection}{\numberline {6.11.5}\leavevmode {\color {Chapter }IsomorphicCopyByNormalSubloop}}{34}{subsection.6.11.5}
+\contentsline {subsection}{\numberline {6.11.6}\leavevmode {\color {Chapter }Discriminator}}{34}{subsection.6.11.6}
+\contentsline {subsection}{\numberline {6.11.7}\leavevmode {\color {Chapter }AreEqualDiscriminators}}{35}{subsection.6.11.7}
+\contentsline {section}{\numberline {6.12}\leavevmode {\color {Chapter }Isotopisms}}{35}{section.6.12}
+\contentsline {subsection}{\numberline {6.12.1}\leavevmode {\color {Chapter }IsotopismLoops}}{35}{subsection.6.12.1}
+\contentsline {subsection}{\numberline {6.12.2}\leavevmode {\color {Chapter }LoopsUpToIsotopism}}{35}{subsection.6.12.2}
+\contentsline {chapter}{\numberline {7}\leavevmode {\color {Chapter }Testing Properties of Quasigroups and Loops}}{36}{chapter.7}
+\contentsline {section}{\numberline {7.1}\leavevmode {\color {Chapter }Associativity, Commutativity and Generalizations}}{36}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}\leavevmode {\color {Chapter }IsAssociative}}{36}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}\leavevmode {\color {Chapter }IsCommutative}}{36}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}\leavevmode {\color {Chapter }IsPowerAssociative}}{36}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}\leavevmode {\color {Chapter }IsDiassociative}}{36}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}\leavevmode {\color {Chapter }Inverse Propeties}}{37}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}\leavevmode {\color {Chapter }HasLeftInverseProperty, HasRightInverseProperty and HasInverseProperty}}{37}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}\leavevmode {\color {Chapter }HasTwosidedInverses}}{37}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}\leavevmode {\color {Chapter }HasWeakInverseProperty}}{37}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}\leavevmode {\color {Chapter }HasAutomorphicInverseProperty}}{37}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}\leavevmode {\color {Chapter }HasAntiautomorphicInverseProperty}}{37}{subsection.7.2.5}
+\contentsline {section}{\numberline {7.3}\leavevmode {\color {Chapter }Some Properties of Quasigroups}}{38}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}\leavevmode {\color {Chapter }IsSemisymmetric}}{38}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}\leavevmode {\color {Chapter }IsTotallySymmetric}}{38}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}\leavevmode {\color {Chapter }IsIdempotent}}{38}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}\leavevmode {\color {Chapter }IsSteinerQuasigroup}}{38}{subsection.7.3.4}
+\contentsline {subsection}{\numberline {7.3.5}\leavevmode {\color {Chapter }IsUnipotent}}{38}{subsection.7.3.5}
+\contentsline {subsection}{\numberline {7.3.6}\leavevmode {\color {Chapter }IsLeftDistributive, IsRightDistributive, IsDistributive}}{38}{subsection.7.3.6}
+\contentsline {subsection}{\numberline {7.3.7}\leavevmode {\color {Chapter }IsEntropic and IsMedial}}{39}{subsection.7.3.7}
+\contentsline {section}{\numberline {7.4}\leavevmode {\color {Chapter }Loops of Bol Moufang Type}}{39}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}\leavevmode {\color {Chapter }IsExtraLoop}}{40}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}\leavevmode {\color {Chapter }IsMoufangLoop}}{40}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.3}\leavevmode {\color {Chapter }IsCLoop}}{40}{subsection.7.4.3}
+\contentsline {subsection}{\numberline {7.4.4}\leavevmode {\color {Chapter }IsLeftBolLoop}}{40}{subsection.7.4.4}
+\contentsline {subsection}{\numberline {7.4.5}\leavevmode {\color {Chapter }IsRightBolLoop}}{40}{subsection.7.4.5}
+\contentsline {subsection}{\numberline {7.4.6}\leavevmode {\color {Chapter }IsLCLoop}}{40}{subsection.7.4.6}
+\contentsline {subsection}{\numberline {7.4.7}\leavevmode {\color {Chapter }IsRCLoop}}{40}{subsection.7.4.7}
+\contentsline {subsection}{\numberline {7.4.8}\leavevmode {\color {Chapter }IsLeftNuclearSquareLoop}}{40}{subsection.7.4.8}
+\contentsline {subsection}{\numberline {7.4.9}\leavevmode {\color {Chapter }IsMiddleNuclearSquareLoop}}{40}{subsection.7.4.9}
+\contentsline {subsection}{\numberline {7.4.10}\leavevmode {\color {Chapter }IsRightNuclearSquareLoop}}{40}{subsection.7.4.10}
+\contentsline {subsection}{\numberline {7.4.11}\leavevmode {\color {Chapter }IsNuclearSquareLoop}}{41}{subsection.7.4.11}
+\contentsline {subsection}{\numberline {7.4.12}\leavevmode {\color {Chapter }IsFlexible}}{41}{subsection.7.4.12}
+\contentsline {subsection}{\numberline {7.4.13}\leavevmode {\color {Chapter }IsLeftAlternative}}{41}{subsection.7.4.13}
+\contentsline {subsection}{\numberline {7.4.14}\leavevmode {\color {Chapter }IsRightAlternative}}{41}{subsection.7.4.14}
+\contentsline {subsection}{\numberline {7.4.15}\leavevmode {\color {Chapter }IsAlternative}}{41}{subsection.7.4.15}
+\contentsline {section}{\numberline {7.5}\leavevmode {\color {Chapter }Power Alternative Loops}}{42}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}\leavevmode {\color {Chapter }IsLeftPowerAlternative, IsRightPowerAlternative and IsPowerAlternative}}{42}{subsection.7.5.1}
+\contentsline {section}{\numberline {7.6}\leavevmode {\color {Chapter }Conjugacy Closed Loops and Related Properties}}{42}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}\leavevmode {\color {Chapter }IsLCCLoop}}{42}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2}\leavevmode {\color {Chapter }IsRCCLoop}}{42}{subsection.7.6.2}
+\contentsline {subsection}{\numberline {7.6.3}\leavevmode {\color {Chapter }IsCCLoop}}{42}{subsection.7.6.3}
+\contentsline {subsection}{\numberline {7.6.4}\leavevmode {\color {Chapter }IsOsbornLoop}}{42}{subsection.7.6.4}
+\contentsline {section}{\numberline {7.7}\leavevmode {\color {Chapter }Automorphic Loops}}{43}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}\leavevmode {\color {Chapter }IsLeftAutomorphicLoop}}{43}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.7.2}\leavevmode {\color {Chapter }IsMiddleAutomorphicLoop}}{43}{subsection.7.7.2}
+\contentsline {subsection}{\numberline {7.7.3}\leavevmode {\color {Chapter }IsRightAutomorphicLoop}}{43}{subsection.7.7.3}
+\contentsline {subsection}{\numberline {7.7.4}\leavevmode {\color {Chapter }IsAutomorphicLoop}}{43}{subsection.7.7.4}
+\contentsline {section}{\numberline {7.8}\leavevmode {\color {Chapter }Additonal Varieties of Loops}}{43}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}\leavevmode {\color {Chapter }IsCodeLoop}}{43}{subsection.7.8.1}
+\contentsline {subsection}{\numberline {7.8.2}\leavevmode {\color {Chapter }IsSteinerLoop}}{44}{subsection.7.8.2}
+\contentsline {subsection}{\numberline {7.8.3}\leavevmode {\color {Chapter }IsLeftBruckLoop and IsLeftKLoop}}{44}{subsection.7.8.3}
+\contentsline {subsection}{\numberline {7.8.4}\leavevmode {\color {Chapter }IsRightBruckLoop and IsRightKLoop}}{44}{subsection.7.8.4}
+\contentsline {chapter}{\numberline {8}\leavevmode {\color {Chapter }Specific Methods}}{45}{chapter.8}
+\contentsline {section}{\numberline {8.1}\leavevmode {\color {Chapter }Core Methods for Bol Loops}}{45}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}\leavevmode {\color {Chapter }AssociatedLeftBruckLoop and AssociatedRightBruckLoop}}{45}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}\leavevmode {\color {Chapter }IsExactGroupFactorization}}{45}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}\leavevmode {\color {Chapter }RightBolLoopByExactGroupFactorization}}{45}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}\leavevmode {\color {Chapter }Moufang Modifications}}{46}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}\leavevmode {\color {Chapter }LoopByCyclicModification}}{46}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}\leavevmode {\color {Chapter }LoopByDihedralModification}}{46}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}\leavevmode {\color {Chapter }LoopMG2}}{46}{subsection.8.2.3}
+\contentsline {section}{\numberline {8.3}\leavevmode {\color {Chapter }Triality for Moufang Loops}}{46}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}\leavevmode {\color {Chapter }TrialityPermGroup}}{47}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}\leavevmode {\color {Chapter }TrialityPcGroup}}{47}{subsection.8.3.2}
+\contentsline {section}{\numberline {8.4}\leavevmode {\color {Chapter }Realizing Groups as Multiplication Groups of Loops}}{47}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}\leavevmode {\color {Chapter }AllLoopTablesInGroup}}{47}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}\leavevmode {\color {Chapter }AllProperLoopTablesInGroup}}{47}{subsection.8.4.2}
+\contentsline {subsection}{\numberline {8.4.3}\leavevmode {\color {Chapter }OneLoopTableInGroup}}{47}{subsection.8.4.3}
+\contentsline {subsection}{\numberline {8.4.4}\leavevmode {\color {Chapter }OneProperLoopTableInGroup}}{48}{subsection.8.4.4}
+\contentsline {subsection}{\numberline {8.4.5}\leavevmode {\color {Chapter }AllLoopsWithMltGroup}}{48}{subsection.8.4.5}
+\contentsline {subsection}{\numberline {8.4.6}\leavevmode {\color {Chapter }OneLoopWithMltGroup}}{48}{subsection.8.4.6}
+\contentsline {chapter}{\numberline {9}\leavevmode {\color {Chapter }Libraries of Loops}}{49}{chapter.9}
+\contentsline {section}{\numberline {9.1}\leavevmode {\color {Chapter }A Typical Library}}{49}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}\leavevmode {\color {Chapter }LibraryLoop}}{49}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}\leavevmode {\color {Chapter }MyLibraryLoop}}{49}{subsection.9.1.2}
+\contentsline {subsection}{\numberline {9.1.3}\leavevmode {\color {Chapter }DisplayLibraryInfo}}{50}{subsection.9.1.3}
+\contentsline {section}{\numberline {9.2}\leavevmode {\color {Chapter }Left Bol Loops and Right Bol Loops}}{50}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}\leavevmode {\color {Chapter }LeftBolLoop}}{50}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}\leavevmode {\color {Chapter }RightBolLoop}}{50}{subsection.9.2.2}
+\contentsline {section}{\numberline {9.3}\leavevmode {\color {Chapter }Moufang Loops}}{50}{section.9.3}
+\contentsline {subsection}{\numberline {9.3.1}\leavevmode {\color {Chapter }MoufangLoop}}{50}{subsection.9.3.1}
+\contentsline {section}{\numberline {9.4}\leavevmode {\color {Chapter }Code Loops}}{51}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}\leavevmode {\color {Chapter }CodeLoop}}{51}{subsection.9.4.1}
+\contentsline {section}{\numberline {9.5}\leavevmode {\color {Chapter }Steiner Loops}}{51}{section.9.5}
+\contentsline {subsection}{\numberline {9.5.1}\leavevmode {\color {Chapter }SteinerLoop}}{51}{subsection.9.5.1}
+\contentsline {section}{\numberline {9.6}\leavevmode {\color {Chapter }Conjugacy Closed Loops}}{51}{section.9.6}
+\contentsline {subsection}{\numberline {9.6.1}\leavevmode {\color {Chapter }RCCLoop and RightConjugacyClosedLoop}}{52}{subsection.9.6.1}
+\contentsline {subsection}{\numberline {9.6.2}\leavevmode {\color {Chapter }LCCLoop and LeftConjugacyClosedLoop}}{52}{subsection.9.6.2}
+\contentsline {subsection}{\numberline {9.6.3}\leavevmode {\color {Chapter }CCLoop and ConjugacyClosedLoop}}{52}{subsection.9.6.3}
+\contentsline {section}{\numberline {9.7}\leavevmode {\color {Chapter }Small Loops}}{52}{section.9.7}
+\contentsline {subsection}{\numberline {9.7.1}\leavevmode {\color {Chapter }SmallLoop}}{53}{subsection.9.7.1}
+\contentsline {section}{\numberline {9.8}\leavevmode {\color {Chapter }Paige Loops}}{53}{section.9.8}
+\contentsline {subsection}{\numberline {9.8.1}\leavevmode {\color {Chapter }PaigeLoop}}{53}{subsection.9.8.1}
+\contentsline {section}{\numberline {9.9}\leavevmode {\color {Chapter }Nilpotent Loops}}{53}{section.9.9}
+\contentsline {subsection}{\numberline {9.9.1}\leavevmode {\color {Chapter }NilpotentLoop}}{53}{subsection.9.9.1}
+\contentsline {section}{\numberline {9.10}\leavevmode {\color {Chapter }Automorphic Loops}}{53}{section.9.10}
+\contentsline {subsection}{\numberline {9.10.1}\leavevmode {\color {Chapter }AutomorphicLoop}}{53}{subsection.9.10.1}
+\contentsline {section}{\numberline {9.11}\leavevmode {\color {Chapter }Interesting Loops}}{53}{section.9.11}
+\contentsline {subsection}{\numberline {9.11.1}\leavevmode {\color {Chapter }InterestingLoop}}{54}{subsection.9.11.1}
+\contentsline {section}{\numberline {9.12}\leavevmode {\color {Chapter }Libraries of Loops Up To Isotopism}}{54}{section.9.12}
+\contentsline {subsection}{\numberline {9.12.1}\leavevmode {\color {Chapter }ItpSmallLoop}}{54}{subsection.9.12.1}
+\contentsline {chapter}{\numberline {A}\leavevmode {\color {Chapter }Files}}{55}{appendix.A}
+\contentsline {chapter}{\numberline {B}\leavevmode {\color {Chapter }Filters}}{57}{appendix.B}
+\contentsline {chapter}{References}{61}{appendix*.3}
+\contentsline {chapter}{Index}{62}{section*.4}

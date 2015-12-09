@@ -2,12 +2,12 @@
 ##
 #W  nr.gd             Near-ring Library                   J"urgen Ecker
 ##
-#H  @(#)$Id: nr.gd,v 1.4 2007-05-09 22:45:31 stein Exp $
+#H  @(#)$Id: nr.gd,v 1.4 2007/05/09 22:45:31 stein Exp $
 ##
 #Y  Copyright (C)
 ##
 ##  $Log: nr.gd,v $
-##  Revision 1.4  2007-05-09 22:45:31  stein
+##  Revision 1.4  2007/05/09 22:45:31  stein
 ##  added functions IsNearRingUnit, NearRingUnits
 ##
 ##  Revision 1.3  2002/01/17 18:25:52  juergen
@@ -26,7 +26,7 @@
 ##		new attribute NRRowEndos
 
 nr_gd:=
-  "@(#)$Id: nr.gd,v 1.4 2007-05-09 22:45:31 stein Exp $";
+  "@(#)$Id: nr.gd,v 1.4 2007/05/09 22:45:31 stein Exp $";
 
 
 #############################################################################

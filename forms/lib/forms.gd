@@ -4,8 +4,9 @@
 ##                                                              John Bamberg
 ##                                                              Jan De Beule
 ##
-##  Copyright 2011, Ghent University
-##  Copyright 2011, The University of Western Austalia
+##  Copyright 2015, Ghent University
+##  Copyright 2015, Vrije Universiteit Brussel
+##  Copyright 2015, The University of Western Austalia
 ##
 ##  Declaration matter for quadratic and sesquilinear forms
 ##
@@ -172,6 +173,10 @@ DeclareAttribute( "IsometricCanonicalForm", IsForm );
 DeclareAttribute( "DiscriminantOfForm", IsForm );
 DeclareAttribute( "PolynomialOfForm", IsForm );
 DeclareAttribute( "AssociatedBilinearForm", IsQuadraticForm );
+# new in forms 1.2.3
+DeclareAttribute( "TypeOfForm", IsBilinearForm);
+DeclareAttribute( "TypeOfForm", IsHermitianForm);
+DeclareAttribute( "TypeOfForm", IsQuadraticForm);
 
 ## Properties
 DeclareProperty( "IsReflexiveForm", IsForm );

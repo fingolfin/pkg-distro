@@ -1,6 +1,6 @@
 # wedderga, chapter 1
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/intro.xml", 135, 159 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/intro.xml", 135, 159 ]
 
 gap> QG := GroupRing( Rationals, SymmetricGroup(4) );
 <algebra-with-one over Rationals, with 2 generators>

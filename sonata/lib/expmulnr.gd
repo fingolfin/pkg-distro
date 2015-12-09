@@ -2,12 +2,12 @@
 ##
 #W  expmulnr.gd             Near-ring Library                   J"urgen Ecker
 ##
-#H  @(#)$Id: expmulnr.gd,v 1.2 2001-03-21 14:41:07 juergen Exp $
+#H  @(#)$Id: expmulnr.gd,v 1.2 2001/03/21 14:41:07 juergen Exp $
 ##
 #Y  Copyright (C)
 ##
 ##  $Log: expmulnr.gd,v $
-##  Revision 1.2  2001-03-21 14:41:07  juergen
+##  Revision 1.2  2001/03/21 14:41:07  juergen
 ##  erste korrekturen nach dem studium des tutorials
 ##
 ##  Revision 1.1.1.1  2000/02/21 15:59:03  hetzi
@@ -15,7 +15,7 @@
 ##
 
 expmulnr_gd:=
-  "@(#)$Id: expmulnr.gd,v 1.2 2001-03-21 14:41:07 juergen Exp $";
+  "@(#)$Id: expmulnr.gd,v 1.2 2001/03/21 14:41:07 juergen Exp $";
 
 #############################################################################
 ##

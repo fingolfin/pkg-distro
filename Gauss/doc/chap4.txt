@@ -65,8 +65,9 @@
     [4X[28X 1 1 1 1 .[128X[104X
     [4X[25Xgap>[125X [27XEchelonMat(M);[127X[104X
     [4X[28Xrec( heads := [ 1, 2, 0, 3, 0 ],[128X[104X
-    [4X[28X  vectors := [ <a GF2 vector of length 5>, <a GF2 vector of length 5>,[128X[104X
-    [4X[28X      <a GF2 vector of length 5> ] )[128X[104X
+    [4X[28X  vectors := [ <an immutable GF2 vector of length 5>,[128X[104X
+    [4X[28X      <an immutable GF2 vector of length 5>,[128X[104X
+    [4X[28X      <an immutable GF2 vector of length 5> ] )[128X[104X
     [4X[25Xgap>[125X [27XDisplay( last.vectors );[127X[104X
     [4X[28X 1 . . . 1[128X[104X
     [4X[28X . 1 1 . 1[128X[104X
@@ -132,12 +133,15 @@
     [4X[25Xgap>[125X [27XM := [[1,0,1],[1,1,0],[1,0,1],[1,1,0],[1,1,1]] * One( GF(2) );;[127X[104X
     [4X[25Xgap>[125X [27XEchelonMatTransformation( M );[127X[104X
     [4X[28Xrec( [128X[104X
-    [4X[28X  coeffs := [ <a GF2 vector of length 5>, <a GF2 vector of length 5>, [128X[104X
-    [4X[28X      <a GF2 vector of length 5> ], heads := [ 1, 2, 3 ], [128X[104X
+    [4X[28X  coeffs := [ <an immutable GF2 vector of length 5>,[128X[104X
+    [4X[28X      <an immutable GF2 vector of length 5>, [128X[104X
+    [4X[28X      <an immutable GF2 vector of length 5> ], heads := [ 1, 2, 3 ], [128X[104X
     [4X[28X  relations := [128X[104X
-    [4X[28X    [ <a GF2 vector of length 5>, <a GF2 vector of length 5> ], [128X[104X
-    [4X[28X  vectors := [ <a GF2 vector of length 3>, <a GF2 vector of length 3>,[128X[104X
-    [4X[28X      <a GF2 vector of length 3> ] )[128X[104X
+    [4X[28X    [ <an immutable GF2 vector of length 5>,[128X[104X
+    [4X[28X      <an immutable GF2 vector of length 5> ], [128X[104X
+    [4X[28X  vectors := [ <an immutable GF2 vector of length 3>,[128X[104X
+    [4X[28X      <an immutable GF2 vector of length 3>,[128X[104X
+    [4X[28X      <an immutable GF2 vector of length 3> ] )[128X[104X
     [4X[25Xgap>[125X [27XDisplay(last.vectors);[127X[104X
     [4X[28X 1 . .[128X[104X
     [4X[28X . 1 .[128X[104X

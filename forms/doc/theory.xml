@@ -4,8 +4,9 @@
                                                                    John Bamberg
                                                                and Jan De Beule
                                                            
-  Copyright (C) 2011, Ghent University
-  Copyright (C) 2011, The University of Western Australia
+  Copyright (C) 2015, Ghent University
+  Copyright (C) 2015, Vrije Universiteit Brussel
+  Copyright (C) 2015, The University of Western Australia
 
 This is the chapter of the documentation describing background theory of forms and preliminary examples.
 -->
@@ -48,8 +49,8 @@ bilinear forms.
 <P/>
 For a given sesquilinear form <M>f</M>, the choice of the basis determines
 uniquely an <M>n\times n</M> matrix <M>M</M> such that 
-<Alt Not="HTML"><Display>f(v, w) = v M w^{\alpha}^T.</Display></Alt><Alt Only="HTML">
-<Display>f(v, w) = v M w&lt;sup>&#945;T&lt;/sup></Display> </Alt>
+<Alt Not="HTML"><M>f(v, w) = v M w^{\alpha}^T.</M></Alt><Alt Only="HTML">f(v, w) = v M w&lt;sup>&#945;T&lt;/sup>.</Alt>
+<P/>
 This matrix is also called the <E>Gram matrix</E> of <M>f</M>.
 Given a sesquilinear form <M>f</M>, we will denote its Gram matrix by <Alt Not="HTML"><M>M_f</M></Alt>
 <Alt Only="HTML">M&lt;sub>f&lt;/sub></Alt>. In
@@ -108,8 +109,8 @@ symmetric relation. A vector <M>v</M> is called <E>isotropic</E><Index>isotropic
 The <E>radical</E><Index>Radical</Index> of <M>f</M> (n.b., <E>kernel</E> in <Cite Key="Atlas"/>) 
 is the subspace consisting of vectors which are orthogonal to every vector. That is,
 <Alt Not="HTML"><Display>Rad(f) = \{v \in V | f(v,w) = 0,\, \forall w \in
-V\},</Display></Alt><Alt Only="HTML"><Display>Rad(f) = {v &#8712; V | f(v,w) = 0
-for all w &#8712; V},</Display></Alt> and we say that <M>f</M> is
+V\},</Display></Alt><Alt Only="HTML">&lt;center>Rad(f) = {v &#8712; V | f(v,w) = 0
+for all w &#8712; V},&lt;/center></Alt> and we say that <M>f</M> is
 <E>non-degenerate</E><Index Key="Form" Subkey="sesquilinear">Non-degenerate</Index> if
 its radical is trivial (and <E>degenerate</E> otherwise).
 <P/>Given a subspace <M>W</M>, we denote the 
@@ -120,13 +121,23 @@ We call a subspace <M>W</M> <E>totally isotropic</E><Index Key="Form"
 Subkey="sesquilinear">Totally Isotropic</Index> with respect to <M>f</M> if
 <M>W</M> is contained in <Alt Not="HTML"><M>W^\perp</M></Alt><Alt
 Only="HTML">W&lt;sup>&#8869;&lt;/sup></Alt>, i.e.
-<Alt Not="HTML"><Display>f(v,w) = 0,\, \forall v,w \in W.</Display></Alt><Alt
-Only="HTML"><Display>f(v,w) = 0 for all v,w &#8712; W.</Display></Alt>
+<Alt Not="HTML"><Display>f(v,w) = 0,\, \mbox{\rm for all } v,w \in W.</Display></Alt><Alt
+Only="HTML">&lt;center>f(v,w) = 0 for all v,w &#8712; W.&lt;/center></Alt>
 <P/>Suppose that <M>f</M> is a non-degenerate sesquilinear form. The <E>Witt
 index</E><Index Key="Form" Subkey="sesquilinear">Witt Index</Index> of <M>f</M>
 is the maximum dimension of a totally isotropic subspace with respect to
-<M>f</M>. Notice that all totally isotropic subspaces of maximal dimension of a
-degenerate form <M>f</M> contain the radical of <M>f</M>.
+<M>f</M>.
+<P/>
+Let <M>f</M> be a sesquilinear form on <M>V(n,q)</M>, with radical <M>R</M>, a
+<M>k</M>-dimensional subspace of <M>V(n,q)</M>, <M>0 \leq k \leq n</M>.
+Then <M>f</M> induces a non-degenerate form <M>g</M> on <M>V/R</M>.
+When <M>dim(R)=0</M>, then <M>g=f</M> and <M>f</M> is non-degenerate.
+Notice that all totally isotropic subspaces of maximal dimension of a degenerate
+form <M>f</M> contain the radical of <M>f</M>. In <Package>Forms</Package>, the notion
+Witt index will <B>always refer to the induced non-degenerate form</B> <M>g</M>.
+Hence, given a degenerate form <M>f</M>, computing its Witt index will return the Witt index
+of the induced form <M>g</M>. <B>This also holds for the notions elliptic, parabolic
+and hyperbolic for a bilinear form, which are notions defined using the Witt index, see below</B>.
 <P/>
 We end this section with a short description of the conventions used in
 <Package>Forms</Package> for the notions orthogonal, symplectic, pseudo, hyperbolic, elliptic
@@ -139,22 +150,22 @@ and only if <M>f</M> is symmetric but not alternating.
 This terminology is related to the theory of polar spaces, and in the case
 of orthogonal forms, we adopt the terms <E>hyperbolic</E><Index Key="Form" Subkey="hyperbolic">Form</Index>, <E>elliptic</E><Index Key="Form" Subkey="elliptic">Form</Index> and <E>parabolic</E><Index Key="Form" Subkey="parabolic">Form</Index> for the three different isometry types of
 orthogonal forms. From the point of view of matrix groups, these three
-types correspond as follows:
+types correspond as follows. Recall that, as explained above, the Witt index refers to the Witt index
+of the <B>induced non-degenerate form</B> <M>g</M> when <M>f</M> is degenerate.
 <Table Align="l|l|l">
-<Caption>Summary of Orthogonal Forms</Caption>
+<Caption>Posibilites for an orthogonal form <M>f</M> on a vector space <M>V</M></Caption>
 <HorLine/>
 <Row>
-  <Item>Hyperbolic</Item><Item>Orthogonal of + type</Item><Item>Even dimension, maximal Witt index</Item>
+  <Item>Hyperbolic</Item><Item>Orthogonal of + type</Item><Item><M>V/Rad(f)</M> has even dimension, <M>g</M> has maximal Witt index</Item>
 </Row>
 <Row>
-  <Item>Elliptic</Item><Item>Orthogonal of - type</Item><Item>Even dimension, non-maximal Witt index</Item>
+  <Item>Elliptic</Item><Item>Orthogonal of - type</Item><Item><M>V/Rad(f)</M> has even dimension, <M>g</M> has non-maximal Witt index</Item>
 </Row>
 <Row>
-  <Item>Parabolic</Item><Item>Orthogonal of o type</Item><Item>Odd dimension</Item>
+  <Item>Parabolic</Item><Item>Orthogonal of o type</Item><Item><M>V/Rad(f)</M> has odd dimension</Item>
 </Row>
 <HorLine/>
 </Table>
-
 
 <Subsection>
 <Heading>Examples</Heading>
@@ -315,7 +326,7 @@ form. Chosing a basis of the vector space <M>V</M>, it is clear that an <M>n
 <Package>Forms</Package>, the <E>Gram matrix</E> of a quadratic form is always an upper
 triangle matrix <M>M</M>, such that
 <Alt Not="HTML"><Display>Q(v) = vMv^T,</Display></Alt><Alt
-Only="HTML"><Display>Q(v)=vMv&lt;sup>T&lt;/sup>,</Display></Alt>
+Only="HTML">&lt;center>Q(v)=vMv&lt;sup>T&lt;/sup>,&lt;/center></Alt>
 where the basis of <M>V</M> is the standard basis. Although the Gram matrix
 stored with the quadratic form is always an upper triangle matrix, the user is
 allowed to use any matrix to define the quadratic form, since any matrix
@@ -346,7 +357,7 @@ if and only if they are orthogonal with respect to the associated bilinear form
 of the set of all singular vectors with relation to <M>Q</M> and the radical of
 the associated bilinear form <M>f</M>, i.e.
 <Alt Not="HTML"><Display>Rad(Q) = \{v \in V | Q(v) = 0\,\, \mathrm{and}\,\, v \in Rad(f)\}.</Display></Alt>
-<Alt Only="HTML"><Display>Rad(Q) = {v &#8712; V | Q(v) = 0 and v &#8712; Rad(f)}.</Display></Alt>
+<Alt Only="HTML">&lt;center>Rad(Q) = {v &#8712; V | Q(v) = 0 and v &#8712; Rad(f)}.&lt;/center></Alt>
 We call a quadratic form <M>Q</M> <E>non-singular</E> if and only if the radical
 contains only the zero vector, and <E>singular</E> otherwise.
 <P/>
@@ -358,13 +369,46 @@ associated bilinear form <M>f</M>, but the converse is only true when the
 characteristic of the field is odd.
 <P/>Suppose now that <M>Q</M> is a non-singular quadratic form. The <E>Witt
 index</E> of <M>Q</M> is the maximum dimension of a totally singular subspace with
-respect to <M>Q</M>. Notice that all totally singular subspaces of maximal
-dimension of a singular quadratic form <M>Q</M> contain the radical of <M>Q</M>.
+respect to <M>Q</M>.
 <P/>
+Let <M>Q</M> be a quadratic form on <M>V(n,q)</M>, with radical <M>R</M>, a
+<M>k</M>-dimensional subspace of <M>V(n,q)</M>, <M>0 \leq k \leq n</M>.
+Then <M>Q</M> induces a non-singular form <M>Q'</M> on <M>V/R</M>.
+When <M>dim(R)=0</M>, then <M>Q=Q'</M> and <M>Q</M> is non-singular.
+Notice that all totally singular subspaces of maximal dimension of a singular
+form <M>Q</M> contain the radical of <M>Q</M>. In <Package>Forms</Package>, the notion
+Witt index will <B>always refer to the induced non-singular form</B> <M>Q'</M>.
+Hence, given a singular form <M>Q</M>, computing its Witt index will return the Witt index
+of the induced form <M>Q'</M>. <B>This also holds for the notions elliptic, parabolic
+and hyperbolic for a quadratic form, which are notions defined using the Witt index, see below</B>.
+<P/>
+
+The terminology<E>hyperbolic</E><Index Key="Form" Subkey="hyperbolic">Form</Index>,
+<E>elliptic</E><Index Key="Form" Subkey="elliptic">Form</Index> and
+<E>parabolic</E><Index Key="Form" Subkey="parabolic">Form</Index> is also used
+for quadratic forms, and is defined analogously as for the bilinear forms using the
+Witt index. Also in the case of quadratic forms, this terminology is related to the theory of
+polar spaces. Recall that, as explained above, the Witt index refers to the Witt index
+of the <B>induced non-singular form</B> <M>Q</M> when <M>Q'</M> is singular.
+<Table Align="l|l|l">
+<Caption>Posibilites for a quadratic form <M>Q</M> on a vector space <M>V</M></Caption>
+<HorLine/>
+<Row>
+  <Item>Hyperbolic</Item><Item>Orthogonal of + type</Item><Item><M>V/Rad(Q)</M> has even dimension, <M>Q'</M> has maximal Witt index</Item>
+</Row>
+<Row>
+  <Item>Elliptic</Item><Item>Orthogonal of - type</Item><Item><M>V/Rad(Q)</M> has even dimension, <M>Q'</M> has non-maximal Witt index</Item>
+</Row>
+<Row>
+  <Item>Parabolic</Item><Item>Orthogonal of o type</Item><Item><M>V/Rad(Q)</M> has odd dimension</Item>
+</Row>
+<HorLine/>
+</Table>
+
 From the above definitions, it follows that, when the characteristic of the field
-differs from 2, a quadratic form <M>Q</M> is non-degenerate if and only if its
+differs from 2, a quadratic form <M>Q</M> is non-singular if and only if its
 associated bilinear form <M>f</M> is non-degenerate. When the characteristic of
-the field is 2, one can easily construct non-degenerate quadratic forms, with a
+the field is 2, one can easily construct non-singular quadratic forms, with a
 degenerate associated bilinear form. We will give an example of this situation
 in the next section.
 <Subsection>
@@ -390,7 +434,7 @@ We construct now two different quadratic forms with the same associated bilinear
 <Example>
 <#Include SYSTEM "../examples/include/bg_th_ex8.include"> 
 </Example>
-We end with an example of a non-degenerate quadratic form with a degenerate
+We end with an example of a non-singular quadratic form with a degenerate
 associated bilinear form.
 <Example>
 <#Include SYSTEM "../examples/include/bg_th_ex9.include"> 

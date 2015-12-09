@@ -122,9 +122,9 @@
   [33X[0;0YCheck  if  [3Xcm[103X  is  a  well-defined  chain  morphism, i.e. independent of all
   involved presentations.[133X
   
-  [1X7.3-2 IsGeneralizedMorphism[101X
+  [1X7.3-2 IsGeneralizedMorphismWithFullDomain[101X
   
-  [29X[2XIsGeneralizedMorphism[102X( [3Xcm[103X ) [32X property
+  [29X[2XIsGeneralizedMorphismWithFullDomain[102X( [3Xcm[103X ) [32X property
   [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X or [10Xfalse[110X[133X
   
   [33X[0;0YCheck if [3Xcm[103X is a generalized morphism.[133X

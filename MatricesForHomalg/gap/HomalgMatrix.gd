@@ -464,6 +464,9 @@ DeclareAttribute( "EvalKroneckerMat",
 DeclareAttribute( "EvalMulMat",
         IsHomalgMatrix );
 
+DeclareAttribute( "EvalMulMatRight",
+        IsHomalgMatrix );
+
 DeclareAttribute( "EvalAddMat",
         IsHomalgMatrix );
 
@@ -1162,6 +1165,9 @@ DeclareOperation( "Iterator",
 
 DeclareOperation( "Select",
         [ IsHomalgMatrix, IsList ] );
+
+DeclareOperation( "ClearDenominatorsRowWise",
+        [ IsHomalgMatrix ] );
 
 ####################################
 #

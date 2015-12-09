@@ -15,7 +15,6 @@
 ##
 ## <#Include Label="SCAlexanderDual"/>
 ## <#Include Label="SCClose"/>
-## <#Include Label="SCCollapseGreedy"/>
 ## <#Include Label="SCCone"/>
 ## <#Include Label="SCDeletedJoin"/>
 ## <#Include Label="SCDifference"/>

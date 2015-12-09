@@ -45,7 +45,7 @@
 ## <#Include Label="SCHasInterior"/>
 ## <#Include Label="SCHeegaardSplittingSmallGenus"/>
 ## <#Include Label="SCHeegaardSplitting"/>
-## <#Include Label="SCHomology"/>
+## <#Include Label="SCHomologyClassic"/>
 ## <#Include Label="SCIncidences"/>
 ## <#Include Label="SCIncidencesEx"/>
 ## <#Include Label="SCInterior"/>

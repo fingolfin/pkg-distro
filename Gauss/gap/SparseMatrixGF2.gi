@@ -227,6 +227,19 @@ InstallMethod( UnionOfColumns,
 
 ##
 InstallMethod( \*,
+        [ IsSparseMatrixGF2Rep, IsRingElement ],
+  function( A, a )
+    local i, m;
+    if IsZero( a ) then
+        return SparseZeroMatrix( A!.nrows, A!.ncols, GF(2) );
+    else #a = 1
+        return A;
+    fi;
+  end
+);
+
+##
+InstallMethod( \*,
         [ IsRingElement, IsSparseMatrixGF2Rep ],
   function( a, A )
     local i, m;
@@ -237,7 +250,7 @@ InstallMethod( \*,
     fi;
   end
 );
-  
+
 ##
 InstallMethod( \*,
         [ IsSparseMatrixGF2Rep, IsSparseMatrixGF2Rep ],
@@ -287,7 +300,7 @@ InstallMethod( IsSparseIdentityMatrix,
 
 ##
 InstallMethod( SparseKroneckerProduct,
-        [ IsSparseMatrix, IsSparseMatrix ],
+        [ IsSparseMatrixGF2Rep, IsSparseMatrixGF2Rep ],
         function( A, B )
     local indices, i1, i2, rowindex, j1, j2, prod;
     

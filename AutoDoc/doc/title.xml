@@ -9,7 +9,7 @@
     Generate documentation from &GAP; source code
   </Subtitle>
   <Version>
-    2015.04.29
+    2015.09.30
   </Version>
   <Author>
     Sebastian Gutsche<Alt Only="LaTeX"><Br/></Alt>
@@ -38,7 +38,7 @@ Germany<Br/>
 
   </Author>
   <Date>
-    29/04/2015
+    30/09/2015
   </Date>
   <Copyright>
     &copyright; 2012-2014 by Sebastian Gutsche and Max Horn<P/>

@@ -37,7 +37,7 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F66120A814DC16B">4.3-1 IsMorphism</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F210D987C9DCC11">4.3-2 IsGeneralizedMorphism</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7B7206EC7F584F25">4.3-2 IsGeneralizedMorphismWithFullDomain</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7AD32A427B247366">4.3-3 IsGeneralizedEpimorphism</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X83C68AEA7FE4AA29">4.3-4 IsGeneralizedMonomorphism</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X83F05F467DA5EA4D">4.3-5 IsGeneralizedIsomorphism</a></span>
@@ -63,7 +63,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85FA7C19800F72B2">4.4-8 ImageObjectEmb</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X86E3E1BA7BCE4D66">4.4-9 ImageObjectEpi</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X823682157C6B4D63">4.4-10 MorphismAid</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8569D5BE8405F643">4.4-11 GeneralizedInverse</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X85F22F4084EA7D31">4.4-11 InverseOfGeneralizedMorphismWithFullDomain</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8500C49A784C8EDC">4.4-12 DegreeOfMorphism</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X789623548056F7B7">4.5 <span class="Heading">Morphisms: Operations and Functions</span></a>
@@ -180,11 +180,11 @@ DeclareRepresentation( "IsStaticMorphismOfFinitelyGeneratedObjectsRep",
 
 <p>Check if <var class="Arg">phi</var> is a well-defined map, i.e. independent of all involved presentations.</p>
 
-<p><a id="X7F210D987C9DCC11" name="X7F210D987C9DCC11"></a></p>
+<p><a id="X7B7206EC7F584F25" name="X7B7206EC7F584F25"></a></p>
 
-<h5>4.3-2 IsGeneralizedMorphism</h5>
+<h5>4.3-2 IsGeneralizedMorphismWithFullDomain</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneralizedMorphism</code>( <var class="Arg">phi</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneralizedMorphismWithFullDomain</code>( <var class="Arg">phi</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
 
 <p>Check if <var class="Arg">phi</var> is a generalized morphism.</p>
@@ -382,11 +382,11 @@ DeclareRepresentation( "IsStaticMorphismOfFinitelyGeneratedObjectsRep",
 
 <p>The morphism aid map of a true generalized map. <br /> (no method installed)</p>
 
-<p><a id="X8569D5BE8405F643" name="X8569D5BE8405F643"></a></p>
+<p><a id="X85F22F4084EA7D31" name="X85F22F4084EA7D31"></a></p>
 
-<h5>4.4-11 GeneralizedInverse</h5>
+<h5>4.4-11 InverseOfGeneralizedMorphismWithFullDomain</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneralizedInverse</code>( <var class="Arg">phi</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InverseOfGeneralizedMorphismWithFullDomain</code>( <var class="Arg">phi</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>Returns: a <strong class="pkg">homalg</strong> morphism</p>
 
 <p>The generalized inverse of the epimorphism <var class="Arg">phi</var> (cf. <a href="chapBib.html#biBBaSF">[Bar, Cor. 4.8]</a>)).</p>

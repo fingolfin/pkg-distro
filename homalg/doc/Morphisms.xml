@@ -31,7 +31,7 @@
 <Heading>Morphisms: Properties</Heading>
 
 <#Include Label="IsMorphism">
-<#Include Label="IsGeneralizedMorphism">
+<#Include Label="IsGeneralizedMorphismWithFullDomain">
 <#Include Label="IsGeneralizedEpimorphism">
 <#Include Label="IsGeneralizedMonomorphism">
 <#Include Label="IsGeneralizedIsomorphism">
@@ -59,7 +59,7 @@
 <#Include Label="ImageObjectEmb">
 <#Include Label="ImageObjectEpi">
 <#Include Label="MorphismAid">
-<#Include Label="GeneralizedInverse">
+<#Include Label="InverseOfGeneralizedMorphismWithFullDomain">
 <#Include Label="DegreeOfMorphism">
 
 </Section>

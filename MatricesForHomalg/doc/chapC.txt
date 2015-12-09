@@ -653,6 +653,37 @@
     [4X    return a * Eval( A );[104X
     [4X    [104X
     [4Xend );[104X
+    [4X[104X
+    [4XInstallMethod( Eval,[104X
+    [4X        "for homalg matrices (HasEvalMulMatRight)",[104X
+    [4X        [ IsHomalgMatrix and HasEvalMulMatRight ],[104X
+    [4X        [104X
+    [4X  function( C )[104X
+    [4X    local R, RP, e, A, a;[104X
+    [4X    [104X
+    [4X    R := HomalgRing( C );[104X
+    [4X    [104X
+    [4X    RP := homalgTable( R );[104X
+    [4X    [104X
+    [4X    e :=  EvalMulMatRight( C );[104X
+    [4X    [104X
+    [4X    A := e[1];[104X
+    [4X    a := e[2];[104X
+    [4X    [104X
+    [4X    if IsBound(RP!.MulMatRight) then[104X
+    [4X        return RP!.MulMatRight( A, a );[104X
+    [4X    fi;[104X
+    [4X    [104X
+    [4X    if not IsHomalgInternalMatrixRep( C ) then[104X
+    [4X        Error( "could not find a procedure called MulMatRight ",[104X
+    [4X               "in the homalgTable of the non-internal ring\n" );[104X
+    [4X    fi;[104X
+    [4X    [104X
+    [4X    #=====# can only work for homalg internal matrices #=====#[104X
+    [4X    [104X
+    [4X    return Eval( A ) * a;[104X
+    [4X    [104X
+    [4Xend );[104X
   [4X[32X[104X
   
   [1XC.4-15 Eval[101X

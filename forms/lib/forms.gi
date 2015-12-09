@@ -4,8 +4,9 @@
 ##                                                              John Bamberg
 ##                                                              Jan De Beule
 ##
-##  Copyright 2011, Ghent University
-##  Copyright 2011, The University of Western Austalia
+##  Copyright 2015, Ghent University
+##  Copyright 2015, Vrije Universiteit Brussel
+##  Copyright 2015, The University of Western Austalia
 ##
 ##  Implementation of quadratic and sesquilinear forms
 ##
@@ -1196,23 +1197,31 @@ InstallOtherMethod( \^, "for a pair of FFE matrices and a sesquilinear form",
 InstallOtherMethod( \^, "for a pair of FFE vectors and an hermitian form",
   [ IsVectorList and IsFFECollColl, IsHermitianForm ],
   function( pair, f )
-    local frob;
+    local frob,hh,bf,p;
     if Size(pair) <> 2 then 
        Error("The first argument must be a pair of vectors");
     fi;
-    frob := FrobeniusAutomorphism(f!.basefield);
+    bf := f!.basefield;
+	p := Characteristic(bf);
+	hh := LogInt(Size(bf),p)/2;
+	#frob := FrobeniusAutomorphism(f!.basefield); #here was a mistake!
+	frob := FrobeniusAutomorphism(bf)^hh; 
     return pair[1] * f!.matrix * (pair[2]^frob);
   end );
 
 InstallOtherMethod( \^, "for a pair of FFE matrices and an hermitian form",
   [ IsFFECollCollColl, IsHermitianForm ],
   function( pair, f )
-    local frob;
+    local frob,hh,bf,p;
     if Size(pair) <> 2 then 
        Error("The first argument must be a pair of vectors");
     fi;
-    frob := FrobeniusAutomorphism(f!.basefield);
-    return pair[1] * f!.matrix * (TransposedMat(pair[2])^frob);
+    bf := f!.basefield;
+	p := Characteristic(bf);
+	hh := LogInt(Size(bf),p)/2;
+	#frob := FrobeniusAutomorphism(f!.basefield);  #here was a mistake, noticed by using fining.
+	frob := FrobeniusAutomorphism(bf)^hh; 
+	return pair[1] * f!.matrix * (TransposedMat(pair[2])^frob);
   end );
 
 InstallOtherMethod( \^, "for a pair of FFE matrices and a trivial form", #new in 1.2.1
@@ -3199,3 +3208,88 @@ InstallMethod(IsTotallySingularSubspace,
     return IsTotallyIsotropicSubspace(AssociatedBilinearForm(f),sub);
   fi;
 end );
+
+#############################################################################
+#A TypeOfForm( <form> ) <form>: sesquilinear or quadratic form
+#  returns one of 0, 1, -1, 1/2, or -1/2.
+# Let <f> be a form on V(n,q), with radical R, a k-dimensional subspace
+# of V(n,q), 0 <= k <= n. Then <f> induces a non-degenerate/non-singular
+# form <g> on V/R. When dim(R)=0, this induced form <g> is <f> itself of course.
+# TypeOfForm(f) returns:
+#  - 0 when g is symplectic (1) or parabolic (2)
+#  - +1 when g is hyperbolic (3)
+#  - -1 when g is elliptic (4)
+#  - -1/2 when g is hermitian in odd dimension (5)
+#  - 1/2 when g is hermitian in even dimension (6)
+#  - An error when f is a pseudo form (7);
+#    note that no method is installed for trivial forms.
+#  One way to remember it is that the number of points of the
+#  corresponding rank 1 polar space is q^(1 - sign) + 1, q the order
+#  of the base field of the form.
+#  The above description is valid for sesquilinear and quadratic forms,
+#  of course case (1) can only occcur for bilinear forms, cases (2), (3) and (4)
+#  for both quadratic and bilinear forms, cases (5) and (6) only for hermitian
+#  forms and case (7) only for bilinear forms.
+#
+#  In principle, for the non-degenerate/non-singular orthogonal forms,
+#  it could be sufficient to investigate whether the determinant is square or not,
+#  however, since degenerate/singular forms are allowed, in thoses cases, we must
+#  compute the induced form to use the determinant method. Taking into account
+#  that all is already available by simply testing for IsEllipticForm, IsHyperbolicForm
+#  IsParabolicForm (which goes through the base change mechanisms), I opted to use
+#  simply these tests. The hermitian case is straightforwardly done.
+##
+#############################################################################
+#A TypeOfForm( <form> ) <form>: bilinear form
+#
+InstallMethod( TypeOfForm,
+    "for a bilinear form",
+    [IsBilinearForm],
+    function(f)
+    if IsSymplecticForm(f)
+        then return 0;
+    elif IsEllipticForm(f)
+        then return -1;
+    elif IsHyperbolicForm(f)
+        then return 1;
+    elif IsParabolicForm(f)
+        then return 0;
+    else
+        Error("<f> is a pseudo form and has no defined type");
+    fi;
+end );
+
+#############################################################################
+#A TypeOfForm( <form> ) <form>: quadratic form
+#
+InstallMethod( TypeOfForm,
+    "for a quadratic form",
+    [IsQuadraticForm],
+    function(f)
+    if IsEllipticForm(f)
+        then return -1;
+    elif IsHyperbolicForm(f)
+        then return 1;
+    elif IsParabolicForm(f)
+        then return 0;
+    fi;
+  end );
+
+#############################################################################
+#A TypeOfForm( <form> ) <form>: hermitian form
+#
+InstallMethod( TypeOfForm,
+  "for a unitary form",
+  [IsHermitianForm],
+  function(f)
+  local m,dim;
+    m := f!.matrix;
+    dim := Dimension(RadicalOfForm(f));
+    if IsOddInt(Length(m)-dim) then
+       return -1/2;
+    else
+       return 1/2;
+    fi;
+  end );
+
+

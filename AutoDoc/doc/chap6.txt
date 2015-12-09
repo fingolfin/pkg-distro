@@ -19,6 +19,27 @@
   [8XAuthor [3Xauthor[103X[108X
         [33X[0;6YThis adds an author to the document.[133X
   
+  [8XDependency [3Xpackagename[103X, [3Xversion[103X[108X
+        [33X[0;6YThis  adds  a  dependency  to  the  worksheet which will be checked at
+        compile  time. If your GAP does not provide the correct [3Xversion[103X of the
+        package  [3Xpackagename[103X  the command will give an error. If you only want
+        to  compile  the  worksheet,  you  can continue. A possible [3Xversion[103X is
+        >=20.[133X
+  
+  [8XDate [3Xdate[103X[108X
+        [33X[0;6YAdds the string [3Xdate[103X as a date to the titlepage of the pdf.[133X
+  
+  [8XAbstract[108X
+        [33X[0;6YAdds the following lines as abstract to the title of the worksheet.[133X
+  
+  [8XAcknowledgement[108X
+        [33X[0;6YAdds  the  following  lines  as  acknowledgement  to  the title of the
+        worksheet.[133X
+  
+  [8XURL [3Xurl[103X[108X
+        [33X[0;6YAdds  the URL [3Xurl[103X as a link to the titlepage of the worksheet. This is
+        done in the TitleComment section of the TitlePage.[133X
+  
   [33X[0;0YNote  that some commands have no effect, i.e. the level command. The options
   are as follows.[133X
   
@@ -30,7 +51,12 @@
   [8XTestFile[108X
         [33X[0;6YIf TestFile is set to false, no testfile is produced. If TestFile is a
         string,  then it is used as name of the testfile. If nothing is given,
-        the testfile will be maketest.g[133X
+        the testfile will be maketest.g.[133X
+  
+  [8XTestFileOutputFolder[108X
+        [33X[0;6YDefines  an  output  folder for a testfile. If the string "current" is
+        given,  the  current  folder  will  be used to output the testfile. If
+        nothing is given, OutputFolder will be used.[133X
   
   [8XOutputFolder[108X
         [33X[0;6YAll  files  will  be  stored  in  OutputFolder. If OutputFolder is not
@@ -41,4 +67,11 @@
   
   [8XBibliography[108X
         [33X[0;6YPath to a bibliography file.[133X
+  
+  [8XCreateIndex[108X
+        [33X[0;6YEnables  the  index  if set to true. Please enable it only if you have
+        something to index. It will create an error otherwise.[133X
+  
+  [8XEntityList[108X
+        [33X[0;6YWorks like the entities part in the AutoDoc command.[133X
   

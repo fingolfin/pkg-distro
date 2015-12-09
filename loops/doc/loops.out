@@ -1,0 +1,83 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{License}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Installation}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Documentation}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Test Files}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Memory Management}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.6}{Feedback}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.7}{Acknowledgment}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Mathematical Background}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Quasigroups and Loops}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Translations}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Subquasigroups and Subloops}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.4}{Nilpotence and Solvability}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.5}{Associators and Commutators}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.6}{Homomorphism and Homotopisms}{chapter.2}% 15
+\BOOKMARK [0][-]{chapter.3}{How the Package Works}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Representing Quasigroups}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Conversions between magmas, quasigroups, loops and groups}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Calculating with Quasigroups}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Naming, Viewing and Printing Quasigroups and their Elements}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Creating Quasigroups and Loops}{}% 21
+\BOOKMARK [1][-]{section.4.1}{About Cayley Tables}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Testing Cayley Tables}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.3}{Canonical and Normalized Cayley Tables}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.4}{Creating Quasigroups and Loops From Cayley Tables}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.5}{Creating Quasigroups and Loops from a File}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.6}{Creating Quasigroups and Loops From Sections}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.7}{Creating Quasigroups and Loops From Folders}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.8}{Creating Quasigroups and Loops By Nuclear Extensions}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.9}{Random Quasigroups and Loops}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.10}{Conversions}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.11}{Products of Loops}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.12}{Opposite Quasigroups and Loops}{chapter.4}% 33
+\BOOKMARK [0][-]{chapter.5}{Basic Methods And Attributes}{}% 34
+\BOOKMARK [1][-]{section.5.1}{Basic Attributes}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.2}{Basic Arithmetic Operations}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.3}{Powers and Inverses}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.4}{Associators and Commutators}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.5}{Generators}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{Methods Based on Permutation Groups}{}% 40
+\BOOKMARK [1][-]{section.6.1}{Parent of a Quasigroup}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.2}{Subquasigroups and Subloops}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.3}{Translations and Sections}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.4}{Multiplication Groups}{chapter.6}% 44
+\BOOKMARK [1][-]{section.6.5}{Inner Mapping Groups}{chapter.6}% 45
+\BOOKMARK [1][-]{section.6.6}{Nuclei, Commutant, Center, and Associator Subloop}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.7}{Normal Subloops and Simple Loops}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.8}{Factor Loops}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.9}{Nilpotency and Central Series}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.10}{Solvability, Derived Series and Frattini Subloop}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.11}{Isomorphisms and Automorphisms}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.12}{Isotopisms}{chapter.6}% 52
+\BOOKMARK [0][-]{chapter.7}{Testing Properties of Quasigroups and Loops}{}% 53
+\BOOKMARK [1][-]{section.7.1}{Associativity, Commutativity and Generalizations}{chapter.7}% 54
+\BOOKMARK [1][-]{section.7.2}{Inverse Propeties}{chapter.7}% 55
+\BOOKMARK [1][-]{section.7.3}{Some Properties of Quasigroups}{chapter.7}% 56
+\BOOKMARK [1][-]{section.7.4}{Loops of Bol Moufang Type}{chapter.7}% 57
+\BOOKMARK [1][-]{section.7.5}{Power Alternative Loops}{chapter.7}% 58
+\BOOKMARK [1][-]{section.7.6}{Conjugacy Closed Loops and Related Properties}{chapter.7}% 59
+\BOOKMARK [1][-]{section.7.7}{Automorphic Loops}{chapter.7}% 60
+\BOOKMARK [1][-]{section.7.8}{Additonal Varieties of Loops}{chapter.7}% 61
+\BOOKMARK [0][-]{chapter.8}{Specific Methods}{}% 62
+\BOOKMARK [1][-]{section.8.1}{Core Methods for Bol Loops}{chapter.8}% 63
+\BOOKMARK [1][-]{section.8.2}{Moufang Modifications}{chapter.8}% 64
+\BOOKMARK [1][-]{section.8.3}{Triality for Moufang Loops}{chapter.8}% 65
+\BOOKMARK [1][-]{section.8.4}{Realizing Groups as Multiplication Groups of Loops}{chapter.8}% 66
+\BOOKMARK [0][-]{chapter.9}{Libraries of Loops}{}% 67
+\BOOKMARK [1][-]{section.9.1}{A Typical Library}{chapter.9}% 68
+\BOOKMARK [1][-]{section.9.2}{Left Bol Loops and Right Bol Loops}{chapter.9}% 69
+\BOOKMARK [1][-]{section.9.3}{Moufang Loops}{chapter.9}% 70
+\BOOKMARK [1][-]{section.9.4}{Code Loops}{chapter.9}% 71
+\BOOKMARK [1][-]{section.9.5}{Steiner Loops}{chapter.9}% 72
+\BOOKMARK [1][-]{section.9.6}{Conjugacy Closed Loops}{chapter.9}% 73
+\BOOKMARK [1][-]{section.9.7}{Small Loops}{chapter.9}% 74
+\BOOKMARK [1][-]{section.9.8}{Paige Loops}{chapter.9}% 75
+\BOOKMARK [1][-]{section.9.9}{Nilpotent Loops}{chapter.9}% 76
+\BOOKMARK [1][-]{section.9.10}{Automorphic Loops}{chapter.9}% 77
+\BOOKMARK [1][-]{section.9.11}{Interesting Loops}{chapter.9}% 78
+\BOOKMARK [1][-]{section.9.12}{Libraries of Loops Up To Isotopism}{chapter.9}% 79
+\BOOKMARK [0][-]{appendix.A}{Files}{}% 80
+\BOOKMARK [0][-]{appendix.B}{Filters}{}% 81
+\BOOKMARK [0][-]{appendix*.3}{References}{}% 82
+\BOOKMARK [0][-]{section*.4}{Index}{}% 83

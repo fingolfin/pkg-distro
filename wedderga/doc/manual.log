@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.4)  24 NOV 2014 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.16)  18 SEP 2015 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -465,7 +465,7 @@ lteanu, Á. del Río and I.
 
 Underfull \hbox (badness 3375) in paragraph at lines 198--201
 \T1/ptm/m/n/10 Van Gelder. \T1/ptm/m/it/10 Wed-derga --- Wed-der-burn De-com-po
--si-tion of Group Al-ge-bras, Ver-sion 4.7.2; \T1/ptm/m/n/10 2014
+-si-tion of Group Al-ge-bras, Ver-sion 4.7.3; \T1/ptm/m/n/10 2015
  []
 
 
@@ -975,7 +975,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3668.
  ) 
 Here is how much of TeX's memory you used:
  7539 strings out of 493117
- 111648 string characters out of 6135434
+ 111648 string characters out of 6135433
  200159 words of memory out of 5000000
  10541 multiletter control sequences out of 15000+600000
  101596 words of font info for 117 fonts, out of 8000000 for 9000
@@ -999,7 +999,7 @@ w/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/symbol/us
 yr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/t
 exlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manual.pdf (72 pages, 432398 bytes).
+Output written on manual.pdf (72 pages, 432712 bytes).
 PDF statistics:
  1286 PDF objects out of 1440 (max. 8388607)
  1183 compressed objects within 12 object streams

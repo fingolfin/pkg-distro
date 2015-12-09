@@ -13,7 +13,7 @@ LoadPackage("GAPDoc");
 #initialize the directory /doc/ directory in the package tree
 docdir := DirectoriesPackageLibrary("forms","doc")[1];
 
-MakeGAPDocDoc(docdir, "forms", [], "Forms");
+MakeGAPDocDoc(docdir, "forms", [], "Forms", "MathJax");
 
 GAPDocManualLab("forms");
 

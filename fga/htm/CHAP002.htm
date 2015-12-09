@@ -54,13 +54,13 @@ of this list, then
 <p>
 <ul>
   <li>
-    <i>v</i>1 <i>v</i>2  <font face="symbol">¹</font> 1 implies <font face="symbol">|</font><i>v</i>1 <i>v</i>2 <font face="symbol">|</font> <font face="symbol">³</font> max(<font face="symbol">|</font><i>v</i>1 <font face="symbol">|</font>, <font face="symbol">|</font><i>v</i>2 <font face="symbol">|</font>), and
+    <i>v</i>1 <i>v</i>2  &#8800; 1 implies &#124;<i>v</i>1 <i>v</i>2 &#124; &#8805; max(&#124;<i>v</i>1 &#124;, &#124;<i>v</i>2 &#124;), and
   <li>
-    <i>v</i>1 <i>v</i>2  <font face="symbol">¹</font> 1 and <i>v</i>2 <i>v</i>3  <font face="symbol">¹</font> 1 implies
-    <font face="symbol">|</font><i>v</i>1 &gt; <i>v</i>2 <i>v</i>3 <font face="symbol">|</font>   <font face="symbol">|</font><i>v</i>1 <font face="symbol">|</font> <font face="symbol">-</font> <font face="symbol">|</font><i>v</i>2 <font face="symbol">|</font> + <font face="symbol">|</font><i>v</i>3 <font face="symbol">|</font>
+    <i>v</i>1 <i>v</i>2  &#8800; 1 and <i>v</i>2 <i>v</i>3  &#8800; 1 implies
+    &#124;<i>v</i>1 &gt; <i>v</i>2 <i>v</i>3 &#124;   &#124;<i>v</i>1 &#124; &#8722; &#124;<i>v</i>2 &#124; + &#124;<i>v</i>3 &#124;
 </ul>
 <p>
-hold, where <font face="symbol">|</font>&#183;<font face="symbol">|</font> denotes the word length.
+hold, where &#124;&#183;&#124; denotes the word length.
 <p>
 <a name = "SSEC001.2"></a>
 <li><code>RankOfFreeGroup( </code><var>u</var><code> ) A</code>
@@ -91,7 +91,7 @@ internally, user functions are shown instead.
 The first variant returns the normalizer of the finitely generated
 subgroup <var>u2</var> in <var>u1</var>.
 <p>
-The second variant returns the normalizer of <font face="symbol">á</font><i>elm</i>  <font face="symbol">ñ</font>
+The second variant returns the normalizer of &#9001;<i>elm</i>  &#9002;
 in the finitely generated subgroup <var>u</var> (see <a href="../../../doc/ref/CHAP039.htm#X804F0F037F06E25E">Normalizer</a> in the
 Reference Manual).
 <p>
@@ -100,7 +100,7 @@ Reference Manual).
 <a name = "SSEC002.2"></a>
 <li><code>IsConjugate( </code><var>u</var><code>, </code><var>d</var><code>, </code><var>e</var><code> ) O</code>
 <p>
-<code>RepresentativeAction</code> returns an element  <i>r</i>   <font face="symbol">Î</font> <i>u</i>  ,
+<code>RepresentativeAction</code> returns an element  <i>r</i>   &#8712; <i>u</i>  ,
 where <var>u</var> is a finitely generated subgroup of a free group, such
 that <i>d</i> <sup><i>r</i> </sup>=<i>e</i> , or fail, if no such <var>r</var> exists.  <var>d</var> and <var>e</var> may
 be elements or subgroups of <var>u</var>.
@@ -306,17 +306,17 @@ generators in the presentation:
 return the automorphism which maps the free generators 
 [ <i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, ..., <i>x</i><sub><i>n</i></sub> ] of <var>group</var> to
 <dl compact>
-  <dt>O:<dd>[ <i>x</i><sub>1</sub><sup><font face="symbol">-</font>1</sup>, <i>x</i><sub>2</sub>, ..., <i>x</i><sub><i>n</i></sub> ]                      (<i>n</i> <font face="symbol">³</font> 1)
-  <dt>P:<dd>[ <i>x</i><sub>2</sub>, <i>x</i><sub>1</sub>, <i>x</i><sub>3</sub>, ..., <i>x</i><sub><i>n</i></sub> ]                      (<i>n</i> <font face="symbol">³</font> 2)
-  <dt>U:<dd>[ <i>x</i><sub>1</sub><i>x</i><sub>2</sub>, <i>x</i><sub>2</sub>, <i>x</i><sub>3</sub>, ..., <i>x</i><sub><i>n</i></sub> ]                   (<i>n</i> <font face="symbol">³</font> 2)
-  <dt>S:<dd>[ <i>x</i><sub>2</sub><sup><font face="symbol">-</font>1</sup>, <i>x</i><sub>3</sub><sup><font face="symbol">-</font>1</sup>, ..., <i>x</i><sub><i>n</i></sub><sup><font face="symbol">-</font>1</sup>, <i>x</i><sub>1</sub><sup><font face="symbol">-</font>1</sup> ]  (<i>n</i> <font face="symbol">³</font> 1)
-  <dt>T:<dd>[ <i>x</i><sub>2</sub>, <i>x</i><sub>1</sub><sup><font face="symbol">-</font>1</sup>, <i>x</i><sub>3</sub>, ..., <i>x</i><sub><i>n</i></sub> ]                 (<i>n</i> <font face="symbol">³</font> 2)
-  <dt>Q:<dd>[ <i>x</i><sub>2</sub>, <i>x</i><sub>3</sub>, ..., <i>x</i><sub><i>n</i></sub>, <i>x</i><sub>1</sub> ]                      (<i>n</i> <font face="symbol">³</font> 2)
-  <dt>R:<dd>[ <i>x</i><sub>2</sub><sup><font face="symbol">-</font>1</sup>, <i>x</i><sub>1</sub>, <i>x</i><sub>3</sub>, <i>x</i><sub>4</sub>, ..., <i>x</i><sub><i>n</i><font face="symbol">-</font>2</sub>, <i>x</i><sub><i>n</i></sub><i>x</i><sub><i>n</i><font face="symbol">-</font>1</sub><sup><font face="symbol">-</font>1</sup>, <i>x</i><sub><i>n</i><font face="symbol">-</font>1</sub><sup><font face="symbol">-</font>1</sup> ]           (<i>n</i> <font face="symbol">³</font> 4)
+  <dt>O:<dd>[ <i>x</i><sub>1</sub><sup>&#8722;1</sup>, <i>x</i><sub>2</sub>, ..., <i>x</i><sub><i>n</i></sub> ]                      (<i>n</i> &#8805; 1)
+  <dt>P:<dd>[ <i>x</i><sub>2</sub>, <i>x</i><sub>1</sub>, <i>x</i><sub>3</sub>, ..., <i>x</i><sub><i>n</i></sub> ]                      (<i>n</i> &#8805; 2)
+  <dt>U:<dd>[ <i>x</i><sub>1</sub><i>x</i><sub>2</sub>, <i>x</i><sub>2</sub>, <i>x</i><sub>3</sub>, ..., <i>x</i><sub><i>n</i></sub> ]                   (<i>n</i> &#8805; 2)
+  <dt>S:<dd>[ <i>x</i><sub>2</sub><sup>&#8722;1</sup>, <i>x</i><sub>3</sub><sup>&#8722;1</sup>, ..., <i>x</i><sub><i>n</i></sub><sup>&#8722;1</sup>, <i>x</i><sub>1</sub><sup>&#8722;1</sup> ]  (<i>n</i> &#8805; 1)
+  <dt>T:<dd>[ <i>x</i><sub>2</sub>, <i>x</i><sub>1</sub><sup>&#8722;1</sup>, <i>x</i><sub>3</sub>, ..., <i>x</i><sub><i>n</i></sub> ]                 (<i>n</i> &#8805; 2)
+  <dt>Q:<dd>[ <i>x</i><sub>2</sub>, <i>x</i><sub>3</sub>, ..., <i>x</i><sub><i>n</i></sub>, <i>x</i><sub>1</sub> ]                      (<i>n</i> &#8805; 2)
+  <dt>R:<dd>[ <i>x</i><sub>2</sub><sup>&#8722;1</sup>, <i>x</i><sub>1</sub>, <i>x</i><sub>3</sub>, <i>x</i><sub>4</sub>, ..., <i>x</i><sub><i>n</i>&#8722;2</sub>, <i>x</i><sub><i>n</i></sub><i>x</i><sub><i>n</i>&#8722;1</sub><sup>&#8722;1</sup>, <i>x</i><sub><i>n</i>&#8722;1</sub><sup>&#8722;1</sup> ]           (<i>n</i> &#8805; 4)
 </dl>
 <p>
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>FGA manual<br>November 2012
+<address>FGA manual<br>August 2015
 </address></body></html>

@@ -206,12 +206,12 @@
   
   [1X4.4-1 PrimitiveIdempotentsNilpotent[101X
   
-  [29X[2XPrimitiveIdempotentsNilpotent[102X( [3XFG[103X, [3XH[103X, [3XK[103X, [3XC[103X, [3Xarg[103X ) [32X operation
+  [29X[2XPrimitiveIdempotentsNilpotent[102X( [3XFG[103X, [3XH[103X, [3XK[103X, [3XC[103X, [3Xargs[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10YA list of orthogonal primitive idempotents.[133X
   
   [33X[0;0YThe  input  [3XFG[103X  should  be  a semisimple group algebra of a finite nilpotent
   group  [22XG[122X  whose coefficient field [22XF[122X is a finite field. [3XH[103X and [3XK[103X should form a
-  strong  Shoda  pair  [22X(H,K)[122X of [22XG[122X. [3Xarg[103X is a list containing an epimorphism map
+  strong  Shoda  pair [22X(H,K)[122X of [22XG[122X. [3Xargs[103X is a list containing an epimorphism map
   [3Xepi[103X  from  [22XN_G(K)[122X  to  [22XN_G(K)/K[122X  and  a  generator  [3Xgq[103X  of  [22XH/K[122X.  [22XC[122X  is  the
   [22X|F|[122X-cyclotomic class modulo [22X[H:K][122X (w.r.t. the generator [22Xgq[122X of [22XH/K[122X)[133X
   
@@ -245,15 +245,15 @@
   
   [1X4.4-2 PrimitiveIdempotentsTrivialTwisting[101X
   
-  [29X[2XPrimitiveIdempotentsTrivialTwisting[102X( [3XFG[103X, [3XH[103X, [3XK[103X, [3XC[103X, [3Xarg[103X ) [32X operation
+  [29X[2XPrimitiveIdempotentsTrivialTwisting[102X( [3XFG[103X, [3XH[103X, [3XK[103X, [3XC[103X, [3Xargs[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10YA list of orthogonal primitive idempotents.[133X
   
   [33X[0;0YThe  input [3XFG[103X should be a semisimple group algebra of a finite group [22XG[122X whose
   coefficient  field  [22XF[122X  is a finite field. [3XH[103X and [3XK[103X should form a strong Shoda
-  pair [22X(H,K)[122X of [22XG[122X. [3Xarg[103X is a list containing an epimorphism map [3Xepi[103X from [22XN_G(K)[122X
-  to  [22XN_G(K)/K[122X and a generator [3Xgq[103X of [22XH/K[122X. [22XC[122X is the [22X|F|[122X-cyclotomic class modulo
-  [22X[H:K][122X  (w.r.t. the generator [22Xgq[122X of [22XH/K[122X). The input parameters should be such
-  that the simple component [22XFGe_C(G,H,K)[122X has a trivial twisting.[133X
+  pair  [22X(H,K)[122X  of  [22XG[122X.  [3Xargs[103X  is  a list containing an epimorphism map [3Xepi[103X from
+  [22XN_G(K)[122X  to [22XN_G(K)/K[122X and a generator [3Xgq[103X of [22XH/K[122X. [22XC[122X is the [22X|F|[122X-cyclotomic class
+  modulo  [22X[H:K][122X  (w.r.t. the generator [22Xgq[122X of [22XH/K[122X). The input parameters should
+  be such that the simple component [22XFGe_C(G,H,K)[122X has a trivial twisting.[133X
   
   [33X[0;0YThe  output  is  a  complete  set of orthogonal primitive idempotents of the
   simple algebra [22XFGe_C(G,H,K)[122X ([14X9.20[114X).[133X

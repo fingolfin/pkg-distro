@@ -1,54 +1,5 @@
-
-gap> f := FreeGroup( 2 );
-<free group on the generators [ f1, f2 ]>
-gap> u := Group( f.1^2, f.2^2, f.1*f.2 );
-Group([ f1^2, f2^2 ])
-gap> u1 := Subgroup( u, [f.1^2, f.1^4*f.2^6] );
-Group([ f1^2, f1^4*f2^6 ])
-gap> elm := f.1;
-f1
-gap> u2 := Normalizer( u, elm );
-Group([ f1^2 ])
-
-
-gap> f := FreeGroup( 2 );
-<free group on the generators [ f1, f2 ]>
-gap> ua := f.1^2*f.2^2;; ub := f.1^2*f.2;;
-gap> u := Group( ua, ub );;
-gap> g := FreeGroup( "a", "b" );;
-gap> hom := GroupHomomorphismByImages( g, u,
-              GeneratorsOfGroup(g),
-              GeneratorsOfGroup(u) );
-[ a, b ] -> [ f1^2*f2^2, f1^2*f2 ]
-gap> # how can f.1^2 be expressed?
-gap> PreImagesRepresentative( hom, f.1^2 );
-b*a^-1*b
-gap> last ^ hom; # check this
-f1^2
-gap> ub * ua^-1 * ub; # another check
-f1^2
-gap> PreImagesRepresentative( hom, f.1 ); # try f.1
-fail
-gap> f.1 in u;
-false
-
-
-gap> AsWordLetterRepInGenerators( f.1^2, u );
-[ 2, -1, 2 ]
-gap> AsWordLetterRepInFreeGenerators( f.1^2, u );
-[ 2 ]
-
-
-gap> f := FreeGroup( 2 );;
-gap> a := AutomorphismGroup( f );;
-gap> iso := IsomorphismFpGroup( a );;
-gap> Range( iso );
-<fp group on the generators [ O, P, U ]>
-
-
-gap> aut := GroupHomomorphismByImages( f, f,
-               GeneratorsOfGroup( f ), [ f.1^f.2, f.1*f.2 ] );
-[ f1, f2 ] -> [ f2^-1*f1*f2, f1*f2 ]
-gap> ImageElm( iso, aut );
-O^2*U*O*P^-1*U
-
+^^Jgap> f := FreeGroup( 2 );^^J<free group on the generators [ f1, f2 ]>^^Jgap> u := Group( f.1^2, f.2^2, f.1*f.2 );^^JGroup([ f1^2, f2^2 ])^^Jgap> u1 := Subgroup( u, [f.1^2, f.1^4*f.2^6] );^^JGroup([ f1^2, f1^4*f2^6 ])^^Jgap> elm := f.1;^^Jf1^^Jgap> u2 := Normalizer( u, elm );^^JGroup([ f1^2 ])^^J
+^^Jgap> f := FreeGroup( 2 );^^J<free group on the generators [ f1, f2 ]>^^Jgap> ua := f.1^2*f.2^2;; ub := f.1^2*f.2;;^^Jgap> u := Group( ua, ub );;^^Jgap> g := FreeGroup( "a", "b" );;^^Jgap> hom := GroupHomomorphismByImages( g, u,^^J              GeneratorsOfGroup(g),^^J              GeneratorsOfGroup(u) );^^J[ a, b ] -> [ f1^2*f2^2, f1^2*f2 ]^^Jgap> # how can f.1^2 be expressed?^^Jgap> PreImagesRepresentative( hom, f.1^2 );^^Jb*a^-1*b^^Jgap> last ^ hom; # check this^^Jf1^2^^Jgap> ub * ua^-1 * ub; # another check^^Jf1^2^^Jgap> PreImagesRepresentative( hom, f.1 ); # try f.1^^Jfail^^Jgap> f.1 in u;^^Jfalse^^J
+^^Jgap> AsWordLetterRepInGenerators( f.1^2, u );^^J[ 2, -1, 2 ]^^Jgap> AsWordLetterRepInFreeGenerators( f.1^2, u );^^J[ 2 ]^^J
+^^Jgap> f := FreeGroup( 2 );;^^Jgap> a := AutomorphismGroup( f );;^^Jgap> iso := IsomorphismFpGroup( a );;^^Jgap> Range( iso );^^J<fp group on the generators [ O, P, U ]>^^J
+^^Jgap> aut := GroupHomomorphismByImages( f, f,^^J               GeneratorsOfGroup( f ), [ f.1^f.2, f.1*f.2 ] );^^J[ f1, f2 ] -> [ f2^-1*f1*f2, f1*f2 ]^^Jgap> ImageElm( iso, aut );^^JO^2*U*O*P^-1*U^^J

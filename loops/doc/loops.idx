@@ -1,0 +1,422 @@
+\indexentry{groupoid|hyperpage}{8}
+\indexentry{magma|hyperpage}{8}
+\indexentry{neutral element|hyperpage}{8}
+\indexentry{identity!element|hyperpage}{8}
+\indexentry{inverse!two-sided|hyperpage}{8}
+\indexentry{group|hyperpage}{8}
+\indexentry{quasigroup|hyperpage}{8}
+\indexentry{latin square|hyperpage}{8}
+\indexentry{loop|hyperpage}{8}
+\indexentry{translation!left|hyperpage}{8}
+\indexentry{translation!right|hyperpage}{8}
+\indexentry{division!left|hyperpage}{8}
+\indexentry{division!right|hyperpage}{8}
+\indexentry{section!left|hyperpage}{8}
+\indexentry{section!right|hyperpage}{8}
+\indexentry{multiplication group!left|hyperpage}{9}
+\indexentry{multiplication group!right|hyperpage}{9}
+\indexentry{multiplication group|hyperpage}{9}
+\indexentry{inner mapping group!left|hyperpage}{9}
+\indexentry{inner mapping group!right|hyperpage}{9}
+\indexentry{inner mapping group|hyperpage}{9}
+\indexentry{subquasigroup|hyperpage}{9}
+\indexentry{subloop|hyperpage}{9}
+\indexentry{nucleus!left|hyperpage}{9}
+\indexentry{nucleus!middle|hyperpage}{9}
+\indexentry{nucleus!right|hyperpage}{9}
+\indexentry{nucleus|hyperpage}{9}
+\indexentry{commutant|hyperpage}{9}
+\indexentry{center|hyperpage}{9}
+\indexentry{subloop!normal|hyperpage}{9}
+\indexentry{nilpotence class|hyperpage}{9}
+\indexentry{nilpotent loop|hyperpage}{9}
+\indexentry{loop!nilpotent|hyperpage}{9}
+\indexentry{central series!upper|hyperpage}{9}
+\indexentry{derived subloop|hyperpage}{9}
+\indexentry{solvability class|hyperpage}{9}
+\indexentry{solvable loop|hyperpage}{9}
+\indexentry{loop!solvable|hyperpage}{9}
+\indexentry{derived series|hyperpage}{9}
+\indexentry{commutator|hyperpage}{9}
+\indexentry{associator|hyperpage}{9}
+\indexentry{associator subloop|hyperpage}{9}
+\indexentry{homomorphism|hyperpage}{9}
+\indexentry{isomorphism|hyperpage}{9}
+\indexentry{homotopism|hyperpage}{10}
+\indexentry{isotopism|hyperpage}{10}
+\indexentry{isotopism!principal|hyperpage}{10}
+\indexentry{loop isotope!principal|hyperpage}{10}
+\indexentry{IsQuasigroupElement|hyperpage}{11}
+\indexentry{IsLoopElement|hyperpage}{11}
+\indexentry{IsQuasigroup|hyperpage}{11}
+\indexentry{IsLoop|hyperpage}{11}
+\indexentry{Bol loop!left|hyperpage}{12}
+\indexentry{loop!left Bol|hyperpage}{12}
+\indexentry{simple loop|hyperpage}{12}
+\indexentry{loop!simple|hyperpage}{12}
+\indexentry{SetQuasigroupElmName@\texttt  {SetQuasigroupElmName}|hyperpage}{13}
+\indexentry{SetLoopElmName@\texttt  {SetLoopElmName}|hyperpage}{13}
+\indexentry{Cayley table|hyperpage}{14}
+\indexentry{multiplication table|hyperpage}{14}
+\indexentry{quasigroup table|hyperpage}{14}
+\indexentry{latin square|hyperpage}{14}
+\indexentry{loop table|hyperpage}{14}
+\indexentry{IsQuasigroupTable@\texttt  {IsQuasigroupTable}|hyperpage}{14}
+\indexentry{IsQuasigroupCayleyTable@\texttt  {IsQuasigroupCayleyTable}|hyperpage}{14}
+\indexentry{IsLoopTable@\texttt  {IsLoopTable}|hyperpage}{14}
+\indexentry{IsLoopCayleyTable@\texttt  {IsLoopCayleyTable}|hyperpage}{14}
+\indexentry{CanonicalCayleyTable@\texttt  {CanonicalCayleyTable}|hyperpage}{15}
+\indexentry{Cayley table!canonical|hyperpage}{15}
+\indexentry{NormalizedQuasigroupTable@\texttt  {NormalizedQuasigroupTable}|hyperpage}{15}
+\indexentry{QuasigroupByCayleyTable@\texttt  {QuasigroupByCayleyTable}|hyperpage}{15}
+\indexentry{LoopByCayleyTable@\texttt  {LoopByCayleyTable}|hyperpage}{15}
+\indexentry{QuasigroupFromFile@\texttt  {QuasigroupFromFile}|hyperpage}{16}
+\indexentry{LoopFromFile@\texttt  {LoopFromFile}|hyperpage}{16}
+\indexentry{CayleyTableByPerms@\texttt  {CayleyTableByPerms}|hyperpage}{17}
+\indexentry{QuasigroupByLeftSection@\texttt  {QuasigroupByLeftSection}|hyperpage}{17}
+\indexentry{LoopByLeftSection@\texttt  {LoopByLeftSection}|hyperpage}{17}
+\indexentry{QuasigroupByRightSection@\texttt  {QuasigroupByRightSection}|hyperpage}{17}
+\indexentry{LoopByRightSection@\texttt  {LoopByRightSection}|hyperpage}{17}
+\indexentry{folder!quasigroup|hyperpage}{17}
+\indexentry{QuasigroupByRightFolder@\texttt  {QuasigroupByRightFolder}|hyperpage}{18}
+\indexentry{LoopByRightFolder@\texttt  {LoopByRightFolder}|hyperpage}{18}
+\indexentry{extension|hyperpage}{18}
+\indexentry{extension!nuclear|hyperpage}{18}
+\indexentry{cocycle|hyperpage}{18}
+\indexentry{NuclearExtension@\texttt  {NuclearExtension}|hyperpage}{18}
+\indexentry{LoopByExtension@\texttt  {LoopByExtension}|hyperpage}{18}
+\indexentry{latin square!random|hyperpage}{19}
+\indexentry{RandomQuasigroup@\texttt  {RandomQuasigroup}|hyperpage}{19}
+\indexentry{RandomLoop@\texttt  {RandomLoop}|hyperpage}{19}
+\indexentry{RandomNilpotentLoop@\texttt  {RandomNilpotentLoop}|hyperpage}{19}
+\indexentry{loop!nilpotent|hyperpage}{19}
+\indexentry{IntoQuasigroup@\texttt  {IntoQuasigroup}|hyperpage}{20}
+\indexentry{PrincipalLoopIsotope@\texttt  {PrincipalLoopIsotope}|hyperpage}{20}
+\indexentry{IntoLoop@\texttt  {IntoLoop}|hyperpage}{20}
+\indexentry{IntoGroup@\texttt  {IntoGroup}|hyperpage}{20}
+\indexentry{DirectProduct@\texttt  {DirectProduct}|hyperpage}{20}
+\indexentry{opposite quasigroup|hyperpage}{21}
+\indexentry{quasigroup!opposite|hyperpage}{21}
+\indexentry{Opposite@\texttt  {Opposite}|hyperpage}{21}
+\indexentry{OppositeQuasigroup@\texttt  {OppositeQuasigroup}|hyperpage}{21}
+\indexentry{OppositeLoop@\texttt  {OppositeLoop}|hyperpage}{21}
+\indexentry{Elements@\texttt  {Elements}|hyperpage}{22}
+\indexentry{CayleyTable@\texttt  {CayleyTable}|hyperpage}{22}
+\indexentry{One@\texttt  {One}|hyperpage}{22}
+\indexentry{Size@\texttt  {Size}|hyperpage}{22}
+\indexentry{Exponent@\texttt  {Exponent}|hyperpage}{23}
+\indexentry{loop!power associative|hyperpage}{23}
+\indexentry{power associative loop|hyperpage}{23}
+\indexentry{exponent|hyperpage}{23}
+\indexentry{LeftDivision@\texttt  {LeftDivision}|hyperpage}{23}
+\indexentry{RightDivision@\texttt  {RightDivision}|hyperpage}{23}
+\indexentry{LeftDivision@\texttt  {LeftDivision}|hyperpage}{23}
+\indexentry{LeftDivision@\texttt  {LeftDivision}|hyperpage}{23}
+\indexentry{RightDivision@\texttt  {RightDivision}|hyperpage}{23}
+\indexentry{RightDivision@\texttt  {RightDivision}|hyperpage}{23}
+\indexentry{LeftDivisionCayleyTable@\texttt  {LeftDivisionCayleyTable}|hyperpage}{23}
+\indexentry{RightDivisionCayleyTable@\texttt  {RightDivisionCayleyTable}|hyperpage}{23}
+\indexentry{inverse!left|hyperpage}{24}
+\indexentry{inverse!right|hyperpage}{24}
+\indexentry{inverse|hyperpage}{24}
+\indexentry{LeftInverse@\texttt  {LeftInverse}|hyperpage}{24}
+\indexentry{RightInverse@\texttt  {RightInverse}|hyperpage}{24}
+\indexentry{Inverse@\texttt  {Inverse}|hyperpage}{24}
+\indexentry{Associator@\texttt  {Associator}|hyperpage}{24}
+\indexentry{Commutator@\texttt  {Commutator}|hyperpage}{24}
+\indexentry{GeneratorsOfQuasigroup@\texttt  {GeneratorsOfQuasigroup}|hyperpage}{24}
+\indexentry{GeneratorsOfLoop@\texttt  {GeneratorsOfLoop}|hyperpage}{24}
+\indexentry{GeneratorsSmallest@\texttt  {GeneratorsSmallest}|hyperpage}{25}
+\indexentry{Parent@\texttt  {Parent}|hyperpage}{26}
+\indexentry{Position@\texttt  {Position}|hyperpage}{26}
+\indexentry{PosInParent@\texttt  {PosInParent}|hyperpage}{27}
+\indexentry{Subquasigroup@\texttt  {Subquasigroup}|hyperpage}{27}
+\indexentry{Subloop@\texttt  {Subloop}|hyperpage}{27}
+\indexentry{IsSubquasigroup@\texttt  {IsSubquasigroup}|hyperpage}{27}
+\indexentry{IsSubloop@\texttt  {IsSubloop}|hyperpage}{27}
+\indexentry{AllSubloops@\texttt  {AllSubloops}|hyperpage}{27}
+\indexentry{RightCosets@\texttt  {RightCosets}|hyperpage}{28}
+\indexentry{coset|hyperpage}{28}
+\indexentry{RightTransversal@\texttt  {RightTransversal}|hyperpage}{28}
+\indexentry{transversal|hyperpage}{28}
+\indexentry{LeftTranslation@\texttt  {LeftTranslation}|hyperpage}{28}
+\indexentry{RightTranslation@\texttt  {RightTranslation}|hyperpage}{28}
+\indexentry{LeftSection@\texttt  {LeftSection}|hyperpage}{28}
+\indexentry{RightSection@\texttt  {RightSection}|hyperpage}{28}
+\indexentry{LeftMultiplicationGroup@\texttt  {LeftMultiplicationGroup}|hyperpage}{29}
+\indexentry{RightMultiplicationGroup@\texttt  {RightMultiplicationGroup}|hyperpage}{29}
+\indexentry{MultiplicationGroup@\texttt  {MultiplicationGroup}|hyperpage}{29}
+\indexentry{RelativeLeftMultiplicationGroup@\texttt  {RelativeLeftMultiplicationGroup}|hyperpage}{29}
+\indexentry{RelativeRightMultiplicationGroup@\texttt  {RelativeRightMultiplicationGroup}|hyperpage}{29}
+\indexentry{RelativeMultiplicationGroup@\texttt  {RelativeMultiplicationGroup}|hyperpage}{29}
+\indexentry{multiplication group!relative left|hyperpage}{29}
+\indexentry{multiplication group!relative right |hyperpage}{29}
+\indexentry{multiplication group!relative|hyperpage}{29}
+\indexentry{inner mapping!left|hyperpage}{29}
+\indexentry{inner mapping!right|hyperpage}{29}
+\indexentry{conjugation|hyperpage}{29}
+\indexentry{inner mapping!middle|hyperpage}{29}
+\indexentry{inner mapping group!middle|hyperpage}{29}
+\indexentry{LeftInnerMapping@\texttt  {LeftInnerMapping}|hyperpage}{30}
+\indexentry{RightInnerMapping@\texttt  {RightInnerMapping}|hyperpage}{30}
+\indexentry{MiddleInnerMapping@\texttt  {MiddleInnerMapping}|hyperpage}{30}
+\indexentry{LeftInnerMappingGroup@\texttt  {LeftInnerMappingGroup}|hyperpage}{30}
+\indexentry{RightInnerMappingGroup@\texttt  {RightInnerMappingGroup}|hyperpage}{30}
+\indexentry{MiddleInnerMappingGroup@\texttt  {MiddleInnerMappingGroup}|hyperpage}{30}
+\indexentry{InnerMappingGroup@\texttt  {InnerMappingGroup}|hyperpage}{30}
+\indexentry{LeftNucleus@\texttt  {LeftNucleus}|hyperpage}{30}
+\indexentry{MiddleNucleus@\texttt  {MiddleNucleus}|hyperpage}{30}
+\indexentry{RightNucleus@\texttt  {RightNucleus}|hyperpage}{30}
+\indexentry{Nuc@\texttt  {Nuc}|hyperpage}{30}
+\indexentry{NucleusOfQuasigroup@\texttt  {NucleusOfQuasigroup}|hyperpage}{30}
+\indexentry{NucleusOfLoop@\texttt  {NucleusOfLoop}|hyperpage}{31}
+\indexentry{Commutant@\texttt  {Commutant}|hyperpage}{31}
+\indexentry{Center@\texttt  {Center}|hyperpage}{31}
+\indexentry{AssociatorSubloop@\texttt  {AssociatorSubloop}|hyperpage}{31}
+\indexentry{IsNormal@\texttt  {IsNormal}|hyperpage}{31}
+\indexentry{subloop!normal|hyperpage}{31}
+\indexentry{normal subloop|hyperpage}{31}
+\indexentry{NormalClosure@\texttt  {NormalClosure}|hyperpage}{31}
+\indexentry{normal closure|hyperpage}{31}
+\indexentry{IsSimple@\texttt  {IsSimple}|hyperpage}{31}
+\indexentry{simple loop|hyperpage}{31}
+\indexentry{loop!simple|hyperpage}{31}
+\indexentry{FactorLoop@\texttt  {FactorLoop}|hyperpage}{32}
+\indexentry{NaturalHomomorphismByNormalSubloop@\texttt  {NaturalHomomorphismByNormalSubloop}|hyperpage}{32}
+\indexentry{IsNilpotent@\texttt  {IsNilpotent}|hyperpage}{32}
+\indexentry{NilpotencyClassOfLoop@\texttt  {NilpotencyClassOfLoop}|hyperpage}{32}
+\indexentry{IsStronglyNilpotent@\texttt  {IsStronglyNilpotent}|hyperpage}{32}
+\indexentry{strongly nilpotent loop|hyperpage}{32}
+\indexentry{nilpotent loop!strongly|hyperpage}{32}
+\indexentry{loop!strongly nilpotent|hyperpage}{32}
+\indexentry{UpperCentralSeries@\texttt  {UpperCentralSeries}|hyperpage}{32}
+\indexentry{LowerCentralSeries@\texttt  {LowerCentralSeries}|hyperpage}{33}
+\indexentry{central series!lower|hyperpage}{33}
+\indexentry{IsSolvable@\texttt  {IsSolvable}|hyperpage}{33}
+\indexentry{DerivedSubloop@\texttt  {DerivedSubloop}|hyperpage}{33}
+\indexentry{DerivedLength@\texttt  {DerivedLength}|hyperpage}{33}
+\indexentry{FrattiniSubloop@\texttt  {FrattiniSubloop}|hyperpage}{33}
+\indexentry{Frattini subloop|hyperpage}{33}
+\indexentry{FrattinifactorSize@\texttt  {FrattinifactorSize}|hyperpage}{33}
+\indexentry{IsomorphismLoops@\texttt  {IsomorphismLoops}|hyperpage}{33}
+\indexentry{LoopsUpToIsomorphism@\texttt  {LoopsUpToIsomorphism}|hyperpage}{34}
+\indexentry{AutomorphismGroup@\texttt  {AutomorphismGroup}|hyperpage}{34}
+\indexentry{IsomorphicCopyByPerm@\texttt  {IsomorphicCopyByPerm}|hyperpage}{34}
+\indexentry{IsomorphicCopyByNormalSubloop@\texttt  {IsomorphicCopyByNormalSubloop}|hyperpage}{34}
+\indexentry{Discriminator@\texttt  {Discriminator}|hyperpage}{34}
+\indexentry{AreEqualDiscriminators@\texttt  {AreEqualDiscriminators}|hyperpage}{35}
+\indexentry{IsotopismLoops@\texttt  {IsotopismLoops}|hyperpage}{35}
+\indexentry{LoopsUpToIsotopism@\texttt  {LoopsUpToIsotopism}|hyperpage}{35}
+\indexentry{IsAssociative@\texttt  {IsAssociative}|hyperpage}{36}
+\indexentry{IsCommutative@\texttt  {IsCommutative}|hyperpage}{36}
+\indexentry{IsPowerAssociative@\texttt  {IsPowerAssociative}|hyperpage}{36}
+\indexentry{loop!power associative|hyperpage}{36}
+\indexentry{power associative loop|hyperpage}{36}
+\indexentry{IsDiassociative@\texttt  {IsDiassociative}|hyperpage}{36}
+\indexentry{loop!diassociative|hyperpage}{36}
+\indexentry{diassociative loop|hyperpage}{36}
+\indexentry{inverse!left|hyperpage}{37}
+\indexentry{inverse!right|hyperpage}{37}
+\indexentry{HasLeftInverseProperty@\texttt  {HasLeftInverseProperty}|hyperpage}{37}
+\indexentry{HasRightInverseProperty@\texttt  {HasRightInverseProperty}|hyperpage}{37}
+\indexentry{HasInverseProperty@\texttt  {HasInverseProperty}|hyperpage}{37}
+\indexentry{inverse property!left|hyperpage}{37}
+\indexentry{inverse property!right|hyperpage}{37}
+\indexentry{inverse property|hyperpage}{37}
+\indexentry{HasTwosidedInverses@\texttt  {HasTwosidedInverses}|hyperpage}{37}
+\indexentry{inverse!two-sided|hyperpage}{37}
+\indexentry{HasWeakInverseProperty@\texttt  {HasWeakInverseProperty}|hyperpage}{37}
+\indexentry{inverse property!weak|hyperpage}{37}
+\indexentry{HasAutomorphicInverseProperty@\texttt  {HasAutomorphicInverseProperty}|hyperpage}{37}
+\indexentry{automorphic inverse property|hyperpage}{37}
+\indexentry{inverse property!automorphic|hyperpage}{37}
+\indexentry{HasAntiautomorphicInverseProperty@\texttt  {HasAntiautomorphicInverseProperty}|hyperpage}{37}
+\indexentry{antiautomorphic inverse property|hyperpage}{37}
+\indexentry{inverse property!antiautomorphic|hyperpage}{37}
+\indexentry{IsSemisymmetric@\texttt  {IsSemisymmetric}|hyperpage}{38}
+\indexentry{semisymmetric quasigroup|hyperpage}{38}
+\indexentry{quasigroup!semisymmetric|hyperpage}{38}
+\indexentry{IsTotallySymmetric@\texttt  {IsTotallySymmetric}|hyperpage}{38}
+\indexentry{totally symmetric quasigroup|hyperpage}{38}
+\indexentry{quasigroup!totally symmetric|hyperpage}{38}
+\indexentry{IsIdempotent@\texttt  {IsIdempotent}|hyperpage}{38}
+\indexentry{idempotent quasigroup|hyperpage}{38}
+\indexentry{quasigroup!idempotent|hyperpage}{38}
+\indexentry{IsSteinerQuasigroup@\texttt  {IsSteinerQuasigroup}|hyperpage}{38}
+\indexentry{Steiner quasigroup|hyperpage}{38}
+\indexentry{quasigroup!Steiner|hyperpage}{38}
+\indexentry{unipotent quasigroup|hyperpage}{38}
+\indexentry{quasigroup!unipotent|hyperpage}{38}
+\indexentry{IsUnipotent@\texttt  {IsUnipotent}|hyperpage}{38}
+\indexentry{IsLeftDistributive@\texttt  {IsLeftDistributive}|hyperpage}{38}
+\indexentry{IsRightDistributive@\texttt  {IsRightDistributive}|hyperpage}{38}
+\indexentry{IsDistributive@\texttt  {IsDistributive}|hyperpage}{38}
+\indexentry{quasigroup!left distributive|hyperpage}{38}
+\indexentry{distributive quasigroup!left|hyperpage}{38}
+\indexentry{quasigroup!right distributive|hyperpage}{38}
+\indexentry{distributive quasigroup!right|hyperpage}{38}
+\indexentry{quasigroup!distributive|hyperpage}{38}
+\indexentry{distributive quasigroup|hyperpage}{38}
+\indexentry{IsEntropic@\texttt  {IsEntropic}|hyperpage}{39}
+\indexentry{IsMedial@\texttt  {IsMedial}|hyperpage}{39}
+\indexentry{entropic quasigroup|hyperpage}{39}
+\indexentry{quasigroup!entropic|hyperpage}{39}
+\indexentry{medial quasigroup|hyperpage}{39}
+\indexentry{quasigroup!medial|hyperpage}{39}
+\indexentry{loop!of Bol-Moufang type|hyperpage}{39}
+\indexentry{identity!of Bol-Moufang type|hyperpage}{39}
+\indexentry{alternative loop!left|hyperpage}{39}
+\indexentry{loop!left alternative|hyperpage}{39}
+\indexentry{alternative loop!right|hyperpage}{39}
+\indexentry{loop!right alternative|hyperpage}{39}
+\indexentry{nuclear square loop!left|hyperpage}{39}
+\indexentry{loop!left nuclear square|hyperpage}{39}
+\indexentry{nuclear square loop!middle|hyperpage}{39}
+\indexentry{loop!middle nuclear square|hyperpage}{39}
+\indexentry{nuclear square loop!right|hyperpage}{39}
+\indexentry{loop!right nuclear square|hyperpage}{39}
+\indexentry{flexible loop|hyperpage}{39}
+\indexentry{loop!flexible|hyperpage}{39}
+\indexentry{Bol loop!left|hyperpage}{39}
+\indexentry{loop!left Bol|hyperpage}{39}
+\indexentry{Bol loop!right|hyperpage}{39}
+\indexentry{loop!right Bol|hyperpage}{39}
+\indexentry{LC loop|hyperpage}{39}
+\indexentry{loop!LC|hyperpage}{39}
+\indexentry{RC loop|hyperpage}{39}
+\indexentry{loop!RC|hyperpage}{39}
+\indexentry{Moufang loop|hyperpage}{39}
+\indexentry{loop!Moufang|hyperpage}{39}
+\indexentry{C loop|hyperpage}{39}
+\indexentry{loop!C|hyperpage}{39}
+\indexentry{extra loop|hyperpage}{39}
+\indexentry{loop!extra|hyperpage}{39}
+\indexentry{alternative loop|hyperpage}{39}
+\indexentry{loop!alternative|hyperpage}{39}
+\indexentry{nuclear square loop|hyperpage}{39}
+\indexentry{loop!nuclear square|hyperpage}{39}
+\indexentry{IsExtraLoop@\texttt  {IsExtraLoop}|hyperpage}{40}
+\indexentry{IsMoufangLoop@\texttt  {IsMoufangLoop}|hyperpage}{40}
+\indexentry{IsCLoop@\texttt  {IsCLoop}|hyperpage}{40}
+\indexentry{IsLeftBolLoop@\texttt  {IsLeftBolLoop}|hyperpage}{40}
+\indexentry{IsRightBolLoop@\texttt  {IsRightBolLoop}|hyperpage}{40}
+\indexentry{IsLCLoop@\texttt  {IsLCLoop}|hyperpage}{40}
+\indexentry{IsRCLoop@\texttt  {IsRCLoop}|hyperpage}{40}
+\indexentry{IsLeftNuclearSquareLoop@\texttt  {IsLeftNuclearSquareLoop}|hyperpage}{40}
+\indexentry{IsMiddleNuclearSquareLoop@\texttt  {IsMiddleNuclearSquareLoop}|hyperpage}{40}
+\indexentry{IsRightNuclearSquareLoop@\texttt  {IsRightNuclearSquareLoop}|hyperpage}{40}
+\indexentry{IsNuclearSquareLoop@\texttt  {IsNuclearSquareLoop}|hyperpage}{41}
+\indexentry{IsFlexible@\texttt  {IsFlexible}|hyperpage}{41}
+\indexentry{IsLeftAlternative@\texttt  {IsLeftAlternative}|hyperpage}{41}
+\indexentry{IsRightAlternative@\texttt  {IsRightAlternative}|hyperpage}{41}
+\indexentry{IsAlternative@\texttt  {IsAlternative}|hyperpage}{41}
+\indexentry{power alternative loop!left|hyperpage}{42}
+\indexentry{loop!left power alternative|hyperpage}{42}
+\indexentry{power alternative loop!right|hyperpage}{42}
+\indexentry{loop!right power alternative|hyperpage}{42}
+\indexentry{power alternative loop|hyperpage}{42}
+\indexentry{loop!power alternative|hyperpage}{42}
+\indexentry{IsLeftPowerAlternative@\texttt  {IsLeftPowerAlternative}|hyperpage}{42}
+\indexentry{IsRightPowerAlternative@\texttt  {IsRightPowerAlternative}|hyperpage}{42}
+\indexentry{IsPowerAlternative@\texttt  {IsPowerAlternative}|hyperpage}{42}
+\indexentry{conjugacy closed loop!left|hyperpage}{42}
+\indexentry{loop!left conjugacy closed|hyperpage}{42}
+\indexentry{conjugacy closed loop!right|hyperpage}{42}
+\indexentry{loop!right conjugacy closed|hyperpage}{42}
+\indexentry{conjugacy closed loop|hyperpage}{42}
+\indexentry{loop!conjugacy closed|hyperpage}{42}
+\indexentry{IsLCCLoop@\texttt  {IsLCCLoop}|hyperpage}{42}
+\indexentry{IsLeftConjugacyClosedLoop@\texttt  {IsLeftConjugacyClosedLoop}|hyperpage}{42}
+\indexentry{IsRCCLoop@\texttt  {IsRCCLoop}|hyperpage}{42}
+\indexentry{IsRightConjugacyClosedLoop@\texttt  {IsRightConjugacyClosedLoop}|hyperpage}{42}
+\indexentry{IsCCLoop@\texttt  {IsCCLoop}|hyperpage}{42}
+\indexentry{IsConjugacyClosedLoop@\texttt  {IsConjugacyClosedLoop}|hyperpage}{42}
+\indexentry{IsOsbornLoop@\texttt  {IsOsbornLoop}|hyperpage}{42}
+\indexentry{Osborn loop|hyperpage}{43}
+\indexentry{loop!Osborn|hyperpage}{43}
+\indexentry{automorphic loop!left|hyperpage}{43}
+\indexentry{loop!left automorphic|hyperpage}{43}
+\indexentry{automorphic loop!middle|hyperpage}{43}
+\indexentry{loop!middle automorphic|hyperpage}{43}
+\indexentry{automorphic loop!right|hyperpage}{43}
+\indexentry{loop!right automorphic|hyperpage}{43}
+\indexentry{automorphic loop|hyperpage}{43}
+\indexentry{loop!automorphic|hyperpage}{43}
+\indexentry{IsLeftAutomorphicLoop@\texttt  {IsLeftAutomorphicLoop}|hyperpage}{43}
+\indexentry{IsLeftALoop@\texttt  {IsLeftALoop}|hyperpage}{43}
+\indexentry{IsMiddleAutomorphicLoop@\texttt  {IsMiddleAutomorphicLoop}|hyperpage}{43}
+\indexentry{IsMiddleALoop@\texttt  {IsMiddleALoop}|hyperpage}{43}
+\indexentry{IsRightAutomorphicLoop@\texttt  {IsRightAutomorphicLoop}|hyperpage}{43}
+\indexentry{IsRightALoop@\texttt  {IsRightALoop}|hyperpage}{43}
+\indexentry{IsAutomorphicLoop@\texttt  {IsAutomorphicLoop}|hyperpage}{43}
+\indexentry{IsALoop@\texttt  {IsALoop}|hyperpage}{43}
+\indexentry{IsCodeLoop@\texttt  {IsCodeLoop}|hyperpage}{43}
+\indexentry{code loop|hyperpage}{43}
+\indexentry{loop!code|hyperpage}{43}
+\indexentry{IsSteinerLoop@\texttt  {IsSteinerLoop}|hyperpage}{44}
+\indexentry{Steiner loop|hyperpage}{44}
+\indexentry{loop!Steiner|hyperpage}{44}
+\indexentry{IsLeftBruckLoop@\texttt  {IsLeftBruckLoop}|hyperpage}{44}
+\indexentry{IsLeftKLoop@\texttt  {IsLeftKLoop}|hyperpage}{44}
+\indexentry{Bruck loop!left|hyperpage}{44}
+\indexentry{loop!left Bruck|hyperpage}{44}
+\indexentry{K loop!left|hyperpage}{44}
+\indexentry{loop!left K|hyperpage}{44}
+\indexentry{IsRightBruckLoop@\texttt  {IsRightBruckLoop}|hyperpage}{44}
+\indexentry{IsRightKLoop@\texttt  {IsRightKLoop}|hyperpage}{44}
+\indexentry{Bruck loop!right|hyperpage}{44}
+\indexentry{loop!right Bruck|hyperpage}{44}
+\indexentry{K loop!right|hyperpage}{44}
+\indexentry{loop!right K|hyperpage}{44}
+\indexentry{AssociatedLeftBruckLoop@\texttt  {AssociatedLeftBruckLoop}|hyperpage}{45}
+\indexentry{AssociatedRightBruckLoop@\texttt  {AssociatedRightBruckLoop}|hyperpage}{45}
+\indexentry{loop!left Bol|hyperpage}{45}
+\indexentry{Bol loop!left|hyperpage}{45}
+\indexentry{Bruck loop!associated left|hyperpage}{45}
+\indexentry{loop!associated left Bruck|hyperpage}{45}
+\indexentry{IsExactGroupFactorization@\texttt  {IsExactGroupFactorization}|hyperpage}{45}
+\indexentry{exact group factorization|hyperpage}{45}
+\indexentry{RightBolLoopByExactGroupFactorization@\texttt  {Right}\discretionary {-}{}{}\texttt  {Bol}\discretionary {-}{}{}\texttt  {Loop}\discretionary {-}{}{}\texttt  {By}\discretionary {-}{}{}\texttt  {Exact}\discretionary {-}{}{}\texttt  {Group}\discretionary {-}{}{}\texttt  {Factorization}|hyperpage}{45}
+\indexentry{modification!Moufang|hyperpage}{46}
+\indexentry{LoopByCyclicModification@\texttt  {LoopByCyclicModification}|hyperpage}{46}
+\indexentry{modification!cyclic|hyperpage}{46}
+\indexentry{LoopByDihedralModification@\texttt  {LoopByDihedralModification}|hyperpage}{46}
+\indexentry{modification!dihedral|hyperpage}{46}
+\indexentry{LoopMG2@\texttt  {LoopMG2}|hyperpage}{46}
+\indexentry{Chein loop|hyperpage}{46}
+\indexentry{loop!Chein|hyperpage}{46}
+\indexentry{group with triality|hyperpage}{46}
+\indexentry{TrialityPermGroup@\texttt  {TrialityPermGroup}|hyperpage}{47}
+\indexentry{TrialityPcGroup@\texttt  {TrialityPcGroup}|hyperpage}{47}
+\indexentry{AllLoopTablesInGroup@\texttt  {AllLoopTablesInGroup}|hyperpage}{47}
+\indexentry{AllProperLoopTablesInGroup@\texttt  {AllProperLoopTablesInGroup}|hyperpage}{47}
+\indexentry{OneLoopTableInGroup@\texttt  {OneLoopTableInGroup}|hyperpage}{47}
+\indexentry{OneProperLoopTableInGroup@\texttt  {OneProperLoopTableInGroup}|hyperpage}{48}
+\indexentry{AllLoopsWithMltGroup@\texttt  {AllLoopsWithMltGroup}|hyperpage}{48}
+\indexentry{OneLoopWithMltGroup@\texttt  {OneLoopWithMltGroup}|hyperpage}{48}
+\indexentry{LibraryLoop@\texttt  {LibraryLoop}|hyperpage}{49}
+\indexentry{MyLibraryLoop@\texttt  {MyLibraryLoop}|hyperpage}{49}
+\indexentry{DisplayLibraryInfo@\texttt  {DisplayLibraryInfo}|hyperpage}{50}
+\indexentry{LeftBolLoop@\texttt  {LeftBolLoop}|hyperpage}{50}
+\indexentry{RightBolLoop@\texttt  {RightBolLoop}|hyperpage}{50}
+\indexentry{MoufangLoop@\texttt  {MoufangLoop}|hyperpage}{50}
+\indexentry{octonion loop|hyperpage}{50}
+\indexentry{loop!octonion|hyperpage}{50}
+\indexentry{CodeLoop@\texttt  {CodeLoop}|hyperpage}{51}
+\indexentry{SteinerLoop@\texttt  {SteinerLoop}|hyperpage}{51}
+\indexentry{RCCLoop@\texttt  {RCCLoop}|hyperpage}{52}
+\indexentry{RightConjugacyClosedLoop@\texttt  {RightConjugacyClosedLoop}|hyperpage}{52}
+\indexentry{LCCLoop@\texttt  {LCCLoop}|hyperpage}{52}
+\indexentry{LeftConjugacyClosedLoop@\texttt  {LeftConjugacyClosedLoop}|hyperpage}{52}
+\indexentry{CCLoop@\texttt  {CCLoop}|hyperpage}{52}
+\indexentry{ConjugacyClosedLoop@\texttt  {ConjugacyClosedLoop}|hyperpage}{52}
+\indexentry{SmallLoop@\texttt  {SmallLoop}|hyperpage}{53}
+\indexentry{Paige loop|hyperpage}{53}
+\indexentry{loop!Paige|hyperpage}{53}
+\indexentry{PaigeLoop@\texttt  {PaigeLoop}|hyperpage}{53}
+\indexentry{NilpotentLoop@\texttt  {NilpotentLoop}|hyperpage}{53}
+\indexentry{AutomorphicLoop@\texttt  {AutomorphicLoop}|hyperpage}{53}
+\indexentry{sedenion loop|hyperpage}{53}
+\indexentry{loop!sedenion|hyperpage}{53}
+\indexentry{InterestingLoop@\texttt  {InterestingLoop}|hyperpage}{54}
+\indexentry{ItpSmallLoop@\texttt  {ItpSmallLoop}|hyperpage}{54}

@@ -6,10 +6,10 @@
                    [1XWedderburn Decomposition of Group Algebras[101X
   
   
-                                 Version 4.7.2
+                                 Version 4.7.3
   
   
-                                24 November 2014
+                               18 September 2015
   
   
                               Osnel Broche Cristo
@@ -99,7 +99,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y©  2006-2014  by  Osnel  Broche  Cristo,  Allen Herman, Alexander Konovalov,
+  [33X[0;0Y©  2006-2015  by  Osnel  Broche  Cristo,  Allen Herman, Alexander Konovalov,
   Aurora Olivieri, Gabriela Olteanu, Ángel del Río and Inneke Van Gelder.[133X
   
   [33X[0;0Y[5XWedderga[105X  is  free  software; you can redistribute it and/or modify it under
@@ -114,7 +114,7 @@
   
   [33X[0;0YO.  Broche  Cristo, A. Herman, A. Konovalov, A. Olivieri, G. Olteanu, Á. del
   Río  and  I.  Van  Gelder.  [13XWedderga  ---  Wedderburn Decomposition of Group
-  Algebras,                 Version                 4.7.2;[113X                2014
+  Algebras,                 Version                 4.7.3;[113X                2015
   ([7Xhttp://www.cs.st-andrews.ac.uk/~alexk/wedderga[107X).[133X
   
   

@@ -1,0 +1,126 @@
+\begin{thebibliography}{GMR99}
+
+\bibitem[Art59]{Ar}
+R.~Artzy.
+\newblock On automorphic-inverse properties in loops.
+\newblock {\em Proc. Amer. Math. Soc.}, 10:588{\textendash}591, 1959.
+
+\bibitem[Art15]{Artic}
+K.~Artic.
+\newblock {\em On conjugacy closed loops and conjugacy closed loop folders}.
+\newblock PhD thesis, RWTH Aachen University, 2015.
+
+\bibitem[Bru58]{Br}
+R.~H. Bruck.
+\newblock {\em A survey of binary systems}.
+\newblock Ergebnisse der Mathematik und ihrer Grenzgebiete. Neue Folge, Heft
+  20. Reihe: Gruppentheorie. Springer Verlag, Berlin, 1958.
+
+\bibitem[CD05]{CsDr}
+P.~Cs{\"o}rg{\H o} and A.~Dr{\a'a}pal.
+\newblock Left conjugacy closed loops of nilpotency class two.
+\newblock {\em Results Math.}, 47(3-4):242{\textendash}265, 2005.
+
+\bibitem[CR99]{CoRo}
+C.~J. Colbourn and A.~Rosa.
+\newblock {\em Triple systems}.
+\newblock Oxford Mathematical Monographs. The Clarendon Press Oxford University
+  Press, New York, 1999.
+
+\bibitem[Dr{\a'a}03]{DrapalCD}
+A.~Dr{\a'a}pal.
+\newblock Cyclic and dihedral constructions of even order.
+\newblock {\em Comment. Math. Univ. Carolin.}, 44(4):593{\textendash}614, 2003.
+
+\bibitem[DV06]{DrVo}
+A.~Dr{\a'a}pal and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Moufang loops that share associator and three quarters of their
+  multiplication tables.
+\newblock {\em Rocky Mountain J. Math.}, 36(2):425{\textendash}455, 2006.
+
+\bibitem[DV09]{DaVo}
+D.~Daly and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Enumeration of nilpotent loops via cohomology.
+\newblock {\em J. Algebra}, 322(11):4080{\textendash}4098, 2009.
+
+\bibitem[Fen69]{Fe}
+F.~Fenyves.
+\newblock Extra loops. {II}. {O}n loops with identities of {B}ol-{M}oufang
+  type.
+\newblock {\em Publ. Math. Debrecen}, 16:187{\textendash}192, 1969.
+
+\bibitem[GMR99]{Go}
+E.~G. Goodaire, S.~May, and M.~Raman.
+\newblock {\em The {M}oufang loops of order less than 64}.
+\newblock Nova Science Publishers Inc., Commack, NY, 1999.
+
+\bibitem[JM96]{JaMa}
+M.~T. Jacobson and P.~Matthews.
+\newblock Generating uniformly distributed random {L}atin squares.
+\newblock {\em J. Combin. Des.}, 4(6):405{\textendash}437, 1996.
+
+\bibitem[KKP02]{KiKuPh}
+M.~K. Kinyon, K.~Kunen, and J.~D. Phillips.
+\newblock Every diassociative {$A$}-loop is {M}oufang.
+\newblock {\em Proc. Amer. Math. Soc.}, 130(3):619{\textendash}624, 2002.
+
+\bibitem[KNV15]{KiNaVo2015}
+M.~K. Kinyon, G.~P. Nagy, and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Bol loops and bruck loops of order $pq$.
+\newblock 2015.
+\newblock preprint.
+
+\bibitem[Kun00]{Kun}
+K.~Kunen.
+\newblock The structure of conjugacy closed loops.
+\newblock {\em Trans. Amer. Math. Soc.}, 352(6):2889{\textendash}2911, 2000.
+
+\bibitem[Lie87]{Li}
+M.~W. Liebeck.
+\newblock The classification of finite simple {M}oufang loops.
+\newblock {\em Math. Proc. Cambridge Philos. Soc.}, 102(1):33{\textendash}47,
+  1987.
+
+\bibitem[Moo]{Mo}
+G.~E. Moorhouse.
+\newblock Bol loops of small order.
+\newblock http://www.uwyo.edu/moorhouse/pub/bol/.
+
+\bibitem[NV03]{NaVo2003}
+G.~P. Nagy and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Octonions, simple {M}oufang loops and triality.
+\newblock {\em Quasigroups Related Systems}, 10:65{\textendash}94, 2003.
+
+\bibitem[NV07]{NaVo2007}
+G.~P. Nagy and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock The {M}oufang loops of order 64 and 81.
+\newblock {\em J. Symbolic Comput.}, 42(9):871{\textendash}883, 2007.
+
+\bibitem[Pfl90]{Pf}
+H.~O. Pflugfelder.
+\newblock {\em Quasigroups and loops: introduction}, volume~7 of {\em Sigma
+  Series in Pure Mathematics}.
+\newblock Heldermann Verlag, Berlin, 1990.
+
+\bibitem[PV05]{PhiVoj}
+J.~D. Phillips and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock The varieties of loops of {B}ol-{M}oufang type.
+\newblock {\em Algebra Universalis}, 54(3):259{\textendash}271, 2005.
+
+\bibitem[SZ12]{SlZe2011}
+M.~Slattery and A.~Zenisek.
+\newblock Moufang loops of order 243.
+\newblock {\em Commentationes Mathematicae Universitatis Carolinae},
+  53(3):423{\textendash}428, 2012.
+
+\bibitem[Voj06]{Vo}
+P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Toward the classification of {M}oufang loops of order 64.
+\newblock {\em European J. Combin.}, 27(3):444{\textendash}460, 2006.
+
+\bibitem[WJ75]{Wi}
+R.~L. Wilson~Jr.
+\newblock Quasidirect products of quasigroups.
+\newblock {\em Comm. Algebra}, 3(9):835{\textendash}850, 1975.
+
+\end{thebibliography}

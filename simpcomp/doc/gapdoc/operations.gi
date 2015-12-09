@@ -188,48 +188,6 @@
 ##<#/GAPDoc>
 ################################################################################
 ################################################################################
-##<#GAPDoc Label="SCCollapseGreedy">
-## <ManSection>
-## <Meth Name="SCCollapseGreedy" Arg="complex"/>
-## <Returns>simplicial complex of type <C>SCSimplicialComplex</C> upon success, <K>fail</K> otherwise.</Returns>
-## <Description>
-## Employs a greedy collapsing algorithm in order to collapse the simplicial complex <Arg>complex</Arg>. The source code of this function is taken from <Cite Key="Lutz08ManifoldPage" />. 
-## <Example>
-## gap&gt; SCLib.SearchByName("T^2"){[1..6]}; 
-## [ [ 4, "T^2 (VT)" ], [ 5, "T^2 (VT)" ], [ 9, "T^2 (VT)" ], [ 10, "T^2 (VT)" ],
-##   [ 18, "T^2 (VT)" ], [ 20, "(T^2)#2" ] ]
-## gap&gt; torus:=SCLib.Load(last[1][1]);;
-## gap&gt; bdtorus:=SCDifference(torus,SC([torus.Facets[1]]));;
-## gap&gt; coll:=SCCollapseGreedy(bdtorus);
-## [SimplicialComplex
-## 
-##  Properties known: Dim, FacetsEx, Name, Vertices.
-## 
-##  Name="collapsed version of T^2 (VT) \ unnamed complex 18"
-##  Dim=1
-## 
-## /SimplicialComplex]
-## gap&gt; coll.Facets;
-## [ [ 3, 6 ], [ 3, 7 ], [ 5, 6 ], [ 5, 7 ], [ 6, 7 ] ]
-## gap&gt; sphere:=SCBdSimplex(4);;                              
-## gap&gt; bdsphere:=SCDifference(sphere,SC([sphere.Facets[1]]));;
-## gap&gt; coll:=SCCollapseGreedy(bdsphere);
-## [SimplicialComplex
-## 
-##  Properties known: Dim, FacetsEx, Name, Vertices.
-## 
-##  Name="collapsed version of S^3_5 \ unnamed complex 22"
-##  Dim=0
-## 
-## /SimplicialComplex]
-## gap&gt; coll.Facets;                     
-## [ [ 5 ] ]
-## </Example>
-## </Description>
-## </ManSection>
-##<#/GAPDoc>
-################################################################################
-################################################################################
 ##<#GAPDoc Label="SCDifference">
 ## <ManSection>
 ## <Meth Name="SCDifference" Arg="complex1, complex2"/>
@@ -263,7 +221,7 @@
 ## 
 ##  Properties known: Dim, FacetsEx, Name, Vertices.
 ## 
-##  Name="unnamed complex 28"
+##  Name="unnamed complex 21"
 ##  Dim=1
 ## 
 ## /SimplicialComplex]
@@ -288,7 +246,7 @@
 ## 
 ##  Properties known: Dim, FacetsEx, Name, Vertices.
 ## 
-##  Name="unnamed complex 29"
+##  Name="unnamed complex 22"
 ##  Dim=1
 ## 
 ## /SimplicialComplex]
@@ -753,10 +711,13 @@
 ## gap&gt; SCCollapseGreedy(filled);
 ## [SimplicialComplex
 ## 
-##  Properties known: Dim, FacetsEx, Name, Vertices.
+##  Properties known: Dim, FVector, FacetsEx, IsPure, Name, NumFaces[], 
+##                    SkelExs[], Vertices.
 ## 
 ##  Name="collapsed version of FilledSphere(S^4 (VT)) at vertex [ 1 ]"
 ##  Dim=0
+##  FVector=[ 1 ]
+##  IsPure=true
 ## 
 ## /SimplicialComplex]
 ## gap&gt; bd:=SCBoundary(filled);;
@@ -797,7 +758,7 @@
 ## 
 ##  Properties known: Dim, FacetsEx, Name, Vertices.
 ## 
-##  Name="span([ 2, 3, 5 ]) in unnamed complex 119"
+##  Name="span([ 2, 3, 5 ]) in unnamed complex 121"
 ##  Dim=1
 ## 
 ## /SimplicialComplex]

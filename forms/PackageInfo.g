@@ -10,8 +10,8 @@
 SetPackageInfo( rec( 
   PackageName := "Forms", 
   Subtitle := "Sesquilinear and Quadratic",
-  Version := "1.2.2",
-  Date := "29/08/2011",
+  Version := "1.2.3",
+  Date := "26/10/2015",
 
 ##  URL of the archive(s) of the current package release, but *without*
 ##  the format extension(s), like '.zoo', which are given next.
@@ -21,7 +21,7 @@ SetPackageInfo( rec(
 ##  directory containing the package (in our "example" probably:
 ##  example/init.g, ...    or  example-1.3/init.g, ...  )
 # 
-ArchiveURL := "http://cage.ugent.be/geometry/software/forms/forms-1.2.2",
+ArchiveURL := "http://cage.ugent.be/geometry/software/forms/forms-1.2.3",
 ArchiveFormats := ".tar.gz -win.zip .tar.bz2",
 Persons := [
   rec( 
@@ -47,16 +47,16 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "jdebeule@cage.ugent.be",
-    WWWHome       := "http://cage.ugent.be/~jdebeule",
+    WWWHome       := "http://www.debeule.eu",
     PostalAddress := Concatenation( [
                        "Jan De Beule\n",
                        "Department of Mathematics\n",
-                       "Ghent University\n",
-                       "Krijgslaan 281, S22\n",
-                       "B-9000 Ghent\n",
+                       "Vrije Universiteit Brussel\n",
+                       "Pleinlaan 2\n",
+                       "B-1050 Brussel\n",
                        "Belgium" ] ),
-    Place         := "Ghent",
-    Institution   := "Ghent University",
+    Place         := "Brussels",
+    Institution   := "Vrije Universiteit Brussel",
   ),
 ],
 
@@ -98,6 +98,9 @@ BannerString := Concatenation(
   "---------------------------------------------------------------------\n" ),
 
 Autoload := false,
+
+TestFile := "tst/testall.g",
+
 Keywords := ["Forms", "Sesquilinear", "Quadratic"],
 
 CommunicatedBy := "Leonard Soicher (London)",

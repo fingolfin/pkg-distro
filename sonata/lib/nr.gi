@@ -2,12 +2,12 @@
 ##
 #W  nr.gi             Near-ring Library                   J"urgen Ecker
 ##
-#H  @(#)$Id: nr.gi,v 1.10 2011-11-23 20:01:17 stein Exp $
+#H  @(#)$Id: nr.gi,v 1.10 2011/11/23 20:01:17 stein Exp $
 ##
 #Y  Copyright (C)
 ##
 ##  $Log: nr.gi,v $
-##  Revision 1.10  2011-11-23 20:01:17  stein
+##  Revision 1.10  2011/11/23 20:01:17  stein
 ##  New methods for Zero for elements of a nearring.
 ##  New methods for multiplying a nearring element with an integer (These should
 ##  be integrated into GAP in a future release and then removed from nr.gi).
@@ -43,7 +43,7 @@
 ##
 
 nr_gi:=
-  "@(#)$Id: nr.gi,v 1.10 2011-11-23 20:01:17 stein Exp $";
+  "@(#)$Id: nr.gi,v 1.10 2011/11/23 20:01:17 stein Exp $";
 
 #############################################################################
 ##

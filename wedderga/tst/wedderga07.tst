@@ -1,6 +1,6 @@
 # wedderga, chapter 7
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 29, 48 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 29, 48 ]
 
 gap> G:=SmallGroup(48,15);
 <pc group of size 48 with 5 generators>
@@ -20,7 +20,7 @@ gap> WedderburnDecompositionWithDivAlgParts(R);
           LocalIndices := [ [ 2, 2 ], [ 3, 2 ] ], SchurIndex := 2 ) ] ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 70, 94 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 70, 94 ]
 
 gap> G:=SmallGroup(240,89);
 <permutation group of size 240 with 2 generators>
@@ -45,7 +45,7 @@ gap> CyclotomicAlgebraWithDivAlgPart(W[10]);
       LocalIndices := [ [ infinity, 2 ] ], SchurIndex := 2 ) ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 135, 157 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 135, 157 ]
 
 gap> G:=SmallGroup(63,1);  
 <pc group of size 63 with 3 generators>
@@ -68,7 +68,7 @@ gap> SchurIndexByCharacter(CF(5),G,16);
 1
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 188, 214 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 188, 214 ]
 
 gap> G:=SmallGroup(63,1);                                  
 <pc group of size 63 with 3 generators>
@@ -95,7 +95,7 @@ gap> SimpleComponentByCharacterAsSCAlgebra(Rationals,G,15);
 
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 238, 245 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 238, 245 ]
 
 gap> PPartOfN(2275,5);
 25
@@ -103,7 +103,7 @@ gap> PDashPartOfN(2275,5);
 91
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 262, 269 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 262, 269 ]
 
 gap> PSplitSubextension(Rationals,60,5);  
 GaussianRationals
@@ -111,7 +111,7 @@ gap> PSplitSubextension(NF(5,[1,4]),70,2);
 NF(35,[ 1, 4, 9, 11, 16, 29 ])
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 292, 312 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 292, 312 ]
 
 gap> F:=CF(12);
 CF(12)
@@ -132,7 +132,7 @@ gap> SplittingDegreeAtP(F,120,5); SplittingDegreeAtP(K,120,5); last2/last;
 2
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 338, 345 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 338, 345 ]
 
 gap> A:=[1,Rationals,6,[2,5,3]];
 [ 1, Rationals, 6, [ 2, 5, 3 ] ]
@@ -140,7 +140,7 @@ gap> LocalIndicesOfCyclicCyclotomicAlgebra(A);
 [ [ 3, 2 ], [ infinity, 2 ] ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 383, 398 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 383, 398 ]
 
 gap> A:=[1,CF(4),20,[4,13,15]];
 [ 1, GaussianRationals, 20, [ 4, 13, 15 ] ]
@@ -156,7 +156,7 @@ gap> LocalIndexAtTwo(A);
 2
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 438, 451 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 438, 451 ]
 
 gap> G:=SmallGroup(480,600);
 <pc group of size 480 with 7 generators>
@@ -170,7 +170,7 @@ gap> LocalIndicesOfCyclotomicAlgebra(W[27]);
 [ [ infinity, 2 ] ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 464, 471 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 464, 471 ]
 
 gap> A:=[3,Rationals,12,[[2,5,3],[2,7,0]],[[3]]];
 [ 3, Rationals, 12, [ [ 2, 5, 3 ], [ 2, 7, 0 ] ], [ [ 3 ] ] ]
@@ -178,7 +178,7 @@ gap> RootOfDimensionOfCyclotomicAlgebra(A);
 12
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 498, 517 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 498, 517 ]
 
 gap> G:=SmallGroup(48,15);
 <pc group of size 48 with 5 generators>
@@ -198,7 +198,7 @@ gap> SimpleComponentOfGroupRingByCharacter(Rationals,G,12)
 [ 1, Rationals, 12, [ [ 2, 5, 3 ], [ 2, 7, 0 ] ], [ [ 3 ] ] ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 532, 544 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 532, 544 ]
 
 gap> G:=SmallGroup(48,16);
 <pc group of size 48 with 5 generators>
@@ -211,7 +211,7 @@ gap> LocalIndexAtInftyByCharacter(CF(3),G,12);
 
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 577, 592 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 577, 592 ]
 
 gap> G:=SmallGroup(72,21);
 <pc group of size 72 with 5 generators>
@@ -227,7 +227,7 @@ gap> DefectOfCharacterAtP(G,Irr(G)[18],3);
 2
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 634, 668 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 634, 668 ]
 
 gap> G:=SmallGroup(80,28);
 <pc group of size 80 with 5 generators>
@@ -262,7 +262,7 @@ gap> ValuesOfClassFunction(IBr(G,5)[10]);
   -E(8), E(8), -1, E(8)^3 ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 669, 678 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 669, 678 ]
 
 gap> G:=SmallGroup(72,20);
 <pc group of size 72 with 5 generators>
@@ -272,7 +272,7 @@ gap> LocalIndexAtPByBrauerCharacter(Rationals,G,Irr(G)[13],2);
 1
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 722, 735 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 722, 735 ]
 
 gap> G:=SmallGroup(48,15);
 <pc group of size 48 with 5 generators>
@@ -286,7 +286,7 @@ gap> LocalIndexAtTwoByCharacter(CF(3),G,12);
 1
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 790, 809 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 790, 809 ]
 
 gap> LocalIndicesOfRationalSymbolAlgebra(-1,-1);
 [ [ infinity, 2 ], [ 2, 2 ] ]
@@ -306,7 +306,7 @@ gap> LocalIndicesOfRationalQuaternionAlgebra(A);
 fail
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 835, 850 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 835, 850 ]
 
 gap> A:=QuaternionAlgebra(Rationals,-30,-15);           
 <algebra-with-one of dimension 4 over Rationals>
@@ -322,7 +322,7 @@ gap> LocalIndicesOfRationalQuaternionAlgebra(A);
 [  ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 901, 914 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 901, 914 ]
 
 gap> G:=SmallGroup(96,35);
 <pc group of size 96 with 6 generators>
@@ -336,7 +336,7 @@ gap> DecomposeCyclotomicAlgebra(A);
   [ NF(8,[ 1, 7 ]), NF(24,[ 1, 7 ]), [ -2-E(8)+E(8)^3 ] ] ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 938, 958 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 938, 958 ]
 
 gap> A:=[NF(24,[1,11]),CF(24),[-1]];
 [ NF(24,[ 1, 11 ]), CF(24), [ -1 ] ]
@@ -357,7 +357,7 @@ gap> b[2]*b[3]+b[3]*b[2];
 0*e
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/wedderga/doc/div-alg.xml", 985, 1006 ]
+# [ "/Users/alexk/gap4r7p8/pkg/wedderga/doc/div-alg.xml", 985, 1006 ]
 
 gap> A:=QuaternionAlgebra(CF(5),-3,-1);
 <algebra-with-one of dimension 4 over CF(5)>

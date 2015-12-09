@@ -114,6 +114,25 @@ BindGlobal( "TheTypeToDoListEntryWithContraposition",
 ##########################################
 
 ##
+BindGlobal( "TODOLIST_ADD_TO_RECORD_AT_POSITION",
+            
+  function( record, position, entry )
+    
+    if not IsBound( record.( position ) ) then
+        
+        record.( position ) := [ ];
+        
+    elif ForAny( record.( position ), i -> IsIdenticalObj( i, entry ) ) then
+        
+        return;
+        
+   fi;
+   
+   Add( record.( position ), entry );
+   
+end );
+
+##
 InstallMethod( \=,
                [ IsToDoListEntry, IsToDoListEntry ],
                
@@ -348,6 +367,8 @@ InstallMethod( AddToToDoList,
         
     fi;
     
+    entry!.source_tester_list := List( source_list, i -> false );
+    
     source_object_list := [ ];
     
     for source in source_list do
@@ -368,19 +389,19 @@ InstallMethod( AddToToDoList,
     
     result := ProcessAToDoListEntry( entry );
     
-    for source in source_object_list do
+    for source in source_list do
         
-        todo_list := ToDoList( source );
+        todo_list := ToDoList( source[ 1 ] );
         
         if IsFunction( result ) then
             
             Add( todo_list!.already_done, entry );
             
-        elif result = false and not PreconditionsDefinitelyNotFulfilled( entry ) and CanHaveAToDoList( source ) then
+        elif result = false and not PreconditionsDefinitelyNotFulfilled( entry ) and CanHaveAToDoList( source[ 1 ] ) then
             
-            Add( todo_list!.todos, entry );
+            TODOLIST_ADD_TO_RECORD_AT_POSITION( todo_list!.todos, source[ 2 ], entry );
             
-            SetFilterObj( source, HasSomethingToDo );
+            SetFilterObj( source[ 1 ], HasSomethingToDo );
             
         elif result = false and PreconditionsDefinitelyNotFulfilled( entry ) then
             
@@ -486,11 +507,15 @@ InstallMethod( ProcessAToDoListEntry,
     
     fi;
     
-    tester_var := true;
-    
-    for source in source_list do
+    for source in [ 1 .. Length( source_list ) ] do
         
-        source_status := ToolsForHomalg_CheckASourcePart( source );
+        if entry!.source_tester_list[ source ] = true then
+            
+            continue;
+            
+        fi;
+        
+        source_status := ToolsForHomalg_CheckASourcePart( source_list[ source ] );
         
         if source_status = fail then
             
@@ -502,19 +527,17 @@ InstallMethod( ProcessAToDoListEntry,
             
             return false;
             
+        else
+            
+            entry!.source_tester_list[ source ] := true;
+            
         fi;
         
     od;
     
-    if tester_var then
-        
-        SetFilterObj( entry, IsProcessedEntry );
-        
-        return target;
-        
-    fi;
+    SetFilterObj( entry, IsProcessedEntry );
     
-    return false;
+    return target;
     
 end );
 
@@ -631,9 +654,15 @@ InstallMethod( ProcessAToDoListEntry,
     
     tester_var := true;
     
-    for source in source_list do
+    for source in [ 1 .. Length( source_list ) ] do
         
-        source_status := ToolsForHomalg_CheckASourcePart( source );
+        if entry!.source_tester_list[ source ] = true then
+            
+            continue;
+            
+        fi;
+        
+        source_status := ToolsForHomalg_CheckASourcePart( source_list[ source ] );
         
         if source_status = fail then
             
@@ -644,6 +673,10 @@ InstallMethod( ProcessAToDoListEntry,
         elif not source_status then
             
             return false;
+            
+        else
+            
+            entry!.source_tester_list[ source ] := true;
             
         fi;
         
@@ -769,11 +802,11 @@ InstallMethod( AddToToDoList,
     entry1!.contrapositions := [ entry_contra ];
     
     entry_contra!.contrapositions := [ entry1 ];
-    
-    AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry1, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
-    
-    AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_contra, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
-    
+#     
+#     AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry1, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
+#     
+#     AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_contra, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
+#     
     AddToToDoList( entry1 );
     
     AddToToDoList( entry_contra );
@@ -847,10 +880,10 @@ InstallMethod( AddToToDoList,
     entry_forward!.equivalencies := [ entry_backwards ];
     
     entry_backwards!.equivalencies := [ entry_forward ];
-    
-    AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_forward, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
-    
-    AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_backwards, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
+#     
+#     AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_forward, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
+#     
+#     AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_backwards, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
     
     AddToToDoList( entry_forward );
     
@@ -914,10 +947,10 @@ InstallMethod( AddToToDoList,
     entry_forward!.equivalencies := [ entry_backwards ];
     
     entry_backwards!.equivalencies := [ entry_forward ];
-    
-    AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_forward, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
-    
-    AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_backwards, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
+#     
+#     AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_forward, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
+#     
+#     AddToToDoList( ToDoListEntry( [ [ entry, "DescriptionOfImplication" ] ], entry_backwards, "DescriptionOfImplication", [ DescriptionOfImplication, entry ] ) );
     
     AddToToDoList( entry_forward );
     

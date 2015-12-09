@@ -216,7 +216,7 @@
 ## #I  SCIsTight: processed 30000 of 40320 rsl-functions so far, all perfect.
 ## #I  SCIsTight: processed 40000 of 40320 rsl-functions so far, all perfect.
 ## true
-## 5628
+## 7900
 ## </Example> 
 ## <Example>
 ## gap&gt; SCLib.SearchByAttribute("F[1] = 120");
@@ -233,7 +233,7 @@
 ##   98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 
 ##   113, 114, 115, 116, 117, 118, 119, 120 ], complex not tight.
 ## false
-## 0
+## 12
 ## </Example>
 ## <Example>
 ## gap&gt; SCInfoLevel(0);

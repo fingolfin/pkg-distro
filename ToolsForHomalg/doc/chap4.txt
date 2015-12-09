@@ -1,12 +1,9 @@
   
-  [1X4 [33X[0;0YToolsForHomalg automatic generated documentation[133X[101X
+  [1X4 [33X[0;0YToDo-list[133X[101X
   
   
-  [1X4.1 [33X[0;0YToolsForHomalg automatic generated documentation of global variables[133X[101X
+  [1X4.1 [33X[0;0YProof tracking[133X[101X
   
-  [1X4.1-1 HOMALG_TOOLS[101X
-  
-  [29X[2XHOMALG_TOOLS[102X[32X global variable
-  
-  [33X[0;0YA central place for configurations. ChapterInfo Basics, Variables[133X
+  [33X[0;0YThis  is  a  way to track proofs from ToDoLists. Not only for debugging, but
+  also for knowing how things work together.[133X
   

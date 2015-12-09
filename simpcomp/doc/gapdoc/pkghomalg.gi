@@ -11,9 +11,15 @@
 ##<#GAPDoc Label="SCHomalgBoundaryMatrices">
 ## <ManSection>
 ## <Meth Name="SCHomalgBoundaryMatrices" Arg="complex,modulus"/>
-## <Returns>a list of <Package>homalg</Package> objects upon success, <K>fail</K> otherwise.</Returns>
+## <Returns>a list of <Package>homalg</Package> objects upon success, 
+## <K>fail</K> otherwise.</Returns>
 ## <Description>
-## This function computes the boundary operator matrices for the simplicial complex <Arg>complex</Arg> with a ring of coefficients as specified by <Arg>modulus</Arg>: a value of <C>0</C> yields <M>\mathbb{Q}</M>-matrices, a value of <C>1</C> yields <M>\mathbb{Z}</M>-matrices and a value of <C>q</C>, q a prime or a prime power, computes the <M>\mathbb{F}_q</M>-matrices.<P/>
+## This function computes the boundary operator matrices for the simplicial 
+## complex <Arg>complex</Arg> with a ring of coefficients as specified by 
+## <Arg>modulus</Arg>: a value of <C>0</C> yields <M>\mathbb{Q}</M>-matrices, 
+## a value of <C>1</C> yields <M>\mathbb{Z}</M>-matrices and a value of 
+## <C>q</C>, q a prime or a prime power, computes the 
+## <M>\mathbb{F}_q</M>-matrices.<P/>
 ## <Example>
 ## gap&gt; SCLib.SearchByName("CP^2 (VT)");
 ## [ [ 16, "CP^2 (VT)" ] ]
@@ -33,9 +39,15 @@
 ##<#GAPDoc Label="SCHomalgCoboundaryMatrices">
 ## <ManSection>
 ## <Meth Name="SCHomalgCoboundaryMatrices" Arg="complex,modulus"/>
-## <Returns>a list of <Package>homalg</Package> objects upon success, <K>fail</K> otherwise.</Returns>
+## <Returns>a list of <Package>homalg</Package> objects upon success, 
+## <K>fail</K> otherwise.</Returns>
 ## <Description>
-## This function computes the coboundary operator matrices for the simplicial complex <Arg>complex</Arg> with a ring of coefficients as specified by <Arg>modulus</Arg>: a value of <C>0</C> yields <M>\mathbb{Q}</M>-matrices, a value of <C>1</C> yields <M>\mathbb{Z}</M>-matrices and a value of <C>q</C>, q a prime or a prime power, computes the <M>\mathbb{F}_q</M>-matrices.<P/>
+## This function computes the coboundary operator matrices for the simplicial 
+## complex <Arg>complex</Arg> with a ring of coefficients as specified by 
+## <Arg>modulus</Arg>: a value of <C>0</C> yields <M>\mathbb{Q}</M>-matrices, 
+## a value of <C>1</C> yields <M>\mathbb{Z}</M>-matrices and a value of 
+## <C>q</C>, q a prime or a prime power, computes the 
+## <M>\mathbb{F}_q</M>-matrices.<P/>
 ## <Example>
 ## gap&gt; SCLib.SearchByName("CP^2 (VT)");
 ## [ [ 16, "CP^2 (VT)" ] ]
@@ -57,8 +69,15 @@
 ## <Meth Name="SCHomalgHomology" Arg="complex,modulus"/>
 ## <Returns>a list of integers upon success, <K>fail</K> otherwise.</Returns>
 ## <Description>
-## This function computes the ranks of the homology groups of <Arg>complex</Arg> with a ring of coefficients as specified by <Arg>modulus</Arg>: a value of <C>0</C> computes the <M>\mathbb{Q}</M>-homology, a value of <C>1</C> computes the <M>\mathbb{Z}</M>-homology and a value of <C>q</C>, q a prime or a prime power, computes the <M>\mathbb{F}_q</M>-homology ranks.<P/>
-## Note that if you are interested not only in the ranks of the homology groups, but rather their full structure, have a look at the function <Ref Meth="SCHomalgHomologyBasis" />.
+## This function computes the ranks of the homology groups of 
+## <Arg>complex</Arg> with a ring of coefficients as specified by 
+## <Arg>modulus</Arg>: a value of <C>0</C> computes the 
+## <M>\mathbb{Q}</M>-homology, a value of <C>1</C> computes the 
+## <M>\mathbb{Z}</M>-homology and a value of <C>q</C>, q a prime or a 
+## prime power, computes the <M>\mathbb{F}_q</M>-homology ranks.<P/>
+## Note that if you are interested not only in the ranks of the homology 
+## groups, but rather their full structure, have a look at the function 
+## <Ref Meth="SCHomalgHomologyBasis" />.
 ## <Example>
 ## gap&gt; SCLib.SearchByName("K3");
 ## [ [ 7648, "K3_16" ], [ 7649, "K3_17" ] ]
@@ -75,11 +94,23 @@
 ##<#GAPDoc Label="SCHomalgHomologyBasis">
 ## <ManSection>
 ## <Meth Name="SCHomalgHomologyBasis" Arg="complex,modulus"/>
-## <Returns>a <Package>homalg</Package> object upon success, <K>fail</K> otherwise.</Returns>
+## <Returns>a <Package>homalg</Package> object upon success, <K>fail</K> 
+## otherwise.</Returns>
 ## <Description>
-## This function computes the homology groups (including explicit bases of the modules involved) of <Arg>complex</Arg> with a ring of coefficients as specified by <Arg>modulus</Arg>: a value of <C>0</C> computes the <M>\mathbb{Q}</M>-homology, a value of <C>1</C> computes the <M>\mathbb{Z}</M>-homology and a value of <C>q</C>, q a prime or a prime power, computes the <M>\mathbb{F}_q</M>-homology groups.<P/>
-## The <M>k</M>-th homology group <C>hk</C> can be obtained by calling <C>hk:=CertainObject(homology,k);</C>, where <C>homology</C> is the <Package>homalg</Package> object returned by this function. The generators of <C>hk</C> can then be obtained via <C>GeneratorsOfModule(hk);</C>.<P/>
-## Note that if you are only interested in the ranks of the homology groups, then it is better to use the funtion <Ref Meth="SCHomalgHomology" /> which is way faster.
+## This function computes the homology groups (including explicit bases of 
+## the modules involved) of <Arg>complex</Arg> with a ring of coefficients 
+## as specified by <Arg>modulus</Arg>: a value of <C>0</C> computes the 
+## <M>\mathbb{Q}</M>-homology, a value of <C>1</C> computes the 
+## <M>\mathbb{Z}</M>-homology and a value of <C>q</C>, q a prime or a prime 
+## power, computes the <M>\mathbb{F}_q</M>-homology groups.<P/>
+## The <M>k</M>-th homology group <C>hk</C> can be obtained by calling 
+## <C>hk:=CertainObject(homology,k);</C>, where <C>homology</C> is the 
+## <Package>homalg</Package> object returned by this function. The 
+## generators of <C>hk</C> can then be obtained via 
+## <C>GeneratorsOfModule(hk);</C>.<P/>
+## Note that if you are only interested in the ranks of the homology groups, 
+## then it is better to use the funtion <Ref Meth="SCHomalgHomology" /> 
+## which is way faster.
 ## <Example>
 ## gap&gt; SCLib.SearchByName("K3");
 ## [ [ 7648, "K3_16" ], [ 7649, "K3_17" ] ]
@@ -98,8 +129,15 @@
 ## <Meth Name="SCHomalgCohomology" Arg="complex,modulus"/>
 ## <Returns>a list of integers upon success, <K>fail</K> otherwise.</Returns>
 ## <Description>
-## This function computes the ranks of the cohomology groups of <Arg>complex</Arg> with a ring of coefficients as specified by <Arg>modulus</Arg>: a value of <C>0</C> computes the <M>\mathbb{Q}</M>-cohomology, a value of <C>1</C> computes the <M>\mathbb{Z}</M>-cohomology and a value of <C>q</C>, q a prime or a prime power, computes the <M>\mathbb{F}_q</M>-cohomology ranks.<P/>
-## Note that if you are interested not only in the ranks of the cohomology groups, but rather their full structure, have a look at the function <Ref Meth="SCHomalgCohomologyBasis" />.
+## This function computes the ranks of the cohomology groups of 
+## <Arg>complex</Arg> with a ring of coefficients as specified by 
+## <Arg>modulus</Arg>: a value of <C>0</C> computes the 
+## <M>\mathbb{Q}</M>-cohomology, a value of <C>1</C> computes the 
+## <M>\mathbb{Z}</M>-cohomology and a value of <C>q</C>, q a prime or a 
+## prime power, computes the <M>\mathbb{F}_q</M>-cohomology ranks.<P/>
+## Note that if you are interested not only in the ranks of the cohomology 
+## groups, but rather their full structure, have a look at the function 
+## <Ref Meth="SCHomalgCohomologyBasis" />.
 ## <Example>
 ## gap&gt; SCLib.SearchByName("K3");
 ## [ [ 7648, "K3_16" ], [ 7649, "K3_17" ] ]
@@ -116,11 +154,23 @@
 ##<#GAPDoc Label="SCHomalgCohomologyBasis">
 ## <ManSection>
 ## <Meth Name="SCHomalgCohomologyBasis" Arg="complex,modulus"/>
-## <Returns>a <Package>homalg</Package> object upon success, <K>fail</K> otherwise.</Returns>
+## <Returns>a <Package>homalg</Package> object upon success, <K>fail</K> 
+## otherwise.</Returns>
 ## <Description>
-## This function computes the cohomology groups (including explicit bases of the modules involved) of <Arg>complex</Arg> with a ring of coefficients as specified by <Arg>modulus</Arg>: a value of <C>0</C> computes the <M>\mathbb{Q}</M>-cohomology, a value of <C>1</C> computes the <M>\mathbb{Z}</M>-cohomology and a value of <C>q</C>, q a prime or a prime power, computes the <M>\mathbb{F}_q</M>-homology groups.<P/>
-## The <M>k</M>-th cohomology group <C>ck</C> can be obtained by calling <C>ck:=CertainObject(cohomology,k);</C>, where <C>cohomology</C> is the <Package>homalg</Package> object returned by this function. The generators of <C>ck</C> can then be obtained via <C>GeneratorsOfModule(ck);</C>.<P/>
-## Note that if you are only interested in the ranks of the cohomology groups, then it is better to use the funtion <Ref Meth="SCHomalgCohomology" /> which is way faster.
+## This function computes the cohomology groups (including explicit bases of 
+## the modules involved) of <Arg>complex</Arg> with a ring of coefficients as 
+## specified by <Arg>modulus</Arg>: a value of <C>0</C> computes the 
+## <M>\mathbb{Q}</M>-cohomology, a value of <C>1</C> computes the 
+## <M>\mathbb{Z}</M>-cohomology and a value of <C>q</C>, q a prime or a prime 
+## power, computes the <M>\mathbb{F}_q</M>-homology groups.<P/>
+## The <M>k</M>-th cohomology group <C>ck</C> can be obtained by calling 
+## <C>ck:=CertainObject(cohomology,k);</C>, where <C>cohomology</C> is the 
+## <Package>homalg</Package> object returned by this function. The 
+## generators of <C>ck</C> can then be obtained via 
+## <C>GeneratorsOfModule(ck);</C>.<P/>
+## Note that if you are only interested in the ranks of the cohomology groups, 
+## then it is better to use the funtion <Ref Meth="SCHomalgCohomology" /> 
+## which is way faster.
 ## <Example>
 ## gap&gt; SCLib.SearchByName("K3");
 ## [ [ 7648, "K3_16" ], [ 7649, "K3_17" ] ]

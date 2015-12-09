@@ -180,8 +180,9 @@
  1 1 1 1 .
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EchelonMat(M);</span>
 rec( heads := [ 1, 2, 0, 3, 0 ],
-  vectors := [ &lt;a GF2 vector of length 5&gt;, &lt;a GF2 vector of length 5&gt;,
-      &lt;a GF2 vector of length 5&gt; ] )
+  vectors := [ &lt;an immutable GF2 vector of length 5&gt;,
+      &lt;an immutable GF2 vector of length 5&gt;,
+      &lt;an immutable GF2 vector of length 5&gt; ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( last.vectors );</span>
  1 . . . 1
  . 1 1 . 1
@@ -242,12 +243,15 @@ rec( heads := [ 1, 2, 3 ],
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M := [[1,0,1],[1,1,0],[1,0,1],[1,1,0],[1,1,1]] * One( GF(2) );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EchelonMatTransformation( M );</span>
 rec( 
-  coeffs := [ &lt;a GF2 vector of length 5&gt;, &lt;a GF2 vector of length 5&gt;, 
-      &lt;a GF2 vector of length 5&gt; ], heads := [ 1, 2, 3 ], 
+  coeffs := [ &lt;an immutable GF2 vector of length 5&gt;,
+      &lt;an immutable GF2 vector of length 5&gt;, 
+      &lt;an immutable GF2 vector of length 5&gt; ], heads := [ 1, 2, 3 ], 
   relations := 
-    [ &lt;a GF2 vector of length 5&gt;, &lt;a GF2 vector of length 5&gt; ], 
-  vectors := [ &lt;a GF2 vector of length 3&gt;, &lt;a GF2 vector of length 3&gt;,
-      &lt;a GF2 vector of length 3&gt; ] )
+    [ &lt;an immutable GF2 vector of length 5&gt;,
+      &lt;an immutable GF2 vector of length 5&gt; ], 
+  vectors := [ &lt;an immutable GF2 vector of length 3&gt;,
+      &lt;an immutable GF2 vector of length 3&gt;,
+      &lt;an immutable GF2 vector of length 3&gt; ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(last.vectors);</span>
  1 . .
  . 1 .
