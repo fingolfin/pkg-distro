@@ -1,0 +1,25 @@
+gap> 
+gap> # Defining planes of EGQ-BLT
+gap> clan := KantorKnuthqClan(9);
+<q-clan over GF(3^2)>
+gap> blt := BLTSetByqClan(clan);
+[ <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0> ]
+gap> egq := EGQByBLTSet(blt);
+#I  Now embedding dual BLT-set into W(5,q)...
+#I  Computing elation group...
+<EGQ of order [ 81, 9 ] and basepoint in W(5, 9 ) >
+gap> DefiningPlanesOfEGQByBLTSet(egq);
+[ <a plane in W(5, 9)>, <a plane in W(5, 9)>, <a plane in W(5, 9)>, 
+  <a plane in W(5, 9)>, <a plane in W(5, 9)>, <a plane in W(5, 9)>, 
+  <a plane in W(5, 9)>, <a plane in W(5, 9)>, <a plane in W(5, 9)>, 
+  <a plane in W(5, 9)> ]
+gap> quit;

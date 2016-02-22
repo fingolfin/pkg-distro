@@ -1,0 +1,5 @@
+gap> 
+gap> #underlying vector space
+gap> UnderlyingVectorSpace(AG(4,5));
+( GF(5)^4 )
+gap> quit;

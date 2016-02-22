@@ -1,0 +1,25 @@
+gap> 
+gap> # fining orbit (2)
+gap> ps := ParabolicQuadric(4,3);
+Q(4, 3)
+gap> g := CollineationGroup(ps);
+PGammaO(5,3)
+gap> pg := PG(4,3);
+ProjectiveSpace(4, 3)
+gap> s := First(Solids(pg),t -> TypeOfSubspace(ps,t) = "elliptic" );
+<a solid in ProjectiveSpace(4, 3)>
+gap> orbit1 := FiningOrbit(g,s,OnProjSubspaces);
+<closed orbit, 36 points>
+gap> time;
+9
+gap> spts := Filtered(Points(s),s->s in ps);
+[ <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)> ]
+gap> orbit2 := FiningOrbit(g,Set(spts),OnSetsProjSubspaces);
+<closed orbit, 36 points>
+gap> time;
+18
+gap> quit;

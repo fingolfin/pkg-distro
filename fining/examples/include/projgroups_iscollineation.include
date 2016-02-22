@@ -1,0 +1,14 @@
+gap&gt; g := Random(HomographyGroup(PG(2,27)));
+&lt; a collineation: &lt;cmat 3x3 over GF(3,3)&gt;, F^0&gt;
+gap&gt; IsCollineation(g);
+true
+gap&gt; g := Random(CollineationGroup(PG(2,27)));
+&lt; a collineation: &lt;cmat 3x3 over GF(3,3)&gt;, F^0&gt;
+gap&gt; IsCollineation(g);
+true
+gap&gt; g := Random(CorrelationCollineationGroup(PG(2,27)));
+&lt;projective element with Frobenius with projectivespace isomorphism: &lt;cmat 3x
+3 over GF(3,3)&gt;, F^0, IdentityMapping( &lt;All elements of ProjectiveSpace(2, 
+27)&gt; ) &gt;
+gap&gt; IsCollineation(g);
+true

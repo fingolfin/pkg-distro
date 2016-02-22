@@ -1,0 +1,9 @@
+gap> 
+gap> #an easy example of a q clan check
+gap> f := GF(3);
+GF(3)
+gap> id := IdentityMat(2, f);;
+gap> clan := List( f, t -> t * id );;
+gap> IsqClan( clan, f );
+true
+gap> quit;

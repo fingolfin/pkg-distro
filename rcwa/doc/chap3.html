@@ -60,24 +60,27 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7C046BE97EE53692">3.3-1 <span class="Heading"> Orbit (for an rcwa group and either a point or a set) </span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7D9DFAC97F9F0891">3.3-2 DrawOrbitPicture</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X78F145197F63A25D">3.3-3 <span class="Heading">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B7A3AF97D195E33">3.3-2 GrowthFunctionOfOrbit</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7D9DFAC97F9F0891">3.3-3 DrawOrbitPicture</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X78F145197F63A25D">3.3-4 <span class="Heading">
     ShortOrbits (for rcwa groups) &amp; ShortCycles (for rcwa permutations)
   </span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X80D18D0778A96C16">3.3-4 <span class="Heading">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X80D18D0778A96C16">3.3-5 <span class="Heading">
     ShortResidueClassOrbits &amp; ShortResidueClassCycles
   </span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F76B04E86C77B94">3.3-5 CycleRepresentativesAndLengths</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8777A62286597D53">3.3-6 FixedResidueClasses</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8735855587CC029F">3.3-7 <span class="Heading">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X80C080287A355EFF">3.3-6 ComputeCycleLength</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F76B04E86C77B94">3.3-7 CycleRepresentativesAndLengths</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8777A62286597D53">3.3-8 FixedResidueClasses</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8735855587CC029F">3.3-9 <span class="Heading">
     Ball (for group, element and radius or group, point, radius and action)
   </span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X87A3462C82FD376E">3.3-8 RepresentativeAction</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8587246A7F890849">3.3-9 ProjectionsToInvariantUnionsOfResidueClasses</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X866843D08213067E">3.3-10 RepresentativeAction</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X87A3462C82FD376E">3.3-10 RepresentativeAction</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8587246A7F890849">3.3-11 ProjectionsToInvariantUnionsOfResidueClasses</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X866843D08213067E">3.3-12 RepresentativeAction</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X82DBAF35788FA239">3.3-13 CollatzLikeMappingByOrbitTree</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X781CBEFA7F39B58D">3.4 <span class="Heading">
   Special attributes of tame residue-class-wise affine groups
@@ -191,7 +194,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WreathProduct</code>( <var class="Arg">G</var>, <var class="Arg">Z</var> )</td><td class="tdright">( method )</td></tr></table></div>
 <p>Returns: an rcwa group isomorphic to the wreath product of the rcwa group <var class="Arg">G</var> over ℤ with the finite permutation group <var class="Arg">P</var> or with the infinite cyclic group <var class="Arg">Z</var>, respectively.</p>
 
-<p>The first-mentioned method embeds the <code class="code">DegreeAction(<var class="Arg">P</var>)</code>th direct power of <var class="Arg">G</var> using the method for <code class="code">DirectProduct</code>, and lets the permutation group <var class="Arg">P</var> act naturally on the set of residue classes modulo <code class="code">DegreeAction(<var class="Arg">P</var>)</code>. The second-mentioned method restricts (<span class="SimpleMath">→</span> <code class="func">Restriction</code> (<a href="chap3.html#X852EF2C079E4D7FF"><span class="RefLink">3.1-6</span></a>)) the group <var class="Arg">G</var> to the residue class 3(4), and maps the generator of the infinite cyclic group <var class="Arg">Z</var> to <code class="code">ClassTransposition(0,2,1,2) * ClassTransposition(0,2,1,4)</code>.</p>
+<p>The first-mentioned method embeds the <code class="code">NrMovedPoints(<var class="Arg">P</var>)</code>th direct power of <var class="Arg">G</var> using the method for <code class="code">DirectProduct</code>, and lets the permutation group <var class="Arg">P</var> act naturally on the set of residue classes modulo <code class="code">NrMovedPoints(<var class="Arg">P</var>)</code>. The second-mentioned method restricts (<span class="SimpleMath">→</span> <code class="func">Restriction</code> (<a href="chap3.html#X852EF2C079E4D7FF"><span class="RefLink">3.1-6</span></a>)) the group <var class="Arg">G</var> to the residue class 3(4), and maps the generator of the infinite cyclic group <var class="Arg">Z</var> to <code class="code">ClassTransposition(0,2,1,2) * ClassTransposition(0,2,1,4)</code>.</p>
 
 
 <div class="example"><pre>
@@ -281,7 +284,7 @@ true
 &lt;rcwa group over Z with 8 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H := Group(List([[0,2,1,2],[1,2,2,4],[0,2,1,4],[1,4,2,4]],</span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">                   ClassTransposition)); # (first) Higman-Thompson group</span>
-&lt;rcwa group over Z with 4 generators&gt;
+&lt;(0(2),1(2)),(1(2),2(4)),(0(2),1(4)),(1(4),2(4))&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G = H;</span>
 true
 
@@ -387,7 +390,8 @@ true
 <h5>3.1-9 CT</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CT</code>( <var class="Arg">R</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns: the group CT(<var class="Arg">R</var>) which is generated by all class transpositions of the ring <span class="SimpleMath">R</span>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CT</code>( <var class="Arg">P</var>, <var class="Arg">Integers</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns: the group CT(<var class="Arg">R</var>) which is generated by all class transpositions of the ring <var class="Arg">R</var>, respectively, the group CT(<var class="Arg">P</var>,ℤ) which is generated by all class transpositions of ℤ which interchange residue classes whose moduli have only odd prime factors in the finite set <var class="Arg">P</var>.</p>
 
 
 <div class="example"><pre>
@@ -398,6 +402,17 @@ CT(Z)
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubgroup(CT_Z,G);</span>
 false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := CT([],Integers);</span>
+CT_[ ](Z)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfGroup(V);</span>
+[ ( 0(2), 1(2) ), ( 1(2), 2(4) ), ( 0(2), 1(4) ), ( 1(4), 2(4) ) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := CT([3],Integers);</span>
+CT_[ 3 ](Z)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfGroup(G);</span>
+[ ( 0(2), 1(2) ), ( 1(2), 2(4) ), ( 0(2), 1(4) ), ( 1(4), 2(4) ), 
+  ( 0(3), 1(3) ), ( 1(3), 2(3) ), ( 0(3), 1(9) ), ( 0(3), 4(9) ), 
+  ( 0(3), 7(9) ), ( 0(2), 1(6) ), ( 0(2), 5(6) ), ( 0(3), 1(6) ), 
+  ( 0(4), 1(6) ), ( 0(6), 1(8) ) ]
 
 </pre></div>
 
@@ -608,7 +623,7 @@ infinity
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := ClassTransposition(4,6,8,12);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c := ClassTransposition(3,4,4,6);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := SparseRep(Group(a,b,c));</span>
-&lt;rcwa group over Z with 3 generators&gt;
+&lt;(2(4),3(4)),(4(6),8(12)),(3(4),4(6))&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">phi := EpimorphismFromFpGroup(G,6);</span>
 [ a, b, c ] -&gt; [ ( 2(4), 3(4) ), ( 4(6), 8(12) ), ( 3(4), 4(6) ) ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RelatorsOfFpGroup(Source(phi));</span>
@@ -627,7 +642,7 @@ infinity
 
 <p>The epimorphism <var class="Arg">phi</var> must map the generators of the free group to the generators of the rcwa group one-by-one.</p>
 
-<p>This method can be used for factoring elements of rcwa groups into generators. The implementation is based on <code class="code">RepresentativeActionPreImage</code>, see <code class="func">RepresentativeAction</code> (<a href="chap3.html#X87A3462C82FD376E"><span class="RefLink">3.3-8</span></a>).</p>
+<p>This method can be used for factoring elements of rcwa groups into generators. The implementation is based on <code class="code">RepresentativeActionPreImage</code>, see <code class="func">RepresentativeAction</code> (<a href="chap3.html#X87A3462C82FD376E"><span class="RefLink">3.3-10</span></a>).</p>
 
 <p>Quite frequently, computing several preimages is not harder than computing just one, i.e. often several preimages are found simultaneously. The operation <code class="code">PreImagesRepresentatives</code> takes care of this. It takes the same arguments as <code class="code">PreImagesRepresentative</code> and returns a list of preimages. If multiple preimages are found, their quotients give rise to nontrivial relations among the generators of the image of <var class="Arg">phi</var>.</p>
 
@@ -674,7 +689,83 @@ true
 
 </pre></div>
 
-<p>Groups generated by class transpositions of the integers act on the set of nonnegative integers. There is a property <code class="code">IsTransitiveOnNonnegativeIntegersInSupport</code> which indicates whether such group acts transitively on its support. Since such transitivity test is a computationally hard problem, methods may fail. Failure is indicated by an error message. Further, there are methods to compute orbits under the action of an rcwa group:</p>
+<p>Groups generated by class transpositions of the integers act on the set of nonnegative integers. There is a property <code class="code">IsTransitiveOnNonnegativeIntegersInSupport(<var class="Arg">G</var>)</code> which indicates whether such group acts transitively on the set of nonnegative integers in its support. Since such transitivity test is a computationally hard problem, methods may fail. If <code class="code">IsTransitiveOnNonnegativeIntegersInSupport</code> returns <code class="code">true</code>, an attribute <code class="code">TransitivityCertificate</code> is set; this is a record containing components <code class="code">phi</code>, <code class="code">words</code>, <code class="code">classes</code>, <code class="code">smallpointbound</code>, <code class="code">status</code> and <code class="code">complete</code> as follows:</p>
+
+
+<dl>
+<dt><strong class="Mark"><code class="code">phi</code></strong></dt>
+<dd><p>is an epimorphism from a free group to <var class="Arg">G</var> which maps generators to generators.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">words</code>, <code class="code">classes</code></strong></dt>
+<dd><p>two lists. -- <code class="code">words[i]</code> is a preimage under <code class="code">phi</code> of an element of <var class="Arg">G</var> which maps all sufficiently large positive integers in the residue classes <code class="code">classes[i]</code> to smaller nonnegative integers.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">smallpointbound</code></strong></dt>
+<dd><p>in addition to finding a list of group elements <span class="SimpleMath">g_i</span> such that for any large enough integer <span class="SimpleMath">n</span> in the support of <var class="Arg">G</var> there is some <span class="SimpleMath">g_i</span> such that <span class="SimpleMath">n^g_i &lt; n</span>, for verifying transitivity it was necessary to check that all integers less than or equal to <code class="code">smallpointbound</code> in the support of <var class="Arg">G</var> lie in the same orbit.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">status</code></strong></dt>
+<dd><p>the string <code class="code">"transitive"</code> in case all checks have been completed successfully.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">complete</code></strong></dt>
+<dd><p><code class="code">true</code> in case all checks have been completed successfully.</p>
+
+</dd>
+</dl>
+<p>If one is also interested in parts of this information for possibly intransitive groups, one can obtain it using the operation <code class="code">TryToComputeTransitivityCertificate(<var class="Arg">G</var>,<var class="Arg">searchlimit</var>)</code>, where <var class="Arg">searchlimit</var> is the maximum radius about a point within which smaller points are searched and taken into consideration. This operation interprets an option <code class="code">abortdensity</code> -- if set, the operation returns the data computed so far once the density of the set of positive integers in the support of <var class="Arg">G</var> for which no group element is found which maps them to smaller integers reaches or drops below <code class="code">abortdensity</code>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(List([[0,2,1,2],[0,3,2,3],[1,2,2,4]],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">                   ClassTransposition));</span>
+&lt;(0(2),1(2)),(0(3),2(3)),(1(2),2(4))&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsTransitiveOnNonnegativeIntegersInSupport(G);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TransitivityCertificate(G);</span>
+rec(
+  classes := [ [ 1(2) ], [ 2(6) ], [ 6(12), 10(12) ], [ 0(12) ], 
+      [ 4(12) ] ], complete := true, 
+  phi := [ a, b, c ] -&gt; [ ( 0(2), 1(2) ), ( 0(3), 2(3) ), ( 1(2), 2(4) ) 
+     ], smallpointbound := 4, status := "transitive", 
+  words := [ a, b, c, b*c, a*b ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(List([[0,2,1,2],[1,2,2,4],[1,4,2,6]],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">                   ClassTransposition));              # '3n+1 group'</span>
+&lt;(0(2),1(2)),(1(2),2(4)),(1(4),2(6))&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cert := TryToComputeTransitivityCertificate(G,10);</span>
+rec(
+  classes := [ [ 1(2) ], [ 2(4) ], [ 4(32) ], [ 8(24), 44(48), 20(96) ], 
+      [ 0(24), 16(24) ] ], complete := false, 
+  phi := [ a, b, c ] -&gt; [ ( 0(2), 1(2) ), ( 1(2), 2(4) ), ( 1(4), 2(6) ) 
+     ], remaining := [ 12(48), 28(48), 52(96), 84(96) ], 
+  smallpointbound := 42, status := "unclear", 
+  words := [ a, b, (a*c)^2*b*a*b, c, a*c*b ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Union(Flat(cert.classes));</span>
+&lt;union of 90 residue classes (mod 96)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(Integers,Union(Flat(cert.classes)));</span>
+12(48) U 28(48) U 52(96) U 84(96)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cert := TryToComputeTransitivityCertificate(G,20); # try larger bound</span>
+rec(
+  classes := [ [ 1(2) ], [ 2(4) ], [ 4(32) ], [ 8(24), 44(48), 20(96) ], 
+      [ 0(24), 16(24) ], [ 12(768), 268(768) ], [ 28(768), 540(768) ] ], 
+  complete := false, 
+  phi := [ a, b, c ] -&gt; [ ( 0(2), 1(2) ), ( 1(2), 2(4) ), ( 1(4), 2(6) ) 
+     ], 
+  remaining := [ 52(96), 84(96), 60(192), 108(192), 124(192), 172(192), 
+      76(384), 204(384), 220(384), 348(384), 156(768), 396(768), 
+      412(768), 652(768) ], smallpointbound := 1074, status := "unclear", 
+  words := [ a, b, (a*c)^2*b*a*b, c, a*c*b, (a*c)^3*b*c*b*a*b, 
+      (a*c)^4*b*a*b*a*b ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(Integers,Union(Flat(cert.classes)));</span>
+&lt;union of 44 residue classes (mod 768)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Intersection([0..100],last);</span>
+[ 52, 60, 76, 84 ]
+
+</pre></div>
+
+<p>Further, there are methods to compute orbits under the action of an rcwa group:</p>
 
 <p><a id="X7C046BE97EE53692" name="X7C046BE97EE53692"></a></p>
 
@@ -711,16 +802,55 @@ true
 
 </pre></div>
 
+<p><a id="X7B7A3AF97D195E33" name="X7B7A3AF97D195E33"></a></p>
+
+<h5>3.3-2 GrowthFunctionOfOrbit</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GrowthFunctionOfOrbit</code>( <var class="Arg">G</var>, <var class="Arg">n</var>, <var class="Arg">r_max</var>, <var class="Arg">size_max</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GrowthFunctionOfOrbit</code>( <var class="Arg">orb</var>, <var class="Arg">r_max</var>, <var class="Arg">size_max</var> )</td><td class="tdright">( method )</td></tr></table></div>
+<p>Returns: a list whose (<span class="SimpleMath">r+1</span>)-th entry is the size of the sphere of radius <span class="SimpleMath">r</span> about <var class="Arg">n</var> under the action of the group <var class="Arg">G</var>, where the argument <var class="Arg">r_max</var> is the largest possible radius to be considered, and the computation stops once the sphere size exceeds <var class="Arg">size_max</var>.</p>
+
+<p>An option <code class="code">"small"</code> is interpreted -- see example below. In place of the group <var class="Arg">G</var> and the point <var class="Arg">n</var>, one can pass as first argument also an rcwa group orbit object <var class="Arg">orb</var>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(List([[0,4,1,4],[0,3,5,6],[0,4,5,6]],ClassTransposition));</span>
+&lt;(0(4),1(4)),(0(3),5(6)),(0(4),5(6))&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GrowthFunctionOfOrbit(G,18,100,20);</span>
+[ 1, 1, 2, 3, 4, 3, 4, 4, 4, 4, 3, 3, 3, 4, 3, 4, 4, 5, 5, 6, 8, 6, 5, 
+  5, 4, 3, 3, 4, 4, 4, 3, 3, 5, 4, 5, 6, 5, 2, 3, 3, 2, 3, 3, 4, 5, 4, 
+  4, 4, 6, 5, 5, 3, 4, 2, 3, 4, 4, 2, 3, 4, 4, 2, 3, 3, 4, 3, 5, 3, 5, 
+  4, 5, 6, 5, 3, 4, 5, 6, 5, 4, 3, 5, 4, 5, 5, 4, 4, 5, 5, 3, 4, 5, 3, 
+  3, 4, 5, 4, 2, 3, 4, 4, 4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">last = GrowthFunctionOfOrbit(Orbit(G,18),100,20);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GrowthFunctionOfOrbit(G,18,20,20:small:=[0..100]);</span>
+rec( smallpoints := [ 18, 24, 25, 27, 30, 32, 33, 36, 37, 39, 40, 41, 
+      42, 44, 45, 48, 49, 51, 52, 53, 56, 57, 59, 60, 61, 64, 65, 66, 
+      68, 69, 71, 75, 76, 77, 80, 81, 83, 88, 89, 92, 93, 95, 100 ], 
+  spheresizes := [ 1, 1, 2, 3, 4, 3, 4, 4, 4, 4, 3, 3, 3, 4, 3, 4, 4, 5, 
+      5, 6, 8 ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(List([[0,2,1,2],[1,2,2,4],[1,4,2,6]],ClassTransposition));</span>
+&lt;(0(2),1(2)),(1(2),2(4)),(1(4),2(6))&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GrowthFunctionOfOrbit(G,0,100,10000);</span>
+[ 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 4, 5, 7, 6, 7, 9, 12, 14, 19, 21, 28, 
+  29, 37, 42, 55, 57, 72, 78, 99, 113, 148, 164, 215, 226, 288, 344, 
+  462, 478, 612, 686, 894, 985, 1284, 1416, 1847, 2018, 2620, 2902, 
+  3786, 4167, 5432, 5958, 7749, 8568, 11178 ]
+
+</pre></div>
+
 <p>Given an rcwa group <var class="Arg">G</var> over ℤ and an integer <var class="Arg">n</var>, the operation <code class="code">DistanceToNextSmallerPointInOrbit(</code><var class="Arg">G</var><code class="code">,</code><var class="Arg">n</var><code class="code">)</code> computes the smallest number <span class="SimpleMath">d</span> such that there is a product <span class="SimpleMath">g</span> of <span class="SimpleMath">d</span> generators or inverses of generators of <var class="Arg">G</var> which maps <var class="Arg">n</var> to an integer with absolute value less than |<var class="Arg">n</var>|, provided that the orbit of <var class="Arg">n</var> contains such integer. <strong class="pkg">RCWA</strong> permits drawing pictures of orbits of rcwa groups on <span class="SimpleMath">ℤ^2</span>. The pictures are written to files in bitmap- (bmp-) format. The author has successfully tested this feature both under Linux and under Windows, and the produced pictures can be processed further with many common graphics programs:</p>
 
 <p><a id="X7D9DFAC97F9F0891" name="X7D9DFAC97F9F0891"></a></p>
 
-<h5>3.3-2 DrawOrbitPicture</h5>
+<h5>3.3-3 DrawOrbitPicture</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DrawOrbitPicture</code>( <var class="Arg">G</var>, <var class="Arg">p0</var>, <var class="Arg">bound</var>, <var class="Arg">h</var>, <var class="Arg">w</var>, <var class="Arg">colored</var>, <var class="Arg">palette</var>, <var class="Arg">filename</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: nothing.</p>
 
-<p>Draws a picture of the orbit(s) of the point(s) <var class="Arg">p0</var> under the action of the group <var class="Arg">G</var> on <span class="SimpleMath">ℤ^2</span>. The argument <var class="Arg">p0</var> is either one point or a list of points. The argument <var class="Arg">bound</var> denotes the bound to which the ball about <var class="Arg">p0</var> is to be computed, in terms of absolute values of coordinates. The size of the produced picture is <var class="Arg">h</var> x <var class="Arg">w</var> pixels. The argument <var class="Arg">colored</var> is a boolean which indicates whether a 24-bit True-Color picture or a monochrome picture should be drawn. In the former case, <var class="Arg">palette</var> must be a list of triples of integers in the range <span class="SimpleMath">0, dots, 255</span>, denoting the RGB values of colors to be used. In the latter case, <var class="Arg">palette</var> is not used, and any value can be passed. The picture is written in bitmap- (bmp-) format to a file named <var class="Arg">filename</var>. This is done using the utility function <code class="func">SaveAsBitmapPicture</code> (<a href="chap9.html#X81DE1E838615C214"><span class="RefLink">9.7-1</span></a>).</p>
+<p>Draws a picture of the orbit(s) of the point(s) <var class="Arg">p0</var> under the action of the group <var class="Arg">G</var> on <span class="SimpleMath">ℤ^2</span>. The argument <var class="Arg">p0</var> is either one point or a list of points. The argument <var class="Arg">bound</var> denotes the bound to which the ball about <var class="Arg">p0</var> is to be computed, in terms of absolute values of coordinates. The size of the produced picture is <var class="Arg">h</var> x <var class="Arg">w</var> pixels. The argument <var class="Arg">colored</var> is a boolean which indicates whether a 24-bit True-Color picture or a monochrome picture should be drawn. In the former case, <var class="Arg">palette</var> must be a list of triples of integers in the range <span class="SimpleMath">0, dots, 255</span>, denoting the RGB values of colors to be used. In the latter case, <var class="Arg">palette</var> is not used, and any value can be passed. The picture is written in bitmap- (bmp-) format to a file named <var class="Arg">filename</var>. This is done using the utility function <code class="func">SaveAsBitmapPicture</code> (<a href="chap9.html#X81DE1E838615C214"><span class="RefLink">9.6-1</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -739,7 +869,7 @@ true
 
 <p><a id="X78F145197F63A25D" name="X78F145197F63A25D"></a></p>
 
-<h5>3.3-3 <span class="Heading">
+<h5>3.3-4 <span class="Heading">
     ShortOrbits (for rcwa groups) &amp; ShortCycles (for rcwa permutations)
   </span></h5>
 
@@ -780,7 +910,7 @@ true
 
 <p><a id="X80D18D0778A96C16" name="X80D18D0778A96C16"></a></p>
 
-<h5>3.3-4 <span class="Heading">
+<h5>3.3-5 <span class="Heading">
     ShortResidueClassOrbits &amp; ShortResidueClassCycles
   </span></h5>
 
@@ -807,7 +937,7 @@ true
   [ 80(96), 81(96), 121(144), 181(216), 271(324), 270(324), 180(216), 
       120(144) ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(List([[0,6,5,6],[1,4,4,6],[2,4,3,6]],ClassTransposition));</span>
-&lt;rcwa group over Z with 3 generators&gt;
+&lt;(0(6),5(6)),(1(4),4(6)),(2(4),3(6))&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ShortResidueClassOrbits(G,48,10);</span>
 [ [ 7(12) ], [ 8(12) ], [ 1(24), 4(36) ], [ 2(24), 3(36) ], 
   [ 12(24), 17(24), 28(36) ], [ 18(24), 23(24), 27(36) ], 
@@ -816,14 +946,54 @@ true
 
 </pre></div>
 
+<p><a id="X80C080287A355EFF" name="X80C080287A355EFF"></a></p>
+
+<h5>3.3-6 ComputeCycleLength</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ComputeCycleLength</code>( <var class="Arg">g</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns: a record containing the length, the largest point and the position of the largest point of the cycle of the rcwa permutation <var class="Arg">g</var> which contains the point <var class="Arg">n</var>, provided that this cycle is finite.</p>
+
+<p>If the cycle is infinite, the function will run into an infinite loop unless the option <code class="code">"abortat"</code> is set to the maximum number of iterates to be tried before aborting. Iterates are not stored, to save memory. The function interprets an option <code class="code">"notify"</code>, which defaults to 10000; every "notify" iterations, the number of binary digits of the latest iterate is printed. This output can be suppressed by the option <code class="code">quiet</code>. The function also interprets an option <code class="code">"small"</code>, which may be set to a range within which small points are recorded and returned in a component <code class="code">smallpoints</code>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g := Product(List([[0,5,3,5],[1,2,0,6],[2,4,3,6]],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">                     ClassTransposition));</span>
+&lt;rcwa permutation of Z with modulus 180&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ComputeCycleLength(g,20:small:=[0..1000]);</span>
+n = 20: after 10000 steps, the iterate has 1919 binary digits.
+n = 20: after 20000 steps, the iterate has 2908 binary digits.
+n = 20: after 30000 steps, the iterate has 1531 binary digits.
+n = 20: after 40000 steps, the iterate has 708 binary digits.
+rec( aborted := false, g := &lt;rcwa permutation of Z with modulus 180&gt;, 
+  length := 45961, 
+  maximum := 180479928411509527091314790144929480041473309862957394384783\
+0525935437431021442346166422201250935268553945158085769924448388724679753\
+5271669245363980744610119632280105994423399614803956244808653465492205657\
+8650363041608376587943180444494842094693691286183613056599672737336761093\
+3101035841077322874883200384115281051837032147150147712534199292886436789\
+7520389780289517825203780151058517520194926468391308525704499649905091899\
+9667529835495635671154681958992898010506577172313321500572646883756736685\
+0158653917532084531267455434808219032998691038943070902228427549279555530\
+6429870190316109419051531138721361826083376315737131067799731181096142797\
+4868525347003646887454985757711743327946232372385342293662007684758208408\
+8635715976464060647431260835037213863991037813998261883899050447111540742\
+5857187943077255493709629738212709349458790098815926920248565399938335540\
+8092502449690267365120996852, maxpos := 19825, n := 20, 
+  smallpoints := [ 20, 23, 66, 99, 294, 295, 298, 441, 447, 882, 890, 
+      893 ] )
+
+</pre></div>
+
 <p><a id="X7F76B04E86C77B94" name="X7F76B04E86C77B94"></a></p>
 
-<h5>3.3-5 CycleRepresentativesAndLengths</h5>
+<h5>3.3-7 CycleRepresentativesAndLengths</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CycleRepresentativesAndLengths</code>( <var class="Arg">g</var>, <var class="Arg">S</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns: a list of pairs (cycle representative, length of cycle) for all cycles of the rcwa permutation <var class="Arg">g</var> which have a nontrivial intersection with the set <var class="Arg">S</var>, where fixed points are omitted.</p>
 
-<p>The rcwa permutation <var class="Arg">g</var> is assumed to have only finite cycles. If <var class="Arg">g</var> has an infinite cycle which intersects non-trivially with <var class="Arg">S</var>, this may cause an infinite loop.</p>
+<p>The rcwa permutation <var class="Arg">g</var> is assumed to have only finite cycles. If <var class="Arg">g</var> has an infinite cycle which intersects non-trivially with <var class="Arg">S</var>, this may cause an infinite loop unless a cycle length limit is set via the option <code class="code">abortat</code>. The output can be suppressed by the option <code class="code">quiet</code>.</p>
 
 
 <div class="example"><pre>
@@ -833,6 +1003,31 @@ true
 [ [ 2, 2 ], [ 4, 4 ], [ 8, 6 ], [ 10, 2 ], [ 14, 2 ], [ 16, 8 ], 
   [ 20, 4 ], [ 22, 2 ], [ 26, 2 ], [ 28, 4 ], [ 32, 10 ], [ 34, 2 ], 
   [ 38, 2 ], [ 40, 6 ], [ 44, 4 ], [ 46, 2 ], [ 50, 2 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g := Product(List([[0,5,3,5],[1,2,0,6],[2,4,3,6]],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">                     ClassTransposition));</span>
+&lt;rcwa permutation of Z with modulus 180&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CycleRepresentativesAndLengths(g,[0..100]:abortat:=100000);</span>
+n = 20: after 10000 steps, the iterate has 1919 binary digits.
+n = 20: after 20000 steps, the iterate has 2908 binary digits.
+n = 20: after 30000 steps, the iterate has 1531 binary digits.
+n = 20: after 40000 steps, the iterate has 708 binary digits.
+n = 79: after 10000 steps, the iterate has 1679 binary digits.
+n = 100: after 10000 steps, the iterate has 712 binary digits.
+n = 100: after 20000 steps, the iterate has 2507 binary digits.
+n = 100: after 30000 steps, the iterate has 3311 binary digits.
+n = 100: after 40000 steps, the iterate has 3168 binary digits.
+n = 100: after 50000 steps, the iterate has 3947 binary digits.
+n = 100: after 60000 steps, the iterate has 4793 binary digits.
+n = 100: after 70000 steps, the iterate has 5325 binary digits.
+n = 100: after 80000 steps, the iterate has 6408 binary digits.
+n = 100: after 90000 steps, the iterate has 7265 binary digits.
+n = 100: after 100000 steps, the iterate has 7918 binary digits.
+[ [ 0, 7 ], [ 5, 3 ], [ 7, 7159 ], [ 11, 9 ], [ 19, 342 ],
+  [ 20, 45961 ], [ 25, 3 ], [ 26, 21 ], [ 29, 2 ], [ 31, 3941 ],
+  [ 34, 19 ], [ 37, 7 ], [ 40, 5 ], [ 41, 7 ], [ 46, 3 ], [ 49, 2 ],
+  [ 59, 564 ], [ 61, 577 ], [ 65, 3 ], [ 67, 23 ], [ 71, 41 ],
+  [ 79, 16984 ], [ 80, 5 ], [ 85, 3 ], [ 86, 3 ], [ 89, 2 ], [ 91, 9 ],
+  [ 94, 1355 ], [ 97, 7 ], [ 100, fail ] ]
 
 </pre></div>
 
@@ -840,7 +1035,7 @@ true
 
 <p><a id="X8777A62286597D53" name="X8777A62286597D53"></a></p>
 
-<h5>3.3-6 FixedResidueClasses</h5>
+<h5>3.3-8 FixedResidueClasses</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FixedResidueClasses</code>( <var class="Arg">g</var>, <var class="Arg">maxmod</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FixedResidueClasses</code>( <var class="Arg">G</var>, <var class="Arg">maxmod</var> )</td><td class="tdright">( operation )</td></tr></table></div>
@@ -861,7 +1056,7 @@ true
 
 <p><a id="X8735855587CC029F" name="X8735855587CC029F"></a></p>
 
-<h5>3.3-7 <span class="Heading">
+<h5>3.3-9 <span class="Heading">
     Ball (for group, element and radius or group, point, radius and action)
   </span></h5>
 
@@ -893,7 +1088,7 @@ true
 
 <p><a id="X87A3462C82FD376E" name="X87A3462C82FD376E"></a></p>
 
-<h5>3.3-8 RepresentativeAction</h5>
+<h5>3.3-10 RepresentativeAction</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RepresentativeAction</code>( <var class="Arg">G</var>, <var class="Arg">source</var>, <var class="Arg">destination</var>, <var class="Arg">action</var> )</td><td class="tdright">( method )</td></tr></table></div>
 <p>Returns: an element of <var class="Arg">G</var> which maps <var class="Arg">source</var> to <var class="Arg">destination</var> under the action given by <var class="Arg">action</var>.</p>
@@ -957,7 +1152,7 @@ a*b^-1*a^-1*(b^-1*a)^2*b*a*b^-2*a*b*a^-1*b
 
 <p><a id="X8587246A7F890849" name="X8587246A7F890849"></a></p>
 
-<h5>3.3-9 ProjectionsToInvariantUnionsOfResidueClasses</h5>
+<h5>3.3-11 ProjectionsToInvariantUnionsOfResidueClasses</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProjectionsToInvariantUnionsOfResidueClasses</code>( <var class="Arg">G</var>, <var class="Arg">m</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns: the projections of the rcwa group <var class="Arg">G</var> to the unions of residue classes (mod <var class="Arg">m</var>) which it fixes setwise.</p>
@@ -982,7 +1177,7 @@ a*b^-1*a^-1*(b^-1*a)^2*b*a*b^-2*a*b*a^-1*b
 
 <p><a id="X866843D08213067E" name="X866843D08213067E"></a></p>
 
-<h5>3.3-10 RepresentativeAction</h5>
+<h5>3.3-12 RepresentativeAction</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RepresentativeAction</code>( <var class="Arg">RCWA(R)</var>, <var class="Arg">P1</var>, <var class="Arg">P2</var> )</td><td class="tdright">( method )</td></tr></table></div>
 <p>Returns: an element of RCWA(<span class="SimpleMath">R</span>) which maps the partition <var class="Arg">P1</var> to <var class="Arg">P2</var>.</p>
@@ -1014,6 +1209,56 @@ true
 &lt;rcwa permutation of Z with modulus 6&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ResidueClass(1,3),ResidueClassUnion(Integers,3,[0,2])]^elm;</span>
 [ 2(5) U 4(5), Z \ 2(5) U 4(5) ]
+
+</pre></div>
+
+<p><a id="X82DBAF35788FA239" name="X82DBAF35788FA239"></a></p>
+
+<h5>3.3-13 CollatzLikeMappingByOrbitTree</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CollatzLikeMappingByOrbitTree</code>( <var class="Arg">G</var>, <var class="Arg">n</var>, <var class="Arg">min_r</var>, <var class="Arg">max_r</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: either an rcwa mapping <span class="SimpleMath">f</span> which maps the sphere of radius <span class="SimpleMath">r</span> about <var class="Arg">n</var> under the action of <var class="Arg">G</var> into the sphere of radius <span class="SimpleMath">r-1</span> about <var class="Arg">n</var> for every <span class="SimpleMath">r</span> ranging from <var class="Arg">min_r</var> to <var class="Arg">max_r</var>, or <code class="code">fail</code>.</p>
+
+<p>Obviously not for every rcwa group and every root point a mapping <span class="SimpleMath">f</span> with these properties exists, and if it exists, it usually depends on the choice of generators of the group.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(ClassTransposition(0,2,1,2),ClassTransposition(1,2,2,4),</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">              ClassTransposition(1,4,2,6));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := SparseRep(G);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := CollatzLikeMappingByOrbitTree(G,0,4,10);</span>
+&lt;rcwa mapping of Z with modulus 4 and 4 affine parts&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(f);</span>
+
+Rcwa mapping of Z with modulus 4 and 4 affine parts
+
+        /
+        | n+1      if n in 0(4)
+        | (3n+1)/2 if n in 1(4)
+ n |-&gt; &lt;  n/2      if n in 2(4)
+        | n-1      if n in 3(4)
+        |
+        \
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B := Ball(G,0,15:Spheres);</span>
+[ [ 0 ], [ 1 ], [ 2 ], [ 3 ], [ 6 ], [ 7 ], [ 14 ], [ 9, 15 ], [ 8, 18, 30 ], 
+  [ 5, 19, 31 ], [ 4, 10, 38, 62 ], [ 11, 25, 39, 41, 63 ], 
+  [ 22, 24, 40, 50, 78, 82, 126 ], [ 23, 33, 51, 79, 83, 127 ], 
+  [ 32, 46, 66, 102, 158, 166, 254 ], 
+  [ 21, 47, 67, 103, 105, 159, 167, 169, 255 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List([3..15],i-&gt;IsSubset(B[i-1],B[i]^f));</span>
+[ true, true, true, true, true, true, true, true, true, true, true, true,
+  true ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Trajectory(f,52,[0,1]);</span>
+[ 52, 53, 80, 81, 122, 61, 92, 93, 140, 141, 212, 213, 320, 321, 482, 241, 
+  362, 181, 272, 273, 410, 205, 308, 309, 464, 465, 698, 349, 524, 525, 788, 
+  789, 1184, 1185, 1778, 889, 1334, 667, 666, 333, 500, 501, 752, 753, 1130, 
+  565, 848, 849, 1274, 637, 956, 957, 1436, 1437, 2156, 2157, 3236, 3237, 
+  4856, 4857, 7286, 3643, 3642, 1821, 2732, 2733, 4100, 4101, 6152, 6153, 
+  9230, 4615, 4614, 2307, 2306, 1153, 1730, 865, 1298, 649, 974, 487, 486, 
+  243, 242, 121, 182, 91, 90, 45, 68, 69, 104, 105, 158, 79, 78, 39, 38, 19, 
+  18, 9, 14, 7, 6, 3, 2, 1 ]
 
 </pre></div>
 

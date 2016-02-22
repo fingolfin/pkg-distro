@@ -1,0 +1,106 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Philosophy}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{How to cite FinInG}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Overview of this manual}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Installing FinInG}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{The Development Team}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Examples}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Elementary examples}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Some objects with interesting combinatorial properties}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Geometry morphisms}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{Some geometrical objects}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.5}{Some particular incidence geometries}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.6}{Elation generalised quadrangles}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.7}{Algebraic varieties}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{Incidence Geometry}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Incidence structures}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.2}{Elements of incidence structures}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Flags of incidence structures}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.4}{Shadow of elements}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.5}{Enumerating elements of an incidence structure}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.6}{Lie geometries}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.7}{Elements of Lie geometries}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.8}{Changing the ambient geometry of elements of a Lie geometry}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{Projective Spaces}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Projective Spaces and basic operations}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{Subspaces of projective spaces}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{Shadows of Projective Subspaces}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.4}{Enumerating subspaces of a projective space}{chapter.4}% 28
+\BOOKMARK [0][-]{chapter.5}{Projective Groups}{}% 29
+\BOOKMARK [1][-]{section.5.1}{ Projectivities, collineations and correlations of projective spaces.}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.2}{Construction of projectivities, collineations and correlations.}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.3}{Basic operations for projectivities, collineations and correlations of projective spaces}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.4}{The groups PL, PGL, and PSL in FinInG }{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.5}{Basic operations for projective groups}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.6}{Natural embedding of a collineation group in a correlationcollineation group}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.7}{Basic action of projective group elements}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.8}{Projective group actions}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.9}{Special subgroups of the projectivity group}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.10}{Nice Monomorphisms}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{Polarities of Projective Spaces}{}% 40
+\BOOKMARK [1][-]{section.6.1}{Creating polarities of projective spaces}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.2}{Operations, attributes and properties for polarities of projective spaces}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.3}{Polarities, absolute points, totally isotropic elements and finite classical polar spaces}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.4}{Commuting polarities}{chapter.6}% 44
+\BOOKMARK [0][-]{chapter.7}{Finite Classical Polar Spaces}{}% 45
+\BOOKMARK [1][-]{section.7.1}{Finite Classical Polar Spaces}{chapter.7}% 46
+\BOOKMARK [1][-]{section.7.2}{Canonical and standard Polar Spaces}{chapter.7}% 47
+\BOOKMARK [1][-]{section.7.3}{Basic operations for finite classical polar spaces}{chapter.7}% 48
+\BOOKMARK [1][-]{section.7.4}{Subspaces of finite classical polar spaces}{chapter.7}% 49
+\BOOKMARK [1][-]{section.7.5}{Basic operations for polar spaces and subspaces of projective spaces}{chapter.7}% 50
+\BOOKMARK [1][-]{section.7.6}{Shadow of elements}{chapter.7}% 51
+\BOOKMARK [1][-]{section.7.7}{Projective Orthogonal/Unitary/Symplectic groups in FinInG}{chapter.7}% 52
+\BOOKMARK [1][-]{section.7.8}{Enumerating subspaces of polar spaces}{chapter.7}% 53
+\BOOKMARK [0][-]{chapter.8}{Orbits, stabilisers and actions}{}% 54
+\BOOKMARK [1][-]{section.8.1}{Orbits}{chapter.8}% 55
+\BOOKMARK [1][-]{section.8.2}{Stabilisers}{chapter.8}% 56
+\BOOKMARK [1][-]{section.8.3}{Actions and nice monomorphisms revisited}{chapter.8}% 57
+\BOOKMARK [0][-]{chapter.9}{Affine Spaces}{}% 58
+\BOOKMARK [1][-]{section.9.1}{Affine spaces and basic operations}{chapter.9}% 59
+\BOOKMARK [1][-]{section.9.2}{Subspaces of affine spaces}{chapter.9}% 60
+\BOOKMARK [1][-]{section.9.3}{Shadows of Affine Subspaces}{chapter.9}% 61
+\BOOKMARK [1][-]{section.9.4}{Iterators and enumerators}{chapter.9}% 62
+\BOOKMARK [1][-]{section.9.5}{Affine groups}{chapter.9}% 63
+\BOOKMARK [1][-]{section.9.6}{Low level operations}{chapter.9}% 64
+\BOOKMARK [0][-]{chapter.10}{Geometry Morphisms}{}% 65
+\BOOKMARK [1][-]{section.10.1}{Geometry morphisms in FinInG}{chapter.10}% 66
+\BOOKMARK [1][-]{section.10.2}{Type preserving bijective geometry morphisms}{chapter.10}% 67
+\BOOKMARK [1][-]{section.10.3}{Klein correspondence and derived dualities}{chapter.10}% 68
+\BOOKMARK [1][-]{section.10.4}{Embeddings of projective spaces}{chapter.10}% 69
+\BOOKMARK [1][-]{section.10.5}{Embeddings of polar spaces}{chapter.10}% 70
+\BOOKMARK [1][-]{section.10.6}{Projections}{chapter.10}% 71
+\BOOKMARK [1][-]{section.10.7}{Projective completion}{chapter.10}% 72
+\BOOKMARK [0][-]{chapter.11}{Algebraic Varieties}{}% 73
+\BOOKMARK [1][-]{section.11.1}{Algebraic Varieties}{chapter.11}% 74
+\BOOKMARK [1][-]{section.11.2}{Projective Varieties}{chapter.11}% 75
+\BOOKMARK [1][-]{section.11.3}{Quadrics and Hermitian varieties}{chapter.11}% 76
+\BOOKMARK [1][-]{section.11.4}{Affine Varieties}{chapter.11}% 77
+\BOOKMARK [1][-]{section.11.5}{Geometry maps}{chapter.11}% 78
+\BOOKMARK [1][-]{section.11.6}{Segre Varieties}{chapter.11}% 79
+\BOOKMARK [1][-]{section.11.7}{Veronese Varieties}{chapter.11}% 80
+\BOOKMARK [1][-]{section.11.8}{Grassmann Varieties}{chapter.11}% 81
+\BOOKMARK [0][-]{chapter.12}{Generalised Polygons}{}% 82
+\BOOKMARK [1][-]{section.12.1}{Categories}{chapter.12}% 83
+\BOOKMARK [1][-]{section.12.2}{Generic functions to create generalised polygons}{chapter.12}% 84
+\BOOKMARK [1][-]{section.12.3}{Attributes and operations for generalised polygons}{chapter.12}% 85
+\BOOKMARK [1][-]{section.12.4}{Elements of generalised polygons}{chapter.12}% 86
+\BOOKMARK [1][-]{section.12.5}{The classical generalised hexagons}{chapter.12}% 87
+\BOOKMARK [1][-]{section.12.6}{Elation generalised quadrangles}{chapter.12}% 88
+\BOOKMARK [0][-]{chapter.13}{Coset Geometries and Diagrams}{}% 89
+\BOOKMARK [1][-]{section.13.1}{Coset Geometries}{chapter.13}% 90
+\BOOKMARK [1][-]{section.13.2}{Automorphisms, Correlations and Isomorphisms}{chapter.13}% 91
+\BOOKMARK [1][-]{section.13.3}{Diagrams}{chapter.13}% 92
+\BOOKMARK [0][-]{appendix.A}{The structure of FinInG }{}% 93
+\BOOKMARK [1][-]{section.A.1}{The different components}{appendix.A}% 94
+\BOOKMARK [1][-]{section.A.2}{The complete inventory}{appendix.A}% 95
+\BOOKMARK [1][-]{section.A.3}{The filter graph\(s\)}{appendix.A}% 96
+\BOOKMARK [0][-]{appendix.B}{The finite classical groups in FinInG }{}% 97
+\BOOKMARK [1][-]{section.B.1}{Standard forms used to produce the finite classical groups.}{appendix.B}% 98
+\BOOKMARK [1][-]{section.B.2}{Direct commands to construct the projective classical groups in FinInG}{appendix.B}% 99
+\BOOKMARK [1][-]{section.B.3}{Basis of the collineation groups}{appendix.B}% 100
+\BOOKMARK [0][-]{appendix.C}{Low level functions for morphisms}{}% 101
+\BOOKMARK [1][-]{section.C.1}{Field reduction and vector spaces}{appendix.C}% 102
+\BOOKMARK [1][-]{section.C.2}{Field reduction and forms}{appendix.C}% 103
+\BOOKMARK [1][-]{section.C.3}{Low level functions}{appendix.C}% 104
+\BOOKMARK [0][-]{appendix*.4}{References}{}% 105
+\BOOKMARK [0][-]{section*.5}{Index}{}% 106

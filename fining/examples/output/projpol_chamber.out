@@ -1,0 +1,15 @@
+gap> 
+gap> #chamber of a projective space.
+gap> ps := PG(3,13);
+ProjectiveSpace(3, 13)
+gap> plane := Random(Planes(ps));
+<a plane in ProjectiveSpace(3, 13)>
+gap> line := Random(Lines(plane));
+<a line in ProjectiveSpace(3, 13)>
+gap> point := Random(Points(line));
+<a point in ProjectiveSpace(3, 13)>
+gap> flag := FlagOfIncidenceStructure(ps,[point,line,plane]);
+<a flag of ProjectiveSpace(3, 13)>
+gap> IsChamberOfIncidenceStructure(flag);
+true
+gap> quit;

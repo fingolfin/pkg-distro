@@ -1,0 +1,73 @@
+\begin{sequent}
+\begin{align*}
+   a: \Obj, b: \Obj ~|~ () \vdash \IsZero \big( \ZeroMorphism( a, b ) \big)
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+   a: \Obj, b: \Obj ~|~ () \vdash \IsIdenticalToZeroMorphism \big( \ZeroMorphism( a, b ) \big)
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+   a: \Obj ~|~ () \vdash \IsZero \big( \MorphismIntoZeroObject( a ) \big)
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+   a: \Obj ~|~ () \vdash \IsZero \big( \MorphismFromZeroObject( a ) \big)
+\end{align*}
+
+\end{sequent}
+
+
+\begin{sequent}
+\begin{align*}
+  \alpha: \Mor ~|~ \IsInitial\big( \KernelObject( \alpha ) \big) \vdash \IsMonomorphism( \alpha )
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+  \alpha: \Mor ~|~ \IsMonomorphism( \alpha ) \vdash \IsZero( \KernelObject( \alpha ) )
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+  \alpha: \Mor ~|~ \IsZero\big( \KernelEmbedding( \alpha ) \big) \vdash \IsMonomorphism( \alpha )
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+  \alpha: \Mor ~|~ \IsMonomorphism( \alpha ) \vdash \IsZero( \KernelEmbedding( \alpha ) )
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+  \alpha: \Mor ~|~ \IsTerminal\big( \CokernelObject( \alpha ) \big) \vdash \IsEpimorphism( \alpha )
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+  \alpha: \Mor ~|~ \IsEpimorphism( \alpha ) \vdash \IsZero\big( \CokernelObject( \alpha ) \big)
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+  \alpha: \Mor ~|~ \IsZero\big( \CokernelProjection( \alpha ) \big) \vdash \IsEpimorphism( \alpha )
+\end{align*}
+\end{sequent}
+
+\begin{sequent}
+\begin{align*}
+  \alpha: \Mor ~|~  \IsEpimorphism( \alpha ) \vdash \IsZero\big( \CokernelProjection( \alpha ) \big)
+\end{align*}
+\end{sequent}

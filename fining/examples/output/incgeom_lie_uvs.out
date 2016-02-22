@@ -1,0 +1,7 @@
+gap> 
+gap> #underlying vector space of a Lie geometry
+gap> UnderlyingVectorSpace(PG(5,4));
+( GF(2^2)^6 )
+gap> UnderlyingVectorSpace(HermitianPolarSpace(4,4));
+( GF(2^2)^5 )
+gap> quit;

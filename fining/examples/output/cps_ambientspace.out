@@ -1,0 +1,11 @@
+gap> 
+gap> #ambient space of a polar space
+gap> ps := EllipticQuadric(5,4);
+Q-(5, 4)
+gap> AmbientSpace(ps);
+ProjectiveSpace(5, 4)
+gap> ps := SymplecticSpace(3,81);
+W(3, 81)
+gap> AmbientSpace(ps);
+ProjectiveSpace(3, 81)
+gap> quit;

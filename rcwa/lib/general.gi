@@ -16,24 +16,53 @@
 
 #############################################################################
 ##
-#F  SearchCycle( <l> ) . . . a utility function for detecting cycles in lists
+#F  SearchCycle( <list> ) .  a utility function for detecting cycles in lists
 ##
 InstallGlobalFunction( SearchCycle,
 
-  function ( l )
+  function ( list )
 
-    local  pos, incr, refine;
+    local  preperiod, cycle, startpos, mainpart, mainpartdiffs,
+           elms, inds, min, n, d, i, j;
 
-    if Length(l) < 2 then return fail; fi;
-    pos := 1; incr := 1;
-    while Length(Set(List([1..Int((Length(l)-pos+1)/incr)],
-                          i->l{[pos+(i-1)*incr..pos+i*incr-1]}))) > 1 do
-      pos := pos + 1; incr := incr + 1;
-      if pos + 2*incr-1 > Length(l) then return fail; fi;
-    od;
-    refine := SearchCycle(l{[pos..pos+incr-1]});
-    if refine <> fail then return refine;
-                      else return l{[pos..pos+incr-1]}; fi;
+    n        := Length(list);
+    mainpart := list{[Int(n/3)..n]};
+    elms     := Set(mainpart);
+    cycle    := [elms[1]];
+    startpos := Filtered(Positions(list,elms[1]),i->i>n/3);
+    if Length(elms) = 1 then
+      if ValueOption("alsopreperiod") <> true then return cycle; else
+        i := Length(list);
+        repeat i := i - 1; until i = 0 or list[i] <> elms[1];
+        preperiod := list{[1..i]};
+        return [preperiod,cycle];
+      fi;
+    fi;
+    i := 0;
+    repeat
+      i := i + 1;
+      inds := Intersection(startpos+i,[1..n]);
+      if inds = [] then return fail; fi;
+      min := Minimum(list{inds});
+      Add(cycle,min);
+      startpos := Filtered(startpos,j->j+i<=n and list[j+i]=min);
+      if Length(startpos) <= 1 then return fail; fi;
+      mainpartdiffs := DifferencesList(Intersection(startpos,[Int(n/3)..n]));
+      if mainpartdiffs = [] then return fail; fi;
+      d := Maximum(mainpartdiffs); 
+    until Length(cycle) = d;
+    if    Minimum(startpos) > n/2
+       or n-Maximum(startpos)-d+1 > d
+       or list{[Maximum(startpos)+d..n]}<>cycle{[1..n-Maximum(startpos)-d+1]}
+    then return fail; fi;
+    if ValueOption("alsopreperiod") <> true then return cycle; else
+      i := Minimum(startpos) + Length(cycle);
+      repeat
+        i := i - Length(cycle);
+      until i <= 0 or list{[i..i+Length(cycle)-1]} <> cycle;
+      preperiod := list{[1..i+Length(cycle)-1]};
+      return [preperiod,cycle];
+    fi;
   end );
 
 #############################################################################
@@ -67,7 +96,7 @@ InstallGlobalFunction( AssignGlobals,
       MakeReadWriteGlobal(name);
     od;
     Print("The following global variables have been assigned:\n",
-          names,"\n");
+          Set(names),"\n");
   end );
 
 #############################################################################
@@ -251,12 +280,23 @@ InstallGlobalFunction( ExponentOfPrime,
 
 #############################################################################
 ##
-#M  AllProducts( <D>, <k> ) . . all products of <k>-tuples of elements of <D>
-#M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists
+#F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
 ##
-InstallMethod( AllProducts,
-               "for lists (RCWA)", ReturnTrue, [ IsList, IsPosInt ], 0,
-               function ( l, k ) return List(Tuples(l,k),Product); end );
+InstallGlobalFunction( NextProbablyPrimeInt,
+
+  function ( n )
+    if   -3 = n            then n := -2;
+    elif -3 < n  and n < 2 then n :=  2;
+    elif n mod 2 = 0       then n := n+1;
+    else                        n := n+2;
+    fi;
+    while not IsProbablyPrimeInt(n) do
+        if n mod 6 = 1 then n := n+4;
+        else                n := n+2;
+        fi;
+    od;
+    return n;
+  end );
 
 #############################################################################
 ##
@@ -299,25 +339,182 @@ InstallGlobalFunction( RestrictedPartitionsWithoutRepetitions,
 
 #############################################################################
 ##
+#S  Iterator for the prime numbers. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+##
+#############################################################################
+
+BindGlobal( "PrimeNumbersIterator_next",
+
+  function ( iter )
+
+    local  sieve, range, p, q, pos, endpos, maxdiv_old, maxdiv, i, j;
+
+    if iter!.index = 0 then
+      sieve := ListWithIdenticalEntries(iter!.chunksize,0);
+      if iter!.n = 0 then sieve[1] := 1; fi;
+      for i in [1..iter!.nrdivs] do
+        p := iter!.offset[i][1];
+        if p > iter!.n then pos := 2 * p;
+                       else pos := iter!.offset[i][2]; fi;
+        if pos = 0 then pos := p; fi;
+        endpos := pos + Int((iter!.chunksize-pos)/p) * p;
+        if pos <= iter!.chunksize then
+          range := [pos,pos+p..endpos];
+          if IsRangeRep(range) then
+            ADD_TO_LIST_ENTRIES_PLIST_RANGE(sieve,range,1);
+          else
+            for j in range do sieve[j] := sieve[j] + 1; od;
+          fi;
+        fi;
+        if endpos <= iter!.chunksize then
+          iter!.offset[i][2] := endpos + p - iter!.chunksize;
+        else
+          iter!.offset[i][2] := iter!.offset[i][2] - iter!.chunksize;
+        fi;
+      od;
+      iter!.primepos := Positions(sieve,0);
+    fi;
+    iter!.index := iter!.index + 1;
+    p           := iter!.n + iter!.primepos[iter!.index];
+    iter!.p     := p;
+    iter!.pi    := iter!.pi + 1;
+    if iter!.index = Length(iter!.primepos) then
+      iter!.index  := 0;
+      iter!.n      := iter!.n + iter!.chunksize;
+      maxdiv_old   := iter!.maxdiv;
+      iter!.maxdiv := RootInt(iter!.n + iter!.chunksize);
+      for q in Filtered([maxdiv_old+1..iter!.maxdiv],IsPrimeInt) do
+        Add(iter!.offset,[q,(q-iter!.n) mod q]);
+      od;
+      iter!.nrdivs := Length(iter!.offset);
+    fi;
+    return p;
+  end );
+
+BindGlobal( "PrimeNumbersIterator_copy",
+
+  function ( iter )
+
+    return rec( chunksize      := iter!.chunksize,
+                n              := iter!.n,
+                p              := iter!.p,
+                pi             := iter!.pi,
+                index          := iter!.index,
+                primepos       := ShallowCopy(iter!.primepos),
+                nrdivs         := iter!.nrdivs,
+                maxdiv         := iter!.maxdiv,
+                offset         := StructuralCopy(iter!.offset) );
+  end );
+
+#############################################################################
+##
+#F  PrimeNumbersIterator(  )
+#F  PrimeNumbersIterator( chunksize )
+##
+InstallGlobalFunction( PrimeNumbersIterator,
+
+  function ( arg )
+
+    local  next, copy, chunksize, maxdiv, nrdivs, offset;
+
+    if   Length(arg) >= 1 and IsPosInt(arg[1])
+    then chunksize := Maximum(arg[1],100); # must be bigger than largest
+    else chunksize := 10000000; fi;        # prime gap in range looped over
+
+    maxdiv     := RootInt(chunksize);
+    offset     := List(Filtered([2..maxdiv],IsPrimeInt),p->[p,0]);
+    nrdivs     := Length(offset);
+
+    return IteratorByFunctions( 
+             rec( NextIterator   := PrimeNumbersIterator_next,
+                  IsDoneIterator := ReturnFalse,
+                  ShallowCopy    := PrimeNumbersIterator_copy,
+                  chunksize      := chunksize,
+                  n              := 0,
+                  p              := 0,
+                  pi             := 0,
+                  index          := 0,
+                  primepos       := [],
+                  nrdivs         := nrdivs,
+                  maxdiv         := maxdiv,
+                  offset         := offset ) );
+  end );
+
+#############################################################################
+##
 #S  Multiplication with infinity. ///////////////////////////////////////////
 ##
 #############################################################################
 
 #############################################################################
 ##
-#M  \*( <n>, infinity ) . . . . . . . . . . for positive integer and infinity
-#M  \*( infinity, <n> ) . . . . . . . . . . for infinity and positive integer
+#M  \*( <n>, infinity ) . . . . . . . . .  for positive rational and infinity
+#M  \*( infinity, <n> ) . . . . . . . . .  for infinity and positive rational
 #M  \*( infinity, infinity )  . . . . . . . . . . . for infinity and infinity
 ##
-InstallMethod( \*, "for positive integer and infinity (RCWA)",
-               ReturnTrue, [ IsPosInt, IsInfinity ], 0,
+InstallMethod( \*, "for positive rational and infinity (RCWA)",
+               ReturnTrue, [ IsPosRat, IsInfinity ], 0,
                function ( n, infty ) return infinity; end );
-InstallMethod( \*, "for infinity and positive integer (RCWA)",
-               ReturnTrue, [ IsInfinity, IsPosInt ], 0,
+InstallMethod( \*, "for infinity and positive rational (RCWA)",
+               ReturnTrue, [ IsInfinity, IsPosRat ], 0,
                function ( infty, n ) return infinity; end );
 InstallMethod( \*, "for infinity and infinity (RCWA)",
                ReturnTrue, [ IsInfinity, IsInfinity ], 0,
                function ( infty1, infty2 ) return infinity; end );
+
+#############################################################################
+##
+#S  Functions to generate small graphs. /////////////////////////////////////
+##
+#############################################################################
+
+#############################################################################
+##
+#F  AllGraphs( <n> ) . . . .  all graphs with <n> vertices, up to isomorphism
+##
+InstallGlobalFunction( AllGraphs,
+
+  function ( n )
+    if not IsPosInt(n) then return fail; fi;
+    return List(GraphClasses(n),Representative);
+  end );
+
+#############################################################################
+##
+#F  GraphClasses( <n> )  isomorphism classes of graphs with vertices 1,2,..,n
+##
+InstallGlobalFunction( GraphClasses,
+
+  function ( n )
+
+    local  classes;
+
+    if not IsPosInt(n) then return fail; fi;
+    classes := ShallowCopy(Orbits(SymmetricGroup(n),
+                                  Combinations(Combinations([1..n],2)),
+                                  function(Gamma,g)
+                                    return Set(Gamma,k->OnSets(k,g));
+                                  end));
+    SortParallel(List(classes,cl->Length(cl[1])),classes);
+    return classes;
+  end );
+
+#############################################################################
+##
+#F  IdGraph( <graph>, <classes> ) . identify the isomorphism class of <graph>
+##
+InstallGlobalFunction( IdGraph,
+
+  function ( graph, classes )
+
+    local  vertexnums, i;
+
+    vertexnums := Set(Flat(graph));
+    graph      := Set(graph,edge->List(edge,v->Position(vertexnums,v)));
+    return First([1..Length(classes)],
+                 i ->    Length(graph) = Length(classes[i][1])
+                     and graph in classes[i]);
+  end );
 
 #############################################################################
 ##
@@ -342,7 +539,6 @@ InstallGlobalFunction(  ListOfPowers,
 
 #############################################################################
 ##
-#M  GeneratorsAndInverses( <D> ) list of generators of <D> and their inverses
 #M  GeneratorsAndInverses( <G> ) . . . . . . . . . . . . . . . . . for groups
 ##
 InstallMethod( GeneratorsAndInverses,
@@ -409,11 +605,18 @@ InstallMethod( AssignGeneratorVariables,
 InstallMethod( AbelianInvariants,
                "for groups knowing an isomorphism to a pcp group", true,
                [ IsGroup and HasIsomorphismPcpGroup ], 0,
-               G -> AbelianInvariants(Image(IsomorphismPcpGroup(G))) );
+  function ( G )
+    if IsPcpGroup(G) then TryNextMethod(); fi; # avoid recursion
+    return AbelianInvariants(Image(IsomorphismPcpGroup(G)));
+  end );
+
 InstallMethod( AbelianInvariants,
                "for groups knowing an isomorphism to a permutation group",
                true, [ IsGroup and HasIsomorphismPermGroup ], 0,
-               G -> AbelianInvariants(Image(IsomorphismPermGroup(G))) );
+  function ( G )
+    if IsPermGroup(G) then TryNextMethod(); fi; # avoid recursion
+    return AbelianInvariants(Image(IsomorphismPermGroup(G)));
+  end );
 
 #############################################################################
 ##
@@ -596,6 +799,7 @@ InstallGlobalFunction( LoadBitmapPicture,
     then Error("usage: LoadBitmapPicture( <filename> )\n"); fi;
 
     str    := StringFile(filename);
+    if str = fail then Error("file not found"); return fail; fi;
     width  := List(str{[19..22]},INT_CHAR) * List([0..3],i->256^i);
     height := List(str{[23..26]},INT_CHAR) * List([0..3],i->256^i);
     if INT_CHAR(str[29]) = 24 then # 24-bit RGB picture
@@ -623,38 +827,6 @@ InstallGlobalFunction( LoadBitmapPicture,
 #S  Routines for drawing or modifying bitmap images. ////////////////////////
 ##
 #############################################################################
-
-#############################################################################
-##
-#F  ShrinkMonochromePictureToGrayscalesPicture( <filename>, <factor> )
-##
-InstallGlobalFunction( ShrinkMonochromePictureToGrayscalesPicture,
-
-  function ( filename, factor )
-
-    local  A, B, h, w, M, blackpixels, i, j, m, n, zero, one, start;
-
-    zero := Zero(GF(2)); one := One(GF(2));
-    A := LoadBitmapPicture(Concatenation(filename,".bmp"));
-    h := Length(A); w := Length(A[1]);
-    B := NullMat(Int(h/factor),Int(w/factor));
-    i := 1; m := 1; start := Runtime();
-    while i <= h - factor + 1 do
-      j := 1; n := 1;
-      if Runtime() - start > 1000 then
-        Info(InfoRCWA,2,"m = ",m);
-        start := Runtime();
-      fi;
-      while j <= w - factor + 1 do
-        M := A{[i..i+factor-1]}{[j..j+factor-1]};
-        blackpixels := Number(Concatenation(M),pix->pix=zero);
-        B[m][n] := 65793 * (255 - Int(255 * blackpixels/factor^2));
-        j := j + factor; n := n + 1;
-      od;
-      i := i + factor; m := m + 1;
-    od;
-    SaveAsBitmapPicture(B,Concatenation(filename,"-small.bmp"));
-  end );
 
 #############################################################################
 ##
@@ -713,234 +885,13 @@ InstallGlobalFunction( DrawGrid,
 
 #############################################################################
 ##
-#S  Functions for steganography in bitmap images. ///////////////////////////
-##
-#############################################################################
-
-#############################################################################
-##
-#F  EncryptIntoBitmapPicture( <picturefile>, <cleartextfile>, <passphrase> )
-##
-InstallGlobalFunction( EncryptIntoBitmapPicture,
-
-  function ( picturefile, cleartextfile, passphrase )
-
-    local  filename, outputfile, cleartext, picture, height, width, hits,
-           N, digits, C, a, b, c, p, q, n, e, i, j, pos, cols,
-           dl, dp, r, rgb, pow2;
-
-    if   picturefile{[Length(picturefile)-3..Length(picturefile)]}
-      in [".bmp",".BMP"]
-    then filename := picturefile{[1..Length(picturefile)-4]};
-    else filename := picturefile; fi; 
-    picturefile := Concatenation(filename,".bmp");
-    outputfile  := Concatenation(filename,"-out.bmp");
-
-    Info(InfoRCWA,2,"Loading picture etc. ...");
-    picture   := LoadBitmapPicture(picturefile);
-    height    := Length(picture);
-    width     := Length(picture[1]);
-    cleartext := StringFile(cleartextfile);
-
-    Info(InfoRCWA,2,"Initialisations ...");
-    hits      := NullMat(height,width);
-    N := List(passphrase,INT_CHAR)*List([0..Length(passphrase)-1],i->256^i);
-    digits := List(cleartext,INT_CHAR);
-    C := 0;
-    for i in [Length(digits),Length(digits)-1..1] do
-      C := 256*C + digits[i];
-    od;
-    p := NextProbablyPrimeInt(Int(1103*N/17));
-    a := PowerModInt(N,Int(37*N/3511),p);
-    q := NextProbablyPrimeInt(Int(223*a/7));
-    while Gcd(a,p-1) <> 1 or Gcd(a,q-1) <> 1 do a := a + 1; od;
-    n := p*q;
-    C := CoefficientsQadic(C,n);
-    C := List(C,d->PowerModInt(d,a,n));
-    C := Concatenation([Length(C)],C);
-    C := List(C,d->CoefficientsQadic(d,2));
-    dl := LogInt(n,2) + 1;
-    pow2 := List([0..23],i->2^i);
-
-    Info(InfoRCWA,2,"Encrypting ",Length(C),
-         " blocks of length ",dl," ...");
-    for pos in [0..dl*Length(C)-1] do
-      if   pos mod dl = 0
-      then Info(InfoRCWA,2,"Encoding block #",pos/dl + 1," ..."); fi;
-      repeat
-        i := a mod height + 1;
-        a := PowerModInt(a,i,n);
-        j := a mod width + 1;
-        a := PowerModInt(a,i+j,n);
-      until hits[i][j] = 0;
-      b := picture[i][j];
-      dp := Int(pos/dl) + 1;
-      r  := pos mod dl + 1;
-      if r > Length(C[dp]) then c := 0; else c := C[dp][r]; fi;
-      cols := List([b mod 256 + 256,Int(b/256) mod 256 + 256,
-                   Int(b/65536) + 256],
-                   col->CoefficientsQadic(col,2){[1..8]});
-      rgb := Int(a/564545657654311111) mod 3 + 1;
-      cols[rgb][1] := c;
-      picture[i][j] := Concatenation(cols) * pow2;
-      hits[i][j] := 1;
-    od;
-
-    Info(InfoRCWA,2,"Writing result to disk ..."); 
-    SaveAsBitmapPicture(picture,outputfile);
-  end );
-
-#############################################################################
-##
-#F  DecryptFromBitmapPicture( <picturefile>, <cleartextfile>, <passphrase> )
-##
-InstallGlobalFunction( DecryptFromBitmapPicture,
-
-  function ( picturefile, cleartextfile, passphrase )
-
-    local  filename, outputfile, cleartext, picture, height, width, hits,
-           N, C, a, a_start, b, c, p, q, n, e, i, j, pos, cols,
-           dl, dp, r, rgb, pow2, val, nrblocks;
-
-    Info(InfoRCWA,2,"Loading picture etc. ...");
-    picture := LoadBitmapPicture(picturefile);
-    height  := Length(picture);
-    width   := Length(picture[1]);
-
-    Info(InfoRCWA,2,"Initialisations ...");
-    hits := NullMat(height,width);
-    N := List(passphrase,INT_CHAR)*List([0..Length(passphrase)-1],i->256^i);
-    p := NextProbablyPrimeInt(Int(1103*N/17));
-    a := PowerModInt(N,Int(37*N/3511),p);
-    q := NextProbablyPrimeInt(Int(223*a/7));
-    while Gcd(a,p-1) <> 1 or Gcd(a,q-1) <> 1 do a := a + 1; od;
-    a_start := a;
-    n := p*q;
-    dl := LogInt(n,2) + 1;
-    pow2 := List([0..23],i->2^i);
-    C := [];
-
-    Info(InfoRCWA,2,"Decrypting ...");
-    pos := 0; nrblocks := 1;
-    repeat
-      if pos mod dl = 0 then
-        Info(InfoRCWA,2,"Decoding block #",pos/dl + 1," ...");
-        Add(C,[]);
-      fi;
-      if pos = dl then
-        nrblocks := C[1]{[1..24]} * pow2;
-        Info(InfoRCWA,2,"Number of blocks is ",nrblocks,"\n");
-      fi;
-      repeat
-        i := a mod height + 1;
-        a := PowerModInt(a,i,n);
-        j := a mod width + 1;
-        a := PowerModInt(a,i+j,n);
-      until hits[i][j] = 0;
-      b := picture[i][j];
-      dp := Int(pos/dl) + 1;
-      r  := pos mod dl + 1;
-      cols := List([b mod 256 + 256,Int(b/256) mod 256 + 256,
-                   Int(b/65536) + 256],
-                   col->CoefficientsQadic(col,2){[1..8]});
-      rgb := Int(a/564545657654311111) mod 3 + 1;
-      C[dp][r] := cols[rgb][1];
-      picture[i][j] := Concatenation(cols) * pow2;
-      hits[i][j] := 1;
-      pos := pos + 1;
-    until pos >= (nrblocks + 1) * dl;
-
-    Info(InfoRCWA,2,"Postprocessing ...");
-    C := C{[2..nrblocks+1]};
-    for i in [1..nrblocks] do
-      val := 0;
-      for j in [dl,dl-1..1] do
-        val := val * 2 + C[i][j];
-      od;
-      C[i] := val;
-    od;
-    e := 1/a_start mod ((p-1)*(q-1));
-    C := List(C,d->PowerModInt(d,e,n));
-    val := 0;
-    for i in [nrblocks,nrblocks-1..1] do
-      val := val * n + C[i];
-    od;
-    C := CoefficientsQadic(val,256);
-    cleartext := List(C,CHAR_INT);
-
-    Info(InfoRCWA,2,"Writing result to disk ...");
-    FileString(cleartextfile,cleartext);
-  end );
-
-#############################################################################
-##
-#S  Utility to run a demonstration in a talk. ///////////////////////////////
-##
-#############################################################################
-
-#############################################################################
-##
-#F  RunDemonstration( <filename> ) . . . . . . . . . . .  run a demonstration
-##
-if not IsBound(last ) then last  := fail; fi;
-if not IsBound(last2) then last2 := fail; fi;
-if not IsBound(last3) then last3 := fail; fi;
-if not IsBound(time ) then time  := fail; fi;
-
-InstallGlobalFunction( RunDemonstration,
-
-  function ( filename )
-
-    local  input, string, lines, doublesemicolonlines,
-           keyboard, linenumber, result, storedtime;
-
-    string := StringFile( filename );
-    if string = fail then Error( "Cannot open file ", filename ); fi;
-    lines := SplitString(string,"\n");
-    doublesemicolonlines := Filtered( [1..Length(lines)],
-                                      i -> Number(lines[i],ch->ch=';') > 1 );
-
-    input := InputTextFile( filename );
-    InputLogTo( OutputTextUser(  ) );
-    keyboard := InputTextUser();
-
-    Print( "\033[1m\033[34mgap> \033[0m\c" );
-    linenumber := 1;
-
-    while CHAR_INT( ReadByte( keyboard ) ) <> 'q' do
-      storedtime := Runtime();
-      # Print( "\033[31m\c" );
-      result := READ_COMMAND( input, true ); # Executing the command.
-      # Print( "\033[0m\c" );
-      time := Runtime() - storedtime;
-      if result <> SuPeRfail then
-        last3 := last2;
-        last2 := last;
-        last := result;
-        if   not linenumber in doublesemicolonlines
-        then View( result ); Print( "\n" ); fi;
-      fi;
-      if IsEndOfStream( input ) then break; fi;
-      Print( "\033[1m\033[34mgap> \033[0m\c" );
-      linenumber := linenumber + 1;
-    od;
-
-    Print( "\n" );
-    CloseStream( keyboard );
-    CloseStream( input );
-    InputLogTo();
-
-  end );
-
-#############################################################################
-##
 #S  Utility to convert GAP logfiles to XHTML 1.0 Strict. ////////////////////
 ##
 #############################################################################
 
 #############################################################################
 ##
-#F  Log2HTML ( logfilename ) . . . .  convert GAP logfile to XHTML 1.0 Strict
+#F  Log2HTML( logfilename ) . . . . . convert GAP logfile to XHTML 1.0 Strict
 ##
 InstallGlobalFunction( Log2HTML,
 
@@ -996,140 +947,6 @@ InstallGlobalFunction( Log2HTML,
     then outputname := ReplacedString(logfilename,".txt",".html");
     else outputname := Concatenation(logfilename,".html"); fi;
     FileString(outputname,s2);
-  end );
-
-#############################################################################
-##
-#S  Test utilities. /////////////////////////////////////////////////////////
-##
-#############################################################################
-
-#############################################################################
-##
-#F  ReadTestWithTimings( <filename> ) . . . read test file and return timings
-##
-InstallGlobalFunction( ReadTestWithTimings,
-
-  function ( filename )
-
-    local  timings, filewithtimings, inputlines, outputlines, isinput,
-           line, nextline, pos, intest, commands, command, lastbuf, i;
-
-    isinput := function ( line )
-      if Length(line) < 1 then return false; fi;
-      if line[1] = '>' then return true; fi;
-      if Length(line) < 4 then return false; fi;
-      if line{[1..4]} = "gap>" then return true; fi;
-      return false;
-    end;
-
-    if   not IsString(filename)
-    then Error("usage: ReadTestWithTimings( <filename> )"); fi;
-
-    inputlines := SplitString(StringFile(filename),"\n");
-    outputlines := []; intest := false; commands := []; command := [];
-    for pos in [1..Length(inputlines)] do
-      line := inputlines[pos];
-      Add(outputlines,line);
-      if PositionSublist(line,"START_TEST") <> fail then intest := true; fi;
-      if PositionSublist(line,"STOP_TEST") <> fail then intest := false; fi;
-      if intest then
-        if isinput(line) then Add(command,line); fi;
-        nextline := inputlines[pos+1];
-        if not isinput(line) and isinput(nextline) then
-          Add(commands,[pos-1,JoinStringsWithSeparator(command,"\n")]);
-          command := [];
-          Add(outputlines,"gap> lastbuf := [last,last2,last3];;");
-          Add(outputlines,"gap> runtime := Runtime()-TEST_START_TIME;;");
-          Add(outputlines,"gap> Add(TEST_TIMINGS,runtime);");
-          Add(outputlines,"gap> TEST_START_TIME := Runtime();;");
-          Add(outputlines,"gap> last3 := lastbuf[3];;");
-          Add(outputlines,"gap> last2 := lastbuf[2];;");
-          Add(outputlines,"gap> last1 := lastbuf[1];;");
-        fi;
-      fi;
-    od;
-    outputlines := JoinStringsWithSeparator(outputlines,"\n");
-    filename := SplitString(filename,"/");
-    filename := filename[Length(filename)];
-    filewithtimings := Filename(DirectoryTemporary(),filename);
-    FileString(filewithtimings,outputlines);
-    Unbind(TEST_TIMINGS);
-    BindGlobal("TEST_TIMINGS",[]);
-    MakeReadWriteGlobal("TEST_TIMINGS");
-    BindGlobal("TEST_START_TIME",Runtime());
-    MakeReadWriteGlobal("TEST_START_TIME"); 
-    Test(filewithtimings);
-    timings := TEST_TIMINGS;
-    UnbindGlobal("TEST_TIMINGS");
-    UnbindGlobal("TEST_START_TIME");
-    if   Length(timings) <> Length(commands)
-    then Error("ReadTestWithTimings: #commands <> #timings"); fi;
-    return List([1..Length(commands)],i->[commands[i],timings[i]]);
-  end );
-
-#############################################################################
-##
-#F  ReadTestCompareTimings( <filename> [,<timingsdir> [,<createreference> ] )
-##
-InstallGlobalFunction( ReadTestCompareRuntimes,
-
-  function ( arg )
-
-    local  filename, timingsdir, createreference, testdir,
-           timingsname, slashpos, oldtimings, newtimings, testnrs,
-           changes, changed, runtimechangesignificance, threshold, n, i;
-
-    runtimechangesignificance := function ( oldtime, newtime )
-      return AbsInt(newtime-oldtime)/(10*RootInt(oldtime)+100);
-    end;
-
-    filename := arg[1];
-    slashpos := Positions(filename,'/');
-    slashpos := slashpos[Length(slashpos)];
-    testdir  := filename{[1..slashpos]};
-    if   Length(arg) >= 2
-    then timingsdir := arg[2]; else timingsdir := testdir; fi;
-    if   Length(arg) >= 3
-    then createreference := arg[3]; else createreference := false; fi;
-    if not IsString(filename) or not IsBool(createreference) then
-      Error("usage: ReadTestCompareTimings( <filename> ",
-            "[, <createreference> ] )");
-    fi;
-    timingsname := ReplacedString(filename,testdir,timingsdir);
-    timingsname := ReplacedString(timingsname,".tst",".runtimes");
-    if   not IsExistingFile(timingsname)
-    then createreference := true;
-    else oldtimings := ReadAsFunction(timingsname)(); fi;
-    newtimings := ReadTestWithTimings(filename);
-    if createreference then
-      PrintTo(timingsname,"return ",newtimings,";\n");
-    else
-      n := Length(oldtimings);
-      if Length(newtimings) < n or TransposedMat(newtimings)[1]{[1..n]}
-                                <> TransposedMat(oldtimings)[1]
-      then
-        Info(InfoWarning,1,"Test file ",filename);
-        Info(InfoWarning,1,"has changed, thus performance ",
-                           "cannot be compared.");
-        Info(InfoWarning,1,"Please create new reference timings.");
-      else
-        testnrs := [1..n];
-        changes := List([1..n],
-                        i->runtimechangesignificance(newtimings[i][2],
-                                                     oldtimings[i][2]));
-        SortParallel(-changes,testnrs);
-        threshold := 1; # significance threshold for runtime change
-        changed := Filtered(testnrs,i->changes[i]>threshold);
-        for i in changed do
-          Print("Line ",oldtimings[i][1][1],": ");
-          if   newtimings[i][2] < oldtimings[i][2]
-          then Print("speedup "); else Print("slowdown "); fi;
-          Print(oldtimings[i][2],"ms -> ",newtimings[i][2],"ms\n");
-          Print(oldtimings[i][1][2],"\n");
-        od;
-      fi;
-    fi;
   end );
 
 #############################################################################

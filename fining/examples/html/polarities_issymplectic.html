@@ -1,0 +1,7 @@
+gap&gt; mat := [[0,0,1,0],[0,0,0,1],[1,0,0,0],[0,1,0,0]]*Z(8)^0;<br>
+[ [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ], [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], <br>
+  [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ] ]<br>
+gap&gt; phi := PolarityOfProjectiveSpace(mat,GF(8));<br>
+&lt;polarity of PG(3, GF(2^3)),  &gt;<br>
+gap&gt; IsSymplecticPolarityOfProjectiveSpace(phi);<br>
+true<br>

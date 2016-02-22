@@ -1,0 +1,21 @@
+gap> 
+gap> #is elliptic quadric property
+gap> mat := IdentityMat(6,GF(5));
+< mutable compressed matrix 6x6 over GF(5) >
+gap> form := BilinearFormByMatrix(mat,GF(5));
+< bilinear form >
+gap> ps := PolarSpace(form);
+<polar space in ProjectiveSpace(
+5,GF(5)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2=0 >
+gap> IsEllipticQuadric(ps);
+false
+gap> mat := IdentityMat(6,GF(7));
+< mutable compressed matrix 6x6 over GF(7) >
+gap> form := BilinearFormByMatrix(mat,GF(7));
+< bilinear form >
+gap> ps := PolarSpace(form);
+<polar space in ProjectiveSpace(
+5,GF(7)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2=0 >
+gap> IsEllipticQuadric(ps);
+true
+gap> quit;

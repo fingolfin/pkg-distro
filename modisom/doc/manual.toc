@@ -17,4 +17,3 @@
 \seccontents {6.2}{A Library of Kurosh Algebras} {13}
 \seccontents {6.3}{Example of accessing the library of Kurosh algebras} {13}
 \chapcontents {}{Bibliography}{14}
-\chapcontents {}{Index}{15}

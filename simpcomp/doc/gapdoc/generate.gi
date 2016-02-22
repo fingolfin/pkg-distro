@@ -905,9 +905,9 @@
 ## gap&gt; Mminus:=SCSpan(c,[1,2,3,4,9,10,11,12]);;                  
 ## gap&gt; Mplus:=SCSpan(c,[5,6,7,8,13,14,15,16]);;                  
 ## gap&gt; SCCollapseGreedy(Mminus).Facets;
-## [ [ 1, 2 ], [ 1, 12 ], [ 2, 10 ], [ 10, 11 ], [ 11, 12 ] ]
+## [ [ 1, 9 ], [ 1, 10 ], [ 3, 10 ], [ 3, 11 ], [ 4, 9 ], [ 4, 12 ], [ 11, 12 ] ]
 ## gap&gt; SCCollapseGreedy(Mplus).Facets; 
-## [ [ 6, 7 ], [ 6, 14 ], [ 7, 16 ], [ 13, 14 ], [ 13, 16 ] ]
+## [ [ 5, 8 ], [ 5, 16 ], [ 6, 14 ], [ 6, 15 ], [ 8, 15 ], [ 13, 14 ], [ 13, 16 ] ]
 ## </Example>
 ## </Description>
 ## </ManSection>

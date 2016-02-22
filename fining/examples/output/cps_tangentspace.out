@@ -1,0 +1,35 @@
+gap> 
+gap> # tangent spaces.
+gap> ps := HermitianPolarSpace(3,4^2);
+H(3, 4^2)
+gap> p := Random(Points(ps));
+<a point in H(3, 4^2)>
+gap> plane := TangentSpace(p);
+<a plane in ProjectiveSpace(3, 16)>
+gap> TypeOfSubspace(ps,plane);
+"degenerate"
+gap> ps := ParabolicQuadric(6,4);
+Q(6, 4)
+gap> p := VectorSpaceToElement(PG(6,4),[0,1,0,0,0,0,0]*Z(4)^0);
+<a point in ProjectiveSpace(6, 4)>
+gap> hyp := TangentSpace(ps,p);
+<a proj. 5-space in ProjectiveSpace(6, 4)>
+gap> NucleusOfParabolicQuadric(ps) in hyp;
+true
+gap> ps := EllipticQuadric(5,2);
+Q-(5, 2)
+gap> line := Random(Lines(ps));
+<a line in Q-(5, 2)>
+gap> TangentSpace(line);
+<a solid in ProjectiveSpace(5, 2)>
+gap> ps := HermitianPolarSpace(5,4);
+H(5, 2^2)
+gap> plane := Random(Planes(ps));
+<a plane in H(5, 2^2)>
+gap> tan := TangentSpace(plane);
+<a plane in ProjectiveSpace(5, 4)>
+gap> tan in ps;
+true
+gap> tan = plane;
+true
+gap> quit;

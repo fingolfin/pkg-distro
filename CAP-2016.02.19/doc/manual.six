@@ -1,0 +1,2615 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "CAP",
+entries :=
+[ [ "Title page", ".", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" ],
+  [ "Table of Contents", ".-1", [ 0, 0, 1 ], 49, 2, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YCAP Categories\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 5, "cap categories", "X7C99ABCB7DEEDE2A" ], 
+  [ "\033[1X\033[33X\033[0;-2YCategories\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 13, 5, "categories", "X7CC6903E78F24167" ], 
+  [ "\033[1X\033[33X\033[0;-2YConstructor\033[133X\033[101X", "1.2", 
+      [ 1, 2, 0 ], 58, 6, "constructor", "X7ABF649E831D4D8E" ], 
+  [ "\033[1X\033[33X\033[0;-2YInternal Attributes\033[133X\033[101X", "1.3", 
+      [ 1, 3, 0 ], 76, 6, "internal attributes", "X79CE135F7E6EBFEE" ], 
+  [ "\033[1X\033[33X\033[0;-2YLogic switcher\033[133X\033[101X", "1.4", 
+      [ 1, 4, 0 ], 121, 7, "logic switcher", "X8305A19E86EC7B67" ], 
+  [ "\033[1X\033[33X\033[0;-2YTool functions\033[133X\033[101X", "1.5", 
+      [ 1, 5, 0 ], 136, 7, "tool functions", "X7A15CCB67FBCF3E3" ], 
+  [ "\033[1X\033[33X\033[0;-2YWell-Definedness of Cells\033[133X\033[101X", 
+      "1.6", [ 1, 6, 0 ], 159, 8, "well-definedness of cells", 
+      "X7DB3D2BD8792ABBC" ], 
+  [ "\033[1X\033[33X\033[0;-2YType check\033[133X\033[101X", "1.7", 
+      [ 1, 7, 0 ], 170, 8, "type check", "X83E6CD177C796894" ], 
+  [ "\033[1X\033[33X\033[0;-2YCategory of Categories\033[133X\033[101X", "2", 
+      [ 2, 0, 0 ], 1, 9, "category of categories", "X87C0818C7EFB273D" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Category Cat\033[133X\033[101X", "2.1", 
+      [ 2, 1, 0 ], 13, 9, "the category cat", "X7A8C280B85B50DE0" ], 
+  [ "\033[1X\033[33X\033[0;-2YCategories\033[133X\033[101X", "2.2", 
+      [ 2, 2, 0 ], 24, 9, "categories", "X7CC6903E78F24167" ], 
+  [ "\033[1X\033[33X\033[0;-2YConstructors\033[133X\033[101X", "2.3", 
+      [ 2, 3, 0 ], 48, 10, "constructors", "X86EC0F0A78ECBC10" ], 
+  [ "\033[1X\033[33X\033[0;-2YFunctors\033[133X\033[101X", "2.4", 
+      [ 2, 4, 0 ], 72, 10, "functors", "X78D1062D78BE08C1" ], 
+  [ "\033[1X\033[33X\033[0;-2YNatural transformations\033[133X\033[101X", 
+      "2.5", [ 2, 5, 0 ], 144, 11, "natural transformations", 
+      "X836749D8814FEEE6" ], 
+  [ "\033[1X\033[33X\033[0;-2YMorphisms\033[133X\033[101X", "3", [ 3, 0, 0 ], 
+      1, 13, "morphisms", "X7BEB6C617FED52DA" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAttributes for the Type of Morphisms\033[133X\\
+033[101X", "3.1", [ 3, 1, 0 ], 11, 13, "attributes for the type of morphisms",
+      "X8642E3327E96BBDD" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCategorical Properties of Morphisms\033[133X\033[\
+101X", "3.2", [ 3, 2, 0 ], 38, 13, "categorical properties of morphisms", 
+      "X7A00D0C181471D06" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YNon-Categorical Properties of Morphisms\033[133X\\
+033[101X", "3.3", [ 3, 3, 0 ], 104, 14, 
+      "non-categorical properties of morphisms", "X7EA50D6587A93936" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YEquality and Congruence for Morphisms\033[133X\\
+033[101X", "3.4", [ 3, 4, 0 ], 163, 16, 
+      "equality and congruence for morphisms", "X850CFDD48773998E" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YBasic Operations for Morphisms in Ab-Categories\\
+033[133X\033[101X", "3.5", [ 3, 5, 0 ], 221, 17, 
+      "basic operations for morphisms in ab-categories", "X8312421679CAAE35" ]
+    , 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSubobject and Factorobject Operations\033[133X\\
+033[101X", "3.6", [ 3, 6, 0 ], 292, 18, 
+      "subobject and factorobject operations", "X7C81E153817F489F" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIdentity Morphism and Composition of Morphisms\\
+033[133X\033[101X", "3.7", [ 3, 7, 0 ], 379, 19, 
+      "identity morphism and composition of morphisms", "X82ADC0BF82DA2122" ],
+  [ "\033[1X\033[33X\033[0;-2YWell-Definedness of Morphisms\033[133X\033[101X"
+        , "3.8", [ 3, 8, 0 ], 456, 20, "well-definedness of morphisms", 
+      "X7D5182B48598FBC5" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YBasic Operations for Morphisms in Abelian Categor\
+ies\033[133X\033[101X", "3.9", [ 3, 9, 0 ], 477, 21, 
+      "basic operations for morphisms in abelian categories", 
+      "X7E4EC4B97985DB35" ], 
+  [ "\033[1X\033[33X\033[0;-2YLift/ Colift\033[133X\033[101X", "3.10", 
+      [ 3, 10, 0 ], 518, 21, "lift/ colift", "X80EC4D217F67F376" ], 
+  [ "\033[1X\033[33X\033[0;-2YInverses\033[133X\033[101X", "3.11", 
+      [ 3, 11, 0 ], 579, 22, "inverses", "X864F84C47DC1A620" ], 
+  [ "\033[1X\033[33X\033[0;-2YTool functions for caches\033[133X\033[101X", 
+      "3.12", [ 3, 12, 0 ], 596, 23, "tool functions for caches", 
+      "X7DD668627932185C" ], 
+  [ "\033[1X\033[33X\033[0;-2YObjects\033[133X\033[101X", "4", [ 4, 0, 0 ], 
+      1, 24, "objects", "X78497E777FB3E402" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAttributes for the Type of Objects\033[133X\033[1\
+01X", "4.1", [ 4, 1, 0 ], 11, 24, "attributes for the type of objects", 
+      "X7ABD8E5A8408A301" ], 
+  [ "\033[1X\033[33X\033[0;-2YEquality for Objects\033[133X\033[101X", "4.2", 
+      [ 4, 2, 0 ], 22, 24, "equality for objects", "X7B4B807A848111AA" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YCategorical Properties of Objects\033[133X\033[10\
+1X", "4.3", [ 4, 3, 0 ], 42, 25, "categorical properties of objects", 
+      "X86CCD70884952468" ], 
+  [ "\033[1X\033[33X\033[0;-2YTool functions for caches\033[133X\033[101X", 
+      "4.4", [ 4, 4, 0 ], 99, 26, "tool functions for caches", 
+      "X7DD668627932185C" ], 
+  [ "\033[1X\033[33X\033[0;-2YWell-Definedness of Objects\033[133X\033[101X", 
+      "4.5", [ 4, 5, 0 ], 123, 26, "well-definedness of objects", 
+      "X7820B09C781A90A8" ], 
+  [ "\033[1X\033[33X\033[0;-2YCategory 2-Cells\033[133X\033[101X", "5", 
+      [ 5, 0, 0 ], 1, 27, "category 2-cells", "X7B2650D983390045" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YAttributes for the Type of 2-Cells\033[133X\033[1\
+01X", "5.1", [ 5, 1, 0 ], 4, 27, "attributes for the type of 2-cells", 
+      "X793836877FCD5EC6" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YIdentity 2-Cell and Composition of 2-Cells\033[13\
+3X\033[101X", "5.2", [ 5, 2, 0 ], 23, 27, 
+      "identity 2-cell and composition of 2-cells", "X7B780EDB7E466121" ], 
+  [ "\033[1X\033[33X\033[0;-2YWell-Definedness for 2-Cells\033[133X\033[101X",
+      "5.3", [ 5, 3, 0 ], 119, 29, "well-definedness for 2-cells", 
+      "X84A60F017943A943" ], 
+  [ "\033[1X\033[33X\033[0;-2YUniversal Objects\033[133X\033[101X", "6", 
+      [ 6, 0, 0 ], 1, 30, "universal objects", "X7994CC1487D7617C" ], 
+  [ "\033[1X\033[33X\033[0;-2YKernel\033[133X\033[101X", "6.1", [ 6, 1, 0 ], 
+      4, 30, "kernel", "X7DCD99628504B810" ], 
+  [ "\033[1X\033[33X\033[0;-2YCokernel\033[133X\033[101X", "6.2", 
+      [ 6, 2, 0 ], 169, 33, "cokernel", "X875F177A82BF9B8B" ], 
+  [ "\033[1X\033[33X\033[0;-2YZero Object\033[133X\033[101X", "6.3", 
+      [ 6, 3, 0 ], 337, 35, "zero object", "X797A74DE8267C974" ], 
+  [ "\033[1X\033[33X\033[0;-2YTerminal Object\033[133X\033[101X", "6.4", 
+      [ 6, 4, 0 ], 543, 39, "terminal object", "X827CD17C7EBFD58F" ], 
+  [ "\033[1X\033[33X\033[0;-2YInitial Object\033[133X\033[101X", "6.5", 
+      [ 6, 5, 0 ], 637, 41, "initial object", "X78B0ED8B80BF5254" ], 
+  [ "\033[1X\033[33X\033[0;-2YDirect Sum\033[133X\033[101X", "6.6", 
+      [ 6, 6, 0 ], 731, 42, "direct sum", "X81FDB99378D1307A" ], 
+  [ "\033[1X\033[33X\033[0;-2YCoproduct\033[133X\033[101X", "6.7", 
+      [ 6, 7, 0 ], 1173, 49, "coproduct", "X7E8036DF7AC65994" ], 
+  [ "\033[1X\033[33X\033[0;-2YDirect Product\033[133X\033[101X", "6.8", 
+      [ 6, 8, 0 ], 1375, 53, "direct product", "X844C65417FBEA3C7" ], 
+  [ "\033[1X\033[33X\033[0;-2YFiber Product\033[133X\033[101X", "6.9", 
+      [ 6, 9, 0 ], 1553, 56, "fiber product", "X7C5C7D847A89D79C" ], 
+  [ "\033[1X\033[33X\033[0;-2YPushout\033[133X\033[101X", "6.10", 
+      [ 6, 10, 0 ], 1899, 61, "pushout", "X81A2D49D85923894" ], 
+  [ "\033[1X\033[33X\033[0;-2YImage\033[133X\033[101X", "6.11", [ 6, 11, 0 ], 
+      2239, 66, "image", "X87F4D35A826599C6" ], 
+  [ "\033[1X\033[33X\033[0;-2YCoimage\033[133X\033[101X", "6.12", 
+      [ 6, 12, 0 ], 2452, 70, "coimage", "X7EB02EC487B586E5" ], 
+  [ "\033[1X\033[33X\033[0;-2YConvenience Methods\033[133X\033[101X", "6.13", 
+      [ 6, 13, 0 ], 2721, 75, "convenience methods", "X7B40ED8B78D067A5" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YTensor Product and Internal Hom\033[133X\033[101X\
+", "7", [ 7, 0, 0 ], 1, 76, "tensor product and internal hom", 
+      "X7AF6C1DF84986EEA" ], 
+  [ "\033[1X\033[33X\033[0;-2YMonoidal Categories\033[133X\033[101X", "7.1", 
+      [ 7, 1, 0 ], 4, 76, "monoidal categories", "X808DC49C7ED99B52" ], 
+  [ "\033[1X\033[33X\033[0;-2YBraided Monoidal Categories\033[133X\033[101X", 
+      "7.2", [ 7, 2, 0 ], 387, 82, "braided monoidal categories", 
+      "X7D94AD967E6D60F1" ], 
+  [ "\033[1X\033[33X\033[0;-2YSymmetric Monoidal Categories\033[133X\033[101X"
+        , "7.3", [ 7, 3, 0 ], 459, 84, "symmetric monoidal categories", 
+      "X85ED71067F7CEA82" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YSymmetric Closed Monoidal Categories\033[133X\\
+033[101X", "7.4", [ 7, 4, 0 ], 466, 84, "symmetric closed monoidal categories"
+        , "X849F4CB58466EAEB" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YRigid Symmetric Closed Monoidal Categories\033[13\
+3X\033[101X", "7.5", [ 7, 5, 0 ], 1188, 96, 
+      "rigid symmetric closed monoidal categories", "X805AEF9784062A31" ], 
+  [ "\033[1X\033[33X\033[0;-2YManaging Derived Methods\033[133X\033[101X", 
+      "8", [ 8, 0, 0 ], 1, 98, "managing derived methods", 
+      "X8397FA067BFF4850" ], 
+  [ "\033[1X\033[33X\033[0;-2YInfo Class\033[133X\033[101X", "8.1", 
+      [ 8, 1, 0 ], 4, 98, "info class", "X7EBFC26F83EB9F72" ], 
+  [ "\033[1X\033[33X\033[0;-2YDerivation Objects\033[133X\033[101X", "8.2", 
+      [ 8, 2, 0 ], 21, 98, "derivation objects", "X85225AB582EE9B06" ], 
+  [ "\033[1X\033[33X\033[0;-2YDerivation Graphs\033[133X\033[101X", "8.3", 
+      [ 8, 3, 0 ], 135, 100, "derivation graphs", "X87186DAD7DF242ED" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YManaging Derivations in a Category\033[133X\033[1\
+01X", "8.4", [ 8, 4, 0 ], 233, 103, "managing derivations in a category", 
+      "X86F129738355A31B" ], 
+  [ "\033[1X\033[33X\033[0;-2YMin Heaps for Strings\033[133X\033[101X", 
+      "8.5", [ 8, 5, 0 ], 340, 105, "min heaps for strings", 
+      "X85B1CCCC81C1A631" ], 
+  [ "\033[1X\033[33X\033[0;-2YAdd Functions\033[133X\033[101X", "9", 
+      [ 9, 0, 0 ], 1, 107, "add functions", "X87A9DB228112DF45" ], 
+  [ "\033[1X\033[33X\033[0;-2YFunctions Installed by Add\033[133X\033[101X", 
+      "9.1", [ 9, 1, 0 ], 7, 107, "functions installed by add", 
+      "X85EC14607B6F66FE" ], 
+  [ "\033[1X\033[33X\033[0;-2YAdd Method\033[133X\033[101X", "9.2", 
+      [ 9, 2, 0 ], 84, 108, "add method", "X85E3D9E07B8BC960" ], 
+  [ "\033[1X\033[33X\033[0;-2YInstallAdd Function\033[133X\033[101X", "9.3", 
+      [ 9, 3, 0 ], 143, 109, "installadd function", "X7D83FC527EA66166" ], 
+  [ "\033[1X\033[33X\033[0;-2YInstall All Adds\033[133X\033[101X", "9.4", 
+      [ 9, 4, 0 ], 208, 110, "install all adds", "X78B69C307CF0DE53" ], 
+  [ "\033[1X\033[33X\033[0;-2YTechnical Details\033[133X\033[101X", "10", 
+      [ 10, 0, 0 ], 1, 112, "technical details", "X87A9EC0A7DF04931" ], 
+  [ "\033[1X\033[33X\033[0;-2YThe Category Cat\033[133X\033[101X", "10.1", 
+      [ 10, 1, 0 ], 4, 112, "the category cat", "X7A8C280B85B50DE0" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YInstall Functions for IsWellDefined\033[133X\033[\
+101X", "10.2", [ 10, 2, 0 ], 23, 112, "install functions for iswelldefined", 
+      "X84802DD67AA9E628" ], 
+  [ "\033[1X\033[33X\033[0;-2YUniversal Objects\033[133X\033[101X", "10.3", 
+      [ 10, 3, 0 ], 119, 114, "universal objects", "X7994CC1487D7617C" ], 
+  [ "\033[1X\033[33X\033[0;-2YExamples and Tests\033[133X\033[101X", "11", 
+      [ 11, 0, 0 ], 1, 117, "examples and tests", "X7967FE8E7BBDF485" ], 
+  [ "\033[1X\033[33X\033[0;-2YSpectral Sequences\033[133X\033[101X", "11.1", 
+      [ 11, 1, 0 ], 4, 117, "spectral sequences", "X87330D8C82E71B50" ], 
+  [ "\033[1X\033[33X\033[0;-2YMonoidal Categories\033[133X\033[101X", "11.2", 
+      [ 11, 2, 0 ], 175, 120, "monoidal categories", "X808DC49C7ED99B52" ], 
+  [ 
+      "\033[1X\033[33X\033[0;-2YGeneralized Morphisms Category\033[133X\033[101X"
+        , "11.3", [ 11, 3, 0 ], 278, 122, "generalized morphisms category", 
+      "X86FB477C7908A3A6" ], 
+  [ "\033[1X\033[33X\033[0;-2YIsWellDefined\033[133X\033[101X", "11.4", 
+      [ 11, 4, 0 ], 647, 129, "iswelldefined", "X7E8AFE5085FF7E15" ], 
+  [ "\033[1X\033[33X\033[0;-2YKernel\033[133X\033[101X", "11.5", 
+      [ 11, 5, 0 ], 673, 129, "kernel", "X7DCD99628504B810" ], 
+  [ "\033[1X\033[33X\033[0;-2YFiberProduct\033[133X\033[101X", "11.6", 
+      [ 11, 6, 0 ], 783, 131, "fiberproduct", "X7DE20941803BFBD9" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 133, "index", "X83A0356F839C696F" ], 
+  [ "\033[5XCAP\033[105X", ".-1", [ 0, 0, 1 ], 49, 2, "cap", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[2XIsCapCategory\033[102X (for IsObject)", "1.1-1", [ 1, 1, 1 ], 16, 
+      5, "iscapcategory for isobject", "X852A10417EEF5D0E" ], 
+  [ "\033[2XIsCapCategoryCell\033[102X (for IsObject)", "1.1-2", [ 1, 1, 2 ], 
+      26, 5, "iscapcategorycell for isobject", "X7CCB83B285177E82" ], 
+  [ "\033[2XIsCapCategoryObject\033[102X (for IsCapCategoryCell)", "1.1-3", 
+      [ 1, 1, 3 ], 34, 5, "iscapcategoryobject for iscapcategorycell", 
+      "X7DAEF54180094D1E" ], 
+  [ 
+      "\033[2XIsCapCategoryMorphism\033[102X (for IsCapCategoryCell and IsAdditiv\
+eElementWithInverse)", "1.1-4", [ 1, 1, 4 ], 42, 6, 
+      "iscapcategorymorphism for iscapcategorycell and isadditiveelementwithin\
+verse", "X86DA006A7B9D3EB9" ], 
+  [ "\033[2XIsCapCategoryTwoCell\033[102X (for IsCapCategoryCell)", "1.1-5", 
+      [ 1, 1, 5 ], 50, 6, "iscapcategorytwocell for iscapcategorycell", 
+      "X7F3B964286D98710" ], 
+  [ "\033[2XCreateCapCategory\033[102X", "1.2-1", [ 1, 2, 1 ], 61, 6, 
+      "createcapcategory", "X86EDB84D7E3F0194" ], 
+  [ "\033[2XCreateCapCategory\033[102X (for IsString)", "1.2-2", [ 1, 2, 2 ], 
+      68, 6, "createcapcategory for isstring", "X854CC42E828C120D" ], 
+  [ "\033[2XCategoryFilter\033[102X (for IsCapCategory)", "1.3-1", 
+      [ 1, 3, 1 ], 82, 6, "categoryfilter for iscapcategory", 
+      "X7C7B1EAF7D786508" ], 
+  [ "\033[2XCellFilter\033[102X (for IsCapCategory)", "1.3-2", [ 1, 3, 2 ], 
+      89, 6, "cellfilter for iscapcategory", "X7E88D5D3860AF854" ], 
+  [ "\033[2XObjectFilter\033[102X (for IsCapCategory)", "1.3-3", [ 1, 3, 3 ], 
+      97, 7, "objectfilter for iscapcategory", "X7BD6E2B887F86E9C" ], 
+  [ "\033[2XMorphismFilter\033[102X (for IsCapCategory)", "1.3-4", 
+      [ 1, 3, 4 ], 105, 7, "morphismfilter for iscapcategory", 
+      "X7F62E0C47C778CBB" ], 
+  [ "\033[2XTwoCellFilter\033[102X (for IsCapCategory)", "1.3-5", 
+      [ 1, 3, 5 ], 113, 7, "twocellfilter for iscapcategory", 
+      "X850D0E978090D0C0" ], 
+  [ "\033[2XCapCategorySwitchLogicOn\033[102X", "1.4-1", [ 1, 4, 1 ], 124, 7, 
+      "capcategoryswitchlogicon", "X84824AC3793D872B" ], 
+  [ "\033[2XCapCategorySwitchLogicOff\033[102X", "1.4-2", [ 1, 4, 2 ], 130, 
+      7, "capcategoryswitchlogicoff", "X84A995A687D031B7" ], 
+  [ "\033[2XCanCompute\033[102X (for IsCapCategory, IsString)", "1.5-1", 
+      [ 1, 5, 1 ], 139, 7, "cancompute for iscapcategory isstring", 
+      "X851D0435816DDB40" ], 
+  [ 
+      "\033[2XCheckConstructivenessOfCategory\033[102X (for IsCapCategory, IsStri\
+ng)", "1.5-2", [ 1, 5, 2 ], 149, 7, 
+      "checkconstructivenessofcategory for iscapcategory isstring", 
+      "X7ACB9FFA84476BA0" ], 
+  [ "\033[2XIsWellDefined\033[102X (for IsCapCategoryCell)", "1.6-1", 
+      [ 1, 6, 1 ], 162, 8, "iswelldefined for iscapcategorycell", 
+      "X839EA4D7805D4F97" ], 
+  [ "\033[2XDisableBasicOperationTypeCheck\033[102X", "1.7-1", [ 1, 7, 1 ], 
+      173, 8, "disablebasicoperationtypecheck", "X8747655184DF9BED" ], 
+  [ "\033[2XEnableBasicOperationTypeCheck\033[102X", "1.7-1", [ 1, 7, 1 ], 
+      173, 8, "enablebasicoperationtypecheck", "X8747655184DF9BED" ], 
+  [ "\033[2XCapCat\033[102X", "2.1-1", [ 2, 1, 1 ], 16, 9, "capcat", 
+      "X810DBB407D117E6B" ], 
+  [ "\033[2XIsCapCategoryAsCatObject\033[102X (for IsCapCategoryObject)", 
+      "2.2-1", [ 2, 2, 1 ], 27, 9, 
+      "iscapcategoryascatobject for iscapcategoryobject", "X814369D484E429EF" 
+     ], 
+  [ "\033[2XIsCapFunctor\033[102X (for IsCapCategoryMorphism)", "2.2-2", 
+      [ 2, 2, 2 ], 34, 9, "iscapfunctor for iscapcategorymorphism", 
+      "X7CBE360B8629DC79" ], 
+  [ "\033[2XIsCapNaturalTransformation\033[102X (for IsCapCategoryTwoCell)", 
+      "2.2-3", [ 2, 2, 3 ], 41, 9, 
+      "iscapnaturaltransformation for iscapcategorytwocell", 
+      "X7D2DD1297D6E57D0" ], 
+  [ "\033[2XAsCatObject\033[102X (for IsCapCategory)", "2.3-1", [ 2, 3, 1 ], 
+      51, 10, "ascatobject for iscapcategory", "X7F7E47537FD1EDC3" ], 
+  [ "\033[2XAsCapCategory\033[102X (for IsCapCategoryAsCatObject)", "2.3-2", 
+      [ 2, 3, 2 ], 64, 10, "ascapcategory for iscapcategoryascatobject", 
+      "X7E3142BA84C1EC72" ], 
+  [ "\033[2XCapFunctor\033[102X (for IsString, IsCapCategory, IsCapCategory)",
+      "2.4-1", [ 2, 4, 1 ], 81, 10, 
+      "capfunctor for isstring iscapcategory iscapcategory", 
+      "X7814A6FC86238C93" ], 
+  [ 
+      "\033[2XCapFunctor\033[102X (for IsString, IsCapCategoryAsCatObject, IsCapC\
+ategory)", "2.4-1", [ 2, 4, 1 ], 81, 10, 
+      "capfunctor for isstring iscapcategoryascatobject iscapcategory", 
+      "X7814A6FC86238C93" ], 
+  [ 
+      "\033[2XCapFunctor\033[102X (for IsString, IsCapCategory, IsCapCategoryAsCa\
+tObject)", "2.4-1", [ 2, 4, 1 ], 81, 10, 
+      "capfunctor for isstring iscapcategory iscapcategoryascatobject", 
+      "X7814A6FC86238C93" ], 
+  [ 
+      "\033[2XCapFunctor\033[102X (for IsString, IsCapCategoryAsCatObject, IsCapC\
+ategoryAsCatObject)", "2.4-1", [ 2, 4, 1 ], 81, 10, 
+      "capfunctor for isstring iscapcategoryascatobject iscapcategoryascatobje\
+ct", "X7814A6FC86238C93" ], 
+  [ "\033[2XCapFunctor\033[102X (for IsString, IsList, IsCapCategory)", 
+      "2.4-1", [ 2, 4, 1 ], 81, 10, 
+      "capfunctor for isstring islist iscapcategory", "X7814A6FC86238C93" ], 
+  [ "\033[2XCapFunctor\033[102X (for IsString, IsList, IsCapCategoryAsCatObjec\
+t)", "2.4-1", [ 2, 4, 1 ], 81, 10, 
+      "capfunctor for isstring islist iscapcategoryascatobject", 
+      "X7814A6FC86238C93" ], 
+  [ "\033[2XAddObjectFunction\033[102X (for IsCapFunctor, IsFunction)", 
+      "2.4-2", [ 2, 4, 2 ], 95, 11, 
+      "addobjectfunction for iscapfunctor isfunction", "X7A75B6A77C9F6836" ], 
+  [ "\033[2XFunctorObjectOperation\033[102X (for IsCapFunctor)", "2.4-3", 
+      [ 2, 4, 3 ], 105, 11, "functorobjectoperation for iscapfunctor", 
+      "X78CD5D1E811A85CF" ], 
+  [ "\033[2XAddMorphismFunction\033[102X (for IsCapFunctor, IsFunction)", 
+      "2.4-4", [ 2, 4, 4 ], 113, 11, 
+      "addmorphismfunction for iscapfunctor isfunction", "X85EFB9BE8145B737" ]
+    , [ "\033[2XFunctorMorphismOperation\033[102X (for IsCapFunctor)", 
+      "2.4-5", [ 2, 4, 5 ], 123, 11, 
+      "functormorphismoperation for iscapfunctor", "X7D3BAF84793D9576" ], 
+  [ "\033[2XApplyFunctor\033[102X", "2.4-6", [ 2, 4, 6 ], 131, 11, 
+      "applyfunctor", "X850397447A1A766E" ], 
+  [ "\033[2XInstallFunctor\033[102X (for IsCapFunctor, IsString)", "2.4-7", 
+      [ 2, 4, 7 ], 138, 11, "installfunctor for iscapfunctor isstring", 
+      "X781664C7876ED8A0" ], 
+  [ "\033[2XName\033[102X (for IsCapNaturalTransformation)", "2.5-1", 
+      [ 2, 5, 1 ], 147, 11, "name for iscapnaturaltransformation", 
+      "X7F32E8C985178781" ], 
+  [ "\033[2XNaturalTransformation\033[102X (for IsCapFunctor, IsCapFunctor)", 
+      "2.5-2", [ 2, 5, 2 ], 155, 12, 
+      "naturaltransformation for iscapfunctor iscapfunctor", 
+      "X7C9810B8858249A0" ], 
+  [ 
+      "\033[2XAddNaturalTransformationFunction\033[102X (for IsCapNaturalTransfor\
+mation, IsFunction)", "2.5-3", [ 2, 5, 3 ], 164, 12, 
+      "addnaturaltransformationfunction for iscapnaturaltransformation isfunct\
+ion", "X7DFC4C9183446E95" ], 
+  [ "\033[2XApplyNaturalTransformation\033[102X", "2.5-4", [ 2, 5, 4 ], 173, 
+      12, "applynaturaltransformation", "X867F8B6A78462396" ], 
+  [ 
+      "\033[2XInstallNaturalTransformation\033[102X (for IsCapNaturalTransformati\
+on, IsString)", "2.5-5", [ 2, 5, 5 ], 182, 12, 
+      "installnaturaltransformation for iscapnaturaltransformation isstring", 
+      "X79E6BE7E83687767" ], 
+  [ 
+      "\033[2XHorizontalPreComposeNaturalTransformationWithFunctor\033[102X (for \
+IsCapNaturalTransformation, IsCapFunctor)", "2.5-6", [ 2, 5, 6 ], 189, 12, 
+      "horizontalprecomposenaturaltransformationwithfunctor for iscapnaturaltr\
+ansformation iscapfunctor", "X7EAB133B81CDB5E5" ], 
+  [ 
+      "\033[2XHorizontalPreComposeFunctorWithNaturalTransformation\033[102X (for \
+IsCapFunctor, IsCapNaturalTransformation)", "2.5-7", [ 2, 5, 7 ], 196, 12, 
+      "horizontalprecomposefunctorwithnaturaltransformation for iscapfunctor i\
+scapnaturaltransformation", "X7B8AC0BB8370031D" ], 
+  [ "\033[2XCapCategory\033[102X (for IsCapCategoryMorphism)", "3.1-1", 
+      [ 3, 1, 1 ], 14, 13, "capcategory for iscapcategorymorphism", 
+      "X7E923036810C606E" ], 
+  [ "\033[2XSource\033[102X (for IsCapCategoryMorphism)", "3.1-2", 
+      [ 3, 1, 2 ], 22, 13, "source for iscapcategorymorphism", 
+      "X7E1373E385E7315A" ], 
+  [ "\033[2XRange\033[102X (for IsCapCategoryMorphism)", "3.1-3", 
+      [ 3, 1, 3 ], 30, 13, "range for iscapcategorymorphism", 
+      "X817496B987A1ADFC" ], 
+  [ "\033[2XAddIsMonomorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.2-1", [ 3, 2, 1 ], 41, 13, 
+      "addismonomorphism for iscapcategory isfunction", "X87DEC4BD7C48E679" ],
+  [ "\033[2XAddIsEpimorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.2-2", [ 3, 2, 2 ], 50, 14, 
+      "addisepimorphism for iscapcategory isfunction", "X8523850C827FE182" ], 
+  [ "\033[2XAddIsIsomorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.2-3", [ 3, 2, 3 ], 59, 14, 
+      "addisisomorphism for iscapcategory isfunction", "X7B0818ED7A7BBCB4" ], 
+  [ "\033[2XAddIsSplitMonomorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.2-4", [ 3, 2, 4 ], 68, 14, 
+      "addissplitmonomorphism for iscapcategory isfunction", 
+      "X7C5D46B77A65ACF2" ], 
+  [ "\033[2XAddIsSplitEpimorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.2-5", [ 3, 2, 5 ], 77, 14, 
+      "addissplitepimorphism for iscapcategory isfunction", 
+      "X7D7BDF8F7EED3A72" ], 
+  [ "\033[2XAddIsOne\033[102X (for IsCapCategory, IsFunction)", "3.2-6", 
+      [ 3, 2, 6 ], 86, 14, "addisone for iscapcategory isfunction", 
+      "X7FCC38DC7843D455" ], 
+  [ "\033[2XAddIsIdempotent\033[102X (for IsCapCategory, IsFunction)", 
+      "3.2-7", [ 3, 2, 7 ], 95, 14, 
+      "addisidempotent for iscapcategory isfunction", "X85701DBE7A5F90A1" ], 
+  [ "\033[2XIsIdenticalToIdentityMorphism\033[102X (for IsCapCategoryMorphism)\
+", "3.3-1", [ 3, 3, 1 ], 109, 15, 
+      "isidenticaltoidentitymorphism for iscapcategorymorphism", 
+      "X7E01690B7D763504" ], 
+  [ 
+      "\033[2XAddIsIdenticalToIdentityMorphism\033[102X (for IsCapCategory, IsFun\
+ction)", "3.3-2", [ 3, 3, 2 ], 117, 15, 
+      "addisidenticaltoidentitymorphism for iscapcategory isfunction", 
+      "X8507561F7E66719B" ], 
+  [ "\033[2XIsIdenticalToZeroMorphism\033[102X (for IsCapCategoryMorphism)", 
+      "3.3-3", [ 3, 3, 3 ], 127, 15, 
+      "isidenticaltozeromorphism for iscapcategorymorphism", 
+      "X82ED159481E8A2CF" ], 
+  [ 
+      "\033[2XAddIsIdenticalToZeroMorphism\033[102X (for IsCapCategory, IsFunctio\
+n)", "3.3-4", [ 3, 3, 4 ], 135, 15, 
+      "addisidenticaltozeromorphism for iscapcategory isfunction", 
+      "X8219E5A47E352C66" ], 
+  [ "\033[2XAddIsEndomorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.3-5", [ 3, 3, 5 ], 145, 15, 
+      "addisendomorphism for iscapcategory isfunction", "X87B1905481F6AF28" ],
+  [ "\033[2XAddIsAutomorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.3-6", [ 3, 3, 6 ], 154, 15, 
+      "addisautomorphism for iscapcategory isfunction", "X7FA3BD6D79D99498" ],
+  [ "\033[2XIsCongruentForMorphisms\033[102X (for IsCapCategoryMorphism, IsCap\
+CategoryMorphism)", "3.4-1", [ 3, 4, 1 ], 166, 16, 
+      "iscongruentformorphisms for iscapcategorymorphism iscapcategorymorphism\
+", "X7FABCFBF865F4179" ], 
+  [ 
+      "\033[2XAddIsCongruentForMorphisms\033[102X (for IsCapCategory, IsFunction)\
+", "3.4-2", [ 3, 4, 2 ], 174, 16, 
+      "addiscongruentformorphisms for iscapcategory isfunction", 
+      "X861A83B3802D0FBD" ], 
+  [ 
+      "\033[2XIsEqualForMorphisms\033[102X (for IsCapCategoryMorphism, IsCapCateg\
+oryMorphism)", "3.4-3", [ 3, 4, 3 ], 184, 16, 
+      "isequalformorphisms for iscapcategorymorphism iscapcategorymorphism", 
+      "X8004F1DA7D9BFA8B" ], 
+  [ "\033[2XAddIsEqualForMorphisms\033[102X (for IsCapCategory, IsFunction)", 
+      "3.4-4", [ 3, 4, 4 ], 192, 16, 
+      "addisequalformorphisms for iscapcategory isfunction", 
+      "X83F60F5F7E57F3C8" ], 
+  [ 
+      "\033[2XIsEqualForMorphismsOnMor\033[102X (for IsCapCategoryMorphism, IsCap\
+CategoryMorphism)", "3.4-5", [ 3, 4, 5 ], 202, 16, 
+      "isequalformorphismsonmor for iscapcategorymorphism iscapcategorymorphis\
+m", "X8589E5A4814C3DA5" ], 
+  [ 
+      "\033[2XAddIsEqualForMorphismsOnMor\033[102X (for IsCapCategory, IsFunction\
+)", "3.4-6", [ 3, 4, 6 ], 211, 16, 
+      "addisequalformorphismsonmor for iscapcategory isfunction", 
+      "X84AB81547A770D36" ], 
+  [ "\033[2XIsZeroForMorphisms\033[102X (for IsCapCategoryMorphism)", 
+      "3.5-1", [ 3, 5, 1 ], 224, 17, 
+      "iszeroformorphisms for iscapcategorymorphism", "X844684AD86DCC2DC" ], 
+  [ "\033[2XAddIsZeroForMorphisms\033[102X (for IsCapCategory, IsFunction)", 
+      "3.5-2", [ 3, 5, 2 ], 232, 17, 
+      "addiszeroformorphisms for iscapcategory isfunction", 
+      "X87DD3BD27C49450A" ], 
+  [ 
+      "\033[2XAdditionForMorphisms\033[102X (for IsCapCategoryMorphism, IsCapCate\
+goryMorphism)", "3.5-3", [ 3, 5, 3 ], 241, 17, 
+      "additionformorphisms for iscapcategorymorphism iscapcategorymorphism", 
+      "X83B77FBB85927F14" ], 
+  [ "\033[2XAddAdditionForMorphisms\033[102X (for IsCapCategory, IsFunction)",
+      "3.5-4", [ 3, 5, 4 ], 249, 17, 
+      "addadditionformorphisms for iscapcategory isfunction", 
+      "X811BB502781CFBB9" ], 
+  [ "\033[2XAdditiveInverseForMorphisms\033[102X (for IsCapCategoryMorphism)",
+      "3.5-5", [ 3, 5, 5 ], 258, 17, 
+      "additiveinverseformorphisms for iscapcategorymorphism", 
+      "X83177713785DCFFC" ], 
+  [ 
+      "\033[2XAddAdditiveInverseForMorphisms\033[102X (for IsCapCategory, IsFunct\
+ion)", "3.5-6", [ 3, 5, 6 ], 266, 17, 
+      "addadditiveinverseformorphisms for iscapcategory isfunction", 
+      "X7AB78A707BF08401" ], 
+  [ 
+      "\033[2XZeroMorphism\033[102X (for IsCapCategoryObject, IsCapCategoryObject\
+)", "3.5-7", [ 3, 5, 7 ], 275, 17, 
+      "zeromorphism for iscapcategoryobject iscapcategoryobject", 
+      "X873412DB7BD0FBD3" ], 
+  [ "\033[2XAddZeroMorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.5-8", [ 3, 5, 8 ], 283, 18, 
+      "addzeromorphism for iscapcategory isfunction", "X824C08CE7D7FB387" ], 
+  [ "\033[2XIsEqualAsSubobjects\033[102X (for IsCapCategoryMorphism, IsCapCate\
+goryMorphism)", "3.6-1", [ 3, 6, 1 ], 299, 18, 
+      "isequalassubobjects for iscapcategorymorphism iscapcategorymorphism", 
+      "X7E99DAA884674DE2" ], 
+  [ "\033[2XAddIsEqualAsSubobjects\033[102X (for IsCapCategory, IsFunction)", 
+      "3.6-2", [ 3, 6, 2 ], 309, 18, 
+      "addisequalassubobjects for iscapcategory isfunction", 
+      "X7A97D3C3869323D1" ], 
+  [ 
+      "\033[2XIsEqualAsFactorobjects\033[102X (for IsCapCategoryMorphism, IsCapCa\
+tegoryMorphism)", "3.6-3", [ 3, 6, 3 ], 319, 18, 
+      "isequalasfactorobjects for iscapcategorymorphism iscapcategorymorphism"
+        , "X79389FBF86CF87A4" ], 
+  [ 
+      "\033[2XAddIsEqualAsFactorobjects\033[102X (for IsCapCategory, IsFunction)"
+        , "3.6-4", [ 3, 6, 4 ], 329, 18, 
+      "addisequalasfactorobjects for iscapcategory isfunction", 
+      "X82DE9AE387425307" ], 
+  [ 
+      "\033[2XIsDominating\033[102X (for IsCapCategoryMorphism, IsCapCategoryMorp\
+hism)", "3.6-5", [ 3, 6, 5 ], 339, 18, 
+      "isdominating for iscapcategorymorphism iscapcategorymorphism", 
+      "X7C21531C7EE65C72" ], 
+  [ "\033[2XAddIsDominating\033[102X (for IsCapCategory, IsFunction)", 
+      "3.6-6", [ 3, 6, 6 ], 350, 19, 
+      "addisdominating for iscapcategory isfunction", "X834AC612831DDD11" ], 
+  [ "\033[2XIsCodominating\033[102X (for IsCapCategoryMorphism, IsCapCategoryM\
+orphism)", "3.6-7", [ 3, 6, 7 ], 359, 19, 
+      "iscodominating for iscapcategorymorphism iscapcategorymorphism", 
+      "X7C77E9D479C8D502" ], 
+  [ "\033[2XAddIsCodominating\033[102X (for IsCapCategory, IsFunction)", 
+      "3.6-8", [ 3, 6, 8 ], 370, 19, 
+      "addiscodominating for iscapcategory isfunction", "X78E046E387674019" ],
+  [ "\033[2XIdentityMorphism\033[102X (for IsCapCategoryObject)", "3.7-1", 
+      [ 3, 7, 1 ], 382, 19, "identitymorphism for iscapcategoryobject", 
+      "X7C9F3D8086238443" ], 
+  [ "\033[2XAddIdentityMorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "3.7-2", [ 3, 7, 2 ], 390, 19, 
+      "addidentitymorphism for iscapcategory isfunction", "X878F4D2481E94EB6" 
+     ], 
+  [ 
+      "\033[2XPreCompose\033[102X (for IsCapCategoryMorphism, IsCapCategoryMorphi\
+sm)", "3.7-3", [ 3, 7, 3 ], 399, 19, 
+      "precompose for iscapcategorymorphism iscapcategorymorphism", 
+      "X8244F7A0868BE27D" ], 
+  [ "\033[2XPreCompose\033[102X (for IsList)", "3.7-4", [ 3, 7, 4 ], 408, 20, 
+      "precompose for islist", "X83CB57FB81931CFE" ], 
+  [ "\033[2XAddPreCompose\033[102X (for IsCapCategory, IsFunction)", "3.7-5", 
+      [ 3, 7, 5 ], 419, 20, "addprecompose for iscapcategory isfunction", 
+      "X868C87097D322509" ], 
+  [ 
+      "\033[2XPostCompose\033[102X (for IsCapCategoryMorphism, IsCapCategoryMorph\
+ism)", "3.7-6", [ 3, 7, 6 ], 428, 20, 
+      "postcompose for iscapcategorymorphism iscapcategorymorphism", 
+      "X84293B8381256A08" ], 
+  [ "\033[2XPostCompose\033[102X (for IsList)", "3.7-7", [ 3, 7, 7 ], 437, 
+      20, "postcompose for islist", "X81222A1084A4F637" ], 
+  [ "\033[2XAddPostCompose\033[102X (for IsCapCategory, IsFunction)", 
+      "3.7-8", [ 3, 7, 8 ], 447, 20, 
+      "addpostcompose for iscapcategory isfunction", "X853E87F47F9FC287" ], 
+  [ "\033[2XIsWellDefinedForMorphisms\033[102X (for IsCapCategoryMorphism)", 
+      "3.8-1", [ 3, 8, 1 ], 459, 20, 
+      "iswelldefinedformorphisms for iscapcategorymorphism", 
+      "X7968A871832877B8" ], 
+  [ 
+      "\033[2XAddIsWellDefinedForMorphisms\033[102X (for IsCapCategory, IsFunctio\
+n)", "3.8-2", [ 3, 8, 2 ], 467, 20, 
+      "addiswelldefinedformorphisms for iscapcategory isfunction", 
+      "X7A4BE39A83D2A730" ], 
+  [ 
+      "\033[2XLiftAlongMonomorphism\033[102X (for IsCapCategoryMorphism, IsCapCat\
+egoryMorphism)", "3.9-1", [ 3, 9, 1 ], 480, 21, 
+      "liftalongmonomorphism for iscapcategorymorphism iscapcategorymorphism",
+      "X83CDF65582CD9921" ], 
+  [ "\033[2XAddLiftAlongMonomorphism\033[102X (for IsCapCategory, IsFunction)"
+        , "3.9-2", [ 3, 9, 2 ], 489, 21, 
+      "addliftalongmonomorphism for iscapcategory isfunction", 
+      "X869A19337CB3059E" ], 
+  [ 
+      "\033[2XColiftAlongEpimorphism\033[102X (for IsCapCategoryMorphism, IsCapCa\
+tegoryMorphism)", "3.9-3", [ 3, 9, 3 ], 499, 21, 
+      "coliftalongepimorphism for iscapcategorymorphism iscapcategorymorphism"
+        , "X79AA9F638487EE32" ], 
+  [ 
+      "\033[2XAddColiftAlongEpimorphism\033[102X (for IsCapCategory, IsFunction)"
+        , "3.9-4", [ 3, 9, 4 ], 508, 21, 
+      "addcoliftalongepimorphism for iscapcategory isfunction", 
+      "X7BBEF7C479E612ED" ], 
+  [ "\033[2XLift\033[102X (for IsCapCategoryMorphism, IsCapCategoryMorphism)",
+      "3.10-1", [ 3, 10, 1 ], 537, 22, 
+      "lift for iscapcategorymorphism iscapcategorymorphism", 
+      "X87C471D583C1CD9E" ], 
+  [ "\033[2XAddLift\033[102X (for IsCapCategory, IsFunction)", "3.10-2", 
+      [ 3, 10, 2 ], 548, 22, "addlift for iscapcategory isfunction", 
+      "X7DA9346A8517648D" ], 
+  [ 
+      "\033[2XColift\033[102X (for IsCapCategoryMorphism, IsCapCategoryMorphism)"
+        , "3.10-3", [ 3, 10, 3 ], 558, 22, 
+      "colift for iscapcategorymorphism iscapcategorymorphism", 
+      "X7BA38B0F797AFE20" ], 
+  [ "\033[2XAddColift\033[102X (for IsCapCategory, IsFunction)", "3.10-4", 
+      [ 3, 10, 4 ], 569, 22, "addcolift for iscapcategory isfunction", 
+      "X84A7986F82ED769E" ], 
+  [ "\033[2XAddInverse\033[102X (for IsCapCategory, IsFunction)", "3.11-1", 
+      [ 3, 11, 1 ], 587, 22, "addinverse for iscapcategory isfunction", 
+      "X7A6B4970823DDAE6" ], 
+  [ 
+      "\033[2XIsEqualForCacheForMorphisms\033[102X (for IsCapCategoryMorphism, Is\
+CapCategoryMorphism)", "3.12-1", [ 3, 12, 1 ], 599, 23, 
+      "isequalforcacheformorphisms for iscapcategorymorphism iscapcategorymorp\
+hism", "X83F87AE07ED534ED" ], 
+  [ 
+      "\033[2XAddIsEqualForCacheForMorphisms\033[102X (for IsCapCategory, IsFunct\
+ion)", "3.12-2", [ 3, 12, 2 ], 606, 23, 
+      "addisequalforcacheformorphisms for iscapcategory isfunction", 
+      "X833165B27AA74580" ], 
+  [ "\033[2XCapCategory\033[102X (for IsCapCategoryObject)", "4.1-1", 
+      [ 4, 1, 1 ], 14, 24, "capcategory for iscapcategoryobject", 
+      "X7C3B8C3D865002C8" ], 
+  [ 
+      "\033[2XIsEqualForObjects\033[102X (for IsCapCategoryObject, IsCapCategoryO\
+bject)", "4.2-1", [ 4, 2, 1 ], 25, 24, 
+      "isequalforobjects for iscapcategoryobject iscapcategoryobject", 
+      "X8337569D81C0BBEC" ], 
+  [ "\033[2XAddIsEqualForObjects\033[102X (for IsCapCategory, IsFunction)", 
+      "4.2-2", [ 4, 2, 2 ], 33, 24, 
+      "addisequalforobjects for iscapcategory isfunction", 
+      "X787F654B82150781" ], 
+  [ "\033[2XAddIsProjective\033[102X (for IsCapCategory, IsFunction)", 
+      "4.3-1", [ 4, 3, 1 ], 45, 25, 
+      "addisprojective for iscapcategory isfunction", "X865C78CF789DA86D" ], 
+  [ "\033[2XAddIsInjective\033[102X (for IsCapCategory, IsFunction)", 
+      "4.3-2", [ 4, 3, 2 ], 54, 25, 
+      "addisinjective for iscapcategory isfunction", "X7F7F309F7C67D6CE" ], 
+  [ "\033[2XAddIsTerminal\033[102X (for IsCapCategory, IsFunction)", "4.3-3", 
+      [ 4, 3, 3 ], 63, 25, "addisterminal for iscapcategory isfunction", 
+      "X7EDB2D5B7F234ADA" ], 
+  [ "\033[2XAddIsInitial\033[102X (for IsCapCategory, IsFunction)", "4.3-4", 
+      [ 4, 3, 4 ], 72, 25, "addisinitial for iscapcategory isfunction", 
+      "X7E6EDA9484F3E6F6" ], 
+  [ "\033[2XIsZeroForObjects\033[102X (for IsCapCategoryObject)", "4.3-5", 
+      [ 4, 3, 5 ], 81, 25, "iszeroforobjects for iscapcategoryobject", 
+      "X856FA5E084753312" ], 
+  [ "\033[2XAddIsZeroForObjects\033[102X (for IsCapCategory, IsFunction)", 
+      "4.3-6", [ 4, 3, 6 ], 90, 25, 
+      "addiszeroforobjects for iscapcategory isfunction", "X78C3E7BF78A9A7D5" 
+     ], 
+  [ 
+      "\033[2XIsEqualForCacheForObjects\033[102X (for IsCapCategoryObject, IsCapC\
+ategoryObject)", "4.4-1", [ 4, 4, 1 ], 102, 26, 
+      "isequalforcacheforobjects for iscapcategoryobject iscapcategoryobject",
+      "X7BAE9BBC874635CB" ], 
+  [ 
+      "\033[2XAddIsEqualForCacheForObjects\033[102X (for IsCapCategory, IsFunctio\
+n)", "4.4-2", [ 4, 4, 2 ], 109, 26, 
+      "addisequalforcacheforobjects for iscapcategory isfunction", 
+      "X7887D32C7973F4A0" ], 
+  [ "\033[2XIsWellDefinedForObjects\033[102X (for IsCapCategoryObject)", 
+      "4.5-1", [ 4, 5, 1 ], 126, 26, 
+      "iswelldefinedforobjects for iscapcategoryobject", "X7F9A38A187D9ABFA" ]
+    , 
+  [ 
+      "\033[2XAddIsWellDefinedForObjects\033[102X (for IsCapCategory, IsFunction)\
+", "4.5-2", [ 4, 5, 2 ], 134, 26, 
+      "addiswelldefinedforobjects for iscapcategory isfunction", 
+      "X859219147B3058B8" ], 
+  [ "\033[2XSource\033[102X (for IsCapCategoryTwoCell)", "5.1-1", 
+      [ 5, 1, 1 ], 7, 27, "source for iscapcategorytwocell", 
+      "X8061EB36809022A4" ], 
+  [ "\033[2XRange\033[102X (for IsCapCategoryTwoCell)", "5.1-2", [ 5, 1, 2 ], 
+      15, 27, "range for iscapcategorytwocell", "X7C16D44B8639016B" ], 
+  [ "\033[2XIdentityTwoCell\033[102X (for IsCapCategoryMorphism)", "5.2-1", 
+      [ 5, 2, 1 ], 26, 27, "identitytwocell for iscapcategorymorphism", 
+      "X78ED1F327D902924" ], 
+  [ "\033[2XAddIdentityTwoCell\033[102X (for IsCapCategory, IsFunction)", 
+      "5.2-2", [ 5, 2, 2 ], 34, 27, 
+      "addidentitytwocell for iscapcategory isfunction", "X85B4A2607CDFC0D2" ]
+    , 
+  [ 
+      "\033[2XHorizontalPreCompose\033[102X (for IsCapCategoryTwoCell, IsCapCateg\
+oryTwoCell)", "5.2-3", [ 5, 2, 3 ], 43, 27, 
+      "horizontalprecompose for iscapcategorytwocell iscapcategorytwocell", 
+      "X7DD9EB1F80921939" ], 
+  [ "\033[2XAddHorizontalPreCompose\033[102X (for IsCapCategory, IsFunction)",
+      "5.2-4", [ 5, 2, 4 ], 53, 28, 
+      "addhorizontalprecompose for iscapcategory isfunction", 
+      "X7C759D3A7CB3FA3A" ], 
+  [ 
+      "\033[2XHorizontalPostCompose\033[102X (for IsCapCategoryTwoCell, IsCapCate\
+goryTwoCell)", "5.2-5", [ 5, 2, 5 ], 62, 28, 
+      "horizontalpostcompose for iscapcategorytwocell iscapcategorytwocell", 
+      "X87C942B87C6A161D" ], 
+  [ "\033[2XAddHorizontalPostCompose\033[102X (for IsCapCategory, IsFunction)"
+        , "5.2-6", [ 5, 2, 6 ], 72, 28, 
+      "addhorizontalpostcompose for iscapcategory isfunction", 
+      "X80B2FA2F7C2E2BDA" ], 
+  [ 
+      "\033[2XVerticalPreCompose\033[102X (for IsCapCategoryTwoCell, IsCapCategor\
+yTwoCell)", "5.2-7", [ 5, 2, 7 ], 81, 28, 
+      "verticalprecompose for iscapcategorytwocell iscapcategorytwocell", 
+      "X7D89385B7834B086" ], 
+  [ "\033[2XAddVerticalPreCompose\033[102X (for IsCapCategory, IsFunction)", 
+      "5.2-8", [ 5, 2, 8 ], 91, 28, 
+      "addverticalprecompose for iscapcategory isfunction", 
+      "X85F4507081F229DD" ], 
+  [ 
+      "\033[2XVerticalPostCompose\033[102X (for IsCapCategoryTwoCell, IsCapCatego\
+ryTwoCell)", "5.2-9", [ 5, 2, 9 ], 100, 28, 
+      "verticalpostcompose for iscapcategorytwocell iscapcategorytwocell", 
+      "X79D9FBEA851C4F00" ], 
+  [ "\033[2XAddVerticalPostCompose\033[102X (for IsCapCategory, IsFunction)", 
+      "5.2-10", [ 5, 2, 10 ], 110, 28, 
+      "addverticalpostcompose for iscapcategory isfunction", 
+      "X7AA662D58265F658" ], 
+  [ "\033[2XIsWellDefinedForTwoCells\033[102X (for IsCapCategoryTwoCell)", 
+      "5.3-1", [ 5, 3, 1 ], 122, 29, 
+      "iswelldefinedfortwocells for iscapcategorytwocell", 
+      "X8240AF367C87663F" ], 
+  [ 
+      "\033[2XAddIsWellDefinedForTwoCells\033[102X (for IsCapCategory, IsFunction\
+)", "5.3-2", [ 5, 3, 2 ], 130, 29, 
+      "addiswelldefinedfortwocells for iscapcategory isfunction", 
+      "X7EE52A1587E15D94" ], 
+  [ "\033[2XKernelObject\033[102X (for IsCapCategoryMorphism)", "6.1-1", 
+      [ 6, 1, 1 ], 29, 30, "kernelobject for iscapcategorymorphism", 
+      "X82EAD3357C9FE4C8" ], 
+  [ "\033[2XKernelEmbedding\033[102X (for IsCapCategoryMorphism)", "6.1-2", 
+      [ 6, 1, 2 ], 36, 30, "kernelembedding for iscapcategorymorphism", 
+      "X8430666980D732FB" ], 
+  [ "\033[2XKernelEmbedding\033[102X (for IsCapCategoryObject)", "6.1-3", 
+      [ 6, 1, 3 ], 44, 30, "kernelembedding for iscapcategoryobject", 
+      "X7856D2AE84C2A362" ], 
+  [ 
+      "\033[2XKernelEmbeddingWithGivenKernelObject\033[102X (for IsCapCategoryMor\
+phism, IsCapCategoryObject)", "6.1-4", [ 6, 1, 4 ], 52, 31, 
+      "kernelembeddingwithgivenkernelobject for iscapcategorymorphism iscapcat\
+egoryobject", "X7CBE1D0C84F5A47E" ], 
+  [ 
+      "\033[2XKernelLift\033[102X (for IsCapCategoryObject, IsCapCategoryMorphism\
+)", "6.1-5", [ 6, 1, 5 ], 61, 31, 
+      "kernellift for iscapcategoryobject iscapcategorymorphism", 
+      "X85F0D73C85AB9616" ], 
+  [ 
+      "\033[2XKernelLift\033[102X (for IsCapCategoryMorphism, IsCapCategoryMorphi\
+sm)", "6.1-6", [ 6, 1, 6 ], 71, 31, 
+      "kernellift for iscapcategorymorphism iscapcategorymorphism", 
+      "X851623317C59DDE5" ], 
+  [ 
+      "\033[2XKernelLiftWithGivenKernelObject\033[102X (for IsCapCategoryMorphism\
+, IsCapCategoryMorphism, IsCapCategoryObject)", "6.1-7", [ 6, 1, 7 ], 81, 31, 
+      "kernelliftwithgivenkernelobject for iscapcategorymorphism iscapcategory\
+morphism iscapcategoryobject", "X80B3CF1A7E2C6783" ], 
+  [ "\033[2XAddKernelObject\033[102X (for IsCapCategory, IsFunction)", 
+      "6.1-8", [ 6, 1, 8 ], 91, 31, 
+      "addkernelobject for iscapcategory isfunction", "X8681E565875A8C03" ], 
+  [ "\033[2XAddKernelEmbedding\033[102X (for IsCapCategory, IsFunction)", 
+      "6.1-9", [ 6, 1, 9 ], 100, 31, 
+      "addkernelembedding for iscapcategory isfunction", "X788D35FA8050DA84" ]
+    , 
+  [ 
+      "\033[2XAddKernelEmbeddingWithGivenKernelObject\033[102X (for IsCapCategory\
+, IsFunction)", "6.1-10", [ 6, 1, 10 ], 109, 32, 
+      "addkernelembeddingwithgivenkernelobject for iscapcategory isfunction", 
+      "X87668C2183C9E8A1" ], 
+  [ "\033[2XAddKernelLift\033[102X (for IsCapCategory, IsFunction)", 
+      "6.1-11", [ 6, 1, 11 ], 118, 32, 
+      "addkernellift for iscapcategory isfunction", "X7A3F184085748DE6" ], 
+  [ 
+      "\033[2XAddKernelLiftWithGivenKernelObject\033[102X (for IsCapCategory, IsF\
+unction)", "6.1-12", [ 6, 1, 12 ], 127, 32, 
+      "addkernelliftwithgivenkernelobject for iscapcategory isfunction", 
+      "X7D6119357E10B4DA" ], 
+  [ "\033[2XKernelObjectFunctorial\033[102X (for IsList)", "6.1-13", 
+      [ 6, 1, 13 ], 136, 32, "kernelobjectfunctorial for islist", 
+      "X78D5B94A7EF4D4F0" ], 
+  [ 
+      "\033[2XKernelObjectFunctorial\033[102X (for IsCapCategoryMorphism, IsCapCa\
+tegoryMorphism, IsCapCategoryMorphism)", "6.1-14", [ 6, 1, 14 ], 147, 32, 
+      "kernelobjectfunctorial for iscapcategorymorphism iscapcategorymorphism \
+iscapcategorymorphism", "X787AE8F07F7A062C" ], 
+  [ 
+      "\033[2XAddKernelObjectFunctorial\033[102X (for IsCapCategory, IsFunction)"
+        , "6.1-15", [ 6, 1, 15 ], 158, 32, 
+      "addkernelobjectfunctorial for iscapcategory isfunction", 
+      "X818A1E2C82034517" ], 
+  [ "\033[2XCokernelObject\033[102X (for IsCapCategoryMorphism)", "6.2-1", 
+      [ 6, 2, 1 ], 194, 33, "cokernelobject for iscapcategorymorphism", 
+      "X82803DBC80F40EFC" ], 
+  [ "\033[2XCokernelProjection\033[102X (for IsCapCategoryMorphism)", 
+      "6.2-2", [ 6, 2, 2 ], 202, 33, 
+      "cokernelprojection for iscapcategorymorphism", "X78948D7A7B52AB31" ], 
+  [ "\033[2XCokernelProjection\033[102X (for IsCapCategoryObject)", "6.2-3", 
+      [ 6, 2, 3 ], 211, 33, "cokernelprojection for iscapcategoryobject", 
+      "X822628AF7C3C8F5B" ], 
+  [ 
+      "\033[2XCokernelProjectionWithGivenCokernelObject\033[102X (for IsCapCatego\
+ryMorphism, IsCapCategoryObject)", "6.2-4", [ 6, 2, 4 ], 220, 33, 
+      "cokernelprojectionwithgivencokernelobject for iscapcategorymorphism isc\
+apcategoryobject", "X845DC9377A05BE7B" ], 
+  [ 
+      "\033[2XCokernelColift\033[102X (for IsCapCategoryObject, IsCapCategoryMorp\
+hism)", "6.2-5", [ 6, 2, 5 ], 229, 34, 
+      "cokernelcolift for iscapcategoryobject iscapcategorymorphism", 
+      "X7DF211358420A6AA" ], 
+  [ 
+      "\033[2XCokernelColift\033[102X (for IsCapCategoryMorphism, IsCapCategoryMo\
+rphism)", "6.2-6", [ 6, 2, 6 ], 239, 34, 
+      "cokernelcolift for iscapcategorymorphism iscapcategorymorphism", 
+      "X7EA0944B81F119C8" ], 
+  [ 
+      "\033[2XCokernelColiftWithGivenCokernelObject\033[102X (for IsCapCategoryMo\
+rphism, IsCapCategoryMorphism, IsCapCategoryObject)", "6.2-7", [ 6, 2, 7 ], 
+      249, 34, 
+      "cokernelcoliftwithgivencokernelobject for iscapcategorymorphism iscapca\
+tegorymorphism iscapcategoryobject", "X7B3F7C3A7B6CEEE1" ], 
+  [ "\033[2XAddCokernelObject\033[102X (for IsCapCategory, IsFunction)", 
+      "6.2-8", [ 6, 2, 8 ], 259, 34, 
+      "addcokernelobject for iscapcategory isfunction", "X7827637D7B8E7E60" ],
+  [ "\033[2XAddCokernelProjection\033[102X (for IsCapCategory, IsFunction)", 
+      "6.2-9", [ 6, 2, 9 ], 268, 34, 
+      "addcokernelprojection for iscapcategory isfunction", 
+      "X7D9723AA7E4EAC2A" ], 
+  [ 
+      "\033[2XAddCokernelProjectionWithGivenCokernelObject\033[102X (for IsCapCat\
+egory, IsFunction)", "6.2-10", [ 6, 2, 10 ], 277, 34, 
+      "addcokernelprojectionwithgivencokernelobject for iscapcategory isfuncti\
+on", "X793803DC816CBA27" ], 
+  [ "\033[2XAddCokernelColift\033[102X (for IsCapCategory, IsFunction)", 
+      "6.2-11", [ 6, 2, 11 ], 286, 35, 
+      "addcokernelcolift for iscapcategory isfunction", "X7988858A83DAFF4B" ],
+  [ "\033[2XAddCokernelColiftWithGivenCokernelObject\033[102X (for IsCapCatego\
+ry, IsFunction)", "6.2-12", [ 6, 2, 12 ], 295, 35, 
+      "addcokernelcoliftwithgivencokernelobject for iscapcategory isfunction",
+      "X7991C43079F444CC" ], 
+  [ "\033[2XCokernelFunctorial\033[102X (for IsList)", "6.2-13", 
+      [ 6, 2, 13 ], 304, 35, "cokernelfunctorial for islist", 
+      "X8666A7B27ECEA3E9" ], 
+  [ 
+      "\033[2XCokernelFunctorial\033[102X (for IsCapCategoryMorphism, IsCapCatego\
+ryMorphism, IsCapCategoryMorphism)", "6.2-14", [ 6, 2, 14 ], 316, 35, 
+      "cokernelfunctorial for iscapcategorymorphism iscapcategorymorphism isca\
+pcategorymorphism", "X87EB2A94837E31F7" ], 
+  [ "\033[2XAddCokernelFunctorial\033[102X (for IsCapCategory, IsFunction)", 
+      "6.2-15", [ 6, 2, 15 ], 327, 35, 
+      "addcokernelfunctorial for iscapcategory isfunction", 
+      "X797742D77BFD64B3" ], 
+  [ "\033[2XZeroObject\033[102X (for IsCapCategory)", "6.3-1", [ 6, 3, 1 ], 
+      357, 36, "zeroobject for iscapcategory", "X790C4FA87CADB93E" ], 
+  [ "\033[2XZeroObject\033[102X (for IsCapCategoryCell)", "6.3-2", 
+      [ 6, 3, 2 ], 364, 36, "zeroobject for iscapcategorycell", 
+      "X87D87A177FE0542F" ], 
+  [ "\033[2XMorphismFromZeroObject\033[102X (for IsCapCategoryObject)", 
+      "6.3-3", [ 6, 3, 3 ], 372, 36, 
+      "morphismfromzeroobject for iscapcategoryobject", "X7F701A11812C74C5" ],
+  [ "\033[2XMorphismIntoZeroObject\033[102X (for IsCapCategoryObject)", 
+      "6.3-4", [ 6, 3, 4 ], 380, 36, 
+      "morphismintozeroobject for iscapcategoryobject", "X837BD808791003FF" ],
+  [ "\033[2XUniversalMorphismFromZeroObject\033[102X (for IsCapCategoryObject)\
+", "6.3-5", [ 6, 3, 5 ], 388, 36, 
+      "universalmorphismfromzeroobject for iscapcategoryobject", 
+      "X7A0BF1118777C8A3" ], 
+  [ 
+      "\033[2XUniversalMorphismFromZeroObjectWithGivenZeroObject\033[102X (for Is\
+CapCategoryObject, IsCapCategoryObject)", "6.3-6", [ 6, 3, 6 ], 396, 36, 
+      "universalmorphismfromzeroobjectwithgivenzeroobject for iscapcategoryobj\
+ect iscapcategoryobject", "X80327B2387F38FE8" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoZeroObject\033[102X (for IsCapCategoryObject)"
+        , "6.3-7", [ 6, 3, 7 ], 404, 37, 
+      "universalmorphismintozeroobject for iscapcategoryobject", 
+      "X86003308844F8341" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoZeroObjectWithGivenZeroObject\033[102X (for Is\
+CapCategoryObject, IsCapCategoryObject)", "6.3-8", [ 6, 3, 8 ], 412, 37, 
+      "universalmorphismintozeroobjectwithgivenzeroobject for iscapcategoryobj\
+ect iscapcategoryobject", "X866104CA84CBC40A" ], 
+  [ 
+      "\033[2XIsomorphismFromZeroObjectToInitialObject\033[102X (for IsCapCategor\
+y)", "6.3-9", [ 6, 3, 9 ], 420, 37, 
+      "isomorphismfromzeroobjecttoinitialobject for iscapcategory", 
+      "X8711ABE9811C7CCF" ], 
+  [ 
+      "\033[2XIsomorphismFromInitialObjectToZeroObject\033[102X (for IsCapCategor\
+y)", "6.3-10", [ 6, 3, 10 ], 429, 37, 
+      "isomorphismfrominitialobjecttozeroobject for iscapcategory", 
+      "X86FF82B284B8E2EB" ], 
+  [ 
+      "\033[2XIsomorphismFromZeroObjectToTerminalObject\033[102X (for IsCapCatego\
+ry)", "6.3-11", [ 6, 3, 11 ], 438, 37, 
+      "isomorphismfromzeroobjecttoterminalobject for iscapcategory", 
+      "X78C501A179BB6CBB" ], 
+  [ 
+      "\033[2XIsomorphismFromTerminalObjectToZeroObject\033[102X (for IsCapCatego\
+ry)", "6.3-12", [ 6, 3, 12 ], 447, 37, 
+      "isomorphismfromterminalobjecttozeroobject for iscapcategory", 
+      "X83E84FC187EE2445" ], 
+  [ "\033[2XAddZeroObject\033[102X (for IsCapCategory, IsFunction)", 
+      "6.3-13", [ 6, 3, 13 ], 456, 37, 
+      "addzeroobject for iscapcategory isfunction", "X7F0111277DF3FB7E" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoZeroObject\033[102X (for IsCapCategory, IsF\
+unction)", "6.3-14", [ 6, 3, 14 ], 465, 38, 
+      "adduniversalmorphismintozeroobject for iscapcategory isfunction", 
+      "X7CAC035583A3BD60" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoZeroObjectWithGivenZeroObject\033[102X (for\
+ IsCapCategory, IsFunction)", "6.3-15", [ 6, 3, 15 ], 474, 38, 
+      "adduniversalmorphismintozeroobjectwithgivenzeroobject for iscapcategory\
+ isfunction", "X8550CFE1804A9965" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromZeroObject\033[102X (for IsCapCategory, IsF\
+unction)", "6.3-16", [ 6, 3, 16 ], 484, 38, 
+      "adduniversalmorphismfromzeroobject for iscapcategory isfunction", 
+      "X873263B37942E963" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromZeroObjectWithGivenZeroObject\033[102X (for\
+ IsCapCategory, IsFunction)", "6.3-17", [ 6, 3, 17 ], 493, 38, 
+      "adduniversalmorphismfromzeroobjectwithgivenzeroobject for iscapcategory\
+ isfunction", "X8396EFB87AABCD66" ], 
+  [ 
+      "\033[2XAddIsomorphismFromZeroObjectToInitialObject\033[102X (for IsCapCate\
+gory, IsFunction)", "6.3-18", [ 6, 3, 18 ], 503, 38, 
+      "addisomorphismfromzeroobjecttoinitialobject for iscapcategory isfunctio\
+n", "X8084DA9E870DF7DB" ], 
+  [ 
+      "\033[2XAddIsomorphismFromInitialObjectToZeroObject\033[102X (for IsCapCate\
+gory, IsFunction)", "6.3-19", [ 6, 3, 19 ], 513, 38, 
+      "addisomorphismfrominitialobjecttozeroobject for iscapcategory isfunctio\
+n", "X876F82038640430A" ], 
+  [ 
+      "\033[2XAddIsomorphismFromZeroObjectToTerminalObject\033[102X (for IsCapCat\
+egory, IsFunction)", "6.3-20", [ 6, 3, 20 ], 523, 39, 
+      "addisomorphismfromzeroobjecttoterminalobject for iscapcategory isfuncti\
+on", "X7BDED1CE7F0FADE9" ], 
+  [ 
+      "\033[2XAddIsomorphismFromTerminalObjectToZeroObject\033[102X (for IsCapCat\
+egory, IsFunction)", "6.3-21", [ 6, 3, 21 ], 533, 39, 
+      "addisomorphismfromterminalobjecttozeroobject for iscapcategory isfuncti\
+on", "X85A29A037839B32B" ], 
+  [ "\033[2XTerminalObject\033[102X (for IsCapCategory)", "6.4-1", 
+      [ 6, 4, 1 ], 560, 39, "terminalobject for iscapcategory", 
+      "X7DC837217946D22D" ], 
+  [ "\033[2XTerminalObject\033[102X (for IsCapCategoryCell)", "6.4-2", 
+      [ 6, 4, 2 ], 567, 39, "terminalobject for iscapcategorycell", 
+      "X7D86D2EA7845AEEB" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoTerminalObject\033[102X (for IsCapCategoryObje\
+ct)", "6.4-3", [ 6, 4, 3 ], 575, 40, 
+      "universalmorphismintoterminalobject for iscapcategoryobject", 
+      "X7BEA5AF67D63F4A5" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoTerminalObjectWithGivenTerminalObject\033[102X\
+ (for IsCapCategoryObject, IsCapCategoryObject)", "6.4-4", [ 6, 4, 4 ], 583, 
+      40, 
+      "universalmorphismintoterminalobjectwithgiventerminalobject for iscapcat\
+egoryobject iscapcategoryobject", "X8707AD1784DCBBFF" ], 
+  [ "\033[2XAddTerminalObject\033[102X (for IsCapCategory, IsFunction)", 
+      "6.4-5", [ 6, 4, 5 ], 591, 40, 
+      "addterminalobject for iscapcategory isfunction", "X7C4B4B7F8009501B" ],
+  [ "\033[2XAddUniversalMorphismIntoTerminalObject\033[102X (for IsCapCategory\
+, IsFunction)", "6.4-6", [ 6, 4, 6 ], 600, 40, 
+      "adduniversalmorphismintoterminalobject for iscapcategory isfunction", 
+      "X84D7DDAF835BDFA3" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoTerminalObjectWithGivenTerminalObject\033[1\
+02X (for IsCapCategory, IsFunction)", "6.4-7", [ 6, 4, 7 ], 609, 40, 
+      "adduniversalmorphismintoterminalobjectwithgiventerminalobject for iscap\
+category isfunction", "X8230986A7821D9B4" ], 
+  [ "\033[2XTerminalObjectFunctorial\033[102X (for IsCapCategory)", "6.4-8", 
+      [ 6, 4, 8 ], 619, 40, "terminalobjectfunctorial for iscapcategory", 
+      "X7C616CD287760D2F" ], 
+  [ 
+      "\033[2XAddTerminalObjectFunctorial\033[102X (for IsCapCategory, IsFunction\
+)", "6.4-9", [ 6, 4, 9 ], 628, 40, 
+      "addterminalobjectfunctorial for iscapcategory isfunction", 
+      "X82ED99F9845D2DA7" ], 
+  [ "\033[2XInitialObject\033[102X (for IsCapCategory)", "6.5-1", 
+      [ 6, 5, 1 ], 654, 41, "initialobject for iscapcategory", 
+      "X7A70384E7F182B00" ], 
+  [ "\033[2XInitialObject\033[102X (for IsCapCategoryCell)", "6.5-2", 
+      [ 6, 5, 2 ], 661, 41, "initialobject for iscapcategorycell", 
+      "X7E17CDF481C348B9" ], 
+  [ 
+      "\033[2XUniversalMorphismFromInitialObject\033[102X (for IsCapCategoryObjec\
+t)", "6.5-3", [ 6, 5, 3 ], 669, 41, 
+      "universalmorphismfrominitialobject for iscapcategoryobject", 
+      "X873FC2B087004DC3" ], 
+  [ 
+      "\033[2XUniversalMorphismFromInitialObjectWithGivenInitialObject\033[102X (\
+for IsCapCategoryObject, IsCapCategoryObject)", "6.5-4", [ 6, 5, 4 ], 677, 
+      41, 
+      "universalmorphismfrominitialobjectwithgiveninitialobject for iscapcateg\
+oryobject iscapcategoryobject", "X7F7177F585576F6B" ], 
+  [ "\033[2XAddInitialObject\033[102X (for IsCapCategory, IsFunction)", 
+      "6.5-5", [ 6, 5, 5 ], 685, 41, 
+      "addinitialobject for iscapcategory isfunction", "X78D5E19E781D696A" ], 
+  [ "\033[2XAddUniversalMorphismFromInitialObject\033[102X (for IsCapCategory,\
+ IsFunction)", "6.5-6", [ 6, 5, 6 ], 694, 42, 
+      "adduniversalmorphismfrominitialobject for iscapcategory isfunction", 
+      "X808255727E365DA5" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromInitialObjectWithGivenInitialObject\033[102\
+X (for IsCapCategory, IsFunction)", "6.5-7", [ 6, 5, 7 ], 703, 42, 
+      "adduniversalmorphismfrominitialobjectwithgiveninitialobject for iscapca\
+tegory isfunction", "X7F7D9168870D7AC6" ], 
+  [ "\033[2XInitialObjectFunctorial\033[102X (for IsCapCategory)", "6.5-8", 
+      [ 6, 5, 8 ], 713, 42, "initialobjectfunctorial for iscapcategory", 
+      "X87B1C71179F798C8" ], 
+  [ 
+      "\033[2XAddInitialObjectFunctorial\033[102X (for IsCapCategory, IsFunction)\
+", "6.5-9", [ 6, 5, 9 ], 722, 42, 
+      "addinitialobjectfunctorial for iscapcategory isfunction", 
+      "X80950253819512A8" ], 
+  [ "\033[2XDirectSumOp\033[102X (for IsList, IsCapCategoryObject)", "6.6-1", 
+      [ 6, 6, 1 ], 770, 43, "directsumop for islist iscapcategoryobject", 
+      "X814FEC4B80B0FBFB" ], 
+  [ "\033[2XProjectionInFactorOfDirectSum\033[102X (for IsList, IsInt)", 
+      "6.6-2", [ 6, 6, 2 ], 778, 43, 
+      "projectioninfactorofdirectsum for islist isint", "X78E4506F7BBA7A9A" ],
+  [ "\033[2XProjectionInFactorOfDirectSumOp\033[102X (for IsList, IsInt, IsCap\
+CategoryObject)", "6.6-3", [ 6, 6, 3 ], 787, 43, 
+      "projectioninfactorofdirectsumop for islist isint iscapcategoryobject", 
+      "X8769332783722A0E" ], 
+  [ 
+      "\033[2XProjectionInFactorOfDirectSumWithGivenDirectSum\033[102X (for IsLis\
+t, IsInt, IsCapCategoryObject)", "6.6-4", [ 6, 6, 4 ], 796, 43, 
+      "projectioninfactorofdirectsumwithgivendirectsum for islist isint iscapc\
+ategoryobject", "X832F2E577B7B70BB" ], 
+  [ "\033[2XInjectionOfCofactorOfDirectSum\033[102X (for IsList, IsInt)", 
+      "6.6-5", [ 6, 6, 5 ], 805, 43, 
+      "injectionofcofactorofdirectsum for islist isint", "X842743E97E2F28CD" ]
+    , 
+  [ 
+      "\033[2XInjectionOfCofactorOfDirectSumOp\033[102X (for IsList, IsInt, IsCap\
+CategoryObject)", "6.6-6", [ 6, 6, 6 ], 814, 43, 
+      "injectionofcofactorofdirectsumop for islist isint iscapcategoryobject",
+      "X780F3EC487AAC296" ], 
+  [ 
+      "\033[2XInjectionOfCofactorOfDirectSumWithGivenDirectSum\033[102X (for IsLi\
+st, IsInt, IsCapCategoryObject)", "6.6-7", [ 6, 6, 7 ], 823, 44, 
+      "injectionofcofactorofdirectsumwithgivendirectsum for islist isint iscap\
+categoryobject", "X876493497F824480" ], 
+  [ "\033[2XUniversalMorphismIntoDirectSum\033[102X", "6.6-8", [ 6, 6, 8 ], 
+      832, 44, "universalmorphismintodirectsum", "X84F1F06186C6A191" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoDirectSumOp\033[102X (for IsList, IsList, IsCa\
+pCategoryObject)", "6.6-9", [ 6, 6, 9 ], 852, 44, 
+      "universalmorphismintodirectsumop for islist islist iscapcategoryobject"
+        , "X7D20E7E88116A73D" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoDirectSumWithGivenDirectSum\033[102X (for IsLi\
+st, IsList, IsCapCategoryObject)", "6.6-10", [ 6, 6, 10 ], 863, 44, 
+      "universalmorphismintodirectsumwithgivendirectsum for islist islist isca\
+pcategoryobject", "X7EB551D47C4FE210" ], 
+  [ "\033[2XUniversalMorphismFromDirectSum\033[102X", "6.6-11", [ 6, 6, 11 ], 
+      874, 44, "universalmorphismfromdirectsum", "X7E85FE0E85FEEA73" ], 
+  [ 
+      "\033[2XUniversalMorphismFromDirectSumOp\033[102X (for IsList, IsList, IsCa\
+pCategoryObject)", "6.6-12", [ 6, 6, 12 ], 894, 45, 
+      "universalmorphismfromdirectsumop for islist islist iscapcategoryobject"
+        , "X83B7987F822EECDF" ], 
+  [ 
+      "\033[2XUniversalMorphismFromDirectSumWithGivenDirectSum\033[102X (for IsLi\
+st, IsList, IsCapCategoryObject)", "6.6-13", [ 6, 6, 13 ], 905, 45, 
+      "universalmorphismfromdirectsumwithgivendirectsum for islist islist isca\
+pcategoryobject", "X851CD8777F77A9F2" ], 
+  [ "\033[2XIsomorphismFromDirectSumToDirectProduct\033[102X (for IsList)", 
+      "6.6-14", [ 6, 6, 14 ], 916, 45, 
+      "isomorphismfromdirectsumtodirectproduct for islist", 
+      "X7AB9D34882B5EDDF" ], 
+  [ 
+      "\033[2XIsomorphismFromDirectSumToDirectProductOp\033[102X (for IsList, IsC\
+apCategoryObject)", "6.6-15", [ 6, 6, 15 ], 925, 45, 
+      "isomorphismfromdirectsumtodirectproductop for islist iscapcategoryobjec\
+t", "X7828CC27825168CA" ], 
+  [ "\033[2XIsomorphismFromDirectProductToDirectSum\033[102X (for IsList)", 
+      "6.6-16", [ 6, 6, 16 ], 935, 45, 
+      "isomorphismfromdirectproducttodirectsum for islist", 
+      "X7E87C9257A1BFFEE" ], 
+  [ 
+      "\033[2XIsomorphismFromDirectProductToDirectSumOp\033[102X (for IsList, IsC\
+apCategoryObject)", "6.6-17", [ 6, 6, 17 ], 944, 45, 
+      "isomorphismfromdirectproducttodirectsumop for islist iscapcategoryobjec\
+t", "X78B119077AFF7AFB" ], 
+  [ "\033[2XIsomorphismFromDirectSumToCoproduct\033[102X (for IsList)", 
+      "6.6-18", [ 6, 6, 18 ], 954, 46, 
+      "isomorphismfromdirectsumtocoproduct for islist", "X85599FEC812FD591" ],
+  [ "\033[2XIsomorphismFromDirectSumToCoproductOp\033[102X (for IsList, IsCapC\
+ategoryObject)", "6.6-19", [ 6, 6, 19 ], 964, 46, 
+      "isomorphismfromdirectsumtocoproductop for islist iscapcategoryobject", 
+      "X7AB73A50828A1E7C" ], 
+  [ "\033[2XIsomorphismFromCoproductToDirectSum\033[102X (for IsList)", 
+      "6.6-20", [ 6, 6, 20 ], 974, 46, 
+      "isomorphismfromcoproducttodirectsum for islist", "X7CACFBCA7B9A4E19" ],
+  [ "\033[2XIsomorphismFromCoproductToDirectSumOp\033[102X (for IsList, IsCapC\
+ategoryObject)", "6.6-21", [ 6, 6, 21 ], 984, 46, 
+      "isomorphismfromcoproducttodirectsumop for islist iscapcategoryobject", 
+      "X86256BBF783F85F4" ], 
+  [ "\033[2XMorphismBetweenDirectSums\033[102X (for IsList)", "6.6-22", 
+      [ 6, 6, 22 ], 994, 46, "morphismbetweendirectsums for islist", 
+      "X7FDE63F78410A822" ], 
+  [ 
+      "\033[2XMorphismBetweenDirectSumsOp\033[102X (for IsList, IsInt, IsInt, IsC\
+apCategoryMorphism)", "6.6-23", [ 6, 6, 23 ], 1005, 46, 
+      "morphismbetweendirectsumsop for islist isint isint iscapcategorymorphis\
+m", "X7DCF225F79D1757C" ], 
+  [ 
+      "\033[2XAddProjectionInFactorOfDirectSum\033[102X (for IsCapCategory, IsFun\
+ction)", "6.6-24", [ 6, 6, 24 ], 1017, 47, 
+      "addprojectioninfactorofdirectsum for iscapcategory isfunction", 
+      "X7B87E0308677AB17" ], 
+  [ 
+      "\033[2XAddProjectionInFactorOfDirectSumWithGivenDirectSum\033[102X (for Is\
+CapCategory, IsFunction)", "6.6-25", [ 6, 6, 25 ], 1026, 47, 
+      "addprojectioninfactorofdirectsumwithgivendirectsum for iscapcategory is\
+function", "X81ACCDB081967CD3" ], 
+  [ 
+      "\033[2XAddInjectionOfCofactorOfDirectSum\033[102X (for IsCapCategory, IsFu\
+nction)", "6.6-26", [ 6, 6, 26 ], 1035, 47, 
+      "addinjectionofcofactorofdirectsum for iscapcategory isfunction", 
+      "X845EB2F47C8FE49C" ], 
+  [ 
+      "\033[2XAddInjectionOfCofactorOfDirectSumWithGivenDirectSum\033[102X (for I\
+sCapCategory, IsFunction)", "6.6-27", [ 6, 6, 27 ], 1044, 47, 
+      "addinjectionofcofactorofdirectsumwithgivendirectsum for iscapcategory i\
+sfunction", "X86A78CC2859E4382" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoDirectSum\033[102X (for IsCapCategory, IsFu\
+nction)", "6.6-28", [ 6, 6, 28 ], 1054, 47, 
+      "adduniversalmorphismintodirectsum for iscapcategory isfunction", 
+      "X7AA30E857A11AA2A" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoDirectSumWithGivenDirectSum\033[102X (for I\
+sCapCategory, IsFunction)", "6.6-29", [ 6, 6, 29 ], 1063, 47, 
+      "adduniversalmorphismintodirectsumwithgivendirectsum for iscapcategory i\
+sfunction", "X7E666F5683000D34" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromDirectSum\033[102X (for IsCapCategory, IsFu\
+nction)", "6.6-30", [ 6, 6, 30 ], 1073, 48, 
+      "adduniversalmorphismfromdirectsum for iscapcategory isfunction", 
+      "X82AEA81280F0FE29" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromDirectSumWithGivenDirectSum\033[102X (for I\
+sCapCategory, IsFunction)", "6.6-31", [ 6, 6, 31 ], 1082, 48, 
+      "adduniversalmorphismfromdirectsumwithgivendirectsum for iscapcategory i\
+sfunction", "X81DB161779E15937" ], 
+  [ 
+      "\033[2XAddIsomorphismFromDirectSumToDirectProduct\033[102X (for IsCapCateg\
+ory, IsFunction)", "6.6-32", [ 6, 6, 32 ], 1092, 48, 
+      "addisomorphismfromdirectsumtodirectproduct for iscapcategory isfunction\
+", "X79DA06C087D4BDF3" ], 
+  [ 
+      "\033[2XAddIsomorphismFromDirectProductToDirectSum\033[102X (for IsCapCateg\
+ory, IsFunction)", "6.6-33", [ 6, 6, 33 ], 1102, 48, 
+      "addisomorphismfromdirectproducttodirectsum for iscapcategory isfunction\
+", "X793FDA608055E5C9" ], 
+  [ 
+      "\033[2XAddIsomorphismFromDirectSumToCoproduct\033[102X (for IsCapCategory,\
+ IsFunction)", "6.6-34", [ 6, 6, 34 ], 1112, 48, 
+      "addisomorphismfromdirectsumtocoproduct for iscapcategory isfunction", 
+      "X7D710CA282194DC7" ], 
+  [ 
+      "\033[2XAddIsomorphismFromCoproductToDirectSum\033[102X (for IsCapCategory,\
+ IsFunction)", "6.6-35", [ 6, 6, 35 ], 1122, 48, 
+      "addisomorphismfromcoproducttodirectsum for iscapcategory isfunction", 
+      "X87C04FAA7F49427B" ], 
+  [ "\033[2XAddDirectSum\033[102X (for IsCapCategory, IsFunction)", "6.6-36", 
+      [ 6, 6, 36 ], 1132, 49, "adddirectsum for iscapcategory isfunction", 
+      "X7CE460A37D8D468F" ], 
+  [ "\033[2XDirectSumFunctorial\033[102X (for IsList)", "6.6-37", 
+      [ 6, 6, 37 ], 1141, 49, "directsumfunctorial for islist", 
+      "X7D1ADFE478EF9354" ], 
+  [ "\033[2XAddDirectSumFunctorial\033[102X (for IsCapCategory, IsFunction)", 
+      "6.6-38", [ 6, 6, 38 ], 1152, 49, 
+      "adddirectsumfunctorial for iscapcategory isfunction", 
+      "X80778A107EFC97B8" ], 
+  [ 
+      "\033[2XDirectSumFunctorialOp\033[102X (for IsList, IsCapCategoryMorphism)"
+        , "6.6-39", [ 6, 6, 39 ], 1162, 49, 
+      "directsumfunctorialop for islist iscapcategorymorphism", 
+      "X84A8A17E78833D8B" ], 
+  [ "\033[2XCoproduct\033[102X (for IsList)", "6.7-1", [ 6, 7, 1 ], 1196, 50, 
+      "coproduct for islist", "X872D3F297979C7B8" ], 
+  [ "\033[2XCoproduct\033[102X (for IsCapCategoryObject, IsCapCategoryObject)"
+        , "6.7-2", [ 6, 7, 2 ], 1204, 50, 
+      "coproduct for iscapcategoryobject iscapcategoryobject", 
+      "X7E3C6A0482E8CAB5" ], 
+  [ 
+      "\033[2XCoproduct\033[102X (for IsCapCategoryObject, IsCapCategoryObject, I\
+sCapCategoryObject)", "6.7-3", [ 6, 7, 3 ], 1212, 50, 
+      "coproduct for iscapcategoryobject iscapcategoryobject iscapcategoryobje\
+ct", "X82FCE4657D132584" ], 
+  [ "\033[2XCoproductOp\033[102X (for IsList, IsCapCategoryObject)", "6.7-4", 
+      [ 6, 7, 4 ], 1220, 50, "coproductop for islist iscapcategoryobject", 
+      "X86685D3B8123A20F" ], 
+  [ "\033[2XInjectionOfCofactorOfCoproduct\033[102X (for IsList, IsInt)", 
+      "6.7-5", [ 6, 7, 5 ], 1228, 50, 
+      "injectionofcofactorofcoproduct for islist isint", "X82D87B52862BB55C" ]
+    , 
+  [ 
+      "\033[2XInjectionOfCofactorOfCoproductOp\033[102X (for IsList, IsInt, IsCap\
+CategoryObject)", "6.7-6", [ 6, 7, 6 ], 1237, 50, 
+      "injectionofcofactorofcoproductop for islist isint iscapcategoryobject",
+      "X818E31F17FAE5F07" ], 
+  [ 
+      "\033[2XInjectionOfCofactorOfCoproductWithGivenCoproduct\033[102X (for IsLi\
+st, IsInt, IsCapCategoryObject)", "6.7-7", [ 6, 7, 7 ], 1246, 50, 
+      "injectionofcofactorofcoproductwithgivencoproduct for islist isint iscap\
+categoryobject", "X83687CD9789CAB9C" ], 
+  [ "\033[2XUniversalMorphismFromCoproduct\033[102X", "6.7-8", [ 6, 7, 8 ], 
+      1255, 51, "universalmorphismfromcoproduct", "X82A8A7C97DFA77E2" ], 
+  [ 
+      "\033[2XUniversalMorphismFromCoproductOp\033[102X (for IsList, IsList, IsCa\
+pCategoryObject)", "6.7-9", [ 6, 7, 9 ], 1275, 51, 
+      "universalmorphismfromcoproductop for islist islist iscapcategoryobject"
+        , "X7CEEE5357A2A714E" ], 
+  [ 
+      "\033[2XUniversalMorphismFromCoproductWithGivenCoproduct\033[102X (for IsLi\
+st, IsList, IsCapCategoryObject)", "6.7-10", [ 6, 7, 10 ], 1285, 51, 
+      "universalmorphismfromcoproductwithgivencoproduct for islist islist isca\
+pcategoryobject", "X7C132541786946EE" ], 
+  [ "\033[2XAddCoproduct\033[102X (for IsCapCategory, IsFunction)", "6.7-11", 
+      [ 6, 7, 11 ], 1295, 51, "addcoproduct for iscapcategory isfunction", 
+      "X790C5EE180471583" ], 
+  [ 
+      "\033[2XAddInjectionOfCofactorOfCoproduct\033[102X (for IsCapCategory, IsFu\
+nction)", "6.7-12", [ 6, 7, 12 ], 1304, 51, 
+      "addinjectionofcofactorofcoproduct for iscapcategory isfunction", 
+      "X81B68CB6783FAFE0" ], 
+  [ 
+      "\033[2XAddInjectionOfCofactorOfCoproductWithGivenCoproduct\033[102X (for I\
+sCapCategory, IsFunction)", "6.7-13", [ 6, 7, 13 ], 1313, 52, 
+      "addinjectionofcofactorofcoproductwithgivencoproduct for iscapcategory i\
+sfunction", "X7DC2E9CD78A8622C" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromCoproduct\033[102X (for IsCapCategory, IsFu\
+nction)", "6.7-14", [ 6, 7, 14 ], 1323, 52, 
+      "adduniversalmorphismfromcoproduct for iscapcategory isfunction", 
+      "X874696508440B555" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromCoproductWithGivenCoproduct\033[102X (for I\
+sCapCategory, IsFunction)", "6.7-15", [ 6, 7, 15 ], 1333, 52, 
+      "adduniversalmorphismfromcoproductwithgivencoproduct for iscapcategory i\
+sfunction", "X7ABE731884D77899" ], 
+  [ "\033[2XCoproductFunctorial\033[102X (for IsList)", "6.7-16", 
+      [ 6, 7, 16 ], 1343, 52, "coproductfunctorial for islist", 
+      "X80697A2E797CCAA0" ], 
+  [ "\033[2XAddCoproductFunctorial\033[102X (for IsCapCategory, IsFunction)", 
+      "6.7-17", [ 6, 7, 17 ], 1354, 52, 
+      "addcoproductfunctorial for iscapcategory isfunction", 
+      "X79F685258336C4B4" ], 
+  [ 
+      "\033[2XCoproductFunctorialOp\033[102X (for IsList, IsCapCategoryMorphism)"
+        , "6.7-18", [ 6, 7, 18 ], 1364, 52, 
+      "coproductfunctorialop for islist iscapcategorymorphism", 
+      "X7F78CBBF7910647F" ], 
+  [ "\033[2XDirectProductOp\033[102X (for IsList, IsCapCategoryObject)", 
+      "6.8-1", [ 6, 8, 1 ], 1398, 53, 
+      "directproductop for islist iscapcategoryobject", "X82267DF8861F3EB6" ],
+  [ "\033[2XProjectionInFactorOfDirectProduct\033[102X (for IsList, IsInt)", 
+      "6.8-2", [ 6, 8, 2 ], 1406, 53, 
+      "projectioninfactorofdirectproduct for islist isint", 
+      "X7FFBE9EC7BEE7673" ], 
+  [ 
+      "\033[2XProjectionInFactorOfDirectProductOp\033[102X (for IsList, IsInt, Is\
+CapCategoryObject)", "6.8-3", [ 6, 8, 3 ], 1415, 53, 
+      "projectioninfactorofdirectproductop for islist isint iscapcategoryobjec\
+t", "X857EAF38822D16F0" ], 
+  [ 
+      "\033[2XProjectionInFactorOfDirectProductWithGivenDirectProduct\033[102X (f\
+or IsList, IsInt, IsCapCategoryObject)", "6.8-4", [ 6, 8, 4 ], 1424, 53, 
+      "projectioninfactorofdirectproductwithgivendirectproduct for islist isin\
+t iscapcategoryobject", "X8288ABA984EF9DED" ], 
+  [ "\033[2XUniversalMorphismIntoDirectProduct\033[102X", "6.8-5", 
+      [ 6, 8, 5 ], 1433, 54, "universalmorphismintodirectproduct", 
+      "X7D6464757E9A87A9" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoDirectProductOp\033[102X (for IsList, IsList, \
+IsCapCategoryObject)", "6.8-6", [ 6, 8, 6 ], 1453, 54, 
+      "universalmorphismintodirectproductop for islist islist iscapcategoryobj\
+ect", "X84F7DE5679BAC378" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoDirectProductWithGivenDirectProduct\033[102X (\
+for IsList, IsList, IsCapCategoryObject)", "6.8-7", [ 6, 8, 7 ], 1464, 54, 
+      "universalmorphismintodirectproductwithgivendirectproduct for islist isl\
+ist iscapcategoryobject", "X78930E5581F14F14" ], 
+  [ "\033[2XAddDirectProduct\033[102X (for IsCapCategory, IsFunction)", 
+      "6.8-8", [ 6, 8, 8 ], 1475, 54, 
+      "adddirectproduct for iscapcategory isfunction", "X7FE84F89844B8352" ], 
+  [ "\033[2XAddProjectionInFactorOfDirectProduct\033[102X (for IsCapCategory, \
+IsFunction)", "6.8-9", [ 6, 8, 9 ], 1484, 54, 
+      "addprojectioninfactorofdirectproduct for iscapcategory isfunction", 
+      "X84F5824779267907" ], 
+  [ 
+      "\033[2XAddProjectionInFactorOfDirectProductWithGivenDirectProduct\033[102X\
+ (for IsCapCategory, IsFunction)", "6.8-10", [ 6, 8, 10 ], 1493, 55, 
+      "addprojectioninfactorofdirectproductwithgivendirectproduct for iscapcat\
+egory isfunction", "X7B83D0627A2DCF93" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoDirectProduct\033[102X (for IsCapCategory, \
+IsFunction)", "6.8-11", [ 6, 8, 11 ], 1503, 55, 
+      "adduniversalmorphismintodirectproduct for iscapcategory isfunction", 
+      "X7E4C217083150A21" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoDirectProductWithGivenDirectProduct\033[102\
+X (for IsCapCategory, IsFunction)", "6.8-12", [ 6, 8, 12 ], 1513, 55, 
+      "adduniversalmorphismintodirectproductwithgivendirectproduct for iscapca\
+tegory isfunction", "X84C986C67D703457" ], 
+  [ "\033[2XDirectProductFunctorial\033[102X (for IsList)", "6.8-13", 
+      [ 6, 8, 13 ], 1523, 55, "directproductfunctorial for islist", 
+      "X814F469F80302D50" ], 
+  [ 
+      "\033[2XAddDirectProductFunctorial\033[102X (for IsCapCategory, IsFunction)\
+", "6.8-14", [ 6, 8, 14 ], 1533, 55, 
+      "adddirectproductfunctorial for iscapcategory isfunction", 
+      "X78F2B05A7DC3F890" ], 
+  [ 
+      "\033[2XDirectProductFunctorialOp\033[102X (for IsList, IsCapCategoryMorphi\
+sm)", "6.8-15", [ 6, 8, 15 ], 1543, 55, 
+      "directproductfunctorialop for islist iscapcategorymorphism", 
+      "X7C7799197D943457" ], 
+  [ 
+      "\033[2XIsomorphismFromFiberProductToKernelOfDiagonalDifference\033[102X (f\
+or IsList)", "6.9-1", [ 6, 9, 1 ], 1583, 56, 
+      "isomorphismfromfiberproducttokernelofdiagonaldifference for islist", 
+      "X79C946837899FDBF" ], 
+  [ 
+      "\033[2XIsomorphismFromFiberProductToKernelOfDiagonalDifferenceOp\033[102X \
+(for IsList, IsCapCategoryMorphism)", "6.9-2", [ 6, 9, 2 ], 1593, 56, 
+      "isomorphismfromfiberproducttokernelofdiagonaldifferenceop for islist is\
+capcategorymorphism", "X7B0F26DF868F8B2D" ], 
+  [ 
+      "\033[2XAddIsomorphismFromFiberProductToKernelOfDiagonalDifference\033[102X\
+ (for IsCapCategory, IsFunction)", "6.9-3", [ 6, 9, 3 ], 1603, 56, 
+      "addisomorphismfromfiberproducttokernelofdiagonaldifference for iscapcat\
+egory isfunction", "X82A6A64979DFFE43" ], 
+  [ 
+      "\033[2XIsomorphismFromKernelOfDiagonalDifferenceToFiberProduct\033[102X (f\
+or IsList)", "6.9-4", [ 6, 9, 4 ], 1614, 57, 
+      "isomorphismfromkernelofdiagonaldifferencetofiberproduct for islist", 
+      "X848F0B52844D782B" ], 
+  [ 
+      "\033[2XIsomorphismFromKernelOfDiagonalDifferenceToFiberProductOp\033[102X \
+(for IsList, IsCapCategoryMorphism)", "6.9-5", [ 6, 9, 5 ], 1624, 57, 
+      "isomorphismfromkernelofdiagonaldifferencetofiberproductop for islist is\
+capcategorymorphism", "X7E0329477A5B0EB9" ], 
+  [ 
+      "\033[2XAddIsomorphismFromKernelOfDiagonalDifferenceToFiberProduct\033[102X\
+ (for IsCapCategory, IsFunction)", "6.9-6", [ 6, 9, 6 ], 1634, 57, 
+      "addisomorphismfromkernelofdiagonaldifferencetofiberproduct for iscapcat\
+egory isfunction", "X7B255D3F7F8D0846" ], 
+  [ "\033[2XDirectSumDiagonalDifference\033[102X (for IsList)", "6.9-7", 
+      [ 6, 9, 7 ], 1645, 57, "directsumdiagonaldifference for islist", 
+      "X7E17BF518268C33A" ], 
+  [ 
+      "\033[2XDirectSumDiagonalDifferenceOp\033[102X (for IsList, IsCapCategoryMo\
+rphism)", "6.9-8", [ 6, 9, 8 ], 1654, 57, 
+      "directsumdiagonaldifferenceop for islist iscapcategorymorphism", 
+      "X866CDC8A842CC21C" ], 
+  [ 
+      "\033[2XAddDirectSumDiagonalDifference\033[102X (for IsCapCategory, IsFunct\
+ion)", "6.9-9", [ 6, 9, 9 ], 1664, 57, 
+      "adddirectsumdiagonaldifference for iscapcategory isfunction", 
+      "X842E4433870BE980" ], 
+  [ "\033[2XFiberProductEmbeddingInDirectSum\033[102X (for IsList)", 
+      "6.9-10", [ 6, 9, 10 ], 1674, 58, 
+      "fiberproductembeddingindirectsum for islist", "X7919AF7486FA42C5" ], 
+  [ 
+      "\033[2XFiberProductEmbeddingInDirectSumOp\033[102X (for IsList, IsCapCateg\
+oryMorphism)", "6.9-11", [ 6, 9, 11 ], 1684, 58, 
+      "fiberproductembeddingindirectsumop for islist iscapcategorymorphism", 
+      "X803207BC84DFDACA" ], 
+  [ 
+      "\033[2XAddFiberProductEmbeddingInDirectSum\033[102X (for IsCapCategory, Is\
+Function)", "6.9-12", [ 6, 9, 12 ], 1694, 58, 
+      "addfiberproductembeddingindirectsum for iscapcategory isfunction", 
+      "X8718265481B0270E" ], 
+  [ "\033[2XFiberProduct\033[102X", "6.9-13", [ 6, 9, 13 ], 1705, 58, 
+      "fiberproduct", "X7DE20941803BFBD9" ], 
+  [ "\033[2XFiberProductOp\033[102X (for IsList, IsCapCategoryMorphism)", 
+      "6.9-14", [ 6, 9, 14 ], 1721, 58, 
+      "fiberproductop for islist iscapcategorymorphism", "X81E871B983FA6EE8" ]
+    , 
+  [ "\033[2XProjectionInFactorOfFiberProduct\033[102X (for IsList, IsInt)", 
+      "6.9-15", [ 6, 9, 15 ], 1730, 58, 
+      "projectioninfactoroffiberproduct for islist isint", 
+      "X8104B3717D3B646F" ], 
+  [ 
+      "\033[2XProjectionInFactorOfFiberProductOp\033[102X (for IsList, IsInt, IsC\
+apCategoryMorphism)", "6.9-16", [ 6, 9, 16 ], 1739, 59, 
+      "projectioninfactoroffiberproductop for islist isint iscapcategorymorphi\
+sm", "X809C05D883C1E31D" ], 
+  [ 
+      "\033[2XProjectionInFactorOfFiberProductWithGivenFiberProduct\033[102X (for\
+ IsList, IsInt, IsCapCategoryObject)", "6.9-17", [ 6, 9, 17 ], 1748, 59, 
+      "projectioninfactoroffiberproductwithgivenfiberproduct for islist isint \
+iscapcategoryobject", "X8085606A7B09071F" ], 
+  [ "\033[2XUniversalMorphismIntoFiberProduct\033[102X", "6.9-18", 
+      [ 6, 9, 18 ], 1757, 59, "universalmorphismintofiberproduct", 
+      "X79F3937679B61538" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoFiberProductOp\033[102X (for IsList, IsList, I\
+sCapCategoryMorphism)", "6.9-19", [ 6, 9, 19 ], 1785, 59, 
+      "universalmorphismintofiberproductop for islist islist iscapcategorymorp\
+hism", "X83A406227DE6BC4D" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoFiberProductWithGivenFiberProduct\033[102X (fo\
+r IsList, IsList, IsCapCategoryObject)", "6.9-20", [ 6, 9, 20 ], 1797, 59, 
+      "universalmorphismintofiberproductwithgivenfiberproduct for islist islis\
+t iscapcategoryobject", "X835D5D3578A3226D" ], 
+  [ "\033[2XAddFiberProduct\033[102X (for IsCapCategory, IsFunction)", 
+      "6.9-21", [ 6, 9, 21 ], 1809, 60, 
+      "addfiberproduct for iscapcategory isfunction", "X86B7F8B983B9B184" ], 
+  [ "\033[2XAddProjectionInFactorOfFiberProduct\033[102X (for IsCapCategory, I\
+sFunction)", "6.9-22", [ 6, 9, 22 ], 1818, 60, 
+      "addprojectioninfactoroffiberproduct for iscapcategory isfunction", 
+      "X7BC4A40A8587EB82" ], 
+  [ 
+      "\033[2XAddProjectionInFactorOfFiberProductWithGivenFiberProduct\033[102X (\
+for IsCapCategory, IsFunction)", "6.9-23", [ 6, 9, 23 ], 1828, 60, 
+      "addprojectioninfactoroffiberproductwithgivenfiberproduct for iscapcateg\
+ory isfunction", "X822C988083A72B14" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoFiberProduct\033[102X (for IsCapCategory, I\
+sFunction)", "6.9-24", [ 6, 9, 24 ], 1838, 60, 
+      "adduniversalmorphismintofiberproduct for iscapcategory isfunction", 
+      "X7F7446F882DF6DA5" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoFiberProductWithGivenFiberProduct\033[102X \
+(for IsCapCategory, IsFunction)", "6.9-25", [ 6, 9, 25 ], 1848, 60, 
+      "adduniversalmorphismintofiberproductwithgivenfiberproduct for iscapcate\
+gory isfunction", "X84C5017486990FB2" ], 
+  [ "\033[2XFiberProductFunctorial\033[102X (for IsList)", "6.9-26", 
+      [ 6, 9, 26 ], 1858, 61, "fiberproductfunctorial for islist", 
+      "X85B1887C822DA631" ], 
+  [ 
+      "\033[2XAddFiberProductFunctorial\033[102X (for IsCapCategory, IsFunction)"
+        , "6.9-27", [ 6, 9, 27 ], 1872, 61, 
+      "addfiberproductfunctorial for iscapcategory isfunction", 
+      "X7BFDD60786E07890" ], 
+  [ 
+      "\033[2XFiberProductFunctorialOp\033[102X (for IsList, IsCapCategoryMorphis\
+m)", "6.9-28", [ 6, 9, 28 ], 1884, 61, 
+      "fiberproductfunctorialop for islist iscapcategorymorphism", 
+      "X8471BD30803F2CA7" ], 
+  [ 
+      "\033[2XIsomorphismFromPushoutToCokernelOfDiagonalDifference\033[102X (for \
+IsList)", "6.10-1", [ 6, 10, 1 ], 1929, 61, 
+      "isomorphismfrompushouttocokernelofdiagonaldifference for islist", 
+      "X7DB5F4937D3FFB15" ], 
+  [ 
+      "\033[2XIsomorphismFromPushoutToCokernelOfDiagonalDifferenceOp\033[102X (fo\
+r IsList, IsCapCategoryMorphism)", "6.10-2", [ 6, 10, 2 ], 1938, 62, 
+      "isomorphismfrompushouttocokernelofdiagonaldifferenceop for islist iscap\
+categorymorphism", "X7B1FAA958491D7FC" ], 
+  [ 
+      "\033[2XAddIsomorphismFromPushoutToCokernelOfDiagonalDifference\033[102X (f\
+or IsCapCategory, IsFunction)", "6.10-3", [ 6, 10, 3 ], 1948, 62, 
+      "addisomorphismfrompushouttocokernelofdiagonaldifference for iscapcatego\
+ry isfunction", "X8639C412856D8860" ], 
+  [ 
+      "\033[2XIsomorphismFromCokernelOfDiagonalDifferenceToPushout\033[102X (for \
+IsList)", "6.10-4", [ 6, 10, 4 ], 1959, 62, 
+      "isomorphismfromcokernelofdiagonaldifferencetopushout for islist", 
+      "X7D9E5AEA7E6F0092" ], 
+  [ 
+      "\033[2XIsomorphismFromCokernelOfDiagonalDifferenceToPushoutOp\033[102X (fo\
+r IsList, IsCapCategoryMorphism)", "6.10-5", [ 6, 10, 5 ], 1968, 62, 
+      "isomorphismfromcokernelofdiagonaldifferencetopushoutop for islist iscap\
+categorymorphism", "X7BC6642F87C12C7B" ], 
+  [ 
+      "\033[2XAddIsomorphismFromCokernelOfDiagonalDifferenceToPushout\033[102X (f\
+or IsCapCategory, IsFunction)", "6.10-6", [ 6, 10, 6 ], 1978, 62, 
+      "addisomorphismfromcokernelofdiagonaldifferencetopushout for iscapcatego\
+ry isfunction", "X811F965D7B9837F9" ], 
+  [ "\033[2XDirectSumCodiagonalDifference\033[102X (for IsList)", "6.10-7", 
+      [ 6, 10, 7 ], 1989, 63, "directsumcodiagonaldifference for islist", 
+      "X81DC4C1778CF1FD3" ], 
+  [ 
+      "\033[2XDirectSumCodiagonalDifferenceOp\033[102X (for IsList, IsCapCategory\
+Morphism)", "6.10-8", [ 6, 10, 8 ], 1998, 63, 
+      "directsumcodiagonaldifferenceop for islist iscapcategorymorphism", 
+      "X7CA4577F7D26C099" ], 
+  [ 
+      "\033[2XAddDirectSumCodiagonalDifference\033[102X (for IsCapCategory, IsFun\
+ction)", "6.10-9", [ 6, 10, 9 ], 2008, 63, 
+      "adddirectsumcodiagonaldifference for iscapcategory isfunction", 
+      "X84CF535682E444B6" ], 
+  [ "\033[2XDirectSumProjectionInPushout\033[102X (for IsList)", "6.10-10", 
+      [ 6, 10, 10 ], 2018, 63, "directsumprojectioninpushout for islist", 
+      "X78450AD684E5746A" ], 
+  [ 
+      "\033[2XDirectSumProjectionInPushoutOp\033[102X (for IsList, IsCapCategoryM\
+orphism)", "6.10-11", [ 6, 10, 11 ], 2028, 63, 
+      "directsumprojectioninpushoutop for islist iscapcategorymorphism", 
+      "X8702BC0180D5AEFD" ], 
+  [ 
+      "\033[2XAddDirectSumProjectionInPushout\033[102X (for IsCapCategory, IsFunc\
+tion)", "6.10-12", [ 6, 10, 12 ], 2038, 63, 
+      "adddirectsumprojectioninpushout for iscapcategory isfunction", 
+      "X84852B0980DF02AE" ], 
+  [ "\033[2XPushout\033[102X (for IsList)", "6.10-13", [ 6, 10, 13 ], 2048, 
+      63, "pushout for islist", "X78E10D9E849FE214" ], 
+  [ 
+      "\033[2XPushout\033[102X (for IsCapCategoryMorphism, IsCapCategoryMorphism)\
+", "6.10-14", [ 6, 10, 14 ], 2056, 64, 
+      "pushout for iscapcategorymorphism iscapcategorymorphism", 
+      "X78D93A2883C83CAC" ], 
+  [ "\033[2XPushoutOp\033[102X (for IsList, IsCapCategoryMorphism)", 
+      "6.10-15", [ 6, 10, 15 ], 2064, 64, 
+      "pushoutop for islist iscapcategorymorphism", "X78BE08E284796495" ], 
+  [ "\033[2XInjectionOfCofactorOfPushout\033[102X (for IsList, IsInt)", 
+      "6.10-16", [ 6, 10, 16 ], 2073, 64, 
+      "injectionofcofactorofpushout for islist isint", "X7CF12E527805752F" ], 
+  [ "\033[2XInjectionOfCofactorOfPushoutOp\033[102X (for IsList, IsInt, IsCapC\
+ategoryMorphism)", "6.10-17", [ 6, 10, 17 ], 2082, 64, 
+      "injectionofcofactorofpushoutop for islist isint iscapcategorymorphism",
+      "X7BF8D08E8253D61C" ], 
+  [ 
+      "\033[2XInjectionOfCofactorOfPushoutWithGivenPushout\033[102X (for IsList, \
+IsInt, IsCapCategoryObject)", "6.10-18", [ 6, 10, 18 ], 2091, 64, 
+      "injectionofcofactorofpushoutwithgivenpushout for islist isint iscapcate\
+goryobject", "X7E54DB957B5F9157" ], 
+  [ "\033[2XUniversalMorphismFromPushout\033[102X", "6.10-19", [ 6, 10, 19 ], 
+      2100, 64, "universalmorphismfrompushout", "X82A1EFBA7E16FA63" ], 
+  [ 
+      "\033[2XUniversalMorphismFromPushoutOp\033[102X (for IsList, IsList, IsCapC\
+ategoryMorphism)", "6.10-20", [ 6, 10, 20 ], 2128, 65, 
+      "universalmorphismfrompushoutop for islist islist iscapcategorymorphism"
+        , "X7DB773A47D22963E" ], 
+  [ 
+      "\033[2XUniversalMorphismFromPushoutWithGivenPushout\033[102X (for IsList, \
+IsList, IsCapCategoryObject)", "6.10-21", [ 6, 10, 21 ], 2140, 65, 
+      "universalmorphismfrompushoutwithgivenpushout for islist islist iscapcat\
+egoryobject", "X7A3830637BB1E7C6" ], 
+  [ "\033[2XAddPushout\033[102X (for IsCapCategory, IsFunction)", "6.10-22", 
+      [ 6, 10, 22 ], 2151, 65, "addpushout for iscapcategory isfunction", 
+      "X78FDEE468742E573" ], 
+  [ 
+      "\033[2XAddInjectionOfCofactorOfPushout\033[102X (for IsCapCategory, IsFunc\
+tion)", "6.10-23", [ 6, 10, 23 ], 2160, 65, 
+      "addinjectionofcofactorofpushout for iscapcategory isfunction", 
+      "X87ED0E87850C6D96" ], 
+  [ 
+      "\033[2XAddInjectionOfCofactorOfPushoutWithGivenPushout\033[102X (for IsCap\
+Category, IsFunction)", "6.10-24", [ 6, 10, 24 ], 2170, 65, 
+      "addinjectionofcofactorofpushoutwithgivenpushout for iscapcategory isfun\
+ction", "X8352461A796F9214" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromPushout\033[102X (for IsCapCategory, IsFunc\
+tion)", "6.10-25", [ 6, 10, 25 ], 2180, 66, 
+      "adduniversalmorphismfrompushout for iscapcategory isfunction", 
+      "X7ACB31A479737723" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromPushoutWithGivenPushout\033[102X (for IsCap\
+Category, IsFunction)", "6.10-26", [ 6, 10, 26 ], 2190, 66, 
+      "adduniversalmorphismfrompushoutwithgivenpushout for iscapcategory isfun\
+ction", "X847BA99A851088A1" ], 
+  [ "\033[2XPushoutFunctorial\033[102X (for IsList)", "6.10-27", 
+      [ 6, 10, 27 ], 2200, 66, "pushoutfunctorial for islist", 
+      "X7BDB1CBF79D0D1D3" ], 
+  [ "\033[2XAddPushoutFunctorial\033[102X (for IsCapCategory, IsFunction)", 
+      "6.10-28", [ 6, 10, 28 ], 2214, 66, 
+      "addpushoutfunctorial for iscapcategory isfunction", 
+      "X85F9FDCF7E697028" ], 
+  [ "\033[2XPushoutFunctorialOp\033[102X (for IsList, IsCapCategoryMorphism)",
+      "6.10-29", [ 6, 10, 29 ], 2225, 66, 
+      "pushoutfunctorialop for islist iscapcategorymorphism", 
+      "X7DF3AF4F8190BEFF" ], 
+  [ 
+      "\033[2XIsomorphismFromImageObjectToKernelOfCokernel\033[102X (for IsCapCat\
+egoryMorphism)", "6.11-1", [ 6, 11, 1 ], 2263, 67, 
+      "isomorphismfromimageobjecttokernelofcokernel for iscapcategorymorphism"
+        , "X80490BD785CA695A" ], 
+  [ 
+      "\033[2XAddIsomorphismFromImageObjectToKernelOfCokernel\033[102X (for IsCap\
+Category, IsFunction)", "6.11-2", [ 6, 11, 2 ], 2273, 67, 
+      "addisomorphismfromimageobjecttokernelofcokernel for iscapcategory isfun\
+ction", "X7B09757B8411AD52" ], 
+  [ 
+      "\033[2XIsomorphismFromKernelOfCokernelToImageObject\033[102X (for IsCapCat\
+egoryMorphism)", "6.11-3", [ 6, 11, 3 ], 2284, 67, 
+      "isomorphismfromkernelofcokerneltoimageobject for iscapcategorymorphism"
+        , "X7CAA3342865B456B" ], 
+  [ 
+      "\033[2XAddIsomorphismFromKernelOfCokernelToImageObject\033[102X (for IsCap\
+Category, IsFunction)", "6.11-4", [ 6, 11, 4 ], 2294, 67, 
+      "addisomorphismfromkernelofcokerneltoimageobject for iscapcategory isfun\
+ction", "X78A3EEFB843C5067" ], 
+  [ "\033[2XImageObject\033[102X (for IsCapCategoryMorphism)", "6.11-5", 
+      [ 6, 11, 5 ], 2305, 67, "imageobject for iscapcategorymorphism", 
+      "X83B457FF79AC5AC6" ], 
+  [ "\033[2XImageEmbedding\033[102X (for IsCapCategoryObject)", "6.11-6", 
+      [ 6, 11, 6 ], 2313, 68, "imageembedding for iscapcategoryobject", 
+      "X7BACDC4782B8FD83" ], 
+  [ "\033[2XImageEmbedding\033[102X (for IsCapCategoryMorphism)", "6.11-7", 
+      [ 6, 11, 7 ], 2322, 68, "imageembedding for iscapcategorymorphism", 
+      "X86CEE2D1876EC2B9" ], 
+  [ 
+      "\033[2XImageEmbeddingWithGivenImageObject\033[102X (for IsCapCategoryMorph\
+ism, IsCapCategoryObject)", "6.11-8", [ 6, 11, 8 ], 2330, 68, 
+      "imageembeddingwithgivenimageobject for iscapcategorymorphism iscapcateg\
+oryobject", "X82991FA17B460744" ], 
+  [ "\033[2XCoastrictionToImage\033[102X (for IsCapCategoryObject)", 
+      "6.11-9", [ 6, 11, 9 ], 2339, 68, 
+      "coastrictiontoimage for iscapcategoryobject", "X78EDCD557AC8727B" ], 
+  [ "\033[2XCoastrictionToImage\033[102X (for IsCapCategoryMorphism)", 
+      "6.11-10", [ 6, 11, 10 ], 2348, 68, 
+      "coastrictiontoimage for iscapcategorymorphism", "X8144201987A27661" ], 
+  [ "\033[2XCoastrictionToImageWithGivenImageObject\033[102X (for IsCapCategor\
+yMorphism, IsCapCategoryObject)", "6.11-11", [ 6, 11, 11 ], 2356, 68, 
+      "coastrictiontoimagewithgivenimageobject for iscapcategorymorphism iscap\
+categoryobject", "X78BE36EA83BEF493" ], 
+  [ 
+      "\033[2XUniversalMorphismFromImage\033[102X (for IsCapCategoryMorphism, IsL\
+ist)", "6.11-12", [ 6, 11, 12 ], 2365, 68, 
+      "universalmorphismfromimage for iscapcategorymorphism islist", 
+      "X7989B1FB811D2033" ], 
+  [ 
+      "\033[2XUniversalMorphismFromImageWithGivenImageObject\033[102X (for IsCapC\
+ategoryMorphism, IsList, IsCapCategoryObject)", "6.11-13", [ 6, 11, 13 ], 
+      2376, 69, 
+      "universalmorphismfromimagewithgivenimageobject for iscapcategorymorphis\
+m islist iscapcategoryobject", "X86E557097CFB4430" ], 
+  [ "\033[2XAddImageObject\033[102X (for IsCapCategory, IsFunction)", 
+      "6.11-14", [ 6, 11, 14 ], 2388, 69, 
+      "addimageobject for iscapcategory isfunction", "X7CA61123868B51B2" ], 
+  [ "\033[2XAddImageEmbedding\033[102X (for IsCapCategory, IsFunction)", 
+      "6.11-15", [ 6, 11, 15 ], 2397, 69, 
+      "addimageembedding for iscapcategory isfunction", "X796EDCCD7A729E12" ],
+  [ "\033[2XAddImageEmbeddingWithGivenImageObject\033[102X (for IsCapCategory,\
+ IsFunction)", "6.11-16", [ 6, 11, 16 ], 2406, 69, 
+      "addimageembeddingwithgivenimageobject for iscapcategory isfunction", 
+      "X785393EB7C27451E" ], 
+  [ "\033[2XAddCoastrictionToImage\033[102X (for IsCapCategory, IsFunction)", 
+      "6.11-17", [ 6, 11, 17 ], 2415, 69, 
+      "addcoastrictiontoimage for iscapcategory isfunction", 
+      "X78C7D6E582FD41E9" ], 
+  [ 
+      "\033[2XAddCoastrictionToImageWithGivenImageObject\033[102X (for IsCapCateg\
+ory, IsFunction)", "6.11-18", [ 6, 11, 18 ], 2424, 69, 
+      "addcoastrictiontoimagewithgivenimageobject for iscapcategory isfunction\
+", "X8077FB7485FCD5E6" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromImage\033[102X (for IsCapCategory, IsFuncti\
+on)", "6.11-19", [ 6, 11, 19 ], 2433, 70, 
+      "adduniversalmorphismfromimage for iscapcategory isfunction", 
+      "X7BE632048014DB7F" ], 
+  [ 
+      "\033[2XAddUniversalMorphismFromImageWithGivenImageObject\033[102X (for IsC\
+apCategory, IsFunction)", "6.11-20", [ 6, 11, 20 ], 2442, 70, 
+      "adduniversalmorphismfromimagewithgivenimageobject for iscapcategory isf\
+unction", "X79813E327CAD3D99" ], 
+  [ "\033[2XMorphismFromCoimageToImage\033[102X (for IsCapCategoryMorphism)", 
+      "6.12-1", [ 6, 12, 1 ], 2475, 70, 
+      "morphismfromcoimagetoimage for iscapcategorymorphism", 
+      "X7F7BD6A18581671E" ], 
+  [ 
+      "\033[2XMorphismFromCoimageToImageWithGivenObjects\033[102X (for IsCapCateg\
+oryObject, IsCapCategoryMorphism, IsCapCategoryObject)", "6.12-2", 
+      [ 6, 12, 2 ], 2485, 70, 
+      "morphismfromcoimagetoimagewithgivenobjects for iscapcategoryobject isca\
+pcategorymorphism iscapcategoryobject", "X8025749B78E12A2B" ], 
+  [ 
+      "\033[2XAddMorphismFromCoimageToImageWithGivenObjects\033[102X (for IsCapCa\
+tegory, IsFunction)", "6.12-3", [ 6, 12, 3 ], 2494, 71, 
+      "addmorphismfromcoimagetoimagewithgivenobjects for iscapcategory isfunct\
+ion", "X7FCCF6EA7BD56684" ], 
+  [ 
+      "\033[2XInverseMorphismFromCoimageToImage\033[102X (for IsCapCategoryMorphi\
+sm)", "6.12-4", [ 6, 12, 4 ], 2504, 71, 
+      "inversemorphismfromcoimagetoimage for iscapcategorymorphism", 
+      "X7D0C9B067F3E15B4" ], 
+  [ 
+      "\033[2XInverseMorphismFromCoimageToImageWithGivenObjects\033[102X (for IsC\
+apCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject)", "6.12-5", 
+      [ 6, 12, 5 ], 2514, 71, 
+      "inversemorphismfromcoimagetoimagewithgivenobjects for iscapcategoryobje\
+ct iscapcategorymorphism iscapcategoryobject", "X83C4E6FF7D1F1A9C" ], 
+  [ 
+      "\033[2XAddInverseMorphismFromCoimageToImageWithGivenObjects\033[102X (for \
+IsCapCategory, IsFunction)", "6.12-6", [ 6, 12, 6 ], 2523, 71, 
+      "addinversemorphismfromcoimagetoimagewithgivenobjects for iscapcategory \
+isfunction", "X7E25930683F94127" ], 
+  [ 
+      "\033[2XIsomorphismFromCoimageToCokernelOfKernel\033[102X (for IsCapCategor\
+yMorphism)", "6.12-7", [ 6, 12, 7 ], 2533, 71, 
+      "isomorphismfromcoimagetocokernelofkernel for iscapcategorymorphism", 
+      "X7C594E227D8DB0ED" ], 
+  [ 
+      "\033[2XAddIsomorphismFromCoimageToCokernelOfKernel\033[102X (for IsCapCate\
+gory, IsFunction)", "6.12-8", [ 6, 12, 8 ], 2543, 71, 
+      "addisomorphismfromcoimagetocokernelofkernel for iscapcategory isfunctio\
+n", "X80B45F4D7A7B96A4" ], 
+  [ 
+      "\033[2XIsomorphismFromCokernelOfKernelToCoimage\033[102X (for IsCapCategor\
+yMorphism)", "6.12-9", [ 6, 12, 9 ], 2554, 72, 
+      "isomorphismfromcokernelofkerneltocoimage for iscapcategorymorphism", 
+      "X7CF7E7E47A460E56" ], 
+  [ 
+      "\033[2XAddIsomorphismFromCokernelOfKernelToCoimage\033[102X (for IsCapCate\
+gory, IsFunction)", "6.12-10", [ 6, 12, 10 ], 2564, 72, 
+      "addisomorphismfromcokernelofkerneltocoimage for iscapcategory isfunctio\
+n", "X7D9B059578AC42D6" ], 
+  [ "\033[2XCoimage\033[102X (for IsCapCategoryMorphism)", "6.12-11", 
+      [ 6, 12, 11 ], 2575, 72, "coimage for iscapcategorymorphism", 
+      "X866FB09E857D1846" ], 
+  [ "\033[2XCoimageProjection\033[102X (for IsCapCategoryObject)", "6.12-12", 
+      [ 6, 12, 12 ], 2583, 72, "coimageprojection for iscapcategoryobject", 
+      "X822D25177F2C1541" ], 
+  [ "\033[2XCoimageProjection\033[102X (for IsCapCategoryMorphism)", 
+      "6.12-13", [ 6, 12, 13 ], 2592, 72, 
+      "coimageprojection for iscapcategorymorphism", "X788E717C7CCC6645" ], 
+  [ 
+      "\033[2XCoimageProjectionWithGivenCoimage\033[102X (for IsCapCategoryMorphi\
+sm, IsCapCategoryObject)", "6.12-14", [ 6, 12, 14 ], 2600, 72, 
+      "coimageprojectionwithgivencoimage for iscapcategorymorphism iscapcatego\
+ryobject", "X845344847E9C3AD9" ], 
+  [ "\033[2XAstrictionToCoimage\033[102X (for IsCapCategoryObject)", 
+      "6.12-15", [ 6, 12, 15 ], 2609, 73, 
+      "astrictiontocoimage for iscapcategoryobject", "X7BC763EA7D2D3164" ], 
+  [ "\033[2XAstrictionToCoimage\033[102X (for IsCapCategoryMorphism)", 
+      "6.12-16", [ 6, 12, 16 ], 2618, 73, 
+      "astrictiontocoimage for iscapcategorymorphism", "X805108BF8047357E" ], 
+  [ "\033[2XAstrictionToCoimageWithGivenCoimage\033[102X (for IsCapCategoryMor\
+phism, IsCapCategoryObject)", "6.12-17", [ 6, 12, 17 ], 2626, 73, 
+      "astrictiontocoimagewithgivencoimage for iscapcategorymorphism iscapcate\
+goryobject", "X7BEDEDCC7818490B" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoCoimage\033[102X (for IsCapCategoryMorphism, I\
+sList)", "6.12-18", [ 6, 12, 18 ], 2635, 73, 
+      "universalmorphismintocoimage for iscapcategorymorphism islist", 
+      "X7D051DDF7A68BFFB" ], 
+  [ 
+      "\033[2XUniversalMorphismIntoCoimageWithGivenCoimage\033[102X (for IsCapCat\
+egoryMorphism, IsList, IsCapCategoryObject)", "6.12-19", [ 6, 12, 19 ], 2646, 
+      73, 
+      "universalmorphismintocoimagewithgivencoimage for iscapcategorymorphism \
+islist iscapcategoryobject", "X7D9C6F3C7B929E5F" ], 
+  [ "\033[2XAddCoimage\033[102X (for IsCapCategory, IsFunction)", "6.12-20", 
+      [ 6, 12, 20 ], 2657, 73, "addcoimage for iscapcategory isfunction", 
+      "X7A0027687B377BC2" ], 
+  [ "\033[2XAddCoimageProjection\033[102X (for IsCapCategory, IsFunction)", 
+      "6.12-21", [ 6, 12, 21 ], 2666, 74, 
+      "addcoimageprojection for iscapcategory isfunction", 
+      "X85B54DD47C3E9682" ], 
+  [ 
+      "\033[2XAddCoimageProjectionWithGivenCoimage\033[102X (for IsCapCategory, I\
+sFunction)", "6.12-22", [ 6, 12, 22 ], 2675, 74, 
+      "addcoimageprojectionwithgivencoimage for iscapcategory isfunction", 
+      "X800CCC74801CFF29" ], 
+  [ "\033[2XAddAstrictionToCoimage\033[102X (for IsCapCategory, IsFunction)", 
+      "6.12-23", [ 6, 12, 23 ], 2684, 74, 
+      "addastrictiontocoimage for iscapcategory isfunction", 
+      "X786682798320D413" ], 
+  [ 
+      "\033[2XAddAstrictionToCoimageWithGivenCoimage\033[102X (for IsCapCategory,\
+ IsFunction)", "6.12-24", [ 6, 12, 24 ], 2693, 74, 
+      "addastrictiontocoimagewithgivencoimage for iscapcategory isfunction", 
+      "X820E0A8786AA718F" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoCoimage\033[102X (for IsCapCategory, IsFunc\
+tion)", "6.12-25", [ 6, 12, 25 ], 2702, 74, 
+      "adduniversalmorphismintocoimage for iscapcategory isfunction", 
+      "X85DB30B982F6C564" ], 
+  [ 
+      "\033[2XAddUniversalMorphismIntoCoimageWithGivenCoimage\033[102X (for IsCap\
+Category, IsFunction)", "6.12-26", [ 6, 12, 26 ], 2711, 74, 
+      "adduniversalmorphismintocoimagewithgivencoimage for iscapcategory isfun\
+ction", "X8617139A8651C194" ], 
+  [ "\033[2XInjectionOfCofactor\033[102X", "6.13-1", [ 6, 13, 1 ], 2724, 75, 
+      "injectionofcofactor", "X788CF4217F06E3D0" ], 
+  [ "\033[2XProjectionInFactor\033[102X", "6.13-2", [ 6, 13, 2 ], 2751, 75, 
+      "projectioninfactor", "X85AA5CF6790FF20F" ], 
+  [ 
+      "\033[2XTensorProductOnObjects\033[102X (for IsCapCategoryObject, IsCapCate\
+goryObject)", "7.1-1", [ 7, 1, 1 ], 36, 76, 
+      "tensorproductonobjects for iscapcategoryobject iscapcategoryobject", 
+      "X797034F17AA47EE0" ], 
+  [ 
+      "\033[2XAddTensorProductOnObjects\033[102X (for IsCapCategory, IsFunction)"
+        , "7.1-2", [ 7, 1, 2 ], 44, 76, 
+      "addtensorproductonobjects for iscapcategory isfunction", 
+      "X7CED389B792142F5" ], 
+  [ 
+      "\033[2XTensorProductOnMorphisms\033[102X (for IsCapCategoryMorphism, IsCap\
+CategoryMorphism)", "7.1-3", [ 7, 1, 3 ], 53, 77, 
+      "tensorproductonmorphisms for iscapcategorymorphism iscapcategorymorphis\
+m", "X84997A1E8188D6BE" ], 
+  [ 
+      "\033[2XTensorProductOnMorphismsWithGivenTensorProducts\033[102X (for IsCap\
+CategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObj\
+ect)", "7.1-4", [ 7, 1, 4 ], 61, 77, 
+      "tensorproductonmorphismswithgiventensorproducts for iscapcategoryobject\
+ iscapcategorymorphism iscapcategorymorphism iscapcategoryobject", 
+      "X85008BF07C2C0386" ], 
+  [ 
+      "\033[2XAddTensorProductOnMorphismsWithGivenTensorProducts\033[102X (for Is\
+CapCategory, IsFunction)", "7.1-5", [ 7, 1, 5 ], 70, 77, 
+      "addtensorproductonmorphismswithgiventensorproducts for iscapcategory is\
+function", "X879659397D11AD9F" ], 
+  [ 
+      "\033[2XAssociatorRightToLeft\033[102X (for IsCapCategoryObject, IsCapCateg\
+oryObject, IsCapCategoryObject)", "7.1-6", [ 7, 1, 6 ], 81, 77, 
+      "associatorrighttoleft for iscapcategoryobject iscapcategoryobject iscap\
+categoryobject", "X84C2FAEA7B9678AA" ], 
+  [ 
+      "\033[2XAssociatorRightToLeftWithGivenTensorProducts\033[102X (for IsCapCat\
+egoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, Is\
+CapCategoryObject)", "7.1-7", [ 7, 1, 7 ], 91, 77, 
+      "associatorrighttoleftwithgiventensorproducts for iscapcategoryobject is\
+capcategoryobject iscapcategoryobject iscapcategoryobject iscapcategoryobject"
+        , "X85645C4D86060ED2" ], 
+  [ 
+      "\033[2XAddAssociatorRightToLeftWithGivenTensorProducts\033[102X (for IsCap\
+Category, IsFunction)", "7.1-8", [ 7, 1, 8 ], 102, 77, 
+      "addassociatorrighttoleftwithgiventensorproducts for iscapcategory isfun\
+ction", "X7CF105217904D280" ], 
+  [ 
+      "\033[2XAssociatorLeftToRight\033[102X (for IsCapCategoryObject, IsCapCateg\
+oryObject, IsCapCategoryObject)", "7.1-9", [ 7, 1, 9 ], 112, 78, 
+      "associatorlefttoright for iscapcategoryobject iscapcategoryobject iscap\
+categoryobject", "X7C5A064C7E1995F1" ], 
+  [ 
+      "\033[2XAssociatorLeftToRightWithGivenTensorProducts\033[102X (for IsCapCat\
+egoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, Is\
+CapCategoryObject)", "7.1-10", [ 7, 1, 10 ], 122, 78, 
+      "associatorlefttorightwithgiventensorproducts for iscapcategoryobject is\
+capcategoryobject iscapcategoryobject iscapcategoryobject iscapcategoryobject"
+        , "X7C59D73F8389E389" ], 
+  [ 
+      "\033[2XAddAssociatorLeftToRightWithGivenTensorProducts\033[102X (for IsCap\
+Category, IsFunction)", "7.1-11", [ 7, 1, 11 ], 133, 78, 
+      "addassociatorlefttorightwithgiventensorproducts for iscapcategory isfun\
+ction", "X850B5B357F592FAE" ], 
+  [ "\033[2XTensorUnit\033[102X (for IsCapCategory)", "7.1-12", [ 7, 1, 12 ], 
+      143, 78, "tensorunit for iscapcategory", "X7BF7FFDF8789474A" ], 
+  [ "\033[2XAddTensorUnit\033[102X (for IsCapCategory, IsFunction)", 
+      "7.1-13", [ 7, 1, 13 ], 151, 78, 
+      "addtensorunit for iscapcategory isfunction", "X7BC4B940858F903B" ], 
+  [ "\033[2XLeftUnitor\033[102X (for IsCapCategoryObject)", "7.1-14", 
+      [ 7, 1, 14 ], 160, 78, "leftunitor for iscapcategoryobject", 
+      "X7EBCAFDD81BDB655" ], 
+  [ 
+      "\033[2XLeftUnitorWithGivenTensorProduct\033[102X (for IsCapCategoryObject,\
+ IsCapCategoryObject)", "7.1-15", [ 7, 1, 15 ], 168, 79, 
+      "leftunitorwithgiventensorproduct for iscapcategoryobject iscapcategoryo\
+bject", "X7ED284DF7BA21774" ], 
+  [ 
+      "\033[2XAddLeftUnitorWithGivenTensorProduct\033[102X (for IsCapCategory, Is\
+Function)", "7.1-16", [ 7, 1, 16 ], 176, 79, 
+      "addleftunitorwithgiventensorproduct for iscapcategory isfunction", 
+      "X8614FD9C78812C98" ], 
+  [ "\033[2XLeftUnitorInverse\033[102X (for IsCapCategoryObject)", "7.1-17", 
+      [ 7, 1, 17 ], 185, 79, "leftunitorinverse for iscapcategoryobject", 
+      "X79A274078147A9F7" ], 
+  [ 
+      "\033[2XLeftUnitorInverseWithGivenTensorProduct\033[102X (for IsCapCategory\
+Object, IsCapCategoryObject)", "7.1-18", [ 7, 1, 18 ], 193, 79, 
+      "leftunitorinversewithgiventensorproduct for iscapcategoryobject iscapca\
+tegoryobject", "X849609447CAE996B" ], 
+  [ 
+      "\033[2XAddLeftUnitorInverseWithGivenTensorProduct\033[102X (for IsCapCateg\
+ory, IsFunction)", "7.1-19", [ 7, 1, 19 ], 201, 79, 
+      "addleftunitorinversewithgiventensorproduct for iscapcategory isfunction\
+", "X87CB487587ED3EC5" ], 
+  [ "\033[2XRightUnitor\033[102X (for IsCapCategoryObject)", "7.1-20", 
+      [ 7, 1, 20 ], 211, 79, "rightunitor for iscapcategoryobject", 
+      "X82F758CB7A23468A" ], 
+  [ 
+      "\033[2XRightUnitorWithGivenTensorProduct\033[102X (for IsCapCategoryObject\
+, IsCapCategoryObject)", "7.1-21", [ 7, 1, 21 ], 219, 79, 
+      "rightunitorwithgiventensorproduct for iscapcategoryobject iscapcategory\
+object", "X84C8F97F7BF2282D" ], 
+  [ 
+      "\033[2XAddRightUnitorWithGivenTensorProduct\033[102X (for IsCapCategory, I\
+sFunction)", "7.1-22", [ 7, 1, 22 ], 227, 80, 
+      "addrightunitorwithgiventensorproduct for iscapcategory isfunction", 
+      "X7DB39DC9794F3FCA" ], 
+  [ "\033[2XRightUnitorInverse\033[102X (for IsCapCategoryObject)", "7.1-23", 
+      [ 7, 1, 23 ], 236, 80, "rightunitorinverse for iscapcategoryobject", 
+      "X82DC825480E87301" ], 
+  [ 
+      "\033[2XRightUnitorInverseWithGivenTensorProduct\033[102X (for IsCapCategor\
+yObject, IsCapCategoryObject)", "7.1-24", [ 7, 1, 24 ], 244, 80, 
+      "rightunitorinversewithgiventensorproduct for iscapcategoryobject iscapc\
+ategoryobject", "X85A8A87C87B33008" ], 
+  [ 
+      "\033[2XAddRightUnitorInverseWithGivenTensorProduct\033[102X (for IsCapCate\
+gory, IsFunction)", "7.1-25", [ 7, 1, 25 ], 252, 80, 
+      "addrightunitorinversewithgiventensorproduct for iscapcategory isfunctio\
+n", "X8682171F86C6793E" ], 
+  [ 
+      "\033[2XLeftDistributivityExpanding\033[102X (for IsCapCategoryObject, IsLi\
+st)", "7.1-26", [ 7, 1, 26 ], 262, 80, 
+      "leftdistributivityexpanding for iscapcategoryobject islist", 
+      "X7ACF268E7D82B0C9" ], 
+  [ 
+      "\033[2XLeftDistributivityExpandingWithGivenObjects\033[102X (for IsCapCate\
+goryObject, IsCapCategoryObject, IsList, IsCapCategoryObject)", "7.1-27", 
+      [ 7, 1, 27 ], 272, 80, 
+      "leftdistributivityexpandingwithgivenobjects for iscapcategoryobject isc\
+apcategoryobject islist iscapcategoryobject", "X7CA18968862D2285" ], 
+  [ 
+      "\033[2XAddLeftDistributivityExpandingWithGivenObjects\033[102X (for IsCapC\
+ategory, IsFunction)", "7.1-28", [ 7, 1, 28 ], 282, 81, 
+      "addleftdistributivityexpandingwithgivenobjects for iscapcategory isfunc\
+tion", "X814BA200802D26E4" ], 
+  [ 
+      "\033[2XLeftDistributivityFactoring\033[102X (for IsCapCategoryObject, IsLi\
+st)", "7.1-29", [ 7, 1, 29 ], 293, 81, 
+      "leftdistributivityfactoring for iscapcategoryobject islist", 
+      "X780322FE7E5A626D" ], 
+  [ 
+      "\033[2XLeftDistributivityFactoringWithGivenObjects\033[102X (for IsCapCate\
+goryObject, IsCapCategoryObject, IsList, IsCapCategoryObject)", "7.1-30", 
+      [ 7, 1, 30 ], 303, 81, 
+      "leftdistributivityfactoringwithgivenobjects for iscapcategoryobject isc\
+apcategoryobject islist iscapcategoryobject", "X784D8CD685F5F021" ], 
+  [ 
+      "\033[2XAddLeftDistributivityFactoringWithGivenObjects\033[102X (for IsCapC\
+ategory, IsFunction)", "7.1-31", [ 7, 1, 31 ], 313, 81, 
+      "addleftdistributivityfactoringwithgivenobjects for iscapcategory isfunc\
+tion", "X7F0A439478576973" ], 
+  [ 
+      "\033[2XRightDistributivityExpanding\033[102X (for IsList, IsCapCategoryObj\
+ect)", "7.1-32", [ 7, 1, 32 ], 324, 81, 
+      "rightdistributivityexpanding for islist iscapcategoryobject", 
+      "X8409C74778A4313A" ], 
+  [ 
+      "\033[2XRightDistributivityExpandingWithGivenObjects\033[102X (for IsCapCat\
+egoryObject, IsList, IsCapCategoryObject, IsCapCategoryObject)", "7.1-33", 
+      [ 7, 1, 33 ], 335, 81, 
+      "rightdistributivityexpandingwithgivenobjects for iscapcategoryobject is\
+list iscapcategoryobject iscapcategoryobject", "X7DBE629F811DEADC" ], 
+  [ 
+      "\033[2XAddRightDistributivityExpandingWithGivenObjects\033[102X (for IsCap\
+Category, IsFunction)", "7.1-34", [ 7, 1, 34 ], 345, 82, 
+      "addrightdistributivityexpandingwithgivenobjects for iscapcategory isfun\
+ction", "X7A6178C17EFC817A" ], 
+  [ 
+      "\033[2XRightDistributivityFactoring\033[102X (for IsList, IsCapCategoryObj\
+ect)", "7.1-35", [ 7, 1, 35 ], 356, 82, 
+      "rightdistributivityfactoring for islist iscapcategoryobject", 
+      "X86C5C33786C1DC28" ], 
+  [ 
+      "\033[2XRightDistributivityFactoringWithGivenObjects\033[102X (for IsCapCat\
+egoryObject, IsList, IsCapCategoryObject, IsCapCategoryObject)", "7.1-36", 
+      [ 7, 1, 36 ], 366, 82, 
+      "rightdistributivityfactoringwithgivenobjects for iscapcategoryobject is\
+list iscapcategoryobject iscapcategoryobject", "X795267217F7807CE" ], 
+  [ 
+      "\033[2XAddRightDistributivityFactoringWithGivenObjects\033[102X (for IsCap\
+Category, IsFunction)", "7.1-37", [ 7, 1, 37 ], 376, 82, 
+      "addrightdistributivityfactoringwithgivenobjects for iscapcategory isfun\
+ction", "X842099557CF2036E" ], 
+  [ "\033[2XBraiding\033[102X (for IsCapCategoryObject, IsCapCategoryObject)",
+      "7.2-1", [ 7, 2, 1 ], 405, 83, 
+      "braiding for iscapcategoryobject iscapcategoryobject", 
+      "X7C6ADBFE7A8DD1E3" ], 
+  [ 
+      "\033[2XBraidingWithGivenTensorProducts\033[102X (for IsCapCategoryObject, \
+IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject)", "7.2-2", 
+      [ 7, 2, 2 ], 413, 83, 
+      "braidingwithgiventensorproducts for iscapcategoryobject iscapcategoryob\
+ject iscapcategoryobject iscapcategoryobject", "X7F4B09A87B2500C0" ], 
+  [ 
+      "\033[2XAddBraidingWithGivenTensorProducts\033[102X (for IsCapCategory, IsF\
+unction)", "7.2-3", [ 7, 2, 3 ], 422, 83, 
+      "addbraidingwithgiventensorproducts for iscapcategory isfunction", 
+      "X7A52CBE8801D6B28" ], 
+  [ 
+      "\033[2XBraidingInverse\033[102X (for IsCapCategoryObject, IsCapCategoryObj\
+ect)", "7.2-4", [ 7, 2, 4 ], 432, 83, 
+      "braidinginverse for iscapcategoryobject iscapcategoryobject", 
+      "X8195EC5279D3E8D0" ], 
+  [ 
+      "\033[2XBraidingInverseWithGivenTensorProducts\033[102X (for IsCapCategoryO\
+bject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject)", 
+      "7.2-5", [ 7, 2, 5 ], 440, 83, 
+      "braidinginversewithgiventensorproducts for iscapcategoryobject iscapcat\
+egoryobject iscapcategoryobject iscapcategoryobject", "X854AFBC67C836769" ], 
+  [ "\033[2XAddBraidingInverseWithGivenTensorProducts\033[102X (for IsCapCateg\
+ory, IsFunction)", "7.2-6", [ 7, 2, 6 ], 449, 83, 
+      "addbraidinginversewithgiventensorproducts for iscapcategory isfunction"
+        , "X85C7E40583A5955F" ], 
+  [ 
+      "\033[2XInternalHomOnObjects\033[102X (for IsCapCategoryObject, IsCapCatego\
+ryObject)", "7.4-1", [ 7, 4, 1 ], 475, 84, 
+      "internalhomonobjects for iscapcategoryobject iscapcategoryobject", 
+      "X78AA83E77B380D68" ], 
+  [ "\033[2XAddInternalHomOnObjects\033[102X (for IsCapCategory, IsFunction)",
+      "7.4-2", [ 7, 4, 2 ], 483, 84, 
+      "addinternalhomonobjects for iscapcategory isfunction", 
+      "X7B74F8FD8348D590" ], 
+  [ 
+      "\033[2XInternalHomOnMorphisms\033[102X (for IsCapCategoryMorphism, IsCapCa\
+tegoryMorphism)", "7.4-3", [ 7, 4, 3 ], 492, 84, 
+      "internalhomonmorphisms for iscapcategorymorphism iscapcategorymorphism"
+        , "X7C0191A483A72F98" ], 
+  [ 
+      "\033[2XInternalHomOnMorphismsWithGivenInternalHoms\033[102X (for IsCapCate\
+goryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject)\
+", "7.4-4", [ 7, 4, 4 ], 503, 84, 
+      "internalhomonmorphismswithgiveninternalhoms for iscapcategoryobject isc\
+apcategorymorphism iscapcategorymorphism iscapcategoryobject", 
+      "X861226B47B5CB713" ], 
+  [ 
+      "\033[2XAddInternalHomOnMorphismsWithGivenInternalHoms\033[102X (for IsCapC\
+ategory, IsFunction)", "7.4-5", [ 7, 4, 5 ], 515, 84, 
+      "addinternalhomonmorphismswithgiveninternalhoms for iscapcategory isfunc\
+tion", "X8070203E80388349" ], 
+  [ 
+      "\033[2XEvaluationMorphism\033[102X (for IsCapCategoryObject, IsCapCategory\
+Object)", "7.4-6", [ 7, 4, 6 ], 527, 85, 
+      "evaluationmorphism for iscapcategoryobject iscapcategoryobject", 
+      "X809226D2878DD662" ], 
+  [ 
+      "\033[2XEvaluationMorphismWithGivenSource\033[102X (for IsCapCategoryObject\
+, IsCapCategoryObject, IsCapCategoryObject)", "7.4-7", [ 7, 4, 7 ], 537, 85, 
+      "evaluationmorphismwithgivensource for iscapcategoryobject iscapcategory\
+object iscapcategoryobject", "X7E42359B7A888F61" ], 
+  [ 
+      "\033[2XAddEvaluationMorphismWithGivenSource\033[102X (for IsCapCategory, I\
+sFunction)", "7.4-8", [ 7, 4, 8 ], 548, 85, 
+      "addevaluationmorphismwithgivensource for iscapcategory isfunction", 
+      "X7D5C06137CEB86B0" ], 
+  [ 
+      "\033[2XCoevaluationMorphism\033[102X (for IsCapCategoryObject, IsCapCatego\
+ryObject)", "7.4-9", [ 7, 4, 9 ], 558, 85, 
+      "coevaluationmorphism for iscapcategoryobject iscapcategoryobject", 
+      "X79E277047AB3E909" ], 
+  [ 
+      "\033[2XCoevaluationMorphismWithGivenRange\033[102X (for IsCapCategoryObjec\
+t, IsCapCategoryObject, IsCapCategoryObject)", "7.4-10", [ 7, 4, 10 ], 568, 
+      85, 
+      "coevaluationmorphismwithgivenrange for iscapcategoryobject iscapcategor\
+yobject iscapcategoryobject", "X7E8123AD8567A5C0" ], 
+  [ 
+      "\033[2XAddCoevaluationMorphismWithGivenRange\033[102X (for IsCapCategory, \
+IsFunction)", "7.4-11", [ 7, 4, 11 ], 579, 85, 
+      "addcoevaluationmorphismwithgivenrange for iscapcategory isfunction", 
+      "X817E96AA7ACACE89" ], 
+  [ 
+      "\033[2XTensorProductToInternalHomAdjunctionMap\033[102X (for IsCapCategory\
+Object, IsCapCategoryObject, IsCapCategoryMorphism)", "7.4-12", [ 7, 4, 12 ], 
+      589, 86, 
+      "tensorproducttointernalhomadjunctionmap for iscapcategoryobject iscapca\
+tegoryobject iscapcategorymorphism", "X809E6A3182D62DCB" ], 
+  [ 
+      "\033[2XAddTensorProductToInternalHomAdjunctionMap\033[102X (for IsCapCateg\
+ory, IsFunction)", "7.4-13", [ 7, 4, 13 ], 598, 86, 
+      "addtensorproducttointernalhomadjunctionmap for iscapcategory isfunction\
+", "X7BB46BD486E96939" ], 
+  [ 
+      "\033[2XInternalHomToTensorProductAdjunctionMap\033[102X (for IsCapCategory\
+Object, IsCapCategoryObject, IsCapCategoryMorphism)", "7.4-14", [ 7, 4, 14 ], 
+      608, 86, 
+      "internalhomtotensorproductadjunctionmap for iscapcategoryobject iscapca\
+tegoryobject iscapcategorymorphism", "X7A48DA157CCFB0B9" ], 
+  [ 
+      "\033[2XAddInternalHomToTensorProductAdjunctionMap\033[102X (for IsCapCateg\
+ory, IsFunction)", "7.4-15", [ 7, 4, 15 ], 617, 86, 
+      "addinternalhomtotensorproductadjunctionmap for iscapcategory isfunction\
+", "X7C8C2DC381EA0962" ], 
+  [ 
+      "\033[2XMonoidalPreComposeMorphism\033[102X (for IsCapCategoryObject, IsCap\
+CategoryObject, IsCapCategoryObject)", "7.4-16", [ 7, 4, 16 ], 627, 86, 
+      "monoidalprecomposemorphism for iscapcategoryobject iscapcategoryobject \
+iscapcategoryobject", "X86E4E97C82BFB45C" ], 
+  [ 
+      "\033[2XMonoidalPreComposeMorphismWithGivenObjects\033[102X (for IsCapCateg\
+oryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCa\
+pCategoryObject)", "7.4-17", [ 7, 4, 17 ], 638, 87, 
+      "monoidalprecomposemorphismwithgivenobjects for iscapcategoryobject isca\
+pcategoryobject iscapcategoryobject iscapcategoryobject iscapcategoryobject", 
+      "X7FE4A52284060F20" ], 
+  [ 
+      "\033[2XAddMonoidalPreComposeMorphismWithGivenObjects\033[102X (for IsCapCa\
+tegory, IsFunction)", "7.4-18", [ 7, 4, 18 ], 651, 87, 
+      "addmonoidalprecomposemorphismwithgivenobjects for iscapcategory isfunct\
+ion", "X7A22CD657A2A338C" ], 
+  [ 
+      "\033[2XMonoidalPostComposeMorphism\033[102X (for IsCapCategoryObject, IsCa\
+pCategoryObject, IsCapCategoryObject)", "7.4-19", [ 7, 4, 19 ], 663, 87, 
+      "monoidalpostcomposemorphism for iscapcategoryobject iscapcategoryobject\
+ iscapcategoryobject", "X79F4FCE781385829" ], 
+  [ 
+      "\033[2XMonoidalPostComposeMorphismWithGivenObjects\033[102X (for IsCapCate\
+goryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsC\
+apCategoryObject)", "7.4-20", [ 7, 4, 20 ], 674, 87, 
+      "monoidalpostcomposemorphismwithgivenobjects for iscapcategoryobject isc\
+apcategoryobject iscapcategoryobject iscapcategoryobject iscapcategoryobject",
+      "X7E6933B8816EE4E3" ], 
+  [ 
+      "\033[2XAddMonoidalPostComposeMorphismWithGivenObjects\033[102X (for IsCapC\
+ategory, IsFunction)", "7.4-21", [ 7, 4, 21 ], 687, 87, 
+      "addmonoidalpostcomposemorphismwithgivenobjects for iscapcategory isfunc\
+tion", "X7FC3725A7CF804F9" ], 
+  [ "\033[2XDualOnObjects\033[102X (for IsCapCategoryObject)", "7.4-22", 
+      [ 7, 4, 22 ], 699, 88, "dualonobjects for iscapcategoryobject", 
+      "X80FFC71D7E57DD53" ], 
+  [ "\033[2XAddDualOnObjects\033[102X (for IsCapCategory, IsFunction)", 
+      "7.4-23", [ 7, 4, 23 ], 706, 88, 
+      "adddualonobjects for iscapcategory isfunction", "X7BB4DD5381EBF082" ], 
+  [ "\033[2XDualOnMorphisms\033[102X (for IsCapCategoryMorphism)", "7.4-24", 
+      [ 7, 4, 24 ], 715, 88, "dualonmorphisms for iscapcategorymorphism", 
+      "X815C0BC47D000819" ], 
+  [ 
+      "\033[2XDualOnMorphismsWithGivenDuals\033[102X (for IsCapCategoryObject, Is\
+CapCategoryMorphism, IsCapCategoryObject)", "7.4-25", [ 7, 4, 25 ], 723, 88, 
+      "dualonmorphismswithgivenduals for iscapcategoryobject iscapcategorymorp\
+hism iscapcategoryobject", "X7DCC0F468386AA46" ], 
+  [ 
+      "\033[2XAddDualOnMorphismsWithGivenDuals\033[102X (for IsCapCategory, IsFun\
+ction)", "7.4-26", [ 7, 4, 26 ], 732, 88, 
+      "adddualonmorphismswithgivenduals for iscapcategory isfunction", 
+      "X85DA12C581E673DE" ], 
+  [ "\033[2XEvaluationForDual\033[102X (for IsCapCategoryObject)", "7.4-27", 
+      [ 7, 4, 27 ], 742, 88, "evaluationfordual for iscapcategoryobject", 
+      "X86D42C7587F03A68" ], 
+  [ 
+      "\033[2XEvaluationForDualWithGivenTensorProduct\033[102X (for IsCapCategory\
+Object, IsCapCategoryObject, IsCapCategoryObject)", "7.4-28", [ 7, 4, 28 ], 
+      750, 88, 
+      "evaluationfordualwithgiventensorproduct for iscapcategoryobject iscapca\
+tegoryobject iscapcategoryobject", "X7B588B1B8472834E" ], 
+  [ 
+      "\033[2XAddEvaluationForDualWithGivenTensorProduct\033[102X (for IsCapCateg\
+ory, IsFunction)", "7.4-29", [ 7, 4, 29 ], 759, 89, 
+      "addevaluationfordualwithgiventensorproduct for iscapcategory isfunction\
+", "X7CB63A4E7E905CD4" ], 
+  [ "\033[2XCoevaluationForDual\033[102X (for IsCapCategoryObject)", 
+      "7.4-30", [ 7, 4, 30 ], 769, 89, 
+      "coevaluationfordual for iscapcategoryobject", "X83849B327C8074E9" ], 
+  [ 
+      "\033[2XCoevaluationForDualWithGivenTensorProduct\033[102X (for IsCapCatego\
+ryObject, IsCapCategoryObject, IsCapCategoryObject)", "7.4-31", [ 7, 4, 31 ], 
+      777, 89, 
+      "coevaluationfordualwithgiventensorproduct for iscapcategoryobject iscap\
+categoryobject iscapcategoryobject", "X7C65E6A97AAE0DE3" ], 
+  [ 
+      "\033[2XAddCoevaluationForDualWithGivenTensorProduct\033[102X (for IsCapCat\
+egory, IsFunction)", "7.4-32", [ 7, 4, 32 ], 786, 89, 
+      "addcoevaluationfordualwithgiventensorproduct for iscapcategory isfuncti\
+on", "X831DC3947941E8BA" ], 
+  [ "\033[2XMorphismToBidual\033[102X (for IsCapCategoryObject)", "7.4-33", 
+      [ 7, 4, 33 ], 796, 89, "morphismtobidual for iscapcategoryobject", 
+      "X7F68B55781C1DFB1" ], 
+  [ 
+      "\033[2XMorphismToBidualWithGivenBidual\033[102X (for IsCapCategoryObject, \
+IsCapCategoryObject)", "7.4-34", [ 7, 4, 34 ], 804, 89, 
+      "morphismtobidualwithgivenbidual for iscapcategoryobject iscapcategoryob\
+ject", "X79260E5680F1E741" ], 
+  [ 
+      "\033[2XAddMorphismToBidualWithGivenBidual\033[102X (for IsCapCategory, IsF\
+unction)", "7.4-35", [ 7, 4, 35 ], 812, 90, 
+      "addmorphismtobidualwithgivenbidual for iscapcategory isfunction", 
+      "X84C05B087EFCE599" ], 
+  [ 
+      "\033[2XTensorProductInternalHomCompatibilityMorphism\033[102X (for IsCapCa\
+tegoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject)",
+      "7.4-36", [ 7, 4, 36 ], 822, 90, 
+      "tensorproductinternalhomcompatibilitymorphism for iscapcategoryobject i\
+scapcategoryobject iscapcategoryobject iscapcategoryobject", 
+      "X85FD880E7B76936C" ], 
+  [ 
+      "\033[2XTensorProductInternalHomCompatibilityMorphismWithGivenObjects\033[1\
+02X (for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapC\
+ategoryObject, IsList)", "7.4-37", [ 7, 4, 37 ], 835, 90, 
+      "tensorproductinternalhomcompatibilitymorphismwithgivenobjects for iscap\
+categoryobject iscapcategoryobject iscapcategoryobject iscapcategoryobject isl\
+ist", "X7DDA8E317EF3078D" ], 
+  [ 
+      "\033[2XAddTensorProductInternalHomCompatibilityMorphismWithGivenObjects\\
+033[102X (for IsCapCategory, IsFunction)", "7.4-38", [ 7, 4, 38 ], 850, 90, 
+      "addtensorproductinternalhomcompatibilitymorphismwithgivenobjects for is\
+capcategory isfunction", "X871C6B55843A0AF3" ], 
+  [ 
+      "\033[2XTensorProductDualityCompatibilityMorphism\033[102X (for IsCapCatego\
+ryObject, IsCapCategoryObject)", "7.4-39", [ 7, 4, 39 ], 864, 90, 
+      "tensorproductdualitycompatibilitymorphism for iscapcategoryobject iscap\
+categoryobject", "X7D173DB08132E40A" ], 
+  [ 
+      "\033[2XTensorProductDualityCompatibilityMorphismWithGivenObjects\033[102X \
+(for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCateg\
+oryObject)", "7.4-40", [ 7, 4, 40 ], 874, 91, 
+      "tensorproductdualitycompatibilitymorphismwithgivenobjects for iscapcate\
+goryobject iscapcategoryobject iscapcategoryobject iscapcategoryobject", 
+      "X794ED97782B8DF76" ], 
+  [ 
+      "\033[2XAddTensorProductDualityCompatibilityMorphismWithGivenObjects\033[10\
+2X (for IsCapCategory, IsFunction)", "7.4-41", [ 7, 4, 41 ], 885, 91, 
+      "addtensorproductdualitycompatibilitymorphismwithgivenobjects for iscapc\
+ategory isfunction", "X78D1B6AF8654A950" ], 
+  [ 
+      "\033[2XMorphismFromTensorProductToInternalHom\033[102X (for IsCapCategoryO\
+bject, IsCapCategoryObject)", "7.4-42", [ 7, 4, 42 ], 896, 91, 
+      "morphismfromtensorproducttointernalhom for iscapcategoryobject iscapcat\
+egoryobject", "X8439BFF57BFE390F" ], 
+  [ 
+      "\033[2XMorphismFromTensorProductToInternalHomWithGivenObjects\033[102X (fo\
+r IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategory\
+Object)", "7.4-43", [ 7, 4, 43 ], 906, 91, 
+      "morphismfromtensorproducttointernalhomwithgivenobjects for iscapcategor\
+yobject iscapcategoryobject iscapcategoryobject iscapcategoryobject", 
+      "X8473D28B7F3A5E20" ], 
+  [ 
+      "\033[2XAddMorphismFromTensorProductToInternalHomWithGivenObjects\033[102X \
+(for IsCapCategory, IsFunction)", "7.4-44", [ 7, 4, 44 ], 917, 91, 
+      "addmorphismfromtensorproducttointernalhomwithgivenobjects for iscapcate\
+gory isfunction", "X86D3AF4A80FA738D" ], 
+  [ 
+      "\033[2XIsomorphismFromTensorProductToInternalHom\033[102X (for IsCapCatego\
+ryObject, IsCapCategoryObject)", "7.4-45", [ 7, 4, 45 ], 928, 92, 
+      "isomorphismfromtensorproducttointernalhom for iscapcategoryobject iscap\
+categoryobject", "X7E88C05A78C378B3" ], 
+  [ 
+      "\033[2XAddIsomorphismFromTensorProductToInternalHom\033[102X (for IsCapCat\
+egory, IsFunction)", "7.4-46", [ 7, 4, 46 ], 938, 92, 
+      "addisomorphismfromtensorproducttointernalhom for iscapcategory isfuncti\
+on", "X80A7C9A57D85D981" ], 
+  [ 
+      "\033[2XMorphismFromInternalHomToTensorProduct\033[102X (for IsCapCategoryO\
+bject, IsCapCategoryObject)", "7.4-47", [ 7, 4, 47 ], 948, 92, 
+      "morphismfrominternalhomtotensorproduct for iscapcategoryobject iscapcat\
+egoryobject", "X7D189B8280CECBA2" ], 
+  [ 
+      "\033[2XMorphismFromInternalHomToTensorProductWithGivenObjects\033[102X (fo\
+r IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategory\
+Object)", "7.4-48", [ 7, 4, 48 ], 959, 92, 
+      "morphismfrominternalhomtotensorproductwithgivenobjects for iscapcategor\
+yobject iscapcategoryobject iscapcategoryobject iscapcategoryobject", 
+      "X7D10805D840AAC8D" ], 
+  [ 
+      "\033[2XAddMorphismFromInternalHomToTensorProductWithGivenObjects\033[102X \
+(for IsCapCategory, IsFunction)", "7.4-49", [ 7, 4, 49 ], 971, 92, 
+      "addmorphismfrominternalhomtotensorproductwithgivenobjects for iscapcate\
+gory isfunction", "X7A4A4C668706D593" ], 
+  [ 
+      "\033[2XIsomorphismFromInternalHomToTensorProduct\033[102X (for IsCapCatego\
+ryObject, IsCapCategoryObject)", "7.4-50", [ 7, 4, 50 ], 982, 93, 
+      "isomorphismfrominternalhomtotensorproduct for iscapcategoryobject iscap\
+categoryobject", "X87A9E42D7F3FDEAD" ], 
+  [ 
+      "\033[2XAddIsomorphismFromInternalHomToTensorProduct\033[102X (for IsCapCat\
+egory, IsFunction)", "7.4-51", [ 7, 4, 51 ], 993, 93, 
+      "addisomorphismfrominternalhomtotensorproduct for iscapcategory isfuncti\
+on", "X7EAC425A87FF2C0E" ], 
+  [ "\033[2XTraceMap\033[102X (for IsCapCategoryMorphism)", "7.4-52", 
+      [ 7, 4, 52 ], 1003, 93, "tracemap for iscapcategorymorphism", 
+      "X85D0C9487A22AFFE" ], 
+  [ "\033[2XAddTraceMap\033[102X (for IsCapCategory, IsFunction)", "7.4-53", 
+      [ 7, 4, 53 ], 1011, 93, "addtracemap for iscapcategory isfunction", 
+      "X8446431880FFF111" ], 
+  [ "\033[2XRankMorphism\033[102X (for IsCapCategoryObject)", "7.4-54", 
+      [ 7, 4, 54 ], 1020, 93, "rankmorphism for iscapcategoryobject", 
+      "X82F0DBD485D93793" ], 
+  [ "\033[2XAddRankMorphism\033[102X (for IsCapCategory, IsFunction)", 
+      "7.4-55", [ 7, 4, 55 ], 1028, 93, 
+      "addrankmorphism for iscapcategory isfunction", "X849B17E08679450A" ], 
+  [ "\033[2XIsomorphismFromDualToInternalHom\033[102X (for IsCapCategoryObject\
+)", "7.4-56", [ 7, 4, 56 ], 1037, 93, 
+      "isomorphismfromdualtointernalhom for iscapcategoryobject", 
+      "X7C8F7512785C7028" ], 
+  [ 
+      "\033[2XAddIsomorphismFromDualToInternalHom\033[102X (for IsCapCategory, Is\
+Function)", "7.4-57", [ 7, 4, 57 ], 1046, 94, 
+      "addisomorphismfromdualtointernalhom for iscapcategory isfunction", 
+      "X7882497883F6666A" ], 
+  [ 
+      "\033[2XIsomorphismFromInternalHomToDual\033[102X (for IsCapCategoryObject)\
+", "7.4-58", [ 7, 4, 58 ], 1056, 94, 
+      "isomorphismfrominternalhomtodual for iscapcategoryobject", 
+      "X7E1B1DE47E838F75" ], 
+  [ 
+      "\033[2XAddIsomorphismFromInternalHomToDual\033[102X (for IsCapCategory, Is\
+Function)", "7.4-59", [ 7, 4, 59 ], 1065, 94, 
+      "addisomorphismfrominternalhomtodual for iscapcategory isfunction", 
+      "X7A91D0187FF3C50E" ], 
+  [ 
+      "\033[2XUniversalPropertyOfDual\033[102X (for IsCapCategoryObject, IsCapCat\
+egoryObject, IsCapCategoryMorphism)", "7.4-60", [ 7, 4, 60 ], 1075, 94, 
+      "universalpropertyofdual for iscapcategoryobject iscapcategoryobject isc\
+apcategorymorphism", "X7AF8F68887146C20" ], 
+  [ 
+      "\033[2XAddUniversalPropertyOfDual\033[102X (for IsCapCategory, IsFunction)\
+", "7.4-61", [ 7, 4, 61 ], 1084, 94, 
+      "adduniversalpropertyofdual for iscapcategory isfunction", 
+      "X7FCEDB3B7DF69A1E" ], 
+  [ "\033[2XLambdaIntroduction\033[102X (for IsCapCategoryMorphism)", 
+      "7.4-62", [ 7, 4, 62 ], 1094, 94, 
+      "lambdaintroduction for iscapcategorymorphism", "X80F3F2287B9E55E3" ], 
+  [ "\033[2XAddLambdaIntroduction\033[102X (for IsCapCategory, IsFunction)", 
+      "7.4-63", [ 7, 4, 63 ], 1103, 95, 
+      "addlambdaintroduction for iscapcategory isfunction", 
+      "X84944B6283F2802A" ], 
+  [ 
+      "\033[2XLambdaElimination\033[102X (for IsCapCategoryObject, IsCapCategoryO\
+bject, IsCapCategoryMorphism)", "7.4-64", [ 7, 4, 64 ], 1113, 95, 
+      "lambdaelimination for iscapcategoryobject iscapcategoryobject iscapcate\
+gorymorphism", "X79EC44077F661E80" ], 
+  [ "\033[2XAddLambdaElimination\033[102X (for IsCapCategory, IsFunction)", 
+      "7.4-65", [ 7, 4, 65 ], 1122, 95, 
+      "addlambdaelimination for iscapcategory isfunction", 
+      "X8406FBCD7EE968FF" ], 
+  [ 
+      "\033[2XIsomorphismFromObjectToInternalHom\033[102X (for IsCapCategoryObjec\
+t)", "7.4-66", [ 7, 4, 66 ], 1132, 95, 
+      "isomorphismfromobjecttointernalhom for iscapcategoryobject", 
+      "X8726BA888787D53D" ], 
+  [ 
+      "\033[2XIsomorphismFromObjectToInternalHomWithGivenInternalHom\033[102X (fo\
+r IsCapCategoryObject, IsCapCategoryObject)", "7.4-67", [ 7, 4, 67 ], 1140, 
+      95, 
+      "isomorphismfromobjecttointernalhomwithgiveninternalhom for iscapcategor\
+yobject iscapcategoryobject", "X87F91EF37C76A7F7" ], 
+  [ 
+      "\033[2XAddIsomorphismFromObjectToInternalHomWithGivenInternalHom\033[102X \
+(for IsCapCategory, IsFunction)", "7.4-68", [ 7, 4, 68 ], 1149, 95, 
+      "addisomorphismfromobjecttointernalhomwithgiveninternalhom for iscapcate\
+gory isfunction", "X78ED7FCC83D091AB" ], 
+  [ 
+      "\033[2XIsomorphismFromInternalHomToObject\033[102X (for IsCapCategoryObjec\
+t)", "7.4-69", [ 7, 4, 69 ], 1160, 96, 
+      "isomorphismfrominternalhomtoobject for iscapcategoryobject", 
+      "X831CF4E1824FA178" ], 
+  [ 
+      "\033[2XIsomorphismFromInternalHomToObjectWithGivenInternalHom\033[102X (fo\
+r IsCapCategoryObject, IsCapCategoryObject)", "7.4-70", [ 7, 4, 70 ], 1168, 
+      96, 
+      "isomorphismfrominternalhomtoobjectwithgiveninternalhom for iscapcategor\
+yobject iscapcategoryobject", "X7988DC7C79BED3B2" ], 
+  [ 
+      "\033[2XAddIsomorphismFromInternalHomToObjectWithGivenInternalHom\033[102X \
+(for IsCapCategory, IsFunction)", "7.4-71", [ 7, 4, 71 ], 1177, 96, 
+      "addisomorphismfrominternalhomtoobjectwithgiveninternalhom for iscapcate\
+gory isfunction", "X7D6421147BF6651B" ], 
+  [ 
+      "\033[2XTensorProductInternalHomCompatibilityMorphismInverse\033[102X (for \
+IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryOb\
+ject)", "7.5-1", [ 7, 5, 1 ], 1204, 96, 
+      "tensorproductinternalhomcompatibilitymorphisminverse for iscapcategoryo\
+bject iscapcategoryobject iscapcategoryobject iscapcategoryobject", 
+      "X79374295858E884C" ], 
+  [ 
+      "\033[2XTensorProductInternalHomCompatibilityMorphismInverseWithGivenObject\
+s\033[102X (for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject,\
+ IsCapCategoryObject, IsList)", "7.5-2", [ 7, 5, 2 ], 1217, 96, 
+      "tensorproductinternalhomcompatibilitymorphisminversewithgivenobjects fo\
+r iscapcategoryobject iscapcategoryobject iscapcategoryobject iscapcategoryobj\
+ect islist", "X7D5443AA7C591DDF" ], 
+  [ 
+      "\033[2XAddTensorProductInternalHomCompatibilityMorphismInverseWithGivenObj\
+ects\033[102X (for IsCapCategory, IsFunction)", "7.5-3", [ 7, 5, 3 ], 1232, 
+      97, 
+      "addtensorproductinternalhomcompatibilitymorphisminversewithgivenobjects\
+ for iscapcategory isfunction", "X7D9EA11980170B0C" ], 
+  [ "\033[2XMorphismFromBidual\033[102X (for IsCapCategoryObject)", "7.5-4", 
+      [ 7, 5, 4 ], 1246, 97, "morphismfrombidual for iscapcategoryobject", 
+      "X7E02E8197EA201EA" ], 
+  [ 
+      "\033[2XMorphismFromBidualWithGivenBidual\033[102X (for IsCapCategoryObject\
+, IsCapCategoryObject)", "7.5-5", [ 7, 5, 5 ], 1254, 97, 
+      "morphismfrombidualwithgivenbidual for iscapcategoryobject iscapcategory\
+object", "X785CF0BB7BC0AC0D" ], 
+  [ 
+      "\033[2XAddMorphismFromBidualWithGivenBidual\033[102X (for IsCapCategory, I\
+sFunction)", "7.5-6", [ 7, 5, 6 ], 1263, 97, 
+      "addmorphismfrombidualwithgivenbidual for iscapcategory isfunction", 
+      "X877C409E865C2BB3" ], 
+  [ "\033[2XDerivationInfo\033[102X", "8.1-1", [ 8, 1, 1 ], 7, 98, 
+      "derivationinfo", "X847BF8788620ADEC" ], 
+  [ "\033[2XActivateDerivationInfo\033[102X", "8.1-2", [ 8, 1, 2 ], 13, 98, 
+      "activatederivationinfo", "X82EB820C81919BD5" ], 
+  [ "\033[2XDeactivateDerivationInfo\033[102X", "8.1-3", [ 8, 1, 3 ], 17, 98, 
+      "deactivatederivationinfo", "X7853FBCF7DAA6AD1" ], 
+  [ "\033[2XIsDerivedMethod\033[102X (for IsObject)", "8.2-1", [ 8, 2, 1 ], 
+      24, 98, "isderivedmethod for isobject", "X7E30DF4F8029D24F" ], 
+  [ 
+      "\033[2XMakeDerivation\033[102X (for IsString, IsFunction, IsDenseList,IsPo\
+sInt, IsDenseList, IsFunction)", "8.2-2", [ 8, 2, 2 ], 33, 98, 
+      "makederivation for isstring isfunction isdenselist isposint isdenselist\
+ isfunction", "X7A9081ED8334054B" ], 
+  [ "\033[2XDerivationName\033[102X (for IsDerivedMethod)", "8.2-3", 
+      [ 8, 2, 3 ], 58, 99, "derivationname for isderivedmethod", 
+      "X85FA69CA831B3D68" ], 
+  [ "\033[2XDerivationWeight\033[102X (for IsDerivedMethod)", "8.2-4", 
+      [ 8, 2, 4 ], 66, 99, "derivationweight for isderivedmethod", 
+      "X8039396185E25B0C" ], 
+  [ 
+      "\033[2XDerivationFunctionsWithExtraFilters\033[102X (for IsDerivedMethod)"
+        , "8.2-5", [ 8, 2, 5 ], 72, 99, 
+      "derivationfunctionswithextrafilters for isderivedmethod", 
+      "X8509D9897EC94507" ], 
+  [ "\033[2XCategoryFilter\033[102X (for IsDerivedMethod)", "8.2-6", 
+      [ 8, 2, 6 ], 79, 99, "categoryfilter for isderivedmethod", 
+      "X7F2B7310826D555B" ], 
+  [ 
+      "\033[2XIsApplicableToCategory\033[102X (for IsDerivedMethod, IsCapCategory\
+)", "8.2-7", [ 8, 2, 7 ], 85, 99, 
+      "isapplicabletocategory for isderivedmethod iscapcategory", 
+      "X7CA199A3868E0222" ], 
+  [ "\033[2XTargetOperation\033[102X (for IsDerivedMethod)", "8.2-8", 
+      [ 8, 2, 8 ], 93, 100, "targetoperation for isderivedmethod", 
+      "X82E56CD47C15FE34" ], 
+  [ "\033[2XUsedOperations\033[102X (for IsDerivedMethod)", "8.2-9", 
+      [ 8, 2, 9 ], 99, 100, "usedoperations for isderivedmethod", 
+      "X7A407F3F7F264A77" ], 
+  [ "\033[2XUsedOperationMultiples\033[102X (for IsDerivedMethod)", "8.2-10", 
+      [ 8, 2, 10 ], 104, 100, "usedoperationmultiples for isderivedmethod", 
+      "X78FAD4788098483B" ], 
+  [ "\033[2XUsedOperationsWithMultiples\033[102X (for IsDerivedMethod)", 
+      "8.2-11", [ 8, 2, 11 ], 111, 100, 
+      "usedoperationswithmultiples for isderivedmethod", "X80FA45B68744108E" ]
+    , 
+  [ 
+      "\033[2XInstallDerivationForCategory\033[102X (for IsDerivedMethod, IsPosIn\
+t, IsCapCategory)", "8.2-12", [ 8, 2, 12 ], 119, 100, 
+      "installderivationforcategory for isderivedmethod isposint iscapcategory\
+", "X7DCED23B84345454" ], 
+  [ 
+      "\033[2XDerivationResultWeight\033[102X (for IsDerivedMethod, IsDenseList)"
+        , "8.2-13", [ 8, 2, 13 ], 126, 100, 
+      "derivationresultweight for isderivedmethod isdenselist", 
+      "X82546C667C204B78" ], 
+  [ "\033[2XIsDerivedMethodGraph\033[102X (for IsObject)", "8.3-1", 
+      [ 8, 3, 1 ], 138, 100, "isderivedmethodgraph for isobject", 
+      "X7BFD964E8739600C" ], 
+  [ "\033[2XMakeDerivationGraph\033[102X (for IsDenseList)", "8.3-2", 
+      [ 8, 3, 2 ], 147, 101, "makederivationgraph for isdenselist", 
+      "X7E19A0AD8661EF00" ], 
+  [ 
+      "\033[2XAddOperationsToDerivationGraph\033[102X (for IsDerivedMethodGraph, \
+IsDenseList)", "8.3-3", [ 8, 3, 3 ], 156, 101, 
+      "addoperationstoderivationgraph for isderivedmethodgraph isdenselist", 
+      "X7B801088854A0127" ], 
+  [ 
+      "\033[2XAddDerivation\033[102X (for IsDerivedMethodGraph, IsDerivedMethod)"
+        , "8.3-4", [ 8, 3, 4 ], 166, 101, 
+      "addderivation for isderivedmethodgraph isderivedmethod", 
+      "X7DEBC71E8450F86A" ], 
+  [ 
+      "\033[2XAddDerivation\033[102X (for IsDerivedMethodGraph, IsFunction, IsDen\
+seList, IsObject)", "8.3-5", [ 8, 3, 5 ], 172, 101, 
+      "addderivation for isderivedmethodgraph isfunction isdenselist isobject"
+        , "X85CADCFF85BBF867" ], 
+  [ 
+      "\033[2XAddDerivation\033[102X (for IsDerivedMethodGraph, IsFunction, IsDen\
+seList)", "8.3-6", [ 8, 3, 6 ], 176, 101, 
+      "addderivation for isderivedmethodgraph isfunction isdenselist", 
+      "X8669A64F7BB2C4FB" ], 
+  [ 
+      "\033[2XAddDerivation\033[102X (for IsDerivedMethodGraph, IsFunction, IsFun\
+ction)", "8.3-7", [ 8, 3, 7 ], 180, 101, 
+      "addderivation for isderivedmethodgraph isfunction isfunction", 
+      "X8027604D8282F123" ], 
+  [ 
+      "\033[2XAddDerivationPair\033[102X (for IsDerivedMethodGraph, IsFunction, I\
+sFunction, IsDenseList, IsDenseList, IsDenseList)", "8.3-8", [ 8, 3, 8 ], 
+      184, 101, 
+      "addderivationpair for isderivedmethodgraph isfunction isfunction isdens\
+elist isdenselist isdenselist", "X80E6AA06854AAF28" ], 
+  [ 
+      "\033[2XAddDerivationPair\033[102X (for IsDerivedMethodGraph, IsFunction, I\
+sFunction, IsDenseList, IsDenseList)", "8.3-9", [ 8, 3, 9 ], 188, 101, 
+      "addderivationpair for isderivedmethodgraph isfunction isfunction isdens\
+elist isdenselist", "X85F0182679C6E863" ], 
+  [ 
+      "\033[2XAddDerivationPair\033[102X (for IsDerivedMethodGraph, IsFunction, I\
+sFunction, IsDenseList, IsFunction, IsFunction)", "8.3-10", [ 8, 3, 10 ], 
+      192, 102, 
+      "addderivationpair for isderivedmethodgraph isfunction isfunction isdens\
+elist isfunction isfunction", "X801E2F4E86008850" ], 
+  [ 
+      "\033[2XAddDerivationPair\033[102X (for IsDerivedMethodGraph, IsFunction, I\
+sFunction, IsFunction, IsFunction)", "8.3-11", [ 8, 3, 11 ], 196, 102, 
+      "addderivationpair for isderivedmethodgraph isfunction isfunction isfunc\
+tion isfunction", "X7F31CF457FF00EF5" ], 
+  [ "\033[2XAddDerivationToCAP\033[102X", "8.3-12", [ 8, 3, 12 ], 200, 102, 
+      "addderivationtocap", "X7BC80B4F7A067D91" ], 
+  [ "\033[2XAddDerivationPairToCAP\033[102X", "8.3-13", [ 8, 3, 13 ], 204, 
+      102, "addderivationpairtocap", "X81358A4C862A8BC1" ], 
+  [ "\033[2XAddWithGivenDerivationPairToCAP\033[102X", "8.3-14", 
+      [ 8, 3, 14 ], 208, 102, "addwithgivenderivationpairtocap", 
+      "X8263F4547BBF28C7" ], 
+  [ "\033[2XOperations\033[102X (for IsDerivedMethodGraph)", "8.3-15", 
+      [ 8, 3, 15 ], 212, 102, "operations for isderivedmethodgraph", 
+      "X8669CCC78175B23B" ], 
+  [ 
+      "\033[2XDerivationsUsingOperation\033[102X (for IsDerivedMethodGraph, IsStr\
+ing)", "8.3-16", [ 8, 3, 16 ], 218, 102, 
+      "derivationsusingoperation for isderivedmethodgraph isstring", 
+      "X7D8B5FE482B39913" ], 
+  [ 
+      "\033[2XDerivationsOfOperation\033[102X (for IsDerivedMethodGraph, IsString\
+)", "8.3-17", [ 8, 3, 17 ], 225, 102, 
+      "derivationsofoperation for isderivedmethodgraph isstring", 
+      "X7A4C262581C53309" ], 
+  [ "\033[2XIsOperationWeightList\033[102X (for IsObject)", "8.4-1", 
+      [ 8, 4, 1 ], 236, 103, "isoperationweightlist for isobject", 
+      "X832B6935788EA870" ], 
+  [ 
+      "\033[2XMakeOperationWeightList\033[102X (for IsCapCategory, IsDerivedMetho\
+dGraph)", "8.4-2", [ 8, 4, 2 ], 251, 103, 
+      "makeoperationweightlist for iscapcategory isderivedmethodgraph", 
+      "X7CFC7F17786B1B6E" ], 
+  [ "\033[2XDerivationGraph\033[102X (for IsOperationWeightList)", "8.4-3", 
+      [ 8, 4, 3 ], 261, 103, "derivationgraph for isoperationweightlist", 
+      "X7E6F8469808FE57E" ], 
+  [ 
+      "\033[2XCategoryOfOperationWeightList\033[102X (for IsOperationWeightList)"
+        , "8.4-4", [ 8, 4, 4 ], 267, 103, 
+      "categoryofoperationweightlist for isoperationweightlist", 
+      "X80E9071D87ABCA57" ], 
+  [ 
+      "\033[2XCurrentOperationWeight\033[102X (for IsOperationWeightList, IsStrin\
+g)", "8.4-5", [ 8, 4, 5 ], 273, 103, 
+      "currentoperationweight for isoperationweightlist isstring", 
+      "X7BE16AB2849D0107" ], 
+  [ 
+      "\033[2XOperationWeightUsingDerivation\033[102X (for IsOperationWeightList,\
+ IsDerivedMethod)", "8.4-6", [ 8, 4, 6 ], 279, 103, 
+      "operationweightusingderivation for isoperationweightlist isderivedmetho\
+d", "X7A67FC1B80BF67AD" ], 
+  [ 
+      "\033[2XDerivationOfOperation\033[102X (for IsOperationWeightList, IsString\
+)", "8.4-7", [ 8, 4, 7 ], 286, 104, 
+      "derivationofoperation for isoperationweightlist isstring", 
+      "X79490A257E67804E" ], 
+  [ 
+      "\033[2XInstallDerivationsUsingOperation\033[102X (for IsOperationWeightLis\
+t, IsString)", "8.4-8", [ 8, 4, 8 ], 295, 104, 
+      "installderivationsusingoperation for isoperationweightlist isstring", 
+      "X8411326D85222A6C" ], 
+  [ "\033[2XReevaluate\033[102X (for IsOperationWeightList)", "8.4-9", 
+      [ 8, 4, 9 ], 304, 104, "reevaluate for isoperationweightlist", 
+      "X7E2279C47AFE3FAD" ], 
+  [ 
+      "\033[2XAddPrimitiveOperation\033[102X (for IsOperationWeightList, IsString\
+, IsInt)", "8.4-10", [ 8, 4, 10 ], 314, 104, 
+      "addprimitiveoperation for isoperationweightlist isstring isint", 
+      "X835210E67EF93118" ], 
+  [ 
+      "\033[2XPrintDerivationTree\033[102X (for IsOperationWeightList, IsString)"
+        , "8.4-11", [ 8, 4, 11 ], 323, 104, 
+      "printderivationtree for isoperationweightlist isstring", 
+      "X8145094E862826BE" ], 
+  [ "\033[2XPrintTree\033[102X (for IsObject, IsFunction, IsFunction)", 
+      "8.4-12", [ 8, 4, 12 ], 330, 104, 
+      "printtree for isobject isfunction isfunction", "X7E59037F7B4E42D0" ], 
+  [ "\033[2XPrintTreeRec\033[102X (for IsObject, IsFunction, IsFunction, IsInt\
+)", "8.4-13", [ 8, 4, 13 ], 336, 105, 
+      "printtreerec for isobject isfunction isfunction isint", 
+      "X8293EF6286A82480" ], 
+  [ "\033[2XIsStringMinHeap\033[102X (for IsObject)", "8.5-1", [ 8, 5, 1 ], 
+      346, 105, "isstringminheap for isobject", "X86D1D85F828978AE" ], 
+  [ "\033[2XStringMinHeap\033[102X", "8.5-2", [ 8, 5, 2 ], 354, 105, 
+      "stringminheap", "X812EDE3F8737AB9D" ], 
+  [ "\033[2XAdd\033[102X (for IsStringMinHeap, IsString, IsInt)", "8.5-3", 
+      [ 8, 5, 3 ], 360, 105, "add for isstringminheap isstring isint", 
+      "X80604054823A6F01" ], 
+  [ "\033[2XExtractMin\033[102X (for IsStringMinHeap)", "8.5-4", [ 8, 5, 4 ], 
+      366, 105, "extractmin for isstringminheap", "X7E136159853A3BAC" ], 
+  [ "\033[2XDecreaseKey\033[102X (for IsStringMinHeap, IsString, IsInt)", 
+      "8.5-5", [ 8, 5, 5 ], 374, 105, 
+      "decreasekey for isstringminheap isstring isint", "X79B2FB2178CC6A34" ],
+  [ "\033[2XIsEmptyHeap\033[102X (for IsStringMinHeap)", "8.5-6", 
+      [ 8, 5, 6 ], 381, 105, "isemptyheap for isstringminheap", 
+      "X7CEECD45781A49A3" ], 
+  [ "\033[2XHeapSize\033[102X (for IsStringMinHeap)", "8.5-7", [ 8, 5, 7 ], 
+      387, 106, "heapsize for isstringminheap", "X7E1CEFDB7824EE94" ], 
+  [ "\033[2XContains\033[102X (for IsStringMinHeap, IsString)", "8.5-8", 
+      [ 8, 5, 8 ], 393, 106, "contains for isstringminheap isstring", 
+      "X82F874FB7954D662" ], 
+  [ "\033[2XSwap\033[102X (for IsStringMinHeap, IsPosInt, IsPosInt)", 
+      "8.5-9", [ 8, 5, 9 ], 400, 106, 
+      "swap for isstringminheap isposint isposint", "X7AE2A000800CD0A2" ], 
+  [ "\033[2XHeapify\033[102X (for IsStringMinHeap, IsPosInt)", "8.5-10", 
+      [ 8, 5, 10 ], 409, 106, "heapify for isstringminheap isposint", 
+      "X78B8D0BD7A2FE83A" ], 
+  [ "\033[2XObjectCache\033[102X (for IsCapFunctor)", "10.1-1", [ 10, 1, 1 ], 
+      7, 112, "objectcache for iscapfunctor", "X7B3D8EB378625F73" ], 
+  [ "\033[2XMorphismCache\033[102X (for IsCapFunctor)", "10.1-2", 
+      [ 10, 1, 2 ], 15, 112, "morphismcache for iscapfunctor", 
+      "X84472BD57E11264C" ], 
+  [ "\033[2XInstallMethodWithToDoForIsWellDefined\033[102X", "10.2-1", 
+      [ 10, 2, 1 ], 26, 112, "installmethodwithtodoforiswelldefined", 
+      "X7B516ECB84EE7FFF" ], 
+  [ 
+      "\033[2XInstallSetWithToDoForIsWellDefined\033[102X (for IsObject, IsString\
+, IsList)", "10.2-2", [ 10, 2, 2 ], 46, 113, 
+      "installsetwithtodoforiswelldefined for isobject isstring islist", 
+      "X7C486C0F7D6161A0" ], 
+  [ "\033[2XDeclareAttributeWithToDoForIsWellDefined\033[102X", "10.2-3", 
+      [ 10, 2, 3 ], 55, 113, "declareattributewithtodoforiswelldefined", 
+      "X7801E9D185E5C130" ], 
+  [ "\033[2XDeclareFamilyProperty\033[102X", "10.2-4", [ 10, 2, 4 ], 66, 113, 
+      "declarefamilyproperty", "X87364D2E830F7FAE" ], 
+  [ "\033[2XCAP_INTERNAL_REPLACE_STRINGS_WITH_FILTERS\033[102X", "10.2-5", 
+      [ 10, 2, 5 ], 70, 113, "cap_internal_replace_strings_with_filters", 
+      "X840466B67CFF9CEA" ], 
+  [ "\033[2XCAP_INTERNAL_MERGE_FILTER_LISTS\033[102X", "10.2-6", 
+      [ 10, 2, 6 ], 80, 113, "cap_internal_merge_filter_lists", 
+      "X7F2869657DDE9AC9" ], 
+  [ "\033[2XCAP_INTERNAL_RETURN_OPTION_OR_DEFAULT\033[102X", "10.2-7", 
+      [ 10, 2, 7 ], 90, 113, "cap_internal_return_option_or_default", 
+      "X849B851C80D47B4F" ], 
+  [ "\033[2XCAP_INTERNAL_FIND_APPEARANCE_OF_SYMBOL_IN_FUNCTION\033[102X", 
+      "10.2-8", [ 10, 2, 8 ], 98, 113, 
+      "cap_internal_find_appearance_of_symbol_in_function", 
+      "X7C7A71C97DC2FABF" ], 
+  [ "\033[2XCAP_INTERNAL_MERGE_PRECONDITIONS_LIST\033[102X", "10.2-9", 
+      [ 10, 2, 9 ], 108, 114, "cap_internal_merge_preconditions_list", 
+      "X78A121F97CF81A43" ], 
+  [ "\033[2XWasCreatedAsKernelObject\033[102X", "10.3-1", [ 10, 3, 1 ], 122, 
+      114, "wascreatedaskernelobject", "X78F0E21B7A2C5B66" ], 
+  [ "\033[2XWasCreatedAsCokernelObject\033[102X", "10.3-2", [ 10, 3, 2 ], 
+      130, 114, "wascreatedascokernelobject", "X8581762F81AA478E" ], 
+  [ "\033[2XWasCreatedAsZeroObject\033[102X", "10.3-3", [ 10, 3, 3 ], 138, 
+      114, "wascreatedaszeroobject", "X82D475D57AC228B4" ], 
+  [ "\033[2XWasCreatedAsTerminalObject\033[102X", "10.3-4", [ 10, 3, 4 ], 
+      146, 114, "wascreatedasterminalobject", "X81141D0B80B57951" ], 
+  [ "\033[2XWasCreatedAsInitialObject\033[102X", "10.3-5", [ 10, 3, 5 ], 154, 
+      115, "wascreatedasinitialobject", "X8499CEE47D861DD3" ], 
+  [ "\033[2XWasCreatedAsDirectSum\033[102X", "10.3-6", [ 10, 3, 6 ], 162, 
+      115, "wascreatedasdirectsum", "X7D98B3AA7A34AD3C" ], 
+  [ "\033[2XWasCreatedAsCoproduct\033[102X", "10.3-7", [ 10, 3, 7 ], 170, 
+      115, "wascreatedascoproduct", "X81B5EA6D826ED78F" ], 
+  [ "\033[2XWasCreatedAsDirectProduct\033[102X", "10.3-8", [ 10, 3, 8 ], 178, 
+      115, "wascreatedasdirectproduct", "X785B98C38172191E" ], 
+  [ "\033[2XWasCreatedAsFiberProduct\033[102X", "10.3-9", [ 10, 3, 9 ], 186, 
+      115, "wascreatedasfiberproduct", "X7D36162983C3CD88" ], 
+  [ "\033[2XWasCreatedAsPushout\033[102X", "10.3-10", [ 10, 3, 10 ], 194, 
+      115, "wascreatedaspushout", "X7AE8750585F7D3A1" ], 
+  [ "\033[2XWasCreatedAsImageObject\033[102X", "10.3-11", [ 10, 3, 11 ], 202, 
+      116, "wascreatedasimageobject", "X7CF632288031CAC4" ] ]
+);

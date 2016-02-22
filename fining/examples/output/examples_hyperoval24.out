@@ -1,0 +1,53 @@
+gap> 
+gap> # a hyeroval of PG(2,4)
+gap> pg := ProjectiveSpace(2,4);
+ProjectiveSpace(2, 4)
+gap> points := Points(pg);
+<points of ProjectiveSpace(2, 4)>
+gap> pointslist := AsList(points);
+[ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)> ]
+gap> Display(pointslist[1]);
+[1..]
+gap> frame := [[1,0,0],[0,1,0],[0,0,1],[1,1,1]]*Z(2)^0;
+[ [ Z(2)^0, 0*Z(2), 0*Z(2) ], [ 0*Z(2), Z(2)^0, 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), Z(2)^0 ], [ Z(2)^0, Z(2)^0, Z(2)^0 ] ]
+gap> frame := List(frame,x -> VectorSpaceToElement(pg,x));
+[ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ]
+gap> frame := StandardFrame( pg );
+[ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ]
+gap> pairs := Combinations(frame,2);
+[ [ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ], 
+  [ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ], 
+  [ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ], 
+  [ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ], 
+  [ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ], 
+  [ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ] ]
+gap> secants := List(pairs,p -> Span(p[1],p[2]));
+[ <a line in ProjectiveSpace(2, 4)>, <a line in ProjectiveSpace(2, 4)>, 
+  <a line in ProjectiveSpace(2, 4)>, <a line in ProjectiveSpace(2, 4)>, 
+  <a line in ProjectiveSpace(2, 4)>, <a line in ProjectiveSpace(2, 4)> ]
+gap> leftover := Filtered(pointslist,t->not ForAny(secants,s->t in s));
+[ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ]
+gap> hyperoval := Union(frame,leftover);
+[ <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)>, 
+  <a point in ProjectiveSpace(2, 4)>, <a point in ProjectiveSpace(2, 4)> ]
+gap> g := CollineationGroup(pg);
+The FinInG collineation group PGammaL(3,4)
+gap> stab := Stabilizer(g,Set(hyperoval),OnSets);
+<projective collineation group of size 720 with 3 generators>
+gap> StructureDescription(stab);
+"S6"
+gap> quit;

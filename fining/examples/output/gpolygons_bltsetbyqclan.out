@@ -1,0 +1,31 @@
+gap> 
+gap> #blt set by qclan
+gap> clan := KantorKnuthqClan(9);
+<q-clan over GF(3^2)>
+gap> blt := BLTSetByqClan(clan);
+[ <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0> ]
+gap> clan := FisherThasWalkerKantorBettenqClan(11);
+<q-clan over GF(11)>
+gap> blt := BLTSetByqClan(clan);
+[ <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0> ]
+gap> quit;

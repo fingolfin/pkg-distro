@@ -20,17 +20,21 @@ DeclareGlobalFunction( "FloatQuotientsList" );
 
 #############################################################################
 ##
-#F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
+#O  PositionsSublist( <list>, <sub> )
 ##
-##  Returns the smallest integer larger than <n> which passes GAP's
-##  probabilistic primality test.
+##  Returns the list of indices in the list <list> at which a sublist equal
+##  to <sub> starts.
 ##
-##  The function `NextProbablyPrimeInt' does the same as `NextPrimeInt',
-##  except that for reasons of performance it tests numbers only for
-##  `IsProbablyPrimeInt' instead of `IsPrimeInt'.
-##  For large <n>, this function is much faster than `NextPrimeInt'.
+DeclareOperation( "PositionsSublist",
+                  [ IsListOrCollection, IsListOrCollection ] );
+
+#############################################################################
 ##
-DeclareGlobalFunction( "NextProbablyPrimeInt" );
+#O  RandomCombination( S, k )
+##
+##  Returns a random unordered <k>-tuple of distinct elements of the set <S>.
+##
+DeclareOperation( "RandomCombination", [ IsListOrCollection, IsPosInt ] );
 
 #############################################################################
 ##
@@ -57,6 +61,15 @@ DeclareOperation( "IsCommuting", [ IsMultiplicativeElement,
 DeclareGlobalFunction( "SetupCache" );
 DeclareGlobalFunction( "PutIntoCache" );
 DeclareGlobalFunction( "FetchFromCache" );
+
+#############################################################################
+##
+#F LogToDatedFile( <directory> )
+##
+## Opens a logfile in the specified directory whose name has the form of a
+## timestamp, i.e. <year>-<month>-<day> <hour>-<minute>-<second>.log.
+##
+DeclareGlobalFunction( "LogToDatedFile" );
 
 #############################################################################
 ##

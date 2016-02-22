@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<#Include SYSTEM "_Chapter_CAP_Categories.xml">
+<#Include SYSTEM "_Chapter_Category_of_Categories.xml">
+<#Include SYSTEM "_Chapter_Morphisms.xml">
+<#Include SYSTEM "_Chapter_Objects.xml">
+<#Include SYSTEM "_Chapter_Category_2-Cells.xml">
+<#Include SYSTEM "_Chapter_Universal_Objects.xml">
+<#Include SYSTEM "_Chapter_Tensor_Product_and_Internal_Hom.xml">
+<#Include SYSTEM "_Chapter_Managing_Derived_Methods.xml">
+<#Include SYSTEM "_Chapter_Add_Functions.xml">
+<#Include SYSTEM "_Chapter_Technical_Details.xml">
+<#Include SYSTEM "_Chapter_Examples_and_Tests.xml">

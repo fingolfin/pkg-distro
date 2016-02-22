@@ -1,0 +1,29 @@
+gap> 
+gap> # span
+gap> mat := [ [ 1, 1, 0, 0, 0, 1, 0 ], [ 1, 0, 0, 1, 1, 0, 0 ],
+>          [ 1, 0, 1, 0, 0, 0, 1 ], [ 0, 1, 1, 1, 0, 0, 0 ],
+>          [ 0, 1, 0, 0, 1, 0, 1 ], [ 0, 0, 0, 1, 0, 1, 1 ],
+>          [ 0, 0, 1, 0, 1, 1, 0 ] ];
+[ [ 1, 1, 0, 0, 0, 1, 0 ], [ 1, 0, 0, 1, 1, 0, 0 ], [ 1, 0, 1, 0, 0, 0, 1 ], 
+  [ 0, 1, 1, 1, 0, 0, 0 ], [ 0, 1, 0, 0, 1, 0, 1 ], [ 0, 0, 0, 1, 0, 1, 1 ], 
+  [ 0, 0, 1, 0, 1, 1, 0 ] ]
+gap> gp := GeneralisedPolygonByIncidenceMatrix(mat);
+<projective plane order 2>
+gap> p := Random(Points(gp));
+<a point in <projective plane order 2>>
+gap> q := Random(Points(gp));
+<a point in <projective plane order 2>>
+gap> Span(p,q);
+<a line in <projective plane order 2>>
+gap> ps := ParabolicQuadric(4,3);
+Q(4, 3)
+gap> gp := GeneralisedPolygonByElements(Set(Points(ps)),Set(Lines(ps)),\*);
+<generalised quadrangle of order [ 3, 3 ]>
+gap> p := Random(Points(gp));
+<a point in <generalised quadrangle of order [ 3, 3 ]>>
+gap> q := Random(Points(gp));
+<a point in <generalised quadrangle of order [ 3, 3 ]>>
+gap> Span(p,q);
+#I  <x> and <y> do not span a line of gp
+fail
+gap> quit;

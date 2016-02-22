@@ -1,0 +1,775 @@
+\GAPDocLabFile{fining}
+\makelabel{fining:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{fining:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{fining:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{fining:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{fining:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{fining:Philosophy}{1.1}{X873C99678745ABAF}
+\makelabel{fining:How to cite FinInG}{1.2}{X82542E7A783E6C96}
+\makelabel{fining:Overview of this manual}{1.3}{X87B5A1377BCABBD6}
+\makelabel{fining:Installing FinInG}{1.4}{X7C6601ED8252C24F}
+\makelabel{fining:The Development Team}{1.5}{X83BC24CC831A2542}
+\makelabel{fining:Examples}{2}{X7A489A5D79DA9E5C}
+\makelabel{fining:Elementary examples}{2.1}{X81660CB279889CB6}
+\makelabel{fining:subspaces of projective spaces}{2.1.1}{X8016E6857D53F2ED}
+\makelabel{fining:Subspaces of classical polar spaces}{2.1.2}{X7B99511887D41A95}
+\makelabel{fining:Underlying objects}{2.1.3}{X8555398C83677C27}
+\makelabel{fining:Constructing polar spaces}{2.1.4}{X8771ACB879E479C6}
+\makelabel{fining:Some collineation groups}{2.1.5}{X85D3BB2A8274DDCB}
+\makelabel{fining:Some objects with interesting combinatorial properties}{2.2}{X825F78F57E309197}
+\makelabel{fining:The Tits ovoid}{2.2.1}{X815BB30986E84DB1}
+\makelabel{fining:Lines meeting a hermitian curve}{2.2.2}{X7E79F18B8170B4B3}
+\makelabel{fining:The Patterson ovoid}{2.2.3}{X85C255FD78C50992}
+\makelabel{fining:A hyperoval}{2.2.4}{X80B93785876EF3E0}
+\makelabel{fining:Geometry morphisms}{2.3}{X876240A479A5717C}
+\makelabel{fining:Isomorphic polar spaces}{2.3.1}{X79CE092B7E17DF24}
+\makelabel{fining:Intertwiners}{2.3.2}{X83ADB5AE8624C74C}
+\makelabel{fining:Klein correspondence}{2.3.3}{X7C7438AB86A493FE}
+\makelabel{fining:Embedding in a subspace}{2.3.4}{X869EB94D841AE028}
+\makelabel{fining:subgeometries}{2.3.5}{X7FE8E4BF7E700E65}
+\makelabel{fining:Embedding by field reduction}{2.3.6}{X838BBDD97FA03FD0}
+\makelabel{fining:Some geometrical objects}{2.4}{X855C8E6D819EB975}
+\makelabel{fining:Spreads of W(5,3)}{2.4.1}{X86D62CF17931E455}
+\makelabel{fining:Distance-6 spread of the split Cayley hexagon}{2.4.2}{X81F516D07E8165B9}
+\makelabel{fining:Some particular incidence geometries}{2.5}{X7F13364A7EEA2AD1}
+\makelabel{fining:The split Cayley hexagon}{2.5.1}{X79623B9E7D5816B3}
+\makelabel{fining:An (apartment of) a building of type E6}{2.5.2}{X86C5CC2B78B349CC}
+\makelabel{fining:A rank 4 geometry for PSL(2,11)}{2.5.3}{X85572D5782665476}
+\makelabel{fining:The Ree-Tits octagon of order [2,4] as coset geometry}{2.5.4}{X787388FA7DABA2D6}
+\makelabel{fining:Elation generalised quadrangles}{2.6}{X7BA462527B2777BC}
+\makelabel{fining:The classical q-clan}{2.6.1}{X7E3707857A74AB5E}
+\makelabel{fining:Two  ways  to  construct  a  flock  generalised quadrangle from a Kantor-Knuth
+semifield q-clan}{2.6.2}{X83357ED78789111E}
+\makelabel{fining:Algebraic varieties}{2.7}{X87EC44BF7F24486E}
+\makelabel{fining:A projective variety}{2.7.1}{X7ABCF9637B60FF37}
+\makelabel{fining:Incidence Geometry}{3}{X838ACF8A7F100A2B}
+\makelabel{fining:Incidence structures}{3.1}{X7FB175337C4F8B76}
+\makelabel{fining:Main categories in IsIncidenceGeometry}{3.1.4}{X7EB285F379512585}
+\makelabel{fining:Examples of categories of incidence geometries}{3.1.5}{X87FFB1648575FFF2}
+\makelabel{fining:Elements of incidence structures}{3.2}{X7BBDB0AE7E29F3FB}
+\makelabel{fining:Main categories for individual elements of incidence structures}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:Main  categories  for  collections  of  all the elements of a given type of an
+incidence structure}{3.2.5}{X7DE974E687A2ABFB}
+\makelabel{fining:Short names for ElementsOfIncidenceStructure}{3.2.8}{X87E64DA67C3D6661}
+\makelabel{fining:Flags of incidence structures}{3.3}{X7DACFB6785029BF0}
+\makelabel{fining:Shadow of elements}{3.4}{X7AA14EDF7B0B1569}
+\makelabel{fining:Short names for ElementsIncidentWithElementOfIncidenceStructure}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Enumerating elements of an incidence structure}{3.5}{X8133F88478BAFCB7}
+\makelabel{fining:Lie geometries}{3.6}{X84D77D437B5F3716}
+\makelabel{fining:Main categories in IsLieGeometry}{3.6.1}{X85D26CF97A70B761}
+\makelabel{fining:Elements of Lie geometries}{3.7}{X7FBCF60385E8C1D8}
+\makelabel{fining:More short names for ElementsIncidentWithElementOfIncidenceStructure}{3.7.4}{X8365B36785DACE78}
+\makelabel{fining:Changing the ambient geometry of elements of a Lie geometry}{3.8}{X7A9EBF9782671634}
+\makelabel{fining:Projective Spaces}{4}{X83BBAA668672A76D}
+\makelabel{fining:Projective Spaces and basic operations}{4.1}{X7862BC887D20B37A}
+\makelabel{fining:Subspaces of projective spaces}{4.2}{X8016E6857D53F2ED}
+\makelabel{fining:Short names for ElementsOfIncidenceStructure}{4.2.5}{X87E64DA67C3D6661}
+\makelabel{fining:Incidence and containment}{4.2.6}{X7904128479BDFCC9}
+\makelabel{fining:Shadows of Projective Subspaces}{4.3}{X7BD8312C85784503}
+\makelabel{fining:Short names for ElementsIncidentWithElementOfIncidenceStructure}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Enumerating subspaces of a projective space}{4.4}{X799F3A2A86F82E5B}
+\makelabel{fining:Projective Groups}{5}{X816FCFB683915E8A}
+\makelabel{fining:Projectivities, collineations and correlations of projective spaces.}{5.1}{X7A9762F8861B0772}
+\makelabel{fining:Categories for group elements}{5.1.1}{X851186297A91C1C6}
+\makelabel{fining:Representations for group elements}{5.1.2}{X7BBF688083857760}
+\makelabel{fining:Projectivities}{5.1.3}{X8160615081358132}
+\makelabel{fining:Collineations of projective spaces}{5.1.4}{X7E881C237D117C6C}
+\makelabel{fining:Projective strictly semilinear maps}{5.1.5}{X7B89B51F86AE2BCC}
+\makelabel{fining:Correlations and collineations}{5.1.6}{X815B68277D0500C3}
+\makelabel{fining:Construction of projectivities, collineations and correlations.}{5.2}{X78EDF0357B58FC0E}
+\makelabel{fining:Basic   operations  for  projectivities,  collineations  and  correlations  of
+projective spaces}{5.3}{X83A5F86F82598AA6}
+\makelabel{fining:The groups PΓL, PGL, and PSL in FinInG}{5.4}{X7ACE9995784DF6A3}
+\makelabel{fining:Basic operations for projective groups}{5.5}{X7C4C7ADE8746C1B1}
+\makelabel{fining:Natural embedding of a collineation group in a correlationcollineation group}{5.6}{X8490DBEA8649A042}
+\makelabel{fining:Basic action of projective group elements}{5.7}{X7AAD7DDD7E19595E}
+\makelabel{fining:Projective group actions}{5.8}{X7EBA895D7A501CE0}
+\makelabel{fining:Special subgroups of the projectivity group}{5.9}{X809F0F2B857FA178}
+\makelabel{fining:Nice Monomorphisms}{5.10}{X7FFD731684606BC6}
+\makelabel{fining:Polarities of Projective Spaces}{6}{X87BA55CB86B110EC}
+\makelabel{fining:Creating polarities of projective spaces}{6.1}{X86D948C3875A5005}
+\makelabel{fining:Operations, attributes and properties for polarities of projective spaces}{6.2}{X81CC3CBE7879FD7B}
+\makelabel{fining:Polarities,  absolute  points, totally isotropic elements and finite classical
+polar spaces}{6.3}{X83F8149B7D23301E}
+\makelabel{fining:Commuting polarities}{6.4}{X7ADFEAC07CE25530}
+\makelabel{fining:Finite Classical Polar Spaces}{7}{X7F96B1327C022A28}
+\makelabel{fining:Finite Classical Polar Spaces}{7.1}{X7F96B1327C022A28}
+\makelabel{fining:Canonical and standard Polar Spaces}{7.2}{X850CD32686B0656B}
+\makelabel{fining:Basic operations for finite classical polar spaces}{7.3}{X7A04340A7EC9215B}
+\makelabel{fining:Subspaces of finite classical polar spaces}{7.4}{X787E0AEA8284B34B}
+\makelabel{fining:Basic operations for polar spaces and subspaces of projective spaces}{7.5}{X8472E78A79F44828}
+\makelabel{fining:Incidence and containment}{7.5.1}{X7904128479BDFCC9}
+\makelabel{fining:Shadow of elements}{7.6}{X7AA14EDF7B0B1569}
+\makelabel{fining:Enumerating subspaces of polar spaces}{7.8}{X855D48A07E0BBCDB}
+\makelabel{fining:Enumerators for polar spaces}{7.8.1}{X7AB1BA95825BDE71}
+\makelabel{fining:Iterators for polar spaces}{7.8.3}{X861463147B738DF1}
+\makelabel{fining:Orbits, stabilisers and actions}{8}{X87A0A15D8588D62F}
+\makelabel{fining:Orbits}{8.1}{X81E0FF0587C54543}
+\makelabel{fining:Stabilisers}{8.2}{X7EAB52F67B3A0003}
+\makelabel{fining:Actions and nice monomorphisms revisited}{8.3}{X7B449F3B7F23A30A}
+\makelabel{fining:Action functions}{8.3.1}{X86A646FF8668D82E}
+\makelabel{fining:Generic GAP functions}{8.3.2}{X8474367181BB501E}
+\makelabel{fining:Different behaviour for different collineation groups}{8.3.5}{X86AC831981D89DF1}
+\makelabel{fining:Affine Spaces}{9}{X7A63E8817A819046}
+\makelabel{fining:Affine spaces and basic operations}{9.1}{X7ADF809E85917970}
+\makelabel{fining:Subspaces of affine spaces}{9.2}{X7AC346337E23D34F}
+\makelabel{fining:Short names for ElementsOfIncidenceStructure}{9.2.3}{X87E64DA67C3D6661}
+\makelabel{fining:Incidence and containment}{9.2.4}{X7904128479BDFCC9}
+\makelabel{fining:Shadows of Affine Subspaces}{9.3}{X835B9A1F7EFE4640}
+\makelabel{fining:Iterators and enumerators}{9.4}{X7836304580E12428}
+\makelabel{fining:Affine groups}{9.5}{X78B78D517B22FB7E}
+\makelabel{fining:Low level operations}{9.6}{X8769AA7080854675}
+\makelabel{fining:Geometry Morphisms}{10}{X876240A479A5717C}
+\makelabel{fining:Geometry morphisms in FinInG}{10.1}{X850559BF7886E0D2}
+\makelabel{fining:Type preserving bijective geometry morphisms}{10.2}{X7926E5367D0C80B7}
+\makelabel{fining:Klein correspondence and derived dualities}{10.3}{X79C677CD7B7EC451}
+\makelabel{fining:Embeddings of projective spaces}{10.4}{X86D21DCB7C0029F9}
+\makelabel{fining:Embedding of projective spaces by field reduction}{10.4.3}{X7BC7FCDC7D9E1A09}
+\makelabel{fining:Embeddings of polar spaces}{10.5}{X7C00DD48787B1EEE}
+\makelabel{fining:Embedding of polar spaces by field reduction}{10.5.3}{X7823BA95797898CE}
+\makelabel{fining:Projections}{10.6}{X81FAC1DE7C4B1972}
+\makelabel{fining:Projective completion}{10.7}{X7952EE1A80D53825}
+\makelabel{fining:Algebraic Varieties}{11}{X87EC44BF7F24486E}
+\makelabel{fining:Algebraic Varieties}{11.1}{X87EC44BF7F24486E}
+\makelabel{fining:Projective Varieties}{11.2}{X79EC6F8381337C08}
+\makelabel{fining:Quadrics and Hermitian varieties}{11.3}{X8030D25C79C50847}
+\makelabel{fining:Affine Varieties}{11.4}{X82BE5DEE843F5490}
+\makelabel{fining:Geometry maps}{11.5}{X862822D57D48DD8E}
+\makelabel{fining:Segre Varieties}{11.6}{X81374CC57CA01150}
+\makelabel{fining:Veronese Varieties}{11.7}{X8759309A83991AB7}
+\makelabel{fining:Grassmann Varieties}{11.8}{X7B4A786B7EA1388C}
+\makelabel{fining:Generalised Polygons}{12}{X7E1F10767D2A4D6A}
+\makelabel{fining:Categories}{12.1}{X7CC6903E78F24167}
+\makelabel{fining:Subcategories in IsGeneralisedPolygon}{12.1.2}{X82EE78CF7A65376F}
+\makelabel{fining:Subcategories in IsProjectivePlaneCategory}{12.1.4}{X872678307DF4603D}
+\makelabel{fining:Subcategories in IsGeneralisedQuadrangle}{12.1.5}{X78C1E64E86803511}
+\makelabel{fining:Generic functions to create generalised polygons}{12.2}{X8614D6A779F9B1AA}
+\makelabel{fining:Attributes and operations for generalised polygons}{12.3}{X864C966D8184A9C0}
+\makelabel{fining:Elements of generalised polygons}{12.4}{X7A13D5EB82E01576}
+\makelabel{fining:Collections of elements of generalised polygons}{12.4.1}{X7E7607CA7D59D086}
+\makelabel{fining:Creating elements from objects and retrieving objects from elements}{12.4.3}{X7E9B2A217DBF2849}
+\makelabel{fining:Incidence}{12.4.4}{X83B0FA9E7AE3DF01}
+\makelabel{fining:Shadow elements}{12.4.7}{X8154BB13844AA0FD}
+\makelabel{fining:The classical generalised hexagons}{12.5}{X7934EB788049B533}
+\makelabel{fining:Trialities of the hyperbolic quadric and generalised hexagons}{12.5.1}{X7BF1D2E57B7630CB}
+\makelabel{fining:Span and meet of elements}{12.5.9}{X7B1380878358938C}
+\makelabel{fining:Elation generalised quadrangles}{12.6}{X7BA462527B2777BC}
+\makelabel{fining:Elation generalised quadrangles and Kantor families}{12.6.1}{X86BD86C77BAAF887}
+\makelabel{fining:Categories}{12.6.2}{X7CC6903E78F24167}
+\makelabel{fining:Kantor families}{12.6.3}{X820A2D6A84A259FC}
+\makelabel{fining:Representation of elements and underlying objects}{12.6.5}{X80C93974807A342B}
+\makelabel{fining:Elation group and natural action on elements}{12.6.6}{X7DCD7EAB839BD97F}
+\makelabel{fining:Kantor families, q-clans, and elation generalised quadrangles}{12.6.7}{X8462F11584736E32}
+\makelabel{fining:Particular q-clans}{12.6.9}{X858A1EA8843BEC13}
+\makelabel{fining:BLT-sets, flocks, q-clans, and elation generalised quadrangles}{12.6.12}{X7FAE48497B2F658A}
+\makelabel{fining:Representation of elements and underlying objects}{12.6.17}{X80C93974807A342B}
+\makelabel{fining:Coset Geometries and Diagrams}{13}{X8328AFAC7CF1EB1B}
+\makelabel{fining:Coset Geometries}{13.1}{X781B20AC8097AC9F}
+\makelabel{fining:Automorphisms, Correlations and Isomorphisms}{13.2}{X7967CA67876214A6}
+\makelabel{fining:Diagrams}{13.3}{X78932FB48237B18F}
+\makelabel{fining:The structure of FinInG}{A}{X86AA009B8756CA64}
+\makelabel{fining:The different components}{A.1}{X84D6D0EC7989CF5E}
+\makelabel{fining:The complete inventory}{A.2}{X83E153B784E17E05}
+\makelabel{fining:Declarations}{A.2.1}{X844A8A1F85E6E038}
+\makelabel{fining:The filter graph(s)}{A.3}{X835D28F3807174EB}
+\makelabel{fining:The finite classical groups in FinInG}{B}{X7D0FACF8814D5125}
+\makelabel{fining:Standard forms used to produce the finite classical groups.}{B.1}{X7F297E2B7D98DC76}
+\makelabel{fining:Direct commands to construct the projective classical groups in FinInG}{B.2}{X86B815D586461783}
+\makelabel{fining:Basis of the collineation groups}{B.3}{X7F1343937C036C7A}
+\makelabel{fining:Low level functions for morphisms}{C}{X874D94F47C943D71}
+\makelabel{fining:Field reduction and vector spaces}{C.1}{X799BE5108516D030}
+\makelabel{fining:Field reduction and forms}{C.2}{X7F06BA41857256B8}
+\makelabel{fining:Low level functions}{C.3}{X81CCB1F5789CD7D8}
+\makelabel{fining:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{fining:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{fining:Index}{Ind}{X83A0356F839C696F}
+\makelabel{fining:IsIncidenceStructure}{3.1.1}{X81F7D8FA82A55561}
+\makelabel{fining:IsIncidenceGeometry}{3.1.2}{X78C74BE87E050E84}
+\makelabel{fining:IncidenceStructure}{3.1.3}{X7C3258887C8DF5C1}
+\makelabel{fining:IsLieGeometry}{3.1.4}{X7EB285F379512585}
+\makelabel{fining:IsAffineSpace}{3.1.4}{X7EB285F379512585}
+\makelabel{fining:IsGeneralisedPolygon}{3.1.4}{X7EB285F379512585}
+\makelabel{fining:IsCosetGeometry}{3.1.4}{X7EB285F379512585}
+\makelabel{fining:TypesOfElementsOfIncidenceStructure}{3.1.6}{X7E574AB27DA97063}
+\makelabel{fining:TypesOfElementsOfIncidenceStructurePlural}{3.1.6}{X7E574AB27DA97063}
+\makelabel{fining:Rank}{3.1.7}{X827146F37E2AA841}
+\makelabel{fining:RankAttr}{3.1.7}{X827146F37E2AA841}
+\makelabel{fining:IncidenceGraph}{3.1.8}{X815BE6D57D623452}
+\makelabel{fining:IsElementOfIncidenceStructure}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:IsElementOfIncidenceGeometry}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:IsElementOfLieGeometry}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:IsElementOfAffineSpace}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:IsElementOfCosetGeometry}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:IsSubspaceOfProjectiveSpace}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:IsSubspaceOfClassicalPolarSpace}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:IsElementOfGeneralisedPolygon}{3.2.1}{X827CD3C881DC8364}
+\makelabel{fining:UnderlyingObject}{3.2.2}{X810D4D6D87069697}
+\makelabel{fining:Type}{3.2.3}{X823B3D0F87FB5403}
+\makelabel{fining:ObjectToElement}{3.2.4}{X7809B7C183FA7213}
+\makelabel{fining:IsElementsOfIncidenceStructure}{3.2.5}{X7DE974E687A2ABFB}
+\makelabel{fining:IsElementsOfIncidenceGeometry}{3.2.5}{X7DE974E687A2ABFB}
+\makelabel{fining:IsElementsOfLieGeometry}{3.2.5}{X7DE974E687A2ABFB}
+\makelabel{fining:IsElementsOfAffineSpace}{3.2.5}{X7DE974E687A2ABFB}
+\makelabel{fining:IsElementsOfCosetGeometry}{3.2.5}{X7DE974E687A2ABFB}
+\makelabel{fining:IsSubspacesOfProjectiveSpace}{3.2.5}{X7DE974E687A2ABFB}
+\makelabel{fining:IsSubspacesOfClassicalPolarSpace}{3.2.5}{X7DE974E687A2ABFB}
+\makelabel{fining:ElementsOfIncidenceStructure}{3.2.6}{X87657AEF7E2C50F9}
+\makelabel{fining:ElementsOfIncidenceStructure}{3.2.6}{X87657AEF7E2C50F9}
+\makelabel{fining:ElementsOfIncidenceStructure}{3.2.7}{X87657AEF7E2C50F9}
+\makelabel{fining:Points}{3.2.8}{X87E64DA67C3D6661}
+\makelabel{fining:Lines}{3.2.8}{X87E64DA67C3D6661}
+\makelabel{fining:Planes}{3.2.8}{X87E64DA67C3D6661}
+\makelabel{fining:Solids}{3.2.8}{X87E64DA67C3D6661}
+\makelabel{fining:NrElementsOfIncidenceStructure}{3.2.9}{X86CF041F7FA486D6}
+\makelabel{fining:NrElementsOfIncidenceStructure}{3.2.9}{X86CF041F7FA486D6}
+\makelabel{fining:Random}{3.2.10}{X79730D657AB219DB}
+\makelabel{fining:IsIncident}{3.2.11}{X7A9ED8327C40B445}
+\makelabel{fining:AmbientGeometry}{3.2.12}{X799DB77886B8ABDB}
+\makelabel{fining:FlagOfIncidenceStructure}{3.3.1}{X7E204A78815C46DD}
+\makelabel{fining:IsChamberOfIncidenceStructure}{3.3.2}{X7A453E0E861F2C94}
+\makelabel{fining:IsEmptyFlag}{3.3.3}{X7AEFC2C57F10C3A7}
+\makelabel{fining:ElementsOfFlag}{3.3.4}{X86FFFBC584B97371}
+\makelabel{fining:Rank}{3.3.5}{X827146F37E2AA841}
+\makelabel{fining:Size}{3.3.6}{X858ADA3B7A684421}
+\makelabel{fining:AmbientGeometry}{3.3.7}{X799DB77886B8ABDB}
+\makelabel{fining:Type}{3.3.8}{X823B3D0F87FB5403}
+\makelabel{fining:IsIncident}{3.3.9}{X7A9ED8327C40B445}
+\makelabel{fining:IsIncident}{3.3.9}{X7A9ED8327C40B445}
+\makelabel{fining:ShadowOfElement}{3.4.1}{X7FFA08DA85C5251C}
+\makelabel{fining:ShadowOfElement}{3.4.1}{X7FFA08DA85C5251C}
+\makelabel{fining:ElementsIncidentWithElementOfIncidenceStructure}{3.4.2}{X81A8365A7FE68447}
+\makelabel{fining:ShadowOfFlag}{3.4.3}{X7E86E6417871730C}
+\makelabel{fining:ShadowOfFlag}{3.4.3}{X7E86E6417871730C}
+\makelabel{fining:ShadowOfFlag}{3.4.3}{X7E86E6417871730C}
+\makelabel{fining:ShadowOfFlag}{3.4.3}{X7E86E6417871730C}
+\makelabel{fining:ResidueOfFlag}{3.4.4}{X78BE3D727B060301}
+\makelabel{fining:Points}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Lines}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Planes}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Solids}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Points}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Lines}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Planes}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Solids}{3.4.5}{X7E29C31D7CB5DB23}
+\makelabel{fining:Iterator}{3.5.1}{X83ADF8287ED0668E}
+\makelabel{fining:Enumerator}{3.5.2}{X7EF8910F82B45EC7}
+\makelabel{fining:List}{3.5.3}{X7EBA57FC7CCF8449}
+\makelabel{fining:AsList}{3.5.4}{X8289FCCC8274C89D}
+\makelabel{fining:IsProjectiveSpace}{3.6.1}{X85D26CF97A70B761}
+\makelabel{fining:IsClassicalPolarSpace}{3.6.1}{X85D26CF97A70B761}
+\makelabel{fining:AmbientSpace}{3.6.2}{X8606750A8586DF8D}
+\makelabel{fining:UnderlyingVectorSpace}{3.6.3}{X7D544D7985A4572D}
+\makelabel{fining:ProjectiveDimension}{3.6.4}{X84FDF25D797B874B}
+\makelabel{fining:IsEmptySubspace}{3.6.5}{X85DFF5177CA51AE0}
+\makelabel{fining:VectorSpaceToElement}{3.7.1}{X82E9593B8074AECB}
+\makelabel{fining:VectorSpaceToElement}{3.7.1}{X82E9593B8074AECB}
+\makelabel{fining:UnderlyingObject}{3.7.2}{X810D4D6D87069697}
+\makelabel{fining:Hyperplanes}{3.7.4}{X8365B36785DACE78}
+\makelabel{fining:Hyperplanes}{3.7.4}{X8365B36785DACE78}
+\makelabel{fining:ElementToElement}{3.8.1}{X8561C0117FD76C94}
+\makelabel{fining:Embed}{3.8.1}{X8561C0117FD76C94}
+\makelabel{fining:IsProjectiveSpace}{4.1.1}{X79B440FF7EFBA661}
+\makelabel{fining:ProjectiveSpace}{4.1.2}{X7962DA507C64FCBA}
+\makelabel{fining:ProjectiveSpace}{4.1.2}{X7962DA507C64FCBA}
+\makelabel{fining:PG}{4.1.2}{X7962DA507C64FCBA}
+\makelabel{fining:ProjectiveDimension}{4.1.3}{X84FDF25D797B874B}
+\makelabel{fining:Dimension}{4.1.3}{X84FDF25D797B874B}
+\makelabel{fining:Rank}{4.1.3}{X84FDF25D797B874B}
+\makelabel{fining:BaseField}{4.1.4}{X7BCBA564829D9E89}
+\makelabel{fining:UnderlyingVectorSpace}{4.1.5}{X7D544D7985A4572D}
+\makelabel{fining:AmbientSpace}{4.1.6}{X8606750A8586DF8D}
+\makelabel{fining:VectorSpaceToElement}{4.2.1}{X82E9593B8074AECB}
+\makelabel{fining:EmptySubspace}{4.2.2}{X8461BCEF862B9A7B}
+\makelabel{fining:ProjectiveDimension}{4.2.3}{X84FDF25D797B874B}
+\makelabel{fining:ElementsOfIncidenceStructure}{4.2.4}{X87657AEF7E2C50F9}
+\makelabel{fining:Points}{4.2.5}{X87E64DA67C3D6661}
+\makelabel{fining:Lines}{4.2.5}{X87E64DA67C3D6661}
+\makelabel{fining:Planes}{4.2.5}{X87E64DA67C3D6661}
+\makelabel{fining:Solids}{4.2.5}{X87E64DA67C3D6661}
+\makelabel{fining:Hyperplanes}{4.2.5}{X87E64DA67C3D6661}
+\makelabel{fining:IsIncident}{4.2.6}{X7904128479BDFCC9}
+\makelabel{fining:StandardFrame}{4.2.7}{X870D9D9A7F11806F}
+\makelabel{fining:Coordinates}{4.2.8}{X84E3985A8700B302}
+\makelabel{fining:DualCoordinatesOfHyperplane}{4.2.9}{X7CE4FD76820B503A}
+\makelabel{fining:HyperplaneByDualCoordinates}{4.2.10}{X86628227863989E5}
+\makelabel{fining:EquationOfHyperplane}{4.2.11}{X801A95907B13F447}
+\makelabel{fining:AmbientSpace}{4.2.12}{X8606750A8586DF8D}
+\makelabel{fining:BaseField}{4.2.13}{X7BCBA564829D9E89}
+\makelabel{fining:Random}{4.2.14}{X79730D657AB219DB}
+\makelabel{fining:RandomSubspace}{4.2.15}{X7D3C5D3B7AA4DE28}
+\makelabel{fining:RandomSubspace}{4.2.15}{X7D3C5D3B7AA4DE28}
+\makelabel{fining:Span}{4.2.16}{X875BE2957FAF6209}
+\makelabel{fining:Span}{4.2.16}{X875BE2957FAF6209}
+\makelabel{fining:Meet}{4.2.17}{X8469B54180FE1E4C}
+\makelabel{fining:Meet}{4.2.17}{X8469B54180FE1E4C}
+\makelabel{fining:FlagOfIncidenceStructure}{4.2.18}{X7E204A78815C46DD}
+\makelabel{fining:IsEmptyFlag}{4.2.19}{X7AEFC2C57F10C3A7}
+\makelabel{fining:IsChamberOfIncidenceStructure}{4.2.20}{X7A453E0E861F2C94}
+\makelabel{fining:ShadowOfElement}{4.3.1}{X7FFA08DA85C5251C}
+\makelabel{fining:ShadowOfElement}{4.3.1}{X7FFA08DA85C5251C}
+\makelabel{fining:ShadowOfFlag}{4.3.2}{X7E86E6417871730C}
+\makelabel{fining:ShadowOfFlag}{4.3.2}{X7E86E6417871730C}
+\makelabel{fining:ElementsIncidentWithElementOfIncidenceStructure}{4.3.3}{X81A8365A7FE68447}
+\makelabel{fining:Points}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Lines}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Planes}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Solids}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Hyperplanes}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Points}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Lines}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Planes}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Solids}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Hyperplanes}{4.3.4}{X7D12E3A28364CC84}
+\makelabel{fining:Iterator}{4.4.1}{X83ADF8287ED0668E}
+\makelabel{fining:Enumerator}{4.4.2}{X7EF8910F82B45EC7}
+\makelabel{fining:List}{4.4.3}{X7EBA57FC7CCF8449}
+\makelabel{fining:AsList}{4.4.3}{X7EBA57FC7CCF8449}
+\makelabel{fining:IsProjGrpEl}{5.1.1}{X851186297A91C1C6}
+\makelabel{fining:IsProjGrpElWithFrob}{5.1.1}{X851186297A91C1C6}
+\makelabel{fining:IsProjGrpElWithFrobWithPSIsom}{5.1.1}{X851186297A91C1C6}
+\makelabel{fining:IsProjGrpElRep}{5.1.2}{X7BBF688083857760}
+\makelabel{fining:IsProjGrpElWithFrobRep}{5.1.2}{X7BBF688083857760}
+\makelabel{fining:IsProjGrpElWithFrobWithPSIsomRep}{5.1.2}{X7BBF688083857760}
+\makelabel{fining:IsProjectivity}{5.1.3}{X8160615081358132}
+\makelabel{fining:IsCollineation}{5.1.4}{X7E881C237D117C6C}
+\makelabel{fining:IsStrictlySemilinear}{5.1.5}{X7B89B51F86AE2BCC}
+\makelabel{fining:IsProjGrpElWithFrobWithPSIsom}{5.1.6}{X815B68277D0500C3}
+\makelabel{fining:IsCorrelationCollineation}{5.1.6}{X815B68277D0500C3}
+\makelabel{fining:IsCorrelation}{5.1.6}{X815B68277D0500C3}
+\makelabel{fining:Projectivity}{5.2.1}{X877DA4E185A1D9C7}
+\makelabel{fining:Projectivity}{5.2.1}{X877DA4E185A1D9C7}
+\makelabel{fining:CollineationOfProjectiveSpace}{5.2.2}{X7AB452B2781EF128}
+\makelabel{fining:CollineationOfProjectiveSpace}{5.2.2}{X7AB452B2781EF128}
+\makelabel{fining:CollineationOfProjectiveSpace}{5.2.2}{X7AB452B2781EF128}
+\makelabel{fining:CollineationOfProjectiveSpace}{5.2.2}{X7AB452B2781EF128}
+\makelabel{fining:CollineationOfProjectiveSpace}{5.2.2}{X7AB452B2781EF128}
+\makelabel{fining:CollineationOfProjectiveSpace}{5.2.2}{X7AB452B2781EF128}
+\makelabel{fining:Collineation}{5.2.2}{X7AB452B2781EF128}
+\makelabel{fining:Collineation}{5.2.2}{X7AB452B2781EF128}
+\makelabel{fining:ProjectiveSemilinearMap}{5.2.3}{X81ED446485A71588}
+\makelabel{fining:IdentityMappingOfElementsOfProjectiveSpace}{5.2.4}{X80649C427E3BCBFF}
+\makelabel{fining:StandardDualityOfProjectiveSpace}{5.2.5}{X841607A77B841CC9}
+\makelabel{fining:CorrelationOfProjectiveSpace}{5.2.6}{X78BBC4E27B2E06D6}
+\makelabel{fining:CorrelationOfProjectiveSpace}{5.2.6}{X78BBC4E27B2E06D6}
+\makelabel{fining:CorrelationOfProjectiveSpace}{5.2.6}{X78BBC4E27B2E06D6}
+\makelabel{fining:CorrelationOfProjectiveSpace}{5.2.6}{X78BBC4E27B2E06D6}
+\makelabel{fining:CorrelationOfProjectiveSpace}{5.2.6}{X78BBC4E27B2E06D6}
+\makelabel{fining:Correlation}{5.2.6}{X78BBC4E27B2E06D6}
+\makelabel{fining:Representative}{5.3.1}{X865507568182424E}
+\makelabel{fining:MatrixOfCollineation}{5.3.2}{X7CA72CB07E3122F1}
+\makelabel{fining:MatrixOfCorrelation}{5.3.3}{X7E8B65547970F689}
+\makelabel{fining:BaseField}{5.3.4}{X7BCBA564829D9E89}
+\makelabel{fining:FieldAutomorphism}{5.3.5}{X7B60C4257C46ED4B}
+\makelabel{fining:ProjectiveSpaceIsomorphism}{5.3.6}{X7FE527AB81C2B675}
+\makelabel{fining:Order}{5.3.7}{X84F59A2687C62763}
+\makelabel{fining:ProjectivityGroup}{5.4.1}{X850A954887CA9A55}
+\makelabel{fining:HomographyGroup}{5.4.1}{X850A954887CA9A55}
+\makelabel{fining:CollineationGroup}{5.4.2}{X83FF6FA0790D5747}
+\makelabel{fining:SpecialProjectivityGroup}{5.4.3}{X7BE9CE127ACFA6C2}
+\makelabel{fining:SpecialHomographyGroup}{5.4.3}{X7BE9CE127ACFA6C2}
+\makelabel{fining:IsProjectivityGroup}{5.4.4}{X7DEA3BDA82C7B855}
+\makelabel{fining:IsCollineationGroup}{5.4.5}{X7B1FC1327FD85D18}
+\makelabel{fining:CorrelationCollineationGroup}{5.4.6}{X81444EF57E228232}
+\makelabel{fining:BaseField}{5.5.1}{X7BCBA564829D9E89}
+\makelabel{fining:Dimension}{5.5.2}{X7E6926C6850E7C4E}
+\makelabel{fining:Embedding}{5.6.1}{X86452F8587CBAEA0}
+\makelabel{fining:OnProjSubspaces}{5.8.1}{X84A3D5357872EC3B}
+\makelabel{fining:ActionOnAllProjPoints}{5.8.2}{X798053D47D8187EC}
+\makelabel{fining:OnProjSubspacesExtended}{5.8.3}{X86B4C03E85ADD0C2}
+\makelabel{fining:ElationOfProjectiveSpace}{5.9.1}{X86FF1DDE8356E966}
+\makelabel{fining:ProjectiveElationGroup}{5.9.2}{X7E5660A17A4B1349}
+\makelabel{fining:ProjectiveElationGroup}{5.9.2}{X7E5660A17A4B1349}
+\makelabel{fining:HomologyOfProjectiveSpace}{5.9.3}{X86319DCD7AF98E28}
+\makelabel{fining:ProjectiveHomologyGroup}{5.9.4}{X82FBABF384960A3D}
+\makelabel{fining:NiceMonomorphism}{5.10.1}{X7965086E82ABCF41}
+\makelabel{fining:NiceObject}{5.10.2}{X7B47BE0983E93A83}
+\makelabel{fining:FINING}{5.10.3}{X7CE11961817B311C}
+\makelabel{fining:CanComputeActionOnPoints}{5.10.4}{X7B102DAE7E0CCF47}
+\makelabel{fining:NiceMonomorphismByDomain}{5.10.5}{X7D8C4B657FD6F7BA}
+\makelabel{fining:NiceMonomorphismByOrbit}{5.10.6}{X7BCBD96786901FF9}
+\makelabel{fining:PolarityOfProjectiveSpace}{6.1.1}{X7EBD8C07802562B7}
+\makelabel{fining:PolarityOfProjectiveSpace}{6.1.2}{X7EBD8C07802562B7}
+\makelabel{fining:HermitianPolarityOfProjectiveSpace}{6.1.2}{X7EBD8C07802562B7}
+\makelabel{fining:PolarityOfProjectiveSpace}{6.1.3}{X7EBD8C07802562B7}
+\makelabel{fining:PolarityOfProjectiveSpace}{6.1.4}{X7EBD8C07802562B7}
+\makelabel{fining:SesquilinearForm}{6.2.1}{X793BE1A27BF349F3}
+\makelabel{fining:BaseField}{6.2.2}{X7BCBA564829D9E89}
+\makelabel{fining:GramMatrix}{6.2.3}{X847AFB4C81A90B3F}
+\makelabel{fining:CompanionAutomorphism}{6.2.4}{X7C55F56E7E34768B}
+\makelabel{fining:IsHermitianPolarityOfProjectiveSpace}{6.2.5}{X7C15F40A85F167F4}
+\makelabel{fining:IsSymplecticPolarityOfProjectiveSpace}{6.2.6}{X855077387D144CDE}
+\makelabel{fining:IsOrthogonalPolarityOfProjectiveSpace}{6.2.7}{X87FFEEAE7FC2EE41}
+\makelabel{fining:IsPseudoPolarityOfProjectiveSpace}{6.2.8}{X8372FCBC8313572F}
+\makelabel{fining:GeometryOfAbsolutePoints}{6.3.1}{X81C291357E5B2408}
+\makelabel{fining:AbsolutePoints}{6.3.2}{X8686AB4D798970BC}
+\makelabel{fining:PolarSpace}{6.3.3}{X863BC8E57C98A471}
+\makelabel{fining:IsClassicalPolarSpace}{7.1.1}{X83A92A177BE4E0BB}
+\makelabel{fining:PolarSpace}{7.1.2}{X863BC8E57C98A471}
+\makelabel{fining:PolarSpace}{7.1.2}{X863BC8E57C98A471}
+\makelabel{fining:SymplecticSpace}{7.2.1}{X850980EF8607BDA7}
+\makelabel{fining:SymplecticSpace}{7.2.1}{X850980EF8607BDA7}
+\makelabel{fining:HermitianPolarSpace}{7.2.2}{X7A8CF840833D3D8B}
+\makelabel{fining:HermitianPolarSpace}{7.2.2}{X7A8CF840833D3D8B}
+\makelabel{fining:ParabolicQuadric}{7.2.3}{X7CEDD5CC7A6B0E64}
+\makelabel{fining:ParabolicQuadric}{7.2.3}{X7CEDD5CC7A6B0E64}
+\makelabel{fining:HyperbolicQuadric}{7.2.4}{X7CF248A2864BCD8F}
+\makelabel{fining:HyperbolicQuadric}{7.2.4}{X7CF248A2864BCD8F}
+\makelabel{fining:EllipticQuadric}{7.2.5}{X85EEF70480D7149E}
+\makelabel{fining:EllipticQuadric}{7.2.5}{X85EEF70480D7149E}
+\makelabel{fining:IsCanonicalPolarSpace}{7.2.6}{X7F6D25D57BC697B5}
+\makelabel{fining:CanonicalPolarSpace}{7.2.7}{X8240380A7F8B6EC3}
+\makelabel{fining:CanonicalPolarSpace}{7.2.7}{X8240380A7F8B6EC3}
+\makelabel{fining:StandardPolarSpace}{7.2.8}{X7EE25EDF7ADC30D7}
+\makelabel{fining:StandardPolarSpace}{7.2.8}{X7EE25EDF7ADC30D7}
+\makelabel{fining:UnderlyingVectorSpace}{7.3.1}{X7D544D7985A4572D}
+\makelabel{fining:AmbientSpace}{7.3.2}{X8606750A8586DF8D}
+\makelabel{fining:ProjectiveDimension}{7.3.3}{X84FDF25D797B874B}
+\makelabel{fining:Dimension}{7.3.3}{X84FDF25D797B874B}
+\makelabel{fining:Rank}{7.3.4}{X827146F37E2AA841}
+\makelabel{fining:BaseField}{7.3.5}{X7BCBA564829D9E89}
+\makelabel{fining:IsHyperbolicQuadric}{7.3.6}{X8412E6307ACC82C2}
+\makelabel{fining:IsEllipticQuadric}{7.3.7}{X85386DAB8056E316}
+\makelabel{fining:IsParabolicQuadric}{7.3.8}{X87ADB8B5790776C7}
+\makelabel{fining:VectorSpaceToElement}{7.4.1}{X82E9593B8074AECB}
+\makelabel{fining:EmptySubspace}{7.4.2}{X8461BCEF862B9A7B}
+\makelabel{fining:ProjectiveDimension}{7.4.3}{X84FDF25D797B874B}
+\makelabel{fining:Dimension}{7.4.3}{X84FDF25D797B874B}
+\makelabel{fining:ElementsOfIncidenceStructure}{7.4.4}{X87657AEF7E2C50F9}
+\makelabel{fining:AmbientSpace}{7.4.5}{X8606750A8586DF8D}
+\makelabel{fining:Coordinates}{7.4.6}{X84E3985A8700B302}
+\makelabel{fining:IsIncident}{7.5.1}{X7904128479BDFCC9}
+\makelabel{fining:Span}{7.5.2}{X875BE2957FAF6209}
+\makelabel{fining:Meet}{7.5.3}{X8469B54180FE1E4C}
+\makelabel{fining:IsCollinear}{7.5.4}{X8176044E7D2242D9}
+\makelabel{fining:PolarityOfProjectiveSpace}{7.5.5}{X7EBD8C07802562B7}
+\makelabel{fining:TypeOfSubspace}{7.5.6}{X863F1924805F6C63}
+\makelabel{fining:TangentSpace}{7.5.7}{X82C38639870C0DD6}
+\makelabel{fining:TangentSpace}{7.5.7}{X82C38639870C0DD6}
+\makelabel{fining:Pole}{7.5.8}{X8520DC538717C6BE}
+\makelabel{fining:ShadowOfElement}{7.6.1}{X7FFA08DA85C5251C}
+\makelabel{fining:ShadowOfElement}{7.6.1}{X7FFA08DA85C5251C}
+\makelabel{fining:ElementsIncidentWithElementOfIncidenceStructure}{7.6.2}{X81A8365A7FE68447}
+\makelabel{fining:Isometry}{7.7}{X7ADF374F8347F527}
+\makelabel{fining:Similarity}{7.7}{X7ADF374F8347F527}
+\makelabel{fining:Semi-similarity}{7.7}{X7ADF374F8347F527}
+\makelabel{fining:Isometry}{7.7}{X7ADF374F8347F527}
+\makelabel{fining:Similarity}{7.7}{X7ADF374F8347F527}
+\makelabel{fining:Semi-similarity}{7.7}{X7ADF374F8347F527}
+\makelabel{fining:SpecialIsometryGroup}{7.7.1}{X857C261585038CB8}
+\makelabel{fining:IsometryGroup}{7.7.2}{X87708229834E4C44}
+\makelabel{fining:SimilarityGroup}{7.7.3}{X812836E48364AE6D}
+\makelabel{fining:CollineationGroup}{7.7.4}{X83FF6FA0790D5747}
+\makelabel{fining:Enumerator}{7.8.2}{X7EF8910F82B45EC7}
+\makelabel{fining:List}{7.8.2}{X7EF8910F82B45EC7}
+\makelabel{fining:Iterator}{7.8.4}{X83ADF8287ED0668E}
+\makelabel{fining:AsList}{7.8.5}{X8289FCCC8274C89D}
+\makelabel{fining:FiningOrbit}{8.1.1}{X7CF168A0818C553D}
+\makelabel{fining:FiningOrbits}{8.1.2}{X827CD5727A7DA4A3}
+\makelabel{fining:FiningOrbits}{8.1.2}{X827CD5727A7DA4A3}
+\makelabel{fining:FiningStabiliser}{8.2.1}{X83B7F30F81A0BCE3}
+\makelabel{fining:FiningStabiliserOrb}{8.2.2}{X854826AC7DA9FB6B}
+\makelabel{fining:FiningSetwiseStabiliser}{8.2.3}{X7929900F79B6000C}
+\makelabel{fining:OnProjSubspaces}{8.3.1}{X86A646FF8668D82E}
+\makelabel{fining:OnProjSubspacesExtended}{8.3.1}{X86A646FF8668D82E}
+\makelabel{fining:OnSetsProjSubspaces}{8.3.1}{X86A646FF8668D82E}
+\makelabel{fining:ActionHomomorphism}{8.3.2}{X8474367181BB501E}
+\makelabel{fining:Action}{8.3.2}{X8474367181BB501E}
+\makelabel{fining:NiceMonomorphism}{8.3.3}{X7965086E82ABCF41}
+\makelabel{fining:NiceObject}{8.3.4}{X7B47BE0983E93A83}
+\makelabel{fining:SetParent}{8.3.6}{X80F4EDD487059D70}
+\makelabel{fining:IsAffineSpace}{9.1.1}{X793755BF8775B629}
+\makelabel{fining:AffineSpace}{9.1.2}{X87C360337E16E6CC}
+\makelabel{fining:AffineSpace}{9.1.2}{X87C360337E16E6CC}
+\makelabel{fining:AG}{9.1.2}{X87C360337E16E6CC}
+\makelabel{fining:AG}{9.1.2}{X87C360337E16E6CC}
+\makelabel{fining:Dimension}{9.1.3}{X7E6926C6850E7C4E}
+\makelabel{fining:Rank}{9.1.3}{X7E6926C6850E7C4E}
+\makelabel{fining:BaseField}{9.1.4}{X7BCBA564829D9E89}
+\makelabel{fining:UnderlyingVectorSpace}{9.1.5}{X7D544D7985A4572D}
+\makelabel{fining:AmbientSpace}{9.1.6}{X8606750A8586DF8D}
+\makelabel{fining:AffineSubspace}{9.2.1}{X82DE73E884CF8172}
+\makelabel{fining:AffineSubspace}{9.2.1}{X82DE73E884CF8172}
+\makelabel{fining:ElementsOfIncidenceStructure}{9.2.2}{X87657AEF7E2C50F9}
+\makelabel{fining:Points}{9.2.3}{X87E64DA67C3D6661}
+\makelabel{fining:Lines}{9.2.3}{X87E64DA67C3D6661}
+\makelabel{fining:Planes}{9.2.3}{X87E64DA67C3D6661}
+\makelabel{fining:Solids}{9.2.3}{X87E64DA67C3D6661}
+\makelabel{fining:Hyperplanes}{9.2.3}{X87E64DA67C3D6661}
+\makelabel{fining:IsIncident}{9.2.4}{X7904128479BDFCC9}
+\makelabel{fining:AmbientSpace}{9.2.5}{X8606750A8586DF8D}
+\makelabel{fining:BaseField}{9.2.6}{X7BCBA564829D9E89}
+\makelabel{fining:Span}{9.2.7}{X875BE2957FAF6209}
+\makelabel{fining:Meet}{9.2.8}{X8469B54180FE1E4C}
+\makelabel{fining:IsParallel}{9.2.9}{X7FE5611C7A4C0FA2}
+\makelabel{fining:ParallelClass}{9.2.10}{X7A9F3647866EEEE3}
+\makelabel{fining:ParallelClass}{9.2.10}{X7A9F3647866EEEE3}
+\makelabel{fining:ShadowOfElement}{9.3.1}{X7FFA08DA85C5251C}
+\makelabel{fining:ShadowOfFlag}{9.3.2}{X7E86E6417871730C}
+\makelabel{fining:Iterator}{9.4.1}{X83ADF8287ED0668E}
+\makelabel{fining:Enumerator}{9.4.2}{X7EF8910F82B45EC7}
+\makelabel{fining:AffineGroup}{9.5.1}{X8388486C80D0991D}
+\makelabel{fining:CollineationGroup}{9.5.2}{X83FF6FA0790D5747}
+\makelabel{fining:OnAffineSpaces}{9.5.3}{X7E819F357EEEF31C}
+\makelabel{fining:IsVectorSpaceTransversal}{9.6.1}{X85C1B3067C6014D2}
+\makelabel{fining:VectorSpaceTransversal}{9.6.2}{X8210A9FA7F9FA6DF}
+\makelabel{fining:VectorSpaceTransversalElement}{9.6.3}{X7B2163767BCA3CC6}
+\makelabel{fining:ComplementSpace}{9.6.4}{X8292D00E82069C27}
+\makelabel{fining:IsGeometryMorphism}{10.1.1}{X7A3BDDBE7BADCF0A}
+\makelabel{fining:Intertwiner}{10.1.2}{X86E0B2117DD536D2}
+\makelabel{fining:IsomorphismPolarSpaces}{10.2.1}{X8774AF5B840E488D}
+\makelabel{fining:IsomorphismPolarSpaces}{10.2.1}{X8774AF5B840E488D}
+\makelabel{fining:PluckerCoordinates}{10.3.1}{X7C8E719883F407BB}
+\makelabel{fining:KleinCorrespondence}{10.3.2}{X7CD8E5187C5B7116}
+\makelabel{fining:KleinCorrespondence}{10.3.2}{X7CD8E5187C5B7116}
+\makelabel{fining:KleinCorrespondence}{10.3.2}{X7CD8E5187C5B7116}
+\makelabel{fining:KleinCorrespondence}{10.3.2}{X7CD8E5187C5B7116}
+\makelabel{fining:KleinCorrespondence}{10.3.3}{X7CD8E5187C5B7116}
+\makelabel{fining:KleinCorrespondence}{10.3.3}{X7CD8E5187C5B7116}
+\makelabel{fining:KleinCorrespondenceExtended}{10.3.4}{X7FE537C57F2F6BAA}
+\makelabel{fining:KleinCorrespondenceExtended}{10.3.4}{X7FE537C57F2F6BAA}
+\makelabel{fining:NaturalDuality}{10.3.5}{X8472EBA584544B51}
+\makelabel{fining:NaturalDuality}{10.3.5}{X8472EBA584544B51}
+\makelabel{fining:NaturalDuality}{10.3.5}{X8472EBA584544B51}
+\makelabel{fining:NaturalDuality}{10.3.5}{X8472EBA584544B51}
+\makelabel{fining:SelfDuality}{10.3.6}{X7954DA578247B06F}
+\makelabel{fining:SelfDuality}{10.3.6}{X7954DA578247B06F}
+\makelabel{fining:NaturalEmbeddingBySubspace}{10.4.1}{X857976B679B8EC30}
+\makelabel{fining:NaturalEmbeddingBySubField}{10.4.2}{X82510EF078F0806E}
+\makelabel{fining:NaturalEmbeddingBySubField}{10.4.2}{X82510EF078F0806E}
+\makelabel{fining:BlownUpSubspaceOfProjectiveSpace}{10.4.4}{X7F84986879DD952A}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.4.5}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.4.5}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.4.5}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.4.5}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingBySubspace}{10.5.1}{X857976B679B8EC30}
+\makelabel{fining:NaturalEmbeddingBySubField}{10.5.2}{X82510EF078F0806E}
+\makelabel{fining:NaturalEmbeddingBySubField}{10.5.2}{X82510EF078F0806E}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.5.4}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.5.4}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.5.4}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.5.4}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.5.4}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.5.4}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.5.5}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalEmbeddingByFieldReduction}{10.5.5}{X7D2D9AD287532FDB}
+\makelabel{fining:NaturalProjectionBySubspace}{10.6.1}{X7B9E8AB682EC07C2}
+\makelabel{fining:ProjectiveCompletion}{10.7.1}{X7E23CA137AEFD1D2}
+\makelabel{fining:AlgebraicVariety}{11.1.1}{X85B05D0385B6032A}
+\makelabel{fining:AlgebraicVariety}{11.1.1}{X85B05D0385B6032A}
+\makelabel{fining:DefiningListOfPolynomials}{11.1.2}{X7D9C2FA47BCDEBDB}
+\makelabel{fining:AmbientSpace}{11.1.3}{X8606750A8586DF8D}
+\makelabel{fining:PointsOfAlgebraicVariety}{11.1.4}{X86605DF87C562635}
+\makelabel{fining:Points}{11.1.4}{X86605DF87C562635}
+\makelabel{fining:Iterator}{11.1.5}{X83ADF8287ED0668E}
+\makelabel{fining:ProjectiveVariety}{11.2.1}{X83D5414481C9E1D0}
+\makelabel{fining:ProjectiveVariety}{11.2.1}{X83D5414481C9E1D0}
+\makelabel{fining:AlgebraicVariety}{11.2.1}{X83D5414481C9E1D0}
+\makelabel{fining:AlgebraicVariety}{11.2.1}{X83D5414481C9E1D0}
+\makelabel{fining:HermitianVariety}{11.3.1}{X7E233D1979CEB18B}
+\makelabel{fining:HermitianVariety}{11.3.1}{X7E233D1979CEB18B}
+\makelabel{fining:HermitianVariety}{11.3.1}{X7E233D1979CEB18B}
+\makelabel{fining:HermitianVariety}{11.3.1}{X7E233D1979CEB18B}
+\makelabel{fining:QuadraticVariety}{11.3.2}{X850EDF127B1A2C4D}
+\makelabel{fining:QuadraticVariety}{11.3.2}{X850EDF127B1A2C4D}
+\makelabel{fining:QuadraticVariety}{11.3.2}{X850EDF127B1A2C4D}
+\makelabel{fining:QuadraticVariety}{11.3.2}{X850EDF127B1A2C4D}
+\makelabel{fining:QuadraticVariety}{11.3.2}{X850EDF127B1A2C4D}
+\makelabel{fining:QuadraticVariety}{11.3.2}{X850EDF127B1A2C4D}
+\makelabel{fining:QuadraticForm}{11.3.3}{X8421249486CEE1A0}
+\makelabel{fining:SesquilinearForm}{11.3.4}{X793BE1A27BF349F3}
+\makelabel{fining:PolarSpace}{11.3.5}{X863BC8E57C98A471}
+\makelabel{fining:AffineVariety}{11.4.1}{X7A0D03A37AEF48B3}
+\makelabel{fining:AffineVariety}{11.4.1}{X7A0D03A37AEF48B3}
+\makelabel{fining:AlgebraicVariety}{11.4.1}{X7A0D03A37AEF48B3}
+\makelabel{fining:AlgebraicVariety}{11.4.1}{X7A0D03A37AEF48B3}
+\makelabel{fining:Source}{11.5.1}{X7DE8173F80E07AB1}
+\makelabel{fining:Range}{11.5.2}{X829F76BB80BD55DB}
+\makelabel{fining:ImageElm}{11.5.3}{X7CFAB0157BFB1806}
+\makelabel{fining:ImagesSet}{11.5.4}{X8781348F7F5796A0}
+\makelabel{fining:SegreVariety}{11.6.1}{X7F3EBD5487340078}
+\makelabel{fining:SegreVariety}{11.6.1}{X7F3EBD5487340078}
+\makelabel{fining:SegreVariety}{11.6.1}{X7F3EBD5487340078}
+\makelabel{fining:SegreVariety}{11.6.1}{X7F3EBD5487340078}
+\makelabel{fining:SegreVariety}{11.6.1}{X7F3EBD5487340078}
+\makelabel{fining:PointsOfSegreVariety}{11.6.2}{X82AD64F47B418E4F}
+\makelabel{fining:Points}{11.6.2}{X82AD64F47B418E4F}
+\makelabel{fining:SegreMap}{11.6.3}{X7B7DDDA17837AEF5}
+\makelabel{fining:SegreMap}{11.6.3}{X7B7DDDA17837AEF5}
+\makelabel{fining:SegreMap}{11.6.3}{X7B7DDDA17837AEF5}
+\makelabel{fining:SegreMap}{11.6.3}{X7B7DDDA17837AEF5}
+\makelabel{fining:SegreMap}{11.6.3}{X7B7DDDA17837AEF5}
+\makelabel{fining:SegreMap}{11.6.3}{X7B7DDDA17837AEF5}
+\makelabel{fining:Source}{11.6.4}{X7DE8173F80E07AB1}
+\makelabel{fining:VeroneseVariety}{11.7.1}{X85CBADAD7A18BB19}
+\makelabel{fining:VeroneseVariety}{11.7.1}{X85CBADAD7A18BB19}
+\makelabel{fining:VeroneseVariety}{11.7.1}{X85CBADAD7A18BB19}
+\makelabel{fining:PointsOfVeroneseVariety}{11.7.2}{X78420B3B8031C6D0}
+\makelabel{fining:Points}{11.7.2}{X78420B3B8031C6D0}
+\makelabel{fining:VeroneseMap}{11.7.3}{X816B9AB287EEF9A5}
+\makelabel{fining:VeroneseMap}{11.7.3}{X816B9AB287EEF9A5}
+\makelabel{fining:VeroneseMap}{11.7.3}{X816B9AB287EEF9A5}
+\makelabel{fining:VeroneseMap}{11.7.3}{X816B9AB287EEF9A5}
+\makelabel{fining:Source}{11.7.4}{X7DE8173F80E07AB1}
+\makelabel{fining:GrassmannVariety}{11.8.1}{X81872E5D843373C8}
+\makelabel{fining:GrassmannVariety}{11.8.1}{X81872E5D843373C8}
+\makelabel{fining:GrassmannVariety}{11.8.1}{X81872E5D843373C8}
+\makelabel{fining:PointsOfGrassmannVariety}{11.8.2}{X82572EA68327F857}
+\makelabel{fining:Points}{11.8.2}{X82572EA68327F857}
+\makelabel{fining:GrassmannMap}{11.8.3}{X7C6ED0B284833878}
+\makelabel{fining:GrassmannMap}{11.8.3}{X7C6ED0B284833878}
+\makelabel{fining:GrassmannMap}{11.8.3}{X7C6ED0B284833878}
+\makelabel{fining:GrassmannMap}{11.8.3}{X7C6ED0B284833878}
+\makelabel{fining:Source}{11.8.4}{X7DE8173F80E07AB1}
+\makelabel{fining:IsGeneralisedPolygon}{12.1.1}{X8141DFFF7B352E2D}
+\makelabel{fining:IsGeneralisedPolygonRep}{12.1.1}{X8141DFFF7B352E2D}
+\makelabel{fining:IsProjectivePlaneCategory}{12.1.2}{X82EE78CF7A65376F}
+\makelabel{fining:IsGeneralisedQuadrangle}{12.1.2}{X82EE78CF7A65376F}
+\makelabel{fining:IsGeneralisedHexagon}{12.1.2}{X82EE78CF7A65376F}
+\makelabel{fining:IsGeneralisedOctagon}{12.1.2}{X82EE78CF7A65376F}
+\makelabel{fining:IsWeakGeneralisedPolygon}{12.1.3}{X86C124B3804C7569}
+\makelabel{fining:IsDesarguesianPlane}{12.1.4}{X872678307DF4603D}
+\makelabel{fining:IsClassicalGQ}{12.1.5}{X78C1E64E86803511}
+\makelabel{fining:IsElationGQ}{12.1.5}{X78C1E64E86803511}
+\makelabel{fining:IsClassicalGeneralisedHexagon}{12.1.6}{X7A2ABB0B818E25C5}
+\makelabel{fining:GeneralisedPolygonByBlocks}{12.2.1}{X849A83597CC78B5F}
+\makelabel{fining:GeneralisedPolygonByIncidenceMatrix}{12.2.2}{X8751B0FB8500D0B1}
+\makelabel{fining:GeneralisedPolygonByElements}{12.2.3}{X7A6169127CE8ABC0}
+\makelabel{fining:GeneralisedPolygonByElements}{12.2.3}{X7A6169127CE8ABC0}
+\makelabel{fining:Order}{12.3.1}{X84F59A2687C62763}
+\makelabel{fining:IncidenceGraphAttr}{12.3.2}{X836C15B57968A511}
+\makelabel{fining:IncidenceGraph}{12.3.3}{X815BE6D57D623452}
+\makelabel{fining:IncidenceMatrixOfGeneralisedPolygon}{12.3.4}{X81F531BB7DEA127D}
+\makelabel{fining:CollineationGroup}{12.3.5}{X83FF6FA0790D5747}
+\makelabel{fining:CollineationAction}{12.3.6}{X8074EDB381D97984}
+\makelabel{fining:BlockDesignOfGeneralisedPolygon}{12.3.7}{X7D75521986B958DA}
+\makelabel{fining:ElementsOfIncidencStructure}{12.4.1}{X7E7607CA7D59D086}
+\makelabel{fining:Points}{12.4.1}{X7E7607CA7D59D086}
+\makelabel{fining:Lines}{12.4.1}{X7E7607CA7D59D086}
+\makelabel{fining:Size}{12.4.2}{X858ADA3B7A684421}
+\makelabel{fining:ObjectToElement}{12.4.3}{X7E9B2A217DBF2849}
+\makelabel{fining:ObjectToElement}{12.4.3}{X7E9B2A217DBF2849}
+\makelabel{fining:UnderlyingObject}{12.4.3}{X7E9B2A217DBF2849}
+\makelabel{fining:IsIncident}{12.4.4}{X83B0FA9E7AE3DF01}
+\makelabel{fining:Span}{12.4.5}{X875BE2957FAF6209}
+\makelabel{fining:Meet}{12.4.6}{X8469B54180FE1E4C}
+\makelabel{fining:ShadowOfElement}{12.4.7}{X8154BB13844AA0FD}
+\makelabel{fining:Points}{12.4.7}{X8154BB13844AA0FD}
+\makelabel{fining:Lines}{12.4.7}{X8154BB13844AA0FD}
+\makelabel{fining:ElementsIncidentWithElementOfIncidenceStructure}{12.4.7}{X8154BB13844AA0FD}
+\makelabel{fining:DistanceBetweenElements}{12.4.8}{X7807682E86D3BE10}
+\makelabel{fining:IsLieGeometry}{12.5.2}{X7C35384980AA9B77}
+\makelabel{fining:SplitCayleyHexagon}{12.5.3}{X7A05FF0079F55291}
+\makelabel{fining:SplitCayleyHexagon}{12.5.3}{X7A05FF0079F55291}
+\makelabel{fining:SplitCayleyHexagon}{12.5.3}{X7A05FF0079F55291}
+\makelabel{fining:TwistedTrialityHexagon}{12.5.4}{X7E17977384011587}
+\makelabel{fining:TwistedTrialityHexagon}{12.5.4}{X7E17977384011587}
+\makelabel{fining:TwistedTrialityHexagon}{12.5.4}{X7E17977384011587}
+\makelabel{fining:VectorSpaceToElement}{12.5.5}{X82E9593B8074AECB}
+\makelabel{fining:ObjectToElement}{12.5.6}{X7809B7C183FA7213}
+\makelabel{fining:UnderlyingObject}{12.5.7}{X810D4D6D87069697}
+\makelabel{fining:Span}{12.5.9}{X7B1380878358938C}
+\makelabel{fining:Meet}{12.5.9}{X7B1380878358938C}
+\makelabel{fining:CollineationGroup}{12.5.10}{X83FF6FA0790D5747}
+\makelabel{fining:IsEGQByKantorFamily}{12.6.2}{X7CC6903E78F24167}
+\makelabel{fining:IsElementOfKantorFamily}{12.6.2}{X7CC6903E78F24167}
+\makelabel{fining:IsKantorFamily}{12.6.3}{X820A2D6A84A259FC}
+\makelabel{fining:EGQByKantorFamily}{12.6.4}{X7B80E3AC7DEAF948}
+\makelabel{fining:ObjectToElement}{12.6.5}{X80C93974807A342B}
+\makelabel{fining:ObjectToElement}{12.6.5}{X80C93974807A342B}
+\makelabel{fining:BasePointOfEGQ}{12.6.5}{X80C93974807A342B}
+\makelabel{fining:UnderlyingObject}{12.6.5}{X80C93974807A342B}
+\makelabel{fining:ElationGroup}{12.6.6}{X7DCD7EAB839BD97F}
+\makelabel{fining:OnKantorFamily}{12.6.6}{X7DCD7EAB839BD97F}
+\makelabel{fining:CollineationAction}{12.6.6}{X7DCD7EAB839BD97F}
+\makelabel{fining:qClan}{12.6.8}{X806527387F1D5D42}
+\makelabel{fining:LinearqClan}{12.6.9}{X858A1EA8843BEC13}
+\makelabel{fining:FisherThasWalkerKantorBettenqClan}{12.6.9}{X858A1EA8843BEC13}
+\makelabel{fining:KantorMonomialqClan}{12.6.9}{X858A1EA8843BEC13}
+\makelabel{fining:KantorKnuthqClan}{12.6.9}{X858A1EA8843BEC13}
+\makelabel{fining:FisherqClan}{12.6.9}{X858A1EA8843BEC13}
+\makelabel{fining:KantorFamilyByqClan}{12.6.10}{X7C59CF8079EA33D3}
+\makelabel{fining:EGQByqClan}{12.6.11}{X830222B084BF866D}
+\makelabel{fining:IsEGQByBLTSet}{12.6.13}{X7A8438537D2F1374}
+\makelabel{fining:BLTSetByqClan}{12.6.14}{X7ECC1871866AC286}
+\makelabel{fining:EGQByBLTSet}{12.6.15}{X84700DDF80B39332}
+\makelabel{fining:DefiningPlanesOfEGQByBLTSet}{12.6.16}{X79186E29799355BD}
+\makelabel{fining:ObjectToElement}{12.6.17}{X80C93974807A342B}
+\makelabel{fining:ObjectToElement}{12.6.17}{X80C93974807A342B}
+\makelabel{fining:UnderlyingObject}{12.6.17}{X80C93974807A342B}
+\makelabel{fining:CollineationSubgroup}{12.6.18}{X7C57B0BD7A2E5877}
+\makelabel{fining:IsCosetGeometry}{13.1.1}{X877735BF810DEAD5}
+\makelabel{fining:CosetGeometry}{13.1.2}{X86C97C4780C27E6F}
+\makelabel{fining:IsIncident}{13.1.3}{X7A9ED8327C40B445}
+\makelabel{fining:ParabolicSubgroups}{13.1.4}{X86CC6815824E71E4}
+\makelabel{fining:AmbientGroup}{13.1.5}{X824D5D558425B4B5}
+\makelabel{fining:Borelsubgroup}{13.1.6}{X7E5B687E86068196}
+\makelabel{fining:RandomElement}{13.1.7}{X82FB0B387E53B073}
+\makelabel{fining:RandomFlag}{13.1.8}{X87E9C0D3799F95BA}
+\makelabel{fining:RandomChamber}{13.1.9}{X82DA90817A70103A}
+\makelabel{fining:IsFlagTransitiveGeometry}{13.1.10}{X7FEFCB907CAAA9B1}
+\makelabel{fining:OnCosetGeometryElement}{13.1.11}{X7C0E5EDD806CE4C1}
+\makelabel{fining:IsFirmGeometry}{13.1.14}{X7F74FD648751B7E6}
+\makelabel{fining:IsThickGeometry}{13.1.15}{X7F8A17357F9FFA00}
+\makelabel{fining:IsThinGeometry}{13.1.16}{X830213C3843A1BA2}
+\makelabel{fining:IsConnected}{13.1.17}{X877F178084D9A589}
+\makelabel{fining:IsResiduallyConnected}{13.1.18}{X83A5107981824C2F}
+\makelabel{fining:StandardFlagOfCosetGeometry}{13.1.19}{X80E7BC8F8612176D}
+\makelabel{fining:FlagToStandardFlag}{13.1.20}{X875E89FF7ECD44A6}
+\makelabel{fining:CanonicalResidueOfFlag}{13.1.21}{X7F3A2B47833EA22F}
+\makelabel{fining:ResidueOfFlag}{13.1.22}{X78BE3D727B060301}
+\makelabel{fining:IncidenceGraph}{13.1.23}{X815BE6D57D623452}
+\makelabel{fining:Rk2GeoGonality}{13.1.24}{X8233EE5D7BC9FD15}
+\makelabel{fining:Rk2GeoDiameter}{13.1.25}{X8573A0DE841CE7B3}
+\makelabel{fining:GeometryOfRank2Residue}{13.1.26}{X8327F4A481DD6DEB}
+\makelabel{fining:Rank2Parameters}{13.1.27}{X7B63DAB082839BD3}
+\makelabel{fining:AutGroupIncidenceStructureWithNauty}{13.2.1}{X833D384D7B061881}
+\makelabel{fining:CorGroupIncidenceStructureWithNauty}{13.2.2}{X85260FB17EACF6F5}
+\makelabel{fining:IsIsomorphicIncidenceStructureWithNauty}{13.2.3}{X82CB6DDB8068AC42}
+\makelabel{fining:DiagramOfGeometry}{13.3.1}{X8239310E79D3DE12}
+\makelabel{fining:GeometryOfDiagram}{13.3.2}{X7A2783337F87104F}
+\makelabel{fining:DrawDiagram}{13.3.3}{X808A503579A155BF}
+\makelabel{fining:DrawDiagram}{13.3.3}{X808A503579A155BF}
+\makelabel{fining:DrawDiagram}{13.3.3}{X808A503579A155BF}
+\makelabel{fining:DrawDiagramWithNeato}{13.3.4}{X79F882017FEFE4DE}
+\makelabel{fining:CanonicalGramMatrix}{B.1.1}{X80010BA38266701F}
+\makelabel{fining:CanonicalQuadraticForm}{B.1.2}{X83A532A17828B887}
+\makelabel{fining:SOdesargues}{B.2.1}{X7DB7788C7E3DE820}
+\makelabel{fining:GOdesargues}{B.2.2}{X7C5583F87F904567}
+\makelabel{fining:SUdesargues}{B.2.3}{X7EBFB99E853F378D}
+\makelabel{fining:GUdesargues}{B.2.4}{X7F5D42EA84929ACA}
+\makelabel{fining:Spdesargues}{B.2.5}{X80DD252A82E848C9}
+\makelabel{fining:GeneralSymplecticGroup}{B.2.6}{X7E1CDB2B87448665}
+\makelabel{fining:GSpdesargues}{B.2.7}{X7BDD39DC823F7E33}
+\makelabel{fining:GammaSp}{B.2.8}{X793B43C58481EDCF}
+\makelabel{fining:DeltaOminus}{B.2.9}{X7D2C49FD7D15988C}
+\makelabel{fining:DeltaOplus}{B.2.10}{X82DF70F5873432C7}
+\makelabel{fining:GammaOminus}{B.2.11}{X8364267E800EF6E5}
+\makelabel{fining:GammaO}{B.2.12}{X7A9C29DB84B4A97E}
+\makelabel{fining:GammaOplus}{B.2.13}{X7A5C03CD7A2F5CAE}
+\makelabel{fining:GammaU}{B.2.14}{X854A064C7E907B61}
+\makelabel{fining:G2fining}{B.2.15}{X7A171F11786F771C}
+\makelabel{fining:3D4fining}{B.2.16}{X82BE951780CFFBFB}
+\makelabel{fining:FindBasePointCandidates}{B.3.1}{X814A0FEE7B677BF7}
+\makelabel{fining:ShrinkVec}{C.1.1}{X802446017891FBCD}
+\makelabel{fining:ShrinkVec}{C.1.1}{X802446017891FBCD}
+\makelabel{fining:ShrinkMat}{C.1.2}{X7F5886C47A02D55A}
+\makelabel{fining:ShrinkMat}{C.1.2}{X7F5886C47A02D55A}
+\makelabel{fining:BlownUpProjectiveSpace}{C.1.3}{X787FC91D7A92BD96}
+\makelabel{fining:BlownUpProjectiveSpaceBySubfield}{C.1.4}{X84CD51327DD6120A}
+\makelabel{fining:BlownUpSubspaceOfProjectiveSpace}{C.1.5}{X7F84986879DD952A}
+\makelabel{fining:BlownUpSubspaceOfProjectiveSpace}{C.1.5}{X7F84986879DD952A}
+\makelabel{fining:BlownUpSubspaceOfProjectiveSpaceBySubfield}{C.1.6}{X7B0BD62A86C9E432}
+\makelabel{fining:IsDesarguesianSpreadElement}{C.1.7}{X87B6C4AB7C6532CE}
+\makelabel{fining:QuadraticFormFieldReduction}{C.2.1}{X7C23A6B17C98D3BB}
+\makelabel{fining:QuadraticFormFieldReduction}{C.2.1}{X7C23A6B17C98D3BB}
+\makelabel{fining:BilinearFormFieldReduction}{C.2.2}{X8181A7B478A3E86D}
+\makelabel{fining:BilinearFormFieldReduction}{C.2.2}{X8181A7B478A3E86D}
+\makelabel{fining:HermitianFormFieldReduction}{C.2.3}{X8785505B7E4C4E7D}
+\makelabel{fining:HermitianFormFieldReduction}{C.2.3}{X8785505B7E4C4E7D}
+\makelabel{fining:PluckerCoordinates}{C.3.1}{X7C8E719883F407BB}
+\makelabel{fining:InversePluckerCoordinates}{C.3.1}{X7C8E719883F407BB}
+\makelabel{fining:IsomorphismPolarSpacesProjectionFromNucleus}{C.3.2}{X79AF591A87EC8A2D}
+\makelabel{fining:IsomorphismPolarSpacesNC}{C.3.3}{X7D71512E7AC27598}
+\makelabel{fining:IsomorphismPolarSpacesNC}{C.3.3}{X7D71512E7AC27598}
+\makelabel{fining:NaturalEmbeddingBySubspaceNC}{C.3.4}{X7A26E90A85017919}
+\makelabel{fining:NaturalProjectionBySubspaceNC}{C.3.5}{X78CA4C227D969B22}

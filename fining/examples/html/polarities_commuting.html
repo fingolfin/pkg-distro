@@ -1,0 +1,25 @@
+gap&gt; mat := [[0,1,0,0],[1,0,0,0],[0,0,0,1],[0,0,1,0]]*Z(5)^0;<br>
+[ [ 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], [ Z(5)^0, 0*Z(5), 0*Z(5), 0*Z(5) ], <br>
+  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0 ], [ 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5) ] ]<br>
+gap&gt; phi := HermitianPolarityOfProjectiveSpace(mat,GF(25));<br>
+&lt;polarity of PG(3, GF(5^2)),  &gt;<br>
+gap&gt; mat2 := IdentityMat(4,GF(5));<br>
+[ [ Z(5)^0, 0*Z(5), 0*Z(5), 0*Z(5) ], [ 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], <br>
+  [ 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5) ], [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0 ] ]<br>
+gap&gt; psi := PolarityOfProjectiveSpace(mat2,GF(25));<br>
+&lt;polarity of PG(3, GF(5^2)),  &gt;<br>
+gap&gt; phi*psi = psi*phi;<br>
+true<br>
+gap&gt; g := CorrelationGroup(PG(3,25));<br>
+&lt;projective group with Frobenius with proj. space isomorphism of size <br>
+3719082276000000000000 with 4 generators&gt;<br>
+gap&gt; h := CollineationGroup(PG(3,25));<br>
+PGammaL(4,25)<br>
+gap&gt; hom := Embedding(h,g);<br>
+MappingByFunction( PGammaL(4,25), &lt;projective group with Frobenius with proj. <br>
+space isomorphism of size 3719082276000000000000 with <br>
+4 generators&gt;, function( y ) ... end )<br>
+gap&gt; coll := PreImagesRepresentative(hom,phi*psi);<br>
+&lt;projective semilinear element: [ [ 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], <br>
+  [ Z(5)^0, 0*Z(5), 0*Z(5), 0*Z(5) ], [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0 ], <br>
+  [ 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5) ] ], F^5&gt;<br>

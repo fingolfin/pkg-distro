@@ -1,0 +1,142 @@
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdftex 2007.6.7)  23 OCT 2014 15:19
+entering extended mode
+**manual
+(./manual.tex (../../../doc/gapmacro.tex
+(/usr/local/gwTeX/texmf.texlive/tex/plain/amsfonts/amssym.tex
+(/usr/local/gwTeX/texmf.texlive/tex/plain/amsfonts/amssym.def
+\msafam=\fam8
+\msbfam=\fam9
+\eufmfam=\fam10
+))
+Running PDFTeX
+\pagewidth=\dimen16
+\pageheight=\dimen17
+\colwidth=\dimen18
+\partialpage=\box16
+\origvsize=\dimen19
+\manindent=\dimen20
+\smallmanindent=\dimen21
+\itfam=\fam11
+\slfam=\fam12
+\bffam=\fam13
+\ttfam=\fam14
+\msbfam=\fam15
+\ttindent=\dimen22
+\labelout=\write0
+\indexout=\write1
+\secindout=\write2
+\tocout=\write3
+\citeout=\write4
+\ans=\write5
+\exampleout=\write6
+\labelin=\read0
+\indexin=\read1
+\tocin=\read2
+\citein=\read3
+\secno=\count26
+\subsecno=\count27
+\exno=\count28
+\indentno=\count29
+\chapnum=\count30
+\ortoks=\toks12
+\bibindent=\dimen23
+) [1{/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `eenbo8r': SlantFont/ExtendFont can be used o
+nly with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `eenro8r': SlantFont/ExtendFont can be used o
+nly with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `efabiu8r': SlantFont/ExtendFont can be used 
+only with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `efabo8r': SlantFont/ExtendFont can be used o
+nly with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `efariu8r': SlantFont/ExtendFont can be used 
+only with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `efariu8x': SlantFont/ExtendFont can be used 
+only with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `efaro8r': SlantFont/ExtendFont can be used o
+nly with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `efaro8x': SlantFont/ExtendFont can be used o
+nly with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `esxbo8r': SlantFont/ExtendFont can be used o
+nly with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `esxriu8r': SlantFont/ExtendFont can be used 
+only with embedded Type1 fonts
+
+
+pdfTeX warning: pdftex (file /usr/local/gwTeX/texmf.local/fonts/map/pdftex/updm
+ap/pdftex.map): invalid entry for `esxro8r': SlantFont/ExtendFont can be used o
+nly with embedded Type1 fonts
+}]
+\makelabel{matgrp:Contents}{{\setbox 0=\hbox {1}\vrule width 0pt height\ht 0}}
+Chapter `Contents' .
+(./manual.toc) [2.1
+\chapcontents {\tocstrut }{Contents}{2}
+] (./manual.lab)
+\openout3 = `manual.toc'.
+
+\openout0 = `manual.lab'.
+
+\openout1 = `manual.idx'.
+
+\openout2 = `manual.six'.
+
+\openout4 = `manual.aux'.
+
+ (./matgrp.tex
+Chapter `matgrp' .
+\openout6 = `manual.example-1.tst'.
+
+[3.1] [4.1]) [5.1]
+Chapter `Bibliography' .
+No file manual.bbl.
+[6.2]
+Chapter `Index' .
+No file manual.ind.
+##
+## Citations for BibTeX written on manual.aux.
+## Index entries for makeindex written on manual.idx.
+## Section index entries written on manual.six.
+## Label definitions written on manual.lab.
+## Table of contents written on manual.toc.
+## Examples written to manual.example-XX.tst.
+##
+[7.3] )pdfTeX warning (dest): name{index} has been referenced but does not exis
+t, replaced by a fixed one
+
+{/usr/local/gwTeX/texmf.texlive/fonts/enc/dvips/base/8r.enc}</usr/local/gwTeX/t
+exmf.texlive/fonts/type1/bluesky/cm/cmtt10.pfb>
+Output written on manual.pdf (7 pages, 29069 bytes).
+PDF statistics:
+ 84 PDF objects out of 1000 (max. 8388607)
+ 7 named destinations out of 1000 (max. 131072)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+

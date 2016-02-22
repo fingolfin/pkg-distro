@@ -77,11 +77,11 @@ BindGlobal( "ResClassesTest",
 
   function (  )
 
-    local  ResClassesDir, dir;
+    return
 
-    ResClassesDir := GAPInfo.PackagesInfo.("resclasses")[1].InstallationPath;
-    dir := Concatenation( ResClassesDir, "/tst/" );
-    Read( Concatenation( dir, "testall.g" ) );
+    TestDirectory(Concatenation(
+                  GAPInfo.PackagesInfo.("resclasses")[1].InstallationPath,
+                  "/tst/"));
   end );
 
 #############################################################################
@@ -166,7 +166,9 @@ BindGlobal( "ConvertPackageFilesToUNIXLineBreaks",
                    ext->PositionSublist(file,ext) <> fail)
           or file in ["README","CHANGES","version"]
         then RecodeFile(Concatenation(dir,"/",file));
-        elif file in ["data","doc","examples","lib","paper","tst","timings"]
+        elif file in ["data","3ctsgroups6","3ctsgroups9","4ctsgroups6",
+                      "ctproducts","doc","examples","lib","paper",
+                      "tst","timings"]
         then ProcessDirectory(Concatenation(dir,"/",file)); fi;
       od;
     end;

@@ -1,0 +1,10 @@
+gap> 
+gap> #this is a test file
+gap> list := List(Lines(PG(4,7)));;  #27260 ms
+gap> orb := AsList(Lines(PG(4,7))); #38522 ms
+#I  Alarm: Collision warning: Collisions: 36823792 Accesses: 364592!
+<closed orbit, 140050 points>
+gap> list2 := List(orb);;
+gap> Set(list)=Set(list2);
+true
+gap> quit;

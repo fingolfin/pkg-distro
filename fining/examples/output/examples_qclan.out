@@ -1,0 +1,39 @@
+gap> 
+gap> ## examples_qclan.g
+gap> f := GF(3);
+GF(3)
+gap> id := IdentityMat(2, f);;
+gap> clan := List( f, t -> t*id );;
+gap> IsqClan( clan, f );
+true
+gap> clan := qClan(clan, f);
+<q-clan over GF(3)>
+gap> egq := EGQByqClan( clan );
+#I  Computed Kantor family. Now computing EGQ...
+<EGQ of order [ 9, 3 ] and basepoint 0>
+gap> elations := ElationGroup( egq );
+<matrix group of size 243 with 8 generators>
+gap> points := Points( egq );
+<points of <EGQ of order [ 9, 3 ] and basepoint 0>>
+gap> p := Random(points);
+<a point of class 2 of <EGQ of order [ 9, 3 ] and basepoint 0>>
+gap> x := Random(elations);
+[ [ Z(3)^0, 0*Z(3), 0*Z(3), Z(3)^0 ], [ 0*Z(3), Z(3)^0, 0*Z(3), Z(3)^0 ], 
+  [ 0*Z(3), 0*Z(3), Z(3)^0, Z(3)^0 ], [ 0*Z(3), 0*Z(3), 0*Z(3), Z(3)^0 ] ]
+gap> OnKantorFamily(p,x);
+<a point of class 2 of <EGQ of order [ 9, 3 ] and basepoint 0>>
+gap> orbs := Orbits( elations, points, OnKantorFamily);;
+gap> Collected(List( orbs, Size ));
+[ [ 1, 1 ], [ 9, 4 ], [ 243, 1 ] ]
+gap> blt := BLTSetByqClan( clan );
+[ <a point in Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0>, 
+  <a point in Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0>, 
+  <a point in Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0>, 
+  <a point in Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0> ]
+gap> q4q := AmbientGeometry( blt[1] );
+Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0
+gap> span := Span( blt );
+<a plane in ProjectiveSpace(4, 3)>
+gap> ProjectiveDimension( span ); 
+2
+gap> quit;

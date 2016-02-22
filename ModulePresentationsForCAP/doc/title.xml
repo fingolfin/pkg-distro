@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    ModulePresentationsForCAP
+  </Title>
+  <Subtitle>
+    Category R-pres for CAP
+  </Subtitle>
+  <Version>
+    2015.12.09
+  </Version>
+  <Author>
+    Sebastian Gutsche<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Mathematics<Br/>
+University of Kaiserslautern<Br/>
+67653 Kaiserslautern<Br/>
+Germany<Br/>
+</Address>
+<Email>gutsche@mathematik.uni-kl.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~gutsche/</Homepage>
+
+  </Author>
+  <Author>
+    Sebastian Posur<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Lehrstuhl B für Mathematik RWTH - Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>sposur@momo.math.rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/Mitarbeiter/posur.php</Homepage>
+
+  </Author>
+  <Date>
+    09/12/2015
+  </Date>
+  </TitlePage>

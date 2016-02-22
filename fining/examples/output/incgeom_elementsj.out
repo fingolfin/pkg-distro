@@ -1,0 +1,22 @@
+gap> 
+gap> #elements of type j of an incidence geometry.
+gap> ps := ProjectiveSpace(3,3);
+ProjectiveSpace(3, 3)
+gap> l := ElementsOfIncidenceStructure(ps,2);
+<lines of ProjectiveSpace(3, 3)>
+gap> ps := EllipticQuadric(5,9);
+Q-(5, 9)
+gap> lines := ElementsOfIncidenceStructure(ps,2);
+<lines of Q-(5, 9)>
+gap> planes := ElementsOfIncidenceStructure(ps,3);
+Error, <geo> has no elements of type <j> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 12 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> as := AffineSpace(3,9);
+AG(3, 9)
+gap> lines := ElementsOfIncidenceStructure(as,"lines");
+<lines of AG(3, 9)>
+gap> quit;

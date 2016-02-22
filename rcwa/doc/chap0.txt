@@ -6,10 +6,10 @@
                         [1XResidue-Class-Wise Affine Groups[101X
   
   
-                                 Version 3.7.0
+                                 Version 4.0.0
   
   
-                                 July 21, 2014
+                                January 25, 2016
   
   
                                   Stefan Kohl
@@ -47,7 +47,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2003 - 2014 by Stefan Kohl.[133X
+  [33X[0;0Y© 2003 - 2016 by Stefan Kohl.[133X
   
   [33X[0;0Y[5XRCWA[105X  is  free  software: you can redistribute it and/or modify it under the
   terms  of  the  GNU General Public License as published by the Free Software
@@ -147,17 +147,20 @@
       3.2-3 PreImagesRepresentative
     3.3 [33X[0;0YThe natural action of an rcwa group on the underlying ring[133X
       3.3-1 [33X[0;0YOrbit (for an rcwa group and either a point or a set)[133X
-      3.3-2 DrawOrbitPicture
-      3.3-3 [33X[0;0YShortOrbits (for rcwa groups) & ShortCycles (for rcwa
+      3.3-2 GrowthFunctionOfOrbit
+      3.3-3 DrawOrbitPicture
+      3.3-4 [33X[0;0YShortOrbits (for rcwa groups) & ShortCycles (for rcwa
       permutations)[133X
-      3.3-4 [33X[0;0YShortResidueClassOrbits & ShortResidueClassCycles[133X
-      3.3-5 CycleRepresentativesAndLengths
-      3.3-6 FixedResidueClasses
-      3.3-7 [33X[0;0YBall (for group, element and radius or group, point, radius and
+      3.3-5 [33X[0;0YShortResidueClassOrbits & ShortResidueClassCycles[133X
+      3.3-6 ComputeCycleLength
+      3.3-7 CycleRepresentativesAndLengths
+      3.3-8 FixedResidueClasses
+      3.3-9 [33X[0;0YBall (for group, element and radius or group, point, radius and
       action)[133X
-      3.3-8 RepresentativeAction
-      3.3-9 ProjectionsToInvariantUnionsOfResidueClasses
       3.3-10 RepresentativeAction
+      3.3-11 ProjectionsToInvariantUnionsOfResidueClasses
+      3.3-12 RepresentativeAction
+      3.3-13 CollatzLikeMappingByOrbitTree
     3.4 [33X[0;0YSpecial attributes of tame residue-class-wise affine groups[133X
       3.4-1 [33X[0;0YRespectedPartition (of a tame rcwa group or -permutation)[133X
       3.4-2 [33X[0;0YActionOnRespectedPartition & KernelOfActionOnRespectedPartition[133X
@@ -188,7 +191,8 @@
       6.1-1 LoadRCWAExamples
     6.2 [33X[0;0YDatabases of rcwa groups[133X
       6.2-1 LoadDatabaseOfGroupsGeneratedBy3ClassTranspositions
-      6.2-2 LoadDatabaseOfGroupsGeneratedBy4ClassTranspositions
+      6.2-2 LoadDatabaseOfGroupsGeneratedBy3ClassTranspositions
+      6.2-3 LoadDatabaseOfGroupsGeneratedBy4ClassTranspositions
     6.3 [33X[0;0YDatabases of rcwa mappings[133X
       6.3-1 LoadDatabaseOfProductsOf2ClassTranspositions
       6.3-2 LoadDatabaseOfNonbalancedProductsOfClassTranspositions
@@ -226,14 +230,11 @@
       9.4-3 RCWATestExamples
     9.5 [33X[0;0YThe Info class of the package[133X
       9.5-1 InfoRCWA
-    9.6 [33X[0;0YRunning demonstrations[133X
-      9.6-1 RunDemonstration
-    9.7 [33X[0;0YUtility functions for bitmap pictures[133X
-      9.7-1 SaveAsBitmapPicture
-      9.7-2 EncryptIntoBitmapPicture
-    9.8 [33X[0;0YConverting GAP logfiles to HTML[133X
-      9.8-1 Log2HTML
-    9.9 [33X[0;0YSome general utility functions[133X
+    9.6 [33X[0;0YUtility functions for bitmap pictures[133X
+      9.6-1 SaveAsBitmapPicture
+    9.7 [33X[0;0YConverting GAP logfiles to HTML[133X
+      9.7-1 Log2HTML
+    9.8 [33X[0;0YSome general utility functions[133X
   
   
   [32X

@@ -1,0 +1,19 @@
+gap> 
+gap> #example using the generic Stabilizer
+gap> ps := PG(3,8);
+ProjectiveSpace(3, 8)
+gap> g := CollineationGroup(ps);
+The FinInG collineation group PGammaL(4,8)
+gap> p := Random(Points(ps));
+<a point in ProjectiveSpace(3, 8)>
+gap> Stabilizer(g,p,OnProjSubspaces);
+<projective collineation group of size 177223237632 with 2 generators>
+gap> time;
+10026
+gap> line := Random(Lines(ps));
+<a line in ProjectiveSpace(3, 8)>
+gap> Stabilizer(g,line,OnProjSubspaces);
+<projective collineation group of size 21849440256 with 2 generators>
+gap> time;
+78126
+gap> quit;

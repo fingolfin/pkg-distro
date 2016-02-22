@@ -1,0 +1,5 @@
+gap> 
+gap> #gammaoplus
+gap> GammaOplus(6,GF(64));
+PGammaO+(6,64)
+gap> quit;

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Generalized_Morphism_Category_by_Cospans">
+<Heading>Generalized Morphism Category by Cospans</Heading>
+
+<Section Label="Chapter_Generalized_Morphism_Category_by_Cospans_Section_GAP_Categories">
+<Heading>GAP Categories</Heading>
+
+<ManSection>
+  <Filt Arg="object" Name="IsGeneralizedMorphismCategoryByCospansObject" Label="for IsGeneralizedMorphismCategoryObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of objects in the
+generalized morphism category by cospans.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Arg="object" Name="IsGeneralizedMorphismByCospan" Label="for IsGeneralizedMorphism"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of morphisms in the
+generalized morphism category by cospans.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Generalized_Morphism_Category_by_Cospans_Section_Properties">
+<Heading>Properties</Heading>
+
+<ManSection>
+  <Prop Arg="alpha" Name="HasIdentityAsReversedArrow" Label="for IsGeneralizedMorphismByCospan"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha</Math> by
+a cospan <Math>a \rightarrow b \leftarrow c</Math>.
+The output is <C>true</C> if <Math>b \leftarrow c</Math>
+is congruent to an identity morphism,
+<C>false</C> otherwise.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Generalized_Morphism_Category_by_Cospans_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="a" Name="UnderlyingHonestObject" Label="for IsGeneralizedMorphismCategoryByCospansObject"/>
+ <Returns>an object in <Math>\mathbf{A}</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math> in the generalized morphism category by cospans.
+The output is its underlying honest object.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="Arrow" Label="for IsGeneralizedMorphismByCospan"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{A}}(a,c)</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha</Math> by
+a cospan <Math>a \rightarrow b \leftarrow c</Math>.
+The output is its arrow <Math>a \rightarrow b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="ReversedArrow" Label="for IsGeneralizedMorphismByCospan"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{A}}(c,b)</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha</Math> by
+a cospan <Math>a \rightarrow b \leftarrow c</Math>.
+The output is its reversed arrow <Math>b \leftarrow c</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="NormalizedCospanTuple" Label="for IsGeneralizedMorphismByCospan"/>
+ <Returns>a pair of morphisms in <Math>\mathbf{A}</Math>.
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha: a \rightarrow b</Math> by
+a cospan.
+The output is its normalized cospan pair <Math>(a \rightarrow d, d \leftarrow b)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="PseudoInverse" Label="for IsGeneralizedMorphismByCospan"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(b,a)</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha: a \rightarrow b</Math> by
+a cospan.
+The output is its pseudo inverse <Math>b \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="GeneralizedInverseByCospan" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(b,a)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b \in \mathbf{A}</Math>.
+The output is its generalized inverse <Math>b \rightarrow a</Math> by cospan.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="IdempotentDefinedBySubobjectByCospan" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(b,b)</Math>
+</Returns>
+ <Description>
+The argument is a subobject <Math>\alpha: a \hookrightarrow b \in \mathbf{A}</Math>.
+The output is the idempotent <Math>b \rightarrow b \in \mathbf{G(A)}</Math> by cospan
+defined by <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="IdempotentDefinedByFactorobjectByCospan" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(b,b)</Math>
+</Returns>
+ <Description>
+The argument is a factorobject <Math>\alpha: b \twoheadrightarrow a \in \mathbf{A}</Math>.
+The output is the idempotent <Math>b \rightarrow b \in \mathbf{G(A)}</Math> by cospan
+defined by <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="NormalizedCospan" Label="for IsGeneralizedMorphismByCospan"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(a,b)</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha: a \rightarrow b</Math> by
+a cospan. The output is its normalization by cospan.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Generalized_Morphism_Category_by_Cospans_Section_Operations">
+<Heading>Operations</Heading>
+
+<ManSection>
+  <Oper Arg="beta, alpha" Name="GeneralizedMorphismFromFactorToSubobjectByCospan" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(c,a)</Math>
+</Returns>
+ <Description>
+The arguments are a a factorobject <Math>\beta: b \twoheadrightarrow c</Math>,
+and a subobject <Math>\alpha: a \hookrightarrow b</Math>.
+The output is the generalized morphism by cospan from the factorobject to the subobject.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Generalized_Morphism_Category_by_Cospans_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="GeneralizedMorphismByCospan" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(a,c)</Math>
+</Returns>
+ <Description>
+The arguments are morphisms <Math>\alpha: a \rightarrow b</Math> and <Math>\beta: c \rightarrow b</Math> in <Math>\mathbf{A}</Math>.
+The output is a generalized morphism by cospan
+with arrow <Math>\alpha</Math> and reversed arrow <Math>\beta</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta, gamma" Name="GeneralizedMorphismByCospan" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(a,d)</Math>
+</Returns>
+ <Description>
+The arguments are morphisms <Math>\alpha: a \leftarrow b</Math>,
+<Math>\beta: b \rightarrow c</Math>,
+and <Math>\gamma: c \leftarrow d</Math> in <Math>\mathbf{A}</Math>.
+The output is a generalized morphism by cospan
+defined by the composition the given three arrows
+regarded as generalized morphisms.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="GeneralizedMorphismByCospanWithSourceAid" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(a,c)</Math>
+</Returns>
+ <Description>
+The arguments are morphisms <Math>\alpha: a \leftarrow b</Math>,
+and <Math>\beta: b \rightarrow c</Math> in <Math>\mathbf{A}</Math>.
+The output is a generalized morphism by cospan
+defined by the composition the given two arrows
+regarded as generalized morphisms.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="AsGeneralizedMorphismByCospan" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(a,b)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math> in <Math>\mathbf{A}</Math>.
+The output is the honest generalized morphism by cospan defined by <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="GeneralizedMorphismCategoryByCospans" Label="for IsCapCategory"/>
+ <Returns>a category
+</Returns>
+ <Description>
+The argument is an abelian category <Math>\mathbf{A}</Math>.
+The output is its generalized morphism category <Math>\mathbf{G(A)}</Math> by cospans.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="GeneralizedMorphismByCospansObject" Label="for IsCapCategoryObject"/>
+ <Returns>an object in <Math>\mathbf{G(A)}</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math> in an abelian category <Math>\mathbf{A}</Math>.
+The output is the object in the generalized morphism category by cospans
+whose underlying honest object is <Math>a</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

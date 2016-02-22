@@ -1,0 +1,9 @@
+gap> 
+gap> #base field of a projective space
+gap> ps := PG(5,8);
+ProjectiveSpace(5, 8)
+gap> p := VectorSpaceToElement(ps,[1,1,1,0,0,1]*Z(2));
+<a point in ProjectiveSpace(5, 8)>
+gap> BaseField(p);
+GF(2^3)
+gap> quit;

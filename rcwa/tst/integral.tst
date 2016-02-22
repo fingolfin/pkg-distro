@@ -425,20 +425,20 @@ gap> Union(List(cls,cl->Image(u,cl)));
 Integers
 gap> F := ResidueClassUnion(Integers,5,[1,2],[3,8],[-4,1]);;
 gap> im := Image(a,Image(a,F));
-<union of 18 residue classes (mod 45)> U [ 3, 18 ] \ [ -9, 1 ]
+<union of 18 residue classes (mod 45) (12 classes)> U [ 3, 18 ] \ [ -9, 1 ]
 gap> pre := PreImage(a,PreImage(a,im));
 1(5) U 2(5) U [ 3, 8 ] \ [ -4, 1 ]
 gap> C7 := Group(g);; 
 gap> orb := Orbit(C7,F);
-[ 1(5) U 2(5) U [ 3, 8 ] \ [ -4, 1 ], 
-  <union of 12 residue classes (mod 30)> U [ 4, 8 ] \ [ -2, 5 ], 
+[ 1(5) U 2(5) U [ 3, 8 ] \ [ -4, 1 ], <union of 12 residue classes (mod 30) (
+    9 classes)> U [ 4, 8 ] \ [ -2, 5 ], 
   <union of 24 residue classes (mod 60)> U [ 0, 4 ] \ [ -6, 3 ], 
   <union of 24 residue classes (mod 60)> U [ 0, 2 ] \ [ -10, 8 ], 
   <union of 24 residue classes (mod 60)> U [ 1, 2 ] \ [ -5, 4 ], 
   <union of 24 residue classes (mod 60)> U [ 1, 5 ] \ [ -1, 0 ], 
-  <union of 12 residue classes (mod 30)> U [ 3, 5 ] \ [ -3, 2 ] ]
+  <union of 12 residue classes (mod 30) (9 classes)> U [ 3, 5 ] \ [ -3, 2 ] ]
 gap> Union(orb{[1,2]});
-<union of 19 residue classes (mod 30)> U [ 3, 4, 8 ] \ [ -2, 5 ]
+<union of 19 residue classes (mod 30) (8 classes)> U [ 3, 4, 8 ] \ [ -2, 5 ]
 gap> Union(orb{[1,2,3]});
 <union of 44 residue classes (mod 60)> U [ 0, 4, 8 ] \ [ -6 ]
 gap> Union(orb{[1,2,3,4]});
@@ -765,7 +765,7 @@ gap> Trajectory(T,27,[1],"LastCoeffs");
 [ 36472996377170786403, 195820718533800070543, 1180591620717411303424 ]
 gap> Trajectory(T,ResidueClass(Integers,3,0),Integers);
 [ 0(3), 0(3) U 5(9), 0(3) U 5(9) U 7(9) U 8(27), 
-  <union of 20 residue classes (mod 27)>, 
+  <union of 20 residue classes (mod 27) (6 classes)>, 
   <union of 73 residue classes (mod 81)>, Z \ 10(81) U 37(81), Integers ]
 gap> List(Trajectory(sigma,37,37^(sigma^-1),"AllCoeffs"),
 >         c->(c[1]*37+c[2])/c[3]){[1..23]} = Cycle(sigma,37);
@@ -1074,14 +1074,18 @@ gap> DecreasingOn(T);
 0(2)
 gap> DecreasingOn(T^2);
 Z \ 3(4)
+gap> DecreasingOn(SparseRep(T)^2:classes);
+[ 0(4), 1(4), 2(4) ]
 gap> DecreasingOn(T^3);
 0(4) U 2(8) U 5(8)
+gap> IncreasingOn(SparseRep(T)^2:classes);
+[ 3(4) ]
 gap> DecreasingOn(a);
 1(2)
 gap> DecreasingOn(a^2);
 1(8) U 7(8)
 gap> DecreasingOn(a^3);
-<union of 8 residue classes (mod 16)>
+<union of 8 residue classes (mod 16) (6 classes)>
 gap> FactorizationIntoCSCRCT(ab);
 [ ClassShift( 7(9) ), ClassShift( 1(9) )^-1, ( 1(9), 4(9) ), ( 1(9), 7(9) ), 
   ( 6(18), 15(18) ), ( 5(9), 15(18) ), ( 4(9), 15(18) ), ( 5(9), 6(18) ), 
@@ -1263,7 +1267,7 @@ true
 gap> CyclicGroup(IsRcwaGroupOverZ,1);
 Trivial rcwa group over Z
 gap> CyclicGroup(IsRcwaGroupOverZ,2);
-<rcwa group over Z with 1 generator, of order 2>
+<(0(2),1(2))>
 gap> CyclicGroup(IsRcwaGroupOverZ,7);
 <rcwa group over Z with 1 generator, of order 7>
 gap> Display(last);
@@ -1493,7 +1497,7 @@ gap> StructureDescription(last);
 gap> Exponent(G);
 infinity
 gap> G := Group(ClassTransposition(0,2,1,2),ClassTransposition(0,3,1,3));
-<rcwa group over Z with 2 generators>
+<(0(2),1(2)),(0(3),1(3))>
 gap> Exponent(G);
 4
 gap> (1,2,3,4,5,6,7,8,9,10,11,12)^Collatz;
@@ -1517,7 +1521,7 @@ gap> g := RcwaMapping([[2,2,1],[1, 4,1],[1,0,2],[2,2,1],[1,-4,1],[1,-2,1]]);;
 gap> h := RcwaMapping([[2,2,1],[1,-2,1],[1,0,2],[2,2,1],[1,-1,1],[1, 1,1]]);;
 gap> SetName(g,"g"); SetName(h,"h");
 gap> G := Group(g,h);;
-gap> H := Stabilizer(G,0);;
+gap> H := Stabilizer(G,0:maxgens:=10);;
 gap> IsTrivial(H);
 false
 gap> ClassTransposition(1,3,2,3) in H;
@@ -1535,8 +1539,9 @@ gap> for h in H do Add(l,h); if Length(l) = 10 then break; fi; od;
 gap> List(l,h->0^h);
 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 gap> List(l,h->PreImagesRepresentative(phi,h));
-[ <identity ...>, h*g^-1, g*h^-1, (h*g^-1)^2, g^-1*h^-1*g^2, g^-2*h*g, 
-  (g*h^-1)^2, h^-3*g^-1, h*g*h^2, h^-4 ]
+[ <identity ...>, h*g^-1, g^-1*h^-1*g^2, g^-2*h*g, g*h^-1, g^-2*h^-1*g^3, 
+  (g^2*h)^2*g^-3*h^-1*g^-2, g^2*h*g^3*(h^-1*g^-2)^2, g^3*h*g*h^-2*g^-3, 
+  g^-3*h*g^2 ]
 gap> l := ExtRepOfObj(Collatz);
 [ 3, [ [ 2, 0, 3 ], [ 4, -1, 3 ], [ 4, 1, 3 ] ] ]
 gap> Collatz2 := ObjByExtRep(FamilyObj(Collatz),l);
@@ -1550,6 +1555,10 @@ Integers
 gap> ShiftsUpOn(ClassShift(2,3));
 2(3)
 gap> ShiftsDownOn(ClassShift(2,3));
+[  ]
+gap> ShiftsUpOn(SparseRep(ClassShift(2,3)):classes);
+[ 2(3) ]
+gap> ShiftsDownOn(SparseRep(ClassShift(2,3)):classes);
 [  ]
 gap> ShiftsUpOn(ClassShift(2,3)^-1);
 [  ]
@@ -1567,7 +1576,7 @@ gap> a := ClassTransposition(2,4,3,4);; SetName(a,"a");
 gap> b := ClassTransposition(4,6,8,12);; SetName(b,"b");
 gap> c := ClassTransposition(3,4,4,6);; SetName(c,"c");
 gap> G := Group(a,b,c);
-<rcwa group over Z with 3 generators>
+<(2(4),3(4)),(4(6),8(12)),(3(4),4(6))>
 gap> phi := EpimorphismFromFpGroup(G,3);
 [ a, b, c ] -> [ a, b, c ]
 gap> Length(RelatorsOfFpGroup(Source(phi))) >= 4;
@@ -1680,7 +1689,7 @@ gap> G := GroupByResidueClasses(List([[0,2],[0,4],[1,4],[2,4],[3,4]],
 <rcwa group over Z with 8 generators>
 gap> H := Group(List([[0,2,1,2],[1,2,2,4],[0,2,1,4],[1,4,2,4]],
 >                    ClassTransposition)); # (first) Higman-Thompson group
-<rcwa group over Z with 4 generators>
+<(0(2),1(2)),(1(2),2(4)),(0(2),1(4)),(1(4),2(4))>
 gap> G = H;
 true
 gap> cts := Filtered(List(ClassPairs(4),ClassTransposition),
@@ -1690,7 +1699,7 @@ gap> G := Group(cts);
 gap> gens := SmallGeneratingSet(G);
 [ ( 0(2), 1(2) ), ( 0(2), 1(4) ), ( 0(2), 3(4) ), ( 0(4), 1(4) ) ]
 gap> G := Group(gens);
-<rcwa group over Z with 4 generators>
+<(0(2),1(2)),(0(2),1(4)),(0(2),3(4)),(0(4),1(4))>
 gap> Br := List([1..10],r->RestrictedBall(G,One(G),r,4));;
 gap> List(Br,Length);
 [ 5, 14, 27, 39, 51, 71, 99, 118, 120, 120 ]
@@ -1838,7 +1847,7 @@ gap> b := ClassTransposition(1,3,2,6);
 gap> c := ClassTransposition(2,3,4,6);
 ( 2(3), 4(6) )
 gap> G := Group(a,b,c);
-<rcwa group over Z with 3 generators>
+<(1(2),4(6)),(1(3),2(6)),(2(3),4(6))>
 gap> A := SparseRep(a);
 ( 1(2), 4(6) )
 gap> B := SparseRep(b);
@@ -1859,7 +1868,7 @@ gap> Set(S);
 gap> Set([a,b,c]) = Set([A,B,C]);
 true
 gap> H := Group(A,B,C);
-<rcwa group over Z with 3 generators>
+<(1(2),4(6)),(1(3),2(6)),(2(3),4(6))>
 gap> One(H)!.coeffs;
 [ [ 0, 1, 1, 0, 1 ] ]
 gap> Zero(A)!.coeffs;
@@ -1936,6 +1945,106 @@ gap> G = Group(List([[0,4,1,4],[1,4,2,4],[2,4,3,4],[0,2,1,4]],
 true
 gap> GeneratorsOfGroup(G);
 [ ( 0(4), 1(4), 2(4), 3(4) ), ( 0(4), 1(4) ), ( 0(4), 2(8) ) ( 1(4), 6(8) ) ]
+gap> G := Group(ClassTransposition(0,2,1,2),ClassTransposition(1,2,2,4),
+>               ClassTransposition(1,4,2,6));;
+gap> G := SparseRep(G);;
+gap> f := CollatzLikeMappingByOrbitTree(G,0,4,10);
+<rcwa mapping of Z with modulus 4 and 4 affine parts>
+gap> Display(f);
+
+Rcwa mapping of Z with modulus 4 and 4 affine parts
+
+        /
+        | n+1      if n in 0(4)
+        | (3n+1)/2 if n in 1(4)
+ n |-> <  n/2      if n in 2(4)
+        | n-1      if n in 3(4)
+        |
+        \
+
+gap> g := Product(List([[0,2,1,2],[0,5,4,5],[1,4,0,6]],ClassTransposition));
+<rcwa permutation of Z with modulus 60>
+gap> ComputeCycleLength(g,736:notify:=100000);
+n = 736: after 100000 steps, the iterate has 135 binary digits.
+n = 736: after 200000 steps, the iterate has 507 binary digits.
+n = 736: after 300000 steps, the iterate has 457 binary digits.
+n = 736: after 400000 steps, the iterate has 325 binary digits.
+rec( aborted := false, g := <rcwa permutation of Z with modulus 60>, 
+  length := 495448, 
+  maximum := 24613742765227139490361518119031497856901514673563546528602769571\
+523014650546360696627187194849439881973442451686685024708652634593861146709752\
+378847078493406287854573381920553713155967741550498839, maxpos := 189666, 
+  n := 736 )
+gap> G := Group(List([[0,4,1,4],[0,3,5,6],[0,4,5,6]],ClassTransposition));
+<(0(4),1(4)),(0(3),5(6)),(0(4),5(6))>
+gap> GrowthFunctionOfOrbit(G,18,100,20);
+[ 1, 1, 2, 3, 4, 3, 4, 4, 4, 4, 3, 3, 3, 4, 3, 4, 4, 5, 5, 6, 8, 6, 5, 5, 4, 
+  3, 3, 4, 4, 4, 3, 3, 5, 4, 5, 6, 5, 2, 3, 3, 2, 3, 3, 4, 5, 4, 4, 4, 6, 5, 
+  5, 3, 4, 2, 3, 4, 4, 2, 3, 4, 4, 2, 3, 3, 4, 3, 5, 3, 5, 4, 5, 6, 5, 3, 4, 
+  5, 6, 5, 4, 3, 5, 4, 5, 5, 4, 4, 5, 5, 3, 4, 5, 3, 3, 4, 5, 4, 2, 3, 4, 4, 
+  4 ]
+gap> last = GrowthFunctionOfOrbit(Orbit(G,18),100,20);
+true
+gap> G := Group(List([[0,2,1,2],[0,3,2,3],[1,2,2,4]],ClassTransposition));
+<(0(2),1(2)),(0(3),2(3)),(1(2),2(4))>
+gap> IsTransitiveOnNonnegativeIntegersInSupport(G);
+true
+gap> TransitivityCertificate(G);
+rec( classes := [ [ 1(2) ], [ 2(6) ], [ 6(12), 10(12) ], [ 0(12) ], [ 4(12) ] 
+     ], complete := true, 
+  phi := [ a, b, c ] -> [ ( 0(2), 1(2) ), ( 0(3), 2(3) ), ( 1(2), 2(4) ) ], 
+  smallpointbound := 4, status := "transitive", 
+  words := [ a, b, c, b*c, a*b ] )
+gap> G := Group(List([[0,3,1,3],[1,2,4,6],[0,4,3,6]],ClassTransposition));
+<(0(3),1(3)),(1(2),4(6)),(0(4),3(6))>
+gap> TryToComputeTransitivityCertificate(G,20);
+rec( classes := [ [ 1(6), 4(12), 10(12) ], [ 3(6) ], [ 0(12), 5(12), 8(12) ], 
+      [ 6(48), 23(48) ], [ 11(24), 47(48) ], [ 18(24) ], [ 30(432) ], 
+      [ 78(144) ] ], complete := false, 
+  phi := [ a, b, c ] -> [ ( 0(3), 1(3) ), ( 1(2), 4(6) ), ( 0(4), 3(6) ) ], 
+  remaining := [ 126(144), 174(432), 318(432) ], smallpointbound := 8343, 
+  status := "unclear", 
+  words := [ a, c, b*c*a*b*c, (a*b)^2*c*(a*c*a*b)^2*c*b, (b*a)^2*c*b*a*b, 
+      (a*b)^2*c*a*b*a*c*a*b*c*b, (a*b)^2*(a*b*a*c)^2*(b*c)^2*b, 
+      (a*b)^2*(a*b*a*c)^2*b*a*b*c*b ] )
+gap> TryToComputeTransitivityCertificate(G,25);
+rec( classes := [ [ 1(6), 4(12), 10(12) ], [ 3(6) ], [ 0(12), 5(12), 8(12) ], 
+      [ 6(48), 23(48) ], [ 11(24), 47(48) ], [ 18(24) ], [ 30(432) ], 
+      [ 78(144) ], [ 126(144), 174(432), 318(432) ] ], complete := true, 
+  phi := [ a, b, c ] -> [ ( 0(3), 1(3) ), ( 1(2), 4(6) ), ( 0(4), 3(6) ) ], 
+  smallpointbound := 8343, status := "transitive", 
+  words := [ a, c, b*c*a*b*c, (a*b)^2*c*(a*c*a*b)^2*c*b, (b*a)^2*c*b*a*b, 
+      (a*b)^2*c*a*b*a*c*a*b*c*b, (a*b)^2*(a*b*a*c)^2*(b*c)^2*b, 
+      (a*b)^2*(a*b*a*c)^2*b*a*b*c*b, (a*b)^2*(a*b*a*c)^2*(b*a)^2*c*(a*b)^2 ] )
+gap> Display(  ClassTransposition(0,3,1,3)
+>            * ClassTransposition(1,2,2,8):AsClassMapping);
+
+Rcwa permutation of Z with modulus 24
+
+    0(6) -> 2(24)
+   1(12) -> 0(12)
+   2(24) -> 1(6)
+   3(12) -> 4(12)
+    4(6) -> 10(24) loop
+    5(6) -> 18(24)
+   7(24) -> 6(24)
+   8(12) -> 8(12)  id
+   9(24) -> 3(6)   loop
+  14(24) -> 14(24) id
+  19(24) -> 5(6)
+  21(24) -> 22(24)
+
+gap> V := CT([],Integers);
+CT_[ ](Z)
+gap> GeneratorsOfGroup(V);
+[ ( 0(2), 1(2) ), ( 1(2), 2(4) ), ( 0(2), 1(4) ), ( 1(4), 2(4) ) ]
+gap> G := CT([3],Integers);
+CT_[ 3 ](Z)
+gap> GeneratorsOfGroup(G);
+[ ( 0(2), 1(2) ), ( 1(2), 2(4) ), ( 0(2), 1(4) ), ( 1(4), 2(4) ), 
+  ( 0(3), 1(3) ), ( 1(3), 2(3) ), ( 0(3), 1(9) ), ( 0(3), 4(9) ), 
+  ( 0(3), 7(9) ), ( 0(2), 1(6) ), ( 0(2), 5(6) ), ( 0(3), 1(6) ), 
+  ( 0(4), 1(6) ), ( 0(6), 1(8) ) ]
 gap> RCWADoThingsToBeDoneAfterTest();
 gap> STOP_TEST( "integral.tst", 8000000000 );
 

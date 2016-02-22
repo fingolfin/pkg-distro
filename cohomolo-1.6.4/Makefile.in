@@ -1,0 +1,26 @@
+# General makefile for GAP4 cohomolo package -
+# all executables are put into the bin directory.
+BIN = bin/@GAPARCH@
+
+CC=gcc
+CFLAGS = -O
+
+all:
+	mkdir -p bin/@GAPARCH@;
+	cd standalone/progs.d;\
+	$(MAKE) CC="$(CC)" BIN="..//..//$(BIN)" COPTS="$(COPTS)"
+
+clean:
+	cd standalone/progs.d; $(MAKE) clean
+
+distclean:
+	cd standalone/progs.d; $(MAKE) clean
+	rm -rf bin htm
+
+doc:
+	cd doc && ./make_doc
+
+Makefile: configure Makefile.in
+	./configure "@GAPPATH@"
+
+.PHONY: all clean distclean doc

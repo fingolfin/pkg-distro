@@ -1,0 +1,15 @@
+gap> 
+gap> #affine collineation group
+gap> as := AffineSpace(4,8);
+AG(4, 8)
+gap> g := CollineationGroup(as);
+AGammaL(4,8)
+gap> h := AffineGroup(as);
+AGL(4,8)
+gap> IsSubgroup(g,h);
+true
+gap> as := AffineSpace(4,7);
+AG(4, 7)
+gap> g := CollineationGroup(as);
+AGL(4,7)
+gap> quit;

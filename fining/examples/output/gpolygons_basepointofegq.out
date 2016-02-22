@@ -1,0 +1,36 @@
+gap> 
+gap> #base point of egq
+gap> clan := LinearqClan(3);
+<q-clan over GF(3)>
+gap> egq := EGQByqClan(clan);
+#I  Computed Kantor family. Now computing EGQ...
+#I  Computing points from Kantor family...
+#I  Computing lines from Kantor family...
+<EGQ of order [ 9, 3 ] and basepoint 0>
+gap> blt := BLTSetByqClan(clan);
+[ <a point in Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0>, 
+  <a point in Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0>, 
+  <a point in Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0>, 
+  <a point in Q(4, 3): -x_1*x_5-x_2*x_4+x_3^2=0> ]
+gap> egq2 := EGQByBLTSet(blt);
+#I  No intertwiner computed. One of the polar spaces must have a collineation \
+group computed
+#I  Computing nice monomorphism...
+#I  Now embedding dual BLT-set into W(5,q)...
+#I  Computing points(1) of Knarr construction...
+#I  Computing lines(1) of Knarr construction...
+#I  Computing points(2) of Knarr construction...
+#I  Computing lines(2) of Knarr construction...please wait
+#I  Computing elation group...
+<EGQ of order [ 9, 3 ] and basepoint [ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3),
+  0*Z(3) ]>
+gap> BasePointOfEGQ(egq);
+<a point of a Kantor family>
+gap> Display(last);
+0
+gap> BasePointOfEGQ(egq2);
+<a point of <EGQ of order [ 9, 3 ] and basepoint 
+[ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ]>>
+gap> Display(last);
+[ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ]
+gap> quit;

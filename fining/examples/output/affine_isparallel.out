@@ -1,0 +1,17 @@
+gap> 
+gap> # example: affine_isparallel.g
+gap> as := AffineSpace(3, 3);
+AG(3, 3)
+gap> l := AffineSubspace(as,[0,0,0]*Z(3)^0,[[1,0,0]]*Z(3)^0);
+<a line in AG(3, 3)>
+gap> m := AffineSubspace(as,[1,0,0]*Z(3)^0,[[1,0,0]]*Z(3)^0);
+<a line in AG(3, 3)>
+gap> n := AffineSubspace(as,[1,0,0]*Z(3)^0,[[0,1,0]]*Z(3)^0);
+<a line in AG(3, 3)>
+gap> IsParallel(l,m);
+true
+gap> IsParallel(m,n);
+false
+gap> IsParallel(l,n);
+false
+gap> quit;

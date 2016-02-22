@@ -1,0 +1,57 @@
+gap> 
+gap> # Example for quadratic varieties
+gap> F:=GF(5);
+GF(5)
+gap> r:=PolynomialRing(F,4);
+GF(5)[x_1,x_2,x_3,x_4]
+gap> x:=IndeterminatesOfPolynomialRing(r);
+[ x_1, x_2, x_3, x_4 ]
+gap> pg:=PG(3,F);
+ProjectiveSpace(3, 5)
+gap> Q:=x[2]*x[3]+x[4]^2;
+x_2*x_3+x_4^2
+gap> qv:=QuadraticVariety(pg,Q);
+Quadratic Variety in ProjectiveSpace(3, 5)
+gap> AsSet(List(Planes(pg),z->Size(Filtered(Points(z),x->x in qv))));
+[ 1, 6, 11 ]
+gap> qf:=QuadraticForm(qv);
+< quadratic form >
+gap> Display(qf);
+Quadratic form
+Gram Matrix:
+ . . . .
+ . . 1 .
+ . . . .
+ . . . 1
+Polynomial: [ [  x_2*x_3+x_4^2 ] ]
+
+gap> IsDegenerateForm(qf);
+#I  Testing degeneracy of the *associated bilinear form*
+true
+gap> qv:=QuadraticVariety(3,F,"-");
+Quadratic Variety in ProjectiveSpace(3, 5)
+gap> PolarSpace(qv);
+<polar space in ProjectiveSpace(3,GF(5)): x_1^2+Z(5)*x_2^2+x_3*x_4=0 >
+gap> Display(last);
+<polar space of rank 3 over GF(5)>
+Non-singular elliptic quadratic form
+Gram Matrix:
+ 1 . . .
+ . 2 . .
+ . . . 1
+ . . . .
+Polynomial: [ [  x_1^2+Z(5)*x_2^2+x_3*x_4 ] ]
+
+Witt Index: 1
+Bilinear form
+Gram Matrix:
+ 2 . . .
+ . 4 . .
+ . . . 1
+ . . 1 .
+gap> qv:=QuadraticVariety(3,F,"+");
+Quadratic Variety in ProjectiveSpace(3, 5)
+gap> Display(last);
+Quadratic Variety in ProjectiveSpace(3, 5)
+ Polynomial: [ Z(5)*x_1*x_2+Z(5)*x_3*x_4 ]
+gap> quit;

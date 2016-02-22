@@ -1,0 +1,24 @@
+gap> 
+gap> #morphisms_subfield2.g
+gap> w := SymplecticSpace(5, 3);
+W(5, 3)
+gap> h := HermitianPolarSpace(5, 3^2);
+H(5, 3^2)
+gap> em := NaturalEmbeddingBySubfield(w, h);
+#I  No intertwiner computed. <geom1> must have a collineation group computed
+<geometry morphism from <Elements of W(5, 3)> to <Elements of H(5, 3^2)>>
+gap> points := AsList(Points(w));;
+gap> image := ImagesSet(em, points);;
+gap> ForAll(image, x -> x in h);
+true
+gap> hq:=HyperbolicQuadric(3,4);
+Q+(3, 4)
+gap> eq:=EllipticQuadric(3,2);
+Q-(3, 2)
+gap> em:=NaturalEmbeddingBySubfield(eq,hq);
+#I  No intertwiner computed. <geom1> must have a collineation group computed
+<geometry morphism from <Elements of Q-(3, 2)> to <Elements of Q+(3, 4)>>
+gap> eqpts:=ImagesSet(em,AsList(Points(eq)));
+[ <a point in Q+(3, 4)>, <a point in Q+(3, 4)>, <a point in Q+(3, 4)>, 
+  <a point in Q+(3, 4)>, <a point in Q+(3, 4)> ]
+gap> quit;

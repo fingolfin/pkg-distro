@@ -1,0 +1,19 @@
+gap> 
+gap> #collineation group of a projective space
+gap> ps := ProjectiveSpace(3,16);
+ProjectiveSpace(3, 16)
+gap> CollineationGroup(ps);
+The FinInG collineation group PGammaL(4,16)
+gap> ps := ProjectiveSpace(4,81);
+ProjectiveSpace(4, 81)
+gap> CollineationGroup(ps);
+The FinInG collineation group PGammaL(5,81)
+gap> ps := ProjectiveSpace(5,3);
+ProjectiveSpace(5, 3)
+gap> CollineationGroup(ps);
+The FinInG collineation group PGL(6,3)
+gap> ps := ProjectiveSpace(2,2);
+ProjectiveSpace(2, 2)
+gap> CollineationGroup(ps);
+The FinInG collineation group PGL(3,2)
+gap> quit;

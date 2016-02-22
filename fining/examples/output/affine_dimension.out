@@ -1,0 +1,7 @@
+gap> 
+gap> #dimension of an affine space
+gap> Dimension(AG(5,7));
+5
+gap> Rank(AG(5,7));
+5
+gap> quit;

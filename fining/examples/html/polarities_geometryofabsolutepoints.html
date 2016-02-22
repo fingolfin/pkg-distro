@@ -1,0 +1,14 @@
+gap&gt; mat := IdentityMat(4,GF(16));<br>
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], <br>
+  [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ], [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ] ]<br>
+gap&gt; phi := HermitianPolarityOfProjectiveSpace(mat,GF(16));<br>
+&lt;polarity of PG(3, GF(2^4)),  &gt;<br>
+gap&gt; geom := GeometryOfAbsolutePoints(phi);<br>
+&lt;polar space over GF(2^4)&gt;<br>
+gap&gt; mat := [[1,0,0,0],[0,0,1,1],[0,1,1,0],[0,1,0,0]]*Z(32)^0;<br>
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], [ 0*Z(2), 0*Z(2), Z(2)^0, Z(2)^0 ], <br>
+  [ 0*Z(2), Z(2)^0, Z(2)^0, 0*Z(2) ], [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ] ]<br>
+gap&gt; phi := PolarityOfProjectiveSpace(mat,GF(32));<br>
+&lt;polarity of PG(3, GF(2^5)),  &gt;<br>
+gap&gt; geom := GeometryOfAbsolutePoints(phi);<br>
+&lt;a plane in ProjectiveSpace(3, 32)&gt;<br>

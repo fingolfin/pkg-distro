@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Serre_Quotients_Subcategory">
+<Heading>Serre Quotients Subcategory</Heading>
+
+This is an implementation of a convenience object for Serre quotients.
+The Subcategory implemented in this file is not a CAP category at all,
+but only a handler for the serre quotient construction.
+It does not contain objects or anything useful, it is just a wrapper for the
+function the Serre quotient is based upon.
+<Section Label="Chapter_Serre_Quotients_Subcategory_Section_implementation">
+<Heading>implementation</Heading>
+
+<ManSection>
+  <Oper Arg="C,func" Name="FullSubcategoryByMembershipFunction" Label="for IsCapCategory, IsFunction"/>
+ <Returns>a function handler
+</Returns>
+ <Description>
+Creates an object which handles the function to create a Serre quotient category.
+It can be used instead of the function for Serre quotients.
+Note that the result is *NOT A CATEGORY* and can not be seen as one.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

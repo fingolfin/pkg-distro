@@ -40,13 +40,33 @@
   
   [29X[2XResidueClassUnion[102X( [3XR[103X, [3Xm[103X, [3Xr[103X ) [32X function
   [29X[2XResidueClassUnion[102X( [3XR[103X, [3Xm[103X, [3Xr[103X, [3Xincluded[103X, [3Xexcluded[103X ) [32X function
-  [6XReturns:[106X  [33X[0;10Ythe  union of the residue classes [3Xr[103X[[22Xi[122X] mod [3Xm[103X of the ring [3XR[103X, plus /
-            minus finite sets [3Xincluded[103X and [3Xexcluded[103X of elements of [3XR[103X.[133X
+  [29X[2XResidueClassUnion[102X( [3XR[103X, [3Xcls[103X ) [32X function
+  [29X[2XResidueClassUnion[102X( [3XR[103X, [3Xcls[103X, [3Xincluded[103X, [3Xexcluded[103X ) [32X function
+  [6XReturns:[106X  [33X[0;10Yin  the  first  two  cases,  the  union  of  the  residue  classes
+            [3Xr[103X[[22Xi[122X] mod [3Xm[103X  of  the  ring [3XR[103X, plus / minus finite sets [3Xincluded[103X and
+            [3Xexcluded[103X of elements of [3XR[103X. In the last two cases, the union of the
+            residue  classes  [3Xcls[103X[[22Xi[122X][1] mod [3Xcls[103X[[22Xi[122X][2]  of the ring [3XR[103X=ℤ, plus /
+            minus finite sets [3Xincluded[103X and [3Xexcluded[103X of integers.[133X
+  
+  [33X[0;0YFor  unions of residue classes of the integers, two distinct representations
+  are  implemented: in the first representation, a union of residue classes is
+  represented  by its modulus [3Xm[103X and the list of residues [3Xr[103X; this is called the
+  [21Xstandard[121X  representation.  In the second ([21Xsparse[121X) representation, a union of
+  residue classes [22Xr_1(m_1) ∪ dots ∪ r_k(m_k)[122X is represented by the list [3Xcls[103X of
+  the pairs [10X[r_i,m_i][110X. One can switch between the two representations by using
+  the   operations   [10XStandardRep[110X   and  [10XSparseRep[110X,  respectively.  The  sparse
+  representation  allows  more  efficient  computation  in  terms of time- and
+  memory  requirements  when  computing  with unions of [21Xrelatively few[121X residue
+  classes  where  the  lcm  of  the  moduli  is  [21Xlarge[121X; otherwise the standard
+  representation  is  advantageous. For rings other than ℤ, presently only the
+  standard representation is available.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XResidueClassUnion(Integers,5,[1,2],[3,8],[-4,1]);[127X[104X
     [4X[28X(Union of the residue classes 1(5) and 2(5) of Z) U [ 3, 8 ] \ [ -4, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XResidueClassUnion(Integers,[[1,2],[0,40],[2,1200]]);[127X[104X
+    [4X[28XUnion of the residue classes 1(2), 0(40) and 2(1200) of Z[128X[104X
     [4X[25Xgap>[125X [27XResidueClassUnion(Z_pi([2,3]),8,[3,5]);[127X[104X
     [4X[28XUnion of the residue classes 3(8) and 5(8) of Z_( 2, 3 )[128X[104X
     [4X[25Xgap>[125X [27XResidueClassUnion(R,x^2,[One(R),x],[],[One(R)]);[127X[104X

@@ -1,0 +1,648 @@
+<!-- 
+
+  groups_app.xml    FinInG package documentation
+                                                                   John Bamberg
+                                                                   Anton Betten
+                                                                   Jan De Beule
+                                                                  Philippe Cara
+                                                                 Michel Lavrauw
+                                                                Max Neunhoeffer
+
+  Copyright (C) 2015,	Colorado State University
+						Università degli Studi di Padova
+						Universiteit Gent
+						University of St. Andrews
+						University of Western Australia
+                        Vrije Universiteit Brussel
+
+
+This appendix gives more (technical) information on the construction of finite classical groups 
+and related topics.
+
+-->
+<Appendix Label="groups_app">
+<Heading>The finite classical groups in <Package>FinInG</Package> </Heading>
+
+<Section Label="groups_app_forms">
+<Heading>Standard forms used to produce the finite classical groups.</Heading>
+
+An overview of operations is given that produce gram matrices to construct standard forms. The notion
+<E>standard form</E> is explained in Section <Ref Sect="can_standard"/>, in the context of
+canonical and standard polar spaces.
+
+<ManSection>
+<Oper Name="CanonicalGramMatrix" Arg="type, d, f"/>
+<Returns>a gram matrix usable as input to construct a sesquilinear form</Returns>
+<Description>
+The arguments <A>d</A> and <A>f</A> are the vector dimension and the fininte field
+respectively. The argument <A>type</A> is eiter "symplectic", "hermitian",
+"hyperbolic", "elliptic" or "parabolic". <P/>
+If <A>type</A> equals "symplectic", the gram matrix is
+<Alt Only="LaTeX"><Display>\left( \begin{array}{ccccccc}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 
+-1 &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; \ldots &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; -1 &amp; 0 \\
+\end{array} \right).</Display>
+</Alt>
+<Alt Only="HTML">
+&lt;!-- matrix expression begin -->
+&lt;table style="color:#000">&lt;tr>
+&lt;td>&lt;table border=0 cellpadding=0 cellspacing=0px style="border-left:1px solid #000; border-right:1px solid #000; color:#000">&lt;tr>
+&lt;td style ="border-top:1px solid #000; border-bottom:1px solid #000;">&nbsp;&lt;/td>&lt;td>&lt;table border=0 cellpadding=0 cellspacing=0 style="color:#000;">
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>1&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>-1&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>1&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>-1&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>&lt;sup>&lt;big>&#183;&lt;/big>&lt;/sup>&#183;&lt;sub>&lt;big>&#183;&lt;/big>&lt;/sub>&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>-1&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;/table>&lt;/td>&lt;td style ="border-top:1px solid #000; border-bottom:1px solid #000;">&nbsp;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>
+&lt;/tr>&lt;/table>
+<!-- matrix expression end -->
+</Alt><P/>
+If <A>type</A> equals "hermitian", the gram matrix is the identity matrix of dimension <A>d</A> over the field <M>f=GF(q)</M><P/>
+If <A>type</A> equals "hyperbolic", the gram matrix is
+<Alt Only="LaTeX"><Display>\left( \begin{array}{ccccccc}
+0 &amp; a &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 
+a &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; a &amp; \ldots &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; a &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; a \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; a &amp; 0 \\
+\end{array} \right).</Display>
+</Alt>
+<Alt Only="HTML">
+&lt;!-- matrix expression begin -->
+&lt;table style="color:#000">&lt;tr>
+&lt;td>&lt;table border=0 cellpadding=0 cellspacing=0px style="border-left:1px solid #000; border-right:1px solid #000; color:#000">&lt;tr>
+&lt;td style ="border-top:1px solid #000; border-bottom:1px solid #000;">&nbsp;&lt;/td>&lt;td>&lt;table border=0 cellpadding=0 cellspacing=0 style="color:#000;">
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>&lt;sup>&lt;big>&#183;&lt;/big>&lt;/sup>&#183;&lt;sub>&lt;big>&#183;&lt;/big>&lt;/sub>&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;/table>&lt;/td>&lt;td style ="border-top:1px solid #000; border-bottom:1px solid #000;">&nbsp;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>
+&lt;/tr>&lt;/table>
+<!-- matrix expression end -->
+</Alt>
+with
+<Alt Only="HTML">a=(p+1)/2 if p+1 = 0 mod 4, q=p&lt;sup>h&lt;/sup></Alt><Alt Only="LaTeX"><M>a=\frac{p+1}{2}</M> if <M>p+1 \equiv 0\,\, \mathrm{mod}\,\, 4, q=p^h</M></Alt>
+and <M>a=1</M> otherwise.
+<P/>
+If <A>type</A> equals "ellipic", the gram matrix is
+<Alt Only="LaTeX"><Display>\left( \begin{array}{ccccccc}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 
+0 &amp; t &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; a &amp; \ldots &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; a &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; a \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \ldots &amp; a &amp; 0 \\
+\end{array} \right).</Display>
+</Alt>
+<Alt Only="HTML">
+&lt;!-- matrix expression begin -->
+&lt;table style="color:#000">&lt;tr>
+&lt;td>&lt;table border=0 cellpadding=0 cellspacing=0px style="border-left:1px solid #000; border-right:1px solid #000; color:#000">&lt;tr>
+&lt;td style ="border-top:1px solid #000; border-bottom:1px solid #000;">&nbsp;&lt;/td>&lt;td>&lt;table border=0 cellpadding=0 cellspacing=0 style="color:#000;">
+&lt;tr>
+&lt;td align="center" valign="center" width=30>1&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>t&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>&lt;sup>&lt;big>&#183;&lt;/big>&lt;/sup>&#183;&lt;sub>&lt;big>&#183;&lt;/big>&lt;/sub>&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;/table>&lt;/td>&lt;td style ="border-top:1px solid #000; border-bottom:1px solid #000;">&nbsp;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>
+&lt;/tr>&lt;/table>
+<!-- matrix expression end -->
+</Alt>
+with
+<M>t</M> the primitive root of <M>GF(q)</M> if <Alt Only="HTML">q = 1 mod 4 or q = 2 mod 4</Alt>
+<Alt Not="HTML"><M>q \equiv 1 \,\, \mathrm{mod}\,\, 4</M> or <M>q \equiv 2 \,\, \mathrm{mod}\,\, 4</M></Alt>, and <M>t=1</M> otherwise;  
+and <Alt Only="HTML">a=(p+1)/2 if p+1 = 0 mod 4, q=p&lt;sup>h&lt;/sup></Alt><Alt Not="HTML"><M>a=\frac{p+1}{2}</M> if <M>p+1 \equiv 0\,\, \mathrm{mod}\,\, 4, q=p^h</M></Alt>
+and <M>a=1</M> otherwise.
+<P/>
+If <A>type</A> equals "parabolic", the gram matrix is
+<Alt Only="LaTeX"><Display>\left( \begin{array}{cccccc}
+t &amp; 0 &amp; 0 &amp;  \ldots &amp; 0 &amp; 0 \\ 
+0 &amp; 0 &amp; a &amp;  \ldots &amp; 0 &amp; 0 \\
+0 &amp; a &amp; 0 &amp;  \ldots &amp; 0 &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; a \\
+0 &amp; 0 &amp; 0 &amp; \ldots &amp; a &amp; 0 \\
+\end{array} \right).</Display>
+</Alt>
+<Alt Only="HTML">
+&lt;!-- matrix expression begin -->
+&lt;table style="color:#000">&lt;tr>
+&lt;td>&lt;table border=0 cellpadding=0 cellspacing=0px style="border-left:1px solid #000; border-right:1px solid #000; color:#000">&lt;tr>
+&lt;td style ="border-top:1px solid #000; border-bottom:1px solid #000;">&nbsp;&lt;/td>&lt;td>&lt;table border=0 cellpadding=0 cellspacing=0 style="color:#000;">
+&lt;tr>
+&lt;td align="center" valign="center" width=30>t&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>&lt;sup>&lt;big>&#183;&lt;/big>&lt;/sup>&#183;&lt;sub>&lt;big>&#183;&lt;/big>&lt;/sub>&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;td align="center" valign="center" width=30>:&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;td align="center" valign="center" width=30>...&lt;/td>
+&lt;td align="center" valign="center" width=30>a&lt;/td>
+&lt;td align="center" valign="center" width=30>0&lt;/td>
+&lt;/tr>
+&lt;/table>&lt;/td>&lt;td style ="border-top:1px solid #000; border-bottom:1px solid #000;">&nbsp;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>
+&lt;/tr>&lt;/table>
+<!-- matrix expression end -->
+</Alt>
+with
+<M>t</M> the primitive root of <M>GF(p)</M> and <Alt Only="HTML">a=t(p+1)/2</Alt><Alt Not="HTML"><M>a=t\frac{p+1}{2}</M></Alt>
+if <Alt Only="HTML">q = 5 mod 8 or q = 7 mod 8</Alt>
+<Alt Not="HTML"><M>q \equiv 5 \,\, \mathrm{mod}\,\, 8</M> or <M>q \equiv 7 \,\, \mathrm{mod}\,\, 8</M></Alt>, and <M>t=a=1</M> otherwise. 
+<P/>
+There is no error message when asking for a hyperbolic, elliptic or parabolic type if the characteristic of the field <M>f</M> is even. In
+such a case, a matrix is returned, which is of course not suitable to create a bilinear form that corresponds with an orthogonal polar space.
+For this reason, <F>CanonicalGramMatrix</F> is not a operation designed for the user.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="CanonicalQuadraticForm" Arg="type, d, f"/>
+<Returns>a gram matrix usable as input to construct a quadratic form</Returns>
+<Description>
+The arguments <A>d</A> and <A>f</A> are the vector dimension and the fininte field
+respectively. The argument <A>type</A> is eiter "hyperbolic", "elliptic" or "parabolic". 
+The matrix returned can be used to construct a quadratic form.
+<P/>
+If <A>type</A> equals "hyperbolic", the gram matrix returned will result in the quadratic form
+<Alt Only="HTML">x&lt;sub>1&lt;/sub>x&lt;sub>2&lt;/sub>+...+ x&lt;sub>d-1&lt;/sub>x&lt;sub>d&lt;/sub></Alt>
+<Alt Not="HTML"><M>x_1x_2+ x_3x_4+\ldots+ x_{d-1}x_d</M></Alt><P/>
+If <A>type</A> equals "elliptic", the gram matrix returned will result in the quadratic form
+<Alt Only="HTML">x&lt;sub>1&lt;/sub>&lt;sup>2&lt;/sup>+x&lt;sub>1&lt;/sub>x&lt;sub>2&lt;/sub>+&#957;x&lt;sub>2&lt;/sub>&lt;sup>2&lt;/sup>
+...+ x&lt;sub>d-1&lt;/sub>x&lt;sub>d&lt;/sub></Alt><Alt Not="HTML"><M>x_1^2+x_1x_2+\nu x_2^2 + x_3x_4+\ldots+ x_{d-1}x_d</M></Alt>with 
+<Alt Only="HTML">&#957;=&#945;&lt;sup>i&lt;/sup></Alt><Alt Not="HTML"><M>\nu=\alpha^i</M></Alt>, with <Alt Only="HTML">&#945;</Alt>
+<Alt Not="HTML">\alpha</Alt> the primitive element of the multiplicative group of <M>GF(q)</M>, which is in GAP <F>Z(q)</F>, and <M>i</M>
+the first number in <M>[0,1,...,q-2]</M> for which <Alt Only="HTML">x&lt;sup>2&lt;/sup>+x+&#957;</Alt><Alt Not="HTML"><M>x^2+x+\nu</M>
+</Alt> is irreducible over <M>GF(q)</M>.
+<P/>
+If <A>type</A> equals "parabolic", the gram matrix returned will result in the quadratic form
+<Alt Only="HTML">x&lt;sub>1&lt;/sub>&lt;sup>2&lt;/sup>+x&lt;sub>2&lt;/sub>x&lt;sub>3&lt;/sub>+...
++ x&lt;sub>d-1&lt;/sub>x&lt;sub>d&lt;/sub></Alt><Alt Not="HTML"><M>x_1^2+x_2x_3 + \ldots x_{d-1}x_d</M></Alt><P/>
+This function is intended to be used only when the characteristic of <A>f</A> is two, but there is no error message is this is not the case.
+For this reason, <F>CanonicalQuadraticForm</F> is not an operation designed for the user.
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="groups_app_forms">
+<Heading>Direct commands to construct the projective classical groups in <Package>FinInG</Package></Heading>
+
+As explained in Chapter <Ref Chap="classicalpolarspaces"/>, Section <Ref Sect="polar:classicalgroups"/>, we have assumed that
+the user asks for the projective classical groups in an indirect way, i.e. as a (subgroup) of the collineation group of 
+a classical polar space. However, shortcuts to these groups exist. More information on the notations can be found in
+Section <Ref Sect="polar:classicalgroups"/>.
+
+<ManSection>
+<Oper Name="SOdesargues" Arg="e, d, f"/>
+<Returns>the special isometry group of a canonical orthogonal polar space</Returns>
+<Description>
+The argument <A>e</A> determines the type of the othogonal polar space, i.e. -1,0,1 for
+an elliptic, hyperbolic, parabolic orthogonal space, respectively. The argument <A>d</A> is
+the dimension of the underlying vector space, <A>f</A> is the finite field. The method relies
+on <F>SO</F>, a GAP command returning the appropriate matrix group. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_sodesargues.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GOdesargues" Arg="e, d, f"/>
+<Returns>the isometry group of a canonical orthogonal polar space</Returns>
+<Description>
+The argument <A>e</A> determines the type of the othogonal polar space, i.e. -1,0,1 for
+an elliptic, hyperbolic, parabolic orthogonal space, respectively. The argument <A>d</A> is
+the dimension of the underlying vector space, <A>f</A> is the finite field. The method relies
+on <F>GO</F>, a GAP command returning the appropriate matrix group. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_godesargues.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="SUdesargues" Arg="d, f"/>
+<Returns>the special isometry group of a canonical hermitian polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>SU</F>, a GAP command returning the appropriate matrix group. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_sudesargues.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GUdesargues" Arg="d, f"/>
+<Returns>the isometry/similarity group of a canonical hermitian polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>GU</F>, a GAP command returning the appropriate matrix group. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_gudesargues.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Spdesargues" Arg="d, f"/>
+<Returns>the (special) isometry group of a canonical symplectic polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>Sp</F>, a GAP command returning the appropriate matrix group. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_spdesargues.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GeneralSymplecticGroup" Arg="d, f"/>
+<Returns>the isometry group of a canonical symplectic form</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_generalsymplectic.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GSpdesargues" Arg="d, f"/>
+<Returns>the similarity group of a canonical symplectic polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>Sp</F>, a GAP command returning the appropriate matrix group. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_gspdesargues.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GammaSp" Arg="d, f"/>
+<Returns>the collineation group of a canonical symplectic polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>GeneralSymplecticGroup</F>, and adds the frobenius automorphism.
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_gammasp.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="DeltaOminus" Arg="d, f"/>
+<Returns>the similarity group of a canonical elliptic orthogonal polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>GOdesargues</F>, and computes the generators to be added.
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_deltaominus.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="DeltaOplus" Arg="d, f"/>
+<Returns>the similarity group of a canonical hyperbolic orthogonal polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>GOdesargues</F>, and computes the generators to be added.
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_deltaoplus.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GammaOminus" Arg="d, f"/>
+<Returns>the collineation group of a canonical elliptic orthogonal polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>DeltaOminus</F>, and computes the generators to be added.
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_gammaominus.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GammaO" Arg="d, f"/>
+<Returns>the collineation group of a canonical parabolic orthogonal polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>GO</F>, a GAP command returning the appropriate matrix group. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>. Furthermore,
+the generators to be added are computed.
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_gammao.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GammaOplus" Arg="d, f"/>
+<Returns>the collineation group of a canonical hyperbolic orthogonal polar space</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>DeltaOplus</F>, and computes the generators to be added.
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_gammaoplus.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GammaU" Arg="d, f"/>
+<Returns>the collineation group of a canonical hermitian variety</Returns>
+<Description>
+The argument <A>d</A> is the dimension of the underlying vector space, <A>f</A> is the finite field. 
+The method relies on <F>GU</F>, a GAP command returning the appropriate matrix group. Internally, the invariant form
+is asked, and the base chage to our canonical form is obtained using the package <Package>form</Package>. Furthermore,
+the generators to be added are computed.
+<Example>
+<#Include SYSTEM "../examples/include/groups_app_gammau.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="G2fining" Arg="d, f"/>
+<Returns>the chevalley group G_2(q)</Returns>
+<Description>
+This group is the group of projectivities stabilising the split Cayley hexagon embedded in the paraboloc
+quadric <M>Q(6,q):</M><Alt Not="HTML"><M>X_0X_4+X_1X_5+X_2X_6=X_3^2</M></Alt>
+<Alt Only="HTML">X&lt;sub>0&lt;/sub>X&lt;sub>4&lt;/sub>+X&lt;sub>1&lt;/sub>X&lt;sub>5&lt;/sub>+X&lt;sub>2&lt;/sub>X&lt;sub>6&lt;/sub>=X&lt;sub>3&lt;/sub>&lt;sup>2&lt;/sup></Alt>.
+<A>f</A> must be a finite field and <A>d</A> must be 5 or 6. When <A>d</A> is 5, <A>F</A> must be a field of even order, and then
+the returned group consists of projectivities of <M>W(5,q)</M>. The generators of this group are described exaplicitely in
+<Cite Key="HVM"/>, Appendix D. A correction can be found in <Cite Key="PhDOffer"/>. However, also this source contains
+a mistake.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="3D4fining" Arg="d, f"/>
+<Returns>the chevalley group 3D4(q)</Returns>
+<Description>
+<A>d</A> must equal 7 and <A>f</A> must be a field of order <Alt Not="HTML"><M>q^3</M></Alt><Alt Only="HTML">q&lt;sup>3&lt;/sup></Alt>
+This group is the group of collineations stabilising the twisted triality hexagon embedded in the
+hyperbolic quadric <Alt Not="HTML"><M>Q+(7,q)</M></Alt><Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>:
+<Alt Not="HTML"><M>X_0X_4+X_1X_5+X_2X_6+X_3X_7</M></Alt>
+<Alt Only="HTML">X&lt;sub>0&lt;/sub>X&lt;sub>4&lt;/sub>+X&lt;sub>1&lt;/sub>X&lt;sub>5&lt;/sub>+X&lt;sub>2&lt;/sub>X&lt;sub>6&lt;/sub>+X&lt;sub>3&lt;/sub>X&lt;sub>7&lt;/sub></Alt>
+The generators of this group are described exaplicitely in <Cite Key="HVM"/>, Appendix D.
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="groups_app_forms">
+<Heading>Basis of the collineation groups</Heading>
+
+The <Package>GenSS</Package> uses a function <F>FindBasePointCandidates</F> taking a group as one of the arguments.
+From a geometrical point of view, it is straightforward to construct a basis for a collineation group for the action
+on projective points. 
+
+<ManSection>
+<Oper Name="FindBasePointCandidates" Arg="g, opt, i, parentS"/>
+<Returns>a record</Returns>
+<Description>
+The returned record contains the base points for the action, and some other fields.
+The information in the other fields is determined from the arguments <A>opt</A> and <A>i</A>. 
+More information on these details can be found in the manual of <Package>GenSS</Package>.
+</Description>
+</ManSection>
+
+Variations on this version of <F>BasePointCandidates</F> are found in <Package>FinInG</Package> used in previous
+versions of <Package>GenSS</Package>. These variations are already or will become obsolete in the (near) future.
+
+</Section>
+</Appendix>
+

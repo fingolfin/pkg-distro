@@ -1,0 +1,8 @@
+gap> 
+gap> #similaritygroup of a polar space
+gap> w := SymplecticSpace(5,3);
+W(5, 3)
+gap> SimilarityGroup(w);
+#I  Computing nice monomorphism...
+PGSp(6,3)
+gap> quit;

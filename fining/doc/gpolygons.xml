@@ -1,0 +1,1026 @@
+<!-- 
+
+  gpolygons.xml    FinInG package documentation
+                                                                   John Bamberg
+                                                                   Anton Betten
+                                                                   Jan De Beule
+                                                                  Philippe Cara
+                                                                 Michel Lavrauw
+                                                                Max Neunhoeffer
+
+  Copyright (C) 2015,	Colorado State University
+						Università degli Studi di Padova
+						Universiteit Gent
+						University of St. Andrews
+						University of Western Australia
+                        Vrije Universiteit Brussel
+
+This is the chapter of the documentation describing generalised polygons.
+-->
+
+<Chapter Label="gpolygons">
+<Heading>Generalised Polygons</Heading>
+
+A <E>generalised n-gon</E> is a point/line geometry whose incidence graph is bipartite
+of diameter <A>n</A> and girth <A>2n</A>. Although these rank 2 structures are very
+much a subdomain of <Package>GRAPE</Package> and <Package>Design</Package>, their significance in
+finite geometry warrants their inclusion in <Package>FinInG</Package>. By the famous
+theorem of Feit and Higman, a generalised n-gon which has at least three points on every line,
+must have <M>n</M> in <M>\{2,3,4,6,8\}</M>. The case <M>n=2</M> concerns the complete multipartite graphs,
+which we disregard. The more interesting cases are accordingly projective planes (<M>n=3</M>),
+generalised quadrangles (<M>n=4</M>), generalised hexagons (<M>n=6</M>), and generalised octagons (<M>n=8</M>).
+<P/>
+<Package>FinInG</Package> provides some basic functionality to deal with generalised polygons as
+incidence geometries. A lot of non-trivial interaction with the package <Package>GRAPE</Package> has been
+very useful and even necessary. Currently, generic functions to create generalised polygons, to create
+elements of generalised polygons, and to explore the elements are implemented. This generic functionality
+allows the user to construct generalised polygons through many different objects available in
+GAP and <Package>FinInG</Package>. Apart from these generic functions, some particular generalised polygons are
+available: the classical generalised hexagons and elation generalised quadrangles from different perspectives
+can be constructed.<P/>
+
+
+<Section>
+<Heading>Categories</Heading>
+
+<ManSection>
+<Filt Name="IsGeneralisedPolygon" Type="Category"/>
+<Filt Name="IsGeneralisedPolygonRep" Type="Representation"/>
+<Description>
+This category is a subcategory of <C>IsIncidenceGeometry</C>, and contains all generalised polygons.
+Generalised polygons constructed through functions described in this chapter, all belong
+to <C>IsGeneralisedPolygonRep</C>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Subcategories in <C>IsGeneralisedPolygon</C></Heading>
+<Filt Name="IsProjectivePlaneCategory" Type="Category"/>
+<Filt Name="IsGeneralisedQuadrangle" Type="Category"/>
+<Filt Name="IsGeneralisedHexagon" Type="Category"/>
+<Filt Name="IsGeneralisedOctagon" Type="Category"/>
+<Description>
+All generalised polygons in <Package>FinInG</Package> belong to one of these four categories. It is not
+possible to construct generalised polygons of which the gonality is not known (or checked). Note that the
+classical generalised quadrangles (which are the classical polar spaces of rank 2) belong
+also to <C>IsGeneralisedQuadrangle</C> and that the desarguesian projective planes (which are the projective
+spaces of dimension 2) also belong to <C>IsProjectivePlaneCategory</C>, but both do not belong
+to <C>IsGeneralisedPolygonRep</C>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Filt Name="IsWeakGeneralisedPolygon" Type="Category"/>
+<Description>
+<C>IsWeakGeneralisedPolygon</C> is the category for weak generalised polygons.
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Subcategories in <C>IsProjectivePlaneCategory</C></Heading>
+<Filt Name="IsDesarguesianPlane" Type="Category"/>
+<Description>
+<C>IsDesarguesianPlane</C> is declared as a subcategory of <C>IsProjectivePlaneCategory</C> and 
+<C>IsProjecticeSpace</C>. Projective spaces of dimension 2 constructed using <F>ProjectiveSpace</F>
+belong to <C>IsDesarguesianPlane</C>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Subcategories in <C>IsGeneralisedQuadrangle</C></Heading>
+<Filt Name="IsClassicalGQ" Type="Category"/>
+<Filt Name="IsElationGQ" Type="Category"/>
+<Description>
+<C>IsClassicalGQ</C> is declared as a subcategory of <C>IsGeneralisedQuadrangle</C> and 
+<C>IsClassicalPolarSpace</C>. All classical polar spaces of rank 2 belong to <C>IsClassicalGQ</C>.
+<C>IsElationGQ</C> is declared as subcategory of <C>IsGeneralisedQuadrangle</C>. Elation GQs will be 
+discusedd in detail in Section <Ref Sect="EGQ"/>
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_categories1.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Filt Name="IsClassicalGeneralisedHexagon" Type="Category"/>
+<Description>
+<C>IsClassicalGeneralisedHexagon</C> is declared as subcategory of <C>IsGeneralisedHexagon</C> and <C>IsLieGeometry</C>.
+The so called classical generalised hexagons are the hexagons that come from the triality of the hyperbolic quadric 
+<Alt Only="LaTeX"><M>Q^+(7,q)</M></Alt><Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>.
+The Split Cayley hexagon is embedded in the parabolic quadric <M>Q(6,q)</M>,
+or <M>W(5,q)</M> in even characteristic. The twisted triality hexagon
+is embedded in the hyperbolic quadric <Alt Only="LaTeX"><M>Q^+(7,q)</M></Alt>
+<Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>. The construction of these hexagons in a subcategory 
+of <C>IsLieGeometry</C> means that the usual operations for Lie geometries become applicable. 
+The classical generalised hexagons are in detail discussed in Section <Ref Sect="CGH"/>
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_categories2.include">
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section>
+<Heading>Generic functions to create generalised polygons</Heading>
+
+<ManSection>
+<Oper Name="GeneralisedPolygonByBlocks" Arg="l"/>
+<Returns>a generalised polygon</Returns>
+<Description>
+The argument <A>l</A> is a finite homogeneous list consisting of
+ordered sets of a common size <M>n+1</M>. This operation will assume that
+each element of <A>l</A> represents a line of the generalised polygon. Its
+points are assumed to be the union of all elements of <A>l</A>. The incidence
+is assumed to be symmetrised containment. From this information, an incidence
+graph is computed using <Package>GRAPE</Package>. If this graph has diameter <M>d</M>
+and girth <M>2d</M>, a generalised polygon is returned. The thickness condition is not checked.
+If <M>d \in \{3,4,6,8\}</M>, a projective plane, a generalised quadrangle, a generalised hexagon,
+a generalised octagon respectively, is returned. Note that for large input, this operation
+can be time consuming.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_gpbyblocks.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GeneralisedPolygonByIncidenceMatrix" Arg="incmat"/>
+<Returns>a generalised polygon</Returns>
+<Description>
+The argument <M>incmat</M> is a matrix representing the incidence matrix of a point line geometry.
+The points are represented by the columns, the rows represent the lines. From <A>incmat</A> a homogeneous
+list of sets of column entries is derived, which is then passed to <F>GeneralisedPolygonByBlocks</F>. When
+<A>incmat</A> indeed represents a generalised polygon, it is returned. The checks are performed
+by <F>GeneralisedPolygonByBlocks</F>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_gpbyincmat.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GeneralisedPolygonByElements" Arg="pts, lns, inc"/>
+<Oper Name="GeneralisedPolygonByElements" Arg="pts, lns, inc, grp, act"/>
+<Returns>a generalised polygon</Returns>
+<Description>
+The argument <A>pts</A>, <A>lns</A> and <A>inc</A> are respectively a set of objects, a set of objects
+and a function. The function <A>inc</A> must represent an incidence relation between objects of <A>pts</A>
+and <A>lns</A>. The first version of <F>GeneralisedPolygonByElements</F> will construct an incidence graph, and
+if this graph has diameter <M>d</M>
+and girth <M>2d</M>, a generalised polygon is returned. The thickness condition is not checked.
+If <M>d \in \{3,4,6,8\}</M>, a projective plane, a generalised quadrangle, a generalised hexagon,
+a generalised octagon respectively, is returned.
+The argument <A>grp</A> is a group, and <A>act</A> a function, representing
+an action of the elements of <A>grp</A> on the objects in the lists <A>pts</A> and <A>lns</A>, preserving
+the incidence. The second version of <F>GeneralisedPolygonByElements</F> acts as the first version, but
+uses <A>grp</A> and <A>act</A> to construct the incidence graph in a more efficient way, so
+if <A>grp</A> is a non trivial group, the construction of the graph will
+be faster. This operation can typically be used to construct generalised polygons from objects that are available
+in <Package>FinInG</Package>. This difference in time is shown in the first two examples. The third examples
+shows the construction of the generalised quadrangle <M>T_2(O)</M>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_gpbyelements.include">
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="gp:operations">
+<Heading>Attributes and operations for generalised polygons</Heading>
+
+All operations described in this section are applicable on objects in the category <C>IsGeneralisedPolygon</C>.
+
+<ManSection>
+<Attr Name="Order" Arg="gp"/>
+<Returns>a pair of positive integers</Returns>
+<Description>
+This method returns the parameters <M>(s,t)</M> of the generalised polygon <A>gp</A>. That is,
+<M>s+1</M> is the number of points on any line of <A>gp</A>, and <M>t+1</M> is the number
+of lines incident with any point of <A>gp</A>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_order.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="IncidenceGraphAttr" Arg="gp"/>
+<Description>
+This attribute is declared for objects in <C>IsGeneralisedPolygon</C>. It is a mutable
+attribute and can be accessed by the operation <F>IncidenceGraph</F>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IncidenceGraph" Arg="gp"/>
+<Returns>a graph</Returns>
+<Description>
+The argument <A>gp</A> is a generalised polygon. This operation returns the incidence graph of
+<A>gp</A>. If <A>gp</A> is constructed using <F>GeneralisedPolygonByBlocks</F>, <F>GeneralisedPolygonByElements</F>
+or <F>GeneralisedPolygonByIncidenceMatrix</F>, an incidence graph is computed to check the input, and is stored 
+as an attribute. For the particular generalised polygons available in <Package>FinInG</Package>, there is
+no precomputed incidence graph. Note that computing an incidence graph may require some time, especially when
+the <A>gp</A> has no collineation group computed. Therefore, this operation will return an error when <A>gp</A>
+has no collineation group computed. As <F>CollineationGroup</F> is an attribute for objects in 
+<C>IsGeneralisedPolygon</C>, the user should compute the collineation group and then reissue the command to compute
+the incidence graph.<P/>
+We should also point out that this method returns a <E>mutable</E> attribute
+of <A>gp</A>, so that acquired information about the incidence graph can be added. For example,
+the automorphism group of the incidence graph may be computed and stored as a record component 
+after the incidence graph is stored as an attribute of <A>gp</A>. Normally, attributes of GAP objects are immutable.<P/>
+Note that the factor 2 as difference in the order of the collineation group of <M>Q(4,4)</M> and the order of the
+automorphism group of its incidence graph is easily explained by the fact that the <M>Q(4,4)</M> is self dual.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_incgraph.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="IncidenceMatrixOfGeneralisedPolygon" Arg="gp"/>
+<Returns>a matrix</Returns>
+<Description>
+This method returns the incidence matrix of the generalised polygon via
+the operation <C>CollapsedAdjacencyMat</C> in the <Package>GRAPE</Package>
+package. The rows of the matrix
+correspond to the points of <A>gp</A>, and the columns correspond to the lines.
+Note that since this operation relies on <F>IncidenceGraph</F>,
+for some generalised polygons, it is necessary to compute a collineation group first.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_incmatrix.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="CollineationGroup" Arg="gp"/>
+<Returns>a group</Returns>
+<Description>
+This attribute returns the full collineation group of the generalised polygon <A>gp</A>. 
+For some particular generalised polygons, a (subgroup) of the full collineation group
+can be computed efficiently without computing the incidence graph of <A>gp</A>: the full 
+collineation group of classical generalised quadrangles and classical generalised hexagons;
+and an elation group with relation to a base-point of an elation generalised quadrangle. For 
+generalised polygons constructed by the operations <F>GeneralisedPolygonByBlocks</F>, 
+<F>GeneralisedPolygonByElements</F> or <F>GeneralisedPolygonByIncidenceMatrix</F>, the 
+full collineation group is computed using the full automorphism group of the underlying
+incidence graph, the latter being computed by the package <Package>GRAPE</Package>.<P/>
+The collineation groups computed for classical generalised quadrangles and classical 
+generalised hexagons are collineation groups in the sense of <Package>FinInG</Package>, and
+come equipped with a NiceMonomorphism. The collineation groups computed in all other cases 
+are permutations groups, acting on the vertices of the underlying incidence graph.<P/>
+Note that the computation of the automorphism group of the underlying graph can be time
+consuming, also if the complete collineation group of the generalised polygon has been
+used as an argument in e.g. <F>GeneralisedPolygonByElements</F>.<P/>
+The first example illustrates that <F>CollineationGroup</F> is naturally applicable to
+all classical generalised Polygons.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_collineationgroup1.include">
+</Example>
+The second example illustrates the computation of collineation groups of generalised polygons constructed
+using different objects. 
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_collineationgroup2.include">
+</Example>
+In the third example, the use of an precomputed automorphism group is illustrated. It speeds up
+the construction of the underlying graph and the computation of the automorphism group of the
+underlying graph. However, as is also illustrated in the example, despite that the precomputed
+automorphism group of the generalised polygon is actually the full collineation group, still some
+time is needed to compute the automorphism group of the underlying graph. The timings after both
+<F>CollineationGroup</F> commands are wrong. This is because <Package>GRAPE</Package> relies on
+an external binary to computed the automorphism group of a graph. The generalised quadrangle in this example
+is known as <M>T_2(O)^</M>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_collineationgroup3.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="CollineationAction" Arg="group"/>
+<Returns>a function</Returns>
+<Description>
+<A>group</A> is a collineation group of a generalised polygon, computed using
+<F>CollineationGroup</F>. The collineation group of classical generalised polygons
+will be a collineation group in the sense of <Package>FinInG</Package>. The natural action
+is <F>OnProjectiveSubspaces</F>. The collineation group of any other generalised polygons
+will be a permutation group. The result of <F>CollineationAction</F> for such a group
+is a function with input a pair <A>(x,g)</A> where <A>x</A> is an element of
+the generalised polygon, and <A>g</A> is a collineation of the generalised polygon,
+so an element of <A>group</A>. The example illustrates the use in the generalised quadrangle.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_collineations.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="BlockDesignOfGeneralisedPolygon" Arg="gp"/>
+<Returns>a block design</Returns>
+<Description>
+This method allows one to use the GAP package <Package>DESIGN</Package> 
+to analyse a generalised polygon, so the user must first load this package.
+The argument <A>gp</A> is a generalised polygon, and if it has a collineation group,
+the block design is computed with this extra information and
+thus the resulting design is easier to work with. Likewise, if <A>gp</A> is an elation
+generalised quadrangle and it has an elation group, then we use the elation group's action
+to efficiently compute the block design.
+
+We should also point out that this method returns a <E>mutable</E> attribute
+of <A>gp</A>, so that accquired information about the block design can be added. For example,
+the automorphism group of the block design may be computed after the design is stored
+as an attribute of <A>gp</A>. Normally, attributes of GAP objects are immutable.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_blockdesign.include">
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="gp:elements">
+<Heading>Elements of generalised polygons</Heading>
+
+<ManSection>
+<Heading>Collections of elements of generalised polygons</Heading>
+<Attr Name="ElementsOfIncidencStructure" Arg="gp, i"/>
+<Attr Name="Points" Arg="gp"/>
+<Attr Name="Lines" Arg="gp"/>
+<Returns>a collection of elements of a generalised polygon</Returns>
+<Description>
+<A>gp</A> is any generalised polygon, <A>i</A> is a natural number, necessarily <M>1</M> or <M>2</M>.
+<F>ElementsOfIncidenceStructure</F> returns the elements of type <M>i</M> of <A>gp</A>, <F>Points</F>
+and <F>Lines</F> are the usual shortcuts.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Size" Arg="els"/>
+<Returns>a number</Returns>
+<Description>
+<A>els</A> is a collection of elements of a generalised polygon. This operation returns
+the number of element in <A>els</A>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Creating elements from objects and retrieving objects from elements</Heading>
+<Oper Name="ObjectToElement" Arg="gp, obj"/>
+<Oper Name="ObjectToElement" Arg="gp, type, obj"/>
+<Oper Name="UnderlyingObject" Arg="el"/>
+<Returns>a collection of elements of a generalised polygon</Returns>
+<Description>
+To create elements in <A>gp</A> (of type <A>type</A>), one of the versions of
+<F>ObjectToElement</F> can be used. It is checked whether <A>obj</A> represents an element
+(of type <A>type</A>). To retrieve an underlying object of an element <A>el</A>, <F>UnderlyingObject</F>
+can be used.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_objectselements.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Incidence</Heading>
+<Oper Name="IsIncident" Arg="v,w"/>
+<Oper Name="\*" Arg="v,w"/>
+<Returns>true or false</Returns>
+<Description>
+Let <A>v</A> and <A>w</A> be two elements of a generalised polygon. It is checked if
+the ambient geometry of the two elements are identical, and true is returned if and only if
+the two elements are incident in their ambient geometry.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Span" Arg="v,w"/>
+<Returns>a line of a generalised polygon or fail</Returns>
+<Description>
+Let <A>v</A> and <A>w</A> be two elements of a generalised polygon. It is checked if
+the ambient geometries of the two elements are identical, and if the two elements are points.
+If <A>v</A> and <A>w</A> are incidence with a common line, this line is returned. Otherwise
+<K>fail</K> is returned. For generalised polygons constructed with <C>GeneralisedPolygonByBlocks</C>,
+<C>GeneralisedPolygonByElements</C> an <C>GeneralisedPolygonByInidenceMatrix</C>, the underlying graph
+is used. Note that the behaviour of <F>Span</F> is different for elements of
+generalised polygons that belong to <C>IsLieGeometry</C>, see <Ref Label="liespan"/>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_span.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Meet" Arg="v,w"/>
+<Returns>a point of a generalised polygon or fail</Returns>
+<Description>
+Let <A>v</A> and <A>w</A> be two elements of a generalised polygon. It is checked if
+the ambient geometries of the two elements are identical, and if the two elements are lines.
+If <A>v</A> and <A>w</A> are incidence with a common point, this point is returned. Otherwise
+<K>fail</K> is returned. For generalised polygons constructed with <C>GeneralisedPolygonByBlocks</C>,
+<C>GeneralisedPolygonByElements</C> an <C>GeneralisedPolygonByInidenceMatrix</C>, the underlying graph
+is used. Note that the behavior of <F>Meet</F> is different for elements of
+generalised polygongs that belong to <C>IsLieGeometry</C>, see <Ref Label="liemeet"/>
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_meet.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Shadow elements</Heading>
+<Oper Name="ShadowOfElement" Arg="geo, v, j"/>
+<Oper Name="Points" Arg="el"/>
+<Oper Name="Lines" Arg="el"/>
+<Oper Name="ElementsIncidentWithElementOfIncidenceStructure" Arg="el, i"/>
+<Returns> A collection of elements</Returns>
+<Description>
+<A>geo</A> is a generalised polygon, <A>v</A> must be an element of <A>geo</A>,
+<A>j</A> is an integer equal to 1 or 2, since <A>geo</A> is a rank two geometry.
+The operation <F>ShadowOfElement</F> returns the collection of elements of <A>geo</A> of type
+<A>j</A>, incident with the element <A>v</A>. The operations <F>Points</F> and <F>Lines</F> with argument
+are the usual shortcuts to <F>ShadowOfElement</F> with <A>j</A> respectively equal to 1, 2. The operation
+<F>ElementsIncidentWithElementOfIncidenceStructure</F> is the usual shortcut to <F>ShadowOfElement</F>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_shadow.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="DistanceBetweenElements" Arg="v,w"/>
+<Returns>a number</Returns>
+<Description>
+Let <A>v</A> and <A>w</A> be two elements of a generalised polygon. It is checked if
+the ambient geometry of the two elements are identical, and the distance between the two
+elements in the incidence graph of their ambient geometry is returned.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_distance.include">
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="CGH">
+<Heading>The classical generalised hexagons</Heading>
+
+<Subsection>
+<Heading>Trialities of the hyperbolic quadric and generalised hexagons</Heading>
+
+Consider the hyperbolic quadric <Alt Not="HTML"><M>Q+(7,q)</M></Alt><Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>.
+This is a polar space of rank 4. It is well known that
+its generators fall into two systems. Each system contains exactly <Alt Not="HTML"><M>(q^3+q^2+q+1)(q^2+q+1)</M></Alt>
+<Alt Only="HTML">(q&lt;sup>3&lt;/sup>+q&lt;sup>2&lt;/sup>+q+1)(q&lt;sup>2&lt;/sup>+q+1)</Alt>
+generators, which is equal to the number of points of <Alt Not="HTML"><M>Q+(7,q)</M></Alt>
+<Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>. Generators from the
+same system meet each other in an empty subspace or in a line, Generators from a different system
+meet each other in a point of a plane. One defines the rank <M>4</M> geometry <Alt Not="HTML"><M>\Omega(7,q)</M></Alt><Alt Only="HTML">&#937;(7,q)</Alt> as follows.
+The 0-points are the points of <Alt Not="HTML"><M>Q+(7,q)</M></Alt>
+<Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>, the 1-points are the generators of the first system, the 2-points
+are the generators of the second system, and the lines are the lines of <Alt Not="HTML"><M>Q+(7,q)</M></Alt>
+<Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>. The incidence is the
+natural incidence of the underlying projective space. Denote the set of <M>i</M>-points as <Alt Not="HTML"><M>P^{(i)}</M></Alt>
+<Alt Only="HTML">P&lt;sup>(i)&lt;/sup></Alt>, <M>i=0,1,2</M>.<P/>
+A triality of <Alt Not="HTML"><M>\Omega(7,q)</M></Alt><Alt Only="HTML">&#937;(7,q)</Alt> is a map
+<Alt Not="HTML"><M>\tau: P^{(i)} \rightarrow P^{(i+1)}</M></Alt><Alt Only="HTML"><M>\tau</M>:P&lt;sup>(i)&lt;/sup>&#8594;P&lt;sup>(i+1)&lt;/sup></Alt>
+(where <M>i+1</M> is computed modulo 3) preserving the incidence and for which <Alt Not="HTML"><M>\tau^3 = 1</M></Alt>
+<Alt Only="HTML"><M>\tau</M>&lt;sup>3&lt;/sup>=1</Alt>. Note that the image of a line under <M>\tau</M> is
+determined by the image of the points incident with the line.<P/> An <M>i</M>-point is absolute with
+respect to a fixed triality if it is incident with its image under the triality. Consequently, a line is absolute
+with if it is fixed by the triality.<P/>
+A generalised hexagon might be obtained as geometry of absolute points of one kind and absolute lines with relation to
+a fixed triality. Note that not all trialities yield (thick) generalised quadrangles. There are different
+types of trialities, for some of them the absolute geometry is degenerate.<P/>
+The triality used in <Package>FinInG</Package> to construct the classical generalised hexagons is fixed. It is
+described explicitely in <Cite Key="HVM"/>. To describe the triality, a trilinear form expressing the incidence
+between <M>i</M>-points of <M>\Omega(7,q)</M> is used. Given the fact that, because of the existence of a triality,
+the role of the 0, 1 and 2 points are the same, each of the 1 and 2 points can be labelled the same way as the 0-points,
+which are effectively labelled by 8-tuples <M>(x_0,\ldots,x_7) \in V(8,q)=V</M> where each 8-tuples represents a projective point
+of <Alt Not="HTML"><M>Q+(7,q)</M></Alt><Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>.<P/>
+Consider the hyperbolic quadric determined by the quadratic form
+<Alt Not="HTML"><M>X_0X_4+X_1X_5+X_2X_6+X_3X_7</M></Alt>
+<Alt Only="HTML">X&lt;sub>0&lt;/sub>X&lt;sub>4&lt;/sub>+X&lt;sub>1&lt;/sub>X&lt;sub>5&lt;/sub>+X&lt;sub>2&lt;/sub>X&lt;sub>6&lt;/sub>+X&lt;sub>3&lt;/sub>X&lt;sub>7&lt;/sub></Alt>.
+Consider the trilinear map <M>T</M>,<P/>
+<Alt Not="HTML"><M>T(x,y,z) = \left|\begin{array}{ccc}
+x_0 &amp; x_1 &amp; x_2 \\
+y_0 &amp; y_1 &amp; y_2 \\
+z_0 &amp; z_1 &amp; z_2 \\
+\end{array}\right| + 
+\left|\begin{array}{ccc}
+x_4 &amp; x_5 &amp; x_6 \\
+y_4 &amp; y_5 &amp; y_6 \\
+z_4 &amp; z_5 &amp; z_6 \\
+\end{array}\right| + 
+x_3(z_0y_4+z_1y_5+z_2y_6) + x_7(y_0z_4+y_1z_5+y_2z_6) + 
+y_3(x_0z_4+x_1z_5+x_2z_6) + y_7(z_0x_4+z_1x_5+z_2x_6) + 
+z_3(y_0x_4+y_1x_5+y_2x_6) + z_7(x_0y_4+x_1y_5+x_2y_6) - 
+x_3y_3z_3 - x_7y_7z_7</M></Alt><Alt Only="HTML">
+<#Include SYSTEM "./beautiful_formula_in_ugly_html.xml">
+</Alt>.<P/>
+
+
+Now a pair <M>(x,y) \in V \times V</M> represents an incident 0-1 pair of points if and only if <M>T(x,y,z)</M> vanishes in the variable
+<M>z</M>, and similarly for any cyclic permutation of the letters <M>x,y,z</M>.  So given a <M>1</M>-point <M>y</M>, <M>T(x,y,z) = 0</M>,
+where <M>z</M> is a variable, and <M>x</M> is an unknown, gives a set of equations representing a generator of
+<Alt Not="HTML"><M>Q+(7,q)</M></Alt><Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>, this the generator of
+<Alt Not="HTML"><M>Q+(7,q)</M></Alt><Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt> represented by <M>y</M> as label
+of a <M>1</M>-point.<P/>
+Let <M>\sigma</M> be an automorphism of <M>GF(q)</M> of order <M>3</M>, or the identity. Consider the map<P/>
+<Alt Only="HTML">       &#964;&lt;sub>&#963;&lt;/sub>: P&lt;sup>(i)&lt;/sup>&#8594;P&lt;sup>(i+1)&lt;/sup></Alt>
+<Alt Not="HTML"><M>\tau_{\sigma}: P^{(i)} \rightarrow P^{(i+1)}</M></Alt><P/>
+<Alt Not="HTML"><M>(x_j) \mapsto (x_j^{\sigma})</M>, <M>j=0\ldots 7</M></Alt>
+<Alt Only="HTML">       (x&lt;sub>j&lt;/sub>) &#8594; (x&lt;sub>j&lt;/sub>&lt;sup>&#963;&lt;/sup>), j=0...7</Alt>.<P/>
+This map clearly preserves <M>T(x,y,z)</M>, so preserves the incidence, and has order three, so it is a triality of
+<Alt Not="HTML"><M>\Omega(7,q)</M></Alt><Alt Only="HTML">&#937;(7,q)</Alt>. We call an element <M>p</M> absolute with
+respect to a triality <M>\tau</M> if and only if <Alt Not="HTML"><M>p I p^\tau</M></Alt>
+<Alt Only="HTML">p I p&lt;sup>&#964;&lt;/sup></Alt>. Consequently, a line is absolute if and only if it
+is fixed by the triality. Denote the set of <M>i</M>-points that are absolute with respect to the triality as
+<Alt Not="HTML"><M>P_{\mathrm{abs}}^{(i)}</M></Alt><Alt Only="HTML">P&lt;sup>(i)&lt;/sup>&lt;sub>abs&lt;/sub></Alt>, and
+set of absolute lines with respect to the triality as <Alt Not="HTML"><M>L_{\mathrm{abs}}</M></Alt><Alt Only="HTML">L&lt;sub>abs&lt;/sub></Alt>.
+Then a famous theorem of Tits (<Cite Key="Tits1959"/>) says that for the triality
+<Alt Only="HTML">&#964;&lt;sub>&#963;&lt;/sub></Alt><Alt Not="HTML"><M>\tau_{\sigma}</M></Alt>,
+the point-line geometry <Alt Not="HTML"><M>\Gamma^{(i)} = (P^{(i)}_{\mathrm{abs}},L_{\mathrm{abs}}),I)</M></Alt>
+<Alt Only="HTML">&#915;&lt;sup>(i)&lt;/sup> = (P&lt;sup>(i)&lt;/sup>&lt;sub>abs&lt;/sub>, L&lt;sub>abs&lt;/sub>, I)</Alt>
+is a generalised hexagon of order <M>(|K|,|L|)</M>, <M>K=GF(q)</M> and <M>L</M> the subfield of invariant elements of <M>K</M>
+under the field automorphism <M>\sigma</M>. Note that a finite field has a field automorphism of order three if and only if its
+order equals <Alt Not="HTML"><M>q^3</M></Alt><Alt Only="HTML">q&lt;sup>3&lt;/sup></Alt>. So, for <M>K=GF(q)</M> and
+<M>\sigma=1</M>, <Alt Only="HTML">&#915;&lt;sup>(i)&lt;/sup></Alt><Alt Not="HTML"><M>\Gamma^{(i)}</M></Alt> is a generalised hexagon
+of order <M>q</M>, which is called the <E>split Cayley hexagon of order <M>q</M></E>, denoted <M>H(q)</M>.
+For <Alt Not="HTML"><M>K=GF(q^3)</M></Alt><Alt Only="HTML">K=GF(q&lt;sup>3&lt;/sup>)</Alt>, and
+<M>\sigma</M> a non-trival field automorphism of order <M>3</M>, <Alt Only="HTML">&#915;&lt;sup>(i)&lt;/sup></Alt>
+<Alt Not="HTML"><M>\Gamma^{(i)}</M></Alt> is a generalised hexagon of order <Alt Not="HTML"><M>(q^3,q)</M></Alt>
+<Alt Only="HTML">(q&lt;sup>3&lt;/sup>,q)</Alt>, which is called the <E>twisted triality hexagon of order <Alt Not="HTML"><M>(q^3,q)</M></Alt>
+<Alt Only="HTML">(q&lt;sup>3&lt;/sup>,q)</Alt></E>, denoted <Alt Not="HTML"><M>T(q^3,q)</M></Alt>
+<Alt Only="HTML">T(q&lt;sup>3&lt;/sup>,q)</Alt>. Note that for a given triality, the hexagons <Alt Only="HTML">&#915;&lt;sup>(i)&lt;/sup></Alt>
+<Alt Not="HTML"><M>\Gamma^{(i)}</M></Alt>, <M>i=0,1,2</M> are isomorphic. Consequently, <Alt Only="HTML">&#915;&lt;sup>(0)&lt;/sup></Alt>
+<Alt Not="HTML"><M>\Gamma^{(0)}</M></Alt> is a point-line geometry of which the point set, line set respectively, is a subset
+of the points, lines respectively of <Alt Not="HTML"><M>Q+(7,q)</M></Alt>
+<Alt Only="HTML">Q&lt;sup>+&lt;/sup>(7,q)</Alt>. Finally, we mention the following important theorem, which was shown by Tits (<Cite Key="Tits1959"/>):
+the split Cayley hexagon, obtained by the triliaty with <M>\sigma=1</M>, is contained in the hyperplane with equation
+<Alt Not="HTML"><M>X_3+X_7=0</M></Alt><Alt Only="HTML">X&lt;sub>3&lt;/sub> + X&lt;sub>7&lt;/sub></Alt>, which intersects
+the hyperbolic quadric in the parabolic quadric <M>Q(6,q)</M>. The points of the split Cayley hexagon are the points
+of <M>Q(6,q)</M>.<P/>
+This above description of the triality and the associated generalised hexagons, contains sufficient analytical information
+to implement the split Cayley hexagon and the twisted triality hexagon in an efficient way. The user is allowed to choose
+a representation for the ambient polar space. For <Alt Not="HTML"><M>q=2^h</M></Alt><Alt Only="HTML">q=2&lt;sup>h&lt;/sup></Alt>
+the polar spaces <M>Q(6,q)</M> and <M>W(5,q)</M> are isomorphic. Consequently, the user may choose <M>W(5,q)</M> as ambient polar
+space for the split Cayley hexagon of even order. This embedding in <M>W(5,q)</M> is called the perfect symplectic embedding of
+the split Cayley hexagon. Finally, <Cite Key="HVM"/> contains an explicit description of the generators of the collineation groups
+of both generalised hexagons.
+
+</Subsection>
+
+<ManSection>
+<Filt Name="IsLieGeometry" Type="Category"/>
+<Description>
+Recall that the classical generalised hexagons are constructed as an object in <F>IsLieGeometry</F>. This makes most operations
+described in the appropriate chapters on Lie geometries, projective spaces and polar spaces applicable.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="SplitCayleyHexagon" Arg="q"/>
+<Oper Name="SplitCayleyHexagon" Arg="f"/>
+<Oper Name="SplitCayleyHexagon" Arg="ps"/>
+<Returns>a generalised hexagon</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_SplitCayleyHexagon.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="TwistedTrialityHexagon" Arg="q"/>
+<Oper Name="TwistedTrialityHexagon" Arg="f"/>
+<Oper Name="TwistedTrialityHexagon" Arg="ps"/>
+<Returns>a generalised hexagon</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_TwistedTrialityHexagon.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="VectorSpaceToElement" Arg="gh, vec"/>
+<Returns>an element of a classical generlised hexagon</Returns>
+<Description>
+The argument <A>vec</A> is one vector or a list of vectors from the underlying vectorspace of <A>gh</A>.
+This operation checks whether <A>vec</A> represents a point or a line of <A>gh</A>. Note that
+vectors and matrices in different representations are allowed as argument.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_cghvectorspacetoelement.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="ObjectToElement" Arg="gh, obj"/>
+<Returns>an element of a classical generlised hexagon</Returns>
+<Description>
+The argument <A>obj</A> is one vector or a list of vectors from the underlying vectorspace of <A>gh</A>.
+This operation checks whether <A>obj</A> represents a point or a line of <A>gh</A>. Note that
+vectors and matrices in different representations are allowed as argument.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_cghobjecttoelement.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="UnderlyingObject" Arg="gh, obj"/>
+<Returns>a vector or a matrix</Returns>
+<Description>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="\in" Arg="x, gh"/>
+<Returns>true or false</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_cghin.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Span and meet of elements</Heading>
+<Oper Name="Span" Arg="x, y"/>
+<Oper Name="Meet" Arg="x, y"/>
+<Returns>a subspace of a projective space</Returns>
+<Description>
+<A>x</A> and <A>y</A> are two elements of a classical generalised hexagon. The operation <F>Span</F> returns the projective
+line spanned by <A>x</A> and <A>y</A>. The operation <F>Meet</F> returns the intersection of the elements <A>x</A> and <A>y</A>.
+Note that the classical generalised hexagons are Lie geometries, so their elements belong to a subcategory of <C>IsSubspaceOfProjectiveSpace</C>. Therefore,
+the operations <F>Span</F> and <F>Meet</F> behave as described in <Ref Sect="polar:span"/> and <Ref Sect="polar:meet"/>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_spanmeet.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="CollineationGroup" Arg="gh"/>
+<Returns>a group of collineations</Returns>
+<Description>
+<A>gh</A> is a classical generalised hexagon. This attribute returns the full collineation group, equipped with a nice monomorphism.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_collineationgroup4.include">
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="EGQ">
+<Heading>Elation generalised quadrangles</Heading>
+
+<Subsection>
+<Heading>Elation generalised quadrangles and Kantor families</Heading>
+
+Suppose <M>S=(P,B,I)</M> is a generalised quadrangle of order <M>(s,t)</M> for which
+there exists a point <M>p</M> and a group of collineations <M>G</M> fixing
+<M>p</M> and each line through <M>p</M>, with the extra property that
+<M>G</M> acts regularly on the points not collinear with <M>p</M>. Then
+<M>S</M> is called an <E>elation generalised quadrangle</E> with base-point <M>p</M>
+and elation group <M>G</M>, and <M>G</M> has order <Alt Not="HTML"><M>s^2t</M></Alt><Alt Only="HTML">s&lt;sup>2&lt;/sup>t</Alt>.
+Let <M>y</M> be a fixed point of <M>S</M>, not collinear with <M>p</M>. Denote the <M>t+1</M>
+lines incident with <M>p</M> as <Alt Not="HTML"><M>L_i, i=0 \ldots t</M></Alt>
+<Alt Only="HTML">L&lt;sub>i&lt;/sub>, i=0 ... t</Alt>. Define for each line
+<Alt Not="HTML"><M>L_i</M></Alt><Alt Only="HTML">L&lt;sub>i&lt;/sub></Alt> the unique
+point-line pair <Alt Not="HTML"><M>(z_i,M_i)</M></Alt><Alt Only="HTML">(z&lt;sub>i&lt;/sub>,M&lt;sub>i&lt;/sub>)</Alt>
+such that <Alt Not="HTML"><M>L_i I z_i I M_i I y</M></Alt>
+<Alt Only="HTML">L&lt;sub>i&lt;/sub> I z&lt;sub>i&lt;/sub> I M&lt;sub>i&lt;/sub> I y</Alt>. Define the groups
+<Alt Not="HTML"><M>S_i</M></Alt><Alt Only="HTML">S&lt;sub>i&lt;/sub></Alt> as the subgroups of <M>G</M> fixing the lines
+<Alt Not="HTML"><M>M_i</M></Alt><Alt Only="HTML">M&lt;sub>i&lt;/sub></Alt>, and define the groups
+<Alt Not="HTML"><M>S_i^*</M></Alt><Alt Only="HTML">S&lt;sub>i&lt;/sub>&lt;sup>*&lt;/sup></Alt> as the subgroups of
+<M>G</M> fixing the point <Alt Not="HTML"><M>z_i</M></Alt><Alt Only="HTML">z&lt;sub>i&lt;/sub></Alt>.
+Define the set <Alt Not="HTML"><M>J = \{S_i: i=0 \ldots t\}</M></Alt><Alt Only="HTML">J = {S&lt;sub>i&lt;/sub>: i=0 ... t}</Alt>,
+and the set <Alt Not="HTML"><M>J^* = \{S_i: i=0 \ldots t\}</M></Alt>
+<Alt Only="HTML">J&lt;sup>*&lt;/sup> = {S&lt;sub>i&lt;/sub>&lt;sup>*&lt;/sup>: i=0 ... t}</Alt>. Since <M>S</M> is an elation generalised quadrangle,
+<M>J</M> is a collection of <M>t+1</M> subgroups of <M>G</M> of order <M>s</M>, and each <Alt Not="HTML"><M>S_i^*</M></Alt>
+<Alt Only="HTML">S&lt;sub>i&lt;/sub>&lt;sup>*&lt;/sup></Alt> contains has order <M>st</M> and contains <Alt Not="HTML"><M>S_i</M></Alt>
+<Alt Only="HTML">S&lt;sub>i&lt;/sub></Alt> as a subgroup. Furthermore, the following two conditions are satisfied.<P/>
+(K1) <Alt Not="HTML"><M>S_iS_j \cap S_k = \{1\}</M></Alt>
+<Alt Only="HTML">S&lt;sub>i&lt;/sub> S&lt;sub>j&lt;/sub> <M>\cap</M>S&lt;sub>k&lt;/sub> = {1}</Alt>, for distinct <M>i,j,k</M>.<P/>
+(K2) <Alt Not="HTML"><M>S_i \cap S_j^* = \{1\}</M></Alt>
+<Alt Only="HTML">S&lt;sub>i&lt;/sub>&lt;sup>*&lt;/sup> <M>\cap</M>S&lt;sub>j&lt;/sub> = {1}</Alt>, for distinct <M>i,j</M>.<P/>
+The pair <Alt Not="HTML"><M>(J,J^*)</M></Alt><Alt Only="HTML">(J,J&lt;sup>*&lt;/sup>)</Alt> is called a <E>4-gonal family</E> or
+<E>Kantor family</E> in <M>G</M>.<P/>
+Remarkably, each Kantor family in a group of order <Alt Not="HTML"><M>s^2t</M></Alt><Alt Only="HTML">s&lt;sup>2&lt;/sup>t</Alt>
+gives rise to an elation generalised quadrangle. Kantor families and elation generalised quadrangles are equivalent objects,
+and one of the motivations to study Kantor families in groups was to find examples of non-classical elation generalised quadrangles.<P/>
+Given a group <M>G</M>, together with a Kantor family <Alt Not="HTML"><M>(J,J^*)</M></Alt><Alt Only="HTML">(J,J&lt;sup>*&lt;/sup>)</Alt>,
+a generalised quadrangle is defined as follows.<P/>
+The points are of three types:<P/>
+(i) points of type 1 are the elements of <M>G</M>;<P/>
+(ii) points of of type 2 are the right cosets <Alt Not="HTML"><M>S^*g, s^* \in J^*</M></Alt>
+<Alt Only="HTML">S&lt;sup>*&lt;/sup>g, S&lt;sup>*&lt;/sup><M>\in</M> J&lt;sup>*&lt;/sup></Alt><P/>
+(iii) the unique point of type (iii) is the symbol <Alt Not="HTML"><M>(\infty)</M></Alt><Alt Only="HTML">(&#8734;)</Alt>.<P/>
+The lines are of two types:<P/>
+(a) lines of type (a) are the right cosets <M>Sg</M>, <M>S \in J</M>;<P/>
+(b) Lines of type (b) are the symbols <M>[S], S \in J</M>.<P/>
+Incidence is defined as follows. A point <M>g</M> of type (i) is incident with each
+line <M>Sg, S \in J</M> of type (a). A point of type (ii) <Alt Not="HTML"><M>S^*g</M></Alt>
+<Alt Only="HTML">S&lt;sup>*&lt;/sup>g</Alt> is incident the line <M>[S]</M> of type (b)
+and the <M>t</M> lines of type (a) for which <Alt Not="HTML"><M>Sh \subset S^*g</M></Alt>
+<Alt Only="HTML">Sh <M>\subset</M> S&lt;sup>*&lt;/sup>g</Alt>. Finally, the unique point of type (iii)
+is incident with the lines of type (b), and there are no further incidences.<P/>
+It is shown, see e.g. the standard work in this field of Payne and Thas <Cite Key="FGQ"/>, that this
+point-line geoemtry is a generalised quadrangle of order <M>(s,t)</M>.<P/>
+<Package>FinInG</Package> provides functions to construct elation generalised quadrangles
+directly from a Kantor family. The constructed generalised quadrangles are generalised polygons in the
+sense of <Package>FinInG</Package>, i.e. all generic operations described in Sections <Ref Sect="gp:operations"/> and
+<Ref Sect="gp:elements"/>.
+
+</Subsection>
+
+<ManSection>
+<Heading>Categories</Heading>
+<Filt Name="IsEGQByKantorFamily" Type="Category"/>
+<Filt Name="IsElementOfKantorFamily" Type="Category"/>
+<Description>
+<C>IsEGQByKantorFamily</C> is a subcategory of <C>IsElationGQ</C>. It contains all elations generalised quadrangles
+that are constructed from a Kantor family. <C>IsElementOfKantorFamily</C> is a subcategory of <C>IsElementOfGeneralisedPolygon</C>.
+It contains the elements from generalised quadrangles in the category <C>IsEGQByKantorFamily</C>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Kantor families</Heading>
+<Oper Name="IsKantorFamily" Arg="g,f,fstar"/>
+<Returns>true or false</Returns>
+<Description>
+There is no specific way to construct a Kantor family in <Package>FinInG</Package>. However, given a group <M>G</M> and
+two collections of subgroups, <F>IsKantorFamily</F> will check whether the input satisfies the conditions of a Kantor family.
+If so, the input can be used directly for the operation <F>EGQByKantorFamily</F>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="EGQByKantorFamily" Arg="g,f,fstar"/>
+<Returns>a generalised quadrangle</Returns>
+<Description>
+Let <A>g</A> be a group and <A>f</A> and <A>fstar</A> two collections of subgroups, satisfying the conditions of a Kantor
+family. This operation returns the corresponding elation generalised quadrangle. Note that this operation <E>does not</E> check
+if the input satisfies the conditions to be a Kantor family, it only checks whether the group <A>f[i]</A> is a subgroup of the group
+<A>fstar[i]</A>. In the example below, the use of <F>IsKantorFamily</F> is also
+demonstrated, and some categories are displayed.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_EGQByKantorFamily.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Representation of elements and underlying objects</Heading>
+<Oper Name="ObjectToElement" Arg="egq, t, obj"/>
+<Oper Name="ObjectToElement" Arg="egq, obj"/>
+<Oper Name="BasePointOfEGQ" Arg="egq"/>
+<Oper Name="UnderlyingObject" Arg="el"/>
+<Description>
+For technical reasons, the underlying objects of the elements of an elation generalised quadrangle constructed from a Kantor family,
+are not exactly the mathematical objects from the definition. However, these technicalities are almost completely hidden for the user, except
+for the representation of lines of type (b), which are represented in <Package>FinInG</Package> by the elements of the collection
+<Alt Not="HTML"><M>J^*</M></Alt><Alt Only="HTML">J&lt;sup>*&lt;/sup></Alt> (instead of the elements of the collection <M>J</M>). This change
+from the original definition has no mathematical implications, since there is a bijective correspondence between the elements of
+<Alt Not="HTML"><M>J^*</M></Alt><Alt Only="HTML">J&lt;sup>*&lt;/sup></Alt> and <M>J</M>. Notice also that it is only possible to obtain
+the base-point of an elation generalised quadrangle constructed from a Kantor family through calling the attribute <F>BasePointOfEGQ</F>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_objectselementsofegq.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Elation group and natural action on elements</Heading>
+<Attr Name="ElationGroup" Arg="egq"/>
+<Func Name="OnKantorFamily" Arg="g,el"/>
+<Attr Name="CollineationAction" Arg="g"/>
+<Description>
+The attribute <F>ElationGroup</F> is naturally set upon creation of an elation generalised quadrangle from a Kantor
+family. The elements of the elation group act "naturally" on the elements of the elation generalised quadrangle. This
+natural action is implemented in the action function <F>OnKantorFamily</F>. When <A>g</A> is the elation group of an elation
+generalised quadrangle constructed from a Kantor family, the attribute <F>CollineationAction</F> will return the action function
+<F>OnKantorFamily</F>. The action function makes use of generic GAP operations possible, as is demonstrated in the example.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_elationgroup.include">
+</Example>
+</Description>
+</ManSection>
+
+<Subsection>
+<Heading>Kantor families, q-clans, and elation generalised quadrangles</Heading>
+
+Let <Alt Not="HTML"><M>C=\{A_i: i=1 \ldots q\}</M></Alt><Alt Only="HTML">C = {A&lt;sub>i&lt;/sub>: i=1 ... q}</Alt>
+ be a set of <M>q</M> distinct upper triangle <M>2 \times 2</M> 
+matrices over the finite field <M>GF(q)</M>. Then <M>C</M> is called a <E>q-clan</E> if 
+<Alt Not="HTML"><M>A_r - A_t</M></Alt><Alt Only="HTML">A&lt;sub>r&lt;/sub> - A&lt;sub>t&lt;/sub></Alt> 
+is anistropic for <M>r \neq t</M>.<P/> Define 
+<Alt Not="HTML"><M>G = \{(\alpha,c,\beta): \alpha,\beta \in GF(q)^2, c \in GF(q)\}</M></Alt>
+<Alt Only="HTML">G = {(&#945;,c,&#946;): &#945;,&#946; &#8712; GF(q)&lt;sup>2&lt;/sup>, c &#8712; GF(q) }</Alt>, 
+and define the binary operator <M>\times</M> as 
+<Alt Not="HTML"><M>(\alpha,c,\beta) \times (\alpha',c',\beta') = 
+(\alpha + \alpha',c+c'+\beta \cdot \alpha'^{T},\beta + \beta')</M></Alt><Alt Only="HTML">(&#945;,c,&#946;) <M>\times</M>
+(&#945;',c',&#946;') = (&#945;+&#945;',c+c'+&#946;&#945;'&lt;sup>T&lt;/sup>,&#946;+&#946;')</Alt>. Then <M>G,\times</M>
+is a group with center <M>Z(G)=\{(0,c,0): c \in GF(q)\}</M>. Consider a q-clan 
+<Alt Not="HTML"><M>C=\{A_i: i=1 \ldots q\}</M></Alt><Alt Only="HTML">C = {A&lt;sub>i&lt;/sub>: i=1 ... q}</Alt>, define
+<Alt Not="HTML"><M>K_i = A_i+A_i^T</M></Alt><Alt Only="HTML">K&lt;sub>i&lt;/sub> = A&lt;sub>i&lt;/sub> + 
+A&lt;sub>i&lt;/sub>&lt;sup>T&lt;/sup></Alt>. Now define the following subgroups of <M>G</M><P/>
+<Alt Not="HTML"><M>A(i) = \{(\alpha,\alpha A_t,\alpha K_t): \alpha \in GF(q)^2, i=1\ldots q\}</M></Alt>
+<Alt Only="HTML">A(i)= {(&#945;,&#945;A&lt;sub>i&lt;/sub>,&#945;K&lt;sub>i&lt;/sub>): &#945; &#8712; GF(q)&lt;sup>2&lt;/sup>, i=1..q }</Alt> and
+<Alt Not="HTML"><M>A(\infty) = \(0,0,\gamma): \gamma \in GF(q)^2\}</M></Alt>
+<Alt Only="HTML">A(&#8734;)= {(0,0,&#947;) &#947; &#8712; GF(q)&lt;sup>2&lt;/sup> }</Alt>, and<P/>
+<Alt Not="HTML"><M>A^*(i) = \{(\alpha,\b,\alpha K_t): \alpha \in GF(q)^2, b \in GF(q), i=1\ldots q\}</M></Alt>
+<Alt Only="HTML">A&lt;sup>*&lt;/sup>(i)= {(&#945;,b,&#945;K&lt;sub>i&lt;/sub>): &#945; &#8712; GF(q)&lt;sup>2&lt;/sup>, b &#8712; GF(q), i=1..q }</Alt> and
+<Alt Not="HTML"><M>A^*(\infty) = \{(0,b,\gamma): \gamma \in GF(q)^2, b \in GF(q)\}</M></Alt>
+<Alt Only="HTML">A&lt;sup>*&lt;/sup>(&#8734;) = {(0,b,&#947;): &#947; &#8712; GF(q)&lt;sup>2&lt;/sup>, b &#8712; GF(q)}</Alt><P/>
+Define <Alt Not="HTML"><M>J=\{A(i):i=1\ldots q\} \cup \{A(\infty)\}</M></Alt>
+<Alt Only="HTML">J = {A(i): i= 1 ... q} &#8746; {A(&#8734;)}</Alt> and 
+<Alt Not="HTML"><M>J^*=\{A^*(i):i=1\ldots q\} \cup \{A^*(\infty)\}</M></Alt>
+<Alt Only="HTML">J&lt;sup>*&lt;/sup> = {A&lt;sup>*&lt;/sup>(i): i= 1 ... q} &#8746; {A&lt;sup>*&lt;/sup>(&#8734;)}</Alt><P/>
+A combination of results of Payne and Kantor yield the famous theorem that <Alt Not="HTML">(J,J^*)</Alt>
+<Alt Only="HTML">(J,J&lt;sup>*&lt;/sup>)</Alt> is a Kantor family in <M>G</M> if and only if <M>C</M> is a q-clan. 
+<Package>FinInG</Package> provides functionality to construct q-clans and to construct the corresponding Kantor family.
+As such, elation generalised quadrangles can directly constructed from q-clans.
+</Subsection>
+
+<ManSection>
+<Oper Name="qClan" Arg="list, f"/>
+<Returns>a q-clan.</Returns>
+<Description>
+Given a list <A>list</A> of <M>2 \times</M> matrices over the field <A>f</A>,
+it is checked if the matrices in the list satisfy the condition to constitute a q-clan
+over <M>f</M>. If so, the q-clan is returned.
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Particular q-clans</Heading>
+<Oper Name="LinearqClan" Arg="q"/>
+<Oper Name="FisherThasWalkerKantorBettenqClan" Arg="q"/>
+<Oper Name="KantorMonomialqClan" Arg="q"/>
+<Oper Name="KantorKnuthqClan" Arg="q"/>
+<Oper Name="FisherqClan" Arg="q"/>
+<Returns>
+a q-clan
+</Returns>
+<Description>
+Some famous q-clans are built in. We refer to ... for more information on these.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="KantorFamilyByqClan" Arg="clan"/>
+<Returns>
+A Kantor family.
+</Returns>
+<Description>
+The Kantor family constructed from a q-clan will be a matrix group together with the
+corresponding collections <M>J</M> and <Alt Not="HTML">J^*</Alt>
+<Alt Only="HTML">J&lt;sup>*&lt;/sup></Alt>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="EGQByqClan" Arg="clan"/>
+<Returns>
+An elation generalised quadrangle constructed from a q-clan.
+</Returns>
+<Description>
+Given a q-clan <A>clan</A>, the operation <F>KantorFamilyByqClan</F> will be used to construct the Kantor family 
+from <A>clan</A>, followed by the construction of the elation generalised quadrangle using the operation 
+<F>EGQByKantorFamily</F>. The first example shows also the use of <F>qClan</F>, and shows that a linear q-clan 
+yields a classical generalised quadrangle. 
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_EGQByqClan.include">
+</Example>
+</Description>
+</ManSection>
+
+<Subsection>
+<Heading>BLT-sets, flocks, q-clans, and elation generalised quadrangles</Heading>
+
+A <E>flock</E> is a partition of the points of a quadratic cone in <M>PG(3,q)</M> 
+minus its vertex into conics. Each conic is determined by a plane, and each plane is determined
+uniquely by a triple of elements of the field <M>GF(q)</M>. So a flock is determined by <M>q</M> such 
+triples. Remarkably, as was shown by J.A. Thas, the conditions for these triples to constitute a flock,
+are exactly the same conditions for these triples to constitute <M>q</M> upper triangle matrices making
+a q-clan over <M>GF(q)</M>. Hence, q-clans and flocks, and thus flocks and elation generalised quadrangles,
+are equivalent objects.<P/>
+The quadratic cone can be embedded as a hyperplane section into the parabolic quadric <M>Q(4,q)</M>. L. Bader,
+G. Lunardon and J.A. Thas observed that a set of <M>q</M> points of <M>Q(4,q)</M> can be constructed from 
+the <M>q</M> planes determining the flock, and this set of points satisfies certain geometric conditions. Such
+a set is called a <E>BLT-set</E>. Dually, a BLT-set corresponds to a set of lines of <M>W(3,q)</M>. Furthermore,
+from this BLT-set of lines, it is possible to construct directly an elation generalised quadrangle from carefully
+selecting points and lines from the symplectic space <M>W(5,q)</M>. This construction is called the Knarr construction.<P/>
+Consider the symplectic polar space <M>W(5,q)</M> and choose a point <M>P \in W(5,q)</M>. Its tangent space is
+a <M>4</M>-dimensional space <M>F</M>. Embed <M>W(3,q)</M> in a solid of <M>F</M> not on the point <M>p</M>, and 
+let <M>L</M> be the set of BLT lines. Each line spans with <M>p</M> a plane of <M>W(5,q)</M>, call these <M>q</M> planes
+the <E>BLT-planes</E>. Now we can define the points an lines of the elation generalised quadrangle as follows.<P/>
+Points of type (i) are the points of <M>W(5,q) \setminus F</M>, points of type (ii) are the lines of each BLT-plane
+not on <M>p</M> and the unique point of type (iii) is the point <M>p</M>. Lines of type (a) are the
+planes of <M>W(5,q)</M> meeting a BLT-plane in a line. Note that no plane of <M>W(5,q)</M> meeting two BLT planes in a
+line can exist. Lines of type (b) are the BLT-planes. Incidence is the natural incidence (so the incidence inherited)
+from the polar space <M>W(5,q)</M>, and this geometry is a elation generalised quadrangle with base-point <M>p</M> and
+of order <Alt Only="HTML">(q&lt;sup>2&lt;/sup>,q)</Alt><Alt Not="HTML"><M>(q^2,q)</M></Alt>.<P/>
+<Package>FinInG</Package> provides functions to construct elation generalised quadrangles using this model from
+BLT-sets, and provides a function to compute a BLT set from a q-clan directly. The advantage of constructing 
+a elation generalised from elements of Lie geometries is the availability of the underlying projective groups and
+their action on elements of Lie geometries. 
+</Subsection>
+
+<ManSection>
+<Filt Name="IsEGQByBLTSet" Type="Category"/>
+<Description>
+<C>IsEGQByBLTSet</C> is a subcategory of <C>IsElationGQ</C>. It contains all elations generalised quadrangles
+that are constructed from a BLT set. 
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="BLTSetByqClan" Arg="clan"/>
+<Returns>
+A BLT-set.
+</Returns>
+<Description>
+The BLT-set is a set of points of the parabolic quadric in <M>PG(4,q)</M> with particular
+equation <Alt Not="HTML"><M>2X_1x_5+2X_2X_4+w^{(q+1)/2}=0</M></Alt><Alt Only="HTML">X&lt;sub>1&lt;/sub>X&lt;sub>5&lt;/sub>+
+X&lt;sub>2&lt;/sub>X&lt;sub>4&lt;/sub>+w&lt;sup>(q+1)/2&lt;/sup>X&lt;sub>3&lt;/sub>&lt;sup>2&lt;/sup>=0</Alt>, where <M>w</M>
+is a primitive element of the underlying field of <A>clan</A>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_bltsetbyqclan.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="EGQByBLTSet" Arg="blt"/>
+<Returns>
+An elation generalised quadrangle.
+</Returns>
+<Description>
+<A>blt</A> is a BLT-set, this operation returns an elation generalised quadrangle constructed
+as described above consisting of elements of <M>W(5,q)</M>. Notice in the example that computing the
+full collineation group of the GQ constructed directly from the q-clan (hence a group coset geometry) is
+substantially slower than computing the full collineation group of the GQ constructed from the BLT-set.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_EGQByBLTSet.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="DefiningPlanesOfEGQByBLTSet" Arg="egq"/>
+<Description>
+For an elation generalised quadrangle in the category <C>IsEGQByBLTSet</C> (constructed from a BLT-set), 
+the planes of the polar space <M>W(5,q)</M>, as described in the introduction, determine the generalised quadrangle
+completely. This attribute returns these <M>q</M> planes of <M>W(5,q)</M>. 
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_definingplanes.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Representation of elements and underlying objects</Heading>
+<Oper Name="ObjectToElement" Arg="egq, t, obj"/>
+<Oper Name="ObjectToElement" Arg="egq, obj"/>
+<Oper Name="UnderlyingObject" Arg="el"/>
+<Description>
+The underlying objects of the elements of an elation generalised quadrangle in the category <C>IsEGQByBLTSet</C> 
+are elements of the polar space <M>W(5,q)</M> in its standard representation. These elements can be used as underlying
+object to construct elements of <A>egq</A>. The example also demonstrates the use of <F>DistanceBetweenElements</F>.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_objectselementsblt.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="CollineationSubgroup" Arg="egq"/>
+<Description>
+For an elation generalised quadrangle in the category <C>IsEGQByBLTSet</C> (constructed from a BLT set), 
+the planes of the polar space <M>W(5,q)</M>, as described in the introduction, determine the generalised quadrangle
+completely. The setwise stabiliser of these planes in the collineation group of <M>W(5,q)</M> is a subgroup of the
+completely collineation group of the elation generalised quadrangle, and can be computed much faster than the 
+complete collineation group. This attribute returns this setwise stabiliser. The returned group is equipped
+with the <F>CollineationACtion</F> attribute. If <F>CollineationSubgroup</F> is computed, this group will be used
+instead of the elation group to compute the incidence graph.
+<Example>
+<#Include SYSTEM "../examples/include/gpolygons_collineationsubgroup.include">
+</Example>
+</Description>
+</ManSection>
+
+
+</Section>
+
+</Chapter>
+
+
+

@@ -1,0 +1,18 @@
+gap> 
+gap> #element to element
+gap> p := VectorSpaceToElement(PG(3,7),[0,1,0,0]*Z(7)^0);
+<a point in ProjectiveSpace(3, 7)>
+gap> q := ElementToElement(HyperbolicQuadric(3,7),p);
+<a point in Q+(3, 7)>
+gap> r := VectorSpaceToElement(PG(3,7),[1,1,0,0]*Z(7)^0);
+<a point in ProjectiveSpace(3, 7)>
+gap> ElementToElement(HyperbolicQuadric(3,7),r);
+Error, <v> does not generate an element of <geom> called from
+VectorSpaceToElement( geom, Unpack( v ) ) called from
+VectorSpaceToElement( ps, UnderlyingObject( el ) ) called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 11 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> quit;

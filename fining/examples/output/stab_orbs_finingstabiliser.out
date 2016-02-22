@@ -1,0 +1,52 @@
+gap> 
+gap> #finingstabiliser
+gap> ps := PG(5,4);
+ProjectiveSpace(5, 4)
+gap> g := SpecialHomographyGroup(ps);
+The FinInG PSL group PSL(6,4)
+gap> p := Random(Points(ps));
+<a point in ProjectiveSpace(5, 4)>
+gap> FiningStabiliser(g,p);
+<projective collineation group of size 264696069567283200 with 2 generators>
+gap> line := Random(Lines(ps));
+<a line in ProjectiveSpace(5, 4)>
+gap> FiningStabiliser(g,line);
+<projective collineation group of size 3881174040576000 with 3 generators>
+gap> plane := Random(Planes(ps));
+<a plane in ProjectiveSpace(5, 4)>
+gap> FiningStabiliser(g,plane);
+#I  Have 106048 points.
+#I  Have 158748 points.
+<projective collineation group of size 958878292377600 with 2 generators>
+gap> ps := HyperbolicQuadric(5,5);
+Q+(5, 5)
+gap> g := IsometryGroup(ps);
+PGO(1,6,5)
+gap> p := Random(Points(ps));
+<a point in Q+(5, 5)>
+gap> FiningStabiliser(g,p);
+<projective collineation group of size 36000000 with 3 generators>
+gap> line := Random(Lines(ps));
+<a line in Q+(5, 5)>
+gap> FiningStabiliser(g,line);
+<projective collineation group of size 6000000 with 3 generators>
+gap> plane := Random(Planes(ps));
+<a plane in Q+(5, 5)>
+gap> FiningStabiliser(g,plane);
+<projective collineation group of size 93000000 with 2 generators>
+gap> h := SplitCayleyHexagon(3);
+H(3)
+gap> g := CollineationGroup(h);
+#I  for Split Cayley Hexagon
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+G_2(3)
+gap> p := Random(Points(h));
+<a point in H(3)>
+gap> FiningStabiliser(g,p);
+<projective collineation group of size 11664 with 2 generators>
+gap> line := Random(Lines(h));
+<a line in H(3)>
+gap> FiningStabiliser(g,line);
+<projective collineation group of size 11664 with 2 generators>
+gap> quit;

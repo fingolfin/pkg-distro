@@ -1,0 +1,17 @@
+gap> 
+gap> #standard frame of a projective space
+gap> StandardFrame(PG(5,4));
+[ <a point in ProjectiveSpace(5, 4)>, <a point in ProjectiveSpace(5, 4)>, 
+  <a point in ProjectiveSpace(5, 4)>, <a point in ProjectiveSpace(5, 4)>, 
+  <a point in ProjectiveSpace(5, 4)>, <a point in ProjectiveSpace(5, 4)>, 
+  <a point in ProjectiveSpace(5, 4)> ]
+gap> Display(last);
+[ NewRowVector(IsCVecRep,GF(2,2),[Z(2)^0,0*Z(2),0*Z(2),0*Z(2),0*Z(2),0*Z(2),])
+    , NewRowVector(IsCVecRep,GF(2,2),[0*Z(2),Z(2)^0,0*Z(2),0*Z(2),0*Z(2),
+    0*Z(2),]), NewRowVector(IsCVecRep,GF(2,2),[0*Z(2),0*Z(2),Z(2)^0,0*Z(2),
+    0*Z(2),0*Z(2),]), NewRowVector(IsCVecRep,GF(2,2),[0*Z(2),0*Z(2),0*Z(2),
+    Z(2)^0,0*Z(2),0*Z(2),]), NewRowVector(IsCVecRep,GF(2,2),[0*Z(2),0*Z(2),
+    0*Z(2),0*Z(2),Z(2)^0,0*Z(2),]), NewRowVector(IsCVecRep,GF(2,2),[0*Z(2),
+    0*Z(2),0*Z(2),0*Z(2),0*Z(2),Z(2)^0,]), NewRowVector(IsCVecRep,GF(2,2),[
+    Z(2)^0,Z(2)^0,Z(2)^0,Z(2)^0,Z(2)^0,Z(2)^0,]) ]
+gap> quit;

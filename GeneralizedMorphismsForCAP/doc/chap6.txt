@@ -1,0 +1,21 @@
+  
+  [1X6 [33X[0;0YSerre Quotients Subcategory[133X[101X
+  
+  [33X[0;0YThis  is  an implementation of a convenience object for Serre quotients. The
+  Subcategory  implemented in this file is not a CAP category at all, but only
+  a  handler  for the serre quotient construction. It does not contain objects
+  or anything useful, it is just a wrapper for the function the Serre quotient
+  is based upon.[133X
+  
+  
+  [1X6.1 [33X[0;0Yimplementation[133X[101X
+  
+  [1X6.1-1 FullSubcategoryByMembershipFunction[101X
+  
+  [29X[2XFullSubcategoryByMembershipFunction[102X( [3XC[103X, [3Xfunc[103X ) [32X operation
+  [6XReturns:[106X  [33X[0;10Ya function handler[133X
+  
+  [33X[0;0YCreates  an  object  which  handles  the function to create a Serre quotient
+  category.  It  can be used instead of the function for Serre quotients. Note
+  that the result is *NOT A CATEGORY* and can not be seen as one.[133X
+  

@@ -1,0 +1,5 @@
+gap> 
+gap> #base field of a projective space
+gap> BaseField(ProjectiveSpace(3,81));
+GF(3^4)
+gap> quit;

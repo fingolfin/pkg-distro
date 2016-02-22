@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Serre_Quotients">
+<Heading>Serre Quotients</Heading>
+
+Serre quotients are implemented using generalized morphisms. A Serre quotient category
+is the quotient of an abelian category A by a thick subcategory C. The objects of the quotient
+are the objects from A, the morphisms are a limit construction. In the implementation
+those morphisms are modeled by generalized morphisms, and therefore there are,
+like in the generalized morphism case, three types of Serre quotients.
+<Section Label="Chapter_Serre_Quotients_Section_General_operations">
+<Heading>General operations</Heading>
+
+As in the generalized morphism case, the generic constructors depend on the
+generalized morphism standard. Please note that for implementations the specialized
+constructors should be used.
+<ManSection>
+  <Filt Arg="arg" Name="IsSerreQuotientCategoryObject" Label="for IsCapCategoryObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The category of objects in the category of Serre quotients.
+For actual objects this needs to be specialized.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Arg="arg" Name="IsSerreQuotientCategoryMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The category of morphisms in the category of Serre quotients.
+For actual morphisms this needs to be specialized.
+ </Description>
+</ManSection>
+
+
+<ManSection Label="AutoDoc_generated_group1">
+  <Oper Arg="A,func[,name]" Name="SerreQuotientCategory" Label="for IsCapCategory, IsFunction, IsString"/>
+ <Returns>a CAP category
+</Returns>
+ <Description>
+Creates a Serre quotient category <A>S</A> with name <A>name</A> out of an Abelian category <A>A</A>.
+If <A>name</A> is not given, a generic name is constructed out of the name of <A>A</A>.
+The argument <A>func</A> must be a unary function on the objects of <A>A</A> deciding the membership in
+the thick subcategory C mentioned above.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, M" Name="AsSerreQuotientCategoryObject" Label="for IsCapCategory, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> and an object <A>M</A> in <A>A</A>,
+this constructor returns the corresponding object in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, phi" Name="SerreQuotientCategoryMorphism" Label="for IsCapCategory, IsGeneralizedMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> and a generalized morphism <A>phi</A> in
+the generalized morphism category <A>A/C</A> is modeled upon,
+this constructor returns the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, iota, phi, pi" Name="SerreQuotientCategoryMorphism" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> and three morphisms <Math>\iota: M' \rightarrow M</Math>,
+<Math>\phi: M' \rightarrow N'</Math> and <Math>\pi: N \rightarrow N'</Math> this operation contructs a
+morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryMorphism" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> and two morphisms of the form <Math>\alpha: X \rightarrow M</Math>
+and <Math>\beta: X \rightarrow N</Math> or <Math>\alpha: M \rightarrow X</Math> and <Math>\beta: N \rightarrow X</Math>,
+this operation constructs the corresponding morphism in the Serre quotient category.
+This operation is only implemented if <A>A/C</A> is
+modeled upon a span generalized morphism category in the first option or upon a cospan
+category in the second.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryMorphismWithSourceAid" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> and two morphisms <Math>\alpha: M \rightarrow X</Math>
+and <Math>\beta: X \rightarrow N</Math>
+this operation constructs the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryMorphismWithRangeAid" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> and two morphisms <Math>\alpha: X \rightarrow M</Math>
+and <Math>\beta: X \rightarrow N</Math>
+this operation constructs the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, phi" Name="AsSerreQuotientCategoryMorphism" Label="for IsCapCategory, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> and a morphism <A>phi</A> in <A>A</A>,
+this constructor returns the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="SubcategoryMembershipTestFunctionForSerreQuotient" Label="for IsCapCategory"/>
+ <Returns>a function
+</Returns>
+ <Description>
+When a Serre quotient category is created, a membership function for
+the subcategory is given. This attribute stores and returns this function
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A/C" Name="UnderlyingHonestCategory" Label="for IsCapCategory"/>
+ <Returns>a category
+</Returns>
+ <Description>
+For a Serre quotient category <A>A/C</A> this attribute returns the category <A>A</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A/C" Name="UnderlyingGeneralizedMorphismCategory" Label="for IsCapCategory"/>
+ <Returns>a category
+</Returns>
+ <Description>
+For a Serre quotient category <A>A/C</A> this attribute returns generalized morphism category the quotient is modelled upon.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="M" Name="UnderlyingGeneralizedObject" Label="for IsSerreQuotientCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+For an object <A>M</A> in the Serre quotient category A/C this attribute returns the
+corresponding object in the generalized morphism category the quotient is modelled upon.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="M" Name="UnderlyingHonestObject" Label="for IsSerreQuotientCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+For an object <A>M</A> in the Serre quotient category A/C this attribute returns the
+corresponding object in <A>A</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="phi" Name="UnderlyingGeneralizedMorphism" Label="for IsSerreQuotientCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+For a morphism <A>phi</A> in the Serre quotient category A/C this attribute returns the
+corresponding generalized morphism in the generalized morphism category the quotient is modelled upon.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A/C" Name="CanonicalProjection" Label="for IsCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A>, this operation returns the canonical projection functor
+<Math> A \rightarrow A/C </Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Serre_Quotients_Section_Serre_quotients_by_cospans">
+<Heading>Serre quotients by cospans</Heading>
+
+<ManSection Label="AutoDoc_generated_group2">
+  <Oper Arg="A,func[,name]" Name="SerreQuotientCategoryByCospans" Label="for IsCapCategory, IsFunction, IsString"/>
+ <Returns>a CAP category
+</Returns>
+ <Description>
+Creates a Serre quotient category S with name <A>name</A> out of an Abelian category <A>A</A>.
+The Serre quotient category will be modeled upon the generalized morphisms by cospans category of <A>A</A>
+If <A>name</A> is not given, a generic name is constructed out of the name of <A>A</A>.
+The argument <A>func</A> must be a unary function on the objects of <A>A</A> deciding the membership in
+the thick subcategory C mentioned above.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, M" Name="AsSerreQuotientCategoryByCospansObject" Label="for IsCapCategory, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by cospans and an object <A>M</A> in <A>A</A>,
+this constructor returns the corresponding object in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, phi" Name="SerreQuotientCategoryByCospansMorphism" Label="for IsCapCategory, IsGeneralizedMorphismByCospan"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by cospans and a generalized morphism <A>phi</A> in
+the generalized morphism category <A>A/C</A> is modeled upon,
+this constructor returns the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, iota, phi, pi" Name="SerreQuotientCategoryByCospansMorphism" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by cospans and three morphisms <Math>\iota: M' \rightarrow M</Math>,
+<Math>\phi: M' \rightarrow N'</Math> and <Math>\pi: N \rightarrow N'</Math> this operation contructs a
+morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryByCospansMorphismWithSourceAid" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by cospans and two morphisms <Math>\alpha: M \rightarrow X</Math>
+and <Math>\beta: X \rightarrow N</Math>
+this operation constructs the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryByCospansMorphism" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by cospans and two morphisms <Math>\alpha: X \rightarrow M</Math>
+and <Math>\beta: X \rightarrow N</Math>
+this operation constructs the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, phi" Name="AsSerreQuotientCategoryByCospansMorphism" Label="for IsCapCategory, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by cospans and a morphism <A>phi</A> in <A>A</A>,
+this constructor returns the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Serre_Quotients_Section_Serre_Quotients_by_Spans">
+<Heading>Serre Quotients by Spans</Heading>
+
+<ManSection Label="AutoDoc_generated_group3">
+  <Oper Arg="A,func[,name]" Name="SerreQuotientCategoryBySpans" Label="for IsCapCategory, IsFunction, IsString"/>
+ <Returns>a CAP category
+</Returns>
+ <Description>
+Creates a Serre quotient category S with name <A>name</A> out of an Abelian category <A>A</A>.
+The Serre quotient category will be modeled upon the generalized morphisms by spans category of <A>A</A>
+If <A>name</A> is not given, a generic name is constructed out of the name of <A>A</A>.
+The argument <A>func</A> must be a unary function on the objects of <A>A</A> deciding the membership in
+the thick subcategory C mentioned above.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, M" Name="AsSerreQuotientCategoryBySpansObject" Label="for IsCapCategory, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by spans and an object <A>M</A> in <A>A</A>,
+this constructor returns the corresponding object in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, phi" Name="SerreQuotientCategoryBySpansMorphism" Label="for IsCapCategory, IsGeneralizedMorphismBySpan"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by spans and a generalized morphism <A>phi</A> in
+the generalized morphism category <A>A/C</A> is modeled upon,
+this constructor returns the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, iota, phi, pi" Name="SerreQuotientCategoryBySpansMorphism" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by spans and three morphisms <Math>\iota: M' \rightarrow M</Math>,
+<Math>\phi: M' \rightarrow N'</Math> and <Math>\pi: N \rightarrow N'</Math> this operation contructs a
+morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryBySpansMorphism" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by spans and two morphisms <Math>\alpha: M \rightarrow X</Math>
+and <Math>\beta: X \rightarrow N</Math>
+this operation constructs the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryBySpansMorphismWithRangeAid" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by spans and two morphisms <Math>\alpha: X \rightarrow M</Math>
+and <Math>\beta: X \rightarrow N</Math>
+this operation constructs the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, phi" Name="AsSerreQuotientCategoryBySpansMorphism" Label="for IsCapCategory, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by spans and a morphism <A>phi</A> in <A>A</A>,
+this constructor returns the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Serre_Quotients_Section_Serre_Quotients_modeled_by_three_arrows">
+<Heading>Serre Quotients modeled by three arrows</Heading>
+
+<ManSection Label="AutoDoc_generated_group4">
+  <Oper Arg="A,func[,name]" Name="SerreQuotientCategoryByThreeArrows" Label="for IsCapCategory, IsFunction, IsString"/>
+ <Returns>a CAP category
+</Returns>
+ <Description>
+Creates a Serre quotient category S with name <A>name</A> out of an Abelian category <A>A</A>.
+The Serre quotient category will be modeled upon the generalized morphisms by three arrows category of <A>A</A>
+If <A>name</A> is not given, a generic name is constructed out of the name of <A>A</A>.
+The argument <A>func</A> must be a unary function on the objects of <A>A</A> deciding the membership in
+the thick subcategory C mentioned above.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, M" Name="AsSerreQuotientCategoryByThreeArrowsObject" Label="for IsCapCategory, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by three arrows and an object <A>M</A> in <A>A</A>,
+this constructor returns the corresponding object in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, phi" Name="SerreQuotientCategoryByThreeArrowsMorphism" Label="for IsCapCategory, IsGeneralizedMorphismByThreeArrows"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by three arrows and a generalized morphism <A>phi</A> in
+the generalized morphism category <A>A/C</A> is modeled upon,
+this constructor returns the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, iota, phi, pi" Name="SerreQuotientCategoryByThreeArrowsMorphism" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by three arrows and three morphisms <Math>\iota: M' \rightarrow M</Math>,
+<Math>\phi: M' \rightarrow N'</Math> and <Math>\pi: N \rightarrow N'</Math> this operation contructs a
+morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryByThreeArrowsMorphismWithSourceAid" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by three arrows and two morphisms <Math>\alpha: M \rightarrow X</Math>
+and <Math>\beta: X \rightarrow N</Math>
+this operation constructs the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, alpha, beta" Name="SerreQuotientCategoryByThreeArrowsMorphismWithRangeAid" Label="for IsCapCategory, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by three arrows and two morphisms <Math>\alpha: X \rightarrow M</Math>
+and <Math>\beta: X \rightarrow N</Math>
+this operation constructs the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A/C, phi" Name="AsSerreQuotientCategoryByThreeArrowsMorphism" Label="for IsCapCategory, IsCapCategoryMorphism"/>
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a Serre quotient category <A>A/C</A> modeled by three arrows and a morphism <A>phi</A> in <A>A</A>,
+this constructor returns the corresponding morphism in the Serre quotient category.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

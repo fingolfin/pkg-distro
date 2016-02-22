@@ -1,0 +1,22 @@
+gap&gt; ps := ProjectiveSpace(5,9);<br>
+ProjectiveSpace(5, 9)<br>
+gap&gt; p := Random(Points(ps));<br>
+&lt;a point in ProjectiveSpace(5, 9)&gt;<br>
+gap&gt; r := Random(Solids(ps));<br>
+&lt;a solid in ProjectiveSpace(5, 9)&gt;<br>
+gap&gt; IsIncident(p,r);<br>
+false<br>
+gap&gt; IsIncident(r,p);<br>
+false<br>
+gap&gt; p*r;<br>
+false<br>
+gap&gt; r*p;<br>
+false<br>
+gap&gt; p in r;<br>
+false<br>
+gap&gt; r in p;<br>
+false<br>
+gap&gt; EmptySubspace(ps) in r;<br>
+true<br>
+gap&gt; r in ps;<br>
+true<br>

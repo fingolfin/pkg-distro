@@ -1,0 +1,445 @@
+\begin{theindex}
+
+  \item \texttt  {\texttt  {\char 92\relax }*}, \hyperpage{48}, 
+		\hyperpage{73}, \hyperpage{128}, \hyperpage{155}, 
+		\hyperpage{213}
+  \item \texttt  {\texttt  {\char 92\relax }\texttt  {\char 94\relax }}, 
+		\hyperpage{98}, \hyperpage{162}, \hyperpage{192}, 
+		\hyperpage{241}
+  \item \texttt  {3D4fining}, \hyperpage{300}
+
+  \indexspace
+
+  \item \texttt  {AbsolutePoints}, \hyperpage{112}
+  \item \texttt  {Action}, \hyperpage{147}
+  \item \texttt  {ActionHomomorphism}, \hyperpage{147}
+  \item \texttt  {ActionOnAllProjPoints}, \hyperpage{99}
+  \item \texttt  {AffineGroup}, \hyperpage{161}
+  \item \texttt  {AffineSpace}, \hyperpage{152}
+  \item \texttt  {AffineSubspace}, \hyperpage{153}
+  \item \texttt  {AffineVariety}, \hyperpage{192}
+  \item \texttt  {AG}, \hyperpage{152}
+  \item \texttt  {AlgebraicVariety}, \hyperpage{185}, \hyperpage{187}, 
+		\hyperpage{192}
+  \item \texttt  {AmbientGeometry}, \hyperpage{48}, \hyperpage{51}
+  \item \texttt  {AmbientGroup}, \hyperpage{238}
+  \item \texttt  {AmbientSpace}, \hyperpage{63}, \hyperpage{70}, 
+		\hyperpage{75}, \hyperpage{122}, \hyperpage{127}, 
+		\hyperpage{153}, \hyperpage{156}, \hyperpage{186}
+  \item \texttt  {AsList}, \hyperpage{60}, \hyperpage{83}, 
+		\hyperpage{138}
+  \item \texttt  {AutGroupIncidenceStructureWithNauty}, \hyperpage{249}
+
+  \indexspace
+
+  \item \texttt  {BaseField}, \hyperpage{69}, \hyperpage{75}, 
+		\hyperpage{92}, \hyperpage{96}, \hyperpage{109}, 
+		\hyperpage{123}, \hyperpage{152}, \hyperpage{156}
+  \item \texttt  {BasePointOfEGQ}, \hyperpage{224}
+  \item \texttt  {BilinearFormFieldReduction}, \hyperpage{303}
+  \item \texttt  {BlockDesignOfGeneralisedPolygon}, \hyperpage{210}
+  \item \texttt  {BlownUpProjectiveSpace}, \hyperpage{301}
+  \item \texttt  {BlownUpProjectiveSpaceBySubfield}, \hyperpage{302}
+  \item \texttt  {BlownUpSubspaceOfProjectiveSpace}, \hyperpage{174}, 
+		\hyperpage{302}
+  \item \texttt  {Blown}\discretionary {-}{}{}\texttt  {Up}\discretionary {-}{}{}\texttt  {Subspace}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Projective}\discretionary {-}{}{}\texttt  {Space}\discretionary {-}{}{}\texttt  {By}\discretionary {-}{}{}\texttt  {Subfield}, 
+		\hyperpage{302}
+  \item \texttt  {BLTSetByqClan}, \hyperpage{232}
+  \item \texttt  {Borelsubgroup}, \hyperpage{238}
+
+  \indexspace
+
+  \item \texttt  {CanComputeActionOnPoints}, \hyperpage{104}
+  \item \texttt  {CanonicalGramMatrix}, \hyperpage{294}
+  \item \texttt  {CanonicalPolarSpace}, \hyperpage{122}
+  \item \texttt  {CanonicalQuadraticForm}, \hyperpage{295}
+  \item \texttt  {CanonicalResidueOfFlag}, \hyperpage{244}
+  \item \texttt  {Collineation}, \hyperpage{89}
+  \item \texttt  {CollineationAction}, \hyperpage{209}, \hyperpage{226}
+  \item \texttt  {CollineationGroup}, \hyperpage{95}, \hyperpage{137}, 
+		\hyperpage{162}, \hyperpage{205}, \hyperpage{222}
+  \item \texttt  {CollineationOfProjectiveSpace}, \hyperpage{89}
+  \item \texttt  {CollineationSubgroup}, \hyperpage{235}
+  \item \texttt  {CompanionAutomorphism}, \hyperpage{109}
+  \item \texttt  {ComplementSpace}, \hyperpage{163}
+  \item \texttt  {Coordinates}, \hyperpage{74}, \hyperpage{128}
+  \item \texttt  {CorGroupIncidenceStructureWithNauty}, \hyperpage{250}
+  \item \texttt  {Correlation}, \hyperpage{90}
+  \item \texttt  {CorrelationCollineationGroup}, \hyperpage{96}
+  \item \texttt  {CorrelationOfProjectiveSpace}, \hyperpage{90}
+  \item \texttt  {CosetGeometry}, \hyperpage{237}
+
+  \indexspace
+
+  \item \texttt  {DefiningListOfPolynomials}, \hyperpage{186}
+  \item \texttt  {DefiningPlanesOfEGQByBLTSet}, \hyperpage{233}
+  \item \texttt  {DeltaOminus}, \hyperpage{298}
+  \item \texttt  {DeltaOplus}, \hyperpage{298}
+  \item \texttt  {DiagramOfGeometry}, \hyperpage{252}
+  \item \texttt  {Dimension}, \hyperpage{69}, \hyperpage{97}, 
+		\hyperpage{123}, \hyperpage{127}, \hyperpage{152}
+  \item \texttt  {DistanceBetweenElements}, \hyperpage{216}
+  \item \texttt  {DrawDiagram}, \hyperpage{252}
+  \item \texttt  {DrawDiagramWithNeato}, \hyperpage{256}
+  \item \texttt  {DualCoordinatesOfHyperplane}, \hyperpage{74}
+
+  \indexspace
+
+  \item \texttt  {EGQByBLTSet}, \hyperpage{232}
+  \item \texttt  {EGQByKantorFamily}, \hyperpage{224}
+  \item \texttt  {EGQByqClan}, \hyperpage{230}
+  \item \texttt  {ElationGroup}, \hyperpage{226}
+  \item \texttt  {ElationOfProjectiveSpace}, \hyperpage{101}
+  \item \texttt  {Elements}\discretionary {-}{}{}\texttt  {Incident}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Incidence}\discretionary {-}{}{}\texttt  {Structure}, 
+		\hyperpage{54}, \hyperpage{81}, \hyperpage{134}, 
+		\hyperpage{215}
+  \item \texttt  {ElementsOfFlag}, \hyperpage{50}
+  \item \texttt  {ElementsOfIncidenceStructure}, \hyperpage{46, 47}, 
+		\hyperpage{72}, \hyperpage{127}, \hyperpage{154}
+  \item \texttt  {ElementsOfIncidencStructure}, \hyperpage{212}
+  \item \texttt  {ElementToElement}, \hyperpage{66}
+  \item \texttt  {EllipticQuadric}, \hyperpage{120}
+  \item \texttt  {Embed}, \hyperpage{66}
+  \item \texttt  {Embedding}, \hyperpage{97}
+  \item \texttt  {EmptySubspace}, \hyperpage{71}, \hyperpage{126}
+  \item \texttt  {Enumerator}, \hyperpage{57}, \hyperpage{83}, 
+		\hyperpage{138}, \hyperpage{160}
+  \item \texttt  {EquationOfHyperplane}, \hyperpage{75}
+
+  \indexspace
+
+  \item \texttt  {FieldAutomorphism}, \hyperpage{93}
+  \item \texttt  {FindBasePointCandidates}, \hyperpage{300}
+  \item \texttt  {FINING}, \hyperpage{104}
+  \item \texttt  {FiningOrbit}, \hyperpage{140}
+  \item \texttt  {FiningOrbits}, \hyperpage{141}
+  \item \texttt  {FiningSetwiseStabiliser}, \hyperpage{145}
+  \item \texttt  {FiningStabiliser}, \hyperpage{142}
+  \item \texttt  {FiningStabiliserOrb}, \hyperpage{143}
+  \item \texttt  {FisherqClan}, \hyperpage{230}
+  \item \texttt  {FisherThasWalkerKantorBettenqClan}, \hyperpage{230}
+  \item \texttt  {FlagOfIncidenceStructure}, \hyperpage{49}, 
+		\hyperpage{79}
+  \item \texttt  {FlagToStandardFlag}, \hyperpage{244}
+
+  \indexspace
+
+  \item \texttt  {G2fining}, \hyperpage{299}
+  \item \texttt  {GammaO}, \hyperpage{299}
+  \item \texttt  {GammaOminus}, \hyperpage{298}
+  \item \texttt  {GammaOplus}, \hyperpage{299}
+  \item \texttt  {GammaSp}, \hyperpage{298}
+  \item \texttt  {GammaU}, \hyperpage{299}
+  \item \texttt  {GeneralisedPolygonByBlocks}, \hyperpage{200}
+  \item \texttt  {GeneralisedPolygonByElements}, \hyperpage{201}
+  \item \texttt  {GeneralisedPolygonByIncidenceMatrix}, \hyperpage{200}
+  \item \texttt  {GeneralSymplecticGroup}, \hyperpage{297}
+  \item \texttt  {GeometryOfAbsolutePoints}, \hyperpage{111}
+  \item \texttt  {GeometryOfDiagram}, \hyperpage{252}
+  \item \texttt  {GeometryOfRank2Residue}, \hyperpage{248}
+  \item \texttt  {GOdesargues}, \hyperpage{296}
+  \item \texttt  {GramMatrix}, \hyperpage{109}
+  \item \texttt  {GrassmannMap}, \hyperpage{196}
+  \item \texttt  {GrassmannVariety}, \hyperpage{196}
+  \item \texttt  {GSpdesargues}, \hyperpage{297}
+  \item \texttt  {GUdesargues}, \hyperpage{297}
+
+  \indexspace
+
+  \item \texttt  {HermitianFormFieldReduction}, \hyperpage{303}
+  \item \texttt  {HermitianPolarityOfProjectiveSpace}, \hyperpage{107}
+  \item \texttt  {HermitianPolarSpace}, \hyperpage{118}
+  \item \texttt  {HermitianVariety}, \hyperpage{188}
+  \item \texttt  {HomographyGroup}, \hyperpage{94}
+  \item \texttt  {HomologyOfProjectiveSpace}, \hyperpage{102}
+  \item \texttt  {HyperbolicQuadric}, \hyperpage{119}
+  \item \texttt  {HyperplaneByDualCoordinates}, \hyperpage{75}
+  \item \texttt  {Hyperplanes}, \hyperpage{65}, \hyperpage{72}, 
+		\hyperpage{82}, \hyperpage{154}
+
+  \indexspace
+
+  \item \texttt  {Identity}\discretionary {-}{}{}\texttt  {Mapping}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Projective}\discretionary {-}{}{}\texttt  {Space}, 
+		\hyperpage{90}
+  \item \texttt  {ImageElm}, \hyperpage{192}
+  \item \texttt  {ImagesSet}, \hyperpage{192}
+  \item \texttt  {\texttt  {\char 92\relax }in}, \hyperpage{65}, 
+		\hyperpage{73}, \hyperpage{128}, \hyperpage{155}, 
+		\hyperpage{187}, \hyperpage{221}
+  \item \texttt  {IncidenceGraph}, \hyperpage{41}, \hyperpage{203}, 
+		\hyperpage{248}
+  \item \texttt  {IncidenceGraphAttr}, \hyperpage{203}
+  \item \texttt  {IncidenceMatrixOfGeneralisedPolygon}, \hyperpage{205}
+  \item \texttt  {IncidenceStructure}, \hyperpage{39}
+  \item \texttt  {Intertwiner}, \hyperpage{165}
+  \item \texttt  {InversePluckerCoordinates}, \hyperpage{303}
+  \item \texttt  {IsAffineSpace}, \hyperpage{40}, \hyperpage{151}
+  \item \texttt  {IsCanonicalPolarSpace}, \hyperpage{121}
+  \item \texttt  {IsChamberOfIncidenceStructure}, \hyperpage{50}, 
+		\hyperpage{80}
+  \item \texttt  {IsClassicalGeneralisedHexagon}, \hyperpage{199}
+  \item \texttt  {IsClassicalGQ}, \hyperpage{199}
+  \item \texttt  {IsClassicalPolarSpace}, \hyperpage{62}, 
+		\hyperpage{114}
+  \item \texttt  {IsCollinear}, \hyperpage{130}
+  \item \texttt  {IsCollineation}, \hyperpage{87}
+  \item \texttt  {IsCollineationGroup}, \hyperpage{96}
+  \item \texttt  {IsConnected}, \hyperpage{242}
+  \item \texttt  {IsCorrelation}, \hyperpage{88}
+  \item \texttt  {IsCorrelationCollineation}, \hyperpage{88}
+  \item \texttt  {IsCosetGeometry}, \hyperpage{40}, \hyperpage{237}
+  \item \texttt  {IsDesarguesianPlane}, \hyperpage{199}
+  \item \texttt  {IsDesarguesianSpreadElement}, \hyperpage{302}
+  \item \texttt  {IsEGQByBLTSet}, \hyperpage{232}
+  \item \texttt  {IsEGQByKantorFamily}, \hyperpage{223}
+  \item \texttt  {IsElationGQ}, \hyperpage{199}
+  \item \texttt  {IsElementOfAffineSpace}, \hyperpage{43}
+  \item \texttt  {IsElementOfCosetGeometry}, \hyperpage{43}
+  \item \texttt  {IsElementOfGeneralisedPolygon}, \hyperpage{43}
+  \item \texttt  {IsElementOfIncidenceGeometry}, \hyperpage{43}
+  \item \texttt  {IsElementOfIncidenceStructure}, \hyperpage{43}
+  \item \texttt  {IsElementOfKantorFamily}, \hyperpage{223}
+  \item \texttt  {IsElementOfLieGeometry}, \hyperpage{43}
+  \item \texttt  {IsElementsOfAffineSpace}, \hyperpage{45}
+  \item \texttt  {IsElementsOfCosetGeometry}, \hyperpage{45}
+  \item \texttt  {IsElementsOfIncidenceGeometry}, \hyperpage{45}
+  \item \texttt  {IsElementsOfIncidenceStructure}, \hyperpage{45}
+  \item \texttt  {IsElementsOfLieGeometry}, \hyperpage{45}
+  \item \texttt  {IsEllipticQuadric}, \hyperpage{124}
+  \item \texttt  {IsEmptyFlag}, \hyperpage{50}, \hyperpage{79}
+  \item \texttt  {IsEmptySubspace}, \hyperpage{63}
+  \item \texttt  {IsFirmGeometry}, \hyperpage{241}
+  \item \texttt  {IsFlagTransitiveGeometry}, \hyperpage{240}
+  \item \texttt  {IsGeneralisedHexagon}, \hyperpage{198}
+  \item \texttt  {IsGeneralisedOctagon}, \hyperpage{198}
+  \item \texttt  {IsGeneralisedPolygon}, \hyperpage{40}, 
+		\hyperpage{198}
+  \item \texttt  {IsGeneralisedPolygonRep}, \hyperpage{198}
+  \item \texttt  {IsGeneralisedQuadrangle}, \hyperpage{198}
+  \item \texttt  {IsGeometryMorphism}, \hyperpage{164}
+  \item \texttt  {IsHermitian}\discretionary {-}{}{}\texttt  {Polarity}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Projective}\discretionary {-}{}{}\texttt  {Space}, 
+		\hyperpage{110}
+  \item \texttt  {IsHyperbolicQuadric}, \hyperpage{124}
+  \item \texttt  {IsIncidenceGeometry}, \hyperpage{39}
+  \item \texttt  {IsIncidenceStructure}, \hyperpage{39}
+  \item \texttt  {IsIncident}, \hyperpage{48}, \hyperpage{52}, 
+		\hyperpage{73}, \hyperpage{128}, \hyperpage{155}, 
+		\hyperpage{213}, \hyperpage{238}
+  \item \texttt  {IsIsomorphic}\discretionary {-}{}{}\texttt  {Incidence}\discretionary {-}{}{}\texttt  {Structure}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Nauty}, 
+		\hyperpage{251}
+  \item \texttt  {IsKantorFamily}, \hyperpage{224}
+  \item \texttt  {IsLieGeometry}, \hyperpage{40}, \hyperpage{218}
+  \item Isometry, \hyperpage{134}
+  \item \texttt  {IsometryGroup}, \hyperpage{136}
+  \item \texttt  {IsomorphismPolarSpaces}, \hyperpage{166}
+  \item \texttt  {IsomorphismPolarSpacesNC}, \hyperpage{303}
+  \item \texttt  {Isomorphism}\discretionary {-}{}{}\texttt  {Polar}\discretionary {-}{}{}\texttt  {Spaces}\discretionary {-}{}{}\texttt  {Projection}\discretionary {-}{}{}\texttt  {From}\discretionary {-}{}{}\texttt  {Nucleus}, 
+		\hyperpage{303}
+  \item \texttt  {IsOrthogonal}\discretionary {-}{}{}\texttt  {Polarity}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Projective}\discretionary {-}{}{}\texttt  {Space}, 
+		\hyperpage{110}
+  \item \texttt  {IsParabolicQuadric}, \hyperpage{125}
+  \item \texttt  {IsParallel}, \hyperpage{157}
+  \item \texttt  {IsProjectivePlaneCategory}, \hyperpage{198}
+  \item \texttt  {IsProjectiveSpace}, \hyperpage{62}, \hyperpage{68}
+  \item \texttt  {IsProjectivity}, \hyperpage{86}
+  \item \texttt  {IsProjectivityGroup}, \hyperpage{96}
+  \item \texttt  {IsProjGrpEl}, \hyperpage{85}
+  \item \texttt  {IsProjGrpElRep}, \hyperpage{85}
+  \item \texttt  {IsProjGrpElWithFrob}, \hyperpage{85}
+  \item \texttt  {IsProjGrpElWithFrobRep}, \hyperpage{85}
+  \item \texttt  {IsProjGrpElWithFrobWithPSIsom}, \hyperpage{85}, 
+		\hyperpage{88}
+  \item \texttt  {IsProjGrpElWithFrobWithPSIsomRep}, \hyperpage{86}
+  \item \texttt  {IsPseudoPolarityOfProjectiveSpace}, \hyperpage{111}
+  \item \texttt  {IsResiduallyConnected}, \hyperpage{242}
+  \item \texttt  {IsStrictlySemilinear}, \hyperpage{87}
+  \item \texttt  {IsSubspaceOfClassicalPolarSpace}, \hyperpage{43}
+  \item \texttt  {IsSubspaceOfProjectiveSpace}, \hyperpage{43}
+  \item \texttt  {IsSubspacesOfClassicalPolarSpace}, \hyperpage{46}
+  \item \texttt  {IsSubspacesOfProjectiveSpace}, \hyperpage{45}
+  \item \texttt  {IsSymplectic}\discretionary {-}{}{}\texttt  {Polarity}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Projective}\discretionary {-}{}{}\texttt  {Space}, 
+		\hyperpage{110}
+  \item \texttt  {IsThickGeometry}, \hyperpage{241}
+  \item \texttt  {IsThinGeometry}, \hyperpage{241}
+  \item \texttt  {IsVectorSpaceTransversal}, \hyperpage{163}
+  \item \texttt  {IsWeakGeneralisedPolygon}, \hyperpage{199}
+  \item \texttt  {Iterator}, \hyperpage{56}, \hyperpage{82}, 
+		\hyperpage{138}, \hyperpage{159}, \hyperpage{187}
+
+  \indexspace
+
+  \item \texttt  {KantorFamilyByqClan}, \hyperpage{230}
+  \item \texttt  {KantorKnuthqClan}, \hyperpage{230}
+  \item \texttt  {KantorMonomialqClan}, \hyperpage{230}
+  \item \texttt  {KleinCorrespondence}, \hyperpage{168, 169}
+  \item \texttt  {KleinCorrespondenceExtended}, \hyperpage{169}
+
+  \indexspace
+
+  \item \texttt  {LinearqClan}, \hyperpage{230}
+  \item \texttt  {Lines}, \hyperpage{47}, \hyperpage{55}, 
+		\hyperpage{72}, \hyperpage{82}, \hyperpage{154}, 
+		\hyperpage{212}, \hyperpage{215}
+  \item \texttt  {List}, \hyperpage{57}, \hyperpage{83}, 
+		\hyperpage{138}
+
+  \indexspace
+
+  \item \texttt  {MatrixOfCollineation}, \hyperpage{92}
+  \item \texttt  {MatrixOfCorrelation}, \hyperpage{92}
+  \item \texttt  {Meet}, \hyperpage{78}, \hyperpage{129}, 
+		\hyperpage{157}, \hyperpage{214}, \hyperpage{221}
+
+  \indexspace
+
+  \item \texttt  {NaturalDuality}, \hyperpage{170}
+  \item \texttt  {NaturalEmbeddingByFieldReduction}, \hyperpage{175}, 
+		\hyperpage{179--181}
+  \item \texttt  {NaturalEmbeddingBySubField}, \hyperpage{173}, 
+		\hyperpage{178}
+  \item \texttt  {NaturalEmbeddingBySubspace}, \hyperpage{172}, 
+		\hyperpage{176}
+  \item \texttt  {NaturalEmbeddingBySubspaceNC}, \hyperpage{304}
+  \item \texttt  {NaturalProjectionBySubspace}, \hyperpage{183}
+  \item \texttt  {NaturalProjectionBySubspaceNC}, \hyperpage{304}
+  \item \texttt  {NiceMonomorphism}, \hyperpage{103}, \hyperpage{148}
+  \item \texttt  {NiceMonomorphismByDomain}, \hyperpage{105}
+  \item \texttt  {NiceMonomorphismByOrbit}, \hyperpage{105}
+  \item \texttt  {NiceObject}, \hyperpage{104}, \hyperpage{148}
+  \item \texttt  {NrElementsOfIncidenceStructure}, \hyperpage{47}
+
+  \indexspace
+
+  \item \texttt  {ObjectToElement}, \hyperpage{45}, \hyperpage{212}, 
+		\hyperpage{220}, \hyperpage{224}, \hyperpage{234}
+  \item \texttt  {OnAffineSpaces}, \hyperpage{162}
+  \item \texttt  {OnCosetGeometryElement}, \hyperpage{240}
+  \item \texttt  {OnKantorFamily}, \hyperpage{226}
+  \item \texttt  {OnProjSubspaces}, \hyperpage{98}, \hyperpage{146}
+  \item \texttt  {OnProjSubspacesExtended}, \hyperpage{99}, 
+		\hyperpage{146}
+  \item \texttt  {OnSetsProjSubspaces}, \hyperpage{147}
+  \item \texttt  {Order}, \hyperpage{93}, \hyperpage{203}
+
+  \indexspace
+
+  \item \texttt  {ParabolicQuadric}, \hyperpage{118}
+  \item \texttt  {ParabolicSubgroups}, \hyperpage{238}
+  \item \texttt  {ParallelClass}, \hyperpage{158}
+  \item \texttt  {PG}, \hyperpage{68}
+  \item \texttt  {Planes}, \hyperpage{47}, \hyperpage{55}, 
+		\hyperpage{72}, \hyperpage{82}, \hyperpage{154}
+  \item \texttt  {PluckerCoordinates}, \hyperpage{167}, \hyperpage{303}
+  \item \texttt  {Points}, \hyperpage{47}, \hyperpage{55}, 
+		\hyperpage{72}, \hyperpage{82}, \hyperpage{154}, 
+		\hyperpage{186}, \hyperpage{193}, \hyperpage{195, 196}, 
+		\hyperpage{212}, \hyperpage{215}
+  \item \texttt  {PointsOfAlgebraicVariety}, \hyperpage{186}
+  \item \texttt  {PointsOfGrassmannVariety}, \hyperpage{196}
+  \item \texttt  {PointsOfSegreVariety}, \hyperpage{193}
+  \item \texttt  {PointsOfVeroneseVariety}, \hyperpage{195}
+  \item \texttt  {PolarityOfProjectiveSpace}, \hyperpage{107, 108}, 
+		\hyperpage{131}
+  \item \texttt  {PolarSpace}, \hyperpage{112}, \hyperpage{115}, 
+		\hyperpage{191}
+  \item \texttt  {Pole}, \hyperpage{133}
+  \item \texttt  {ProjectiveCompletion}, \hyperpage{183}
+  \item \texttt  {ProjectiveDimension}, \hyperpage{63}, \hyperpage{69}, 
+		\hyperpage{71}, \hyperpage{123}, \hyperpage{127}
+  \item \texttt  {ProjectiveElationGroup}, \hyperpage{101}
+  \item \texttt  {ProjectiveHomologyGroup}, \hyperpage{102}
+  \item \texttt  {ProjectiveSemilinearMap}, \hyperpage{89}
+  \item \texttt  {ProjectiveSpace}, \hyperpage{68}
+  \item \texttt  {ProjectiveSpaceIsomorphism}, \hyperpage{93}
+  \item \texttt  {ProjectiveVariety}, \hyperpage{187}
+  \item \texttt  {Projectivity}, \hyperpage{88}
+  \item \texttt  {ProjectivityGroup}, \hyperpage{94}
+
+  \indexspace
+
+  \item \texttt  {qClan}, \hyperpage{230}
+  \item \texttt  {QuadraticForm}, \hyperpage{190}
+  \item \texttt  {QuadraticFormFieldReduction}, \hyperpage{302}
+  \item \texttt  {QuadraticVariety}, \hyperpage{189}
+
+  \indexspace
+
+  \item \texttt  {Random}, \hyperpage{48}, \hyperpage{76}
+  \item \texttt  {RandomChamber}, \hyperpage{239}
+  \item \texttt  {RandomElement}, \hyperpage{239}
+  \item \texttt  {RandomFlag}, \hyperpage{239}
+  \item \texttt  {RandomSubspace}, \hyperpage{77}
+  \item \texttt  {Range}, \hyperpage{192}
+  \item \texttt  {Rank}, \hyperpage{41}, \hyperpage{51}, \hyperpage{69}, 
+		\hyperpage{123}, \hyperpage{152}
+  \item \texttt  {Rank2Parameters}, \hyperpage{249}
+  \item \texttt  {RankAttr}, \hyperpage{41}
+  \item \texttt  {Representative}, \hyperpage{91}
+  \item \texttt  {ResidueOfFlag}, \hyperpage{54}, \hyperpage{245}
+  \item \texttt  {Rk2GeoDiameter}, \hyperpage{248}
+  \item \texttt  {Rk2GeoGonality}, \hyperpage{248}
+
+  \indexspace
+
+  \item \texttt  {SegreMap}, \hyperpage{193}
+  \item \texttt  {SegreVariety}, \hyperpage{193}
+  \item \texttt  {SelfDuality}, \hyperpage{171}
+  \item Semi-similarity, \hyperpage{134, 135}
+  \item \texttt  {SesquilinearForm}, \hyperpage{108}, \hyperpage{190}
+  \item \texttt  {SetParent}, \hyperpage{149}
+  \item \texttt  {ShadowOfElement}, \hyperpage{53}, \hyperpage{80}, 
+		\hyperpage{133}, \hyperpage{158}, \hyperpage{215}
+  \item \texttt  {ShadowOfFlag}, \hyperpage{54}, \hyperpage{81}, 
+		\hyperpage{159}
+  \item \texttt  {ShrinkMat}, \hyperpage{301}
+  \item \texttt  {ShrinkVec}, \hyperpage{301}
+  \item Similarity, \hyperpage{134, 135}
+  \item \texttt  {SimilarityGroup}, \hyperpage{136}
+  \item \texttt  {Size}, \hyperpage{51}, \hyperpage{212}
+  \item \texttt  {SOdesargues}, \hyperpage{296}
+  \item \texttt  {Solids}, \hyperpage{47}, \hyperpage{55}, 
+		\hyperpage{72}, \hyperpage{82}, \hyperpage{154}
+  \item \texttt  {Source}, \hyperpage{192}, \hyperpage{194, 195}, 
+		\hyperpage{197}
+  \item \texttt  {Span}, \hyperpage{77}, \hyperpage{129}, 
+		\hyperpage{156}, \hyperpage{214}, \hyperpage{221}
+  \item \texttt  {Spdesargues}, \hyperpage{297}
+  \item \texttt  {SpecialHomographyGroup}, \hyperpage{95}
+  \item \texttt  {SpecialIsometryGroup}, \hyperpage{135}
+  \item \texttt  {SpecialProjectivityGroup}, \hyperpage{95}
+  \item \texttt  {SplitCayleyHexagon}, \hyperpage{218}
+  \item \texttt  {StandardDualityOfProjectiveSpace}, \hyperpage{90}
+  \item \texttt  {StandardFlagOfCosetGeometry}, \hyperpage{244}
+  \item \texttt  {StandardFrame}, \hyperpage{74}
+  \item \texttt  {StandardPolarSpace}, \hyperpage{122}
+  \item \texttt  {SUdesargues}, \hyperpage{296}
+  \item \texttt  {SymplecticSpace}, \hyperpage{118}
+
+  \indexspace
+
+  \item \texttt  {TangentSpace}, \hyperpage{132}
+  \item \texttt  {TwistedTrialityHexagon}, \hyperpage{219}
+  \item \texttt  {Type}, \hyperpage{45}, \hyperpage{52}
+  \item \texttt  {TypeOfSubspace}, \hyperpage{131}
+  \item \texttt  {TypesOfElementsOfIncidenceStructure}, \hyperpage{40}
+  \item \texttt  {Types}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Incidence}\discretionary {-}{}{}\texttt  {Structure}\discretionary {-}{}{}\texttt  {Plural}, 
+		\hyperpage{40}
+
+  \indexspace
+
+  \item \texttt  {UnderlyingObject}, \hyperpage{43}, \hyperpage{65}, 
+		\hyperpage{212}, \hyperpage{220}, \hyperpage{224}, 
+		\hyperpage{234}
+  \item \texttt  {UnderlyingVectorSpace}, \hyperpage{63}, 
+		\hyperpage{69}, \hyperpage{122}, \hyperpage{152}
+
+  \indexspace
+
+  \item \texttt  {VectorSpaceToElement}, \hyperpage{64}, \hyperpage{70}, 
+		\hyperpage{126}, \hyperpage{219}
+  \item \texttt  {VectorSpaceTransversal}, \hyperpage{163}
+  \item \texttt  {VectorSpaceTransversalElement}, \hyperpage{163}
+  \item \texttt  {VeroneseMap}, \hyperpage{195}
+  \item \texttt  {VeroneseVariety}, \hyperpage{194}
+
+\end{theindex}

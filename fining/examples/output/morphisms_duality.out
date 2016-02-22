@@ -1,0 +1,39 @@
+gap> 
+gap> #morphisms_duality.g
+gap> w := SymplecticSpace(3,5);
+W(3, 5)
+gap> lines:=AsList(Lines(w));;
+gap> duality := NaturalDuality(w);
+<geometry morphism from <Elements of W(3, 5)> to <Elements of Q(4, 5)>>
+gap> l:=lines[1];
+<a line in W(3, 5)>
+gap> l^duality;
+<a point in Q(4, 5)>
+gap> PreImageElm(duality,last);
+<a line in W(3, 5)>
+gap> hom := Intertwiner(duality);
+MappingByFunction( PGammaSp(4,5), <projective collineation group of size 
+9360000 with 4 generators>, function( g ) ... end, function( g ) ... end )
+gap> q := 5;
+5
+gap> q5q := EllipticQuadric(5,q);
+Q-(5, 5)
+gap> mat := [[0,1,0,0],[1,0,0,0],[0,0,0,Z(q)],[0,0,Z(q),0]]*Z(q)^0;
+[ [ 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], [ Z(5)^0, 0*Z(5), 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5) ], [ 0*Z(5), 0*Z(5), Z(5), 0*Z(5) ] ]
+gap> hform := HermitianFormByMatrix(mat,GF(q^2));
+< hermitian form >
+gap> herm := PolarSpace(hform);
+<polar space in ProjectiveSpace(
+3,GF(5^2)): x1^5*x2+x1*x2^5+Z(5)*x3^5*x4+Z(5)*x3*x4^5=0 >
+gap> duality := NaturalDuality(q5q,herm,true);
+<geometry morphism from <Elements of Q-(5, 5)> to <Elements of H(3, 
+5^2): x1^5*x2+x1*x2^5+Z(5)*x3^5*x4+Z(5)*x3*x4^5=0>>
+gap> hom := Intertwiner(duality);
+MappingByFunction( PDeltaO-(6,5), <projective collineation group of size 
+58968000000 with 3 generators>, function( g ) ... end, function( g ) ... end )
+gap> g := Random(CollineationGroup(q5q));
+< a collineation: <cmat 6x6 over GF(5,1)>, F^0>
+gap> g^hom;
+< a collineation: <cmat 4x4 over GF(5,2)>, F^5>
+gap> quit;

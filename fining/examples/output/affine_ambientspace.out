@@ -1,0 +1,5 @@
+gap> 
+gap> #ambient space
+gap> AmbientSpace(AG(4,7));
+AG(4, 7)
+gap> quit;

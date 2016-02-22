@@ -1,0 +1,200 @@
+#############################################################################
+##
+##                                       ModulePresentationsForCAP package
+##
+##  Copyright 2014, Sebastian Gutsche, TU Kaiserslautern
+##                  Sebastian Posur,   RWTH Aachen
+##
+#############################################################################
+
+DeclareRepresentation( "IsLeftPresentationRep",
+                       IsLeftPresentation and IsAttributeStoringRep,
+                       [ ] );
+
+BindGlobal( "TheFamilyOfLeftPresentations",
+            NewFamily( "TheFamilyOfLeftPresentations" ) );
+
+BindGlobal( "TheTypeOfLeftPresentations",
+            NewType( TheFamilyOfLeftPresentations,
+                     IsLeftPresentationRep ) );
+
+
+DeclareRepresentation( "IsRightPresentationRep",
+                       IsRightPresentation and IsAttributeStoringRep,
+                       [ ] );
+
+BindGlobal( "TheFamilyOfRightPresentations",
+            NewFamily( "TheFamilyOfRightPresentations" ) );
+
+BindGlobal( "TheTypeOfRightPresentations",
+            NewType( TheFamilyOfRightPresentations,
+                     IsRightPresentationRep ) );
+
+#############################
+##
+## Constructors
+##
+#############################
+
+InstallGlobalFunction( AsLeftOrRightPresentation,
+               
+  function( matrix, left )
+    local module, ring, type, presentation_category;
+    
+    module := rec( );
+    
+    ring := HomalgRing( matrix );
+    
+    if left = true then
+        type := TheTypeOfLeftPresentations;
+        presentation_category := LeftPresentations( ring );
+    else
+        type := TheTypeOfRightPresentations;
+        presentation_category := RightPresentations( ring );
+    fi;
+    
+    ObjectifyWithAttributes( module, type,
+                             UnderlyingMatrix, matrix,
+                             UnderlyingHomalgRing, ring
+                           );
+    
+    Add( presentation_category, module );
+    
+    return module;
+    
+end );
+
+##
+InstallMethod( AsLeftPresentation,
+               [ IsHomalgMatrix ],
+               
+  matrix -> AsLeftOrRightPresentation( matrix, true ) );
+
+##
+InstallMethod( AsRightPresentation,
+               [ IsHomalgMatrix ],
+               
+  matrix -> AsLeftOrRightPresentation( matrix, false ) );
+
+##
+InstallMethod( FreeLeftPresentation,
+               [ IsInt, IsHomalgRing ],
+               
+  function( rank, homalg_ring )
+    
+    if rank < 0 then
+      
+      Error( "rank must be a non-negative integer" );
+      
+    fi;
+    
+    return AsLeftPresentation( HomalgZeroMatrix( 0, rank, homalg_ring ) );
+    
+end );
+
+##
+InstallMethod( FreeRightPresentation,
+               [ IsInt, IsHomalgRing ],
+               
+  function( rank, homalg_ring )
+    
+    if rank < 0 then
+      
+      Error( "rank must be a non-negative integer" );
+      
+    fi;
+    
+    return AsRightPresentation( HomalgZeroMatrix( rank, 0, homalg_ring ) );
+    
+end );
+
+##############################################
+##
+## Non categorical methods
+##
+##############################################
+
+##
+InstallMethodWithCacheFromObject( INTERNAL_HOM_EMBEDDING_IN_TENSOR_PRODUCT_LEFT,
+                                  [ IsLeftOrRightPresentation, IsLeftOrRightPresentation ],
+                                  
+  function( object_1, object_2 )
+    local underlying_matrix_1, transposed_underlying_matrix_1, identity_matrix_2, differential_matrix, homalg_ring,
+          free_module_source, free_module_range, differential;
+    
+    underlying_matrix_1 := UnderlyingMatrix( object_1 );
+    
+    transposed_underlying_matrix_1 := Involution( underlying_matrix_1 );
+    
+    identity_matrix_2 := UnderlyingMatrix( IdentityMorphism( object_2 ) );
+    
+    differential_matrix := KroneckerMat( transposed_underlying_matrix_1, identity_matrix_2 );
+    
+    homalg_ring := UnderlyingHomalgRing( object_1 );
+    
+    free_module_source := FreeLeftPresentation( NrColumns( underlying_matrix_1 ), homalg_ring );
+    
+    free_module_range := FreeLeftPresentation( NrRows( underlying_matrix_1 ), homalg_ring );
+    
+    differential :=  PresentationMorphism( TensorProductOnObjects( free_module_source, object_2 ),
+                                           differential_matrix,
+                                           TensorProductOnObjects( free_module_range, object_2 )
+                                         );
+    
+    return KernelEmbedding( differential );
+    
+end );
+
+##
+InstallMethodWithCacheFromObject( INTERNAL_HOM_EMBEDDING_IN_TENSOR_PRODUCT_RIGHT,
+                                  [ IsLeftOrRightPresentation, IsLeftOrRightPresentation ],
+                                  
+  function( object_1, object_2 )
+    local underlying_matrix_1, transposed_underlying_matrix_1, identity_matrix_2, differential_matrix, homalg_ring,
+          free_module_source, free_module_range, differential;
+    
+    underlying_matrix_1 := UnderlyingMatrix( object_1 );
+    
+    transposed_underlying_matrix_1 := Involution( underlying_matrix_1 );
+    
+    identity_matrix_2 := UnderlyingMatrix( IdentityMorphism( object_2 ) );
+    
+    differential_matrix := KroneckerMat( transposed_underlying_matrix_1, identity_matrix_2 );
+    
+    homalg_ring := UnderlyingHomalgRing( object_1 );
+    
+    free_module_source := FreeRightPresentation( NrRows( underlying_matrix_1 ), homalg_ring );
+    
+    free_module_range := FreeRightPresentation( NrColumns( underlying_matrix_1 ), homalg_ring );
+    
+    differential :=  PresentationMorphism( TensorProductOnObjects( free_module_source, object_2 ),
+                                           differential_matrix,
+                                           TensorProductOnObjects( free_module_range, object_2 )
+                                         );
+    
+    return KernelEmbedding( differential );
+    
+end );
+
+
+####################################
+##
+## View
+##
+####################################
+
+##
+InstallMethod( Display,
+               [ IsLeftOrRightPresentation ],
+               # FIXME: Fix the rank in GenericView and delete this afterwards
+               9999,
+               
+  function( object )
+    
+    Display( UnderlyingMatrix( object ) );
+    
+    Print( "\n" );
+    
+    Print( StringMutable( object ) );
+    
+end );

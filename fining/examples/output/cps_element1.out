@@ -1,0 +1,24 @@
+gap> 
+gap> #constructing an element of a polar space
+gap> ps := SymplecticSpace(3,4);
+W(3, 4)
+gap> v := [1,0,1,0]*Z(4)^0;
+[ Z(2)^0, 0*Z(2), Z(2)^0, 0*Z(2) ]
+gap> p := VectorSpaceToElement(ps,v);
+<a point in W(3, 4)>
+gap> mat := [[1,1,0,1],[0,0,1,0]]*Z(4)^0;
+[ [ Z(2)^0, Z(2)^0, 0*Z(2), Z(2)^0 ], [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ] ]
+gap> line := VectorSpaceToElement(ps,mat);
+Error, <x> does not generate an element of <geom> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 12 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> mat := [[1,1,0,0],[0,0,1,0]]*Z(4)^0;
+[ [ Z(2)^0, Z(2)^0, 0*Z(2), 0*Z(2) ], [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ] ]
+gap> line := VectorSpaceToElement(ps,mat);
+<a line in W(3, 4)>
+gap> p := VectorSpaceToElement(ps,[0,0,0,0]*Z(4)^0);
+< empty subspace >
+gap> quit;

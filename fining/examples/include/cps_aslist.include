@@ -1,0 +1,4 @@
+gap&gt; ps := HyperbolicQuadric(5,3);
+Q+(5, 3)
+gap&gt; lines := AsList(Lines(ps));
+&lt;closed orbit, 520 points&gt;

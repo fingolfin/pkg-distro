@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Examples">
+<Heading>Examples</Heading>
+
+<Section Label="Chapter_Examples_Section_Generators">
+<Heading>Generators</Heading>
+
+<Example><![CDATA[
+gap> C := NmzCone(["integral_closure",[[2,1],[1,3]]]);
+<a Normaliz cone>
+gap> NmzHasConeProperty(C,"HilbertBasis");
+false
+gap> NmzHasConeProperty(C,"SupportHyperplanes");
+false
+gap> NmzConeProperty(C,"HilbertBasis");
+[ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ] ]
+gap> NmzHasConeProperty(C,"SupportHyperplanes");
+true
+gap> NmzConeProperty(C,"SupportHyperplanes");
+[ [ -1, 2 ], [ 3, -1 ] ]
+]]></Example>
+
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_Section_System_of_equations">
+<Heading>System of equations</Heading>
+
+<Example><![CDATA[
+gap> D := NmzCone(["equations",[[1,2,-3]], "grading",[[0,-1,3]]]);
+<a Normaliz cone>
+gap> NmzCompute(D,["DualMode","HilbertSeries"]);
+true
+gap> NmzHilbertBasis(D);
+[ [ 1, 1, 1 ], [ 0, 3, 2 ], [ 3, 0, 1 ] ]
+gap> NmzHilbertSeries(D);
+[ t^2-t+1, [ [ 1, 1 ], [ 3, 1 ] ] ]
+gap> NmzHasConeProperty(D,"SupportHyperplanes");
+true
+gap> NmzSupportHyperplanes(D);
+[ [ 1, 0, 0 ], [ 1, 3, -3 ] ]
+gap> NmzEquations(D);
+[ [ 1, 2, -3 ] ]
+]]></Example>
+
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_Section_System_of_inhomogeneous_equations">
+<Heading>System of inhomogeneous equations</Heading>
+
+<Example><![CDATA[
+gap> P := NmzCone(["inhom_equations",[[1,2,-3,1]], "grading", [[1,1,1]]]);
+<a Normaliz cone>
+gap> NmzIsInhomogeneous(C);
+false
+gap> NmzIsInhomogeneous(P);
+true
+gap> NmzHilbertBasis(P);
+[ [ 1, 1, 1, 0 ], [ 3, 0, 1, 0 ], [ 0, 3, 2, 0 ] ]
+gap> NmzModuleGenerators(P);
+[ [ 0, 1, 1, 1 ], [ 2, 0, 1, 1 ] ]
+]]></Example>
+
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_Section_Combined_input">
+<Heading>Combined input</Heading>
+
+ Normaliz also allows the combination of different kinds of input, e.g.
+ multiple constraint types, or additional data like a grading.
+ Suppose that you have a 3 by 3 <Q>square</Q> of nonnegative integers such that
+ the 3 numbers in all rows, all columns, and both diagonals sum to the same
+ constant <M>M</M>. Sometimes such squares are called magic and <M>M</M> is the
+ magic constant. This leads to a linear system of equations. The magic constant
+ is a natural choice for the grading. Additionally we force here the 4 corner
+ to have even value by adding congruences.
+<Example><![CDATA[
+gap> Magic3x3even := NmzCone(["equations",
+> [ [1, 1, 1,  -1, -1, -1,   0,  0,  0],
+>   [1, 1, 1,   0,  0,  0,  -1, -1, -1],
+>   [0, 1, 1,  -1,  0,  0,  -1,  0,  0],
+>   [1, 0, 1,   0, -1,  0,   0, -1,  0],
+>   [1, 1, 0,   0,  0, -1,   0,  0, -1],
+>   [0, 1, 1,   0, -1,  0,   0,  0, -1],
+>   [1, 1, 0,   0, -1,  0,  -1,  0,  0] ],
+> "congruences",
+> [ [1, 0, 0,   0, 0, 0,   0, 0, 0,  2],
+>   [0, 0, 1,   0, 0, 0,   0, 0, 0,  2],
+>   [0, 0, 0,   0, 0, 0,   1, 0, 0,  2],
+>   [0, 0, 0,   0, 0, 0,   0, 0, 1,  2] ],
+> "grading",
+> [ [1, 1, 1,   0, 0, 0,   0, 0, 0] ] ] );
+<a Normaliz cone>
+gap> NmzHilbertBasis(Magic3x3even);
+[ [ 0, 4, 2, 4, 2, 0, 2, 0, 4 ], [ 2, 0, 4, 4, 2, 0, 0, 4, 2 ],
+  [ 2, 2, 2, 2, 2, 2, 2, 2, 2 ], [ 2, 4, 0, 0, 2, 4, 4, 0, 2 ],
+  [ 4, 0, 2, 0, 2, 4, 2, 4, 0 ], [ 2, 3, 4, 5, 3, 1, 2, 3, 4 ],
+  [ 2, 5, 2, 3, 3, 3, 4, 1, 4 ], [ 4, 1, 4, 3, 3, 3, 2, 5, 2 ],
+  [ 4, 3, 2, 1, 3, 5, 4, 3, 2 ] ]
+gap> NmzHilbertSeries(Magic3x3even);
+[ t^3+3*t^2-t+1, [ [ 1, 1 ], [ 2, 2 ] ] ]
+gap> NmzHilbertQuasiPolynomial(Magic3x3even);
+[ 1/2*t^2+t+1, 1/2*t^2-1/2 ]
+]]></Example>
+
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_Section_Using_the_dual_mode">
+<Heading>Using the dual mode</Heading>
+
+ For solving systems of equations and inequalities it is often faster to use
+ the dual Normaliz algorithm. We demonstrate how to use it with an
+ inhomogeneous system of equations and inequalities.
+ The input consists of a system of 8 inhomogeneous equations in R^3. The first
+ row of the matrix M encodes the inequality <M>8x + 8y + 8z + 7 \geq 0</M>.
+ Additionally we say that <M>x, y, z</M> should be non-negative by giving the
+ sign vector and use the total degree.
+<Example><![CDATA[
+gap> M := [
+>  [ 8,  8,  8,  7 ],
+>  [ 0,  4,  0,  1 ],
+>  [ 0,  1,  0,  7 ],
+>  [ 0, -2,  0,  7 ],
+>  [ 0, -2,  0,  1 ],
+>  [ 8, 48,  8, 17 ],
+>  [ 1,  6,  1, 34 ],
+>  [ 2,-12, -2, 37 ],
+>  [ 4,-24, -4, 14 ]
+> ];
+[ [ 8, 8, 8, 7 ], [ 0, 4, 0, 1 ], [ 0, 1, 0, 7 ], [ 0, -2, 0, 7 ],
+  [ 0, -2, 0, 1 ], [ 8, 48, 8, 17 ], [ 1, 6, 1, 34 ],
+  [ 2, -12, -2, 37 ], [ 4, -24, -4, 14 ] ]
+gap> D := NmzCone(["inhom_inequalities", M,
+>               "signs", [[1,1,1]],
+>               "grading", [[1,1,1]]]);
+<a Normaliz cone>
+gap> NmzCompute(D,["DualMode","HilbertBasis","ModuleGenerators"]);
+true
+gap> NmzHilbertBasis(D);
+[ [ 1, 0, 0, 0 ], [ 1, 0, 1, 0 ] ]
+gap> NmzModuleGenerators(D);
+[ [ 0, 0, 0, 1 ], [ 0, 0, 1, 1 ], [ 0, 0, 2, 1 ], [ 0, 0, 3, 1 ] ]
+]]></Example>
+
+
+
+ As result we get the Hilbert basis of the cone of the solutions to the
+ homogeneous system and the module generators which are the base
+ solutions to the inhomogeneous system.
+</Section>
+
+
+</Chapter>
+

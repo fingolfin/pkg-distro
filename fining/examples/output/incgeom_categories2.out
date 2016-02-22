@@ -1,0 +1,17 @@
+gap> 
+gap> #categories for individual elements of incidence structures
+gap> Random(Lines(SplitCayleyHexagon(3)));
+#I  for Split Cayley Hexagon
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+<a line in H(3)>
+gap> CategoriesOfObject(last);
+[ "IsElementOfIncidenceStructure", "IsElementOfIncidenceGeometry", 
+  "IsElementOfLieGeometry", "IsSubspaceOfProjectiveSpace", 
+  "IsSubspaceOfClassicalPolarSpace", "IsElementOfGeneralisedPolygon" ]
+gap> Random(Solids(AffineSpace(7,17)));
+<a solid in AG(7, 17)>
+gap> CategoriesOfObject(last);
+[ "IsElementOfIncidenceStructure", "IsElementOfIncidenceGeometry", 
+  "IsSubspaceOfAffineSpace" ]
+gap> quit;

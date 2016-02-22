@@ -1,0 +1,11 @@
+gap> 
+gap> #points of an incidence geometry.
+gap> Points(HermitianVariety(2,64));
+<points of Hermitian Variety in ProjectiveSpace(2, 64)>
+gap> Lines(EllipticQuadric(5,2));
+<lines of Q-(5, 2)>
+gap> Planes(SymplecticSpace(7,3));
+<planes of W(7, 3)>
+gap> Lines(TwistedTrialityHexagon(2^3));
+<lines of T(8, 2)>
+gap> quit;

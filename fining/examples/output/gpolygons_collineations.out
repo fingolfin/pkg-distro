@@ -1,0 +1,57 @@
+gap> 
+gap> # gpolygons_collineations.g
+gap> q := 4;
+4
+gap> conic := ParabolicQuadric(2,q);
+Q(2, 4)
+gap> nucleus := NucleusOfParabolicQuadric(conic);
+<a point in ProjectiveSpace(2, 4)>
+gap> hyperoval := Union(List(Points(conic)),[nucleus]);
+[ <a point in ProjectiveSpace(2, 4)>, <a point in Q(2, 4)>, 
+  <a point in Q(2, 4)>, <a point in Q(2, 4)>, <a point in Q(2, 4)>, 
+  <a point in Q(2, 4)> ]
+gap> pg := PG(3,q);
+ProjectiveSpace(3, 4)
+gap> hyp :=  HyperplaneByDualCoordinates(pg,[1,0,0,0]*Z(q)^0);
+<a plane in ProjectiveSpace(3, 4)>
+gap> em := NaturalEmbeddingBySubspace(PG(2,q),pg,hyp);
+<geometry morphism from <All elements of ProjectiveSpace(2, 
+4)> to <All elements of ProjectiveSpace(3, 4)>>
+gap> O := List(hyperoval,x->x^em);
+[ <a point in ProjectiveSpace(3, 4)>, <a point in ProjectiveSpace(3, 4)>, 
+  <a point in ProjectiveSpace(3, 4)>, <a point in ProjectiveSpace(3, 4)>, 
+  <a point in ProjectiveSpace(3, 4)>, <a point in ProjectiveSpace(3, 4)> ]
+gap> points := Set(Filtered(Points(pg),x->not x in hyp));;
+gap> lines := Union(List(O,x->Filtered(Lines(x),y->not y in hyp)));;
+gap> inc := \*;
+<Operation "*">
+gap> gp := GeneralisedPolygonByElements(points,lines,inc);
+<generalised quadrangle of order [ 3, 5 ]>
+gap> coll := CollineationGroup(gp);
+<permutation group of size 138240 with 8 generators>
+gap> act := CollineationAction(coll);
+function( el, g ) ... end
+gap> g := Random(coll);
+(1,37,45,63,27,19)(2,53,13,64,11,51)(3,33,38,61,31,28)(4,49,6,62,15,60)(5,46,
+47,59,20,17)(7,42,40,57,24,26)(8,58)(9,55)(10,39,41,56,25,23)(12,35,34,54,29,
+32)(14,48,43,52,18,21)(16,44,36,50,22,30)(65,132,90,157,89,105)(66,68,131,143,
+119,103)(67,135,76,123,130,106)(69,133,112,100,81,107)(70,134,150,88,155,
+104)(71,99,79,144,93,149)(72,153,95,120,73,122)(74,125,115,128,140,87)(75,121,
+136,117,113,91)(77,124,98,83,147,146)(78,145,84,118,85,142)(80,92,137,141,108,
+97)(82,86,116,111,138,101)(94,127,126,102,109,96)(110,152,151,154,156,
+129)(114,160,139,158,148,159)
+gap> l := Random(Lines(gp));
+<a line in <generalised quadrangle of order [ 3, 5 ]>>
+gap> act(l,g);
+<a line in <generalised quadrangle of order [ 3, 5 ]>>
+gap> p := Random(Points(gp));
+<a point in <generalised quadrangle of order [ 3, 5 ]>>
+gap> act(p,g);
+<a point in <generalised quadrangle of order [ 3, 5 ]>>
+gap> stab := Stabilizer(coll,p,act);
+<permutation group of size 2160 with 3 generators>
+gap> List(Orbits(stab,List(Points(gp)),act),x->Length(x));
+[ 45, 18, 1 ]
+gap> List(Orbits(stab,List(Lines(gp)),act),x->Length(x));
+[ 90, 6 ]
+gap> quit;

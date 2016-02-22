@@ -1,0 +1,38 @@
+gap> 
+gap> # objects <-> elements in generic gps.
+gap> mat := [ [ 1, 1, 0, 0, 0, 1, 0 ], [ 1, 0, 0, 1, 1, 0, 0 ],
+>          [ 1, 0, 1, 0, 0, 0, 1 ], [ 0, 1, 1, 1, 0, 0, 0 ],
+>          [ 0, 1, 0, 0, 1, 0, 1 ], [ 0, 0, 0, 1, 0, 1, 1 ],
+>          [ 0, 0, 1, 0, 1, 1, 0 ] ];
+[ [ 1, 1, 0, 0, 0, 1, 0 ], [ 1, 0, 0, 1, 1, 0, 0 ], [ 1, 0, 1, 0, 0, 0, 1 ], 
+  [ 0, 1, 1, 1, 0, 0, 0 ], [ 0, 1, 0, 0, 1, 0, 1 ], [ 0, 0, 0, 1, 0, 1, 1 ], 
+  [ 0, 0, 1, 0, 1, 1, 0 ] ]
+gap> gp := GeneralisedPolygonByIncidenceMatrix(mat);
+<projective plane order 2>
+gap> p := Random(Points(gp));
+<a point in <projective plane order 2>>
+gap> UnderlyingObject(p);
+7
+gap> l := Random(Lines(gp));
+<a line in <projective plane order 2>>
+gap> UnderlyingObject(l);
+[ 4, 6, 7 ]
+gap> ObjectToElement(gp,1,4);
+<a point in <projective plane order 2>>
+gap> ObjectToElement(gp,2,5);
+Error, <obj> does not represent a line of <gp> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 18 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> ObjectToElement(gp,2,[1,2,3]);
+Error, <obj> does not represent a line of <gp> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 18 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> ObjectToElement(gp,[1,2,6]);
+<a line in <projective plane order 2>>
+gap> quit;

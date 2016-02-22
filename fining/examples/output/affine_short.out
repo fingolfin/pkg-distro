@@ -1,0 +1,19 @@
+gap> 
+gap> #short names for elements of incidence structures for affine spaces
+gap> as := AG(5,4);
+AG(5, 4)
+gap> Points(as);
+<points of AG(5, 4)>
+gap> Lines(as);
+<lines of AG(5, 4)>
+gap> Planes(as);
+<planes of AG(5, 4)>
+gap> Solids(as);
+<solids of AG(5, 4)>
+gap> Hyperplanes(as);
+<affine. subspaces of dim. 4 of AG(5, 4)>
+gap> as := AG(2,8);
+AG(2, 8)
+gap> Hyperplanes(as);
+<lines of AG(2, 8)>
+gap> quit;

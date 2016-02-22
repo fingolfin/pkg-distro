@@ -1,0 +1,536 @@
+<!-- 
+
+  diagramgeometries.xml    FinInG package documentation
+                                                                   John Bamberg
+                                                                   Anton Betten
+                                                                   Jan De Beule
+                                                                  Philippe Cara
+                                                                 Michel Lavrauw
+																Max Neunhoeffer
+
+  Copyright (C) 2015,	Colorado State University
+						Università degli Studi di Padova
+						Universiteit Gent
+						University of St. Andrews
+						University of Western Australia
+                        Vrije Universiteit Brussel
+
+This is the chapter of the documentation describing diagram geometries groups.
+
+-->
+
+<Chapter Label="diagramgeometries">
+<Heading>Coset Geometries and Diagrams</Heading>
+
+This part of <Package>FinInG</Package> depends
+on <Package>GRAPE</Package>. 
+
+<Section>
+<Heading>Coset Geometries</Heading>
+
+Suppose we have an <E>incidence
+geometry</E> <Alt Not="HTML"><M>\Gamma</M></Alt><Alt Only="HTML">&#915;</Alt>
+(as defined in chapter <Ref Chap="incidencegeometry"/>), together with
+a group <M>G</M> of automorphisms of <Alt Not="HTML"><M>\Gamma</M></Alt><Alt Only="HTML">&#915;</Alt> such that <M>G</M> is
+transitive on the set of <E>chambers</E> of <M>\Gamma</M> (also
+defined in chapter <Ref Chap="incidencegeometry"/>). This implies
+that <M>G</M> is also transitive on the set of all elements of any
+chosen type <M>i</M>. If we consider a chamber <Alt Not="HTML"><M>\{c_{1},c_{2},... ,c_{n}\}</M></Alt>
+<Alt Only="HTML">c&lt;sub>1&lt;/sub>,c&lt;sub>2&lt;/sub>,...,c&lt;sub>n&lt;/sub></Alt>
+such that <Alt Not="HTML"><M>c_{i}</M></Alt><Alt Only="HTML">c&lt;sub>i&lt;/sub></Alt> is of type <M>i</M>, 
+we can look at the stabilizer <Alt Not="HTML"><M>G_{i}</M></Alt><Alt Only="HTML">G&lt;sub>i&lt;/sub></Alt>
+of <Alt Not="HTML"><M>c_{i}</M></Alt><Alt Only="HTML">c&lt;sub>i&lt;/sub></Alt> in <M>G</M>. The
+subgroups  <Alt Not="HTML"><M>G_{i}</M></Alt><Alt Only="HTML">G&lt;sub>i&lt;/sub></Alt> are 
+called <E>parabolic subgroups</E> of <Alt Not="HTML"><M>\Gamma</M></Alt><Alt Only="HTML">&#915;</Alt>. For a
+type <M>i</M>, transitivity of <M>G</M> on the elements of
+type <M>i</M> gives a correspondence between the cosets of the
+stabilizer <Alt Not="HTML"><M>G_{i}</M></Alt><Alt Only="HTML">G&lt;sub>i&lt;/sub></Alt> and the elements of type <M>i</M>
+in <Alt Not="HTML"><M>\Gamma</M></Alt><Alt Only="HTML">&#915;</Alt>. Two elements of 
+<Alt Not="HTML"><M>\Gamma</M></Alt><Alt Only="HTML">&#915;</Alt> are incident if and only
+if the corresponding cosets have a nonempty intersection.<P/>
+
+We now use the above observation to define an incidence structure from
+a group <M>G</M> together with a set of
+subgroups <Alt Not="HTML"><M>\{G_{1},G_{2},...,G_{n}\}</M></Alt><Alt Only="HTML">G&lt;sub>1&lt;/sub>,G&lt;sub>2&lt;/sub>,...,G&lt;sub>n&lt;/sub></Alt>.
+The type set is <Alt Not="HTML"><M>\{1,2,...,n\}</M></Alt><Alt Only="HTML">&#123;1,2,...,n&#125;</Alt>. 
+By definition the elements of type <M>i</M> are the (right) cosets of the subgroup 
+<Alt Not="HTML"><M>G_{i}</M></Alt><Alt Only="HTML">G&lt;sub>i&lt;/sub></Alt>. Two
+cosets are incident if and only if their intersection is not
+empty. This is an incidence structure which is not necessarily a
+geometry (see Chapter <Ref Chap="incidencegeometry"/> for definitions). In order to check whether a coset incidence structure is indeed a
+geometry you can use the command <F>IsFlagTransitiveGeometry</F> which (in case it returns <F>true</F>) guarantees that the argument is a geometry.
+
+<ManSection>
+<Filt Name="IsCosetGeometry" Type="Category"/>
+<Description>
+This category is a subcategory of <C>IsIncidenceGeometry</C>, and contains all coset geometries.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="CosetGeometry" Arg="G,l"/>
+<Returns>the coset incidence structure defined by the list <A>l</A> of subgroups of the group <A>G</A>.</Returns>
+<Description> 
+<A>G</A> must be a group and <A>l</A> is a list of subgroups
+of <A>G</A>. The subgroups in <A>l</A> will be the <E>parabolic subgroups</E>
+of the <E>coset incidence structure</E> whose rank equals the length
+of <A>l</A>. 
+<Example>
+<#Include SYSTEM "../examples/include/diagram_cosetgeom.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsIncident" Arg="ele1,ele2"/>
+<Returns>true if and only if <A>ele1</A> and <A>ele2</A> are incident</Returns>
+<Description> 
+<A>ele1</A> and <A>ele2</A> must be two elements in the same coset geometry.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="ParabolicSubgroups" Arg="cg"/>
+<Returns>the list of parabolic subgroups defining the coset geometry <A>cg</A> </Returns>
+<Description> 
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="AmbientGroup" Arg="cg"/>
+<Returns>the group used to define the coset geometry <A>cg</A></Returns>
+<Description> 
+<A>cg</A> must be a coset geometry.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Borelsubgroup" Arg="cg"/>
+<Returns>the Borel subgroup of de geometry <A>cg</A></Returns>
+<Description> 
+The Borel subgroup is equal to the stabilizer of a chamber. It corresponds to the intersection of all parabolic subgroups.
+</Description>
+
+</ManSection>
+<ManSection>
+<Oper Name="RandomElement" Arg="cg"/>
+<Returns>a random element of <A>cg</A></Returns>
+<Description> 
+<A>cg</A> must be a coset geometry.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="RandomFlag" Arg="cg"/>
+<Returns>a random flag of <A>cg</A></Returns>
+<Description> 
+<A>cg</A> must be a coset geometry.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="RandomChamber" Arg="cg"/>
+<Returns>a random chamber of <A>cg</A></Returns>
+<Description> 
+<A>cg</A> must be a coset geometry.
+</Description>
+</ManSection>
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_random.include"> 
+</Example>
+
+<ManSection>
+<Oper Name="IsFlagTransitiveGeometry" Arg="cg"/>
+<Returns>true if and only if the group <A>G</A> defining <A>cg</A>
+  acts flag-transitively.</Returns>  
+<Description> 
+<A>cg</A> must be a coset geometry.<P/>
+
+The group <M>G</M> used to define <A>cg</A> acts naturally on the
+elements of <A>cg</A> by right translation: a coset <M>G_ig</M> is
+mapped to <M>G_i(gx)</M> by an element <M>x\in G</M>.
+
+This test can be quite time consuming. You can bind the
+attribute <C>IsFlagTransitiveGeometry</C> if you are sure the coset geometry is
+indeed flag-transitive.
+</Description>
+</ManSection>
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_notFT.include"> 
+</Example>
+
+<ManSection>
+<Oper Name="OnCosetGeometryElement" Arg="ele,g"/>
+<Returns>the image of the <F>CosetGeometryElement</F> <A>ele</A> under the action of <A>g</A></Returns>
+<Description> 
+The group element <A>g</A> must belong to <F>AmbientGroup(AmbientGeometry(ele))</F>. 
+</Description>
+</ManSection>
+
+<ManSection>
+    <Oper Name="\^" Arg="ele,g"/>
+ <Returns>an element of a coset geometry</Returns>
+<Description>
+This is an operation which returns the image of <A>ele</A>, an element of a coset incidence structure, under <A>g</A>, an element of <F>AmbientGroup(AmbientGeometry(ele))</F>.
+ </Description>
+</ManSection>
+
+<ManSection>
+    <Oper Name="\^" Arg="flg,g"/>
+ <Returns>a flag of a coset geometry</Returns>
+<Description>
+This is an operation which returns the image of <A>flg</A>, a flag of a coset incidence structure, under <A>g</A>, an element of <F>AmbientGroup(AmbientGeometry(flg))</F>.
+ </Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsFirmGeometry" Arg="cg"/>
+<Returns>true if and only if <A>cg</A> is firm.</Returns>
+<Description> 
+An incidence geometry is said to be <E>firm</E> if every nonmaximal flag is contained in at least two chambers. <A>cg</A> must be a coset geometry. 
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsThickGeometry" Arg="cg"/>
+<Returns>true if and only if <A>cg</A> is thick.</Returns>
+<Description> 
+An incidence geometry is said to be <E>thick</E> if every nonmaximal flag is contained in at least three chambers. <A>cg</A> must be a coset geometry. 
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsThinGeometry" Arg="cg"/>
+<Returns>true if and only if <A>cg</A> is thin.</Returns>
+<Description> 
+An incidence geometry is said to be <E>thin</E> if every rank one residue contains exactly 2 elements. This means that every comaximal flag is contained in exactly 2 chambers. <A>cg</A> must be a coset geometry. 
+</Description>
+</ManSection>
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_firmthinthick.include"> 
+</Example>
+
+<ManSection>
+<Oper Name="IsConnected" Arg="cg"/>
+<Returns>true if and only if <A>cg</A> is connected.</Returns>
+<Description> 
+A geometry is <E>connected</E> if and only if its incidence graph is connected. <A>cg</A> must be a coset geometry.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsResiduallyConnected" Arg="cg"/>
+<Returns>true if and only if <A>cg</A> is residually connected.</Returns>
+<Description> 
+A geometry is <E>residually connected</E> if the incidence graphs of all its
+residues of rank at least 2 are connected. <A>cg</A> must be a coset
+geometry.<P/> 
+
+This test is quite time consuming. You can bind the
+attribute <C>IsResiduallyConnected</C> if you are sure the coset geometry is
+indeed residually connected.
+</Description>
+</ManSection>
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_connectedness.include"> 
+</Example>
+
+<ManSection>
+<Oper Name="StandardFlagOfCosetGeometry" Arg="cg"/>
+<Returns>standard chamber of <A>cg</A></Returns>
+<Description> 
+The standard chamber just consists of all parabolic subgroups
+(i.e. the trivial cosets of these subgroups). The object returned is a FlagOfIncidenceStructure. <A>cg</A> must be a
+coset geometry. 
+<!--Maybe this function should be called StandardChamberOfCosetGeometry.-->
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="FlagToStandardFlag" Arg="cg,fl"/>
+<Returns>element of the defining group of <A>cg</A> which maps <A>fl</A> to the standard chamber of <A>cg</A>.</Returns>
+<Description> 
+<A>fl</A> must be a chamber given as a list of cosets of the parabolic subgroups of <A>cg</A>.
+</Description>
+</ManSection>
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_flagmapping.include"> 
+</Example>
+
+
+<ManSection>
+<Oper Name="CanonicalResidueOfFlag" Arg="cg,fl"/>
+<Returns>coset geometry isomorphic to residue of <A>fl</A> in <A>cg</A></Returns>
+<Description> 
+<A>cg</A> must be a coset incidence structure and <A>fl</A> must be a flag in
+that incidence structure. The returned coset incidence structure for a
+flag <M>\{G_{i_1}g_{i_1},G_{i_2}g_{i_2},\ldots , G_{i_k}g_{i_k}\}</M>
+is the coset incidence structure defined by the
+group <M>H:=\cap_{j=1}^{k}G_{i_j}</M> and parabolic
+subgroups <M>G_{j}\cap H</M> for <M>j</M> not in the type
+set <M>\{i_1,i_2,\ldots ,i_k\}</M> of <A>fl</A>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="ResidueOfFlag" Arg="fl"/>
+<Returns>the residue of <A>fl</A> in <F>AmbientGeometry(fl)</F>.</Returns>
+<Description> 
+This is a <F>CosetGeometry</F> method for the <F>ResidueOfFlag</F> operation given in Chapter <Ref Chap="incidencegeometry"/>. Note that the related operation <F>CanonicalResidueOfFlag</F> takes <E>two</E> arguments.
+</Description>
+</ManSection>
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_residues.include"> 
+</Example>
+
+<ManSection>
+<Oper Name="IncidenceGraph" Arg="cg"/>
+<Returns>incidence graph of <A>cg</A>.</Returns>
+<Description> 
+<A>cg</A> must be a coset geometry. The graph returned is
+a <Package>GRAPE</Package> object. All <Package>GRAPE</Package>
+functionality can now be used to analyse <A>cg</A> via its incidence graph.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Rk2GeoGonality" Arg="cg"/>
+<Returns>the gonality (i.e. half the girth) of the incidence graph of <A>cg</A>.</Returns>
+<Description> 
+<A>cg</A> must be a coset geometry of rank 2.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Rk2GeoDiameter" Arg="cg,type"/>
+<Returns>the point (or line) diameter.</Returns>
+<Description> 
+<A>cg</A> must be a coset geometry of rank 2. <A>type</A> must be
+either <C>1</C> or <C>2</C>. This function computes
+the point diameter of <A>cg</A> when <A>type</A> is <C>1</C> and the
+line diameter when <A>type</A> is <C>2</C>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="GeometryOfRank2Residue" Arg="resi"/>
+<Returns>the geometry of the <F>Rank2Residue</F> object <A>resi</A>.</Returns>
+<Description> 
+The rank 2 residues of a geometry are fundamental when dealing with diagrams. Therefore they 
+are kept in an attribute as (a list of) objects of type <F>Rank2Residue</F>. The present operation just extracts
+the residue as a coset geometry from such a <F>Rank2Residue</F> object.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Rank2Parameters" Arg="cg"/>
+<Returns>a list of length 3.</Returns>
+<Description> 
+<A>cg</A> must be a coset geometry of rank 2. This function computes
+the gonality, point and line diameter of <A>cg</A>. These appear as a
+list in the first entry of the returned list. The second entry
+contains a list of length 2 with the point order and the total number
+of points (i.e. elements of type 1) in the geometry. The last entry
+contains the line order and the number of lines (i.e. elements of type
+2).
+</Description>
+</ManSection>
+
+The following example illustrates <F>Rank2Parameters</F>. It uses <Package>AtlasRep</Package> to 
+fetch the second Janko group, also known as the Hall-Janko group. Beware that <Package>AtlasRep</Package> needs special write permissions on some systems. The constructed geometry has gonality 6 and both diameters equal to 8. It is known as the <E>Cohen-Tits near octagon</E>.
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_nearoctagon.include"> 
+</Example>
+</Section>
+<Section>
+<Heading>Automorphisms, Correlations and Isomorphisms</Heading>
+An <E>automorphism</E> of an incidence structure <Alt Not="HTML"><M>\Gamma</M></Alt><Alt Only="HTML">&#915;</Alt> is a permutation of the element set of <Alt Not="HTML"><M>\Gamma</M></Alt><Alt Only="HTML">&#915;</Alt> such that incidence is preserved and types are fixed (i.e. the type of the image of an element coincides with the type of that element). One way to compute the (full) automorphism group of <Alt Not="HTML"><M>\Gamma</M></Alt><Alt Only="HTML">&#915;</Alt> is to compute its incidence graph and then use the available <F>nauty</F> machinery to obtain the group. 
+
+<ManSection>
+<Oper Name="AutGroupIncidenceStructureWithNauty" Arg="cg"/>
+<Returns>permutation group isomorphic to the full automorphism group of <A>cg</A>.</Returns>
+<Description> 
+The group is computed with <F>nauty</F>, which is part of <Package>GRAPE</Package> but has to be compiled on your system before use. The group returned is a permutation group acting on the set <F>[1..Sum(TypesOfElementsOfIncidenceStructure(cg), t -> NrElementsOfIncidenceStructure(cg,t))]</F>, which is exactly the vertex set of <F>IncidenceGraph(cg)</F>. At the moment the action of the automorphism group on <F>cg</F> is not provided but it can be recovered from the knowledge that the vertex set of <F>IncidenceGraph(cg)</F> first contains all elements of type 1 in <F>cg</F>, then all elements of type 2, etc. or, better still, with the <Package>GRAPE</Package> command <F>VertexNames</F> (see example below).
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="CorGroupIncidenceStructureWithNauty" Arg="cg"/>
+<Returns>permutation group isomorphic to the full automorphism group of <A>cg</A>.</Returns>
+<Description> 
+The group is computed with <F>nauty</F>, which is part of <Package>GRAPE</Package> but has to be compiled on your system before use. The group returned is a permutation group acting on the set <F>[1..Sum(TypesOfElementsOfIncidenceStructure(cg), t -> NrElementsOfIncidenceStructure(cg,t))]</F>, which is exactly the vertex set of <F>IncidenceGraph(cg)</F>. At the moment the action of the automorphism group on <F>cg</F> is not provided but it can be recovered from the knowledge that the vertex set of <F>IncidenceGraph(cg)</F> first contains all elements of type 1 in <F>cg</F>, then all elements of type 2, etc. or with  the <Package>GRAPE</Package> command <F>VertexNames</F>.
+</Description>
+</ManSection>
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_autcor.include"> 
+</Example>
+
+<ManSection>
+<Oper Name="IsIsomorphicIncidenceStructureWithNauty" Arg="cg1, cg2"/>
+<Returns>true iff cg1 and cg2 are isomorphic.</Returns>
+<Description> 
+We use <F>nauty</F>, which is part of <Package>GRAPE</Package> but has to be compiled on your system before use. Isomorphism is tested (with <F>nauty</F>) after converting the coset geometries <A>cg1</A> and <A>cg2</A> to coloured graphs.
+</Description>
+</ManSection>
+
+
+<Example>
+<#Include SYSTEM "../examples/include/diagram_autiso.include"> 
+</Example>
+
+</Section>
+<Section>
+<Heading>Diagrams</Heading>
+
+The <E>diagram</E> of a flag-transitive incidence geometry is a
+schematic description of the structure of the geometry. It is based on
+the collection of rank 2 residues of the geometry.<P/>
+
+Technically, the diagram is added to a <F>CosetGeometry</F> object as a mutable attribute. Also the list of rank 2 residues 
+of the geometry is added as an attribute once these have been computed. This is done with the operations <F>Rank2Residues</F> 
+(to add the attribute) and <F>MakeRank2Residue</F> (to actually compute the resiudes). These operations are not for everyday use and hence remain undocumented.<P/> 
+
+Since the geometry is flag-transitive, all chambers are
+equivalent. Let's fix a chamber <Alt Not="HTML"><M>C=\{c_{1}, c_{2},\ldots,c_{n}\}</M></Alt>
+<Alt Only="HTML">C = &#123; c&lt;sub>1&lt;/sub>,c&lt;sub>2&lt;/sub>,...,c&lt;sub>n&lt;/sub>&#125;</Alt>,
+with <Alt Not="HTML"><M>c_{i}</M></Alt><Alt Only="HTML">c&lt;sub>i&lt;/sub></Alt> of type <M>i</M>. For each subset 
+<Alt Not="HTML"><M>\{i,j\}</M></Alt><Alt Only="HTML">&#123;i,j&#125;</Alt> of
+size two in <Alt Not="HTML"><M>I=\{1,2,\ldots,n\}</M></Alt><Alt Only="HTML">&#123;1,2,...n&#125;</Alt> we take the residue of the
+flag <Alt Not="HTML"><M>C\setminus \{c_{i},c_{j}\}</M></Alt>
+<Alt Only="HTML">C \ &#123; c&lt;sub>i&lt;/sub>, c&lt;sub>j&lt;/sub>&#125;</Alt>. Flag transitivity ensures
+that <E>all</E> residues of type <M>\{i,j\}</M> are
+isomorphic to each other. For each such residue, the structure is
+described by some parameters: the gonality and the point and line
+diameters. For each type <M>i</M>, we also define the <M>i</M>-order
+to be one less than the number of elements of type <M>i</M> in the residue of a(ny) flag of 
+type <M>I\setminus\{i\}</M>. All this information is depicted in
+a <E>diagram</E> which is bascically a labelled graph with vertex set <M>I</M>
+and edges whenever the point diamater, the line diameter and the
+gonality are all greater than <M>2</M>.
+
+<ManSection>
+<Oper Name="DiagramOfGeometry" Arg="Gamma"/>
+<Returns>the diagram of the geometry <A>Gamma</A></Returns>
+<Description> 
+<A>Gamma</A> must be a flag-transitive coset geometry.<P/> 
+
+The flag-transitivity is not tested by this operation because such a test can be
+time consuming. The command <C>IsFlagTransitiveGeometry</C> can be
+used to check flag-transitivity if needed.
+</Description>
+</ManSection>
+<ManSection>
+<Oper Name="GeometryOfDiagram" Arg="diag"/>
+<Returns>the geometry of which <A>diag</A> is the diagram</Returns>
+<Description> 
+<A>diag</A> must be a diagram object.
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="DrawDiagram" Arg="diag,filename"/>
+<Oper Name="DrawDiagram" Arg="diag,filename,vertexverbosity"/>
+<Oper Name="DrawDiagram" Arg="diag,filename,vertexverbosity,edgeverbosity"/>
+<Returns>does not return anything but writes a file <A>filename</A>.ps</Returns>
+<Description> 
+<A>diag</A> must be a diagram. Writes a file <A>filename</A>.ps in the
+current directory with a pictorial version of the diagram. This
+command uses the <Package>graphviz</Package> package which is
+available from http://www.graphviz.org. <P/>
+
+In case <Package>graphviz</Package> is not available on your system,
+you will get an friendly error message and a file <A>filename</A>.dot
+will be written. You can then compile this file later or ask a friend
+to help you.
+
+By default the diagram provides for each type <M>i</M> the <M>i</M>-order and the number of elements of type <M>i</M>. This behaviour can be changed by providing a <A>vertexverbosity</A> level. A value <A>2</A> results in no label under the vertices and a value <A>1</A> gives only the <M>i</M>-order. Any other potitive integer value yields the default behaviour. 
+
+The default labels for the edges of the diagram use the standard convention that a <M>[g,dp,dl]</M>-gon with all three parameters equal is labelled only with the number <M>g</M>. Putting <A>edgeverbosity</A> equal to <M>2</M> puts no labels at all. This yields the so called ``basic diagram'' of the geometry. With <A>edgeverbosity</A> equal to any integer greater than <M>2</M> all labels contain girth and both diameters.
+</Description>
+</ManSection>
+
+<Alt Only="LaTeX">\medskip</Alt>
+
+We illustrate the diagram feature with
+Neumaier's <Alt Not="HTML"><M>A_8</M></Alt><Alt Only="HTML">A&lt;sub>8&lt;/sub></Alt>-geometry. 
+
+The affine space of dimension 3 over the field with two elements is
+denoted by <M>AG(3,2)</M>. If we fix a plane <Alt Not="HTML"><M>\Pi</M></Alt><Alt Only="HTML">&#928;</Alt> in <M>PG(3,2)</M>, the
+structure induced on the 8 points not in <Alt Not="HTML"><M>\Pi</M></Alt><Alt Only="HTML">&#928;</Alt> by the lines and planes
+of <M>PG(3,2)</M> is isomorphic to <M>AG(3,2)</M>. Since every two points of
+<M>AG(3,2)</M> define a line, the collinearity graph of <M>AG(3,2)</M> (that is the graph
+whose vertices are the points of <M>AG(3,2)</M> and in which two vertices
+are adjacent whenever they are collinear) is the complete graph <Alt Not="HTML"><M>K_8</M></Alt><Alt Only="HTML">K&lt;sub>8&lt;/sub></Alt>
+on 8 vertices. Given two copies of the complete graph on 8 vertices,
+one can label the vertices of each of them with the numbers from 1 to
+8. These labelings are always equivalent when the two copies are seen as
+graphs, but not if they are understood as models of the affine
+space. The reason is that an affine space has parallel lines and to be
+affinely equivalent, the labelings must be such that edges which were
+parallel in the first labeling remain parallel in the second
+labeling. In fact there are 15 affinely nonequivalent ways to label the
+vertices of <Alt Not="HTML"><M>K_8</M></Alt><Alt Only="HTML">K&lt;sub>8&lt;/sub></Alt>. The affine space has 14 planes of 4 points and
+there are 70 subsets of 4 elements in the vertex set of <Alt Not="HTML"><M>K_8</M></Alt><Alt Only="HTML">K&lt;sub>8&lt;/sub></Alt>. Each
+time we label <Alt Not="HTML"><M>K_8</M></Alt><Alt Only="HTML">K&lt;sub>8&lt;/sub></Alt>, there are 14 of the 70 sets of 4 elements which
+become planes of <M>AG(3,2)</M>. The remaining 4-subsets will be called 
+<E>nonplanes</E> for that labeling.
+
+A well-known rank 4 geometry discovered by Neumaier
+in 1984 can be described using these concepts. This geometry is quite
+important since its residue of cotype <M>1</M> is the famous 
+<Alt Not="HTML"><M>A_7</M></Alt><Alt Only="HTML">A&lt;sub>7&lt;/sub></Alt>-geometry which is known to be the only flag-transitive locally
+classical <M>C_3</M>-geometry which is not a polar space (see Aschbacher1984
+for details).
+
+The Neumaier geometry can be constructed as follows. The elements of
+types 1 and 2 are the vertices and edges of the complete graph <Alt Not="HTML"><M>K_8</M></Alt><Alt Only="HTML">K&lt;sub>8&lt;/sub></Alt>,
+the elements of type 3 are the 4-subsets of the vertex set 
+of <Alt Not="HTML"><M>K_8</M></Alt><Alt Only="HTML">K&lt;sub>8&lt;/sub></Alt> and the elements of type 4 are the 15 nonequivalent labelings
+of <Alt Not="HTML"><M>K_8</M></Alt><Alt Only="HTML">K&lt;sub>8&lt;/sub></Alt>. Incidences are mostly the natural ones. A 4-subset
+is incident with a labeling of <Alt Not="HTML"><M>K_8</M></Alt><Alt Only="HTML">K&lt;sub>8&lt;/sub></Alt> if it is the set of points of a
+nonplane in the model of <M>AG(3,2)</M> defined by the labeling.
+<Example>
+<#Include SYSTEM "../examples/include/diagram_neumaier.include"> 
+</Example>
+The produced diagrams are included here: Neumaier's <Alt Not="HTML"><M>A_8</M></Alt><Alt Only="HTML">A&lt;sub>8&lt;/sub></Alt><P/>
+<Alt Only="HTML">&lt;img src="./graphics/neuma8.jpg">&lt;/img></Alt><Alt Only="LaTeX">\includegraphics{./graphics/neuma8.pdf}</Alt><P/><P/>
+The <Alt Not="HTML"><M>A_7</M></Alt><Alt Only="HTML">A&lt;sub>7&lt;/sub></Alt> geometry:<P/>
+<Alt Only="HTML">&lt;img src="./graphics/a7geo.jpg">&lt;/img></Alt><Alt Only="LaTeX">\includegraphics[scale=0.5]{./graphics/a7geo.pdf}</Alt><P/><P/>
+
+On a UNIX system we can start an external viewer (``gv'' or ghostview in this case) from within GAP with the <F>Exec</F> command.
+
+<ManSection>
+<Oper Name="DrawDiagramWithNeato" Arg="diag,filename"/>
+<Returns>does not return anything but writes a file <A>filename</A>.ps</Returns>
+<Description> 
+<A>diag</A> must be a diagram. Writes a file <A>filename</A>.ps in the
+current directory with a pictorial version of the diagram. <P/>
+
+This command uses a "spring tension" algorithm to draw the diagram <A>diag</A> with straight edges. For some diagrams this looks 
+better than the result of <F>DrawDiagram</F>. However this algorithm does not print the vertex labels.<P/>
+
+This
+command uses the <Package>graphviz</Package> package which is
+available from http://www.graphviz.org. 
+In case <Package>graphviz</Package> is not available on your system,
+you will get an friendly error message and a file <A>filename</A>.dot
+will be written. You can then compile this file later or ask a friend
+to help you.
+An <M>E_6</M> geometry for comparison: on the left hand side we have the
+output of DrawDiagram and on the right hand side we see the result of
+DrawDiagramWithNeato<P/>
+<Alt Only="HTML">&lt;img src="./graphics/E6.jpg">&lt;/img> &lt;img src="./graphics/E6bis.jpg">&lt;/img></Alt>
+<Alt Only="LaTeX">\includegraphics[scale=0.5]{./graphics/E6.jpg} \includegraphics[scale=0.5]{./graphics/E6bis.jpg}</Alt><P/><P/>
+</Description>
+</ManSection>
+
+</Section>
+</Chapter>

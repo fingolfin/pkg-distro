@@ -2,8 +2,29 @@
 ##
 ##  socle.gd                         CRISP                   Burkhard Höfling
 ##
-##  Copyright (C) 2001, 2002 Burkhard Höfling
+##  Copyright (C) 2001, 2002, 2015 Burkhard Höfling
 ##
+
+#############################################################################
+##
+#A  PSocleComponents (<G>) 
+##
+KeyDependentOperation ("PSocleComponents", IsGroup, IsPosInt, "prime");
+
+
+#############################################################################
+##
+#A  PSocleComponents (<G>) 
+##
+KeyDependentOperation ("PSocleSeries", IsGroup, IsPosInt, "prime");
+
+
+#############################################################################
+##
+#A  PSocle (<G>) 
+##
+KeyDependentOperation ("PSocle", IsGroup, IsPosInt, "prime");
+
 
 #############################################################################
 ##
@@ -29,16 +50,9 @@ DeclareSynonym ("AbelianSocleComponents", SolvableSocleComponents);
 
 #############################################################################
 ##
-#A  PSocleComponents (<G>) 
+#A  MinimalNormalPSubgroups (<G>)
 ##
-KeyDependentOperation ("PSocleComponents", IsGroup, IsPosInt, "prime");
-
-
-#############################################################################
-##
-#A  PSocle (<G>) 
-##
-KeyDependentOperation ("PSocle", IsGroup, IsPosInt, "prime");
+KeyDependentOperation ("MinimalNormalPSubgroups", IsGroup, IsPosInt, "prime");
 
 
 #############################################################################
@@ -47,18 +61,6 @@ KeyDependentOperation ("PSocle", IsGroup, IsPosInt, "prime");
 ##
 DeclareAttribute ("AbelianMinimalNormalSubgroups", IsGroup);
 
-
-#############################################################################
-##
-#F  SolvableSocleComponentsBySeries (<G>, <ser>) 
-##
-##  G must be a finite group and ser must be a G-composition series of ser[i],
-##  which must be solvable.
-##  SocleComponentsBySeries computes a set [L_1, \ldots, L_r] of minimal
-##  G-invariant subgroups of ser such that Soc(G) \cap ser[1] is the direct
-##  product of the L_i.
-##
-DeclareGlobalFunction ("SolvableSocleComponentsBySeries");
 
 
 #############################################################################

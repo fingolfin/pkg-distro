@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Technical_Details">
+<Heading>Technical Details</Heading>
+
+<Section Label="Chapter_Technical_Details_Section_The_Category_Cat">
+<Heading>The Category Cat</Heading>
+
+<ManSection>
+  <Attr Arg="functor" Name="ObjectCache" Label="for IsCapFunctor"/>
+ <Returns>IsCachingObject
+</Returns>
+ <Description>
+Retuns the caching object which stores the results of the functor <A>functor</A> applied to objects.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="functor" Name="MorphismCache" Label="for IsCapFunctor"/>
+ <Returns>IsCachingObject
+</Returns>
+ <Description>
+Retuns the caching object which stores the results of the functor <A>functor</A> applied to morphisms.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Technical_Details_Section_Install_Functions_for_IsWellDefined">
+<Heading>Install Functions for IsWellDefined</Heading>
+
+<ManSection>
+  <Func Arg="arg" Name="InstallMethodWithToDoForIsWellDefined" />
+ <Returns></Returns>
+ <Description>
+The IsWellDefined filter is a basic function of CAP.
+For every categorial construction the outcome is well defined if
+and only if every input object or morphism of the construction is well defined.
+So for every implementation of a categorial construction a ToDoListEntry needs
+to be defined which propagates well definedness from the input cells to the output.
+For not writing this construction in every method, this function can be used to install
+a method which then installs the correct ToDoListEntries for the output.
+The input syntax works exactly like InstallMethod, with one extension:
+The method creates an auxilliary function which computes the output from the function given to
+InstallMethodWithToDoForIsWellDefined, then installs the ToDoListEntries, and then installs the
+auxilliary function instead of the original one. This is normally done with InstallMethod.
+However, one can change this via the option InstallMethod, which can be set to any other function
+which is then used instead of InstallMethod. This is used for the caching functions.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3" Name="InstallSetWithToDoForIsWellDefined" Label="for IsObject, IsString, IsList"/>
+ <Returns></Returns>
+ <Description>
+For the caching one needs the possibility to install setters for functions with multiple arguments.
+This is a setter function which automatically adds ToDoListEntries for IsWellDefined like described above
+for the manually setted result of a method.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="DeclareAttributeWithToDoForIsWellDefined" />
+ <Returns></Returns>
+ <Description>
+Since attributes install their setters themselfes, one needs to declare attributes
+in another way to ensure ToDoListEntries for IsWellDefined in the setter of an attribute.
+This function works like DeclareAttribute, but installs ToDoListEntries for the setter of
+the attribute. Please note that implementations still need to be done with InstallMethodWithToDoForIsWellDefined.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="DeclareFamilyProperty" />
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="list, category" Name="CAP_INTERNAL_REPLACE_STRINGS_WITH_FILTERS" />
+ <Returns>Replaced list
+</Returns>
+ <Description>
+The function takes a list (of lists) of filters or strings, where the strings
+can be category, cell, object, morphism, or twocell. The strings are then recursively replaced
+by the corresponding filters of the category. The replaced list is returned.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="list, additional list" Name="CAP_INTERNAL_MERGE_FILTER_LISTS" />
+ <Returns>merged lists
+</Returns>
+ <Description>
+The first argument should be a dense list with filters, the second a sparse list containing filters
+not longer then the first one. The filters of the second list are then appended (via and) to the
+filters in the first list at the corresponding position, and the resulting list is returned.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="string, value" Name="CAP_INTERNAL_RETURN_OPTION_OR_DEFAULT" />
+ <Returns>option value
+</Returns>
+ <Description>
+Returns the value of the option with name string, or, if this value is fail,
+the object value.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="function, symbol_list, loop_multiple" Name="CAP_INTERNAL_FIND_APPEARANCE_OF_SYMBOL_IN_FUNCTION" />
+ <Returns>a list of symbols with multiples
+</Returns>
+ <Description>
+The function searches for the appearance of the strings in symbol list on the function function
+and returns a list of pairs, containing the name of the symbol and the number of appearance.
+If the symbol appears in a loop, the number of appearance is counted times the loop multiple.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="list1, list2" Name="CAP_INTERNAL_MERGE_PRECONDITIONS_LIST" />
+ <Returns>merge list
+</Returns>
+ <Description>
+The function takes two lists containing pairs of symbols (strings) and multiples.
+The lists are merged that pairs where the string only appears in one list is then
+added to the return list, if a pair with a string appears in both lists, the resulting
+lists only contains this pair once, with the higher multiple from both lists.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Technical_Details_Section_Universal_Objects">
+<Heading>Universal Objects</Heading>
+
+<ManSection>
+  <Filt Name="WasCreatedAsKernelObject" />
+ <Description>
+When created, this filter is set to true for a kernel object.
+Note that we chose <C>WasCreatedAsKernelObject</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsCokernelObject" />
+ <Description>
+When created, this filter is set to true for a cokernel object.
+Note that we chose <C>WasCreatedAsCokernelObject</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsZeroObject" />
+ <Description>
+When created, this filter is set to true for a zero object.
+Note that we chose <C>WasCreatedAsZeroObject</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsTerminalObject" />
+ <Description>
+When created, this filter is set to true for a terminal object.
+Note that we chose <C>WasCreatedAsTerminalObject</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsInitialObject" />
+ <Description>
+When created, this filter is set to true for an initial object.
+Note that we chose <C>WasCreatedAsInitialObject</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsDirectSum" />
+ <Description>
+When created, this filter is set to true for a direct sum object.
+Note that we chose <C>WasCreatedAsDirectSum</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsCoproduct" />
+ <Description>
+When created, this filter is set to true for a coproduct object.
+Note that we chose <C>WasCreatedAsCoprodcut</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsDirectProduct" />
+ <Description>
+When created, this filter is set to true for a terminal object.
+Note that we chose <C>WasCreatedAsDirectProduct</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsFiberProduct" />
+ <Description>
+When created, this filter is set to true for a pullback.
+Note that we chose <C>WasCreatedAsFiberProduct</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsPushout" />
+ <Description>
+When created, this filter is set to true for a pushout.
+Note that we chose <C>WasCreatedAsPushout</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Name="WasCreatedAsImageObject" />
+ <Description>
+When created, this filter is set to true for an image.
+Note that we chose <C>WasCreatedAsImageObject</C> to be a filter rather than a property,
+because by default, a filter is set to false.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

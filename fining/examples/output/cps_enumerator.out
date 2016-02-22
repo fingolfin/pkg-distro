@@ -1,0 +1,12 @@
+gap> 
+gap> #enumerator for collections of subspaces of polar spaces
+gap> Enumerator(Points(ParabolicQuadric(6,3)));
+EnumeratorOfSubspacesOfClassicalPolarSpace( <points of Q(6, 3)> )
+gap> Enumerator(Lines(HermitianPolarSpace(4,4)));
+EnumeratorOfSubspacesOfClassicalPolarSpace( <lines of H(4, 2^2)> )
+gap> planes := List(Planes(HermitianPolarSpace(5,4)));;
+gap> time;
+11515
+gap> Length(planes);
+891
+gap> quit;

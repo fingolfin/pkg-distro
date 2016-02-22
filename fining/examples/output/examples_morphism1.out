@@ -1,0 +1,31 @@
+gap> 
+gap> # isomorphic polar spaces
+gap> mat1 := IdentityMat(4,GF(16));
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ], [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ] ]
+gap> form1 := HermitianFormByMatrix(mat1,GF(16));
+< hermitian form >
+gap> ps1 := PolarSpace(form1);
+<polar space in ProjectiveSpace(3,GF(2^4)): x_1^5+x_2^5+x_3^5+x_4^5=0 >
+gap> mat2 := [[0,1,0,0],[1,0,0,0],[0,0,0,1],[0,0,1,0]]*Z(16)^0;
+[ [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ] ]
+gap> form2 := HermitianFormByMatrix(mat2,GF(16));
+< hermitian form >
+gap> ps2 := PolarSpace(form2);
+<polar space in ProjectiveSpace(
+3,GF(2^4)): x_1^4*x_2+x_1*x_2^4+x_3^4*x_4+x_3*x_4^4=0 >
+gap> map := IsomorphismPolarSpaces(ps1,ps2);
+#I  No intertwiner computed. One of the polar spaces must have a collineation group computed
+<geometry morphism from <Elements of H(3, 
+4^2): x_1^5+x_2^5+x_3^5+x_4^5=0> to <Elements of H(3, 
+4^2): x_1^4*x_2+x_1*x_2^4+x_3^4*x_4+x_3*x_4^4=0>>
+gap> p := Random(Points(ps1));
+<a point in H(3, 4^2): x_1^5+x_2^5+x_3^5+x_4^5=0>
+gap> p^map;
+<a point in H(3, 4^2): x_1^4*x_2+x_1*x_2^4+x_3^4*x_4+x_3*x_4^4=0>
+gap> l := Random(Lines(ps2));
+<a line in H(3, 4^2): x_1^4*x_2+x_1*x_2^4+x_3^4*x_4+x_3*x_4^4=0>
+gap> PreImageElm(map,l);
+<a line in H(3, 4^2): x_1^5+x_2^5+x_3^5+x_4^5=0>
+gap> quit;

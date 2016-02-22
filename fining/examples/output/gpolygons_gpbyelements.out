@@ -1,0 +1,58 @@
+gap> 
+gap> #GP by elements.
+gap> pg := PG(2,25);
+ProjectiveSpace(2, 25)
+gap> pts := Set(Points(pg));;
+gap> lns := Set(Lines(pg));;
+gap> inc := \*;
+<Operation "*">
+gap> gp := GeneralisedPolygonByElements(pts,lns,inc);
+<projective plane order 25>
+gap> time;
+26427
+gap> grp := CollineationGroup(pg);
+The FinInG collineation group PGammaL(3,25)
+gap> act := OnProjSubspaces;
+function( var, el ) ... end
+gap> gp := GeneralisedPolygonByElements(pts,lns,inc,grp,act);
+<projective plane order 25>
+gap> time;
+127
+gap> q := 4;
+4
+gap> conic := Set(Points(ParabolicQuadric(2,q)));
+[ <a point in Q(2, 4)>, <a point in Q(2, 4)>, <a point in Q(2, 4)>, 
+  <a point in Q(2, 4)>, <a point in Q(2, 4)> ]
+gap> pg := PG(3,q);
+ProjectiveSpace(3, 4)
+gap> hyp :=  HyperplaneByDualCoordinates(pg,[1,0,0,0]*Z(q)^0);
+<a plane in ProjectiveSpace(3, 4)>
+gap> em := NaturalEmbeddingBySubspace(PG(2,q),pg,hyp);
+<geometry morphism from <All elements of ProjectiveSpace(2, 
+4)> to <All elements of ProjectiveSpace(3, 4)>>
+gap> O := List(conic,x->x^em);;
+gap> group := CollineationGroup(pg);
+The FinInG collineation group PGammaL(4,4)
+gap> stab := FiningSetwiseStabiliser(group,O);
+#I  Computing adjusted stabilizer chain...
+<projective collineation group with 6 generators>
+gap> points1 := Set(Filtered(Points(pg),x->not x in hyp));;
+gap> tangents := List(conic,x->TangentSpace(x)^em);
+[ <a line in ProjectiveSpace(3, 4)>, <a line in ProjectiveSpace(3, 4)>, 
+  <a line in ProjectiveSpace(3, 4)>, <a line in ProjectiveSpace(3, 4)>, 
+  <a line in ProjectiveSpace(3, 4)> ]
+gap> planes := List(tangents,x->Filtered(Planes(x),y->not y in hyp));;
+gap> points2 := Union(planes);;
+gap> points3 := [hyp];
+[ <a plane in ProjectiveSpace(3, 4)> ]
+gap> linesa := Union(List(O,x->Filtered(Lines(x),y->not y in hyp)));;
+gap> linesb := Set(O);;
+gap> pts := Union(points1,points2,points3);;
+gap> lns := Union(linesa,linesb);;
+gap> inc := \*;
+<Operation "*">
+gap> gp := GeneralisedPolygonByElements(pts,lns,inc,stab,\^);
+<generalised quadrangle of order [ 4, 4 ]>
+gap> time;
+50
+gap> quit;

@@ -1,0 +1,8 @@
+gap> 
+gap> #field automorphism of a collineation
+gap> g:=CollineationGroup( ProjectiveSpace(3,9));
+The FinInG collineation group PGammaL(4,9)
+gap> x:=Random(g);;
+gap> FieldAutomorphism(x);
+IdentityMapping( GF(3^2) )
+gap> quit;

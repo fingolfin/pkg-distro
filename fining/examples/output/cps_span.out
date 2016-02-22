@@ -1,0 +1,17 @@
+gap> 
+gap> #Span for cps's
+gap> ps := HyperbolicQuadric(5,2);
+Q+(5, 2)
+gap> p := Random(Planes(ps));
+<a plane in Q+(5, 2)>
+gap> q := Random(Planes(ps));
+<a plane in Q+(5, 2)>
+gap> s := Span(p,q);
+<a proj. 4-space in ProjectiveSpace(5, 2)>
+gap> s = Span([p,q]);
+true
+gap> t := Span(EmptySubspace(ps),p);
+<a plane in Q+(5, 2)>
+gap> t = p;
+true
+gap> quit;

@@ -1,0 +1,27 @@
+gap> 
+gap> #an example of an incidence structure that is not an incidence geometry
+gap> pg := PG(4,2);
+ProjectiveSpace(4, 2)
+gap> pg2 := PG(9,2);
+ProjectiveSpace(9, 2)
+gap> points := List(Lines(pg),x->VectorSpaceToElement(pg2,GrassmannCoordinates(x)));;
+gap> flags := Concatenation(List(Points(pg),x->List(Planes(x),y->FlagOfIncidenceStructure(pg,[x,y]))));;
+gap> prelines := List(flags,flag->ShadowOfFlag(pg,flag,2));;
+gap> lines := List(prelines,x->VectorSpaceToElement(pg2,List(x,y->GrassmannCoordinates(y))));;
+gap> flags2 := Concatenation(List(Points(pg),x->List(Solids(x),y->FlagOfIncidenceStructure(pg,[x,y]))));;
+gap> preplanes := List(flags2,flag->ShadowOfFlag(pg,flag,2));;
+gap> planes := List(preplanes,x->VectorSpaceToElement(pg2,List(x,y->GrassmannCoordinates(y))));;
+gap> maximals1 := List(Planes(pg),x->VectorSpaceToElement(pg2,List(Lines(x),y->GrassmannCoordinates(y))));;
+gap> maximals2 := List(Points(pg),x->VectorSpaceToElement(pg2,List(Lines(x),y->GrassmannCoordinates(y))));;
+gap> elements := Union(points,lines,planes,maximals1,maximals2);;
+gap> Length(elements);
+1891
+gap> type := x -> ProjectiveDimension(x)+1;
+function( x ) ... end
+gap> inc_rel := \*;
+<Operation "*">
+gap> inc := IncidenceStructure(elements,inc_rel,type,[1,2,3,4]);
+Incidence structure of rank 4
+gap> Rank(inc);
+4
+gap> quit;

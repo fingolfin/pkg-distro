@@ -1,0 +1,11 @@
+gap> 
+gap> #basefield
+gap> ps := HyperbolicQuadric(5,7);
+Q+(5, 7)
+gap> BaseField(ps);
+GF(7)
+gap> ps := HermitianPolarSpace(2,256);
+H(2, 16^2)
+gap> BaseField(ps);
+GF(2^8)
+gap> quit;

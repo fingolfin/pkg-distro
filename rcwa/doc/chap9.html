@@ -44,23 +44,17 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7BAF5F4986288983">9.5-1 InfoRCWA</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X85E215DB85F610ED">9.6 <span class="Heading">Running demonstrations</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X7E87938C84EB0229">9.6 <span class="Heading">Utility functions for bitmap pictures</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X850524E47E3DB78D">9.6-1 RunDemonstration</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X81DE1E838615C214">9.6-1 SaveAsBitmapPicture</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X7E87938C84EB0229">9.7 <span class="Heading">Utility functions for bitmap pictures</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X7ED9DEDA83B2BA05">9.7 <span class="Heading">Converting GAP logfiles to HTML</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X81DE1E838615C214">9.7-1 SaveAsBitmapPicture</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8404B60A84DA4534">9.7-2 EncryptIntoBitmapPicture</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X87F813817B353844">9.7-1 Log2HTML</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X7ED9DEDA83B2BA05">9.8 <span class="Heading">Converting GAP logfiles to HTML</span></a>
-</span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X87F813817B353844">9.8-1 Log2HTML</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X808A30E37A293D19">9.9 <span class="Heading">Some general utility functions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X808A30E37A293D19">9.8 <span class="Heading">Some general utility functions</span></a>
 </span>
 </div>
 </div>
@@ -71,7 +65,7 @@
 
 <h4>9.1 <span class="Heading">Requirements</span></h4>
 
-<p>This version of <strong class="pkg">RCWA</strong> needs at least <strong class="pkg">GAP</strong> 4.7.0, <strong class="pkg">ResClasses</strong> 3.4.0, <strong class="pkg">GRAPE</strong> 4.3 <a href="chapBib.html#biBGRAPE">[Soi06]</a>, <strong class="pkg">Polycyclic</strong> 2.6 <a href="chapBib.html#biBPolycyclic">[EN09]</a> and <strong class="pkg">GAPDoc</strong> 1.4 <a href="chapBib.html#biBGAPDoc">[LN11]</a>. With possible exception of the most recent version of <strong class="pkg">ResClasses</strong>, all needed packages are already present in an up-to-date standard <strong class="pkg">GAP</strong> installation. The <strong class="pkg">RCWA</strong> package can be used on all platforms for which <strong class="pkg">GAP</strong> is available. It is completely written in the <strong class="pkg">GAP</strong> language and does neither contain nor require external binaries. In particular, possible warnings concerning missing binaries issued by other packages when loading <strong class="pkg">RCWA</strong> can safely be ignored.</p>
+<p>This version of <strong class="pkg">RCWA</strong> needs at least <strong class="pkg">GAP</strong> 4.8.1, <strong class="pkg">ResClasses</strong> 4.0.0, <strong class="pkg">GRAPE</strong> 4.3 <a href="chapBib.html#biBGRAPE">[Soi06]</a>, <strong class="pkg">Polycyclic</strong> 2.6 <a href="chapBib.html#biBPolycyclic">[EN09]</a> and <strong class="pkg">GAPDoc</strong> 1.4 <a href="chapBib.html#biBGAPDoc">[LN11]</a>. With possible exception of the most recent version of <strong class="pkg">ResClasses</strong>, all needed packages are already present in an up-to-date standard <strong class="pkg">GAP</strong> installation. The <strong class="pkg">RCWA</strong> package can be used on all platforms for which <strong class="pkg">GAP</strong> is available. It is completely written in the <strong class="pkg">GAP</strong> language and does neither contain nor require external binaries. In particular, possible warnings concerning missing binaries issued by other packages when loading <strong class="pkg">RCWA</strong> can safely be ignored.</p>
 
 <p><a id="X8360C04082558A12" name="X8360C04082558A12"></a></p>
 
@@ -138,30 +132,15 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InfoRCWA</code></td><td class="tdright">( info class )</td></tr></table></div>
 <p>This is the Info class of the <strong class="pkg">RCWA</strong> package. See section <em>Info Functions</em> in the <strong class="pkg">GAP</strong> Reference Manual for a description of the Info mechanism. For convenience: <code class="code">RCWAInfo(</code><var class="Arg">n</var><code class="code">)</code> is a shorthand for <code class="code">SetInfoLevel(InfoRCWA</code>,<var class="Arg">n</var><code class="code">)</code>.</p>
 
-<p><a id="X85E215DB85F610ED" name="X85E215DB85F610ED"></a></p>
-
-<h4>9.6 <span class="Heading">Running demonstrations</span></h4>
-
-<p><strong class="pkg">RCWA</strong> provides a routine to run demonstrations of its functionality or of other features of <strong class="pkg">GAP</strong>. It is intended for being used in talks.</p>
-
-<p><a id="X850524E47E3DB78D" name="X850524E47E3DB78D"></a></p>
-
-<h5>9.6-1 RunDemonstration</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RunDemonstration</code>( <var class="Arg">filename</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns: nothing.</p>
-
-<p>This function executes the commands in the file named <var class="Arg">filename</var>. It shows a command and the corresponding output, waits for a keystroke, shows the next command and the corresponding output, waits again for a keystroke, and so on until the end of the file. The demonstration can be stopped by pressing <code class="code">q</code>. The function is adapted from the function <code class="code">Demonstration</code> in the file <code class="file">lib/demo.g</code> of the main <strong class="pkg">GAP</strong> distribution.</p>
-
 <p><a id="X7E87938C84EB0229" name="X7E87938C84EB0229"></a></p>
 
-<h4>9.7 <span class="Heading">Utility functions for bitmap pictures</span></h4>
+<h4>9.6 <span class="Heading">Utility functions for bitmap pictures</span></h4>
 
 <p><strong class="pkg">RCWA</strong> provides functions to create bitmap picture files from suitable pixel matrices and vice versa. The author has successfully tested this feature both under Linux and under Windows, and the produced pictures can be processed further with many common graphics programs:</p>
 
 <p><a id="X81DE1E838615C214" name="X81DE1E838615C214"></a></p>
 
-<h5>9.7-1 SaveAsBitmapPicture</h5>
+<h5>9.6-1 SaveAsBitmapPicture</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SaveAsBitmapPicture</code>( <var class="Arg">picture</var>, <var class="Arg">filename</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: nothing.</p>
@@ -179,33 +158,15 @@
 
 </pre></div>
 
-<p><strong class="pkg">RCWA</strong> also provides functions for steganography in bitmap pictures:</p>
-
-<p><a id="X8404B60A84DA4534" name="X8404B60A84DA4534"></a></p>
-
-<h5>9.7-2 EncryptIntoBitmapPicture</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EncryptIntoBitmapPicture</code>( <var class="Arg">picturefile</var>, <var class="Arg">cleartextfile</var>, <var class="Arg">passphrase</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecryptFromBitmapPicture</code>( <var class="Arg">picturefile</var>, <var class="Arg">cleartextfile</var>, <var class="Arg">passphrase</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns: nothing.</p>
-
-<p>The first function encrypts the contents of the textfile named <var class="Arg">cleartextfile</var> into the image from the file named <var class="Arg">picturefile</var>, using the passphrase <var class="Arg">passphrase</var>. The modified image is written to a file whose name is derived from <var class="Arg">picturefile</var> by appending the string <code class="code">-out</code>.</p>
-
-<p>The second function decrypts an encoded text from the file named <var class="Arg">picturefile</var> using the passphrase <var class="Arg">passphrase</var>, and writes the obtained cleartext to a file named <var class="Arg">cleartextfile</var>.</p>
-
-<p>These steganographic utility functions are designed for security rather than speed, and are intended to be used for texts of the order of magnitude of what one would normally write into the body of an e-mail -- encoding about 100kb into a picture of usual size should be still convenient, while the functions are definitely not suitable for encoding entire backups or the like.</p>
-
-<p><code class="code">Info</code> messages on the progress of the encryption / decryption are given at <code class="code">InfoLevel</code> 2 of <code class="code">InfoRCWA</code>.</p>
-
 <p><a id="X7ED9DEDA83B2BA05" name="X7ED9DEDA83B2BA05"></a></p>
 
-<h4>9.8 <span class="Heading">Converting GAP logfiles to HTML</span></h4>
+<h4>9.7 <span class="Heading">Converting GAP logfiles to HTML</span></h4>
 
 <p><strong class="pkg">RCWA</strong> provides a routine to convert <strong class="pkg">GAP</strong> logfiles to HTML.</p>
 
 <p><a id="X87F813817B353844" name="X87F813817B353844"></a></p>
 
-<h5>9.8-1 Log2HTML</h5>
+<h5>9.7-1 Log2HTML</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Log2HTML</code>( <var class="Arg">logfilename</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: nothing.</p>
@@ -214,19 +175,19 @@
 
 <p><a id="X808A30E37A293D19" name="X808A30E37A293D19"></a></p>
 
-<h4>9.9 <span class="Heading">Some general utility functions</span></h4>
+<h4>9.8 <span class="Heading">Some general utility functions</span></h4>
 
 <p><strong class="pkg">RCWA</strong> provides a couple of small utility functions which can be used in a more general context. They are described in this section.</p>
 
-<p>The utility functions for groups and group elements are <code class="code">GeneratorsAndInverses(<var class="Arg">G</var>)</code> which returns a list of generators of <var class="Arg">G</var> and their inverses, the function <code class="code">EpimorphismByGenerators(<var class="Arg">G</var>,<var class="Arg">H</var>)</code> which is a shorthand for <code class="code">GroupHomomorphismByImages(<var class="Arg">G</var>,<var class="Arg">H</var>, GeneratorsOfGroup(<var class="Arg">G</var>),GeneratorsOfGroup(<var class="Arg">H</var>))</code> (there is also an <code class="code">NC</code> version of this), the function <code class="code">ListOfPowers(<var class="Arg">g</var>,<var class="Arg">exp</var>)</code> which returns the list <code class="code">[<var class="Arg">g</var>,<var class="Arg">g</var>^2,...,<var class="Arg">g</var>^<var class="Arg">exp</var>]</code> of powers of <var class="Arg">g</var>, and the function <code class="code">AllProducts(<var class="Arg">l</var>,<var class="Arg">k</var>)</code> which returns the list of all products of <var class="Arg">k</var> entries of the list <var class="Arg">l</var>.</p>
-
-<p>The utility functions for lists are <code class="code">DifferencesList(<var class="Arg">l</var>)</code> and <code class="code">QuotientsList(<var class="Arg">l</var>)</code>, which return the list of differences respectively quotients of consecutive entries of the list <var class="Arg">l</var>, and the function <code class="code">FloatQuotientsList(<var class="Arg">l</var>)</code>, which returns the list of floating point approximations of the latter.</p>
+<p>The utility functions for groups and group elements are <code class="code">GeneratorsAndInverses(<var class="Arg">G</var>)</code> which returns a list of generators of <var class="Arg">G</var> and their inverses, the function <code class="code">EpimorphismByGenerators(<var class="Arg">G</var>,<var class="Arg">H</var>)</code> which is a shorthand for <code class="code">GroupHomomorphismByImages(<var class="Arg">G</var>,<var class="Arg">H</var>, GeneratorsOfGroup(<var class="Arg">G</var>),GeneratorsOfGroup(<var class="Arg">H</var>))</code> (there is also an <code class="code">NC</code> version of this), and the function <code class="code">ListOfPowers(<var class="Arg">g</var>,<var class="Arg">exp</var>)</code> which returns the list <code class="code">[<var class="Arg">g</var>,<var class="Arg">g</var>^2,...,<var class="Arg">g</var>^<var class="Arg">exp</var>]</code> of powers of <var class="Arg">g</var>.</p>
 
 <p>There are methods <code class="code">EquivalenceClasses(<var class="Arg">l</var>,<var class="Arg">inv</var>)</code> and <code class="code">EquivalenceClasses(<var class="Arg">l</var>,<var class="Arg">rel</var>)</code>, which decompose a list <var class="Arg">l</var> into equivalence classes under an equivalence relation. The equivalence relation is given either as a function <var class="Arg">inv</var> computing a class invariant of a given list entry or as a function <var class="Arg">rel</var> which takes as arguments two list entries and returns either <code class="code">true</code> or <code class="code">false</code> depending on whether the arguments belong to the same equivalence class or not.</p>
 
+<p>There is a function <code class="code">GraphClasses(<var class="Arg">n</var>)</code>, which computes a list of isomorphism classes of graphs with vertices <span class="SimpleMath">1, 2, dots, n</span>, and a function <code class="code">AllGraphs(<var class="Arg">n</var>)</code> which computes a list of representatives of these classes. The graphs are represented as lists of edges, where each edge is a list of the two vertices it connects, and they are ordered by ascending number of edges. The function <code class="code">IdGraph(<var class="Arg">graph</var>,<var class="Arg">classes</var>)</code> returns the index <code class="code">i</code> such that <var class="Arg">graph</var> lies <var class="Arg">classes</var><code class="code">[i]</code>.</p>
+
 <p>Yet another utility function is <code class="code">AssignGlobals(<var class="Arg">rec</var>)</code> which takes as argument a record <var class="Arg">rec</var> and assigns its components to global variables of the same (i.e. the component's) names.</p>
 
-<p>Finally, the function <code class="code">AllSmoothIntegers(<var class="Arg">maxp</var>,<var class="Arg">maxn</var>)</code> returns a list of all integers less than or equal to <var class="Arg">maxn</var> which do not have prime divisors exceeding <var class="Arg">maxp</var>, the function <code class="code">ExponentOfPrime(<var class="Arg">n</var>,<var class="Arg">p</var>)</code> returns the exponent of the prime <var class="Arg">p</var> in the prime factorization of <var class="Arg">n</var>, and the function <code class="code">LaTeXStringFactorsInt(<var class="Arg">n</var>)</code> returns the prime factorization of an integer <var class="Arg">n</var> as a string in LaTeX format.</p>
+<p>The function <code class="code">NextProbablyPrimeInt(<var class="Arg">n</var>)</code> returns the smallest integer passing <code class="code">IsProbablyPrimeInt</code> larger than <var class="Arg">n</var>. The function <code class="code">PrimeNumbersIterator( )</code> returns an iterator which runs over the prime numbers in ascending order; it takes an optional argument <var class="Arg">chunksize</var> which specifies the length of the interval which is sieved in one go (the default is 10000000), and which can be used to balance runtime vs. memory consumption. It is assumed that <var class="Arg">chunksize</var> is larger than any gap between two consecutive primes within the range one intends to run the iterator over. The function <code class="code">AllSmoothIntegers(<var class="Arg">maxp</var>,<var class="Arg">maxn</var>)</code> returns a list of all integers less than or equal to <var class="Arg">maxn</var> which do not have prime divisors exceeding <var class="Arg">maxp</var>, the function <code class="code">ExponentOfPrime(<var class="Arg">n</var>,<var class="Arg">p</var>)</code> returns the exponent of the prime <var class="Arg">p</var> in the prime factorization of <var class="Arg">n</var>, and the function <code class="code">LaTeXStringFactorsInt(<var class="Arg">n</var>)</code> returns the prime factorization of an integer <var class="Arg">n</var> as a string in LaTeX format.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap8.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>

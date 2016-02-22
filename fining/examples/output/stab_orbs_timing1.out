@@ -1,0 +1,25 @@
+gap> 
+gap> #compare timing
+gap> ps := PG(3,8);
+ProjectiveSpace(3, 8)
+gap> g := CollineationGroup(ps);
+The FinInG collineation group PGammaL(4,8)
+gap> p := Random(Points(ps));
+<a point in ProjectiveSpace(3, 8)>
+gap> g1 := Stabilizer(g,p);
+<projective collineation group of size 177223237632 with 2 generators>
+gap> time;
+9576
+gap> g2 := FiningStabiliser(g,p);
+<projective collineation group of size 177223237632 with 2 generators>
+gap> time;
+244
+gap> g3 := FiningStabiliserOrb(g,p);
+<projective collineation group with 15 generators>
+gap> time;
+46
+gap> g1=g2;
+true
+gap> g2=g3;
+true
+gap> quit;

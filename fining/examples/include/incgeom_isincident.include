@@ -1,0 +1,16 @@
+gap&gt; p := Random(Points(PG(5,4)));
+&lt;a point in ProjectiveSpace(5, 4)&gt;
+gap&gt; l := Random(Lines(p));
+&lt;a line in ProjectiveSpace(5, 4)&gt;
+gap&gt; IsIncident(p,l);
+true
+gap&gt; IsIncident(l,p);
+true
+gap&gt; p * l;
+true
+gap&gt; l * p;
+true
+gap&gt; p * p;
+true
+gap&gt; l * l;
+true

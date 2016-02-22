@@ -324,11 +324,11 @@
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XS:=Monoid(a);[127X[104X
-    [4X[28X<monoid with 1 generator>[128X[104X
+    [4X[28X<commutative monoid with 1 generator>[128X[104X
     [4X[25Xgap>[125X [27XOne(S);[127X[104X
     [4X[28XMyCircleObject( 0 )[128X[104X
     [4X[25Xgap>[125X [27XS:=Monoid( MyCircleObject( ZmodnZObj( 2,8) ) );[127X[104X
-    [4X[28X<monoid with 1 generator>[128X[104X
+    [4X[28X<commutative monoid with 1 generator>[128X[104X
     [4X[25Xgap>[125X [27XSize(S);[127X[104X
     [4X[28X2[128X[104X
     [4X[25Xgap>[125X [27XAsList(S);[127X[104X

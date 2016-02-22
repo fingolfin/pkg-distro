@@ -1,0 +1,18 @@
+gap> 
+gap> #projective dimension of an element
+gap> ps := EllipticQuadric(7,8);
+Q-(7, 8)
+gap> mat := [[0,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0]]*Z(8)^0;
+[ [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ] ]
+gap> line := VectorSpaceToElement(ps,mat);
+<a line in Q-(7, 8)>
+gap> ProjectiveDimension(line);
+1
+gap> Dimension(line);
+1
+gap> e := EmptySubspace(ps);
+< empty subspace >
+gap> ProjectiveDimension(e);
+-1
+gap> quit;

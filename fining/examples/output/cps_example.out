@@ -1,0 +1,18 @@
+gap> 
+gap> #an extra example to construct polar spaces, including an ovoid
+gap> id := IdentityMat(7, GF(3));;
+gap> form := QuadraticFormByMatrix(id, GF(3));
+< quadratic form >
+gap> ps := PolarSpace( form );
+<polar space in ProjectiveSpace(
+6,GF(3)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2=0 >
+gap> psl32 := PSL(3,2);
+Group([ (4,6)(5,7), (1,2,4)(3,6,5) ])
+gap> reps:=[[1,1,1,0,0,0,0], [-1,1,1,0,0,0,0], [1,-1,1,0,0,0,0], [1,1,-1,0,0,0,0]]*Z(3)^0;;
+gap> ovoid := Union( List(reps, x-> Orbit(psl32, x, Permuted)) );;
+gap> ovoid := List(ovoid, x -> VectorSpaceToElement(ps, x));;
+gap> planes := AsList( Planes( ps ) );;
+#I  Computing collineation group of canonical polar space...
+gap> ForAll(planes, p -> Number(ovoid, x -> x in p) = 1);
+true
+gap> quit;

@@ -1,0 +1,15 @@
+gap> 
+gap> #constructing hermitian polarities of a projective space.
+gap> mat := [[Z(11)^0,0*Z(11),0*Z(11)],[0*Z(11),0*Z(11),Z(11)],
+>     [0*Z(11),Z(11),0*Z(11)]];
+[ [ Z(11)^0, 0*Z(11), 0*Z(11) ], [ 0*Z(11), 0*Z(11), Z(11) ], 
+  [ 0*Z(11), Z(11), 0*Z(11) ] ]
+gap> frob := FrobeniusAutomorphism(GF(121));
+FrobeniusAutomorphism( GF(11^2) )
+gap> phi := PolarityOfProjectiveSpace(mat,frob,GF(121));
+<polarity of PG(2, GF(11^2)) >
+gap> psi := HermitianPolarityOfProjectiveSpace(mat,GF(121));
+<polarity of PG(2, GF(11^2)) >
+gap> phi = psi;
+true
+gap> quit;

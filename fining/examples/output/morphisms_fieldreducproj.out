@@ -1,0 +1,46 @@
+gap> 
+gap> #morphisms by field reduction for projective spaces
+gap> pg1 := ProjectiveSpace(2,81);
+ProjectiveSpace(2, 81)
+gap> f2 := GF(9);
+GF(3^2)
+gap> em := NaturalEmbeddingByFieldReduction(pg1,f2);
+<geometry morphism from <All elements of ProjectiveSpace(2, 
+81)> to <All elements of ProjectiveSpace(5, 9)>>
+gap> f2 := GF(3);
+GF(3)
+gap> em := NaturalEmbeddingByFieldReduction(pg1,f2);
+<geometry morphism from <All elements of ProjectiveSpace(2, 
+81)> to <All elements of ProjectiveSpace(11, 3)>>
+gap> pg2 := ProjectiveSpace(11,3);
+ProjectiveSpace(11, 3)
+gap> em := NaturalEmbeddingByFieldReduction(pg1,pg2);
+<geometry morphism from <All elements of ProjectiveSpace(2, 
+81)> to <All elements of ProjectiveSpace(11, 3)>>
+gap> pg1 := PG(1,9);
+ProjectiveSpace(1, 9)
+gap> em := NaturalEmbeddingByFieldReduction(pg1,GF(3));
+<geometry morphism from <All elements of ProjectiveSpace(1, 
+9)> to <All elements of ProjectiveSpace(3, 3)>>
+gap> i := Intertwiner(em);
+MappingByFunction( The FinInG projectivity group PGL(2,9), <projective colline\
+ation group of size 720 with 
+2 generators>, function( m ) ... end, function( m ) ... end )
+gap> spread := List(Points(pg1),x->x^em);
+[ <a line in ProjectiveSpace(3, 3)>, <a line in ProjectiveSpace(3, 3)>, 
+  <a line in ProjectiveSpace(3, 3)>, <a line in ProjectiveSpace(3, 3)>, 
+  <a line in ProjectiveSpace(3, 3)>, <a line in ProjectiveSpace(3, 3)>, 
+  <a line in ProjectiveSpace(3, 3)>, <a line in ProjectiveSpace(3, 3)>, 
+  <a line in ProjectiveSpace(3, 3)>, <a line in ProjectiveSpace(3, 3)> ]
+gap> stab := Stabilizer(CollineationGroup(PG(3,3)),Set(spread),OnSets);
+<projective collineation group of size 5760 with 3 generators>
+gap> hom := HomographyGroup(pg1);
+The FinInG projectivity group PGL(2,9)
+gap> gens := GeneratorsOfGroup(hom);;
+gap> group := Group(List(gens,x->x^i));
+<projective collineation group with 2 generators>
+gap> Order(group);
+2880
+gap> IsSubgroup(stab,group);
+true
+gap> quit;

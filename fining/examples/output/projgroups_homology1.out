@@ -1,0 +1,15 @@
+gap> 
+gap> #homologies of a projective space
+gap> ps := PG(3,81);
+ProjectiveSpace(3, 81)
+gap> sub := VectorSpaceToElement(ps,[[1,0,1,0],[0,1,0,1],[1,2,3,0]]*Z(3)^0);
+<a plane in ProjectiveSpace(3, 81)>
+gap> centre := VectorSpaceToElement(ps,[0*Z(3),Z(3)^0,Z(3^4)^36,0*Z(3)]);
+<a point in ProjectiveSpace(3, 81)>
+gap> p1 := VectorSpaceToElement(ps,[0*Z(3),Z(3)^0,Z(3^4)^51,0*Z(3)]);
+<a point in ProjectiveSpace(3, 81)>
+gap> p2 := VectorSpaceToElement(ps,[0*Z(3),Z(3)^0,Z(3^4)^44,0*Z(3)]);
+<a point in ProjectiveSpace(3, 81)>
+gap> phi := HomologyOfProjectiveSpace(sub,centre,p1,p2);
+< a collineation: <cmat 4x4 over GF(3,4)>, F^0>
+gap> quit;

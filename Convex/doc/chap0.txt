@@ -6,7 +6,7 @@
                    [1XA [5XGAP[105X package for handling convex objects.[101X
   
   
-                               Version 2012.11.15
+                               Version 2013.12.05
   
   
                                   August 2012

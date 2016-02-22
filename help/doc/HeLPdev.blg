@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: HeLPdev.aux
+The style file: alpha.bst
+Database file #1: HeLPdev.bib.bib
+Warning--there's a number but no volume in KonovalovMcL
+You've used 33 entries,
+            2543 wiz_defined-function locations,
+            796 strings with 9514 characters,
+and the built_in function-call counts, 12571 in all, are:
+= -- 1309
+> -- 470
+< -- 25
++ -- 150
+- -- 145
+* -- 888
+:= -- 2030
+add.period$ -- 106
+call.type$ -- 33
+change.case$ -- 184
+chr.to.int$ -- 30
+cite$ -- 34
+duplicate$ -- 517
+empty$ -- 965
+format.name$ -- 194
+if$ -- 2582
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 32
+newline$ -- 171
+num.names$ -- 99
+pop$ -- 153
+preamble$ -- 1
+purify$ -- 219
+quote$ -- 0
+skip$ -- 427
+stack$ -- 0
+substring$ -- 825
+swap$ -- 77
+text.length$ -- 25
+text.prefix$ -- 16
+top$ -- 0
+type$ -- 256
+warning$ -- 1
+while$ -- 131
+width$ -- 37
+write$ -- 435
+(There was 1 warning)

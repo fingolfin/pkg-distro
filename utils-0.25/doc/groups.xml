@@ -1,0 +1,167 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  groups.xml          Utils documentation                            -->
+<!--                                                                     -->
+<!--  version 0.23, 10/02/2016                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-groups">
+<Heading>Groups and homomorphisms</Heading>
+
+
+
+<Section Label="sec-groups">
+<Heading>Functions for groups</Heading>
+
+
+
+<ManSection>
+   <Oper Name="IsCommuting"
+         Arg="a b" />
+<Description>
+This operation has transferred from package <Package>ResClasses</Package>. 
+<P/>
+This operation tests whether two group elements commute. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> D12 := DihedralGroup( 12 );  SetName( D12, "D12" ); 
+<pc group of size 12 with 3 generators>
+gap> a := D12.1;;  b := D12.2;;  
+gap> IsCommuting( a, b );
+false
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="ListOfPowers"
+         Arg="g exp" />
+<Description>
+This operation has transferred from package <Package>RCWA</Package>. 
+<P/>
+The operation <C>ListOfPowers(g,exp)</C> returns the list 
+<M>[g,g^2,...,g^{exp}]</M> of powers of the element <M>g</M>.
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> ListOfPowers( D12.2, 6 );
+[ f2, f3, f2*f3, f3^2, f2*f3^2, <identity> of ... ]
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="GeneratorsAndInverses"
+         Arg="G" />
+<Description>
+This operation has transferred from package <Package>RCWA</Package>. 
+<P/>
+This operation returns a list containing the generators of <M>G</M> 
+followed by the inverses of these generators.  
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> GeneratorsAndInverses( D12 );
+[ f1, f2, f3, f1, f2*f3^2, f3^2 ]
+]]>
+</Example>
+
+
+<ManSection>
+   <Attr Name="UpperFittingSeries"
+         Arg="G" />
+   <Attr Name="LowerFittingSeries"
+         Arg="G" />
+   <Attr Name="FittingLength"
+         Arg="G" />
+<Description>
+These operations have transferred from package <Package>ResClasses</Package>. 
+Note that these three functions have been removed from version 4.0.1 of 
+<Package>ResClasses</Package>, but will not yet be read by &Utils;. 
+<P/>
+The upper and lower Fitting series and the Fitting length of a solvable
+group are described here: 
+<URL>https://en.wikipedia.org/wiki/Fitting_length</URL>. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> UpperFittingSeries( D12 );
+[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ]
+gap> LowerFittingSeries( D12 );
+[ D12, Group([ f3 ]), Group([  ]) ]
+gap> FittingLength( D12 );
+2
+]]>
+</Example>
+
+</Section>
+
+
+
+<Section Label="sec-words">
+<Heading>Functions for words in finitely presented groups</Heading>
+
+<ManSection>
+   <Attr Name="ReducedWordByOrdersOfGenerators"
+         Arg="w, gensords" />
+   <Attr Name="NormalizedRelator"
+         Arg="w gensords" />
+<Description>
+These operations have transferred from package <Package>RCWA</Package>. 
+<P/>
+Some description needed here.
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> ## some examples needed here 
+]]>
+</Example>
+
+</Section>
+
+
+<Section Label="sec-homomorphisms">
+<Heading>Functions for group homomorphisms</Heading>
+
+<ManSection>
+   <Attr Name="EpimorphismByGenerators"
+         Arg="G H" />
+<Description>
+These operations have transferred from package <Package>RCWA</Package>. 
+<P/>
+This function maps the generators of <M>G</M> to those of <M>H</M>. 
+It is not checked that this map is a group homomorphism! 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> G:=Group((1,2,3),(3,4,5));;
+gap> H:=Group((6,7),(8,9));;    
+gap> e:=EpimorphismByGenerators(G,H);
+[ (1,2,3), (3,4,5) ] -> [ (6,7), (8,9) ]
+gap> IsGroupHomomorphism(e);
+true
+]]>
+</Example>
+
+</Section>
+
+
+
+
+</Chapter>

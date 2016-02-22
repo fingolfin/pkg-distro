@@ -1,0 +1,43 @@
+<Chapter Label="Operators"><Heading>Operators</Heading>
+
+  <Section><Heading>Operators for digraphs</Heading>
+    <List>
+     <Mark><C><A>digraph1</A> = <A>digraph2</A></C></Mark>
+     <Item>
+       <Index Key="="><C>=</C> (for digraphs)</Index>
+       returns <K>true</K> if <A>digraph1</A> and <A>digraph2</A> have the same
+       vertices, and <C>DigraphEdges(<A>digraph1</A>) =
+         DigraphEdges(<A>digraph2</A>)</C>, up to some re-ordering of the edge
+       lists. <P/>
+
+       Note that this operator does not compare the vertex labels 
+       of <A>digraph1</A> and <A>digraph2</A>.
+     </Item>
+
+     <Mark><C><A>digraph1</A> &lt; <A>digraph2</A></C></Mark>
+     <Item>
+       <Index Key="&lt;"><C>&lt;</C> (for digraphs)</Index>
+
+       This operator returns <K>true</K> if one of the following holds:
+
+       <List>
+         <Item>
+           The number <M>n_1</M> of vertices in <A>digraph1</A> is less than
+           the number <M>n_2</M> of vertices in <A>digraph2</A>;
+         </Item>
+         <Item>
+           <M>n_1 = n_2</M>, and the number <M>m_1</M> of edges in
+           <A>digraph1</A> is less than the number <M>m_2</M> of edges in
+           <A>digraph2</A>;
+         </Item>
+         <Item>
+           <M>n_1 = n_2</M>, <M>m_1 = m_2</M>, and
+           <C>DigraphEdges(<A>digraph1</A>)</C> is less than
+           <C>DigraphEdges(<A>digraph2</A>)</C> after having both of these sets
+           have been sorted with respect to the lexicographical order.
+         </Item>
+       </List>
+     </Item>
+   </List>
+  </Section>
+</Chapter>

@@ -1,0 +1,11 @@
+gap> 
+gap> #underluing matrix of a collineation.
+gap> g:=CollineationGroup( ProjectiveSpace(3,3));
+The FinInG collineation group PGL(4,3)
+gap> x:=Random(g);;
+gap> MatrixOfCollineation(x);
+<cmat 4x4 over GF(3,1)>
+gap> Unpack(last);
+[ [ 0*Z(3), 0*Z(3), Z(3)^0, Z(3) ], [ Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], 
+  [ Z(3)^0, Z(3)^0, Z(3), 0*Z(3) ], [ Z(3), Z(3), 0*Z(3), 0*Z(3) ] ]
+gap> quit;

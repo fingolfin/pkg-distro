@@ -1,0 +1,22 @@
+gap> 
+gap> #vector space to element for hexagons
+gap> ps := ParabolicQuadric(6,9);
+Q(6, 9)
+gap> gh := SplitCayleyHexagon(ps);
+H(9) in Q(6, 9)
+gap> vec := [ Z(3)^0, Z(3^2), 0*Z(3), Z(3^2), Z(3^2)^3, Z(3^2)^5, 0*Z(3) ];
+[ Z(3)^0, Z(3^2), 0*Z(3), Z(3^2), Z(3^2)^3, Z(3^2)^5, 0*Z(3) ]
+gap> p := VectorSpaceToElement(gh,vec);
+<a point in H(9) in Q(6, 9)>
+gap> vec := [ [ Z(3)^0, 0*Z(3), Z(3^2)^7, 0*Z(3), Z(3)^0, Z(3^2)^2, Z(3^2)^2 ], 
+>   [ 0*Z(3), Z(3)^0, 0*Z(3), Z(3)^0, 0*Z(3), Z(3^2)^3, 0*Z(3) ] ];
+[ [ Z(3)^0, 0*Z(3), Z(3^2)^7, 0*Z(3), Z(3)^0, Z(3^2)^2, Z(3^2)^2 ], 
+  [ 0*Z(3), Z(3)^0, 0*Z(3), Z(3)^0, 0*Z(3), Z(3^2)^3, 0*Z(3) ] ]
+gap> line := VectorSpaceToElement(gh,vec);
+Error, <x> does not generate an element of <geom> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 14 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> quit;

@@ -1,0 +1,9 @@
+gap> 
+gap> #shortcuts to shadowofelement
+gap> line := Random(Lines(AG(5,4)));
+<a line in AG(5, 4)>
+gap> Points(line);
+<shadow points in AG(5, 4)>
+gap> Planes(line);
+<shadow planes in AG(5, 4)>
+gap> quit;

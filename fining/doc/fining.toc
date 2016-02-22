@@ -1,0 +1,522 @@
+\contentsline {chapter}{\numberline {1}\leavevmode {\color {Chapter }Introduction}}{6}{chapter.1}
+\contentsline {section}{\numberline {1.1}\leavevmode {\color {Chapter }Philosophy}}{6}{section.1.1}
+\contentsline {section}{\numberline {1.2}\leavevmode {\color {Chapter }How to cite \textsf {FinInG}}}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}\leavevmode {\color {Chapter }Overview of this manual}}{7}{section.1.3}
+\contentsline {section}{\numberline {1.4}\leavevmode {\color {Chapter }Installing \textsf {FinInG}}}{7}{section.1.4}
+\contentsline {section}{\numberline {1.5}\leavevmode {\color {Chapter }The Development Team}}{11}{section.1.5}
+\contentsline {chapter}{\numberline {2}\leavevmode {\color {Chapter }Examples}}{14}{chapter.2}
+\contentsline {section}{\numberline {2.1}\leavevmode {\color {Chapter }Elementary examples}}{14}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}\leavevmode {\color {Chapter }subspaces of projective spaces}}{14}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}\leavevmode {\color {Chapter }Subspaces of classical polar spaces}}{15}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}\leavevmode {\color {Chapter }Underlying objects}}{16}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}\leavevmode {\color {Chapter }Constructing polar spaces}}{17}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}\leavevmode {\color {Chapter }Some collineation groups}}{18}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Some objects with interesting combinatorial properties}}{19}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}\leavevmode {\color {Chapter }The Tits ovoid}}{19}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}\leavevmode {\color {Chapter }Lines meeting a hermitian curve}}{20}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}\leavevmode {\color {Chapter }The Patterson ovoid}}{20}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}\leavevmode {\color {Chapter }A hyperoval}}{21}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}\leavevmode {\color {Chapter }Geometry morphisms}}{23}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\leavevmode {\color {Chapter }Isomorphic polar spaces}}{23}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}\leavevmode {\color {Chapter }Intertwiners}}{24}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\leavevmode {\color {Chapter }Klein correspondence}}{25}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}\leavevmode {\color {Chapter }Embedding in a subspace}}{25}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}\leavevmode {\color {Chapter }subgeometries}}{26}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}\leavevmode {\color {Chapter }Embedding by field reduction}}{27}{subsection.2.3.6}
+\contentsline {section}{\numberline {2.4}\leavevmode {\color {Chapter }Some geometrical objects}}{28}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\leavevmode {\color {Chapter }Spreads of $W(5,3)$}}{28}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\leavevmode {\color {Chapter }Distance-6 spread of the split Cayley hexagon}}{28}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}\leavevmode {\color {Chapter }Some particular incidence geometries}}{29}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}\leavevmode {\color {Chapter }The split Cayley hexagon}}{29}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}\leavevmode {\color {Chapter }An (apartment of) a building of type $E_6$}}{30}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}\leavevmode {\color {Chapter }A rank 4 geometry for $PSL(2,11)$}}{31}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}\leavevmode {\color {Chapter }The Ree-Tits octagon of order $[2,4]$ as coset geometry}}{32}{subsection.2.5.4}
+\contentsline {section}{\numberline {2.6}\leavevmode {\color {Chapter }Elation generalised quadrangles}}{33}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}\leavevmode {\color {Chapter }The classical q-clan}}{33}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}\leavevmode {\color {Chapter }Two ways to construct a flock generalised quadrangle from a Kantor-Knuth semifield q-clan}}{34}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.7}\leavevmode {\color {Chapter }Algebraic varieties}}{35}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}\leavevmode {\color {Chapter }A projective variety}}{35}{subsection.2.7.1}
+\contentsline {chapter}{\numberline {3}\leavevmode {\color {Chapter }Incidence Geometry}}{38}{chapter.3}
+\contentsline {section}{\numberline {3.1}\leavevmode {\color {Chapter }Incidence structures}}{38}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}\leavevmode {\color {Chapter }IsIncidenceStructure}}{39}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}\leavevmode {\color {Chapter }IsIncidenceGeometry}}{39}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}\leavevmode {\color {Chapter }IncidenceStructure}}{39}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}\leavevmode {\color {Chapter }Main categories in \texttt {IsIncidenceGeometry}}}{40}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}\leavevmode {\color {Chapter }Examples of categories of incidence geometries}}{40}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}\leavevmode {\color {Chapter }TypesOfElementsOfIncidenceStructure}}{40}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}\leavevmode {\color {Chapter }Rank}}{41}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}\leavevmode {\color {Chapter }IncidenceGraph}}{41}{subsection.3.1.8}
+\contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Elements of incidence structures}}{43}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}\leavevmode {\color {Chapter }Main categories for individual elements of incidence structures}}{43}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}\leavevmode {\color {Chapter }UnderlyingObject}}{43}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}\leavevmode {\color {Chapter }Type}}{45}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}\leavevmode {\color {Chapter }ObjectToElement}}{45}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}\leavevmode {\color {Chapter }Main categories for collections of all the elements of a given type of an incidence structure}}{45}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}\leavevmode {\color {Chapter }ElementsOfIncidenceStructure}}{46}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}\leavevmode {\color {Chapter }ElementsOfIncidenceStructure}}{47}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}\leavevmode {\color {Chapter }Short names for ElementsOfIncidenceStructure}}{47}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}\leavevmode {\color {Chapter }NrElementsOfIncidenceStructure}}{47}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.10}\leavevmode {\color {Chapter }Random}}{48}{subsection.3.2.10}
+\contentsline {subsection}{\numberline {3.2.11}\leavevmode {\color {Chapter }IsIncident}}{48}{subsection.3.2.11}
+\contentsline {subsection}{\numberline {3.2.12}\leavevmode {\color {Chapter }AmbientGeometry}}{48}{subsection.3.2.12}
+\contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Flags of incidence structures}}{49}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}\leavevmode {\color {Chapter }FlagOfIncidenceStructure}}{49}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}\leavevmode {\color {Chapter }IsChamberOfIncidenceStructure}}{50}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}\leavevmode {\color {Chapter }IsEmptyFlag}}{50}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}\leavevmode {\color {Chapter }ElementsOfFlag}}{50}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}\leavevmode {\color {Chapter }Rank}}{51}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}\leavevmode {\color {Chapter }Size}}{51}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}\leavevmode {\color {Chapter }AmbientGeometry}}{51}{subsection.3.3.7}
+\contentsline {subsection}{\numberline {3.3.8}\leavevmode {\color {Chapter }Type}}{52}{subsection.3.3.8}
+\contentsline {subsection}{\numberline {3.3.9}\leavevmode {\color {Chapter }IsIncident}}{52}{subsection.3.3.9}
+\contentsline {section}{\numberline {3.4}\leavevmode {\color {Chapter }Shadow of elements}}{53}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}\leavevmode {\color {Chapter }ShadowOfElement}}{53}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}\leavevmode {\color {Chapter }ElementsIncidentWithElementOfIncidenceStructure}}{54}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}\leavevmode {\color {Chapter }ShadowOfFlag}}{54}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}\leavevmode {\color {Chapter }ResidueOfFlag}}{54}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}\leavevmode {\color {Chapter }Short names for ElementsIncidentWithElementOfIncidenceStructure}}{55}{subsection.3.4.5}
+\contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Enumerating elements of an incidence structure}}{55}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}\leavevmode {\color {Chapter }Iterator}}{56}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}\leavevmode {\color {Chapter }Enumerator}}{57}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}\leavevmode {\color {Chapter }List}}{57}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}\leavevmode {\color {Chapter }AsList}}{60}{subsection.3.5.4}
+\contentsline {section}{\numberline {3.6}\leavevmode {\color {Chapter }Lie geometries}}{62}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}\leavevmode {\color {Chapter }Main categories in \texttt {IsLieGeometry}}}{62}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}\leavevmode {\color {Chapter }AmbientSpace}}{63}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}\leavevmode {\color {Chapter }UnderlyingVectorSpace}}{63}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}\leavevmode {\color {Chapter }ProjectiveDimension}}{63}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}\leavevmode {\color {Chapter }IsEmptySubspace}}{63}{subsection.3.6.5}
+\contentsline {section}{\numberline {3.7}\leavevmode {\color {Chapter }Elements of Lie geometries}}{64}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}\leavevmode {\color {Chapter }VectorSpaceToElement}}{64}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}\leavevmode {\color {Chapter }UnderlyingObject}}{65}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}\leavevmode {\color {Chapter }\texttt {\char 92\relax }in}}{65}{subsection.3.7.3}
+\contentsline {subsection}{\numberline {3.7.4}\leavevmode {\color {Chapter }More short names for \texttt {ElementsIncidentWithElementOfIncidenceStructure}}}{65}{subsection.3.7.4}
+\contentsline {section}{\numberline {3.8}\leavevmode {\color {Chapter }Changing the ambient geometry of elements of a Lie geometry}}{66}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}\leavevmode {\color {Chapter }ElementToElement}}{66}{subsection.3.8.1}
+\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Projective Spaces}}{68}{chapter.4}
+\contentsline {section}{\numberline {4.1}\leavevmode {\color {Chapter }Projective Spaces and basic operations}}{68}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}\leavevmode {\color {Chapter }IsProjectiveSpace}}{68}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}\leavevmode {\color {Chapter }ProjectiveSpace}}{68}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}\leavevmode {\color {Chapter }ProjectiveDimension}}{69}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}\leavevmode {\color {Chapter }BaseField}}{69}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}\leavevmode {\color {Chapter }UnderlyingVectorSpace}}{69}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}\leavevmode {\color {Chapter }AmbientSpace}}{70}{subsection.4.1.6}
+\contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }Subspaces of projective spaces}}{70}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}\leavevmode {\color {Chapter }VectorSpaceToElement}}{70}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }EmptySubspace}}{71}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}\leavevmode {\color {Chapter }ProjectiveDimension}}{71}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}\leavevmode {\color {Chapter }ElementsOfIncidenceStructure}}{72}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}\leavevmode {\color {Chapter }Short names for ElementsOfIncidenceStructure}}{72}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}\leavevmode {\color {Chapter }Incidence and containment}}{73}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}\leavevmode {\color {Chapter }StandardFrame}}{74}{subsection.4.2.7}
+\contentsline {subsection}{\numberline {4.2.8}\leavevmode {\color {Chapter }Coordinates}}{74}{subsection.4.2.8}
+\contentsline {subsection}{\numberline {4.2.9}\leavevmode {\color {Chapter }DualCoordinatesOfHyperplane}}{74}{subsection.4.2.9}
+\contentsline {subsection}{\numberline {4.2.10}\leavevmode {\color {Chapter }HyperplaneByDualCoordinates}}{75}{subsection.4.2.10}
+\contentsline {subsection}{\numberline {4.2.11}\leavevmode {\color {Chapter }EquationOfHyperplane}}{75}{subsection.4.2.11}
+\contentsline {subsection}{\numberline {4.2.12}\leavevmode {\color {Chapter }AmbientSpace}}{75}{subsection.4.2.12}
+\contentsline {subsection}{\numberline {4.2.13}\leavevmode {\color {Chapter }BaseField}}{75}{subsection.4.2.13}
+\contentsline {subsection}{\numberline {4.2.14}\leavevmode {\color {Chapter }Random}}{76}{subsection.4.2.14}
+\contentsline {subsection}{\numberline {4.2.15}\leavevmode {\color {Chapter }RandomSubspace}}{77}{subsection.4.2.15}
+\contentsline {subsection}{\numberline {4.2.16}\leavevmode {\color {Chapter }Span}}{77}{subsection.4.2.16}
+\contentsline {subsection}{\numberline {4.2.17}\leavevmode {\color {Chapter }Meet}}{78}{subsection.4.2.17}
+\contentsline {subsection}{\numberline {4.2.18}\leavevmode {\color {Chapter }FlagOfIncidenceStructure}}{79}{subsection.4.2.18}
+\contentsline {subsection}{\numberline {4.2.19}\leavevmode {\color {Chapter }IsEmptyFlag}}{79}{subsection.4.2.19}
+\contentsline {subsection}{\numberline {4.2.20}\leavevmode {\color {Chapter }IsChamberOfIncidenceStructure}}{80}{subsection.4.2.20}
+\contentsline {section}{\numberline {4.3}\leavevmode {\color {Chapter }Shadows of Projective Subspaces}}{80}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}\leavevmode {\color {Chapter }ShadowOfElement}}{80}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}\leavevmode {\color {Chapter }ShadowOfFlag}}{81}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}\leavevmode {\color {Chapter }ElementsIncidentWithElementOfIncidenceStructure}}{81}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}\leavevmode {\color {Chapter }Short names for \texttt {ElementsIncidentWithElementOfIncidenceStructure}}}{82}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}\leavevmode {\color {Chapter }Enumerating subspaces of a projective space}}{82}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}\leavevmode {\color {Chapter }Iterator}}{82}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}\leavevmode {\color {Chapter }Enumerator}}{83}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}\leavevmode {\color {Chapter }List}}{83}{subsection.4.4.3}
+\contentsline {chapter}{\numberline {5}\leavevmode {\color {Chapter }Projective Groups}}{84}{chapter.5}
+\contentsline {section}{\numberline {5.1}\leavevmode {\color {Chapter } Projectivities, collineations and correlations of projective spaces.}}{85}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}\leavevmode {\color {Chapter }Categories for group elements}}{85}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}\leavevmode {\color {Chapter }Representations for group elements}}{85}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}\leavevmode {\color {Chapter }Projectivities}}{86}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}\leavevmode {\color {Chapter }Collineations of projective spaces}}{87}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}\leavevmode {\color {Chapter }Projective strictly semilinear maps}}{87}{subsection.5.1.5}
+\contentsline {subsection}{\numberline {5.1.6}\leavevmode {\color {Chapter }Correlations and collineations}}{88}{subsection.5.1.6}
+\contentsline {section}{\numberline {5.2}\leavevmode {\color {Chapter }Construction of projectivities, collineations and correlations.}}{88}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}\leavevmode {\color {Chapter }Projectivity}}{88}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}\leavevmode {\color {Chapter }CollineationOfProjectiveSpace}}{89}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}\leavevmode {\color {Chapter }ProjectiveSemilinearMap}}{89}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}\leavevmode {\color {Chapter }IdentityMappingOfElementsOfProjectiveSpace}}{90}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}\leavevmode {\color {Chapter }StandardDualityOfProjectiveSpace}}{90}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.6}\leavevmode {\color {Chapter }CorrelationOfProjectiveSpace}}{90}{subsection.5.2.6}
+\contentsline {section}{\numberline {5.3}\leavevmode {\color {Chapter }Basic operations for projectivities, collineations and correlations of projective spaces}}{91}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}\leavevmode {\color {Chapter }Representative}}{91}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}\leavevmode {\color {Chapter }MatrixOfCollineation}}{92}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}\leavevmode {\color {Chapter }MatrixOfCorrelation}}{92}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}\leavevmode {\color {Chapter }BaseField}}{92}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}\leavevmode {\color {Chapter }FieldAutomorphism}}{93}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}\leavevmode {\color {Chapter }ProjectiveSpaceIsomorphism}}{93}{subsection.5.3.6}
+\contentsline {subsection}{\numberline {5.3.7}\leavevmode {\color {Chapter }Order}}{93}{subsection.5.3.7}
+\contentsline {section}{\numberline {5.4}\leavevmode {\color {Chapter }The groups $P\Gamma {}L$, $PGL$, and $PSL$ in \textsf {FinInG} }}{94}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}\leavevmode {\color {Chapter }ProjectivityGroup}}{94}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}\leavevmode {\color {Chapter }CollineationGroup}}{95}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}\leavevmode {\color {Chapter }SpecialProjectivityGroup}}{95}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}\leavevmode {\color {Chapter }IsProjectivityGroup}}{96}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}\leavevmode {\color {Chapter }IsCollineationGroup}}{96}{subsection.5.4.5}
+\contentsline {subsection}{\numberline {5.4.6}\leavevmode {\color {Chapter }CorrelationCollineationGroup}}{96}{subsection.5.4.6}
+\contentsline {section}{\numberline {5.5}\leavevmode {\color {Chapter }Basic operations for projective groups}}{96}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}\leavevmode {\color {Chapter }BaseField}}{96}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}\leavevmode {\color {Chapter }Dimension}}{97}{subsection.5.5.2}
+\contentsline {section}{\numberline {5.6}\leavevmode {\color {Chapter }Natural embedding of a collineation group in a correlationcollineation group}}{97}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}\leavevmode {\color {Chapter }Embedding}}{97}{subsection.5.6.1}
+\contentsline {section}{\numberline {5.7}\leavevmode {\color {Chapter }Basic action of projective group elements}}{98}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}\leavevmode {\color {Chapter }\texttt {\char 92\relax }\texttt {\char 94\relax }}}{98}{subsection.5.7.1}
+\contentsline {section}{\numberline {5.8}\leavevmode {\color {Chapter }Projective group actions}}{98}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}\leavevmode {\color {Chapter }OnProjSubspaces}}{98}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}\leavevmode {\color {Chapter }ActionOnAllProjPoints}}{99}{subsection.5.8.2}
+\contentsline {subsection}{\numberline {5.8.3}\leavevmode {\color {Chapter }OnProjSubspacesExtended}}{99}{subsection.5.8.3}
+\contentsline {section}{\numberline {5.9}\leavevmode {\color {Chapter }Special subgroups of the projectivity group}}{100}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}\leavevmode {\color {Chapter }ElationOfProjectiveSpace}}{101}{subsection.5.9.1}
+\contentsline {subsection}{\numberline {5.9.2}\leavevmode {\color {Chapter }ProjectiveElationGroup}}{101}{subsection.5.9.2}
+\contentsline {subsection}{\numberline {5.9.3}\leavevmode {\color {Chapter }HomologyOfProjectiveSpace}}{102}{subsection.5.9.3}
+\contentsline {subsection}{\numberline {5.9.4}\leavevmode {\color {Chapter }ProjectiveHomologyGroup}}{102}{subsection.5.9.4}
+\contentsline {section}{\numberline {5.10}\leavevmode {\color {Chapter }Nice Monomorphisms}}{103}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}\leavevmode {\color {Chapter }NiceMonomorphism}}{103}{subsection.5.10.1}
+\contentsline {subsection}{\numberline {5.10.2}\leavevmode {\color {Chapter }NiceObject}}{104}{subsection.5.10.2}
+\contentsline {subsection}{\numberline {5.10.3}\leavevmode {\color {Chapter }FINING}}{104}{subsection.5.10.3}
+\contentsline {subsection}{\numberline {5.10.4}\leavevmode {\color {Chapter }CanComputeActionOnPoints}}{104}{subsection.5.10.4}
+\contentsline {subsection}{\numberline {5.10.5}\leavevmode {\color {Chapter }NiceMonomorphismByDomain}}{105}{subsection.5.10.5}
+\contentsline {subsection}{\numberline {5.10.6}\leavevmode {\color {Chapter }NiceMonomorphismByOrbit}}{105}{subsection.5.10.6}
+\contentsline {chapter}{\numberline {6}\leavevmode {\color {Chapter }Polarities of Projective Spaces}}{106}{chapter.6}
+\contentsline {section}{\numberline {6.1}\leavevmode {\color {Chapter }Creating polarities of projective spaces}}{106}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}\leavevmode {\color {Chapter }PolarityOfProjectiveSpace}}{107}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}\leavevmode {\color {Chapter }PolarityOfProjectiveSpace}}{107}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}\leavevmode {\color {Chapter }PolarityOfProjectiveSpace}}{107}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}\leavevmode {\color {Chapter }PolarityOfProjectiveSpace}}{108}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}\leavevmode {\color {Chapter }Operations, attributes and properties for polarities of projective spaces}}{108}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}\leavevmode {\color {Chapter }SesquilinearForm}}{108}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}\leavevmode {\color {Chapter }BaseField}}{109}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}\leavevmode {\color {Chapter }GramMatrix}}{109}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}\leavevmode {\color {Chapter }CompanionAutomorphism}}{109}{subsection.6.2.4}
+\contentsline {subsection}{\numberline {6.2.5}\leavevmode {\color {Chapter }IsHermitianPolarityOfProjectiveSpace}}{110}{subsection.6.2.5}
+\contentsline {subsection}{\numberline {6.2.6}\leavevmode {\color {Chapter }IsSymplecticPolarityOfProjectiveSpace}}{110}{subsection.6.2.6}
+\contentsline {subsection}{\numberline {6.2.7}\leavevmode {\color {Chapter }IsOrthogonalPolarityOfProjectiveSpace}}{110}{subsection.6.2.7}
+\contentsline {subsection}{\numberline {6.2.8}\leavevmode {\color {Chapter }IsPseudoPolarityOfProjectiveSpace}}{111}{subsection.6.2.8}
+\contentsline {section}{\numberline {6.3}\leavevmode {\color {Chapter }Polarities, absolute points, totally isotropic elements and finite classical polar spaces}}{111}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}\leavevmode {\color {Chapter }GeometryOfAbsolutePoints}}{111}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}\leavevmode {\color {Chapter }AbsolutePoints}}{112}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}\leavevmode {\color {Chapter }PolarSpace}}{112}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}\leavevmode {\color {Chapter }Commuting polarities}}{113}{section.6.4}
+\contentsline {chapter}{\numberline {7}\leavevmode {\color {Chapter }Finite Classical Polar Spaces}}{114}{chapter.7}
+\contentsline {section}{\numberline {7.1}\leavevmode {\color {Chapter }Finite Classical Polar Spaces}}{114}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}\leavevmode {\color {Chapter }IsClassicalPolarSpace}}{114}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}\leavevmode {\color {Chapter }PolarSpace}}{115}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}\leavevmode {\color {Chapter }Canonical and standard Polar Spaces}}{116}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}\leavevmode {\color {Chapter }SymplecticSpace}}{118}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}\leavevmode {\color {Chapter }HermitianPolarSpace}}{118}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}\leavevmode {\color {Chapter }ParabolicQuadric}}{118}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}\leavevmode {\color {Chapter }HyperbolicQuadric}}{119}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}\leavevmode {\color {Chapter }EllipticQuadric}}{120}{subsection.7.2.5}
+\contentsline {subsection}{\numberline {7.2.6}\leavevmode {\color {Chapter }IsCanonicalPolarSpace}}{121}{subsection.7.2.6}
+\contentsline {subsection}{\numberline {7.2.7}\leavevmode {\color {Chapter }CanonicalPolarSpace}}{122}{subsection.7.2.7}
+\contentsline {subsection}{\numberline {7.2.8}\leavevmode {\color {Chapter }StandardPolarSpace}}{122}{subsection.7.2.8}
+\contentsline {section}{\numberline {7.3}\leavevmode {\color {Chapter }Basic operations for finite classical polar spaces}}{122}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}\leavevmode {\color {Chapter }UnderlyingVectorSpace}}{122}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}\leavevmode {\color {Chapter }AmbientSpace}}{122}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}\leavevmode {\color {Chapter }ProjectiveDimension}}{123}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}\leavevmode {\color {Chapter }Rank}}{123}{subsection.7.3.4}
+\contentsline {subsection}{\numberline {7.3.5}\leavevmode {\color {Chapter }BaseField}}{123}{subsection.7.3.5}
+\contentsline {subsection}{\numberline {7.3.6}\leavevmode {\color {Chapter }IsHyperbolicQuadric}}{124}{subsection.7.3.6}
+\contentsline {subsection}{\numberline {7.3.7}\leavevmode {\color {Chapter }IsEllipticQuadric}}{124}{subsection.7.3.7}
+\contentsline {subsection}{\numberline {7.3.8}\leavevmode {\color {Chapter }IsParabolicQuadric}}{125}{subsection.7.3.8}
+\contentsline {section}{\numberline {7.4}\leavevmode {\color {Chapter }Subspaces of finite classical polar spaces}}{125}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}\leavevmode {\color {Chapter }VectorSpaceToElement}}{126}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}\leavevmode {\color {Chapter }EmptySubspace}}{126}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.3}\leavevmode {\color {Chapter }ProjectiveDimension}}{127}{subsection.7.4.3}
+\contentsline {subsection}{\numberline {7.4.4}\leavevmode {\color {Chapter }ElementsOfIncidenceStructure}}{127}{subsection.7.4.4}
+\contentsline {subsection}{\numberline {7.4.5}\leavevmode {\color {Chapter }AmbientSpace}}{127}{subsection.7.4.5}
+\contentsline {subsection}{\numberline {7.4.6}\leavevmode {\color {Chapter }Coordinates}}{128}{subsection.7.4.6}
+\contentsline {section}{\numberline {7.5}\leavevmode {\color {Chapter }Basic operations for polar spaces and subspaces of projective spaces}}{128}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}\leavevmode {\color {Chapter }Incidence and containment}}{128}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}\leavevmode {\color {Chapter }Span}}{129}{subsection.7.5.2}
+\contentsline {subsection}{\numberline {7.5.3}\leavevmode {\color {Chapter }Meet}}{129}{subsection.7.5.3}
+\contentsline {subsection}{\numberline {7.5.4}\leavevmode {\color {Chapter }IsCollinear}}{130}{subsection.7.5.4}
+\contentsline {subsection}{\numberline {7.5.5}\leavevmode {\color {Chapter }PolarityOfProjectiveSpace}}{131}{subsection.7.5.5}
+\contentsline {subsection}{\numberline {7.5.6}\leavevmode {\color {Chapter }TypeOfSubspace}}{131}{subsection.7.5.6}
+\contentsline {subsection}{\numberline {7.5.7}\leavevmode {\color {Chapter }TangentSpace}}{132}{subsection.7.5.7}
+\contentsline {subsection}{\numberline {7.5.8}\leavevmode {\color {Chapter }Pole}}{133}{subsection.7.5.8}
+\contentsline {section}{\numberline {7.6}\leavevmode {\color {Chapter }Shadow of elements}}{133}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}\leavevmode {\color {Chapter }ShadowOfElement}}{133}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2}\leavevmode {\color {Chapter }ElementsIncidentWithElementOfIncidenceStructure}}{134}{subsection.7.6.2}
+\contentsline {section}{\numberline {7.7}\leavevmode {\color {Chapter }Projective Orthogonal/Unitary/Symplectic groups in \textsf {FinInG}}}{134}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}\leavevmode {\color {Chapter }SpecialIsometryGroup}}{135}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.7.2}\leavevmode {\color {Chapter }IsometryGroup}}{136}{subsection.7.7.2}
+\contentsline {subsection}{\numberline {7.7.3}\leavevmode {\color {Chapter }SimilarityGroup}}{136}{subsection.7.7.3}
+\contentsline {subsection}{\numberline {7.7.4}\leavevmode {\color {Chapter }CollineationGroup}}{137}{subsection.7.7.4}
+\contentsline {section}{\numberline {7.8}\leavevmode {\color {Chapter }Enumerating subspaces of polar spaces}}{137}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}\leavevmode {\color {Chapter }Enumerators for polar spaces}}{137}{subsection.7.8.1}
+\contentsline {subsection}{\numberline {7.8.2}\leavevmode {\color {Chapter }Enumerator}}{138}{subsection.7.8.2}
+\contentsline {subsection}{\numberline {7.8.3}\leavevmode {\color {Chapter }Iterators for polar spaces}}{138}{subsection.7.8.3}
+\contentsline {subsection}{\numberline {7.8.4}\leavevmode {\color {Chapter }Iterator}}{138}{subsection.7.8.4}
+\contentsline {subsection}{\numberline {7.8.5}\leavevmode {\color {Chapter }AsList}}{138}{subsection.7.8.5}
+\contentsline {chapter}{\numberline {8}\leavevmode {\color {Chapter }Orbits, stabilisers and actions}}{140}{chapter.8}
+\contentsline {section}{\numberline {8.1}\leavevmode {\color {Chapter }Orbits}}{140}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}\leavevmode {\color {Chapter }FiningOrbit}}{140}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}\leavevmode {\color {Chapter }FiningOrbits}}{141}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}\leavevmode {\color {Chapter }Stabilisers}}{142}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}\leavevmode {\color {Chapter }FiningStabiliser}}{142}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}\leavevmode {\color {Chapter }FiningStabiliserOrb}}{143}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}\leavevmode {\color {Chapter }FiningSetwiseStabiliser}}{145}{subsection.8.2.3}
+\contentsline {section}{\numberline {8.3}\leavevmode {\color {Chapter }Actions and nice monomorphisms revisited}}{146}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}\leavevmode {\color {Chapter }Action functions}}{146}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}\leavevmode {\color {Chapter }Generic GAP functions}}{147}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.3}\leavevmode {\color {Chapter }NiceMonomorphism}}{148}{subsection.8.3.3}
+\contentsline {subsection}{\numberline {8.3.4}\leavevmode {\color {Chapter }NiceObject}}{148}{subsection.8.3.4}
+\contentsline {subsection}{\numberline {8.3.5}\leavevmode {\color {Chapter }Different behaviour for different collineation groups}}{148}{subsection.8.3.5}
+\contentsline {subsection}{\numberline {8.3.6}\leavevmode {\color {Chapter }SetParent}}{149}{subsection.8.3.6}
+\contentsline {chapter}{\numberline {9}\leavevmode {\color {Chapter }Affine Spaces}}{151}{chapter.9}
+\contentsline {section}{\numberline {9.1}\leavevmode {\color {Chapter }Affine spaces and basic operations}}{151}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}\leavevmode {\color {Chapter }IsAffineSpace}}{151}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}\leavevmode {\color {Chapter }AffineSpace}}{152}{subsection.9.1.2}
+\contentsline {subsection}{\numberline {9.1.3}\leavevmode {\color {Chapter }Dimension}}{152}{subsection.9.1.3}
+\contentsline {subsection}{\numberline {9.1.4}\leavevmode {\color {Chapter }BaseField}}{152}{subsection.9.1.4}
+\contentsline {subsection}{\numberline {9.1.5}\leavevmode {\color {Chapter }UnderlyingVectorSpace}}{152}{subsection.9.1.5}
+\contentsline {subsection}{\numberline {9.1.6}\leavevmode {\color {Chapter }AmbientSpace}}{153}{subsection.9.1.6}
+\contentsline {section}{\numberline {9.2}\leavevmode {\color {Chapter }Subspaces of affine spaces}}{153}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}\leavevmode {\color {Chapter }AffineSubspace}}{153}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}\leavevmode {\color {Chapter }ElementsOfIncidenceStructure}}{154}{subsection.9.2.2}
+\contentsline {subsection}{\numberline {9.2.3}\leavevmode {\color {Chapter }Short names for ElementsOfIncidenceStructure}}{154}{subsection.9.2.3}
+\contentsline {subsection}{\numberline {9.2.4}\leavevmode {\color {Chapter }Incidence and containment}}{155}{subsection.9.2.4}
+\contentsline {subsection}{\numberline {9.2.5}\leavevmode {\color {Chapter }AmbientSpace}}{156}{subsection.9.2.5}
+\contentsline {subsection}{\numberline {9.2.6}\leavevmode {\color {Chapter }BaseField}}{156}{subsection.9.2.6}
+\contentsline {subsection}{\numberline {9.2.7}\leavevmode {\color {Chapter }Span}}{156}{subsection.9.2.7}
+\contentsline {subsection}{\numberline {9.2.8}\leavevmode {\color {Chapter }Meet}}{157}{subsection.9.2.8}
+\contentsline {subsection}{\numberline {9.2.9}\leavevmode {\color {Chapter }IsParallel}}{157}{subsection.9.2.9}
+\contentsline {subsection}{\numberline {9.2.10}\leavevmode {\color {Chapter }ParallelClass}}{158}{subsection.9.2.10}
+\contentsline {section}{\numberline {9.3}\leavevmode {\color {Chapter }Shadows of Affine Subspaces}}{158}{section.9.3}
+\contentsline {subsection}{\numberline {9.3.1}\leavevmode {\color {Chapter }ShadowOfElement}}{158}{subsection.9.3.1}
+\contentsline {subsection}{\numberline {9.3.2}\leavevmode {\color {Chapter }ShadowOfFlag}}{159}{subsection.9.3.2}
+\contentsline {section}{\numberline {9.4}\leavevmode {\color {Chapter }Iterators and enumerators}}{159}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}\leavevmode {\color {Chapter }Iterator}}{159}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}\leavevmode {\color {Chapter }Enumerator}}{160}{subsection.9.4.2}
+\contentsline {section}{\numberline {9.5}\leavevmode {\color {Chapter }Affine groups}}{160}{section.9.5}
+\contentsline {subsection}{\numberline {9.5.1}\leavevmode {\color {Chapter }AffineGroup}}{161}{subsection.9.5.1}
+\contentsline {subsection}{\numberline {9.5.2}\leavevmode {\color {Chapter }CollineationGroup}}{162}{subsection.9.5.2}
+\contentsline {subsection}{\numberline {9.5.3}\leavevmode {\color {Chapter }OnAffineSpaces}}{162}{subsection.9.5.3}
+\contentsline {section}{\numberline {9.6}\leavevmode {\color {Chapter }Low level operations}}{163}{section.9.6}
+\contentsline {subsection}{\numberline {9.6.1}\leavevmode {\color {Chapter }IsVectorSpaceTransversal}}{163}{subsection.9.6.1}
+\contentsline {subsection}{\numberline {9.6.2}\leavevmode {\color {Chapter }VectorSpaceTransversal}}{163}{subsection.9.6.2}
+\contentsline {subsection}{\numberline {9.6.3}\leavevmode {\color {Chapter }VectorSpaceTransversalElement}}{163}{subsection.9.6.3}
+\contentsline {subsection}{\numberline {9.6.4}\leavevmode {\color {Chapter }ComplementSpace}}{163}{subsection.9.6.4}
+\contentsline {chapter}{\numberline {10}\leavevmode {\color {Chapter }Geometry Morphisms}}{164}{chapter.10}
+\contentsline {section}{\numberline {10.1}\leavevmode {\color {Chapter }Geometry morphisms in FinInG}}{164}{section.10.1}
+\contentsline {subsection}{\numberline {10.1.1}\leavevmode {\color {Chapter }IsGeometryMorphism}}{164}{subsection.10.1.1}
+\contentsline {subsection}{\numberline {10.1.2}\leavevmode {\color {Chapter }Intertwiner}}{165}{subsection.10.1.2}
+\contentsline {section}{\numberline {10.2}\leavevmode {\color {Chapter }Type preserving bijective geometry morphisms}}{166}{section.10.2}
+\contentsline {subsection}{\numberline {10.2.1}\leavevmode {\color {Chapter }IsomorphismPolarSpaces}}{166}{subsection.10.2.1}
+\contentsline {section}{\numberline {10.3}\leavevmode {\color {Chapter }Klein correspondence and derived dualities}}{167}{section.10.3}
+\contentsline {subsection}{\numberline {10.3.1}\leavevmode {\color {Chapter }PluckerCoordinates}}{167}{subsection.10.3.1}
+\contentsline {subsection}{\numberline {10.3.2}\leavevmode {\color {Chapter }KleinCorrespondence}}{168}{subsection.10.3.2}
+\contentsline {subsection}{\numberline {10.3.3}\leavevmode {\color {Chapter }KleinCorrespondence}}{169}{subsection.10.3.3}
+\contentsline {subsection}{\numberline {10.3.4}\leavevmode {\color {Chapter }KleinCorrespondenceExtended}}{169}{subsection.10.3.4}
+\contentsline {subsection}{\numberline {10.3.5}\leavevmode {\color {Chapter }NaturalDuality}}{170}{subsection.10.3.5}
+\contentsline {subsection}{\numberline {10.3.6}\leavevmode {\color {Chapter }SelfDuality}}{171}{subsection.10.3.6}
+\contentsline {section}{\numberline {10.4}\leavevmode {\color {Chapter }Embeddings of projective spaces}}{172}{section.10.4}
+\contentsline {subsection}{\numberline {10.4.1}\leavevmode {\color {Chapter }NaturalEmbeddingBySubspace}}{172}{subsection.10.4.1}
+\contentsline {subsection}{\numberline {10.4.2}\leavevmode {\color {Chapter }NaturalEmbeddingBySubField}}{173}{subsection.10.4.2}
+\contentsline {subsection}{\numberline {10.4.3}\leavevmode {\color {Chapter } Embedding of projective spaces by field reduction}}{174}{subsection.10.4.3}
+\contentsline {subsection}{\numberline {10.4.4}\leavevmode {\color {Chapter }BlownUpSubspaceOfProjectiveSpace}}{174}{subsection.10.4.4}
+\contentsline {subsection}{\numberline {10.4.5}\leavevmode {\color {Chapter }NaturalEmbeddingByFieldReduction}}{175}{subsection.10.4.5}
+\contentsline {section}{\numberline {10.5}\leavevmode {\color {Chapter }Embeddings of polar spaces}}{176}{section.10.5}
+\contentsline {subsection}{\numberline {10.5.1}\leavevmode {\color {Chapter }NaturalEmbeddingBySubspace}}{176}{subsection.10.5.1}
+\contentsline {subsection}{\numberline {10.5.2}\leavevmode {\color {Chapter }NaturalEmbeddingBySubField}}{178}{subsection.10.5.2}
+\contentsline {subsection}{\numberline {10.5.3}\leavevmode {\color {Chapter } Embedding of polar spaces by field reduction}}{179}{subsection.10.5.3}
+\contentsline {subsection}{\numberline {10.5.4}\leavevmode {\color {Chapter }NaturalEmbeddingByFieldReduction}}{179}{subsection.10.5.4}
+\contentsline {subsection}{\numberline {10.5.5}\leavevmode {\color {Chapter }NaturalEmbeddingByFieldReduction}}{181}{subsection.10.5.5}
+\contentsline {section}{\numberline {10.6}\leavevmode {\color {Chapter }Projections}}{183}{section.10.6}
+\contentsline {subsection}{\numberline {10.6.1}\leavevmode {\color {Chapter }NaturalProjectionBySubspace}}{183}{subsection.10.6.1}
+\contentsline {section}{\numberline {10.7}\leavevmode {\color {Chapter }Projective completion}}{183}{section.10.7}
+\contentsline {subsection}{\numberline {10.7.1}\leavevmode {\color {Chapter }ProjectiveCompletion}}{183}{subsection.10.7.1}
+\contentsline {chapter}{\numberline {11}\leavevmode {\color {Chapter }Algebraic Varieties}}{185}{chapter.11}
+\contentsline {section}{\numberline {11.1}\leavevmode {\color {Chapter }Algebraic Varieties}}{185}{section.11.1}
+\contentsline {subsection}{\numberline {11.1.1}\leavevmode {\color {Chapter }AlgebraicVariety}}{185}{subsection.11.1.1}
+\contentsline {subsection}{\numberline {11.1.2}\leavevmode {\color {Chapter }DefiningListOfPolynomials}}{186}{subsection.11.1.2}
+\contentsline {subsection}{\numberline {11.1.3}\leavevmode {\color {Chapter }AmbientSpace}}{186}{subsection.11.1.3}
+\contentsline {subsection}{\numberline {11.1.4}\leavevmode {\color {Chapter }PointsOfAlgebraicVariety}}{186}{subsection.11.1.4}
+\contentsline {subsection}{\numberline {11.1.5}\leavevmode {\color {Chapter }Iterator}}{187}{subsection.11.1.5}
+\contentsline {subsection}{\numberline {11.1.6}\leavevmode {\color {Chapter }\texttt {\char 92\relax }in}}{187}{subsection.11.1.6}
+\contentsline {section}{\numberline {11.2}\leavevmode {\color {Chapter }Projective Varieties}}{187}{section.11.2}
+\contentsline {subsection}{\numberline {11.2.1}\leavevmode {\color {Chapter }ProjectiveVariety}}{187}{subsection.11.2.1}
+\contentsline {section}{\numberline {11.3}\leavevmode {\color {Chapter }Quadrics and Hermitian varieties}}{188}{section.11.3}
+\contentsline {subsection}{\numberline {11.3.1}\leavevmode {\color {Chapter }HermitianVariety}}{188}{subsection.11.3.1}
+\contentsline {subsection}{\numberline {11.3.2}\leavevmode {\color {Chapter }QuadraticVariety}}{189}{subsection.11.3.2}
+\contentsline {subsection}{\numberline {11.3.3}\leavevmode {\color {Chapter }QuadraticForm}}{190}{subsection.11.3.3}
+\contentsline {subsection}{\numberline {11.3.4}\leavevmode {\color {Chapter }SesquilinearForm}}{190}{subsection.11.3.4}
+\contentsline {subsection}{\numberline {11.3.5}\leavevmode {\color {Chapter }PolarSpace}}{191}{subsection.11.3.5}
+\contentsline {section}{\numberline {11.4}\leavevmode {\color {Chapter }Affine Varieties}}{191}{section.11.4}
+\contentsline {subsection}{\numberline {11.4.1}\leavevmode {\color {Chapter }AffineVariety}}{192}{subsection.11.4.1}
+\contentsline {section}{\numberline {11.5}\leavevmode {\color {Chapter }Geometry maps}}{192}{section.11.5}
+\contentsline {subsection}{\numberline {11.5.1}\leavevmode {\color {Chapter }Source}}{192}{subsection.11.5.1}
+\contentsline {subsection}{\numberline {11.5.2}\leavevmode {\color {Chapter }Range}}{192}{subsection.11.5.2}
+\contentsline {subsection}{\numberline {11.5.3}\leavevmode {\color {Chapter }ImageElm}}{192}{subsection.11.5.3}
+\contentsline {subsection}{\numberline {11.5.4}\leavevmode {\color {Chapter }ImagesSet}}{192}{subsection.11.5.4}
+\contentsline {subsection}{\numberline {11.5.5}\leavevmode {\color {Chapter }\texttt {\char 92\relax }\texttt {\char 94\relax }}}{192}{subsection.11.5.5}
+\contentsline {section}{\numberline {11.6}\leavevmode {\color {Chapter }Segre Varieties}}{193}{section.11.6}
+\contentsline {subsection}{\numberline {11.6.1}\leavevmode {\color {Chapter }SegreVariety}}{193}{subsection.11.6.1}
+\contentsline {subsection}{\numberline {11.6.2}\leavevmode {\color {Chapter }PointsOfSegreVariety}}{193}{subsection.11.6.2}
+\contentsline {subsection}{\numberline {11.6.3}\leavevmode {\color {Chapter }SegreMap}}{193}{subsection.11.6.3}
+\contentsline {subsection}{\numberline {11.6.4}\leavevmode {\color {Chapter }Source}}{194}{subsection.11.6.4}
+\contentsline {section}{\numberline {11.7}\leavevmode {\color {Chapter }Veronese Varieties}}{194}{section.11.7}
+\contentsline {subsection}{\numberline {11.7.1}\leavevmode {\color {Chapter }VeroneseVariety}}{194}{subsection.11.7.1}
+\contentsline {subsection}{\numberline {11.7.2}\leavevmode {\color {Chapter }PointsOfVeroneseVariety}}{195}{subsection.11.7.2}
+\contentsline {subsection}{\numberline {11.7.3}\leavevmode {\color {Chapter }VeroneseMap}}{195}{subsection.11.7.3}
+\contentsline {subsection}{\numberline {11.7.4}\leavevmode {\color {Chapter }Source}}{195}{subsection.11.7.4}
+\contentsline {section}{\numberline {11.8}\leavevmode {\color {Chapter }Grassmann Varieties}}{196}{section.11.8}
+\contentsline {subsection}{\numberline {11.8.1}\leavevmode {\color {Chapter }GrassmannVariety}}{196}{subsection.11.8.1}
+\contentsline {subsection}{\numberline {11.8.2}\leavevmode {\color {Chapter }PointsOfGrassmannVariety}}{196}{subsection.11.8.2}
+\contentsline {subsection}{\numberline {11.8.3}\leavevmode {\color {Chapter }GrassmannMap}}{196}{subsection.11.8.3}
+\contentsline {subsection}{\numberline {11.8.4}\leavevmode {\color {Chapter }Source}}{197}{subsection.11.8.4}
+\contentsline {chapter}{\numberline {12}\leavevmode {\color {Chapter }Generalised Polygons}}{198}{chapter.12}
+\contentsline {section}{\numberline {12.1}\leavevmode {\color {Chapter }Categories}}{198}{section.12.1}
+\contentsline {subsection}{\numberline {12.1.1}\leavevmode {\color {Chapter }IsGeneralisedPolygon}}{198}{subsection.12.1.1}
+\contentsline {subsection}{\numberline {12.1.2}\leavevmode {\color {Chapter }Subcategories in \texttt {IsGeneralisedPolygon}}}{198}{subsection.12.1.2}
+\contentsline {subsection}{\numberline {12.1.3}\leavevmode {\color {Chapter }IsWeakGeneralisedPolygon}}{199}{subsection.12.1.3}
+\contentsline {subsection}{\numberline {12.1.4}\leavevmode {\color {Chapter }Subcategories in \texttt {IsProjectivePlaneCategory}}}{199}{subsection.12.1.4}
+\contentsline {subsection}{\numberline {12.1.5}\leavevmode {\color {Chapter }Subcategories in \texttt {IsGeneralisedQuadrangle}}}{199}{subsection.12.1.5}
+\contentsline {subsection}{\numberline {12.1.6}\leavevmode {\color {Chapter }IsClassicalGeneralisedHexagon}}{199}{subsection.12.1.6}
+\contentsline {section}{\numberline {12.2}\leavevmode {\color {Chapter }Generic functions to create generalised polygons}}{200}{section.12.2}
+\contentsline {subsection}{\numberline {12.2.1}\leavevmode {\color {Chapter }GeneralisedPolygonByBlocks}}{200}{subsection.12.2.1}
+\contentsline {subsection}{\numberline {12.2.2}\leavevmode {\color {Chapter }GeneralisedPolygonByIncidenceMatrix}}{200}{subsection.12.2.2}
+\contentsline {subsection}{\numberline {12.2.3}\leavevmode {\color {Chapter }GeneralisedPolygonByElements}}{201}{subsection.12.2.3}
+\contentsline {section}{\numberline {12.3}\leavevmode {\color {Chapter }Attributes and operations for generalised polygons}}{203}{section.12.3}
+\contentsline {subsection}{\numberline {12.3.1}\leavevmode {\color {Chapter }Order}}{203}{subsection.12.3.1}
+\contentsline {subsection}{\numberline {12.3.2}\leavevmode {\color {Chapter }IncidenceGraphAttr}}{203}{subsection.12.3.2}
+\contentsline {subsection}{\numberline {12.3.3}\leavevmode {\color {Chapter }IncidenceGraph}}{203}{subsection.12.3.3}
+\contentsline {subsection}{\numberline {12.3.4}\leavevmode {\color {Chapter }IncidenceMatrixOfGeneralisedPolygon}}{205}{subsection.12.3.4}
+\contentsline {subsection}{\numberline {12.3.5}\leavevmode {\color {Chapter }CollineationGroup}}{205}{subsection.12.3.5}
+\contentsline {subsection}{\numberline {12.3.6}\leavevmode {\color {Chapter }CollineationAction}}{209}{subsection.12.3.6}
+\contentsline {subsection}{\numberline {12.3.7}\leavevmode {\color {Chapter }BlockDesignOfGeneralisedPolygon}}{210}{subsection.12.3.7}
+\contentsline {section}{\numberline {12.4}\leavevmode {\color {Chapter }Elements of generalised polygons}}{212}{section.12.4}
+\contentsline {subsection}{\numberline {12.4.1}\leavevmode {\color {Chapter }Collections of elements of generalised polygons}}{212}{subsection.12.4.1}
+\contentsline {subsection}{\numberline {12.4.2}\leavevmode {\color {Chapter }Size}}{212}{subsection.12.4.2}
+\contentsline {subsection}{\numberline {12.4.3}\leavevmode {\color {Chapter }Creating elements from objects and retrieving objects from elements}}{212}{subsection.12.4.3}
+\contentsline {subsection}{\numberline {12.4.4}\leavevmode {\color {Chapter }Incidence}}{213}{subsection.12.4.4}
+\contentsline {subsection}{\numberline {12.4.5}\leavevmode {\color {Chapter }Span}}{214}{subsection.12.4.5}
+\contentsline {subsection}{\numberline {12.4.6}\leavevmode {\color {Chapter }Meet}}{214}{subsection.12.4.6}
+\contentsline {subsection}{\numberline {12.4.7}\leavevmode {\color {Chapter }Shadow elements}}{215}{subsection.12.4.7}
+\contentsline {subsection}{\numberline {12.4.8}\leavevmode {\color {Chapter }DistanceBetweenElements}}{216}{subsection.12.4.8}
+\contentsline {section}{\numberline {12.5}\leavevmode {\color {Chapter }The classical generalised hexagons}}{217}{section.12.5}
+\contentsline {subsection}{\numberline {12.5.1}\leavevmode {\color {Chapter }Trialities of the hyperbolic quadric and generalised hexagons}}{217}{subsection.12.5.1}
+\contentsline {subsection}{\numberline {12.5.2}\leavevmode {\color {Chapter }IsLieGeometry}}{218}{subsection.12.5.2}
+\contentsline {subsection}{\numberline {12.5.3}\leavevmode {\color {Chapter }SplitCayleyHexagon}}{218}{subsection.12.5.3}
+\contentsline {subsection}{\numberline {12.5.4}\leavevmode {\color {Chapter }TwistedTrialityHexagon}}{219}{subsection.12.5.4}
+\contentsline {subsection}{\numberline {12.5.5}\leavevmode {\color {Chapter }VectorSpaceToElement}}{219}{subsection.12.5.5}
+\contentsline {subsection}{\numberline {12.5.6}\leavevmode {\color {Chapter }ObjectToElement}}{220}{subsection.12.5.6}
+\contentsline {subsection}{\numberline {12.5.7}\leavevmode {\color {Chapter }UnderlyingObject}}{220}{subsection.12.5.7}
+\contentsline {subsection}{\numberline {12.5.8}\leavevmode {\color {Chapter }\texttt {\char 92\relax }in}}{221}{subsection.12.5.8}
+\contentsline {subsection}{\numberline {12.5.9}\leavevmode {\color {Chapter }Span and meet of elements}}{221}{subsection.12.5.9}
+\contentsline {subsection}{\numberline {12.5.10}\leavevmode {\color {Chapter }CollineationGroup}}{222}{subsection.12.5.10}
+\contentsline {section}{\numberline {12.6}\leavevmode {\color {Chapter }Elation generalised quadrangles}}{223}{section.12.6}
+\contentsline {subsection}{\numberline {12.6.1}\leavevmode {\color {Chapter }Elation generalised quadrangles and Kantor families}}{223}{subsection.12.6.1}
+\contentsline {subsection}{\numberline {12.6.2}\leavevmode {\color {Chapter }Categories}}{223}{subsection.12.6.2}
+\contentsline {subsection}{\numberline {12.6.3}\leavevmode {\color {Chapter }Kantor families}}{224}{subsection.12.6.3}
+\contentsline {subsection}{\numberline {12.6.4}\leavevmode {\color {Chapter }EGQByKantorFamily}}{224}{subsection.12.6.4}
+\contentsline {subsection}{\numberline {12.6.5}\leavevmode {\color {Chapter }Representation of elements and underlying objects}}{224}{subsection.12.6.5}
+\contentsline {subsection}{\numberline {12.6.6}\leavevmode {\color {Chapter }Elation group and natural action on elements}}{226}{subsection.12.6.6}
+\contentsline {subsection}{\numberline {12.6.7}\leavevmode {\color {Chapter }Kantor families, q-clans, and elation generalised quadrangles}}{229}{subsection.12.6.7}
+\contentsline {subsection}{\numberline {12.6.8}\leavevmode {\color {Chapter }qClan}}{230}{subsection.12.6.8}
+\contentsline {subsection}{\numberline {12.6.9}\leavevmode {\color {Chapter }Particular q-clans}}{230}{subsection.12.6.9}
+\contentsline {subsection}{\numberline {12.6.10}\leavevmode {\color {Chapter }KantorFamilyByqClan}}{230}{subsection.12.6.10}
+\contentsline {subsection}{\numberline {12.6.11}\leavevmode {\color {Chapter }EGQByqClan}}{230}{subsection.12.6.11}
+\contentsline {subsection}{\numberline {12.6.12}\leavevmode {\color {Chapter }BLT-sets, flocks, q-clans, and elation generalised quadrangles}}{231}{subsection.12.6.12}
+\contentsline {subsection}{\numberline {12.6.13}\leavevmode {\color {Chapter }IsEGQByBLTSet}}{232}{subsection.12.6.13}
+\contentsline {subsection}{\numberline {12.6.14}\leavevmode {\color {Chapter }BLTSetByqClan}}{232}{subsection.12.6.14}
+\contentsline {subsection}{\numberline {12.6.15}\leavevmode {\color {Chapter }EGQByBLTSet}}{232}{subsection.12.6.15}
+\contentsline {subsection}{\numberline {12.6.16}\leavevmode {\color {Chapter }DefiningPlanesOfEGQByBLTSet}}{233}{subsection.12.6.16}
+\contentsline {subsection}{\numberline {12.6.17}\leavevmode {\color {Chapter }Representation of elements and underlying objects}}{234}{subsection.12.6.17}
+\contentsline {subsection}{\numberline {12.6.18}\leavevmode {\color {Chapter }CollineationSubgroup}}{235}{subsection.12.6.18}
+\contentsline {chapter}{\numberline {13}\leavevmode {\color {Chapter }Coset Geometries and Diagrams}}{237}{chapter.13}
+\contentsline {section}{\numberline {13.1}\leavevmode {\color {Chapter }Coset Geometries}}{237}{section.13.1}
+\contentsline {subsection}{\numberline {13.1.1}\leavevmode {\color {Chapter }IsCosetGeometry}}{237}{subsection.13.1.1}
+\contentsline {subsection}{\numberline {13.1.2}\leavevmode {\color {Chapter }CosetGeometry}}{237}{subsection.13.1.2}
+\contentsline {subsection}{\numberline {13.1.3}\leavevmode {\color {Chapter }IsIncident}}{238}{subsection.13.1.3}
+\contentsline {subsection}{\numberline {13.1.4}\leavevmode {\color {Chapter }ParabolicSubgroups}}{238}{subsection.13.1.4}
+\contentsline {subsection}{\numberline {13.1.5}\leavevmode {\color {Chapter }AmbientGroup}}{238}{subsection.13.1.5}
+\contentsline {subsection}{\numberline {13.1.6}\leavevmode {\color {Chapter }Borelsubgroup}}{238}{subsection.13.1.6}
+\contentsline {subsection}{\numberline {13.1.7}\leavevmode {\color {Chapter }RandomElement}}{239}{subsection.13.1.7}
+\contentsline {subsection}{\numberline {13.1.8}\leavevmode {\color {Chapter }RandomFlag}}{239}{subsection.13.1.8}
+\contentsline {subsection}{\numberline {13.1.9}\leavevmode {\color {Chapter }RandomChamber}}{239}{subsection.13.1.9}
+\contentsline {subsection}{\numberline {13.1.10}\leavevmode {\color {Chapter }IsFlagTransitiveGeometry}}{240}{subsection.13.1.10}
+\contentsline {subsection}{\numberline {13.1.11}\leavevmode {\color {Chapter }OnCosetGeometryElement}}{240}{subsection.13.1.11}
+\contentsline {subsection}{\numberline {13.1.12}\leavevmode {\color {Chapter }\texttt {\char 92\relax }\texttt {\char 94\relax }}}{241}{subsection.13.1.12}
+\contentsline {subsection}{\numberline {13.1.13}\leavevmode {\color {Chapter }\texttt {\char 92\relax }\texttt {\char 94\relax }}}{241}{subsection.13.1.13}
+\contentsline {subsection}{\numberline {13.1.14}\leavevmode {\color {Chapter }IsFirmGeometry}}{241}{subsection.13.1.14}
+\contentsline {subsection}{\numberline {13.1.15}\leavevmode {\color {Chapter }IsThickGeometry}}{241}{subsection.13.1.15}
+\contentsline {subsection}{\numberline {13.1.16}\leavevmode {\color {Chapter }IsThinGeometry}}{241}{subsection.13.1.16}
+\contentsline {subsection}{\numberline {13.1.17}\leavevmode {\color {Chapter }IsConnected}}{242}{subsection.13.1.17}
+\contentsline {subsection}{\numberline {13.1.18}\leavevmode {\color {Chapter }IsResiduallyConnected}}{242}{subsection.13.1.18}
+\contentsline {subsection}{\numberline {13.1.19}\leavevmode {\color {Chapter }StandardFlagOfCosetGeometry}}{244}{subsection.13.1.19}
+\contentsline {subsection}{\numberline {13.1.20}\leavevmode {\color {Chapter }FlagToStandardFlag}}{244}{subsection.13.1.20}
+\contentsline {subsection}{\numberline {13.1.21}\leavevmode {\color {Chapter }CanonicalResidueOfFlag}}{244}{subsection.13.1.21}
+\contentsline {subsection}{\numberline {13.1.22}\leavevmode {\color {Chapter }ResidueOfFlag}}{245}{subsection.13.1.22}
+\contentsline {subsection}{\numberline {13.1.23}\leavevmode {\color {Chapter }IncidenceGraph}}{248}{subsection.13.1.23}
+\contentsline {subsection}{\numberline {13.1.24}\leavevmode {\color {Chapter }Rk2GeoGonality}}{248}{subsection.13.1.24}
+\contentsline {subsection}{\numberline {13.1.25}\leavevmode {\color {Chapter }Rk2GeoDiameter}}{248}{subsection.13.1.25}
+\contentsline {subsection}{\numberline {13.1.26}\leavevmode {\color {Chapter }GeometryOfRank2Residue}}{248}{subsection.13.1.26}
+\contentsline {subsection}{\numberline {13.1.27}\leavevmode {\color {Chapter }Rank2Parameters}}{249}{subsection.13.1.27}
+\contentsline {section}{\numberline {13.2}\leavevmode {\color {Chapter }Automorphisms, Correlations and Isomorphisms}}{249}{section.13.2}
+\contentsline {subsection}{\numberline {13.2.1}\leavevmode {\color {Chapter }AutGroupIncidenceStructureWithNauty}}{249}{subsection.13.2.1}
+\contentsline {subsection}{\numberline {13.2.2}\leavevmode {\color {Chapter }CorGroupIncidenceStructureWithNauty}}{250}{subsection.13.2.2}
+\contentsline {subsection}{\numberline {13.2.3}\leavevmode {\color {Chapter }IsIsomorphicIncidenceStructureWithNauty}}{251}{subsection.13.2.3}
+\contentsline {section}{\numberline {13.3}\leavevmode {\color {Chapter }Diagrams}}{251}{section.13.3}
+\contentsline {subsection}{\numberline {13.3.1}\leavevmode {\color {Chapter }DiagramOfGeometry}}{252}{subsection.13.3.1}
+\contentsline {subsection}{\numberline {13.3.2}\leavevmode {\color {Chapter }GeometryOfDiagram}}{252}{subsection.13.3.2}
+\contentsline {subsection}{\numberline {13.3.3}\leavevmode {\color {Chapter }DrawDiagram}}{252}{subsection.13.3.3}
+\contentsline {subsection}{\numberline {13.3.4}\leavevmode {\color {Chapter }DrawDiagramWithNeato}}{256}{subsection.13.3.4}
+\contentsline {chapter}{\numberline {A}\leavevmode {\color {Chapter }The structure of \textsf {FinInG} }}{258}{appendix.A}
+\contentsline {section}{\numberline {A.1}\leavevmode {\color {Chapter }The different components}}{258}{section.A.1}
+\contentsline {section}{\numberline {A.2}\leavevmode {\color {Chapter }The complete inventory}}{258}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}\leavevmode {\color {Chapter }Declarations}}{258}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}\leavevmode {\color {Chapter }Functions/Methods}}{270}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}\leavevmode {\color {Chapter }The filter graph(s)}}{293}{section.A.3}
+\contentsline {chapter}{\numberline {B}\leavevmode {\color {Chapter }The finite classical groups in \textsf {FinInG} }}{294}{appendix.B}
+\contentsline {section}{\numberline {B.1}\leavevmode {\color {Chapter }Standard forms used to produce the finite classical groups.}}{294}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}\leavevmode {\color {Chapter }CanonicalGramMatrix}}{294}{subsection.B.1.1}
+\contentsline {subsection}{\numberline {B.1.2}\leavevmode {\color {Chapter }CanonicalQuadraticForm}}{295}{subsection.B.1.2}
+\contentsline {section}{\numberline {B.2}\leavevmode {\color {Chapter }Direct commands to construct the projective classical groups in \textsf {FinInG}}}{296}{section.B.2}
+\contentsline {subsection}{\numberline {B.2.1}\leavevmode {\color {Chapter }SOdesargues}}{296}{subsection.B.2.1}
+\contentsline {subsection}{\numberline {B.2.2}\leavevmode {\color {Chapter }GOdesargues}}{296}{subsection.B.2.2}
+\contentsline {subsection}{\numberline {B.2.3}\leavevmode {\color {Chapter }SUdesargues}}{296}{subsection.B.2.3}
+\contentsline {subsection}{\numberline {B.2.4}\leavevmode {\color {Chapter }GUdesargues}}{297}{subsection.B.2.4}
+\contentsline {subsection}{\numberline {B.2.5}\leavevmode {\color {Chapter }Spdesargues}}{297}{subsection.B.2.5}
+\contentsline {subsection}{\numberline {B.2.6}\leavevmode {\color {Chapter }GeneralSymplecticGroup}}{297}{subsection.B.2.6}
+\contentsline {subsection}{\numberline {B.2.7}\leavevmode {\color {Chapter }GSpdesargues}}{297}{subsection.B.2.7}
+\contentsline {subsection}{\numberline {B.2.8}\leavevmode {\color {Chapter }GammaSp}}{298}{subsection.B.2.8}
+\contentsline {subsection}{\numberline {B.2.9}\leavevmode {\color {Chapter }DeltaOminus}}{298}{subsection.B.2.9}
+\contentsline {subsection}{\numberline {B.2.10}\leavevmode {\color {Chapter }DeltaOplus}}{298}{subsection.B.2.10}
+\contentsline {subsection}{\numberline {B.2.11}\leavevmode {\color {Chapter }GammaOminus}}{298}{subsection.B.2.11}
+\contentsline {subsection}{\numberline {B.2.12}\leavevmode {\color {Chapter }GammaO}}{299}{subsection.B.2.12}
+\contentsline {subsection}{\numberline {B.2.13}\leavevmode {\color {Chapter }GammaOplus}}{299}{subsection.B.2.13}
+\contentsline {subsection}{\numberline {B.2.14}\leavevmode {\color {Chapter }GammaU}}{299}{subsection.B.2.14}
+\contentsline {subsection}{\numberline {B.2.15}\leavevmode {\color {Chapter }G2fining}}{299}{subsection.B.2.15}
+\contentsline {subsection}{\numberline {B.2.16}\leavevmode {\color {Chapter }3D4fining}}{300}{subsection.B.2.16}
+\contentsline {section}{\numberline {B.3}\leavevmode {\color {Chapter }Basis of the collineation groups}}{300}{section.B.3}
+\contentsline {subsection}{\numberline {B.3.1}\leavevmode {\color {Chapter }FindBasePointCandidates}}{300}{subsection.B.3.1}
+\contentsline {chapter}{\numberline {C}\leavevmode {\color {Chapter }Low level functions for morphisms}}{301}{appendix.C}
+\contentsline {section}{\numberline {C.1}\leavevmode {\color {Chapter }Field reduction and vector spaces}}{301}{section.C.1}
+\contentsline {subsection}{\numberline {C.1.1}\leavevmode {\color {Chapter }ShrinkVec}}{301}{subsection.C.1.1}
+\contentsline {subsection}{\numberline {C.1.2}\leavevmode {\color {Chapter }ShrinkMat}}{301}{subsection.C.1.2}
+\contentsline {subsection}{\numberline {C.1.3}\leavevmode {\color {Chapter }BlownUpProjectiveSpace}}{301}{subsection.C.1.3}
+\contentsline {subsection}{\numberline {C.1.4}\leavevmode {\color {Chapter }BlownUpProjectiveSpaceBySubfield}}{302}{subsection.C.1.4}
+\contentsline {subsection}{\numberline {C.1.5}\leavevmode {\color {Chapter }BlownUpSubspaceOfProjectiveSpace}}{302}{subsection.C.1.5}
+\contentsline {subsection}{\numberline {C.1.6}\leavevmode {\color {Chapter }BlownUpSubspaceOfProjectiveSpaceBySubfield}}{302}{subsection.C.1.6}
+\contentsline {subsection}{\numberline {C.1.7}\leavevmode {\color {Chapter }IsDesarguesianSpreadElement}}{302}{subsection.C.1.7}
+\contentsline {section}{\numberline {C.2}\leavevmode {\color {Chapter }Field reduction and forms}}{302}{section.C.2}
+\contentsline {subsection}{\numberline {C.2.1}\leavevmode {\color {Chapter }QuadraticFormFieldReduction}}{302}{subsection.C.2.1}
+\contentsline {subsection}{\numberline {C.2.2}\leavevmode {\color {Chapter }BilinearFormFieldReduction}}{303}{subsection.C.2.2}
+\contentsline {subsection}{\numberline {C.2.3}\leavevmode {\color {Chapter }HermitianFormFieldReduction}}{303}{subsection.C.2.3}
+\contentsline {section}{\numberline {C.3}\leavevmode {\color {Chapter }Low level functions}}{303}{section.C.3}
+\contentsline {subsection}{\numberline {C.3.1}\leavevmode {\color {Chapter }PluckerCoordinates}}{303}{subsection.C.3.1}
+\contentsline {subsection}{\numberline {C.3.2}\leavevmode {\color {Chapter }IsomorphismPolarSpacesProjectionFromNucleus}}{303}{subsection.C.3.2}
+\contentsline {subsection}{\numberline {C.3.3}\leavevmode {\color {Chapter }IsomorphismPolarSpacesNC}}{303}{subsection.C.3.3}
+\contentsline {subsection}{\numberline {C.3.4}\leavevmode {\color {Chapter }NaturalEmbeddingBySubspaceNC}}{304}{subsection.C.3.4}
+\contentsline {subsection}{\numberline {C.3.5}\leavevmode {\color {Chapter }NaturalProjectionBySubspaceNC}}{304}{subsection.C.3.5}
+\contentsline {chapter}{References}{306}{appendix*.4}
+\contentsline {chapter}{Index}{307}{section*.5}

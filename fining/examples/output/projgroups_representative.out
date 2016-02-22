@@ -1,0 +1,8 @@
+gap> 
+gap> #underluing matrix of a collineation.
+gap> g:=CollineationGroup( ProjectiveSpace(2,49));
+The FinInG collineation group PGammaL(3,49)
+gap> x:=Random(g);;
+gap> Representative(x);
+[ <immutable cmat 3x3 over GF(7,2)>, FrobeniusAutomorphism( GF(7^2) ) ]
+gap> quit;

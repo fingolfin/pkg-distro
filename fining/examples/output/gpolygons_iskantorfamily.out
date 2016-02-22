@@ -1,0 +1,16 @@
+gap> 
+gap> #an easy example of a Kantor family
+gap> g := ElementaryAbelianGroup(27);
+<pc group of size 27 with 3 generators>
+gap> flist1 := [ Group(g.1), Group(g.2), Group(g.3), Group(g.1*g.2*g.3) ];
+[ <pc group with 1 generators>, <pc group with 1 generators>, 
+  <pc group with 1 generators>, <pc group with 1 generators> ]
+gap> flist2 := [ Group([g.1, g.2^2*g.3]), Group([g.2, g.1^2*g.3 ]), 
+>             Group([g.3, g.1^2*g.2]), Group([g.1^2*g.2, g.1^2*g.3 ]) ];
+[ <pc group with 2 generators>, <pc group with 2 generators>, 
+  <pc group with 2 generators>, <pc group with 2 generators> ]
+gap> IsKantorFamily( g, flist1, flist2 );
+#I  Checking tangency condition...
+#I  Checking triple condition...
+true
+gap> quit;

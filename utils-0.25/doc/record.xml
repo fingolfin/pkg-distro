@@ -1,0 +1,67 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  record.xml              Utils documentation                        -->
+<!--                                                                     -->
+<!--  version 0.25, 11Set/02/2016                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-record">
+<Heading>Records</Heading>
+
+
+
+<Section Label="sec-records">
+<Heading>Functions for records</Heading>
+
+
+<ManSection>
+   <Func Name="SetIfMissing"
+         Arg="rec name val" />
+<Description>
+This function has transferred from package <Package>AutoDoc</Package>, 
+where it was called <C>AUTODOC_WriteOnce</C>. 
+It writes into a record provided the position is not yet bound. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> r := rec( a := 1, b := 2 );;                                      
+gap> SetIfMissing( r, "c", 3 );
+gap> RecNames( r );
+[ "b", "c", "a" ]
+gap> SetIfMissing( r, "c", 4 );
+gap> r;
+rec( a := 1, b := 2, c := 3 )
+]]>
+</Example>
+
+<ManSection>
+   <Func Name="AssignGlobals"
+         Arg="rec" />
+<Description>
+This function has transferred from package <Package>RCWA</Package>. 
+<P/>
+This function assigns the record components of <A>rec</A>
+to global variables with the same names.
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> AssignGlobals( r );
+The following global variables have been assigned:
+[ "b", "c", "a" ]
+gap> [a,b,c];
+[ 1, 2, 3 ]
+]]>
+</Example>
+
+</Section>
+
+</Chapter>

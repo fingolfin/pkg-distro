@@ -1,0 +1,34 @@
+gap> 
+gap> #flags of a projective space.
+gap> ps := ProjectiveSpace(12,11);
+ProjectiveSpace(12, 11)
+gap> s1 := RandomSubspace(ps,8);
+<a proj. 8-space in ProjectiveSpace(12, 11)>
+gap> s2 := RandomSubspace(s1,6);
+<a proj. 6-space in ProjectiveSpace(12, 11)>
+gap> s3 := RandomSubspace(s2,4);
+<a proj. 4-space in ProjectiveSpace(12, 11)>
+gap> s4 := Random(Solids(s3));
+<a solid in ProjectiveSpace(12, 11)>
+gap> s5 := Random(Points(s4));
+<a point in ProjectiveSpace(12, 11)>
+gap> flag := FlagOfIncidenceStructure(ps,[s1,s3,s2,s5,s4]);
+<a flag of ProjectiveSpace(12, 11)>
+gap> ps := PG(4,5);
+ProjectiveSpace(4, 5)
+gap> p := Random(Points(ps));
+<a point in ProjectiveSpace(4, 5)>
+gap> l := Random(Lines(ps));
+<a line in ProjectiveSpace(4, 5)>
+gap> v := Random(Solids(ps));
+<a solid in ProjectiveSpace(4, 5)>
+gap> flag := FlagOfIncidenceStructure(ps,[v,l,p]);
+Error, <els> does not determine a flag> called from
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop ...
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> flag := FlagOfIncidenceStructure(ps,[]);
+<a flag of ProjectiveSpace(4, 5)>
+gap> quit;

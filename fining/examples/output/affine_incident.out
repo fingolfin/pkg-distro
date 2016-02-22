@@ -1,0 +1,43 @@
+gap> 
+gap> #incidence and containment in affine spaces
+gap> as := AG(3,16);
+AG(3, 16)
+gap> p := AffineSubspace(as,[1,0,0]*Z(16)^0);
+<a point in AG(3, 16)>
+gap> l := AffineSubspace(as,[1,0,0]*Z(16),[[0,1,1]]*Z(16)^0);
+<a line in AG(3, 16)>
+gap> plane := AffineSubspace(as,[1,0,0]*Z(16)^0,[[1,0,0],[0,1,1]]*Z(16)^0);
+<a plane in AG(3, 16)>
+gap> p in p;
+true
+gap> p in l;
+false
+gap> l in p;
+false
+gap> l in plane;
+true
+gap> plane in l;
+false
+gap> p in plane;
+true
+gap> p in as;
+true
+gap> l in as;
+true
+gap> plane in as;
+true
+gap> as in p;
+false
+gap> IsIncident(p,l);
+false
+gap> IsIncident(l,p);
+false
+gap> IsIncident(l,plane);
+true
+gap> IsIncident(plane,l);
+true
+gap> IsIncident(p,plane);
+true
+gap> IsIncident(plane,p);
+true
+gap> quit;

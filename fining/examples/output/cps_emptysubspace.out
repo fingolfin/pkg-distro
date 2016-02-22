@@ -1,0 +1,7 @@
+gap> 
+gap> #the empty subspace
+gap> ps := HermitianPolarSpace(10,49);
+H(10, 7^2)
+gap> e := EmptySubspace(ps);
+< empty subspace >
+gap> quit;

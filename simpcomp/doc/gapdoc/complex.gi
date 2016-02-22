@@ -484,7 +484,7 @@
 ## /SimplicialComplex]
 ## gap&gt; c.F; time;                                 
 ## [ 12, 66, 220, 495, 792, 922, 780, 465, 180, 36 ]
-## 36
+## 44
 ## gap&gt; c.F; time;                                 
 ## [ 12, 66, 220, 495, 792, 922, 780, 465, 180, 36 ]
 ## 0
@@ -499,7 +499,7 @@
 ## /SimplicialComplex]
 ## gap&gt; c.F; time;                                 
 ## [ 12, 66, 220, 495, 792, 922, 780, 465, 180, 36 ]
-## 40
+## 36
 ## </Example>
 ## </Description>
 ## </ManSection>

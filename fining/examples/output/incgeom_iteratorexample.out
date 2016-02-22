@@ -1,0 +1,15 @@
+gap> 
+gap> # example of the use of an iterator
+gap> pg := PG(12,81);
+ProjectiveSpace(12, 81)
+gap> pts := Points(pg);
+<points of ProjectiveSpace(12, 81)>
+gap> Size(pts);
+80763523615333416236653
+gap> ps := ParabolicQuadric(12,81);
+Q(12, 81)
+gap> First(pts,x->x in ps);
+<a point in ProjectiveSpace(12, 81)>
+gap> time;
+23
+gap> quit;

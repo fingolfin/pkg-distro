@@ -1,0 +1,16 @@
+gap> 
+gap> #collections of elements
+gap> ps := HermitianPolarSpace(8,13^2);
+H(8, 13^2)
+gap> planes := ElementsOfIncidenceStructure(ps,3);
+<planes of H(8, 13^2)>
+gap> solids := ElementsOfIncidenceStructure(ps,4);
+<solids of H(8, 13^2)>
+gap> ElementsOfIncidenceStructure(ps,5);
+Error, <geo> has no elements of type <j> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 11 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> quit;

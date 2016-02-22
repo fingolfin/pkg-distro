@@ -1,0 +1,40 @@
+gap&gt; id := IdentityMat(7,GF(3));;<br>
+gap&gt; form := QuadraticFormByMatrix(id,GF(3));<br>
+&lt; quadratic form &gt;<br>
+gap&gt; ps := PolarSpace(form);<br>
+&lt;polar space over GF(3)&gt;<br>
+gap&gt; psl32 := PSL(3,2);<br>
+Group([ (4,6)(5,7), (1,2,4)(3,6,5) ])<br>
+gap&gt; reps:=[[1,1,1,0,0,0,0],[-1,1,1,0,0,0,0],<br>
+&gt; [1,-1,1,0,0,0,0],[1,1,-1,0,0,0,0]]*Z(3)^0;<br>
+[ [ Z(3)^0, Z(3)^0, Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], <br>
+  [ Z(3), Z(3)^0, Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], <br>
+  [ Z(3)^0, Z(3), Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], <br>
+  [ Z(3)^0, Z(3)^0, Z(3), 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ] ]<br>
+gap&gt; ovoid := Union(List(reps,x -&gt; Orbit(psl32,x,Permuted)));;<br>
+gap&gt; ovoid := List(ovoid,x -&gt; VectorSpaceToElement(ps,x));;<br>
+gap&gt; planes := AsList(Planes(ps));;<br>
+#I  Computing nice monomorphism...<br>
+#I  Computing collineation group of canonical polar space...<br>
+#I  Computing nice monomorphism...<br>
+gap&gt; ForAll(planes,p -&gt; Number(ovoid,x -&gt; x in p) = 1);<br>
+true<br>
+gap&gt; g := IsometryGroup(ps);<br>
+&lt;projective semilinear group of size 9170703360 with 2 generators&gt;<br>
+gap&gt; points := AsList(Points(ps));;<br>
+gap&gt; hom := ActionHomomorphism(g,points,OnPoints);<br>
+&lt;action homomorphism&gt;<br>
+gap&gt; omega := HomeEnumerator(UnderlyingExternalSet(hom));;<br>
+gap&gt; imgs := Filtered([1..Size(omega)],x -&gt; omega[x] in ovoid);;<br>
+gap&gt; stab := Stabilizer(Image(hom),imgs,OnSets);<br>
+&lt;permutation group of size 1451520 with 7 generators&gt;<br>
+gap&gt; stabovoid := PreImage(hom,stab);<br>
+&lt;projective semilinear group of size 1451520 with 7 generators&gt;<br>
+gap&gt; DisplayCompositionSeries(stabovoid);<br>
+G (size 1451520)<br>
+ | B(3,2) = O(7,2) ~ C(3,2) = S(6,2)<br>
+1 (size 1)<br>
+gap&gt; OrbitLengths(stabovoid,ovoid,OnPoints);<br>
+[ 28 ]<br>
+gap&gt; IsTransitive(stabovoid,ovoid,OnPoints);<br>
+true<br>

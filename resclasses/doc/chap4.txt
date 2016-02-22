@@ -4,10 +4,10 @@
   
   [1X4.1 [33X[0;0YRequirements[133X[101X
   
-  [33X[0;0YThis  version  of [5XResClasses[105X needs at least [5XGAP[105X 4.7.0, [5XPolycyclic[105X 2.6 [EN11]
-  and  [5XGAPDoc[105X 1.4 [LN12].  It  can  be  used on all platforms for which [5XGAP[105X is
-  available.  [5XResClasses[105X  is  completely  written in the [5XGAP[105X language and does
-  neither contain nor require external binaries.[133X
+  [33X[0;0YThis  version  of  [5XResClasses[105X  needs  at  least  [5XGAP[105X 4.8.1, [5XIO[105X 4.4.4 [HN14],
+  [5XPolycyclic[105X 2.6 [EN11] and [5XGAPDoc[105X 1.4 [LN12]. It can be used on all platforms
+  for  which  [5XGAP[105X  is  available.  [5XResClasses[105X is completely written in the [5XGAP[105X
+  language and does neither contain nor require external binaries.[133X
   
   
   [1X4.2 [33X[0;0YInstallation[133X[101X
@@ -24,7 +24,7 @@
   [1X4.3-1 ResClassesTest[101X
   
   [29X[2XResClassesTest[102X(  ) [32X function
-  [6XReturns:[106X  [33X[0;10Ynothing.[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X if no errors were found, and [10Xfalse[110X otherwise.[133X
   
   [33X[0;0YPerforms  tests  of  the [5XResClasses[105X package. Errors, i.e. differences to the
   correct  results  of the test computations, are reported. The processed test
@@ -72,20 +72,32 @@
   [10X"rcwa"[110X.[133X
   
   
-  [1X4.5 [33X[0;0YDownloadFile, SendEmail and EmailLogFile[133X[101X
+  [1X4.5 [33X[0;0YCreating timestamped logfiles[133X[101X
   
-  [1X4.5-1 DownloadFile[101X
+  [1X4.5-1 LogToDatedFile[101X
+  
+  [29X[2XLogToDatedFile[102X( [3Xdirectory[103X ) [32X function
+  [6XReturns:[106X  [33X[0;10Ythe full pathname of the created logfile.[133X
+  
+  [33X[0;0YThis  function  opens  a logfile in the specified directory; the name of the
+  logfile    has    the    form    of   a   timestamp,   i.e.   [10Xyear-month-day
+  hour-minute-second.log.[110X  If  [5XGAP[105X is already in logging mode, the old logfile
+  is closed before the new one is opened.[133X
+  
+  
+  [1X4.6 [33X[0;0YDownloadFile, SendEmail and EmailLogFile[133X[101X
+  
+  [1X4.6-1 DownloadFile[101X
   
   [29X[2XDownloadFile[102X( [3Xurl[103X ) [32X function
   [6XReturns:[106X  [33X[0;10Ythe  contents  of the file with URL [3Xurl[103X in the form of a string if
             that  file  exists  and  the  download  was  successful,  and [10Xfail[110X
             otherwise.[133X
   
-  [33X[0;0YThis  function needs the [5XIO[105X package, and as most system-related functions it
-  works  only under UNIX. Also the computer must of course be connected to the
-  Internet.[133X
+  [33X[0;0YAs  most  system-related  functions,  [10XDownloadFile[110X  works  only under UNIX /
+  Linux. Also the computer must of course be connected to the Internet.[133X
   
-  [1X4.5-2 SendEmail[101X
+  [1X4.6-2 SendEmail[101X
   
   [29X[2XSendEmail[102X( [3Xsendto[103X, [3Xcopyto[103X, [3Xsubject[103X, [3Xtext[103X ) [32X function
   [6XReturns:[106X  [33X[0;10Yzero  if  everything  worked  correctly, and a system error number
@@ -95,19 +107,35 @@
   list  [3Xsendto[103X,  and  copies  it  to  those  in the list [3Xcopyto[103X. The first two
   arguments must be lists of strings, and the latter two must be strings.[133X
   
-  [33X[0;0YAs  most system-related functions, [10XSendEmail[110X works only under UNIX. Also the
-  computer must of course be connected to the Internet.[133X
+  [33X[0;0YAs  most  system-related functions, [10XSendEmail[110X works only under UNIX / Linux.
+  Also the computer must of course be connected to the Internet.[133X
   
-  [1X4.5-3 EmailLogFile[101X
+  [1X4.6-3 EmailLogFile[101X
   
   [29X[2XEmailLogFile[102X( [3Xaddresses[103X ) [32X function
   [6XReturns:[106X  [33X[0;10Yzero  if  everything  worked  correctly, and a system error number
             otherwise.[133X
   
   [33X[0;0YSends the current log file by e-mail to [3Xaddresses[103X, if [5XGAP[105X is in logging mode
-  and  one  is  working  under  UNIX, and does nothing otherwise. The argument
-  [3Xaddresses[103X  must  be  either  a  list  of e-mail addresses or a single e-mail
-  address. Long log files are abbreviated, i.e. if the log file is larger than
-  64KB,  then  any  output  is  truncated at 1KB, and if the log file is still
-  longer than 64KB afterwards, it is truncated at 64KB.[133X
+  and  one  is  working  under  UNIX  / Linux, and does nothing otherwise. The
+  argument  [3Xaddresses[103X  must  be  either a list of e-mail addresses or a single
+  e-mail  address.  Long  log  files  are abbreviated, i.e. if the log file is
+  larger  than  64KB, then any output is truncated at 1KB, and if the log file
+  is still longer than 64KB afterwards, it is truncated at 64KB.[133X
+  
+  
+  [1X4.7 [33X[0;0YSome general utility functions[133X[101X
+  
+  [33X[0;0YThere are some utility functions for lists; these are [10XDifferencesList([3Xl[103X[10X)[110X and
+  [10XQuotientsList([3Xl[103X[10X)[110X,  which  return  the  list  of  differences,  respectively,
+  quotients   of   consecutive   entries  of  the  list [3Xl[103X,  and  the  function
+  [10XFloatQuotientsList([3Xl[103X[10X)[110X,   which   returns   the   list   of   floating  point
+  approximations    of   the   latter.   Further   there   is   an   operation
+  [10XPositionsSublist([3Xlist[103X[10X,[3Xsub[103X[10X)[110X,  which  returns  the list of indices in the list
+  [3Xlist[103X  at  which  a  sublist  equal to [3Xsub[103X starts. There also is an operation
+  [10XRandomCombination([3XS[103X[10X,[3Xk[103X[10X)[110X, which returns a random unordered [3Xk[103X-tuple of distinct
+  elements  of  a  set [3XS[103X.  Since  it  is sometimes faster to check whether two
+  group- or ring elements commute than to actually form both products and test
+  them  for  equality,  there  is  an  operation  [10XIsCommuting([3Xa[103X[10X,[3Xb[103X[10X)[110X  for  which
+  corresponding methods can be installed.[133X
   

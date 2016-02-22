@@ -1,0 +1,61 @@
+\GAPDocLabFile{help}
+\makelabel{help:Title page}{}{X7D2C85EC87DD46E5}
+\makelabel{help:Copyright}{}{X81488B807F2A1CF1}
+\makelabel{help:Acknowledgements}{}{X82A988D47DFAFCFA}
+\makelabel{help:Table of Contents}{}{X8537FEB07AF2BEC8}
+\makelabel{help:Introduction}{1}{X7DFB63A97E67C0A1}
+\makelabel{help:The main functions}{2}{X7D3DC4ED855DC13C}
+\makelabel{help:Zassenhaus Conjecture}{2.1}{X7C3DBA147B6CF284}
+\makelabel{help:Prime Graph Question}{2.2}{X7B12013C7C8A6714}
+\makelabel{help:Further functions}{3}{X85C2B0617ECCA64E}
+\makelabel{help:Checks for specific orders}{3.1}{X85F252368293DB34}
+\makelabel{help:Checks for specific orders with s-constant characters}{3.2}{X7FCD80AC87DD0460}
+\makelabel{help:Checks for all orders}{3.3}{X86A4BB01819B625D}
+\makelabel{help:Changing the used Character Table}{3.4}{X7E81639F8186F858}
+\makelabel{help:Influencing how the Systems of Inequalities are solved}{3.5}{X7A05180B7DA5EB77}
+\makelabel{help:Checking solutions, calculating and checking solutions}{3.6}{X7990EC037D6AE938}
+\makelabel{help:The Wagner test}{3.7}{X7BA77C9F86ADD546}
+\makelabel{help:Output}{3.8}{X84DD5181826CA1C2}
+\makelabel{help:Eigenvalue multiplicities and character values}{3.9}{X7F88D4667910126A}
+\makelabel{help:Extended examples}{4}{X7CDC63A27F7790AA}
+\makelabel{help:The Character Table Library}{4.1}{X7DEAD03D7811F9FA}
+\makelabel{help:The behavior of the variable HeLP sol}{4.2}{X84ED1F0D7A47B055}
+\makelabel{help:Saving time}{4.3}{X7E939D8483F1EE64}
+\makelabel{help:Using InfoLevels}{4.4}{X8242093A82FE41FA}
+\makelabel{help:Non-standard characters}{4.5}{X818A647182CA20B3}
+\makelabel{help:A complete example: (PQ) for the MacLaughlin simple group}{4.6}{X879DC8C287C41B09}
+\makelabel{help:Background}{5}{X84AF2F1D7D4E7284}
+\makelabel{help:The Zassenhaus Conjecture and the Prime Graph Question}{5.1}{X7CAEB4DF8506EBF9}
+\makelabel{help:Partial augmentations and the structure of HeLP sol}{5.2}{X7E2BFEC182B09895}
+\makelabel{help:The HeLP equations}{5.3}{X8663389F87B9CE62}
+\makelabel{help:The Wagner test}{5.4}{X7BA77C9F86ADD546}
+\makelabel{help:s-constant (and (s,t)-constant) characters}{5.5}{X811E2B358243C44F}
+\makelabel{help:Known results about (ZC) and (PQ)}{5.6}{X811213427F4177C8}
+\makelabel{help:Remarks on technical problems and the implementation}{6}{X7B53A54C823744E9}
+\makelabel{help:Making the HeLP-package run}{6.1}{X7FBC46BC7A5D28AF}
+\makelabel{help:Computations with big coefficients - precision problems}{6.2}{X802D13E67EADCD32}
+\makelabel{help:How much 4ti2 is really there?}{6.3}{X7CACE0767DA99250}
+\makelabel{help:Bibliography}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{help:References}{Bib}{X7A6F98FD85F02BFE}
+\makelabel{help:Index}{Ind}{X83A0356F839C696F}
+\makelabel{help:HeLP}{}{X8537FEB07AF2BEC8}
+\makelabel{help:HeLPZC}{2.1.1}{X81AF79A587054306}
+\makelabel{help:HeLPPQ}{2.2.1}{X813A10398218E9EE}
+\makelabel{help:HeLPWithGivenOrder}{3.1.1}{X7F8F6E3D80A23C1D}
+\makelabel{help:HeLPWithGivenOrderAndPA}{3.1.2}{X7CD0CEF283F13F7B}
+\makelabel{help:HeLPWithGivenOrderAndPAAndSpecificSystem}{3.1.3}{X80D9773D86873CB2}
+\makelabel{help:HeLPWithGivenOrderSConstant}{3.2.1}{X7CAC647C7D1E95B0}
+\makelabel{help:HeLPAddGaloisCharacterSums}{3.2.2}{X7B0FD19084B09AF8}
+\makelabel{help:HeLPAllOrders}{3.3.1}{X8727639883F787C5}
+\makelabel{help:HeLPAllOrdersPQ}{3.3.2}{X7C00E1567BFF1757}
+\makelabel{help:HeLPChangeCharKeepSols}{3.4.1}{X7BB9009482784E90}
+\makelabel{help:HeLPReset}{3.4.2}{X7C19F3A378AAF294}
+\makelabel{help:HeLPChange4ti2Precision}{3.5.1}{X7F6C4FAD805CD7FC}
+\makelabel{help:HeLPUseRedund}{3.5.2}{X7A7536D9790C1901}
+\makelabel{help:HeLPVerifySolution}{3.6.1}{X7DAA7EF785621D9E}
+\makelabel{help:HeLPFindAndVerifySolution}{3.6.2}{X8452B7F58641E7F5}
+\makelabel{help:HeLPPossiblePartialAugmentationsOfPowers}{3.6.3}{X81E4BAF2815051C4}
+\makelabel{help:HeLPWagnerTest}{3.7.1}{X79349D80830FA89B}
+\makelabel{help:HeLPPrintSolution}{3.8.1}{X7A5CAEBD801EF192}
+\makelabel{help:HeLPMultiplicitiesOfEigenvalues}{3.9.1}{X86601BE281C7B8B6}
+\makelabel{help:HeLPCharacterValue}{3.9.2}{X7C4C37B681A5BC7D}

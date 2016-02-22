@@ -1,0 +1,28 @@
+gap> 
+gap> ## gpolygons_EGQByqClan.g
+gap> f := GF(3);
+GF(3)
+gap> id := IdentityMat(2, f);;
+gap> list := List( f, t -> t * id );;
+gap> clan := qClan(list,f);
+<q-clan over GF(3)>
+gap> egq := EGQByqClan(clan);
+#I  Computed Kantor family. Now computing EGQ...
+<EGQ of order [ 9, 3 ] and basepoint 0>
+gap> incgraph := IncidenceGraph(egq);;
+#I  Computing incidence graph of generalised polygon...
+#I  Using elation of the collineation group...
+gap> group := AutomorphismGroup(incgraph);
+<permutation group with 6 generators>
+gap> Order(group);
+26127360
+gap> Order(CollineationGroup(HermitianPolarSpace(3,9)));
+26127360
+gap> clan := KantorKnuthqClan(9);
+<q-clan over GF(3^2)>
+gap> egq := EGQByqClan(clan);
+#I  Computed Kantor family. Now computing EGQ...
+<EGQ of order [ 81, 9 ] and basepoint 0>
+gap> clan := FisherThasWalkerKantorBettenqClan(11);
+<q-clan over GF(11)>
+gap> quit;

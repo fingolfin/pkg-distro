@@ -1,0 +1,44 @@
+LoadPackage("recog");
+SetInfoLevel(InfoRecog,0);
+TestGroup := function(name,rep,n)
+  local ag,g,i,l,r,ri;
+  Print("Testing ",name,"-",rep,"\n");
+  ag := AtlasGenerators(name,rep);
+  g := Group(ag.generators);
+  SetSize(g, ag.size);
+  if g = fail then Error("something is wrong with the group"); fi;
+  r := Runtime();
+  l := [];
+  for i in [1..n] do
+    ri := RecognizeGroup(g);
+    Assert(0, Size(ri) = Size(g));
+    Print(i," (",n,")\r");
+  od;
+  Print(Collected(l)," used time: ",Runtime()-r,"\n");
+end;
+
+TestGroup("M11",1,200);
+TestGroup("M12",1,200);
+TestGroup("M22",1,200);
+TestGroup("M23",1,200);
+TestGroup("M24",1,200);
+TestGroup("HS",1,200); 
+TestGroup("J1",8,200);
+TestGroup("J2",1,200);
+TestGroup("J3",10,200);
+TestGroup("J4",1,100);
+TestGroup("Co3",1,200);
+TestGroup("Co2",3,200);
+TestGroup("Co1",2,100);
+TestGroup("Fi22",1,200);
+TestGroup("Fi23",1,100);
+TestGroup("McL",1,200);
+TestGroup("Ru",2,200);
+TestGroup("He",5,200);
+TestGroup("Suz",1,200);
+TestGroup("Th",1,50);
+TestGroup("Ly",3,100);
+TestGroup("ON",2,100);
+TestGroup("HN",2,100);
+TestGroup("Fi24'",2,10);
+TestGroup("B",1,10);

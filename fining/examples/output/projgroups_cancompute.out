@@ -1,0 +1,16 @@
+gap> 
+gap> #can compute action on points
+gap> NiceMonomorphism(CollineationGroup(ProjectiveSpace(7,8)));
+Error, action on projective points not feasible to calculate called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 8 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> FINING.LimitForCanComputeActionOnPoints := 3*10^6;
+3000000
+gap> NiceMonomorphism(CollineationGroup(ProjectiveSpace(7,8)));
+<action isomorphism>
+gap> time;
+39619
+gap> quit;

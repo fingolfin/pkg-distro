@@ -1,0 +1,19 @@
+gap> 
+gap> # types of a flag
+gap> pg := PG(8,9);
+ProjectiveSpace(8, 9)
+gap> l := Random(Lines(pg));
+<a line in ProjectiveSpace(8, 9)>
+gap> s := Random(Solids(l));
+<a solid in ProjectiveSpace(8, 9)>
+gap> flag := FlagOfIncidenceStructure(pg,[l,s]);
+<a flag of ProjectiveSpace(8, 9)>
+gap> Type(flag);
+[ 2, 4 ]
+gap> p := Random(Points(pg));
+<a point in ProjectiveSpace(8, 9)>
+gap> flag := FlagOfIncidenceStructure(pg,[p]);
+<a flag of ProjectiveSpace(8, 9)>
+gap> Type(flag);
+[ 1 ]
+gap> quit;

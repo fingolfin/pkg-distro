@@ -1,0 +1,3747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Universal_Objects">
+<Heading>Universal Objects</Heading>
+
+<Section Label="Chapter_Universal_Objects_Section_Kernel">
+<Heading>Kernel</Heading>
+
+For a given morphism <Math>\alpha: A \rightarrow B</Math>, a kernel of <Math>\alpha</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>K</Math>,
+</Item>
+<Item>
+a morphism <Math>\iota: K \rightarrow A</Math> such that <Math>\alpha \circ \iota \sim_{K,B} 0</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each morphism <Math>\tau: T \rightarrow A</Math> satisfying <Math>\alpha \circ \tau \sim_{T,B} 0</Math> to a morphism <Math>u(\tau): T \rightarrow K</Math> such that <Math>\iota \circ u( \tau ) \sim_{T,A} \tau</Math>.
+</Item>
+</List>
+The triple <Math>( K, \iota, u )</Math> is called a <Emph>kernel</Emph> of <Math>\alpha</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>K</Math> of such a triple by <Math>\mathrm{KernelObject}(\alpha)</Math>.
+We say that the morphism <Math>u(\tau)</Math> is induced by the
+<Emph>universal property of the kernel</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{KernelObject}</Math> is a functorial operation. This means:
+for <Math>\mu: A \rightarrow A'</Math>, <Math>\nu: B \rightarrow B'</Math>,
+<Math>\alpha: A \rightarrow B</Math>, <Math>\alpha': A' \rightarrow B'</Math> such that <Math>\nu \circ \alpha \sim_{A,B'} \alpha' \circ \mu</Math>,
+we obtain a morphism <Math>\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' )</Math>.
+<ManSection>
+  <Attr Arg="alpha" Name="KernelObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math>.
+The output is the kernel <Math>K</Math> of <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="KernelEmbedding" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{KernelObject}(\alpha),A)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the kernel embedding <Math>\iota: \mathrm{KernelObject}(\alpha) \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="K" Name="KernelEmbedding" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(K,A)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is an object <Math>K</Math> that was created as a kernel.
+The output is the kernel embedding <Math>\iota: K \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, K" Name="KernelEmbeddingWithGivenKernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(K,A)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+and an object <Math>K = \mathrm{KernelObject}(\alpha)</Math>.
+The output is the kernel embedding <Math>\iota: K \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="K, tau" Name="KernelLift" Label="for IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T,K)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The arguments are an object <Math>K</Math> which was created as a kernel,
+and a test morphism <Math>\tau: T \rightarrow A</Math> satisfying <Math>\alpha \circ \tau \sim_{T,B} 0</Math>.
+The output is the morphism <Math>u(\tau): T \rightarrow K</Math>
+given by the universal property of the kernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, tau" Name="KernelLift" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T,\mathrm{KernelObject}(\alpha))</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+and a test morphism <Math>\tau: T \rightarrow A</Math> satisfying <Math>\alpha \circ \tau \sim_{T,B} 0</Math>.
+The output is the morphism <Math>u(\tau): T \rightarrow \mathrm{KernelObject}(\alpha)</Math>
+given by the universal property of the kernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, tau, K" Name="KernelLiftWithGivenKernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T,K)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>,
+a test morphism <Math>\tau: T \rightarrow A</Math> satisfying <Math>\alpha \circ \tau \sim_{T,B} 0</Math>,
+and an object <Math>K = \mathrm{KernelObject}(\alpha)</Math>.
+The output is the morphism <Math>u(\tau): T \rightarrow K</Math>
+given by the universal property of the kernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddKernelObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>KernelObject</C>.
+<Math>F: \alpha \mapsto \mathrm{KernelObject}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddKernelEmbedding" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>KernelEmbedding</C>.
+<Math>F: \alpha \mapsto \iota</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddKernelEmbeddingWithGivenKernelObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>KernelEmbeddingWithGivenKernelObject</C>.
+<Math>F: (\alpha, K) \mapsto \iota</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddKernelLift" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>KernelLift</C>.
+<Math>F: (\alpha, \tau) \mapsto u(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddKernelLiftWithGivenKernelObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>KernelLiftWithGivenKernelObject</C>.
+<Math>F: (\alpha, \tau, K) \mapsto u</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="KernelObjectFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{KernelObject}( \alpha ), \mathrm{KernelObject}( \alpha' ) )</Math>
+</Returns>
+ <Description>
+The argument is a list <Math>L = [ \alpha: A \rightarrow B, [ \mu: A \rightarrow A', \nu: B \rightarrow B' ], \alpha': A' \rightarrow B' ]</Math> of morphisms.
+The output is the morphism
+<Math>\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' )</Math>
+given by the functorality of the kernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, mu, alpha_prime" Name="KernelObjectFunctorial" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{KernelObject}( \alpha ), \mathrm{KernelObject}( \alpha' ) )</Math>
+</Returns>
+ <Description>
+The arguments are three morphism
+<Math>\alpha: A \rightarrow B</Math>, <Math>\mu: A \rightarrow A'</Math>, <Math>\alpha': A' \rightarrow B'</Math>.
+The output is the morphism
+<Math>\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' )</Math>
+given by the functorality of the kernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddKernelObjectFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>KernelObjectFunctorial</C>.
+<Math>F: (\alpha, \mu, \alpha') \mapsto (\mathrm{KernelObject}( \alpha ) \rightarrow \mathrm{KernelObject}( \alpha' ))</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Cokernel">
+<Heading>Cokernel</Heading>
+
+For a given morphism <Math>\alpha: A \rightarrow B</Math>, a cokernel of <Math>\alpha</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>K</Math>,
+</Item>
+<Item>
+a morphism <Math>\epsilon: B \rightarrow K</Math> such that <Math>\epsilon \circ \alpha \sim_{A,K} 0</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each <Math>\tau: B \rightarrow T</Math> satisfying <Math>\tau \circ \alpha \sim_{A, T} 0</Math> to a morphism <Math>u(\tau):K \rightarrow T</Math> such that <Math>u(\tau) \circ \epsilon \sim_{B,T} \tau</Math>.
+</Item>
+</List>
+The triple <Math>( K, \epsilon, u )</Math> is called a <Emph>cokernel</Emph> of <Math>\alpha</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>K</Math> of such a triple by <Math>\mathrm{CokernelObject}(\alpha)</Math>.
+We say that the morphism <Math>u(\tau)</Math> is induced by the
+<Emph>universal property of the cokernel</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{CokernelObject}</Math> is a functorial operation. This means:
+for <Math>\mu: A \rightarrow A'</Math>, <Math>\nu: B \rightarrow B'</Math>,
+<Math>\alpha: A \rightarrow B</Math>, <Math>\alpha': A' \rightarrow B'</Math> such that <Math>\nu \circ \alpha \sim_{A,B'} \alpha' \circ \mu</Math>,
+we obtain a morphism <Math>\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' )</Math>.
+<ManSection>
+  <Attr Arg="alpha" Name="CokernelObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the cokernel <Math>K</Math> of <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="CokernelProjection" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B, \mathrm{CokernelObject}( \alpha ))</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the cokernel projection <Math>\epsilon: B \rightarrow \mathrm{CokernelObject}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="K" Name="CokernelProjection" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B, K)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is an object <Math>K</Math> which was created as a cokernel.
+The output is the cokernel projection <Math>\epsilon: B \rightarrow K</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, K" Name="CokernelProjectionWithGivenCokernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B, K)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+and an object <Math>K = \mathrm{CokernelObject}(\alpha)</Math>.
+The output is the cokernel projection <Math>\epsilon: B \rightarrow \mathrm{CokernelObject}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="K, tau" Name="CokernelColift" Label="for IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(K,T)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The arguments are an object <Math>K</Math> which was created as a cokernel,
+and a test morphism <Math>\tau: B \rightarrow T</Math> satisfying <Math>\tau \circ \alpha \sim_{A, T} 0</Math>.
+The output is the morphism <Math>u(\tau): K \rightarrow T</Math>
+given by the universal property of the cokernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, tau" Name="CokernelColift" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{CokernelObject}(\alpha),T)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+and a test morphism <Math>\tau: B \rightarrow T</Math> satisfying <Math>\tau \circ \alpha \sim_{A, T} 0</Math>.
+The output is the morphism <Math>u(\tau): \mathrm{CokernelObject}(\alpha) \rightarrow T</Math>
+given by the universal property of the cokernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, tau, K" Name="CokernelColiftWithGivenCokernelObject" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(K,T)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>,
+a test morphism <Math>\tau: B \rightarrow T</Math> satisfying <Math>\tau \circ \alpha \sim_{A, T} 0</Math>,
+and an object <Math>K = \mathrm{CokernelObject}(\alpha)</Math>.
+The output is the morphism <Math>u(\tau): K \rightarrow T</Math>
+given by the universal property of the cokernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCokernelObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CokernelObject</C>.
+<Math>F: \alpha \mapsto K</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCokernelProjection" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CokernelProjection</C>.
+<Math>F: \alpha \mapsto \epsilon</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCokernelProjectionWithGivenCokernelObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CokernelProjection</C>.
+<Math>F: (\alpha, K) \mapsto \epsilon</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCokernelColift" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CokernelProjection</C>.
+<Math>F: (\alpha, \tau) \mapsto u(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCokernelColiftWithGivenCokernelObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CokernelProjection</C>.
+<Math>F: (\alpha, \tau, K) \mapsto u(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="CokernelFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{CokernelObject}( \alpha ), \mathrm{CokernelObject}( \alpha' ))</Math>
+</Returns>
+ <Description>
+The argument is a list <Math>L = [ \alpha: A \rightarrow B, [ \mu:A \rightarrow A', \nu: B \rightarrow B' ], \alpha': A' \rightarrow B' ]</Math>.
+The output is the morphism
+<Math>\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' )</Math>
+given by the functorality of the cokernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, nu, alpha_prime" Name="CokernelFunctorial" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{CokernelObject}( \alpha ), \mathrm{CokernelObject}( \alpha' ))</Math>
+</Returns>
+ <Description>
+The arguments are three morphisms
+<Math>\alpha: A \rightarrow B, \nu: B \rightarrow B', \alpha': A' \rightarrow B'</Math>.
+The output is the morphism
+<Math>\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' )</Math>
+given by the functorality of the cokernel.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCokernelFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CokernelFunctorial</C>.
+<Math>F: (\alpha, \nu, \alpha') \mapsto (\mathrm{CokernelObject}( \alpha ) \rightarrow \mathrm{CokernelObject}( \alpha' ))</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Zero_Object">
+<Heading>Zero Object</Heading>
+
+A zero object consists of three parts:
+<List>
+<Item>
+an object <Math>Z</Math>,
+</Item>
+<Item>
+a function <Math>u_{\mathrm{in}}</Math> mapping each object <Math>A</Math> to a morphism <Math>u_{\mathrm{in}}(A): A \rightarrow Z</Math>,
+</Item>
+<Item>
+a function <Math>u_{\mathrm{out}}</Math> mapping each object <Math>A</Math> to a morphism <Math>u_{\mathrm{out}}(A): Z \rightarrow A</Math>.
+</Item>
+</List>
+The triple <Math>(Z, u_{\mathrm{in}}, u_{\mathrm{out}})</Math> is called a <Emph>zero object</Emph> if the morphisms
+<Math>u_{\mathrm{in}}(A)</Math>, <Math>u_{\mathrm{out}}(A)</Math> are uniquely determined up to congruence of morphisms.
+We denote the object <Math>Z</Math> of such a triple by <Math>\mathrm{ZeroObject}</Math>.
+We say that the morphisms <Math>u_{\mathrm{in}}(A)</Math> and <Math>u_{\mathrm{out}}(A)</Math> are induced by the
+<Emph>universal property of the zero object</Emph>.
+<ManSection>
+  <Attr Arg="C" Name="ZeroObject" Label="for IsCapCategory"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is a zero object <Math>Z</Math> of <Math>C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="c" Name="ZeroObject" Label="for IsCapCategoryCell"/>
+ <Returns>an object
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is a cell <Math>c</Math>.
+The output is a zero object <Math>Z</Math> of the
+category <Math>C</Math> for which <Math>c \in C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="MorphismFromZeroObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, A)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is an object <Math>A</Math>.
+It calls <Math>\mathrm{UniversalMorphismFromZeroObject}</Math> on <Math>A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="MorphismIntoZeroObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, \mathrm{ZeroObject})</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is an object <Math>A</Math>.
+It calls <Math>\mathrm{UniversalMorphismIntoZeroObject}</Math> on <Math>A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="UniversalMorphismFromZeroObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, A)</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>A</Math>.
+The output is the universal morphism <Math>u_{\mathrm{out}}: \mathrm{ZeroObject} \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A, Z" Name="UniversalMorphismFromZeroObjectWithGivenZeroObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(Z, A)</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>A</Math>,
+and a zero object <Math>Z = \mathrm{ZeroObject}</Math>.
+The output is the universal morphism <Math>u_{\mathrm{out}}: Z \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="UniversalMorphismIntoZeroObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, \mathrm{ZeroObject})</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>A</Math>.
+The output is the universal morphism <Math>u_{\mathrm{in}}: A \rightarrow \mathrm{ZeroObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A, Z" Name="UniversalMorphismIntoZeroObjectWithGivenZeroObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, Z)</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>A</Math>,
+and a zero object <Math>Z = \mathrm{ZeroObject}</Math>.
+The output is the universal morphism <Math>u_{\mathrm{in}}: A \rightarrow Z</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="IsomorphismFromZeroObjectToInitialObject" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, \mathrm{InitialObject})</Math>
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is the unique isomorphism <Math>\mathrm{ZeroObject} \rightarrow \mathrm{InitialObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="IsomorphismFromInitialObjectToZeroObject" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{InitialObject}, \mathrm{ZeroObject})</Math>
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is the unique isomorphism <Math>\mathrm{InitialObject} \rightarrow \mathrm{ZeroObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="IsomorphismFromZeroObjectToTerminalObject" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{ZeroObject}, \mathrm{TerminalObject})</Math>
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is the unique isomorphism <Math>\mathrm{ZeroObject} \rightarrow \mathrm{TerminalObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="IsomorphismFromTerminalObjectToZeroObject" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{TerminalObject}, \mathrm{ZeroObject})</Math>
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is the unique isomorphism <Math>\mathrm{TerminalObject} \rightarrow \mathrm{ZeroObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddZeroObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ZeroObject</C>.
+<Math>F: () \mapsto \mathrm{ZeroObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoZeroObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoZeroObject</C>.
+<Math>F: A \mapsto u_{\mathrm{in}}(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoZeroObjectWithGivenZeroObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoZeroObjectWithGivenZeroObject</C>.
+<Math>F: (A, Z) \mapsto u_{\mathrm{in}}(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromZeroObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromZeroObject</C>.
+<Math>F: A \mapsto u_{\mathrm{out}}(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromZeroObjectWithGivenZeroObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromZeroObjectWithGivenZeroObject</C>.
+<Math>F: (A,Z) \mapsto u_{\mathrm{out}}(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromZeroObjectToInitialObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromZeroObjectToInitialObject</C>.
+<Math>F: () \mapsto (\mathrm{ZeroObject} \rightarrow \mathrm{InitialObject})</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromInitialObjectToZeroObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromInitialObjectToZeroObject</C>.
+<Math>F: () \mapsto ( \mathrm{InitialObject} \rightarrow \mathrm{ZeroObject})</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromZeroObjectToTerminalObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromZeroObjectToTerminalObject</C>.
+<Math>F: () \mapsto (\mathrm{ZeroObject} \rightarrow \mathrm{TerminalObject})</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromTerminalObjectToZeroObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromTerminalObjectToZeroObject</C>.
+<Math>F: () \mapsto ( \mathrm{TerminalObject} \rightarrow \mathrm{ZeroObject})</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Terminal_Object">
+<Heading>Terminal Object</Heading>
+
+A terminal object consists of two parts:
+<List>
+<Item>
+an object <Math>T</Math>,
+</Item>
+<Item>
+a function <Math>u</Math> mapping each object <Math>A</Math> to a morphism <Math>u( A ): A \rightarrow T</Math>.
+</Item>
+</List>
+The pair <Math>( T, u )</Math> is called a <Emph>terminal object</Emph> if the morphisms <Math>u( A )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>T</Math> of such a pair by <Math>\mathrm{TerminalObject}</Math>.
+We say that the morphism <Math>u( A )</Math> is induced by the
+<Emph>universal property of the terminal object</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{TerminalObject}</Math> is a functorial operation. This just means:
+There exists a unique morphism <Math>T \rightarrow T</Math>.
+<ManSection>
+  <Attr Arg="C" Name="TerminalObject" Label="for IsCapCategory"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is a terminal object <Math>T</Math> of <Math>C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="c" Name="TerminalObject" Label="for IsCapCategoryCell"/>
+ <Returns>an object
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is a cell <Math>c</Math>.
+The output is a terminal object <Math>T</Math> of the
+category <Math>C</Math> for which <Math>c \in C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="UniversalMorphismIntoTerminalObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, \mathrm{TerminalObject} )</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>A</Math>.
+The output is the universal morphism <Math>u(A): A \rightarrow \mathrm{TerminalObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A, T" Name="UniversalMorphismIntoTerminalObjectWithGivenTerminalObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( A, T )</Math>
+</Returns>
+ <Description>
+The argument are an object <Math>A</Math>,
+and an object <Math>T = \mathrm{TerminalObject}</Math>.
+The output is the universal morphism <Math>u(A): A \rightarrow T</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTerminalObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TerminalObject</C>.
+<Math>F: () \mapsto T</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoTerminalObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoTerminalObject</C>.
+<Math>F: A \mapsto u(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoTerminalObjectWithGivenTerminalObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoTerminalObjectWithGivenTerminalObject</C>.
+<Math>F: (A,T) \mapsto u(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="TerminalObjectFunctorial" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{TerminalObject}, \mathrm{TerminalObject} )</Math>
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is the unique morphism <Math>\mathrm{TerminalObject} \rightarrow \mathrm{TerminalObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTerminalObjectFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TerminalObjectFunctorial</C>.
+<Math>F: () \mapsto (T \rightarrow T)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Initial_Object">
+<Heading>Initial Object</Heading>
+
+An initial object consists of two parts:
+<List>
+<Item>
+an object <Math>I</Math>,
+</Item>
+<Item>
+a function <Math>u</Math> mapping each object <Math>A</Math> to a morphism <Math>u( A ): I \rightarrow A</Math>.
+</Item>
+</List>
+The pair <Math>(I,u)</Math> is called a <Emph>initial object</Emph> if the morphisms <Math>u(A)</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>I</Math> of such a triple by <Math>\mathrm{InitialObject}</Math>.
+We say that the morphism <Math>u( A )</Math> is induced by the
+<Emph>universal property of the initial object</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{InitialObject}</Math> is a functorial operation. This just means:
+There exists a unique morphisms <Math>I \rightarrow I</Math>.
+<ManSection>
+  <Attr Arg="C" Name="InitialObject" Label="for IsCapCategory"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is an initial object <Math>I</Math> of <Math>C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="c" Name="InitialObject" Label="for IsCapCategoryCell"/>
+ <Returns>an object
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is a cell <Math>c</Math>.
+The output is an initial object <Math>I</Math> of the category <Math>C</Math>
+for which <Math>c \in C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="UniversalMorphismFromInitialObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{InitialObject} \rightarrow A)</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>A</Math>.
+The output is the universal morphism <Math>u(A): \mathrm{InitialObject} \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A, I" Name="UniversalMorphismFromInitialObjectWithGivenInitialObject" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{InitialObject} \rightarrow A)</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>A</Math>,
+and an object <Math>I = \mathrm{InitialObject}</Math>.
+The output is the universal morphism <Math>u(A): \mathrm{InitialObject} \rightarrow A</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInitialObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InitialObject</C>.
+<Math>F: () \mapsto I</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromInitialObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromInitialObject</C>.
+<Math>F: A \mapsto u(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromInitialObjectWithGivenInitialObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromInitialObjectWithGivenInitialObject</C>.
+<Math>F: (A,I) \mapsto u(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="InitialObjectFunctorial" Label="for IsCapCategory"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{InitialObject}, \mathrm{InitialObject} )</Math>
+</Returns>
+ <Description>
+The argument is a category <Math>C</Math>.
+The output is the unique morphism <Math>\mathrm{InitialObject} \rightarrow \mathrm{InitialObject}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInitialObjectFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InitialObjectFunctorial</C>.
+<Math>F: () \rightarrow ( I \rightarrow I )</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Direct_Sum">
+<Heading>Direct Sum</Heading>
+
+For a given list <Math>D = (S_1, \dots, S_n)</Math> in an Ab-category, a direct sum consists of five parts:
+<List>
+<Item>
+an object <Math>S</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\pi = (\pi_i: S \rightarrow S_i)_{i = 1 \dots n}</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\iota = (\iota_i: S_i \rightarrow S)_{i = 1 \dots n}</Math>,
+</Item>
+<Item>
+a dependent function <Math>u_{\mathrm{in}}</Math> mapping every list <Math>\tau = ( \tau_i: T \rightarrow S_i )_{i = 1 \dots n}</Math>
+to a morphism <Math>u_{\mathrm{in}}(\tau): T \rightarrow S</Math> such that
+<Math>\pi_i \circ u_{\mathrm{in}}(\tau) \sim_{T,S_i} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+<Item>
+a dependent function <Math>u_{\mathrm{out}}</Math> mapping every list <Math>\tau = ( \tau_i: S_i \rightarrow T )_{i = 1 \dots n}</Math>
+to a morphism <Math>u_{\mathrm{out}}(\tau): S \rightarrow T</Math> such that
+<Math>u_{\mathrm{out}}(\tau) \circ \iota_i \sim_{S_i, T} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>,
+</Item>
+</List>
+such that
+<List>
+<Item>
+<Math>\sum_{i=1}^{n} \iota_i \circ \pi_i = \mathrm{id}_S</Math>,
+</Item>
+<Item>
+<Math>\pi_j \circ \iota_i = \delta_{i,j}</Math>,
+</Item>
+</List>
+where <Math>\delta_{i,j} \in \mathrm{Hom}( S_i, S_j )</Math> is the identity if <Math>i=j</Math>, and <Math>0</Math> otherwise.
+The <Math>5</Math>-tuple <Math>(S, \pi, \iota, u_{\mathrm{in}}, u_{\mathrm{out}})</Math> is called a <Emph>direct sum</Emph> of <Math>D</Math>.
+We denote the object <Math>S</Math> of such a <Math>5</Math>-tuple by <Math>\bigoplus_{i=1}^n S_i</Math>.
+We say that the morphisms <Math>u_{\mathrm{in}}(\tau), u_{\mathrm{out}}(\tau)</Math> are induced by the
+<Emph>universal property of the direct sum</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{DirectSum}</Math> is a functorial operation. This means:
+For <Math>(\mu_i: S_i \rightarrow S'_i)_{i=1\dots n}</Math>,
+we obtain a morphism <Math>\bigoplus_{i=1}^n S_i \rightarrow \bigoplus_{i=1}^n S_i'</Math>.
+<ManSection>
+  <Oper Arg="D, method_selection_object" Name="DirectSumOp" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and an object for method selection.
+The output is the direct sum <Math>\bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k" Name="ProjectionInFactorOfDirectSum" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, S_k )</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_k: \bigoplus_{i=1}^n S_i \rightarrow S_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k, method_selection_object" Name="ProjectionInFactorOfDirectSumOp" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, S_k )</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+an integer <Math>k</Math>,
+and an object for method selection.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_k: \bigoplus_{i=1}^n S_i \rightarrow S_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,S" Name="ProjectionInFactorOfDirectSumWithGivenDirectSum" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( S, S_k )</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+an integer <Math>k</Math>,
+and an object <Math>S = \bigoplus_{i=1}^n S_i</Math>.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_k: S \rightarrow S_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k" Name="InjectionOfCofactorOfDirectSum" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( S_k, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: S_k \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,method_selection_object" Name="InjectionOfCofactorOfDirectSumOp" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( S_k, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+an integer <Math>k</Math>,
+and an object for method selection.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: S_k \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,S" Name="InjectionOfCofactorOfDirectSumWithGivenDirectSum" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( S_k, S )</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+an integer <Math>k</Math>,
+and an object <Math>S = \bigoplus_{i=1}^n S_i</Math>.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: S_k \rightarrow S</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="UniversalMorphismIntoDirectSum" />
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \bigoplus_{i=1}^n S_i)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+There are three different ways to use this method:
+<List>
+<Item>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow S_i )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The argument is a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow S_i )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>\tau_1: T \rightarrow S_1, \dots, \tau_n: T \rightarrow S_n</Math>.
+</Item>
+</List>
+The output is the morphism
+<Math>u_{\mathrm{in}}(\tau): T \rightarrow \bigoplus_{i=1}^n S_i</Math>
+given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,tau,method_selection_object" Name="UniversalMorphismIntoDirectSumOp" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \bigoplus_{i=1}^n S_i)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow S_i )_{i = 1 \dots n}</Math>,
+and an object for method selection.
+The output is the morphism
+<Math>u_{\mathrm{in}}(\tau): T \rightarrow \bigoplus_{i=1}^n S_i</Math>
+given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,tau,S" Name="UniversalMorphismIntoDirectSumWithGivenDirectSum" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, S)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow S_i )_{i = 1 \dots n}</Math>,
+and an object <Math>S = \bigoplus_{i=1}^n S_i</Math>.
+The output is the morphism
+<Math>u_{\mathrm{in}}(\tau): T \rightarrow S</Math>
+given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="UniversalMorphismFromDirectSum" />
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigoplus_{i=1}^n S_i, T)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+There are three different ways to use this method:
+<List>
+<Item>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and a list of morphisms <Math>\tau = ( \tau_i: S_i \rightarrow T )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The argument is a list of morphisms <Math>\tau = ( \tau_i: S_i \rightarrow T )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>S_1 \rightarrow T, \dots, S_n \rightarrow T</Math>.
+</Item>
+</List>
+The output is the morphism
+<Math>u_{\mathrm{out}}(\tau): \bigoplus_{i=1}^n S_i \rightarrow T</Math>
+given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, method_selection_object" Name="UniversalMorphismFromDirectSumOp" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigoplus_{i=1}^n S_i, T)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: S_i \rightarrow T )_{i = 1 \dots n}</Math>,
+and an object for method selection.
+The output is the morphism
+<Math>u_{\mathrm{out}}(\tau): \bigoplus_{i=1}^n S_i \rightarrow T</Math>
+given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, S" Name="UniversalMorphismFromDirectSumWithGivenDirectSum" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(S, T)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: S_i \rightarrow T )_{i = 1 \dots n}</Math>,
+and an object <Math>S = \bigoplus_{i=1}^n S_i</Math>.
+The output is the morphism
+<Math>u_{\mathrm{out}}(\tau): S \rightarrow T</Math>
+given by the universal property of the direct sum.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromDirectSumToDirectProduct" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \prod_{i=1}^{n}S_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+The output is the canonical isomorphism
+<Math>\bigoplus_{i=1}^n S_i \rightarrow \prod_{i=1}^{n}S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_object" Name="IsomorphismFromDirectSumToDirectProductOp" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \prod_{i=1}^{n}S_i )</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and an object for method selection.
+The output is the canonical isomorphism
+<Math>\bigoplus_{i=1}^n S_i \rightarrow \prod_{i=1}^{n}S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromDirectProductToDirectSum" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \prod_{i=1}^{n}S_i, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+The output is the canonical isomorphism
+<Math>\prod_{i=1}^{n}S_i \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_object" Name="IsomorphismFromDirectProductToDirectSumOp" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \prod_{i=1}^{n}S_i, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and an object for method selection.
+The output is the canonical isomorphism
+<Math>\prod_{i=1}^{n}S_i \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromDirectSumToCoproduct" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \bigsqcup_{i=1}^{n}S_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+The output is the canonical isomorphism
+<Math>\bigoplus_{i=1}^n S_i \rightarrow \bigsqcup_{i=1}^{n}S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_object" Name="IsomorphismFromDirectSumToCoproductOp" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \bigsqcup_{i=1}^{n}S_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and an object for method selection.
+The output is the canonical isomorphism
+<Math>\bigoplus_{i=1}^n S_i \rightarrow \bigsqcup_{i=1}^{n}S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromCoproductToDirectSum" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigsqcup_{i=1}^{n}S_i, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>.
+The output is the canonical isomorphism
+<Math>\bigsqcup_{i=1}^{n}S_i \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_object" Name="IsomorphismFromCoproductToDirectSumOp" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigsqcup_{i=1}^{n}S_i, \bigoplus_{i=1}^n S_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = (S_1, \dots, S_n)</Math>
+and an object for method selection.
+The output is the canonical isomorphism
+<Math>\bigsqcup_{i=1}^{n}S_i \rightarrow \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="M" Name="MorphismBetweenDirectSums" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigoplus_{i=1}^{m}A_i, \bigoplus_{j=1}^n A_j)</Math>
+</Returns>
+ <Description>
+The argument is a list of lists of morphisms
+<Math>M = ( ( \phi_{i,j}: A_i \rightarrow A_j )_{j = 1 \dots n} )_{i = 1 \dots m}</Math>.
+The output is the morphism
+<Math>\bigoplus_{i=1}^{m}A_i \rightarrow \bigoplus_{j=1}^n A_j</Math>
+defined by the matrix <Math>M</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="M, m, n, method_selection_morphism" Name="MorphismBetweenDirectSumsOp" Label="for IsList, IsInt, IsInt, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigoplus_{i=1}^{m}A_i, \bigoplus_{j=1}^n A_j)</Math>
+</Returns>
+ <Description>
+The arguments are a list
+<Math>M = ( \phi_{1,1}, \phi_{1,2}, \dots, \phi_{1,n}, \phi_{2,1}, \dots, \phi_{m,n} )</Math>
+of morphisms <Math>\phi_{i,j}: A_i \rightarrow A_j</Math>,
+an integer <Math>m</Math>,
+an integer <Math>n</Math>,
+and a method selection morphism.
+The output is the morphism
+<Math>\bigoplus_{i=1}^{m}A_i \rightarrow \bigoplus_{j=1}^n A_j</Math>
+defined by the list <Math>M</Math> regarded as a matrix of dimension <Math>m \times n</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddProjectionInFactorOfDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ProjectionInFactorOfDirectSum</C>.
+<Math>F: (D,k) \mapsto \pi_{k}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddProjectionInFactorOfDirectSumWithGivenDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ProjectionInFactorOfDirectSumWithGivenDirectSum</C>.
+<Math>F: (D,k,S) \mapsto \pi_{k}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInjectionOfCofactorOfDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InjectionOfCofactorOfDirectSum</C>.
+<Math>F: (D,k) \mapsto \iota_{k}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInjectionOfCofactorOfDirectSumWithGivenDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InjectionOfCofactorOfDirectSumWithGivenDirectSum</C>.
+<Math>F: (D,k,S) \mapsto \iota_{k}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoDirectSum</C>.
+<Math>F: (D,\tau) \mapsto u_{\mathrm{in}}(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoDirectSumWithGivenDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoDirectSumWithGivenDirectSum</C>.
+<Math>F: (D,\tau,S) \mapsto u_{\mathrm{in}}(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromDirectSum</C>.
+<Math>F: (D,\tau) \mapsto u_{\mathrm{out}}(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromDirectSumWithGivenDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromDirectSumWithGivenDirectSum</C>.
+<Math>F: (D,\tau,S) \mapsto u_{\mathrm{out}}(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromDirectSumToDirectProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromDirectSumToDirectProduct</C>.
+<Math>F: D \mapsto (\bigoplus_{i=1}^n S_i \rightarrow \prod_{i=1}^{n}S_i)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromDirectProductToDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromDirectProductToDirectSum</C>.
+<Math>F: D \mapsto ( \prod_{i=1}^{n}S_i \rightarrow \bigoplus_{i=1}^n S_i )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromDirectSumToCoproduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromDirectSumToCoproduct</C>.
+<Math>F: D \mapsto ( \bigoplus_{i=1}^n S_i \rightarrow \bigsqcup_{i=1}^{n}S_i )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromCoproductToDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromCoproductToDirectSum</C>.
+<Math>F: D \mapsto ( \bigsqcup_{i=1}^{n}S_i \rightarrow \bigoplus_{i=1}^n S_i )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DirectSum</C>.
+<Math>F: D \mapsto \bigoplus_{i=1}^n S_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="DirectSumFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \bigoplus_{i=1}^n S_i' )</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>L = ( \mu_1: S_1 \rightarrow S_1', \dots, \mu_n: S_n \rightarrow S_n' )</Math>.
+The output is a morphism
+<Math>\bigoplus_{i=1}^n S_i \rightarrow \bigoplus_{i=1}^n S_i'</Math>
+given by the functorality of the direct sum.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDirectSumFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DirectSumFunctorial</C>.
+<Math>F: (( \mu_1, \dots, \mu_n )) \mapsto (\bigoplus_{i=1}^n S_i \rightarrow \bigoplus_{i=1}^n S_i')</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L, method_selection_morphism" Name="DirectSumFunctorialOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n S_i, \bigoplus_{i=1}^n S_i' )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>L = ( \mu_1: S_1 \rightarrow S_1', \dots, \mu_n: S_n \rightarrow S_n' )</Math>
+and a method selection morphism.
+The output is a morphism
+<Math>\bigoplus_{i=1}^n S_i \rightarrow \bigoplus_{i=1}^n S_i'</Math>
+given by the functorality of the direct sum.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Coproduct">
+<Heading>Coproduct</Heading>
+
+For a given list of objects <Math>D = ( I_1, \dots, I_n )</Math>, a coproduct of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>I</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\iota = ( \iota_i: I_i \rightarrow I )_{i = 1 \dots n}</Math>
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )</Math>
+to a morphism <Math>u( \tau ): I \rightarrow T</Math> such that <Math>u( \tau ) \circ \iota_i \sim_{I_i, T} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+</List>
+The triple <Math>( I, \iota, u )</Math> is called a <Emph>coproduct</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>I</Math> of such a triple by <Math>\bigsqcup_{i=1}^n I_i</Math>.
+We say that the morphism <Math>u( \tau )</Math> is induced by the
+<Emph>universal property of the coproduct</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{Coproduct}</Math> is a functorial operation. This means:
+For <Math>(\mu_i: I_i \rightarrow I'_i)_{i=1\dots n}</Math>,
+we obtain a morphism <Math>\bigsqcup_{i=1}^n I_i \rightarrow \bigsqcup_{i=1}^n I_i'</Math>.
+<ManSection>
+  <Attr Arg="D" Name="Coproduct" Label="for IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a list of objects <Math>D = ( I_1, \dots, I_n )</Math>.
+The output is the coproduct <Math>\bigsqcup_{i=1}^n I_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="I1, I2" Name="Coproduct" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+This is a convenience method.
+The arguments are two objects <Math>I_1, I_2</Math>.
+The output is the coproduct <Math>I_1 \bigsqcup I_2</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="I1, I2" Name="Coproduct" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+This is a convenience method.
+The arguments are three objects <Math>I_1, I_2, I_3</Math>.
+The output is the coproduct <Math>I_1 \bigsqcup I_2 \bigsqcup I_3</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_object" Name="CoproductOp" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>
+and a method selection object.
+The output is the coproduct <Math>\bigsqcup_{i=1}^n I_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k" Name="InjectionOfCofactorOfCoproduct" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I_k, \bigsqcup_{i=1}^n I_i)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: I_k \rightarrow \bigsqcup_{i=1}^n I_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,method_selection_object" Name="InjectionOfCofactorOfCoproductOp" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I_k, \bigsqcup_{i=1}^n I_i)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>,
+an integer <Math>k</Math>,
+and a method selection object.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: I_k \rightarrow \bigsqcup_{i=1}^n I_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,I" Name="InjectionOfCofactorOfCoproductWithGivenCoproduct" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I_k, I)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>,
+an integer <Math>k</Math>,
+and an object <Math>I = \bigsqcup_{i=1}^n I_i</Math>.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: I_k \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="UniversalMorphismFromCoproduct" />
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigsqcup_{i=1}^n I_i, T)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+There are three different ways to use this method.
+<List>
+<Item>
+The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )</Math>.
+</Item>
+<Item>
+The argument is a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>\tau_1: I_1 \rightarrow T, \dots, \tau_n: I_n \rightarrow T</Math>
+</Item>
+</List>
+The output is the morphism
+<Math>u( \tau ): \bigsqcup_{i=1}^n I_i \rightarrow T</Math>
+given by the universal property of the coproduct.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, method_selection_object" Name="UniversalMorphismFromCoproductOp" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigsqcup_{i=1}^n I_i, T)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )</Math>,
+and a method selection object.
+The output is the morphism
+<Math>u( \tau ): \bigsqcup_{i=1}^n I_i \rightarrow T</Math>
+given by the universal property of the coproduct.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, I" Name="UniversalMorphismFromCoproductWithGivenCoproduct" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I, T)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )</Math>,
+and an object <Math>I = \bigsqcup_{i=1}^n I_i</Math>.
+The output is the morphism
+<Math>u( \tau ): I \rightarrow T</Math>
+given by the universal property of the coproduct.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoproduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>Coproduct</C>.
+<Math>F: ( (I_1, \dots, I_n) ) \mapsto I</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInjectionOfCofactorOfCoproduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InjectionOfCofactorOfCoproduct</C>.
+<Math>F: ( (I_1, \dots, I_n), i ) \mapsto \iota_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInjectionOfCofactorOfCoproductWithGivenCoproduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InjectionOfCofactorOfCoproductWithGivenCoproduct</C>.
+<Math>F: ( (I_1, \dots, I_n), i, I ) \mapsto \iota_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromCoproduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromCoproduct</C>.
+<Math>F: ( (I_1, \dots, I_n), \tau ) \mapsto u( \tau )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromCoproductWithGivenCoproduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromCoproductWithGivenCoproduct</C>.
+<Math>F: ( (I_1, \dots, I_n), \tau, I ) \mapsto u( \tau )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="CoproductFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigsqcup_{i=1}^n I_i, \bigsqcup_{i=1}^n I_i')</Math>
+</Returns>
+ <Description>
+The argument is a list <Math>L = ( \mu_1: I_1 \rightarrow I_1', \dots, \mu_n: I_n \rightarrow I_n' )</Math>.
+The output is a morphism
+<Math>\bigsqcup_{i=1}^n I_i \rightarrow \bigsqcup_{i=1}^n I_i'</Math>
+given by the functorality of the coproduct.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoproductFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CoproductFunctorial</C>.
+<Math>F: ( \mu_1, \dots, \mu_n) \rightarrow (\bigsqcup_{i=1}^n I_i \rightarrow \bigsqcup_{i=1}^n I_i')</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L, method_selection_morphism" Name="CoproductFunctorialOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\bigsqcup_{i=1}^n I_i, \bigsqcup_{i=1}^n I_i')</Math>
+</Returns>
+ <Description>
+The arguments are a list <Math>L = ( \mu_1: I_1 \rightarrow I_1', \dots, \mu_n: I_n \rightarrow I_n' )</Math>
+and a method selection morphism.
+The output is a morphism
+<Math>\bigsqcup_{i=1}^n I_i \rightarrow \bigsqcup_{i=1}^n I_i'</Math>
+given by the functorality of the coproduct.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Direct_Product">
+<Heading>Direct Product</Heading>
+
+For a given list of objects <Math>D = ( P_1, \dots, P_n )</Math>, a direct product of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>P</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\pi = ( \pi_i: P \rightarrow P_i )_{i = 1 \dots n}</Math>
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )_{i = 1, \dots, n}</Math>
+to a morphism <Math>u(\tau): T \rightarrow P</Math> such that <Math>\pi_i \circ u( \tau ) \sim_{T,P_i} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+</List>
+The triple <Math>( P, \pi, u )</Math> is called a <Emph>direct product</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>P</Math> of such a triple by <Math>\prod_{i=1}^n P_i</Math>.
+We say that the morphism <Math>u( \tau )</Math> is induced by the
+<Emph>universal property of the direct product</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{DirectProduct}</Math> is a functorial operation. This means:
+For <Math>(\mu_i: P_i \rightarrow P'_i)_{i=1\dots n}</Math>,
+we obtain a morphism <Math>\prod_{i=1}^n P_i \rightarrow \prod_{i=1}^n P_i'</Math>.
+<ManSection>
+  <Oper Arg="D" Name="DirectProductOp" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>
+and an object for method selection.
+The output is the direct product <Math>\prod_{i=1}^n P_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k" Name="ProjectionInFactorOfDirectProduct" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\prod_{i=1}^n P_i, P_k)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_k: \prod_{i=1}^n P_i \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,method_selection_object" Name="ProjectionInFactorOfDirectProductOp" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\prod_{i=1}^n P_i, P_k)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>,
+an integer <Math>k</Math>,
+and an object for method selection.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_k: \prod_{i=1}^n P_i \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,P" Name="ProjectionInFactorOfDirectProductWithGivenDirectProduct" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(P, P_k)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>,
+an integer <Math>k</Math>,
+and an object <Math>P = \prod_{i=1}^n P_i</Math>.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_k: P \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="UniversalMorphismIntoDirectProduct" />
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \prod_{i=1}^n P_i)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+There are three different ways to use this method.
+<List>
+<Item>
+The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>
+and a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )_{i = 1, \dots, n}</Math>.
+</Item>
+<Item>
+The argument is a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )_{i = 1, \dots, n}</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>\tau_1: T \rightarrow P_1, \dots, \tau_n: T \rightarrow P_n</Math>.
+</Item>
+</List>
+The output is the morphism
+<Math>u(\tau): T \rightarrow \prod_{i=1}^n P_i</Math>
+given by the universal property of the direct product.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, method_selection_object" Name="UniversalMorphismIntoDirectProductOp" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \prod_{i=1}^n P_i)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )_{i = 1, \dots, n}</Math>,
+and an object for method selection.
+The output is the morphism
+<Math>u(\tau): T \rightarrow \prod_{i=1}^n P_i</Math>
+given by the universal property of the direct product.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, P" Name="UniversalMorphismIntoDirectProductWithGivenDirectProduct" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \prod_{i=1}^n P_i)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )_{i = 1, \dots, n}</Math>,
+and an object <Math>P = \prod_{i=1}^n P_i</Math>.
+The output is the morphism
+<Math>u(\tau): T \rightarrow \prod_{i=1}^n P_i</Math>
+given by the universal property of the direct product.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDirectProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DirectProduct</C>.
+<Math>F: ( (P_1, \dots, P_n) ) \mapsto P</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddProjectionInFactorOfDirectProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ProjectionInFactorOfDirectProduct</C>.
+<Math>F: ( (P_1, \dots, P_n),k ) \mapsto \pi_k</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddProjectionInFactorOfDirectProductWithGivenDirectProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ProjectionInFactorOfDirectProductWithGivenDirectProduct</C>.
+<Math>F: ( (P_1, \dots, P_n),k,P ) \mapsto \pi_k</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoDirectProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoDirectProduct</C>.
+<Math>F: ( (P_1, \dots, P_n), \tau ) \mapsto u( \tau )</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoDirectProductWithGivenDirectProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoDirectProductWithGivenDirectProduct</C>.
+<Math>F: ( (P_1, \dots, P_n), \tau, P ) \mapsto u( \tau )</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="DirectProductFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \prod_{i=1}^n P_i, \prod_{i=1}^n P_i' )</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>L = (\mu_i: P_i \rightarrow P'_i)_{i=1\dots n}</Math>.
+The output is a morphism
+<Math>\prod_{i=1}^n P_i \rightarrow \prod_{i=1}^n P_i'</Math>
+given by the functorality of the direct product.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDirectProductFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DirectProductFunctorial</C>.
+<Math>F: ( (\mu_i: P_i \rightarrow P'_i)_{i=1\dots n} ) \mapsto (\prod_{i=1}^n P_i \rightarrow \prod_{i=1}^n P_i')</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L, method_selection_morphism" Name="DirectProductFunctorialOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( P_i, \prod_{i=1}^n P_i' )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>L = (\mu_i: P_i \rightarrow P'_i)_{i=1\dots n}</Math>,
+and a morphism for method selection.
+The output is a morphism
+<Math>\prod_{i=1}^n P_i \rightarrow \prod_{i=1}^n P_i'</Math>
+given by the functorality of the direct product.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Fiber_Product">
+<Heading>Fiber Product</Heading>
+
+For a given list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>,
+a fiber product of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>P</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\pi = ( \pi_i: P \rightarrow P_i )_{i = 1 \dots n}</Math> such that
+<Math>\beta_i \circ \pi_i \sim_{P, B} \beta_j \circ \pi_j</Math> for all pairs <Math>i,j</Math>.
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each list of morphisms
+<Math>\tau = ( \tau_i: T \rightarrow P_i )</Math> such that
+<Math>\beta_i \circ \tau_i \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>
+to a morphism <Math>u( \tau ): T \rightarrow P</Math> such that
+<Math>\pi_i \circ u( \tau ) \sim_{T, P_i} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+</List>
+The triple <Math>( P, \pi, u )</Math> is called a <Emph>fiber product</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>P</Math> of such a triple by <Math>\mathrm{FiberProduct}(D)</Math>.
+We say that the morphism <Math>u( \tau )</Math> is induced by the
+<Emph>universal property of the fiber product</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{FiberProduct}</Math> is a functorial operation. This means:
+For a second diagram <Math>D' = (\beta_i': P_i' \rightarrow B')_{i = 1 \dots n}</Math> and a natural morphism
+between pullback diagrams (i.e., a collection of morphisms
+<Math>(\mu_i: P_i \rightarrow P'_i)_{i=1\dots n}</Math> and <Math>\beta: B \rightarrow B'</Math>
+such that <Math>\beta_i' \circ \mu_i \sim_{P_i,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>)
+we obtain a morphism <Math>\mathrm{FiberProduct}( D ) \rightarrow \mathrm{FiberProduct}( D' )</Math>.
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromFiberProductToKernelOfDiagonalDifference" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{FiberProduct}(D), \Delta)</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+The output is a morphism
+<Math>\mathrm{FiberProduct}(D) \rightarrow \Delta</Math>,
+where <Math>\Delta</Math> denotes the kernel object equalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_morphism" Name="IsomorphismFromFiberProductToKernelOfDiagonalDifferenceOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{FiberProduct}(D), \Delta)</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is a morphism
+<Math>\mathrm{FiberProduct}(D) \rightarrow \Delta</Math>,
+where <Math>\Delta</Math> denotes the kernel object equalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromFiberProductToKernelOfDiagonalDifference" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromFiberProductToKernelOfDiagonalDifference</C>.
+<Math>F: ( ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n} ) \mapsto \mathrm{FiberProduct}(D) \rightarrow \Delta</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromKernelOfDiagonalDifferenceToFiberProduct" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\Delta, \mathrm{FiberProduct}(D))</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+The output is a morphism
+<Math>\Delta \rightarrow \mathrm{FiberProduct}(D)</Math>,
+where <Math>\Delta</Math> denotes the kernel object equalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromKernelOfDiagonalDifferenceToFiberProductOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\Delta, \mathrm{FiberProduct}(D))</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is a morphism
+<Math>\Delta \rightarrow \mathrm{FiberProduct}(D)</Math>,
+where <Math>\Delta</Math> denotes the kernel object equalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromKernelOfDiagonalDifferenceToFiberProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromKernelOfDiagonalDifferenceToFiberProduct</C>.
+<Math>F: ( ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n} ) \mapsto \Delta \rightarrow \mathrm{FiberProduct}(D)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="DirectSumDiagonalDifference" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n P_i, B )</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+The output is a morphism
+<Math>\bigoplus_{i=1}^n P_i \rightarrow B</Math>
+such that its kernel equalizes the <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_morphism" Name="DirectSumDiagonalDifferenceOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n P_i, B )</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is a morphism
+<Math>\bigoplus_{i=1}^n P_i \rightarrow B</Math>
+such that its kernel equalizes the <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDirectSumDiagonalDifference" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DirectSumDiagonalDifference</C>.
+<Math>F: ( D ) \mapsto \mathrm{DirectSumDiagonalDifference}(D)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="FiberProductEmbeddingInDirectSum" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{FiberProduct}(D), \bigoplus_{i=1}^n P_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+The output is the natural embedding
+<Math>\mathrm{FiberProduct}(D) \rightarrow \bigoplus_{i=1}^n P_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_morphism" Name="FiberProductEmbeddingInDirectSumOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{FiberProduct}(D), \bigoplus_{i=1}^n P_i )</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is the natural embedding
+<Math>\mathrm{FiberProduct}(D) \rightarrow \bigoplus_{i=1}^n P_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddFiberProductEmbeddingInDirectSum" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>FiberProductEmbeddingInDirectSum</C>.
+<Math>F: ( ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n} ) \mapsto \mathrm{FiberProduct}(D) \rightarrow \bigoplus_{i=1}^n P_i</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="FiberProduct" />
+ <Returns>an object
+</Returns>
+ <Description>
+This is a convenience method.
+There are two different ways to use this method:
+<List>
+<Item>
+The argument is a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>.
+</Item>
+<Item>
+The arguments are morphisms <Math>\beta_1: P_1 \rightarrow B, \dots, \beta_n: P_n \rightarrow B</Math>.
+</Item>
+</List>
+The output is the fiber product <Math>\mathrm{FiberProduct}(D)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_morphism" Name="FiberProductOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is the fiber product <Math>\mathrm{FiberProduct}(D)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k" Name="ProjectionInFactorOfFiberProduct" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{FiberProduct}(D), P_k )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_{k}: \mathrm{FiberProduct}(D) \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,method_selection_morphism" Name="ProjectionInFactorOfFiberProductOp" Label="for IsList, IsInt, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{FiberProduct}(D), P_k )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>,
+an integer <Math>k</Math>,
+and a morphism for method selection.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_{k}: \mathrm{FiberProduct}(D) \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D,k,P" Name="ProjectionInFactorOfFiberProductWithGivenFiberProduct" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( P, P_k )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>,
+an integer <Math>k</Math>,
+and an object <Math>P = \mathrm{FiberProduct}(D)</Math>.
+The output is the <Math>k</Math>-th projection
+<Math>\pi_{k}: P \rightarrow P_k</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="UniversalMorphismIntoFiberProduct" />
+ <Returns></Returns>
+ <Description>
+This is a convenience method.
+There are three different ways to use this method:
+<List>
+<Item>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )</Math>
+such that <Math>\beta_i \circ \tau_i \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>.
+The output is the morphism
+<Math>u( \tau ): T \rightarrow \mathrm{FiberProduct}(D)</Math>
+given by the universal property of the fiber product.
+</Item>
+<Item>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and morphisms <Math>\tau_1: T \rightarrow P_1, \dots, \tau_n: T \rightarrow P_n</Math>
+such that <Math>\beta_i \circ \tau_i \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>.
+The output is the morphism
+<Math>u( \tau ): T \rightarrow \mathrm{FiberProduct}(D)</Math>
+given by the universal property of the fiber product.
+</Item>
+<Item>
+The arguments are an object <Math>P</Math> which was created as a pullback from a list <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and morphisms <Math>\tau_1: T \rightarrow P_1, \dots, \tau_n: T \rightarrow P_n</Math>
+such that <Math>\beta_i \circ \tau_i \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>.
+The output is the morphism
+<Math>u( \tau ): T \rightarrow P</Math>
+given by the universal property of the fiber product.
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, method_selection_morphism" Name="UniversalMorphismIntoFiberProductOp" Label="for IsList, IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( T, \mathrm{FiberProduct}(D) )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )</Math>
+such that <Math>\beta_i \circ \tau_i \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>,
+and a morphism for method selection.
+The output is the morphism
+<Math>u( \tau ): T \rightarrow \mathrm{FiberProduct}(D)</Math>
+given by the universal property of the fiber product.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, P" Name="UniversalMorphismIntoFiberProductWithGivenFiberProduct" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( T, P )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: T \rightarrow P_i )</Math>
+such that <Math>\beta_i \circ \tau_i \sim_{T, B} \beta_j \circ \tau_j</Math> for all pairs <Math>i,j</Math>,
+and an object <Math>P = \mathrm{FiberProduct}(D)</Math>.
+The output is the morphism
+<Math>u( \tau ): T \rightarrow P</Math>
+given by the universal property of the fiber product.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddFiberProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>FiberProduct</C>.
+<Math>F: ( (\beta_i: P_i \rightarrow B)_{i = 1 \dots n} ) \mapsto P</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddProjectionInFactorOfFiberProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ProjectionInFactorOfFiberProduct</C>.
+<Math>F: ( (\beta_i: P_i \rightarrow B)_{i = 1 \dots n}, k ) \mapsto \pi_k</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddProjectionInFactorOfFiberProductWithGivenFiberProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ProjectionInFactorOfFiberProductWithGivenFiberProduct</C>.
+<Math>F: ( (\beta_i: P_i \rightarrow B)_{i = 1 \dots n}, k,P ) \mapsto \pi_k</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoFiberProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoFiberProduct</C>.
+<Math>F: ( (\beta_i: P_i \rightarrow B)_{i = 1 \dots n}, \tau ) \mapsto u(\tau)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoFiberProductWithGivenFiberProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoFiberProductWithGivenFiberProduct</C>.
+<Math>F: ( (\beta_i: P_i \rightarrow B)_{i = 1 \dots n}, \tau, P ) \mapsto u(\tau)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="FiberProductFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{FiberProduct}( ( \beta_i )_{i=1 \dots n} ), \mathrm{FiberProduct}( ( \beta_i' )_{i=1 \dots n} ))</Math>
+</Returns>
+ <Description>
+The argument is a list of triples of morphisms
+<Math>L = ( (\beta_i: P_i \rightarrow B, \mu_i: P_i \rightarrow P_i', \beta_i': P_i' \rightarrow B')_{i = 1 \dots n} )</Math>
+such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+such that <Math>\beta_i' \circ \mu_i \sim_{P_i,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>.
+The output is the morphism
+<Math>\mathrm{FiberProduct}( ( \beta_i )_{i=1 \dots n} ) \rightarrow \mathrm{FiberProduct}( ( \beta_i' )_{i=1 \dots n} )</Math>
+given by the functorality of the fiber product.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddFiberProductFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>FiberProductFunctorial</C>.
+<Math>F: ( (\beta_i: P_i \rightarrow B, \mu_i: P_i \rightarrow P_i', \beta_i': P_i' \rightarrow B')_{i = 1 \dots n} ) \mapsto (\mathrm{FiberProduct}( ( \beta_i )_{i=1 \dots n} ) \rightarrow \mathrm{FiberProduct}( ( \beta_i' )_{i=1 \dots n} ) )</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L, method_selection_morphism" Name="FiberProductFunctorialOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{FiberProduct}( ( \beta_i )_{i=1 \dots n} ), \mathrm{FiberProduct}( ( \beta_i' )_{i=1 \dots n} ))</Math>
+</Returns>
+ <Description>
+The arguments are a list of triples of morphisms
+<Math>L = ( (\beta_i: P_i \rightarrow B, \mu_i: P_i \rightarrow P_i', \beta_i': P_i' \rightarrow B')_{i = 1 \dots n} )</Math>
+such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+such that <Math>\beta_i' \circ \mu_i \sim_{P_i,B'} \beta \circ \beta_i</Math> for <Math>i = 1, \dots, n</Math>,
+and a morphism for method selection.
+The output is the morphism
+<Math>\mathrm{FiberProduct}( ( \beta_i )_{i=1 \dots n} ) \rightarrow \mathrm{FiberProduct}( ( \beta_i' )_{i=1 \dots n} )</Math>
+given by the functorality of the fiber product.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Pushout">
+<Heading>Pushout</Heading>
+
+For a given list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+a pushout of <Math>D</Math> consists of three parts:
+<List>
+<Item>
+an object <Math>I</Math>,
+</Item>
+<Item>
+a list of morphisms <Math>\iota = ( \iota_i: I_i \rightarrow I )_{i = 1 \dots n}</Math> such that
+<Math>\iota_i \circ \beta_i \sim_{B,I} \iota_j \circ \beta_j</Math> for all pairs <Math>i,j</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each list of morphisms
+<Math>\tau = ( \tau_i: I_i \rightarrow T )_{i = 1 \dots n}</Math> such that
+<Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>
+to a morphism <Math>u( \tau ): I \rightarrow T</Math> such that
+<Math>u( \tau ) \circ \iota_i \sim_{I_i, T} \tau_i</Math> for all <Math>i = 1, \dots, n</Math>.
+</Item>
+</List>
+The triple <Math>( I, \iota, u )</Math> is called a <Emph>pushout</Emph> of <Math>D</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>I</Math> of such a triple by <Math>\mathrm{Pushout}(D)</Math>.
+We say that the morphism <Math>u( \tau )</Math> is induced by the
+<Emph>universal property of the pushout</Emph>.
+<Math>\\ </Math>
+<Math>\mathrm{Pushout}</Math> is a functorial operation. This means:
+For a second diagram <Math>D' = (\beta_i': B' \rightarrow I_i')_{i = 1 \dots n}</Math> and a natural morphism
+between pushout diagrams (i.e., a collection of morphisms
+<Math>(\mu_i: I_i \rightarrow I'_i)_{i=1\dots n}</Math> and <Math>\beta: B \rightarrow B'</Math>
+such that <Math>\beta_i' \circ \beta \sim_{B, I_i'} \mu_i \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>)
+we obtain a morphism <Math>\mathrm{Pushout}( D ) \rightarrow \mathrm{Pushout}( D' )</Math>.
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromPushoutToCokernelOfDiagonalDifference" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Pushout}(D), \Delta)</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+The output is a morphism
+<Math>\mathrm{Pushout}(D) \rightarrow \Delta</Math>,
+where <Math>\Delta</Math> denotes the cokernel object coequalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_morphism" Name="IsomorphismFromPushoutToCokernelOfDiagonalDifferenceOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Pushout}(D), \Delta)</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is a morphism
+<Math>\mathrm{Pushout}(D) \rightarrow \Delta</Math>,
+where <Math>\Delta</Math> denotes the cokernel object coequalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromPushoutToCokernelOfDiagonalDifference" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromPushoutToCokernelOfDiagonalDifference</C>.
+<Math>F: ( ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n} ) \mapsto (\mathrm{Pushout}(D) \rightarrow \Delta)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="IsomorphismFromCokernelOfDiagonalDifferenceToPushout" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \Delta, \mathrm{Pushout}(D))</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+The output is a morphism
+<Math>\Delta \rightarrow \mathrm{Pushout}(D)</Math>,
+where <Math>\Delta</Math> denotes the cokernel object coequalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_morphism" Name="IsomorphismFromCokernelOfDiagonalDifferenceToPushoutOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \Delta, \mathrm{Pushout}(D))</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is a morphism
+<Math>\Delta \rightarrow \mathrm{Pushout}(D)</Math>,
+where <Math>\Delta</Math> denotes the cokernel object coequalizing the morphisms <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromCokernelOfDiagonalDifferenceToPushout" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromCokernelOfDiagonalDifferenceToPushout</C>.
+<Math>F: ( ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n} ) \mapsto (\Delta \rightarrow \mathrm{Pushout}(D))</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="DirectSumCodiagonalDifference" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B, \bigoplus_{i=1}^n I_i)</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+The output is a morphism
+<Math>B \rightarrow \bigoplus_{i=1}^n I_i</Math>
+such that its cokernel coequalizes the <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_morphism" Name="DirectSumCodiagonalDifferenceOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(B, \bigoplus_{i=1}^n I_i)</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is a morphism
+<Math>B \rightarrow \bigoplus_{i=1}^n I_i</Math>
+such that its cokernel coequalizes the <Math>\beta_i</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDirectSumCodiagonalDifference" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DirectSumCodiagonalDifference</C>.
+<Math>F: ( D ) \mapsto \mathrm{DirectSumCodiagonalDifference}(D)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="DirectSumProjectionInPushout" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n I_i, \mathrm{Pushout}(D) )</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>.
+The output is the natural projection
+<Math>\bigoplus_{i=1}^n I_i \rightarrow \mathrm{Pushout}(D)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, method_selection_morphism" Name="DirectSumProjectionInPushoutOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \bigoplus_{i=1}^n I_i, \mathrm{Pushout}(D) )</Math>
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is the natural projection
+<Math>\bigoplus_{i=1}^n I_i \rightarrow \mathrm{Pushout}(D)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDirectSumProjectionInPushout" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DirectSumProjectionInPushout</C>.
+<Math>F: ( ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n} ) \mapsto (\bigoplus_{i=1}^n I_i \rightarrow \mathrm{Pushout}(D))</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="Pushout" Label="for IsList"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+The output is the pushout <Math>\mathrm{Pushout}(D)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="Pushout" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+This is a convenience method.
+The arguments are a morphism <Math>\alpha</Math> and a morphism <Math>\beta</Math>.
+The output is the pushout <Math>\mathrm{Pushout}(\alpha, \beta)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D" Name="PushoutOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and a morphism for method selection.
+The output is the pushout <Math>\mathrm{Pushout}(D)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, k" Name="InjectionOfCofactorOfPushout" Label="for IsList, IsInt"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( I_k, \mathrm{Pushout}( D ) )</Math>.
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: I_k \rightarrow \mathrm{Pushout}( D )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, k, method_selection_morphism" Name="InjectionOfCofactorOfPushoutOp" Label="for IsList, IsInt, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( I_k, \mathrm{Pushout}( D ) )</Math>.
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+an integer <Math>k</Math>,
+and a morphism for method selection.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: I_k \rightarrow \mathrm{Pushout}( D )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, k, I" Name="InjectionOfCofactorOfPushoutWithGivenPushout" Label="for IsList, IsInt, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( I_k, \mathrm{Pushout}( D ) )</Math>.
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+an integer <Math>k</Math>,
+and an object <Math>I = \mathrm{Pushout}(D)</Math>.
+The output is the <Math>k</Math>-th injection
+<Math>\iota_k: I_k \rightarrow \mathrm{Pushout}( D )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="UniversalMorphismFromPushout" />
+ <Returns></Returns>
+ <Description>
+This is a convenience method.
+There are three different ways to use this method:
+<List>
+<Item>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )_{i = 1 \dots n}</Math> such that
+<Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>.
+The output is the morphism
+<Math>u( \tau ): \mathrm{Pushout}(D) \rightarrow T</Math>
+given by the universal property of the pushout.
+</Item>
+<Item>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and morphisms <Math>\tau_1: I_1 \rightarrow T, \dots, \tau_n: I_n \rightarrow T</Math> such that
+<Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>.
+The output is the morphism
+<Math>u( \tau ): \mathrm{Pushout}(D) \rightarrow T</Math>
+given by the universal property of the pushout.
+</Item>
+<Item>
+The arguments are an object <Math>I</Math> which was created as a pushout from a list <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and morphisms <Math>\tau_1: I_1 \rightarrow T, \dots, \tau_n: I_n \rightarrow T</Math> such that
+<Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>.
+The output is the morphism
+<Math>u( \tau ): I \rightarrow T</Math>
+given by the universal property of the pushout.
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, method_selection_morphism" Name="UniversalMorphismFromPushoutOp" Label="for IsList, IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{Pushout}(D), T )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )_{i = 1 \dots n}</Math> such that
+<Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>,
+and a morphism for method selection.
+The output is the morphism
+<Math>u( \tau ): \mathrm{Pushout}(D) \rightarrow T</Math>
+given by the universal property of the pushout.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="D, tau, I" Name="UniversalMorphismFromPushoutWithGivenPushout" Label="for IsList, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( I, T )</Math>
+</Returns>
+ <Description>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>,
+a list of morphisms <Math>\tau = ( \tau_i: I_i \rightarrow T )_{i = 1 \dots n}</Math> such that
+<Math>\tau_i \circ \beta_i \sim_{B,T} \tau_j \circ \beta_j</Math>,
+and an object <Math>I = \mathrm{Pushout}(D)</Math>.
+The output is the morphism
+<Math>u( \tau ): I \rightarrow T</Math>
+given by the universal property of the pushout.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddPushout" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>Pushout</C>.
+<Math>F: ( (\beta_i: B \rightarrow I_i)_{i = 1 \dots n} ) \mapsto I</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInjectionOfCofactorOfPushout" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InjectionOfCofactorOfPushout</C>.
+<Math>F: ( (\beta_i: B \rightarrow I_i)_{i = 1 \dots n}, k ) \mapsto \iota_k</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInjectionOfCofactorOfPushoutWithGivenPushout" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InjectionOfCofactorOfPushoutWithGivenPushout</C>.
+<Math>F: ( (\beta_i: B \rightarrow I_i)_{i = 1 \dots n}, k, I ) \mapsto \iota_k</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromPushout" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromPushout</C>.
+<Math>F: ( (\beta_i: B \rightarrow I_i)_{i = 1 \dots n}, \tau ) \mapsto u(\tau)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromPushoutWithGivenPushout" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromPushout</C>.
+<Math>F: ( (\beta_i: B \rightarrow I_i)_{i = 1 \dots n}, \tau, I ) \mapsto u(\tau)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="PushoutFunctorial" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{Pushout}( ( \beta_i )_{i=1}^n ), \mathrm{Pushout}( ( \beta_i' )_{i=1}^n ))</Math>
+</Returns>
+ <Description>
+The argument is a list
+<Math>L = ( ( \beta_i: B \rightarrow I_i, \mu_i: I_i \rightarrow I_i', \beta_i': B' \rightarrow I_i' )_{i = 1 \dots n} )</Math>
+such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+such that <Math>\beta_i' \circ \beta \sim_{B, I_i'} \mu_i \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>.
+The output is the morphism
+<Math>\mathrm{Pushout}( ( \beta_i )_{i=1}^n ) \rightarrow \mathrm{Pushout}( ( \beta_i' )_{i=1}^n )</Math>
+given by the functorality of the pushout.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddPushoutFunctorial" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>PushoutFunctorial</C>.
+<Math>F: ( ( \beta_i: B \rightarrow I_i, \mu_i: I_i \rightarrow I_i', \beta_i': B' \rightarrow I_i' )_{i = 1 \dots n} ) \mapsto (\mathrm{Pushout}( ( \beta_i )_{i=1}^n ) \rightarrow \mathrm{Pushout}( ( \beta_i' )_{i=1}^n ) )</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L, method_selection_morphism" Name="PushoutFunctorialOp" Label="for IsList, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{Pushout}( ( \beta_i )_{i=1}^n ), \mathrm{Pushout}( ( \beta_i' )_{i=1}^n ))</Math>
+</Returns>
+ <Description>
+The argument is a list
+<Math>L = ( ( \beta_i: B \rightarrow I_i, \mu_i: I_i \rightarrow I_i', \beta_i': B' \rightarrow I_i' )_{i = 1 \dots n} )</Math>
+such that there exists a morphism <Math>\beta: B \rightarrow B'</Math>
+such that <Math>\beta_i' \circ \beta \sim_{B, I_i'} \mu_i \circ \beta_i</Math> for <Math>i = 1, \dots n</Math>,
+and a morphism for method selection.
+The output is the morphism
+<Math>\mathrm{Pushout}( ( \beta_i )_{i=1}^n ) \rightarrow \mathrm{Pushout}( ( \beta_i' )_{i=1}^n )</Math>
+given by the functorality of the pushout.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Image">
+<Heading>Image</Heading>
+
+For a given morphism <Math>\alpha: A \rightarrow B</Math>, an image of <Math>\alpha</Math> consists of four parts:
+<List>
+<Item>
+an object <Math>I</Math>,
+</Item>
+<Item>
+a morphism <Math>c: A \rightarrow I</Math>,
+</Item>
+<Item>
+a monomorphism <Math>\iota: I \hookrightarrow B</Math> such that <Math>\iota \circ c \sim_{A,B} \alpha</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each pair of morphisms <Math>\tau = ( \tau_1: A \rightarrow T, \tau_2: T \hookrightarrow B )</Math>
+where <Math>\tau_2</Math> is a monomorphism
+such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math> to a morphism
+<Math>u(\tau): I \rightarrow T</Math> such that
+<Math>\tau_2 \circ u(\tau) \sim_{I,B} \iota</Math> and <Math>u(\tau) \circ c \sim_{A,T} \tau_1</Math>.
+</Item>
+</List>
+The <Math>4</Math>-tuple <Math>( I, c, \iota, u )</Math> is called an <Emph>image</Emph> of <Math>\alpha</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>I</Math> of such a <Math>4</Math>-tuple by <Math>\mathrm{im}(\alpha)</Math>.
+We say that the morphism <Math>u( \tau )</Math> is induced by the
+<Emph>universal property of the image</Emph>.
+<ManSection>
+  <Attr Arg="alpha" Name="IsomorphismFromImageObjectToKernelOfCokernel" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{im}(\alpha), \mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) ) )</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math>.
+The output is the canonical morphism
+<Math>\mathrm{im}(\alpha) \rightarrow \mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromImageObjectToKernelOfCokernel" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromImageObjectToKernelOfCokernel</C>.
+<Math>F: \alpha \mapsto ( \mathrm{im}(\alpha) \rightarrow \mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) ) )</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="IsomorphismFromKernelOfCokernelToImageObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) ), \mathrm{im}(\alpha) )</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math>.
+The output is the canonical morphism
+<Math>\mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) ) \rightarrow \mathrm{im}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromKernelOfCokernelToImageObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromKernelOfCokernelToImageObject</C>.
+<Math>F: \alpha \mapsto ( \mathrm{KernelObject}( \mathrm{CokernelProjection}( \alpha ) ) \rightarrow \mathrm{im}(\alpha) )</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="ImageObject" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math>.
+The output is the image <Math>\mathrm{im}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="I" Name="ImageEmbedding" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I,B)</Math>.
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is an object <Math>I</Math> which was created as an image object
+of a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the image embedding
+<Math>\iota: I \hookrightarrow B</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="ImageEmbedding" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{im}(\alpha), B)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the image embedding
+<Math>\iota: \mathrm{im}(\alpha) \hookrightarrow B</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, I" Name="ImageEmbeddingWithGivenImageObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I, B)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>
+and an object <Math>I = \mathrm{im}( \alpha )</Math>.
+The output is the image embedding
+<Math>\iota: I \hookrightarrow B</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="I" Name="CoastrictionToImage" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, I)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is an object <Math>I</Math> which was created as an image object
+of a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the coastriction to image
+<Math>c: A \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="CoastrictionToImage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, \mathrm{im}( \alpha ))</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the coastriction to image
+<Math>c: A \rightarrow \mathrm{im}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, I" Name="CoastrictionToImageWithGivenImageObject" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, I)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>
+and an object <Math>I = \mathrm{im}( \alpha )</Math>.
+The output is the coastriction to image
+<Math>c: A \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, tau" Name="UniversalMorphismFromImage" Label="for IsCapCategoryMorphism, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{im}(\alpha), T)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+and a pair of morphisms
+<Math>\tau = ( \tau_1: A \rightarrow T, \tau_2: T \hookrightarrow B )</Math>
+where <Math>\tau_2</Math> is a monomorphism
+such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math>.
+The output is the morphism
+<Math>u(\tau): \mathrm{im}(\alpha) \rightarrow T</Math>
+given by the universal property of the image.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, tau, I" Name="UniversalMorphismFromImageWithGivenImageObject" Label="for IsCapCategoryMorphism, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I, T)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>,
+a pair of morphisms
+<Math>\tau = ( \tau_1: A \rightarrow T, \tau_2: T \hookrightarrow B )</Math>
+where <Math>\tau_2</Math> is a monomorphism
+such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math>,
+and an object <Math>I = \mathrm{im}( \alpha )</Math>.
+The output is the morphism
+<Math>u(\tau): \mathrm{im}(\alpha) \rightarrow T</Math>
+given by the universal property of the image.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddImageObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ImageObject</C>.
+<Math>F: \alpha \mapsto I</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddImageEmbedding" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ImageEmbedding</C>.
+<Math>F: \alpha \mapsto \iota</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddImageEmbeddingWithGivenImageObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ImageEmbeddingWithGivenImageObject</C>.
+<Math>F: (\alpha,I) \mapsto \iota</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoastrictionToImage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CoastrictionToImage</C>.
+<Math>F: \alpha \mapsto c</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoastrictionToImageWithGivenImageObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CoastrictionToImageWithGivenImageObject</C>.
+<Math>F: (\alpha,I) \mapsto c</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromImage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromImage</C>.
+<Math>F: (\alpha, \tau) \mapsto u(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismFromImageWithGivenImageObject" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismFromImageWithGivenImageObject</C>.
+<Math>F: (\alpha, \tau, I) \mapsto u(\tau)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Coimage">
+<Heading>Coimage</Heading>
+
+For a given morphism <Math>\alpha: A \rightarrow B</Math>, a coimage of <Math>\alpha</Math> consists of four parts:
+<List>
+<Item>
+an object <Math>C</Math>,
+</Item>
+<Item>
+an epimorphism <Math>\pi: A \twoheadrightarrow C</Math>,
+</Item>
+<Item>
+a morphism <Math>a: C \rightarrow B</Math> such that <Math>a \circ \pi \sim_{A,B} \alpha</Math>,
+</Item>
+<Item>
+a dependent function <Math>u</Math> mapping each pair of morphisms <Math>\tau = ( \tau_1: A \twoheadrightarrow T, \tau_2: T \rightarrow B )</Math>
+where <Math>\tau_1</Math> is an epimorphism
+such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math> to a morphism
+<Math>u(\tau): T \rightarrow C</Math> such that
+<Math>u( \tau ) \circ \tau_1 \sim_{A,C} \pi</Math> and <Math>a \circ u( \tau ) \sim_{T,B} \tau_2</Math>.
+</Item>
+</List>
+The <Math>4</Math>-tuple <Math>( C, \pi, a, u )</Math> is called a <Emph>coimage</Emph> of <Math>\alpha</Math> if the morphisms <Math>u( \tau )</Math> are uniquely determined up to
+congruence of morphisms.
+We denote the object <Math>C</Math> of such a <Math>4</Math>-tuple by <Math>\mathrm{coim}(\alpha)</Math>.
+We say that the morphism <Math>u( \tau )</Math> is induced by the
+<Emph>universal property of the coimage</Emph>.
+<ManSection>
+  <Attr Arg="alpha" Name="MorphismFromCoimageToImage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{coim}(\alpha), \mathrm{im}(\alpha))</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the canonical morphism (in a preabelian category)
+<Math>\mathrm{coim}(\alpha) \rightarrow \mathrm{im}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha" Name="MorphismFromCoimageToImageWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(C,I)</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>C = \mathrm{coim}(\alpha)</Math>,
+a morphism <Math>\alpha: A \rightarrow B</Math>,
+and an object <Math>I = \mathrm{im}(\alpha)</Math>.
+The output is the canonical morphism (in a preabelian category)
+<Math>C \rightarrow I</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddMorphismFromCoimageToImageWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>MorphismFromCoimageToImageWithGivenObjects</C>.
+<Math>F: (C, \alpha, I) \mapsto ( C \rightarrow I )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="InverseMorphismFromCoimageToImage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{im}(\alpha), \mathrm{coim}(\alpha))</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the inverse of the canonical morphism (in an abelian category)
+<Math>\mathrm{im}(\alpha) \rightarrow \mathrm{coim}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha" Name="InverseMorphismFromCoimageToImageWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(I,C)</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>C = \mathrm{coim}(\alpha)</Math>,
+a morphism <Math>\alpha: A \rightarrow B</Math>,
+and an object <Math>I = \mathrm{im}(\alpha)</Math>.
+The output is the inverse of the canonical morphism (in an abelian category)
+<Math>I \rightarrow C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInverseMorphismFromCoimageToImageWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>MorphismFromCoimageToImageWithGivenObjects</C>.
+<Math>F: (C, \alpha, I) \mapsto ( I \rightarrow C )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="IsomorphismFromCoimageToCokernelOfKernel" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{coim}( \alpha ), \mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) ) )</Math>.
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the canonical morphism
+<Math>\mathrm{coim}( \alpha ) \rightarrow \mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromCoimageToCokernelOfKernel" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromCoimageToCokernelOfKernel</C>.
+<Math>F: \alpha \mapsto ( \mathrm{coim}( \alpha ) \rightarrow \mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) ) )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="IsomorphismFromCokernelOfKernelToCoimage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) ), \mathrm{coim}( \alpha ) )</Math>.
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the canonical morphism
+<Math>\mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) ) \rightarrow \mathrm{coim}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromCokernelOfKernelToCoimage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromCokernelOfKernelToCoimage</C>.
+<Math>F: \alpha \mapsto ( \mathrm{CokernelObject}( \mathrm{KernelEmbedding}( \alpha ) ) \rightarrow \mathrm{coim}( \alpha ) )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="Coimage" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math>.
+The output is the coimage <Math>\mathrm{coim}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="CoimageProjection" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, C)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is an object <Math>C</Math> which was created as a coimage
+of a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the coimage projection
+<Math>\pi: A \twoheadrightarrow C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="CoimageProjection" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, \mathrm{coim}( \alpha ))</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the coimage projection
+<Math>\pi: A \twoheadrightarrow \mathrm{coim}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, C" Name="CoimageProjectionWithGivenCoimage" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(A, C)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+and an object <Math>C = \mathrm{coim}(\alpha)</Math>.
+The output is the coimage projection
+<Math>\pi: A \twoheadrightarrow C</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="AstrictionToCoimage" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(C,B)</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is an object <Math>C</Math> which was created as a coimage
+of a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the astriction to coimage
+<Math>a: C \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="AstrictionToCoimage" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{coim}( \alpha ),B)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: A \rightarrow B</Math>.
+The output is the astriction to coimage
+<Math>a: \mathrm{coim}( \alpha ) \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, C" Name="AstrictionToCoimageWithGivenCoimage" Label="for IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(C,B)</Math>
+</Returns>
+ <Description>
+The argument are a morphism <Math>\alpha: A \rightarrow B</Math>
+and an object <Math>C = \mathrm{coim}( \alpha )</Math>.
+The output is the astriction to coimage
+<Math>a: C \rightarrow B</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, tau" Name="UniversalMorphismIntoCoimage" Label="for IsCapCategoryMorphism, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, \mathrm{coim}( \alpha ))</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>
+and a pair of morphisms
+<Math>\tau = ( \tau_1: A \twoheadrightarrow T, \tau_2: T \rightarrow B )</Math>
+where <Math>\tau_1</Math> is an epimorphism
+such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math>.
+The output is the morphism
+<Math>u(\tau): T \rightarrow \mathrm{coim}( \alpha )</Math>
+given by the universal property of the coimage.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, tau, C" Name="UniversalMorphismIntoCoimageWithGivenCoimage" Label="for IsCapCategoryMorphism, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(T, C)</Math>
+</Returns>
+ <Description>
+The arguments are a morphism <Math>\alpha: A \rightarrow B</Math>,
+a pair of morphisms
+<Math>\tau = ( \tau_1: A \twoheadrightarrow T, \tau_2: T \rightarrow B )</Math>
+where <Math>\tau_1</Math> is an epimorphism
+such that <Math>\tau_2 \circ \tau_1 \sim_{A,B} \alpha</Math>,
+and an object <Math>C = \mathrm{coim}( \alpha )</Math>.
+The output is the morphism
+<Math>u(\tau): T \rightarrow C</Math>
+given by the universal property of the coimage.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoimage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>Coimage</C>.
+<Math>F: \alpha \mapsto C</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoimageProjection" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CoimageProjection</C>.
+<Math>F: \alpha \mapsto \pi</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoimageProjectionWithGivenCoimage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CoimageProjectionWithGivenCoimage</C>.
+<Math>F: (\alpha,C) \mapsto \pi</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddAstrictionToCoimage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>AstrictionToCoimage</C>.
+<Math>F: \alpha \mapsto a</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddAstrictionToCoimageWithGivenCoimage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>AstrictionToCoimageWithGivenCoimage</C>.
+<Math>F: (\alpha,C) \mapsto a</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoCoimage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoCoimage</C>.
+<Math>F: (\alpha, \tau) \mapsto u(\tau)</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalMorphismIntoCoimageWithGivenCoimage" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalMorphismIntoCoimageWithGivenCoimage</C>.
+<Math>F: (\alpha, \tau,C) \mapsto u(\tau)</Math>
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Universal_Objects_Section_Convenience_Methods">
+<Heading>Convenience Methods</Heading>
+
+<ManSection>
+  <Func Arg="arg" Name="InjectionOfCofactor" />
+ <Returns></Returns>
+ <Description>
+This is a convenience method.
+There are five different ways to use this method:
+<List>
+<Item>
+The arguments are an object <Math>S</Math> which was created as a direct sum
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th injection <Math>\iota_{k}: S_k \rightarrow S</Math>.
+</Item>
+<Item>
+The arguments are an object <Math>I</Math> which was created as a coproduct
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th injection <Math>\iota_{k}: I_k \rightarrow I</Math>.
+</Item>
+<Item>
+The arguments are an object <Math>I</Math> which was created as a pushout
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th injection <Math>\iota_{k}: I_k \rightarrow I</Math>.
+</Item>
+<Item>
+The arguments are a list of objects <Math>D = ( I_1, \dots, I_n )</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th injection <Math>\iota_{k}: I_k \rightarrow \bigsqcup_{i=1}^n I_i</Math>.
+</Item>
+<Item>
+The arguments are a list of morphisms <Math>D = ( \beta_i: B \rightarrow I_i )_{i = 1 \dots n}</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th injection <Math>\iota_{k}: I_k \rightarrow \mathrm{Pushout}(D)</Math>.
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="ProjectionInFactor" />
+ <Returns></Returns>
+ <Description>
+This is a convenience method.
+There are five different ways to use this method:
+<List>
+<Item>
+The arguments are an object <Math>S</Math> which was created as a direct sum
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th projection <Math>\pi_{k}: S \rightarrow S_k</Math>.
+</Item>
+<Item>
+The arguments are an object <Math>P</Math> which was created as a direct product
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th projection <Math>\pi_{k}: P \rightarrow P_k</Math>.
+</Item>
+<Item>
+The arguments are an object <Math>P</Math> which was created as a fiber product
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th projection <Math>\pi_{k}: P \rightarrow P_k</Math>.
+</Item>
+<Item>
+The arguments are a list of objects <Math>D = ( P_1, \dots, P_n )</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th projection <Math>\pi_{k}: \prod_{i=1}^n P_i \rightarrow P_k</Math>.
+</Item>
+<Item>
+The arguments are a list of morphisms <Math>D = ( \beta_i: P_i \rightarrow B )_{i = 1 \dots n}</Math>
+and an integer <Math>k</Math>.
+The output is the <Math>k</Math>-th projection <Math>\pi_{k}: \mathrm{FiberProduct}(D) \rightarrow P_k</Math>.
+</Item>
+</List>
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

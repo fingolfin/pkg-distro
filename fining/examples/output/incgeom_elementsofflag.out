@@ -1,0 +1,16 @@
+gap> 
+gap> # elements of a flag
+gap> gp := SplitCayleyHexagon(4);
+H(4)
+gap> p := Random(Points(gp));
+#I  for Split Cayley Hexagon
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+<a point in H(4)>
+gap> l := Random(Lines(p));
+<a line in H(4)>
+gap> flag := FlagOfIncidenceStructure(gp,[l,p]);
+<a flag of H(4)>
+gap> ElementsOfFlag(flag);
+[ <a point in H(4)>, <a line in H(4)> ]
+gap> quit;

@@ -1,0 +1,26 @@
+gap> 
+gap> # flag mapping example
+gap> L:=SimpleLieAlgebra("D",8,Rationals);
+<Lie algebra of dimension 120 over Rationals>
+gap> rs:=RootSystem(L);
+<root system of rank 8>
+gap> w:=WeylGroup(rs);
+<matrix group with 8 generators>
+gap> gens:=GeneratorsOfGroup(w);;
+gap> pabs:=List(gens, g -> Group(Difference(gens, [g])));
+[ <matrix group with 7 generators>, <matrix group with 7 generators>, 
+  <matrix group with 7 generators>, <matrix group with 7 generators>, 
+  <matrix group with 7 generators>, <matrix group with 7 generators>, 
+  <matrix group with 7 generators>, <matrix group with 7 generators> ]
+gap> g:=Group(gens);
+<matrix group with 8 generators>
+gap> cg:=CosetGeometry(g,pabs);;
+gap> cham:=RandomChamber(cg);; # Time of last command: 23945 ms
+gap> FlagToStandardFlag(cg,cham); # Time of last command: 1720 ms
+[ [ 0, 0, 0, 0, 1, -1, 0, 0 ], [ 0, 0, 0, 1, 0, -1, 0, 0 ], 
+  [ 0, 0, 0, 1, 0, 0, -1, -1 ], [ 1, -1, 0, 1, 0, 0, -1, -1 ], 
+  [ 0, -1, 0, 1, 0, 0, -1, -1 ], [ 0, -1, 0, 1, 0, 0, 0, -2 ], 
+  [ 0, -1, 1, 0, 0, 0, 0, -1 ], [ 0, -1, 0, 1, 0, 0, 0, -1 ] ]
+gap> cham^last = StandardFlagOfCosetGeometry(cg); # Time of last command:1005 ms
+true
+gap> quit;

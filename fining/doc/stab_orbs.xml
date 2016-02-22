@@ -1,0 +1,258 @@
+<!-- 
+
+  stab_orbs.xml    FinInG package documentation
+                                                                   John Bamberg
+                                                                   Anton Betten
+                                                                  Philippe Cara
+                                                                   Jan De Beule
+                                                                 Michel Lavrauw
+                                                                Max Neunhoeffer
+
+  Copyright (C) 2015,	Colorado State University
+						Università degli Studi di Padova
+						Universiteit Gent
+						University of St. Andrews
+						University of Western Australia
+                        Vrije Universiteit Brussel
+
+This is the chapter of the documentation describing the stabilisers and orbits.
+
+-->
+
+<Chapter Label="acts_stab_orbs">
+<Heading>Orbits, stabilisers and actions</Heading>
+
+<Section>
+<Heading>Orbits</Heading>
+GAP provides generic functionality to compute orbits. These functions are, generally spoken, applicable to the
+groups implemented in <Package>FinInG</Package>, combined with the appropriate action functions. However, the generic
+functions applied in such situations are rather time comsuming. <Package>FinInG</Package> therefore provides alternative
+functions to compute orbits.
+
+<ManSection>
+<Oper Name="FiningOrbit" Arg="g, obj, act"/>
+<Returns>The orbit of the object <A>obj</A> under the action <A>act</A> of the
+group <A>g</A>.</Returns>
+<Description>
+The argument <A>obj</A> is either a subspace of a projective space, then combined with
+the action function <F>OnProjSubspaces</F>, or a set of elements of a projective space, then
+combined with the action function <F>OnSetsProjSubspaces</F>. The group <A>g</A> is a subgroup
+of a collineation group of a projective space. In both cases the action function computes the action
+of <A>el</A> under the group element <A>g</A>.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_finingorbit1.include"> 
+</Example>
+The second example shows the possible use of <F>FiningOrbit</F> in combination with the action function
+<F>OnSetsProjSubspaces</F>. Please note that this variant is probably not the most efficient way to compute all elliptic
+quadrics contained in the parabolic quadric <M>ps</M>. Experiments show that for <M>q=5</M> the second variant takes an 
+unreasonable amount of time. Also note that the second argument <A>el</A> must be
+a set (and therefore it might be necessary to apply <F>Set</F> on a collection of elements).
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_finingorbit2.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="FiningOrbits" Arg="g, set, act"/>
+<Oper Name="FiningOrbits" Arg="g, coll"/>
+<Returns>The orbits of the group <A>g</A> on <A>set</A> under the action of <A>act</A>.</Returns>
+<Description>
+The set is a set of elements of a projective space, the group <A>g</A> is a subgroup of the collineation group
+of a projective space, and <A>act</A> is the function <F>OnProjSubspaces</F>. If <A>coll</A> is a collection of
+elements of a projective space (i.e. not a list or set, but and object representing the collection of elements
+of a given type, such as <F>Lines(PG(3,4))</F>), then the second versions returns the orbits of <A>g</A> on the elements
+of <A>coll</A> under the action <F>OnProjSubspaces</F>.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_finingorbits1.include"> 
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section>
+<Heading>Stabilisers</Heading>
+
+The GAP function <F>Stabilizer</F> is a generic function to compute stabilisers of one object (or sets or tuples etc. of objects)
+under a group, using a specified action function. This generic function can be used together with the in <Package>FinInG</Package>
+implemented groups and elements of geometries. However, computing time can be very long, already in small geometries.
+
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_example1.include"> 
+</Example>
+
+The packages <Package>GenSS</Package> and <Package>orb</Package> required by <Package>FinInG</Package> provide 
+efficient operations to compute stabilisers, and <Package>FinInG</Package> provides functionality to use 
+these operations for the particular groups and (elements) of geometries.
+
+<ManSection>
+<Oper Name="FiningStabiliser" Arg="g, el"/>
+<Returns>The subgroup of <A>g</A> stabilising the element <A>el</A></Returns>
+<Description>The argument <A>g</A> is a group of collineations acting on the element <A>el</A>, being a
+subspace of a projective space (and hence, all elements of a Lie geometry are allowed as second argument).
+This operation relies on the <Package>GenSS</Package> operation <F>Stab</F>.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_finingstabiliser.include"> 
+</Example>
+</Description>
+</ManSection>
+
+
+<ManSection>
+<Oper Name="FiningStabiliserOrb" Arg="g, el"/>
+<Returns>The subgroup of <A>g</A> stabilising the element <A>el</A></Returns>
+<Description>The argument <A>g</A> is a group of collineations acting on the element <A>el</A>, being a
+subspace of a projective space (and hence, all elements of a Lie geometry are allowed as second argument).
+This operation relies on some particular <Package>orb</Package> functionality.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_finingstabiliserorb.include"> 
+</Example>
+</Description>
+</ManSection>
+
+A small example shows the difference in computing time. Clearly the <F>FiningStabiliserOrb</F> is the fastest 
+way to compute stabilizers of one element.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_timing1.include"> 
+</Example>
+
+
+<ManSection>
+<Oper Name="FiningSetwiseStabiliser" Arg="g, els"/>
+<Returns>The subgroup of <A>g</A> stabilising the set <A>els</A></Returns>
+<Description>The argument <A>g</A> is a group of collineations acting on the element <A>el</A>, being a
+subspace of a projective space (and hence, all elements of a Lie geometry are allowed as second argument).
+The argument <A>els</A> is a set of elements of the same type of the same Lie geometry, the elements are all in 
+the category <C>IsSubspaceOfProjectiveSpace</C>. The underlying action function is assumed to be
+<F>OnProjSubspaces</F>
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_finingsetwisestabiliser.include"> 
+</Example>
+</Description>
+</ManSection>
+Computing the setwise stabiliser under a group is also possible using <F>Stabilizer</F>. But, not suprisingly, the computing time can be very long.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_setwisegeneric.include"> 
+</Example>
+The package <Package>GenSS</Package> provides an efficient operations to compute setwise stabilisers. This is why <Package>FinInG</Package> provides functionality, such as <F>FiningSetwiseStabiliser</F>, to use these <Package>GenSS</Package> operations for the particular groups and (elements) of geometries.
+A small example shows the difference in computing time. 
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_timing2.include"> 
+</Example>
+
+</Section>
+
+<Section>
+<Heading>Actions and nice monomorphisms revisited</Heading>
+
+GAP provides generic functions to compute action homomorphisms and their images for arbitrary groups. These
+functions are applicable on the projective groups implemented in <Package>FinInG</Package>.
+
+<ManSection>
+<Heading>Action functions</Heading>
+<Func Name="OnProjSubspaces" Arg="el, g"/>
+<Func Name="OnProjSubspacesExtended" Arg="el, g"/>
+<Func Name="OnSetsProjSubspaces" Arg="set, g"/>
+<Returns>a element of a Lie geometry</Returns>
+<Description>
+Let <A>el</A> be an element of any Lie geometry, and <A>g</A> an element of a projective group
+acting on the elements of the ambient Lie geometry of <A>el</A>. Then then <F>OnProjSubspaces</F>
+will return simply the image of <A>el</A> under <A>g</A>. When <A>g</A> is an element of the correlationcollineation group
+of a projective space, <F>OnProjSubspacesExtended</F> returns the image of <A>el</A> under <A>g</A>. Finally,
+when <A>set</A> is a set of elements of a Lie geometry, <F>OnSetsProjSubspaces</F> returns the set of images
+under <A>g</A>. <F>OnProjSubspaces</F> is also explained in <Ref Sect="proj:onprojsubspaces"/>,
+<F>OnProjSubspacesExtended</F> is also explained in <Ref Sect="proj:onprojsubspacesextended"/>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Generic GAP functions</Heading>
+<Oper Name="ActionHomomorphism" Arg="g, S, act"/>
+<Oper Name="Action" Arg="g, S, act"/>
+<Description><A>g</A> is a projective group, <A>S</A> is a set or a collection of elements, <A>act</A>
+is an action function. <F>Action</F> simply returns <F>Image(hom)</F>, if <A>hom</A> is the result
+of <F>ActionHomomorphism</F>. The examples are self-explanatory.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_action1.include">
+</Example>
+</Description>
+</ManSection>
+
+A nice monomorphism of a group <M>G</M> is roughly just a permutation representation of <M>G</M> on a
+suitable action domain. An easy example is the permutation action of the full collineation
+group of a projective space on its points.<P/>
+
+<ManSection>
+<Attr Name="NiceMonomorphism" Arg="group"/>
+<Returns>A group homomorphism</Returns>
+<Description>
+This is a generic GAP function, and returns a homorphism to a "better" representation.
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="NiceObject" Arg="group"/>
+<Returns>A permutation group</Returns>
+<Description>
+<A>group</A> is a projective group. The object this operation returns is actually equivalent with <F>Image(NiceMonomorphism(group))</F>.
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Different behaviour for different collineation groups</Heading>
+<Description>
+For the different Lie geometries implemented in <Package>FinInG</Package>, nicemonomorphisms
+are (necessarily) treated in a different way. As the aim of a nicemonomorphism of
+group <M>G</M> is to provide a permutation representation, such that efficient algorithms for
+permutation groups become available for certain operations applicable on <M>G</M>, clearly the
+efficiency will be increased if the degree of the permutation representation is as small as
+possible.<P/>
+For the collineation group, projectivity group and special projectivity group of a projective
+space, it is clear that the smallest degree permutation representation is the action of the group
+on the projective points. In principle, one could also consider the action on the hyerplanes.
+For the collineation group, similarity group and isometry group of a classical polar space,
+in most cases, the smallest degree permutation representation is the action on the points. A notorious
+exception to this is the hermitian polar space in three dimensions, of which the number of lines is smaller than
+the number of points, and hence of which the smallest degree permutation representation is the action
+of the group on the lines. When constructing a collineation group (or (special) projectiviity group) of
+a projective space, the nicemonomorphism is not computed. It is only computed when needed. The reason is that from the underlying field and dimension, the underlying
+projective space can be determined at any time, and hence the smallest degree representation can be computed.
+For the collineation groups (and similarity and isometry groups) of classical polar spaces, this behaviour is
+different. Indeed, given a group of collineations, from the underlying field and dimension, the original
+polar space can not be determined. Of course one could consider the action on the points of the underlying
+projective space, but typically the number of points of a classical polar space is much smaller than the number
+points of the underlying projective space. This explains why, currently, a nice monomorphism is computed
+at the moment a collineation group of a classical polar space is computed. As a consequence, just asking the
+collineation group of a polar space can be time consuming.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_behaviour1.include">
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="SetParent" Arg="group"/>
+<Description>
+Assume that <M>G</M> is a group of collineations. As mentioned already, from the underlying field
+and dimension, only the underlying projective space can be determined. An operation like <F>Order</F>
+requires a nice monomorphism, so for an arbitrary group <M>G</M>, the action on the points of the
+underlying projective space will be computed, which can be time consuming for large projective spaces.
+However, if it is known that <M>G</M> is a subgroup of another collineation group <M>H</M>, this group
+<M>H</M> can be set as a parent group for <M>G</M>. If a nice monomorphism is available for <M>H</M>, it
+will become available for <M>G</M>. In the example we construct the collineation group of the hermtian
+polar space <M>H(3,81)</M>. As explained, a nice monomorphism is computed upon construction. Then
+construct a group generated by two random elements of this collineation group of <M>H(3,81)</M>, and compute
+its order. Without further information, it will be assumed by the system that this new group is a subgroup
+of the collineation group of <M>PG(3,81)</M>, and a nice monomorphism will be computed through this group.
+In the second part we set the parent group as the collineation group of <M>H(3,81)</M>, and compute the order
+again. Compare the different timings.
+<Example>
+<#Include SYSTEM "../examples/include/stab_orbs_behaviour2.include">
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+</Chapter>

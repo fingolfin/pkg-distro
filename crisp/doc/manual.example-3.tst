@@ -1,4 +1,3 @@
-
 gap> GroupClass(IsNilpotent);
 GroupClass (in:=<Operation "IsNilpotent">)
 gap> GroupClass([CyclicGroup(2), CyclicGroup(3)]);
@@ -24,11 +23,8 @@ GroupClass ([ <pc group of size 4 with 2 generators>,
   <pc group of size 15 with 2 generators> ], function( A, B ) ... end)
 gap> Group ((1,2), (3,4)) in cl;
 true
-
-
 gap> nilp := GroupClass (IsNilpotent);
 GroupClass (in:=<Operation "IsNilpotent">)
 gap> SetIsFittingClass (nilp, true);
 gap> nilp;
 FittingClass (in:=<Operation "IsNilpotent">)
-

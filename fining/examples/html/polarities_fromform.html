@@ -1,0 +1,7 @@
+gap&gt; mat := [[0,1,0,0],[1,0,0,0],[0,0,0,1],[0,0,1,0]]*Z(16)^0;<br>
+[ [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], <br>
+  [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ] ]<br>
+gap&gt; form := BilinearFormByMatrix(mat,GF(16));<br>
+&lt; bilinear form &gt;<br>
+gap&gt; phi := PolarityOfProjectiveSpace(form);<br>
+&lt;polarity of PG(3, GF(2^4)),  &gt;<br>

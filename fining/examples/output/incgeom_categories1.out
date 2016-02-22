@@ -1,0 +1,24 @@
+gap> 
+gap> #categories for incidence structures.
+gap> CategoriesOfObject(ProjectiveSpace(5,7));
+[ "IsIncidenceStructure", "IsIncidenceGeometry", "IsLieGeometry", 
+  "IsProjectiveSpace" ]
+gap> CategoriesOfObject(HermitianPolarSpace(5,9));
+[ "IsIncidenceStructure", "IsIncidenceGeometry", "IsLieGeometry", 
+  "IsClassicalPolarSpace", "IsAlgebraicVariety", "IsProjectiveVariety", 
+  "IsHermitianVariety" ]
+gap> CategoriesOfObject(AffineSpace(3,3));
+[ "IsIncidenceStructure", "IsIncidenceGeometry", "IsAffineSpace" ]
+gap> CategoriesOfObject(SymplecticSpace(3,11));
+[ "IsIncidenceStructure", "IsIncidenceGeometry", "IsLieGeometry", 
+  "IsClassicalPolarSpace", "IsGeneralisedPolygon", "IsGeneralisedQuadrangle", 
+  "IsClassicalGQ" ]
+gap> CategoriesOfObject(SplitCayleyHexagon(9));
+[ "IsIncidenceStructure", "IsIncidenceGeometry", "IsLieGeometry", 
+  "IsGeneralisedPolygon", "IsGeneralisedHexagon", 
+  "IsClassicalGeneralisedHexagon" ]
+gap> CategoriesOfObject(ParabolicQuadric(4,16));
+[ "IsIncidenceStructure", "IsIncidenceGeometry", "IsLieGeometry", 
+  "IsClassicalPolarSpace", "IsGeneralisedPolygon", "IsGeneralisedQuadrangle", 
+  "IsClassicalGQ", "IsAlgebraicVariety", "IsProjectiveVariety" ]
+gap> quit;

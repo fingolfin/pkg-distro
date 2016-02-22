@@ -1,0 +1,5 @@
+gap> 
+gap> #gammau
+gap> GammaU(4,GF(81));
+PGammaU(4,9^2)
+gap> quit;

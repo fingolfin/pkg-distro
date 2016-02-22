@@ -1,0 +1,5 @@
+gap> 
+gap> #deltaominus
+gap> DeltaOminus(6,GF(7));
+PDeltaO-(6,7)
+gap> quit;

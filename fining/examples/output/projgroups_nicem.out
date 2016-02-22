@@ -1,0 +1,15 @@
+gap> 
+gap> #nice monomorphism for projective semilinear groups
+gap> g := HomographyGroup(PG(4,8));
+The FinInG projectivity group PGL(5,8)
+gap> NiceMonomorphism(g);
+<action isomorphism>
+gap> Image(last);
+<permutation group of size 4638226007491010887680 with 2 generators>
+gap> g := CollineationGroup(PG(4,8));
+The FinInG collineation group PGammaL(5,8)
+gap> NiceMonomorphism(g);
+<action isomorphism>
+gap> Image(last);
+<permutation group of size 13914678022473032663040 with 3 generators>
+gap> quit;

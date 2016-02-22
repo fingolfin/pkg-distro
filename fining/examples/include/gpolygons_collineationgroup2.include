@@ -1,0 +1,76 @@
+gap&gt; mat := [ [ 1, 1, 0, 0, 0, 1, 0 ], [ 1, 0, 0, 1, 1, 0, 0 ],
+&gt;          [ 1, 0, 1, 0, 0, 0, 1 ], [ 0, 1, 1, 1, 0, 0, 0 ],
+&gt;          [ 0, 1, 0, 0, 1, 0, 1 ], [ 0, 0, 0, 1, 0, 1, 1 ],
+&gt;          [ 0, 0, 1, 0, 1, 1, 0 ] ];
+[ [ 1, 1, 0, 0, 0, 1, 0 ], [ 1, 0, 0, 1, 1, 0, 0 ], [ 1, 0, 1, 0, 0, 0, 1 ], 
+  [ 0, 1, 1, 1, 0, 0, 0 ], [ 0, 1, 0, 0, 1, 0, 1 ], [ 0, 0, 0, 1, 0, 1, 1 ], 
+  [ 0, 0, 1, 0, 1, 1, 0 ] ]
+gap&gt; gp := GeneralisedPolygonByIncidenceMatrix(mat);
+&lt;projective plane order 2&gt;
+gap&gt; group := CollineationGroup(gp);
+Group([ (3,4)(5,7)(9,10)(13,14), (3,7)(4,5)(11,12)(13,14), (2,3)(6,7)(8,9)
+(12,13), (2,6)(4,5)(11,13)(12,14), (1,2)(4,7)(9,11)(10,12) ])
+gap&gt; gp := EGQByqClan(FisherqClan(3));
+#I  Computed Kantor family. Now computing EGQ...
+&lt;EGQ of order [ 9, 3 ] and basepoint 0&gt;
+gap&gt; group := CollineationGroup(gp);
+#I  Computing incidence graph of generalised polygon...
+#I  Using elation of the collineation group...
+&lt;permutation group of size 26127360 with 8 generators&gt;
+gap&gt; Order(group);
+26127360
+gap&gt; Random(group);
+(1,75,27,191,96,50,9,110,88,53,63,154,115,213,229,19,236,226,49,143,16,266,58,
+245,11,270,57,44)(2,181,116,225,262,223,17)(3,33,187,149,108,120,177,164,167,
+261,198,26,196,276,52,73,94,222,101,176,32,39,43,89,31,280,65,71)(4,250,173,
+112,246,38,142,138,54,208,69,243,197,42,269,242,125,8,134,265,67,206,20,13,29,
+182,205,36)(5,109,129,82,210,277,185,56,104,114,90,68,61,228,132,235,78,257,
+10,238,145,184,241,170,153,263,45,179)(6,159,230,106,147,91,22,137,256,113,
+117,180,7,133,279,100,55,156,168,86,122,131,12,35,273,264,254,152)(14,62,66,
+268,51,233,253,218,172,130,144,25,169,83,234,127,171,221,34,190,21,46,272,224,
+239,267,60,98)(15,40,278,128,160,215,87,178,203,166,247,119,209,84,255,271,
+232,81,193,252,92,95,111,201,107,140,135,258)( [...] )
+gap&gt; q := 4;
+4
+gap&gt; conic := ParabolicQuadric(2,q);
+Q(2, 4)
+gap&gt; nucleus := NucleusOfParabolicQuadric(conic);
+&lt;a point in ProjectiveSpace(2, 4)&gt;
+gap&gt; conic := ParabolicQuadric(2,q);
+Q(2, 4)
+gap&gt; nucleus := NucleusOfParabolicQuadric(conic);
+&lt;a point in ProjectiveSpace(2, 4)&gt;
+gap&gt; hyperoval := Union(List(Points(conic)),[nucleus]);
+[ &lt;a point in ProjectiveSpace(2, 4)&gt;, &lt;a point in Q(2, 4)&gt;, 
+  &lt;a point in Q(2, 4)&gt;, &lt;a point in Q(2, 4)&gt;, &lt;a point in Q(2, 4)&gt;, 
+  &lt;a point in Q(2, 4)&gt; ]
+gap&gt; pg := PG(3,q);
+ProjectiveSpace(3, 4)
+gap&gt; hyp :=  HyperplaneByDualCoordinates(pg,[1,0,0,0]*Z(q)^0);
+&lt;a plane in ProjectiveSpace(3, 4)&gt;
+gap&gt; em := NaturalEmbeddingBySubspace(PG(2,q),pg,hyp);
+&lt;geometry morphism from &lt;All elements of ProjectiveSpace(2, 
+4)&gt; to &lt;All elements of ProjectiveSpace(3, 4)&gt;&gt;
+gap&gt; O := List(hyperoval,x-&gt;x^em);
+[ &lt;a point in ProjectiveSpace(3, 4)&gt;, &lt;a point in ProjectiveSpace(3, 4)&gt;, 
+  &lt;a point in ProjectiveSpace(3, 4)&gt;, &lt;a point in ProjectiveSpace(3, 4)&gt;, 
+  &lt;a point in ProjectiveSpace(3, 4)&gt;, &lt;a point in ProjectiveSpace(3, 4)&gt; ]
+gap&gt; points := Set(Filtered(Points(pg),x-&gt;not x in hyp));;
+gap&gt; lines := Union(List(O,x-&gt;Filtered(Lines(x),y-&gt;not y in hyp)));;
+gap&gt; inc := \*;
+&lt;Operation "*"&gt;
+gap&gt; gp := GeneralisedPolygonByElements(points,lines,inc);
+&lt;generalised quadrangle of order [ 3, 5 ]&gt;
+gap&gt; coll := CollineationGroup(gp);
+&lt;permutation group of size 138240 with 8 generators&gt;
+gap&gt; Order(coll);
+138240
+gap&gt; Random(coll);
+(1,29,60,40)(2,42,4,10,3,61,59,19,57,51,58,8)(5,21,17,25,52,13,64,48,44,36,9,
+56)(6,34,41,55,50,45,63,27,20,14,11,24)(7,53,18,46,12,35,62,16,43,23,49,
+26)(15,32,47,31,28,39,54,37,22,38,33,30)(65,74,83,111,66,117,149,104,70,151,
+142,78)(67,135,139,136,68,109,98,125,69,95,120,137)(71,92,73,128,77,106,141,
+105,145,150,88,155)(72,121,158,160,76,143,119,103,138,152,134,84)(75,153,133,
+107,115,122,118,85,154,116,147,91)(79,110,101,159,126,90,157,81,112,100,89,
+108)(80,99,97,86,156,129,144,94,127,114,148,82)(87,132,102,131,123,130,124,96,
+93,113,146,140)

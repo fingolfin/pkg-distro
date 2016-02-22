@@ -1,0 +1,11 @@
+gap> 
+gap> ## affine_iterator.g
+gap> ag := AffineSpace(3, 3);
+AG(3, 3)
+gap> lines := Lines( ag );
+<lines of AG(3, 3)>
+gap> iter := Iterator( lines );
+<iterator>
+gap> l := NextIterator( iter );
+<a line in AG(3, 3)>
+gap> quit;

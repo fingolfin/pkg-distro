@@ -38,10 +38,10 @@
 ## gap&gt; c:=SCSeriesBdHandleBody(3,9);;
 ## gap&gt; s:=SCExportToString(c); time;
 ## "deffg.h.f.fahaiciai.i.hai.fbgeiagihbhceceba.g.gag"
-## 4
+## 0
 ## gap&gt; s:=SCExportIsoSig(c); time;
 ## "deefgaf.hbi.gbh.eaiaeaicg.g.ibf.heg.iff.hggcfffgg"
-## 16
+## 20
 ## </Example>
 ## </Description>
 ## </ManSection>

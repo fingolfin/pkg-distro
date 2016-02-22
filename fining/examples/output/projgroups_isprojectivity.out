@@ -1,0 +1,18 @@
+gap> 
+gap> #checks if an object in IsProjGrpEtc is a projectivity
+gap> g := Random(HomographyGroup(PG(3,4)));
+< a collineation: <cmat 4x4 over GF(2,2)>, F^0>
+gap> IsProjectivity(g);
+true
+gap> g := Random(CollineationGroup(PG(3,4)));
+< a collineation: <cmat 4x4 over GF(2,2)>, F^0>
+gap> IsProjectivity(g);
+true
+gap> g := Random(CorrelationCollineationGroup(PG(3,4)));
+<projective element with Frobenius with projectivespace isomorphism: <immutabl\
+e cmat 4x4 over GF(2,2)>, F^
+2, StandardDuality( AllElementsOfIncidenceStructure( ProjectiveSpace(
+3,GF(2^2)) ) ) >
+gap> IsProjectivity(g);
+false
+gap> quit;

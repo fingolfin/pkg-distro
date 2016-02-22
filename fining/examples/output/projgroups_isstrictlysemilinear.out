@@ -1,0 +1,17 @@
+gap> 
+gap> #checks if an object in IsProjGrpEtc is a not linear
+gap> g := Random(HomographyGroup(PG(3,25)));
+< a collineation: <cmat 4x4 over GF(5,2)>, F^0>
+gap> IsStrictlySemilinear(g);
+false
+gap> g := Random(CollineationGroup(PG(3,25)));
+< a collineation: <cmat 4x4 over GF(5,2)>, F^5>
+gap> IsStrictlySemilinear(g);
+true
+gap> g := Random(CorrelationCollineationGroup(PG(3,25)));
+<projective element with Frobenius with projectivespace isomorphism: <cmat 4x
+4 over GF(5,2)>, F^5, IdentityMapping( <All elements of ProjectiveSpace(3, 
+25)> ) >
+gap> IsStrictlySemilinear(g);
+true
+gap> quit;

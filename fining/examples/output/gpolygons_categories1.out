@@ -1,0 +1,13 @@
+gap> 
+gap> #categories and representations
+gap> gp := SymplecticSpace(3,2);
+W(3, 2)
+gap> IsGeneralisedPolygon(gp);
+true
+gap> IsGeneralisedQuadrangle(gp);
+true
+gap> IsClassicalGQ(gp);
+true
+gap> IsGeneralisedPolygonRep(gp);
+false
+gap> quit;

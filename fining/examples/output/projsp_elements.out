@@ -1,0 +1,24 @@
+gap> 
+gap> #elements of a projective space
+gap> ps := ProjectiveSpace(6,7);
+ProjectiveSpace(6, 7)
+gap> ElementsOfIncidenceStructure(ps,1);
+<points of ProjectiveSpace(6, 7)>
+gap> ElementsOfIncidenceStructure(ps,2);
+<lines of ProjectiveSpace(6, 7)>
+gap> ElementsOfIncidenceStructure(ps,3);
+<planes of ProjectiveSpace(6, 7)>
+gap> ElementsOfIncidenceStructure(ps,4);
+<solids of ProjectiveSpace(6, 7)>
+gap> ElementsOfIncidenceStructure(ps,5);
+<proj. 4-subspaces of ProjectiveSpace(6, 7)>
+gap> ElementsOfIncidenceStructure(ps,6);
+<proj. 5-subspaces of ProjectiveSpace(6, 7)>
+gap> ElementsOfIncidenceStructure(ps,7);
+Error, <ps> has no elements of type <j> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 15 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> quit;

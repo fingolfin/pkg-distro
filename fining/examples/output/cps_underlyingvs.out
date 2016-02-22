@@ -1,0 +1,11 @@
+gap> 
+gap> #underlying vectorspace of a polar space
+gap> ps := EllipticQuadric(5,4);
+Q-(5, 4)
+gap> vs := UnderlyingVectorSpace(ps);
+( GF(2^2)^6 )
+gap> ps := SymplecticSpace(3,81);
+W(3, 81)
+gap> vs := UnderlyingVectorSpace(ps);
+( GF(3^4)^4 )
+gap> quit;

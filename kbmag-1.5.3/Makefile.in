@@ -1,0 +1,42 @@
+# General makefile for GAP4 KBMAG share package -
+# all executables are put into the bin directory.
+BIN = bin/@GAPARCH@
+
+CC = gcc
+COPTS = -O
+
+all:
+	mkdir -p bin/@GAPARCH@;
+	cd standalone/lib; $(MAKE) CC="$(CC)" COPTS="$(COPTS)"
+	cd standalone/src;\
+	$(MAKE) CC="$(CC)" BIN="../../$(BIN)" COPTS="$(COPTS)"
+
+clean:
+	cd standalone/lib; $(MAKE) clean
+	cd standalone/src; $(MAKE) clean
+
+distclean:
+	cd standalone/lib; $(MAKE) clean
+	cd standalone/src; $(MAKE) clean
+	rm -rf bin htm
+	rm standalone/ag_data/*.* 
+	rm standalone/kb_data/*.* 
+	rm standalone/fsa_data/*.* 
+	cd standalone/subgp_data; rm -f *.[a-r,t-z]* *.suc* *.sub*.* *.ec
+	cd standalone/doc; rm -f *.aux *.toc *.log *.dvi
+	cd doc; rm -f *.aux *.toc *.log *.dvi
+
+test:
+	cd standalone/kb_data; ../../$(BIN)/kbprog nilp2; rm nilp2.*
+	cd standalone/ag_data; ../../$(BIN)/autgroup 235; ../../$(BIN)/fsacount 235.wa; rm 235.*
+	cd standalone/subgp_data; ../../$(BIN)/autcos -p ab2; ../../$(BIN)/fsacount ab2.cos.wa;\
+		../../$(BIN)/autgroup -silent ab2; ../../$(BIN)/gpsubwa ab2;\
+		rm ab2.[dgw]* ab2.sub.* ab2.suc* ab2.cos*
+
+doc:
+	cd doc && ./make_doc
+
+Makefile: configure Makefile.in
+	./configure "@GAPPATH@"
+
+.PHONY: all clean distclean test doc

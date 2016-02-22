@@ -1,0 +1,24 @@
+gap> 
+gap> # intersection numbers of a hermitian curve in PG(2,q^2)
+gap> w3 := SymplecticSpace(3,3);
+W(3, 3)
+gap> w5 := SymplecticSpace(5,3);
+W(5, 3)
+gap> pg := AmbientSpace(w5);
+PG(5, 3)
+gap> iter := Iterator(ElementsOfIncidenceStructure(pg,4));
+<iterator>
+gap> perp := PolarityOfProjectiveSpace(w5);
+<polarity of PG(5, GF(3)), < immutable compressed matrix 6x6 over GF(
+3) >, F^0 >
+gap> solid := NextIterator(iter);
+<a solid in PG(5, 3)>
+gap> em := NaturalEmbeddingBySubspace(w3,w5,solid);
+<geometry morphism from <Elements of W(3, 3)> to <Elements of W(5, 3)>>
+gap> points := Points(w3);
+<points of W(3, 3)>
+gap> points2 := ImagesSet(em,AsSet(points));;
+#I  Computing nice monomorphism...
+gap> ForAll(points2,x -> x in solid);
+true
+gap> quit;

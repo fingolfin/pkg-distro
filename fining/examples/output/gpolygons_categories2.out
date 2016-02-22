@@ -1,0 +1,13 @@
+gap> 
+gap> # categories (2)
+gap> gp := SplitCayleyHexagon(3);
+H(3)
+gap> IsGeneralisedHexagon(gp);
+true
+gap> IsClassicalGeneralisedHexagon(gp);
+true
+gap> IsLieGeometry(gp);
+true
+gap> IsGeneralisedPolygonRep(gp);
+true
+gap> quit;

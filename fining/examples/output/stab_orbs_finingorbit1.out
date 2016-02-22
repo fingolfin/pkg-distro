@@ -1,0 +1,15 @@
+gap> 
+gap> #fining orbit (1)
+gap> ps := ParabolicQuadric(6,3);
+Q(6, 3)
+gap> g := CollineationGroup(ps);
+PGammaO(7,3)
+gap> pg := PG(6,3);
+ProjectiveSpace(6, 3)
+gap> s := First(Solids(pg),t -> TypeOfSubspace(ps,t) = "elliptic" );
+<a solid in ProjectiveSpace(6, 3)>
+gap> orbit := FiningOrbit(g,s,OnProjSubspaces);
+<closed orbit, 265356 points>
+gap> time;
+33555
+gap> quit;

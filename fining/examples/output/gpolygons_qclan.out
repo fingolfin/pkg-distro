@@ -1,0 +1,9 @@
+gap> 
+gap> #an easy example of a q clan
+gap> f := GF(7);
+GF(7)
+gap> id := IdentityMat(2, f);;
+gap> clan := List( f, t -> t * id );;
+gap> clan := qClan( clan, f );
+<q-clan over GF(7)>
+gap> quit;

@@ -1,0 +1,27 @@
+gap> 
+gap> #projectivity group/homography group
+gap> ps := ProjectiveSpace(3,16);
+ProjectiveSpace(3, 16)
+gap> ProjectivityGroup(ps);
+The FinInG projectivity group PGL(4,16)
+gap> HomographyGroup(ps);
+The FinInG projectivity group PGL(4,16)
+gap> ps := ProjectiveSpace(4,81);
+ProjectiveSpace(4, 81)
+gap> ProjectivityGroup(ps);
+The FinInG projectivity group PGL(5,81)
+gap> HomographyGroup(ps);
+The FinInG projectivity group PGL(5,81)
+gap> ps := ProjectiveSpace(5,3);
+ProjectiveSpace(5, 3)
+gap> ProjectivityGroup(ps);
+The FinInG projectivity group PGL(6,3)
+gap> HomographyGroup(ps);
+The FinInG projectivity group PGL(6,3)
+gap> ps := ProjectiveSpace(2,2);
+ProjectiveSpace(2, 2)
+gap> ProjectivityGroup(ps);
+The FinInG projectivity group PGL(3,2)
+gap> HomographyGroup(ps);
+The FinInG projectivity group PGL(3,2)
+gap> quit;

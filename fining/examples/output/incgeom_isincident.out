@@ -1,0 +1,19 @@
+gap> 
+gap> #testing incidence: to be done
+gap> p := Random(Points(PG(5,4)));
+<a point in ProjectiveSpace(5, 4)>
+gap> l := Random(Lines(p));
+<a line in ProjectiveSpace(5, 4)>
+gap> IsIncident(p,l);
+true
+gap> IsIncident(l,p);
+true
+gap> p * l;
+true
+gap> l * p;
+true
+gap> p * p;
+true
+gap> l * l;
+true
+gap> quit;

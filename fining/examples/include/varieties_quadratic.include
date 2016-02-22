@@ -1,0 +1,52 @@
+gap&gt; F:=GF(5);
+GF(5)
+gap&gt; r:=PolynomialRing(F,4);
+GF(5)[x_1,x_2,x_3,x_4]
+gap&gt; x:=IndeterminatesOfPolynomialRing(r);
+[ x_1, x_2, x_3, x_4 ]
+gap&gt; pg:=PG(3,F);
+ProjectiveSpace(3, 5)
+gap&gt; Q:=x[2]*x[3]+x[4]^2;
+x_2*x_3+x_4^2
+gap&gt; qv:=QuadraticVariety(pg,Q);
+Quadratic Variety in ProjectiveSpace(3, 5)
+gap&gt; AsSet(List(Planes(pg),z-&gt;Size(Filtered(Points(z),x-&gt;x in qv))));
+[ 1, 6, 11 ]
+gap&gt; qf:=QuadraticForm(qv);
+&lt; quadratic form &gt;
+gap&gt; Display(qf);
+Quadratic form
+Gram Matrix:
+ . . . .
+ . . 1 .
+ . . . .
+ . . . 1
+Polynomial: [ [  x_2*x_3+x_4^2 ] ]
+gap&gt; IsDegenerateForm(qf);
+#I  Testing degeneracy of the *associated bilinear form*
+true
+gap&gt; qv:=QuadraticVariety(3,F,"-");
+Quadratic Variety in ProjectiveSpace(3, 5)
+gap&gt; PolarSpace(qv);
+&lt;polar space in ProjectiveSpace(3,GF(5)): x_1^2+Z(5)*x_2^2+x_3*x_4=0 &gt;
+gap&gt; Display(last);
+&lt;polar space of rank 3 over GF(5)&gt;
+Non-singular elliptic quadratic form
+Gram Matrix:
+ 1 . . .
+ . 2 . .
+ . . . 1
+ . . . .
+Polynomial: [ [  x_1^2+Z(5)*x_2^2+x_3*x_4 ] ]
+Witt Index: 1
+Bilinear form
+Gram Matrix:
+ 2 . . .
+ . 4 . .
+ . . . 1
+ . . 1 .
+gap&gt; qv:=QuadraticVariety(3,F,"+");
+Quadratic Variety in ProjectiveSpace(3, 5)
+gap&gt; Display(last);
+Quadratic Variety in ProjectiveSpace(3, 5)
+ Polynomial: [ Z(5)*x_1*x_2+Z(5)*x_3*x_4 ]

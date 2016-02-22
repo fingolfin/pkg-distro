@@ -1,0 +1,28 @@
+  
+  
+  [1XIndex[101X
+  
+  [5XHeLP[105X  .-3
+  [2XHeLP_AddGaloisCharacterSums[102X  3.2-2
+  [2XHeLP_AllOrders[102X  3.3-1
+  [2XHeLP_AllOrdersPQ[102X  3.3-2
+  [2XHeLP_Change4ti2Precision[102X  3.5-1
+  [2XHeLP_ChangeCharKeepSols[102X  3.4-1
+  [2XHeLP_CharacterValue[102X  3.9-2
+  [2XHeLP_FindAndVerifySolution[102X  3.6-2
+  [2XHeLP_MultiplicitiesOfEigenvalues[102X  3.9-1
+  [2XHeLP_PossiblePartialAugmentationsOfPowers[102X  3.6-3
+  [2XHeLP_PQ[102X  2.2-1
+  [2XHeLP_PrintSolution[102X  3.8-1
+  [2XHeLP_Reset[102X  3.4-2
+  [2XHeLP_UseRedund[102X  3.5-2
+  [2XHeLP_VerifySolution[102X  3.6-1
+  [2XHeLP_WagnerTest[102X  3.7-1
+  [2XHeLP_WithGivenOrder[102X  3.1-1
+  [2XHeLP_WithGivenOrderAndPA[102X  3.1-2
+  [2XHeLP_WithGivenOrderAndPAAndSpecificSystem[102X  3.1-3
+  [2XHeLP_WithGivenOrderSConstant[102X  3.2-1
+  [2XHeLP_ZC[102X  2.1-1
+  
+  
+  -------------------------------------------------------

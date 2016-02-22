@@ -1,0 +1,8 @@
+gap> 
+gap> #elementary example how to construct a projectivity
+gap> mat := [[1,0,0],[0,1,0],[0,0,1]]*Z(9)^0;
+[ [ Z(3)^0, 0*Z(3), 0*Z(3) ], [ 0*Z(3), Z(3)^0, 0*Z(3) ], 
+  [ 0*Z(3), 0*Z(3), Z(3)^0 ] ]
+gap> Projectivity(mat,GF(9));
+< a collineation: <cmat 3x3 over GF(3,2)>, F^0>
+gap> quit;

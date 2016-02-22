@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<#Include SYSTEM "Chapter_Introduction.xml">
+<#Include SYSTEM "Chapter_Functions.xml">
+<#Include SYSTEM "Chapter_Examples.xml">
+<#Include SYSTEM "Chapter_Installing_NormalizInterface.xml">

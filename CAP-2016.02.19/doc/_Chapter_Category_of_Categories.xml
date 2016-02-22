@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Category_of_Categories">
+<Heading>Category of Categories</Heading>
+
+Categories itself with functors as morphisms form a category.
+So the data structure of <C>CapCategory</C>s is designed to be objects in a
+category. This category is implemented in <C>CapCat</C>.
+For every category, the corresponding object in Cat can be obtained via <C>AsCatObject</C>.
+The implemetation of the category of categories offers a data structure for functors.
+Those are implemented as morphisms in this category, so functors can be handled like
+morphisms in a category. Also convenience functions to install functors as methods are
+implemented (in order to avoid <C>ApplyFunctor</C>).
+<Section Label="Chapter_Category_of_Categories_Section_The_Category_Cat">
+<Heading>The Category Cat</Heading>
+
+<ManSection>
+  <Var Name="CapCat" />
+ <Description>
+This variable stores the category of categories. Every category object is
+constructed as an object in this category, so Cat is constructed when loading
+the package.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Category_of_Categories_Section_Categories">
+<Heading>Categories</Heading>
+
+<ManSection>
+  <Filt Arg="object" Name="IsCapCategoryAsCatObject" Label="for IsCapCategoryObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of CAP categories seen as object in Cat.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Arg="object" Name="IsCapFunctor" Label="for IsCapCategoryMorphism"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of functors.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Arg="object" Name="IsCapNaturalTransformation" Label="for IsCapCategoryTwoCell"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of natural transformations.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Category_of_Categories_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Attr Arg="C" Name="AsCatObject" Label="for IsCapCategory"/>
+ <Returns></Returns>
+ <Description>
+Given a CAP category <Math>C</Math>, this method returns the corresponding object in Cat.
+For technical reasons, the filter <C>IsCapCategory</C> must not imply the filter <C>IsCapCategoryObject</C>.
+For example, if <C>InitialObject</C> is applied to an object, it returns the initial object of its category. If it is
+applied to a category, it returns the initial object of the category. If a CAP category would be
+a category object itself, this would be ambiguous.
+So categories must be wrapped in a CatObject to be an object in Cat.
+This method returns the wrapper object. The category can be reobtained by <C>AsCapCategory</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="AsCapCategory" Label="for IsCapCategoryAsCatObject"/>
+ <Returns></Returns>
+ <Description>
+For an object <Math>C</Math> in Cat, this method returns the underlying CAP category. This method is inverse to <C>AsCatObject</C>, i.e.
+AsCapCategory( AsCatObject( A ) ) = A.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Category_of_Categories_Section_Functors">
+<Heading>Functors</Heading>
+
+Functors are morphisms in Cat, thus they have source and target which are categories.
+A multivariate functor can be constructed via a product category as source,
+a presheaf is constructed via the opposite category as source.
+Moreover, an object and a morphism function can be added to a functor, to apply it
+to objects or morphisms in the source category.
+<ManSection Label="AutoDoc_generated_group2">
+  <Oper Arg="name,A,B" Name="CapFunctor" Label="for IsString, IsCapCategory, IsCapCategory"/>
+  <Oper Arg="name,A,B" Name="CapFunctor" Label="for IsString, IsCapCategoryAsCatObject, IsCapCategory"/>
+  <Oper Arg="name,A,B" Name="CapFunctor" Label="for IsString, IsCapCategory, IsCapCategoryAsCatObject"/>
+  <Oper Arg="name,A,B" Name="CapFunctor" Label="for IsString, IsCapCategoryAsCatObject, IsCapCategoryAsCatObject"/>
+  <Oper Arg="name,A,B" Name="CapFunctor" Label="for IsString, IsList, IsCapCategory"/>
+  <Oper Arg="name,A,B" Name="CapFunctor" Label="for IsString, IsList, IsCapCategoryAsCatObject"/>
+ <Returns></Returns>
+ <Description>
+These methods construct a CAP functor, i.e. a morphism in Cat.
+Name should be an unique name for the functor, it is also used when the functor is
+installed as a method. <A>A</A> and <A>B</A> are source and target.
+Both can be given as object in Cat or as category itself.
+<Br/>
+<Br/>
+<Br/>
+<Br/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="functor, function" Name="AddObjectFunction" Label="for IsCapFunctor, IsFunction"/>
+ <Returns></Returns>
+ <Description>
+This operation adds a function to the functor which can then be applied to
+objects in the source. The given function <A>function</A> has to take one argument which
+must be an object in the source category and should return a CapCategoryObject. The object
+is automatically added to the range of the functor when it is applied to the object.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="F" Name="FunctorObjectOperation" Label="for IsCapFunctor"/>
+ <Returns>a GAP operation
+</Returns>
+ <Description>
+The argument is a functor <Math>F</Math>.
+The output is the GAP operation
+realizing the action of <Math>F</Math> on objects.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="functor, function" Name="AddMorphismFunction" Label="for IsCapFunctor, IsFunction"/>
+ <Returns></Returns>
+ <Description>
+This operation adds a function to the functor which can then be applied to
+morphisms in the source. The given function <A>function</A> has to take three arguments <Math>A, \tau, B</Math>.
+When the funtor <A>functor</A> is applied to the morphism <Math>\tau</Math>, <Math>A</Math> is the result of <A>functor</A>
+applied to the source of <Math>\tau</Math>, <Math>B</Math> is the result of <A>functor</A> applied to the range.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="F" Name="FunctorMorphismOperation" Label="for IsCapFunctor"/>
+ <Returns>a GAP operation
+</Returns>
+ <Description>
+The argument is a functor <Math>F</Math>.
+The output is the GAP operation
+realizing the action of <Math>F</Math> on morphisms.
+ </Description>
+</ManSection>
+
+
+<ManSection Label="AutoDoc_generated_group3">
+  <Func Arg="func,A" Name="ApplyFunctor" />
+ <Returns>IsCapCategoryCell
+</Returns>
+ <Description>
+Applies the functor <A>func</A> to the object or morphism <A>A</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection Label="AutoDoc_generated_group4">
+  <Oper Arg="functor,method_name" Name="InstallFunctor" Label="for IsCapFunctor, IsString"/>
+ <Returns></Returns>
+ <Description>
+TODO
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Category_of_Categories_Section_Natural_transformations">
+<Heading>Natural transformations</Heading>
+
+<ManSection>
+  <Attr Arg="arg" Name="Name" Label="for IsCapNaturalTransformation"/>
+ <Returns>a string
+</Returns>
+ <Description>
+As every functor, every natural transformation has a name attribute.
+It has to be a string and will be set by the Constructor.
+ </Description>
+</ManSection>
+
+
+<ManSection Label="AutoDoc_generated_group5">
+  <Oper Arg="[name,],F,G" Name="NaturalTransformation" Label="for IsCapFunctor, IsCapFunctor"/>
+ <Returns>a natural transformation
+</Returns>
+ <Description>
+Constructs a natural transformation between the functors <A>F</A><Math>:A \rightarrow B</Math>
+and <A>G</A><Math>:A \rightarrow B</Math>. The string <A>name</A> is optional, and, if not given,
+set automatically from the names of the functors
+ </Description>
+</ManSection>
+
+
+<ManSection Label="AutoDoc_generated_group6">
+  <Oper Arg="N, func" Name="AddNaturalTransformationFunction" Label="for IsCapNaturalTransformation, IsFunction"/>
+ <Returns></Returns>
+ <Description>
+Adds the function (or list of functions) <A>func</A> to the natural transformation <A>N</A>.
+The function or each function in the list should take three arguments. If <Math>N: F \rightarrow G</Math>,
+the arguments should be <Math>F(A), A, G(A)</Math>. The ouptput should be a morphism, <Math>F(A) \rightarrow G(A)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="N, A" Name="ApplyNaturalTransformation" />
+ <Returns>a morphism
+</Returns>
+ <Description>
+Given a natural transformation <A>N</A><Math>:F \rightarrow G</Math> and an object <A>A</A>,
+this function should return the morphism <Math>F(A) \rightarrow G(A)</Math>, corresponding to
+<A>N</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="N, name" Name="InstallNaturalTransformation" Label="for IsCapNaturalTransformation, IsString"/>
+ <Returns></Returns>
+ <Description>
+Installs the natural transformation <A>N</A> as operation with the name <A>name</A>.
+Argument for this operation is an object, output is a morphism.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="N,F" Name="HorizontalPreComposeNaturalTransformationWithFunctor" Label="for IsCapNaturalTransformation, IsCapFunctor"/>
+ <Returns>a natural transformation
+</Returns>
+ <Description>
+Computes the horizontal composition of the natural transformation <A>N</A> and
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="F,N" Name="HorizontalPreComposeFunctorWithNaturalTransformation" Label="for IsCapFunctor, IsCapNaturalTransformation"/>
+ <Returns>a natural transformation
+</Returns>
+ <Description>
+Computes the horizontal composition of the functor <A>F</A> and
+the natural transformation <A>N</A>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

@@ -1,0 +1,35 @@
+gap> 
+gap> #polar space from variety
+gap> f := GF(25);
+GF(5^2)
+gap> r := PolynomialRing(f,4);
+GF(5^2)[x_1,x_2,x_3,x_4]
+gap> ind := IndeterminatesOfPolynomialRing(r);
+[ x_1, x_2, x_3, x_4 ]
+gap> eq1 := Sum(List(ind,t->t^2));
+x_1^2+x_2^2+x_3^2+x_4^2
+gap> var := ProjectiveVariety(PG(3,f),[eq1]);   
+Projective Variety in ProjectiveSpace(3, 25)
+gap> PolarSpace(var);
+<polar space in ProjectiveSpace(3,GF(5^2)): x_1^2+x_2^2+x_3^2+x_4^2=0 >
+gap> eq2 := Sum(List(ind,t->t^4));
+x_1^4+x_2^4+x_3^4+x_4^4
+gap> var := ProjectiveVariety(PG(3,f),[eq2]);
+Projective Variety in ProjectiveSpace(3, 25)
+gap> PolarSpace(var);
+Error, <poly> does not generate a Hermitian matrix called from
+GramMatrixByPolynomialForHermitianForm( pol, gf, n, vars ) called from
+HermitianFormByPolynomial( pol, pring, n ) called from
+HermitianFormByPolynomial( eq, r ) called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 16 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> eq3 := Sum(List(ind,t->t^6));
+x_1^6+x_2^6+x_3^6+x_4^6
+gap> var := ProjectiveVariety(PG(3,f),[eq3]);
+Projective Variety in ProjectiveSpace(3, 25)
+gap> PolarSpace(var);
+<polar space in ProjectiveSpace(3,GF(5^2)): x_1^6+x_2^6+x_3^6+x_4^6=0 >
+gap> quit;

@@ -1,0 +1,12 @@
+gap> 
+gap> #morphisms_completion.g
+gap> as := AffineSpace(3,5);
+AG(3, 5)
+gap> map := ProjectiveCompletion(as);
+<geometry morphism from <Elements of AG(3, 
+5)> to <All elements of ProjectiveSpace(3, 5)>>
+gap> p := Random( Points(as) );
+<a point in AG(3, 5)>
+gap> p^map;
+<a point in ProjectiveSpace(3, 5)>
+gap> quit;

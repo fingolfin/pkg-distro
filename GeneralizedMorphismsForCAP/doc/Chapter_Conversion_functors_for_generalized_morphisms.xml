@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Conversion_functors_for_generalized_morphisms">
+<Heading>Conversion functors for generalized morphisms</Heading>
+
+<Section Label="Chapter_Conversion_functors_for_generalized_morphisms_Section_Functors_from_Cospans">
+<Heading>Functors from Cospans</Heading>
+
+<ManSection>
+  <Attr Arg="C" Name="FunctorFromCospansToThreeArrows" Label="for IsCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+For the given category <A>C</A>, this attribute is the functor from
+the cospan generalized morphism category of <A>C</A> to the generalized
+morphism category modeled by three arrows.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="FunctorFromCospansToSpans" Label="for IsCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+For the given category <A>C</A>, this attribute is the functor from
+the cospan generalized morphism category of <A>C</A> to the generalized
+morphism category modeled by spans.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Conversion_functors_for_generalized_morphisms_Section_Functors_from_Spans">
+<Heading>Functors from Spans</Heading>
+
+<ManSection>
+  <Attr Arg="C" Name="FunctorFromSpansToThreeArrows" Label="for IsCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+For the given category <A>C</A>, this attribute is the functor from
+the span generalized morphism category of <A>C</A> to the generalized
+morphism category modeled by three arrows.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="FunctorFromSpansToCospans" Label="for IsCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+For the given category <A>C</A>, this attribute is the functor from
+the span generalized morphism category of <A>C</A> to the generalized
+morphism category modeled by cospans.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Conversion_functors_for_generalized_morphisms_Section_Functors_from_Three_Arrows">
+<Heading>Functors from Three Arrows</Heading>
+
+<ManSection>
+  <Attr Arg="C" Name="FunctorFromThreeArrowsToCospans" Label="for IsCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+For the given category <A>C</A>, this attribute is the functor from
+the three arrow generalized morphism category of <A>C</A> to the generalized
+morphism category modeled by cospans.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="FunctorFromThreeArrowsToSpans" Label="for IsCapCategory"/>
+ <Returns>a functor
+</Returns>
+ <Description>
+For the given category <A>C</A>, this attribute is the functor from
+the three arrow generalized morphism category of <A>C</A> to the generalized
+morphism category modeled by spans.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

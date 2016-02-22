@@ -1,0 +1,14 @@
+gap&gt; g := Random(HomographyGroup(PG(3,25)));
+&lt; a collineation: &lt;cmat 4x4 over GF(5,2)&gt;, F^0&gt;
+gap&gt; IsStrictlySemilinear(g);
+false
+gap&gt; g := Random(CollineationGroup(PG(3,25)));
+&lt; a collineation: &lt;cmat 4x4 over GF(5,2)&gt;, F^5&gt;
+gap&gt; IsStrictlySemilinear(g);
+true
+gap&gt; g := Random(CorrelationCollineationGroup(PG(3,25)));
+&lt;projective element with Frobenius with projectivespace isomorphism: &lt;cmat 4x
+4 over GF(5,2)&gt;, F^5, IdentityMapping( &lt;All elements of ProjectiveSpace(3, 
+25)&gt; ) &gt;
+gap&gt; IsStrictlySemilinear(g);
+true

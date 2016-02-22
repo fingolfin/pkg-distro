@@ -1,0 +1,44 @@
+gap> 
+gap> # behaviour 2 (takes about 400 seconds to complete) 
+gap> ps := HermitianPolarSpace(3,81);
+H(3, 9^2)
+gap> group := CollineationGroup(ps);
+PGammaU(4,9^2)
+gap> time;
+2219
+gap> g := Random(group);
+< a collineation: <cmat 4x4 over GF(3,4)>, F^27>
+gap> h := Random(group);
+< a collineation: <cmat 4x4 over GF(3,4)>, F^3>
+gap> group2 := Group([g,h]);
+<projective collineation group with 2 generators>
+gap> HasNiceMonomorphism(group2);
+false
+gap> Order(group2);
+407194345728000
+gap> time;
+371559
+gap> HasNiceMonomorphism(group2);
+true
+gap> NrMovedPoints(NiceObject(group2));
+538084
+gap> Size(Points(PG(3,81)));
+538084
+gap> group2 := Group([g,h]);
+<projective collineation group with 2 generators>
+gap> SetParent(group2,group);
+gap> HasNiceMonomorphism(group2);
+true
+gap> HasNiceObject(group2);
+false
+gap> Order(group2);
+407194345728000
+gap> time;
+888
+gap> HasNiceObject(group2);
+true
+gap> NrMovedPoints(NiceObject(group2));
+7300
+gap> Size(Lines(ps));
+7300
+gap> quit;

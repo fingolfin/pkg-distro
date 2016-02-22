@@ -1,0 +1,27 @@
+gap> 
+gap> #random element of a given type of a projective space
+gap> ps := PG(4,3);
+ProjectiveSpace(4, 3)
+gap> plane := Random(Planes(ps));
+<a plane in ProjectiveSpace(4, 3)>
+gap> shadowpoints := ShadowOfElement(ps,plane,1);
+<shadow points in ProjectiveSpace(4, 3)>
+gap> List(shadowpoints);
+[ <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)>, <a point in ProjectiveSpace(4, 3)>, 
+  <a point in ProjectiveSpace(4, 3)> ]
+gap> shadowlines := ShadowOfElement(ps,plane,2);
+<shadow lines in ProjectiveSpace(4, 3)>
+gap> List(shadowlines);
+[ <a line in ProjectiveSpace(4, 3)>, <a line in ProjectiveSpace(4, 3)>, 
+  <a line in ProjectiveSpace(4, 3)>, <a line in ProjectiveSpace(4, 3)>, 
+  <a line in ProjectiveSpace(4, 3)>, <a line in ProjectiveSpace(4, 3)>, 
+  <a line in ProjectiveSpace(4, 3)>, <a line in ProjectiveSpace(4, 3)>, 
+  <a line in ProjectiveSpace(4, 3)>, <a line in ProjectiveSpace(4, 3)>, 
+  <a line in ProjectiveSpace(4, 3)>, <a line in ProjectiveSpace(4, 3)>, 
+  <a line in ProjectiveSpace(4, 3)> ]
+gap> quit;

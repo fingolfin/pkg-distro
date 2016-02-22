@@ -1,4 +1,3 @@
-\indexentry {CRISP}{4}
 \indexentry {FORMAT package@FORMAT package}{4}
 \indexentry {classes!creation of}{5}
 \indexentry {IsClass@`IsClass'}{5}
@@ -47,8 +46,8 @@
 \indexentry {HasIsFittingClass@`HasIsFittingClass'}{9}
 \indexentry {IsFittingClass@`IsFittingClass'}{9}
 \indexentry {SetIsFittingClass@`SetIsFittingClass'}{9}
-\indexentry {HasIsOrdinaryFormation@`HasIsOrdinaryFormation'}{9}
-\indexentry {HasIsFormation@`HasIsFormation'}{9}
+\indexentry {HasIsOrdinaryFormation@`HasIsOrdinaryFormation'}{10}
+\indexentry {HasIsFormation@`HasIsFormation'}{10}
 \indexentry {IsOrdinaryFormation@`IsOrdinaryFormation'}{10}
 \indexentry {IsFormation@`IsFormation'}{10}
 \indexentry {SetIsOrdinaryFormation@`SetIsOrdinaryFormation'}{10}
@@ -95,14 +94,12 @@
 \indexentry {Residuum@`Residuum'}{15}
 \indexentry {ResidualFunction@`ResidualFunction'}{15}
 \indexentry {LocalDefinitionFunction@`LocalDefinitionFunction'}{15}
-\indexentry {NormalSubgroups@`NormalSubgroups'}{15}
-\indexentry {CharacteristicSubgroups@`CharacteristicSubgroups'}{15}
-\indexentry {normal subgroups!with properties inherited by normal subgroups above}{16}
-\indexentry {invariant normal subgroups!with properties inherited by normal subgroups above}{16}
-\indexentry {factor groups!with properties inherited by factor groups}{16}
-\indexentry {quotient groups!with properties inherited by quotients}{16}
-\indexentry {OneInvariantSubgroupMinWrtQProperty@`OneInvariantSubgroupMinWrtQProperty'}{16}
-\indexentry {AllInvariantSubgroupsWithQProperty@`AllInvariantSubgroupsWithQProperty'}{17}
+\indexentry {normal subgroups!with properties inherited by normal subgroups above}{15}
+\indexentry {invariant normal subgroups!with properties inherited by normal subgroups above}{15}
+\indexentry {normal subgroups!with properties inherited by factor groups}{15}
+\indexentry {normal subgroups!with properties inherited by quotients}{15}
+\indexentry {OneInvariantSubgroupMinWrtQProperty@`OneInvariantSubgroupMinWrtQProperty'}{15}
+\indexentry {AllInvariantSubgroupsWithQProperty@`AllInvariantSubgroupsWithQProperty'}{16}
 \indexentry {OneNormalSubgroupMinWrtQProperty@`OneNormalSubgroupMinWrtQProperty'}{17}
 \indexentry {AllNormalSubgroupsWithQProperty@`AllNormalSubgroupsWithQProperty'}{17}
 \indexentry {Fitting classes!creating}{18}
@@ -132,44 +129,51 @@
 \indexentry {Injector@`Injector'}{21}
 \indexentry {RadicalFunction@`RadicalFunction'}{21}
 \indexentry {InjectorFunction@`InjectorFunction'}{21}
-\indexentry {Socle@`Socle'}{22}
-\indexentry {AbelianSocle@`AbelianSocle'}{22}
-\indexentry {SolvableSocle@`SolvableSocle'}{22}
-\indexentry {SocleComponents@`SocleComponents'}{22}
-\indexentry {AbelianSocleComponents@`AbelianSocleComponents'}{22}
-\indexentry {SolvableSocleComponents@`SolvableSocleComponents'}{22}
-\indexentry {PSocle@`PSocle'}{22}
-\indexentry {PSocleComponents@`PSocleComponents'}{22}
-\indexentry {AbelianMinimalNormalSubgroups@`AbelianMinimalNormalSubgroups'}{22}
-\indexentry {minimal normal subgroups}{22}
-\indexentry {normal subgroups!with properties inherited by normal subgroups}{23}
-\indexentry {invariant normal subgroups!with properties inherited by normal subgroups}{23}
-\indexentry {OneInvariantSubgroupMaxWrtNProperty@`OneInvariantSubgroupMaxWrtNProperty'}{23}
-\indexentry {AllInvariantSubgroupsWithNProperty@`AllInvariantSubgroupsWithNProperty'}{23}
-\indexentry {OneNormalSubgroupWithNProperty@`OneNormalSubgroupWithNProperty'}{23}
-\indexentry {AllNormalSubgroupsWithNProperty@`AllNormalSubgroupsWithNProperty'}{23}
-\indexentry {class!of all trivial groups}{24}
-\indexentry {trivial groups!class of}{24}
-\indexentry {class!of all trivial groups}{24}
-\indexentry {class!of all nilpotent groups}{24}
-\indexentry {nilpotent groups!class of}{24}
-\indexentry {class!of all nilpotent groups}{24}
-\indexentry {class!of all supersolvable groups}{24}
-\indexentry {supersolvable groups!class of}{24}
-\indexentry {class!of all supersolvable groups}{24}
-\indexentry {class!of all abelian groups}{24}
-\indexentry {AbelianGroups@`AbelianGroups'}{24}
-\indexentry {abelian groups!class of}{24}
-\indexentry {class!of all abelian groups}{24}
-\indexentry {AbelianGroupsOfExponent@`AbelianGroupsOfExponent'}{24}
-\indexentry {class!of all abelian groups of bounded exponent}{24}
-\indexentry {abelian groups of bounded exponent!class of}{24}
-\indexentry {PiGroups@`PiGroups'}{24}
-\indexentry {class!of all $\pi $-groups}{24}
-\indexentry {PGroups@`PGroups'}{24}
-\indexentry {class!of all $p$-groups}{24}
-\indexentry {NilpotentProjector@`NilpotentProjector'}{24}
-\indexentry {Carter subgroup}{24}
-\indexentry {SupersolvableProjector@`SupersolvableProjector'}{24}
-\indexentry {set!of all primes}{25}
-\indexentry {primes!set of all}{25}
+\indexentry {normal subgroups!with properties inherited by normal subgroups}{22}
+\indexentry {invariant normal subgroups!with properties inherited by normal subgroups}{22}
+\indexentry {OneInvariantSubgroupMaxWrtNProperty@`OneInvariantSubgroupMaxWrtNProperty'}{22}
+\indexentry {AllInvariantSubgroupsWithNProperty@`AllInvariantSubgroupsWithNProperty'}{22}
+\indexentry {OneNormalSubgroupWithNProperty@`OneNormalSubgroupWithNProperty'}{22}
+\indexentry {AllNormalSubgroupsWithNProperty@`AllNormalSubgroupsWithNProperty'}{22}
+\indexentry {class!of all trivial groups}{23}
+\indexentry {trivial groups!class of}{23}
+\indexentry {class!of all trivial groups}{23}
+\indexentry {class!of all nilpotent groups}{23}
+\indexentry {nilpotent groups!class of}{23}
+\indexentry {class!of all nilpotent groups}{23}
+\indexentry {class!of all supersolvable groups}{23}
+\indexentry {supersolvable groups!class of}{23}
+\indexentry {class!of all supersolvable groups}{23}
+\indexentry {class!of all abelian groups}{23}
+\indexentry {AbelianGroups@`AbelianGroups'}{23}
+\indexentry {abelian groups!class of}{23}
+\indexentry {class!of all abelian groups}{23}
+\indexentry {AbelianGroupsOfExponent@`AbelianGroupsOfExponent'}{23}
+\indexentry {class!of all abelian groups of bounded exponent}{23}
+\indexentry {abelian groups of bounded exponent!class of}{23}
+\indexentry {PiGroups@`PiGroups'}{23}
+\indexentry {class!of all $\pi $-groups}{23}
+\indexentry {PGroups@`PGroups'}{23}
+\indexentry {class!of all $p$-groups}{23}
+\indexentry {NilpotentProjector@`NilpotentProjector'}{23}
+\indexentry {Carter subgroup}{23}
+\indexentry {SupersolvableProjector@`SupersolvableProjector'}{23}
+\indexentry {set!of all primes}{24}
+\indexentry {primes!set of all}{24}
+\indexentry {NormalSubgroups@`NormalSubgroups'}{25}
+\indexentry {CharacteristicSubgroups@`CharacteristicSubgroups'}{25}
+\indexentry {MinimalNormalSubgroups@`MinimalNormalSubgroups'}{25}
+\indexentry {minimal normal subgroups}{25}
+\indexentry {MinimalNormalPSubgroups@`MinimalNormalPSubgroups'}{25}
+\indexentry {minimal normal $p$-subgroups}{25}
+\indexentry {AbelianMinimalNormalSubgroups@`AbelianMinimalNormalSubgroups'}{25}
+\indexentry {minimal normal subgroups}{25}
+\indexentry {Socle@`Socle'}{25}
+\indexentry {AbelianSocle@`AbelianSocle'}{25}
+\indexentry {SolvableSocle@`SolvableSocle'}{25}
+\indexentry {SocleComponents@`SocleComponents'}{26}
+\indexentry {AbelianSocleComponents@`AbelianSocleComponents'}{26}
+\indexentry {SolvableSocleComponents@`SolvableSocleComponents'}{26}
+\indexentry {PSocle@`PSocle'}{26}
+\indexentry {PSocleComponents@`PSocleComponents'}{26}
+\indexentry {PSocleSeries@`PSocleSeries'}{26}

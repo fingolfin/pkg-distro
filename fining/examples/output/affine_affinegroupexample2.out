@@ -1,0 +1,16 @@
+gap> 
+gap> #example of affine group (2)
+gap> G := CollineationGroup(AG(3,27));
+AGammaL(3,27)
+gap> H := CollineationGroup(PG(3,27));
+PGammaL(4,27)
+gap> g := Random(G);
+<projective semilinear element: [ [ Z(3^3)^24, Z(3^3)^12, Z(3^3), 0*Z(3) ], 
+  [ Z(3^3)^8, Z(3^3)^10, 0*Z(3), 0*Z(3) ], 
+  [ Z(3^3)^17, Z(3^3)^5, Z(3^3)^3, 0*Z(3) ], 
+  [ Z(3^3), Z(3^3)^11, Z(3)^0, Z(3)^0 ] ], F^9>
+gap> g in H;
+true
+gap> IsSubgroup(H,G);
+true
+gap> quit;

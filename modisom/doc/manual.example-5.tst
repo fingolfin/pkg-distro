@@ -1,4 +1,3 @@
-
 gap> F := FreeAssociativeAlgebra(GF(2), 2);;
 gap> g := GeneratorsOfAlgebra(F);;
 gap> r := [g[1]^2, g[2]^2];;
@@ -28,4 +27,3 @@ rec( def := [ 1, 2 ], dim := 8, fld := GF(2),
         [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ] ]],
   wds := [ ,, [ 2, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ], [ 2, 5 ], [ 1, 6 ] ],
   wgs := [ 1, 1, 2, 2, 3, 3, 4, 4 ] )
-

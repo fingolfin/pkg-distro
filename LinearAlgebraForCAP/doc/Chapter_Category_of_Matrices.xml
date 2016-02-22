@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Category_of_Matrices">
+<Heading>Category of Matrices</Heading>
+
+<Section Label="Chapter_Category_of_Matrices_Section_Constructors">
+<Heading>Constructors</Heading>
+
+<ManSection>
+  <Attr Arg="F" Name="MatrixCategory" Label="for IsFieldForHomalg"/>
+ <Returns>a category
+</Returns>
+ <Description>
+The argument is a homalg field <Math>F</Math>.
+The output is the matrix category over <Math>F</Math>.
+Objects in this category are non-negative integers.
+Morphisms from a non-negative integer <Math>m</Math> to a non-negative integer <Math>n</Math> are given by
+<Math>m \times n</Math> matrices.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="S, M, R" Name="VectorSpaceMorphism" Label="for IsVectorSpaceObject, IsHomalgMatrix, IsVectorSpaceObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(S,R)</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>S</Math> in the category of matrices over a
+homalg field <Math>F</Math>, a homalg matrix <Math>M</Math> over <Math>F</Math>, and another object <Math>R</Math>
+in the category of matrices over <Math>F</Math>.
+The output is the morphism <Math>S \rightarrow R</Math> in the category
+of matrices over <Math>F</Math> whose underlying matrix is given by <Math>M</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="d, F" Name="VectorSpaceObject" Label="for IsInt, IsFieldForHomalg"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The arguments are a non-negative integer <Math>d</Math>
+and a homalg field <Math>F</Math>.
+The output is an object in the category of
+matrices over <Math>F</Math> of dimension <Math>d</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Category_of_Matrices_Section_GAP_Categories">
+<Heading>GAP Categories</Heading>
+
+<ManSection>
+  <Filt Arg="object" Name="IsVectorSpaceMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of morphisms in the category
+of matrices of a field <Math>F</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Arg="object" Name="IsVectorSpaceObject" Label="for IsCapCategoryObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of objects in the category
+of matrices of a field <Math>F</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Category_of_Matrices_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="alpha" Name="UnderlyingFieldForHomalg" Label="for IsVectorSpaceMorphism"/>
+ <Returns>a homalg field
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math> in the matrix category over a
+homalg field <Math>F</Math>.
+The output is the field <Math>F</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="UnderlyingMatrix" Label="for IsVectorSpaceMorphism"/>
+ <Returns>a homalg matrix
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math> in a matrix category.
+The output is its underlying matrix <Math>M</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="UnderlyingFieldForHomalg" Label="for IsVectorSpaceObject"/>
+ <Returns>a homalg field
+</Returns>
+ <Description>
+The argument is an object <Math>A</Math> in the matrix category over a
+homalg field <Math>F</Math>.
+The output is the field <Math>F</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="A" Name="Dimension" Label="for IsVectorSpaceObject"/>
+ <Returns>a non-negative integer
+</Returns>
+ <Description>
+The argument is an object <Math>A</Math> in a matrix category.
+The output is the dimension of <Math>A</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+
+</Chapter>
+

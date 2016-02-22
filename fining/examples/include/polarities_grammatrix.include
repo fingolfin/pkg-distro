@@ -1,0 +1,7 @@
+gap&gt; mat := [[1,0,0],[0,0,3],[0,3,0]]*Z(11)^0;
+[ [ Z(11)^0, 0*Z(11), 0*Z(11) ], [ 0*Z(11), 0*Z(11), Z(11)^8 ], 
+  [ 0*Z(11), Z(11)^8, 0*Z(11) ] ]
+gap&gt; phi := PolarityOfProjectiveSpace(mat,GF(11));
+&lt;polarity of PG(2, GF(11)) &gt;
+gap&gt; GramMatrix(phi);
+&lt;immutable cmat 3x3 over GF(11,1)&gt;

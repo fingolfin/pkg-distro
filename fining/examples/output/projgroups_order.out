@@ -1,0 +1,9 @@
+gap> 
+gap> #order of a collineation
+gap> x := Random(CollineationGroup(PG(4,9)));
+< a collineation: <cmat 5x5 over GF(3,2)>, F^3>
+gap> t := Order(x);
+32
+gap> IsOne(x^t);
+true
+gap> quit;

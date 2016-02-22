@@ -1,0 +1,16 @@
+gap> 
+gap> # coordinates of a point of a projective space
+gap> sf := StandardFrame(PG(5,16));
+[ <a point in ProjectiveSpace(5, 16)>, <a point in ProjectiveSpace(5, 16)>, 
+  <a point in ProjectiveSpace(5, 16)>, <a point in ProjectiveSpace(5, 16)>, 
+  <a point in ProjectiveSpace(5, 16)>, <a point in ProjectiveSpace(5, 16)>, 
+  <a point in ProjectiveSpace(5, 16)> ]
+gap> Display(sf);
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], 
+  [ Z(2)^0, Z(2)^0, Z(2)^0, Z(2)^0, Z(2)^0, Z(2)^0 ] ]
+gap> quit;

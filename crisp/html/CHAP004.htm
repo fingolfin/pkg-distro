@@ -10,8 +10,7 @@
 <li> <A HREF="CHAP004.htm#SECT003">Additional attributes for primitive solvable groups</a>
 <li> <A HREF="CHAP004.htm#SECT004">Creating formations</a>
 <li> <A HREF="CHAP004.htm#SECT005">Attributes and operations for formations</a>
-<li> <A HREF="CHAP004.htm#SECT006">Functions for normal and characteristic subgroups</a>
-<li> <A HREF="CHAP004.htm#SECT007">Low level functions for normal subgroups related to residuals</a>
+<li> <A HREF="CHAP004.htm#SECT006">Low level functions for normal subgroups related to residuals</a>
 </ol><p>
 <p>
 In principle, any group class can be created as generic (group) class,
@@ -376,27 +375,7 @@ then <code></code><var>func</var><code>(</code><var>G</var><code>, </code><var>p
 be called by the user. 
 <p>
 <p>
-<h2><a name="SECT006">4.6 Functions for normal and characteristic subgroups</a></h2>
-<p><p>
-<a name = "SSEC006.1"></a>
-<li><code>NormalSubgroups(</code><var>grp</var><code>) A</code>
-<p>
-<font face="Gill Sans,Helvetica,Arial">CRISP</font> provides an improved method for <code>NormalSubgroups</code> (see
-<a href="../../../doc/ref/chap39.html#X80237A847E24E6CF">NormalSubgroups</a>) for groups <var>grp</var> which are finite and  solvable.
-This method simply calls <code>AllInvSgrsWithQPropUnderAction</code> with
-<var><var>act</var> = <var>grp</var></var>, <code>ReturnTrue</code>
-as <var>pretest</var> and <code>ReturnFail</code> as <var>test</var>. Note that, since
-<var>pretest</var> always returns <code>true</code>, <var>test</var> is never actually called.
-This is usually significantly faster than the methods in the <font face="Gill Sans,Helvetica,Arial">GAP</font> library.
-<p>
-<a name = "SSEC006.2"></a>
-<li><code>CharacteristicSubgroups(</code><var>grp</var><code>) A</code>
-<p>
-returns a list containing all characteristic subgroups of <var>grp</var>. 
-<code>CharacteristicSubgroups</code> calls <code>AllInvSgrsWithQPropUnderAction</code>.
-<p>
-<p>
-<h2><a name="SECT007">4.7 Low level functions for normal subgroups related to residuals</a></h2>
+<h2><a name="SECT006">4.6 Low level functions for normal subgroups related to residuals</a></h2>
 <p><p>
 <a name = "I12"></a>
 
@@ -406,7 +385,7 @@ returns a list containing all characteristic subgroups of <var>grp</var>.
 
 <a name = "I15"></a>
 
-<a name = "SSEC007.1"></a>
+<a name = "SSEC006.1"></a>
 <li><code>OneInvariantSubgroupMinWrtQProperty(</code><var>act</var><code>, </code><var>grp</var><code>, </code><var>pretest</var><code>, </code><var>test</var><code>, </code><var>data</var><code>) O</code>
 <p>
 Let <var>act</var> be a list or group whose elements act on <var>grp</var> via the caret operator,
@@ -483,13 +462,13 @@ gap&gt; OneInvariantSubgroupMinWrtQProperty (
 true
 </pre>
 <p>
-<a name = "SSEC007.2"></a>
+<a name = "SSEC006.2"></a>
 <li><code>AllInvariantSubgroupsWithQProperty(</code><var>act</var><code>, </code><var>grp</var><code>, </code><var>pretest</var><code>, </code><var>test</var><code>, </code><var>data</var><code>) O</code>
 <p>
 <code>AllInvariantSubgroupsWithQProperty</code> returns a list consisting of all 
 <var>act</var>-invariant subgroups in <var>calX</var>, where <var>calX</var> is the class defined by <var>pretest</var>,
 <var>test</var>, and <var>data</var>, as described for <code>OneInvariantSubgroupMinWrtQProperty</code> (see
-<a href="CHAP004.htm#SSEC007.1">OneInvariantSubgroupMinWrtQProperty</a>). 
+<a href="CHAP004.htm#SSEC006.1">OneInvariantSubgroupMinWrtQProperty</a>). 
 At present, there exist only methods for finite solvable groups <var>grp</var>.
 <p>
 <pre>
@@ -512,22 +491,22 @@ gap&gt; normsWithSupersolvableFactorGroups :=
       [ [ Z(3), 0*Z(3) ], [ 0*Z(3), Z(3) ] ] ]) ]
 </pre>
 <p>
-<a name = "SSEC007.3"></a>
+<a name = "SSEC006.3"></a>
 <li><code>OneNormalSubgroupMinWrtQProperty(</code><var>grp</var><code>, </code><var>pretest</var><code>, </code><var>test</var><code>, </code><var>data</var><code>) O</code>
 <p>
 <code>OneNormalSubgroupMinWrtQProperty</code> is a special case of 
 <code>OneInvariantSubgroupMinWrtQProperty</code> (see
-<a href="CHAP004.htm#SSEC007.1">OneInvariantSubgroupMinWrtQProperty</a>) where <var><var>act</var> = <var>grp</var></var>. 
+<a href="CHAP004.htm#SSEC006.1">OneInvariantSubgroupMinWrtQProperty</a>) where <var><var>act</var> = <var>grp</var></var>. 
 <p>
-<a name = "SSEC007.4"></a>
+<a name = "SSEC006.4"></a>
 <li><code>AllNormalSubgroupsWithQProperty(</code><var>grp</var><code>, </code><var>pretest</var><code>, </code><var>test</var><code>, </code><var>data</var><code>) O</code>
 <p>
 <code>AllNormalSubgroupsWithQProperty</code> is a special case of 
 <code>AllInvariantSubgroupsWithQProperty</code> (see
-<a href="CHAP004.htm#SSEC007.2">AllInvariantSubgroupsWithQProperty</a>) where <var><var>act</var> = <var>grp</var></var>. 
+<a href="CHAP004.htm#SSEC006.2">AllInvariantSubgroupsWithQProperty</a>) where <var><var>act</var> = <var>grp</var></var>. 
 <p>
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP003.htm">Previous</a>] [<a href ="CHAP005.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>CRISP manual<br>October 2015
+<address>CRISP manual<br>December 2015
 </address></body></html>

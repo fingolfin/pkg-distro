@@ -1,0 +1,5 @@
+gap> 
+gap> #general symplectic group
+gap> GeneralSymplecticGroup(6,GF(7));
+GSp(6,7)
+gap> quit;

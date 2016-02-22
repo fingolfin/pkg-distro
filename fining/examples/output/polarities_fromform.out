@@ -1,0 +1,10 @@
+gap> 
+gap> #getting the polarity from a form.
+gap> mat := [[0,1,0,0],[1,0,0,0],[0,0,0,1],[0,0,1,0]]*Z(16)^0;
+[ [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ] ]
+gap> form := BilinearFormByMatrix(mat,GF(16));
+< bilinear form >
+gap> phi := PolarityOfProjectiveSpace(form);
+<polarity of PG(3, GF(2^4)) >
+gap> quit;

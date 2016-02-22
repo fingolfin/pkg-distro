@@ -1,0 +1,17 @@
+gap> 
+gap> # pole for elements in projective spaces wrt a polar space
+gap> conic := ParabolicQuadric(2,13);
+Q(2, 13)
+gap> p := VectorSpaceToElement(PG(2,13),[1,0,0]*Z(13)^0);
+<a point in ProjectiveSpace(2, 13)>
+gap> pole := Pole(conic,p);
+<a line in ProjectiveSpace(2, 13)>
+gap> TypeOfSubspace(conic,pole);
+"hyperbolic"
+gap> tangent_points := Filtered(Points(pole),x->x in conic);
+[ <a point in ProjectiveSpace(2, 13)>, <a point in ProjectiveSpace(2, 13)> ]
+gap> tangent_lines_on_p := List(tangent_points,x->Span(x,p));
+[ <a line in ProjectiveSpace(2, 13)>, <a line in ProjectiveSpace(2, 13)> ]
+gap> List(tangent_lines_on_p,x->Number(Points(x),y->y in conic));
+[ 1, 1 ]
+gap> quit;

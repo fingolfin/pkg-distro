@@ -1,0 +1,17 @@
+gap> 
+gap> #short names for shodowelements of an incidence structure
+gap> ps := PG(6,13);
+ProjectiveSpace(6, 13)
+gap> plane := Random(Planes(ps));
+<a plane in ProjectiveSpace(6, 13)>
+gap> Points(plane);
+<shadow points in ProjectiveSpace(6, 13)>
+gap> Lines(plane);
+<shadow lines in ProjectiveSpace(6, 13)>
+gap> Solids(plane);
+<shadow solids in ProjectiveSpace(6, 13)>
+gap> Hyperplanes(plane);
+<shadow lines in ProjectiveSpace(6, 13)>
+gap> ElementsIncidentWithElementOfIncidenceStructure(plane,6);
+<shadow proj. 5-subspaces in ProjectiveSpace(6, 13)>
+gap> quit;

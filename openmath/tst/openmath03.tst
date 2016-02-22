@@ -1,6 +1,6 @@
 # openmath, chapter 3
 
-# [ "/Users/alexk/gap4r7p1pre/pkg/openmath/doc/extend.xml", 23, 38 ]
+# [ "/Users/alexk/gap4r8p1/pkg/openmath/doc/extend.xml", 23, 38 ]
 
 gap> Display( OMsymRecord.nums1 );          
 rec(
@@ -16,7 +16,7 @@ rec(
     end )
 
 
-# [ "/Users/alexk/gap4r7p1pre/pkg/openmath/doc/extend.xml", 64, 88 ]
+# [ "/Users/alexk/gap4r8p1/pkg/openmath/doc/extend.xml", 64, 88 ]
 
 gap> OMPrint( [ [1..10], ZmodnZObj(2,6), (1,2) ] );                
 <OMOBJ>

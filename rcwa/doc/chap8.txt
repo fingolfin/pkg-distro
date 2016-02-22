@@ -34,11 +34,6 @@
         returns the [21Xrest[121X.[133X
   
   [8X
-      [10XAllProducts([3Xl[103X[10X,[3Xk[103X[10X)[110X
-    [108X
-        [33X[0;6Y[21XStraightforward[121X.[133X
-  
-  [8X
       [10XAllSmoothIntegers([3Xmaxp[103X[10X,[3Xmaxn[103X[10X)[110X
     [108X
         [33X[0;6Y[21XStraightforward[121X.  -- The taken time is essentially proportional to the
@@ -1267,7 +1262,7 @@
   [8X
       [10XWreathProduct([3XG[103X[10X,[3XP[103X[10X)[110X
     [108X
-        [33X[0;6YUses  [10XDirectProduct[110X  to embed the [10XDegreeAction([3XP[103X[10X)[110Xth direct power of [3XG[103X,
+        [33X[0;6YUses  [10XDirectProduct[110X to embed the [10XNrMovedPoints([3XP[103X[10X)[110Xth direct power of [3XG[103X,
         and [10XRcwaMapping[110X, Part (d) to embed the finite permutation group [3XP[103X.[133X
   
   [8X

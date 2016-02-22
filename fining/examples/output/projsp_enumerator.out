@@ -1,0 +1,10 @@
+gap> 
+gap> #use of AsList to enumerate elements of a projective space
+gap> pg := PG(3,4);
+ProjectiveSpace(3, 4)
+gap> lines := Lines(pg);
+<lines of ProjectiveSpace(3, 4)>
+gap> enum := Enumerator(lines);;
+gap> Length(enum);
+357
+gap> quit;

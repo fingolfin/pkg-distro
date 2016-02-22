@@ -1,0 +1,29 @@
+gap> 
+gap> #vectorspace to element for a Lie geometry
+gap> v := [1,1,1,0,0,0]*Z(7)^0;
+[ Z(7)^0, Z(7)^0, Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7) ]
+gap> w := [0,0,0,1,1,1]*Z(7)^0;
+[ 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^0, Z(7)^0, Z(7)^0 ]
+gap> VectorSpaceToElement(PG(5,7),v);
+<a point in ProjectiveSpace(5, 7)>
+gap> VectorSpaceToElement(PG(5,7),[v,w]);
+<a line in ProjectiveSpace(5, 7)>
+gap> VectorSpaceToElement(SymplecticSpace(5,7),v);
+<a point in W(5, 7)>
+gap> VectorSpaceToElement(SymplecticSpace(5,7),[v,w]);
+Error, <x> does not generate an element of <geom> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 13 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> VectorSpaceToElement(HyperbolicQuadric(5,7),v);
+Error, <v> does not generate an element of <geom> called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 13 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> VectorSpaceToElement(HyperbolicQuadric(5,7),0*v);
+< empty subspace >
+gap> quit;

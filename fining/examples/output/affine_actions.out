@@ -1,0 +1,22 @@
+gap> 
+gap> #affine actions
+gap> as := AG(3,27);
+AG(3, 27)
+gap> p := Random(Points(as));
+<a point in AG(3, 27)>
+gap> g := Random(CollineationGroup(as));
+<projective semilinear element: [ [ Z(3^3)^24, Z(3^3)^12, Z(3^3), 0*Z(3) ], 
+  [ Z(3^3)^8, Z(3^3)^10, 0*Z(3), 0*Z(3) ], 
+  [ Z(3^3)^17, Z(3^3)^5, Z(3^3)^3, 0*Z(3) ], 
+  [ Z(3^3), Z(3^3)^11, Z(3)^0, Z(3)^0 ] ], F^9>
+gap> OnAffineSubspaces(p,g);
+<a point in AG(3, 27)>
+gap> p^g;
+<a point in AG(3, 27)>
+gap> l := Random(Lines(as));
+<a line in AG(3, 27)>
+gap> OnAffineSubspaces(l,g);
+<a line in AG(3, 27)>
+gap> l^g;
+<a line in AG(3, 27)>
+gap> quit;

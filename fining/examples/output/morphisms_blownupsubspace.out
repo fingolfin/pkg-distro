@@ -1,0 +1,19 @@
+gap> 
+gap> #to blow up a subspace of a projective space
+gap> pg := PG(3,5^2);
+ProjectiveSpace(3, 25)
+gap> basis := Basis(AsVectorSpace(GF(5),GF(5^2)));
+CanonicalBasis( GF(5^2) )
+gap> line := Random(Lines(pg));
+<a line in ProjectiveSpace(3, 25)>
+gap> solid1 := BlownUpSubspaceOfProjectiveSpace(basis,line);
+<a solid in ProjectiveSpace(7, 5)>
+gap> BasisVectors(basis);
+[ Z(5)^0, Z(5^2) ]
+gap> basis := Basis(AsVectorSpace(GF(5),GF(5^2)),[Z(5),Z(5^2)^8]);
+Basis( GF(5^2), [ Z(5), Z(5^2)^8 ] )
+gap> solid2 := BlownUpSubspaceOfProjectiveSpace(basis,line);
+<a solid in ProjectiveSpace(7, 5)>
+gap> solid1 = solid2;
+false
+gap> quit;

@@ -1,0 +1,55 @@
+gap> 
+gap> #object/elements for EGQByBLTSet
+gap> clan := FisherThasWalkerKantorBettenqClan(11);
+<q-clan over GF(11)>
+gap> blt := BLTSetByqClan(clan);
+[ <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0>, 
+  <a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0> ]
+gap> egq := EGQByBLTSet(blt);
+#I  Now embedding dual BLT-set into W(5,q)...
+#I  Computing elation group...
+<EGQ of order [ 121, 11 ] and basepoint in W(5, 11 ) >
+gap> planes := DefiningPlanesOfEGQByBLTSet(egq);
+[ <a plane in W(5, 11)>, <a plane in W(5, 11)>, <a plane in W(5, 11)>, 
+  <a plane in W(5, 11)>, <a plane in W(5, 11)>, <a plane in W(5, 11)>, 
+  <a plane in W(5, 11)>, <a plane in W(5, 11)>, <a plane in W(5, 11)>, 
+  <a plane in W(5, 11)>, <a plane in W(5, 11)>, <a plane in W(5, 11)> ]
+gap> p := BasePointOfEGQ(egq);
+<a point in <EGQ of order [ 121, 11 ] and basepoint in W(5, 11 ) >>
+gap> up := UnderlyingObject(p);
+<a point in W(5, 11)>
+gap> ps := SymplecticSpace(5,11);
+W(5, 11)
+gap> uq := VectorSpaceToElement(ps,[1,1,0,0,0,0]*Z(11)^0);
+<a point in W(5, 11)>
+gap> q := ObjectToElement(egq,1,uq);
+<a point in <EGQ of order [ 121, 11 ] and basepoint in W(5, 11 ) >>
+gap> DistanceBetweenElements(p,q);
+4
+gap> l := ObjectToElement(egq,2,planes[1]);
+<a line in <EGQ of order [ 121, 11 ] and basepoint in W(5, 11 ) >>
+gap> DistanceBetweenElements(p,l);
+1
+gap> DistanceBetweenElements(q,l);
+3
+gap> um := VectorSpaceToElement(ps,[[1,0,0,0,1,1],[0,1,0,9,1,0],[0,0,1,9,9,9]]*Z(11)^0);
+<a plane in W(5, 11)>
+gap> m := ObjectToElement(egq,2,um);
+<a line in <EGQ of order [ 121, 11 ] and basepoint in W(5, 11 ) >>
+gap> DistanceBetweenElements(p,m);
+3
+gap> DistanceBetweenElements(q,m);
+3
+gap> DistanceBetweenElements(l,m);
+2
+gap> quit;

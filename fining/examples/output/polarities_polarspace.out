@@ -1,0 +1,25 @@
+gap> 
+gap> #absolute points wrt polarity
+gap> mat := [[1,0,0,0],[0,0,1,1],[0,1,1,0],[0,1,0,0]]*Z(32)^0;
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], [ 0*Z(2), 0*Z(2), Z(2)^0, Z(2)^0 ], 
+  [ 0*Z(2), Z(2)^0, Z(2)^0, 0*Z(2) ], [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ] ]
+gap> phi := PolarityOfProjectiveSpace(mat,GF(32));
+<polarity of PG(3, GF(2^5)) >
+gap> ps := PolarSpace(phi);
+Error, <polarity> is pseudo and does not induce a polar space called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 10 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> mat := IdentityMat(5,GF(7));
+[ [ Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7) ], 
+  [ 0*Z(7), Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7) ], 
+  [ 0*Z(7), 0*Z(7), Z(7)^0, 0*Z(7), 0*Z(7) ], 
+  [ 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^0, 0*Z(7) ], 
+  [ 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^0 ] ]
+gap> phi := PolarityOfProjectiveSpace(mat,GF(7));
+<polarity of PG(4, GF(7)) >
+gap> ps := PolarSpace(phi);
+<polar space in ProjectiveSpace(4,GF(7)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2=0 >
+gap> quit;

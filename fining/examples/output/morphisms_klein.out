@@ -1,0 +1,18 @@
+gap> 
+gap> #morphisms_klein.g
+gap> k := KleinCorrespondence( 9 );
+<geometry morphism from <lines of ProjectiveSpace(3, 9)> to <points of Q+(5, 
+9): x_1*x_6+x_2*x_5+x_3*x_4=0>>
+gap> Intertwiner(k);
+MappingByFunction( The FinInG collineation group PGammaL(4,9), <projective col\
+lineation group with 
+3 generators>, function( g ) ... end, function( g ) ... end )
+gap> pg := ProjectiveSpace(3, 9);
+ProjectiveSpace(3, 9)
+gap> AmbientGeometry(Range(k));
+Q+(5, 9): x_1*x_6+x_2*x_5+x_3*x_4=0
+gap> l := Random( Lines(pg) );
+<a line in ProjectiveSpace(3, 9)>
+gap> l^k;
+<a point in Q+(5, 9): x_1*x_6+x_2*x_5+x_3*x_4=0>
+gap> quit;

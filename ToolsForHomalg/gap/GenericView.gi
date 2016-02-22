@@ -680,19 +680,19 @@ InstallGlobalFunction( DECIDE_TYPE_OF_PRINTING,
     
     if NodeOfHighLevel( node ) then
         
-        return [ "level_too_high", SuPeRfail ];
+        return [ "level_too_high", fail ];
         
     fi;
     
     if NotComputedNode( node ) then
         
-        return [ "notcomputed", SuPeRfail ];
+        return [ "notcomputed", fail ];
         
     fi;
     
     if ImpliedNode( node ) and print_level <= 2 then
         
-        return [ "implied_node", SuPeRfail ];
+        return [ "implied_node", fail ];
         
     fi;
     
@@ -1035,6 +1035,15 @@ InstallMethod( InstallPrintFunctionsOutOfPrintingGraph,
                [ IsAttributeDependencyGraphForPrinting ],
                
   function( graph )
+    
+    InstallPrintFunctionsOutOfPrintingGraph( graph, 0 );
+    
+end );
+
+InstallMethod( InstallPrintFunctionsOutOfPrintingGraph,
+               [ IsAttributeDependencyGraphForPrinting, IsInt ],
+               
+  function( graph, rank )
     local filter, install_view_obj, install_display, install_full_view, install_full_view_with_everything_computed;
     
     filter := graph!.object_filter;
@@ -1062,6 +1071,7 @@ InstallMethod( InstallPrintFunctionsOutOfPrintingGraph,
     
     InstallMethod( StringMutable,
                    [ filter ],
+                   rank,
                    
       function( obj )
         local string;
@@ -1080,6 +1090,7 @@ InstallMethod( InstallPrintFunctionsOutOfPrintingGraph,
         
         InstallMethod( ViewObj,
                        [ filter ],
+                       rank,
                        
           function( obj )
               
@@ -1097,6 +1108,7 @@ InstallMethod( InstallPrintFunctionsOutOfPrintingGraph,
         
         InstallMethod( Display,
                        [ filter ],
+                       rank,
                        
           function( obj )
             

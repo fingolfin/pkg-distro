@@ -232,6 +232,9 @@ DeclareAttribute( "EqualitiesOfPolytope",
 DeclareAttribute( "DefiningInequalities",
                   IsPolytope );
 
+DeclareAttribute( "LatticePointsGenerators",
+                  IsPolytope );
+
 ################################
 ##
 ## Methods
@@ -264,11 +267,17 @@ DeclareOperation( "\*",
 DeclareOperation( "\+",
                   [ IsPolytope, IsPolytope ] );
 
+DeclareOperation( "IntersectionOfPolytopes",
+                  [ IsPolytope, IsPolytope ] );
+
 ################################
 ##
 ## Constructors
 ##
 ################################
+
+DeclareOperation( "Polytope",
+                  [ IsExternalObject ] );
 
 DeclareOperation( "Polytope",
                   [ IsPolytope ] );

@@ -1,0 +1,25 @@
+gap> 
+gap> #ambient geometry of an element
+gap> plane := Random(Planes(HyperbolicQuadric(5,2)));
+<a plane in Q+(5, 2)>
+gap> AmbientGeometry(plane);
+Q+(5, 2)
+gap> l := Random(Lines(SplitCayleyHexagon(3)));
+#I  for Split Cayley Hexagon
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+<a line in H(3)>
+gap> Print(l);
+NewMatrix(IsCMatRep,GF(3,1),7,[[ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3), 
+  Z(3)^0, Z(3)^0 ],[ 0*Z(3), Z(3)^0, Z(3), Z(3)^0, 0*Z(3), Z(3)^0, 0*Z(3) ],])
+gap> AmbientGeometry(l);
+H(3)
+gap> p := Random(Points(EGQByBLTSet(BLTSetByqClan(LinearqClan(3)))));
+#I  Now embedding dual BLT-set into W(5,q)...
+#I  Computing elation group...
+<a point in <EGQ of order [ 9, 3 ] and basepoint in W(5, 3 ) >>
+gap> Print(p);
+NewRowVector(IsCVecRep,GF(3,1),[Z(3)^0,Z(3),Z(3),Z(3),Z(3)^0,0*Z(3),])
+gap> AmbientGeometry(p);
+<EGQ of order [ 9, 3 ] and basepoint in W(5, 3 ) >
+gap> quit;

@@ -40,13 +40,21 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7EBC3ED67ABADB93">4.4-2 ConvertPackageFilesToUNIXLineBreaks</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7CD897C87D3B8C5C">4.4-3 RemoveTemporaryPackageFiles</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X81DD0163859E9EF5">4.5 <span class="Heading">DownloadFile, SendEmail and EmailLogFile</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7B0129E185088420">4.5 <span class="Heading">Creating timestamped logfiles</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C1543408472A82B">4.5-1 DownloadFile</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F27919085001EA8">4.5-2 SendEmail</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8000E5CF7DF4339C">4.5-3 EmailLogFile</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7B023FD184CC118D">4.5-1 LogToDatedFile</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X81DD0163859E9EF5">4.6 <span class="Heading">DownloadFile, SendEmail and EmailLogFile</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C1543408472A82B">4.6-1 DownloadFile</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F27919085001EA8">4.6-2 SendEmail</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8000E5CF7DF4339C">4.6-3 EmailLogFile</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X808A30E37A293D19">4.7 <span class="Heading">Some general utility functions</span></a>
+</span>
+</div>
 </div>
 
 <h3>4 <span class="Heading">Installation and Auxiliary Functions</span></h3>
@@ -55,7 +63,7 @@
 
 <h4>4.1 <span class="Heading">Requirements</span></h4>
 
-<p>This version of <strong class="pkg">ResClasses</strong> needs at least <strong class="pkg">GAP</strong> 4.7.0, <strong class="pkg">Polycyclic</strong> 2.6 <a href="chapBib.html#biBPolycyclic">[EN11]</a> and <strong class="pkg">GAPDoc</strong> 1.4 <a href="chapBib.html#biBGAPDoc">[LN12]</a>. It can be used on all platforms for which <strong class="pkg">GAP</strong> is available. <strong class="pkg">ResClasses</strong> is completely written in the <strong class="pkg">GAP</strong> language and does neither contain nor require external binaries.</p>
+<p>This version of <strong class="pkg">ResClasses</strong> needs at least <strong class="pkg">GAP</strong> 4.8.1, <strong class="pkg">IO</strong> 4.4.4 <a href="chapBib.html#biBIO">[HN14]</a>, <strong class="pkg">Polycyclic</strong> 2.6 <a href="chapBib.html#biBPolycyclic">[EN11]</a> and <strong class="pkg">GAPDoc</strong> 1.4 <a href="chapBib.html#biBGAPDoc">[LN12]</a>. It can be used on all platforms for which <strong class="pkg">GAP</strong> is available. <strong class="pkg">ResClasses</strong> is completely written in the <strong class="pkg">GAP</strong> language and does neither contain nor require external binaries.</p>
 
 <p><a id="X8360C04082558A12" name="X8360C04082558A12"></a></p>
 
@@ -72,7 +80,7 @@
 <h5>4.3-1 ResClassesTest</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ResClassesTest</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns: nothing.</p>
+<p>Returns: <code class="code">true</code> if no errors were found, and <code class="code">false</code> otherwise.</p>
 
 <p>Performs tests of the <strong class="pkg">ResClasses</strong> package. Errors, i.e. differences to the correct results of the test computations, are reported. The processed test files are in the directory <code class="file">pkg/resclasses/tst</code>.</p>
 
@@ -116,38 +124,57 @@
 
 <p>This function is a development tool which cleans up the temporary files of package <var class="Arg">package</var>. Here <var class="Arg">package</var> is assumed to be either <code class="code">"resclasses"</code> or <code class="code">"rcwa"</code>.</p>
 
+<p><a id="X7B0129E185088420" name="X7B0129E185088420"></a></p>
+
+<h4>4.5 <span class="Heading">Creating timestamped logfiles</span></h4>
+
+<p><a id="X7B023FD184CC118D" name="X7B023FD184CC118D"></a></p>
+
+<h5>4.5-1 LogToDatedFile</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LogToDatedFile</code>( <var class="Arg">directory</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns: the full pathname of the created logfile.</p>
+
+<p>This function opens a logfile in the specified directory; the name of the logfile has the form of a timestamp, i.e. <code class="code">year-month-day hour-minute-second.log.</code> If <strong class="pkg">GAP</strong> is already in logging mode, the old logfile is closed before the new one is opened.</p>
+
 <p><a id="X81DD0163859E9EF5" name="X81DD0163859E9EF5"></a></p>
 
-<h4>4.5 <span class="Heading">DownloadFile, SendEmail and EmailLogFile</span></h4>
+<h4>4.6 <span class="Heading">DownloadFile, SendEmail and EmailLogFile</span></h4>
 
 <p><a id="X7C1543408472A82B" name="X7C1543408472A82B"></a></p>
 
-<h5>4.5-1 DownloadFile</h5>
+<h5>4.6-1 DownloadFile</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DownloadFile</code>( <var class="Arg">url</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: the contents of the file with URL <var class="Arg">url</var> in the form of a string if that file exists and the download was successful, and <code class="code">fail</code> otherwise.</p>
 
-<p>This function needs the <strong class="pkg">IO</strong> package, and as most system-related functions it works only under UNIX. Also the computer must of course be connected to the Internet.</p>
+<p>As most system-related functions, <code class="code">DownloadFile</code> works only under UNIX / Linux. Also the computer must of course be connected to the Internet.</p>
 
 <p><a id="X7F27919085001EA8" name="X7F27919085001EA8"></a></p>
 
-<h5>4.5-2 SendEmail</h5>
+<h5>4.6-2 SendEmail</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SendEmail</code>( <var class="Arg">sendto</var>, <var class="Arg">copyto</var>, <var class="Arg">subject</var>, <var class="Arg">text</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: zero if everything worked correctly, and a system error number otherwise.</p>
 
 <p>Sends an e-mail with subject <var class="Arg">subject</var> and body <var class="Arg">text</var> to the addresses in the list <var class="Arg">sendto</var>, and copies it to those in the list <var class="Arg">copyto</var>. The first two arguments must be lists of strings, and the latter two must be strings.</p>
 
-<p>As most system-related functions, <code class="code">SendEmail</code> works only under UNIX. Also the computer must of course be connected to the Internet.</p>
+<p>As most system-related functions, <code class="code">SendEmail</code> works only under UNIX / Linux. Also the computer must of course be connected to the Internet.</p>
 
 <p><a id="X8000E5CF7DF4339C" name="X8000E5CF7DF4339C"></a></p>
 
-<h5>4.5-3 EmailLogFile</h5>
+<h5>4.6-3 EmailLogFile</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EmailLogFile</code>( <var class="Arg">addresses</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: zero if everything worked correctly, and a system error number otherwise.</p>
 
-<p>Sends the current log file by e-mail to <var class="Arg">addresses</var>, if <strong class="pkg">GAP</strong> is in logging mode and one is working under UNIX, and does nothing otherwise. The argument <var class="Arg">addresses</var> must be either a list of e-mail addresses or a single e-mail address. Long log files are abbreviated, i.e. if the log file is larger than 64KB, then any output is truncated at 1KB, and if the log file is still longer than 64KB afterwards, it is truncated at 64KB.</p>
+<p>Sends the current log file by e-mail to <var class="Arg">addresses</var>, if <strong class="pkg">GAP</strong> is in logging mode and one is working under UNIX / Linux, and does nothing otherwise. The argument <var class="Arg">addresses</var> must be either a list of e-mail addresses or a single e-mail address. Long log files are abbreviated, i.e. if the log file is larger than 64KB, then any output is truncated at 1KB, and if the log file is still longer than 64KB afterwards, it is truncated at 64KB.</p>
+
+<p><a id="X808A30E37A293D19" name="X808A30E37A293D19"></a></p>
+
+<h4>4.7 <span class="Heading">Some general utility functions</span></h4>
+
+<p>There are some utility functions for lists; these are <code class="code">DifferencesList(<var class="Arg">l</var>)</code> and <code class="code">QuotientsList(<var class="Arg">l</var>)</code>, which return the list of differences, respectively, quotients of consecutive entries of the list <var class="Arg">l</var>, and the function <code class="code">FloatQuotientsList(<var class="Arg">l</var>)</code>, which returns the list of floating point approximations of the latter. Further there is an operation <code class="code">PositionsSublist(<var class="Arg">list</var>,<var class="Arg">sub</var>)</code>, which returns the list of indices in the list <var class="Arg">list</var> at which a sublist equal to <var class="Arg">sub</var> starts. There also is an operation <code class="code">RandomCombination(<var class="Arg">S</var>,<var class="Arg">k</var>)</code>, which returns a random unordered <var class="Arg">k</var>-tuple of distinct elements of a set <var class="Arg">S</var>. Since it is sometimes faster to check whether two group- or ring elements commute than to actually form both products and test them for equality, there is an operation <code class="code">IsCommuting(<var class="Arg">a</var>,<var class="Arg">b</var>)</code> for which corresponding methods can be installed.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>

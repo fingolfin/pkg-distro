@@ -1,6 +1,6 @@
 # Circle, chapter 2
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 18, 29 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 18, 29 ]
 
 gap> CircleMultiplication := function(a,b)
 >      return a+b+a*b;
@@ -12,7 +12,7 @@ gap> CircleMultiplication( ZmodnZObj(2,8), ZmodnZObj(5,8) );
 ZmodnZObj( 1, 8 )
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 35, 42 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 35, 42 ]
 
 gap> CircleMultiplication( 3, ZmodnZObj(3,8) );
 ZmodnZObj( 7, 8 )
@@ -20,7 +20,7 @@ gap> CircleMultiplication( [1], [2,3] );
 [ 5, 5 ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 50, 63 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 50, 63 ]
 
 gap> DeclareOperation( "BetterCircleMultiplication",                             
 >      [IsRingElement,IsRingElement] );
@@ -34,24 +34,24 @@ gap> BetterCircleMultiplication( ZmodnZObj(2,8), ZmodnZObj(5,8) );
 ZmodnZObj( 1, 8 )
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 85, 90 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 85, 90 ]
 
 gap> CircleObject( 2 ) * CircleObject( 3 );                       
 CircleObject( 11 )
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 106, 111 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 106, 111 ]
 
 gap> DeclareCategory( "IsMyCircleObject", 
 > IsAssociativeElement and IsMultiplicativeElementWithInverse );
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 119, 123 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 119, 123 ]
 
 gap> DeclareCategoryCollections( "IsMyCircleObject" );
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 134, 141 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 134, 141 ]
 
 gap> DeclareRepresentation( "IsMyPositionalObjectOneSlotRep",
 >     IsPositionalObjectRep, [ 1 ] );
@@ -59,12 +59,12 @@ gap> DeclareSynonym( "IsMyDefaultCircleObject",
 >     IsMyCircleObject and IsMyPositionalObjectOneSlotRep );
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 153, 157 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 153, 157 ]
 
 gap> DeclareAttribute( "MyCircleFamily", IsFamily );
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 162, 180 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 162, 180 ]
 
 gap> InstallMethod( MyCircleFamily,
 >     "for a family",
@@ -83,7 +83,7 @@ gap> InstallMethod( MyCircleFamily,
 > end );
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 191, 200 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 191, 200 ]
 
 gap> DeclareAttribute( "MyCircleObject", IsRingElement );
 gap> InstallMethod( MyCircleObject,
@@ -93,7 +93,7 @@ gap> InstallMethod( MyCircleObject,
 >                       [ Immutable( obj ) ] ) );
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 206, 213 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 206, 213 ]
 
 gap> a:=MyCircleObject(2);
 <object>
@@ -101,13 +101,13 @@ gap> a![1];
 2
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 218, 223 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 218, 223 ]
 
 gap> FamilyObj( MyCircleObject ( 2 ) ) = MyCircleFamily( FamilyObj( 2 ) );
 true
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 228, 237 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 228, 237 ]
 
 gap> InstallMethod( PrintObj,
 >     "for object in `IsMyCircleObject'",
@@ -117,13 +117,13 @@ gap> InstallMethod( PrintObj,
 >     end );
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 244, 249 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 244, 249 ]
 
 gap> a;
 MyCircleObject( 2 )
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 259, 269 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 259, 269 ]
 
 gap> DeclareAttribute("UnderlyingRingElement", IsMyCircleObject );
 gap> InstallMethod( UnderlyingRingElement,
@@ -134,7 +134,7 @@ gap> UnderlyingRingElement(a);
 2
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 280, 292 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 280, 292 ]
 
 gap> InstallMethod( \*,
 >     "for two objects in `IsMyCircleObject'",
@@ -147,7 +147,7 @@ gap> MyCircleObject(2)*MyCircleObject(3);
 MyCircleObject( 11 )
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 301, 318 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 301, 318 ]
 
 gap> InstallMethod( \=,
 >     "for two objects in `IsMyCircleObject'",
@@ -165,7 +165,7 @@ gap> InstallMethod( \<,
 >     end );
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 325, 334 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 325, 334 ]
 
 gap> InstallMethod( OneOp,
 >     "for an object in `IsMyCircleObject'",
@@ -175,21 +175,21 @@ gap> One(a);
 MyCircleObject( 0 )
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 338, 351 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 338, 351 ]
 
 gap> S:=Monoid(a);
-<monoid with 1 generator>
+<commutative monoid with 1 generator>
 gap> One(S);
 MyCircleObject( 0 )
 gap> S:=Monoid( MyCircleObject( ZmodnZObj( 2,8) ) );
-<monoid with 1 generator>
+<commutative monoid with 1 generator>
 gap> Size(S);
 2
 gap> AsList(S);
 [ MyCircleObject( ZmodnZObj( 0, 8 ) ), MyCircleObject( ZmodnZObj( 2, 8 ) ) ]
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 359, 378 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 359, 378 ]
 
 gap> InstallMethod( InverseOp,
 >     "for an object in `IsMyCircleObject'",
@@ -209,7 +209,7 @@ gap> MyCircleObject(2)^-1;
 MyCircleObject( -2/3 )
 
 
-# [ "/Users/alexk/gap4r7p6/pkg/circle/doc/objects.xml", 383, 398 ]
+# [ "/Users/alexk/gap4r8p1/pkg/circle/doc/objects.xml", 383, 398 ]
 
 gap> Group( MyCircleObject(2) );  
 #I  default `IsGeneratorsOfMagmaWithInverses' method returns `true' for

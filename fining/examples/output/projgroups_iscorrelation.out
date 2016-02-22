@@ -1,0 +1,17 @@
+gap> 
+gap> #checks if an object in IsProjGrpEtc is a not linear
+gap> g := Random(CollineationGroup(PG(4,7)));
+< a collineation: <cmat 5x5 over GF(7,1)>, F^0>
+gap> IsCorrelationCollineation(g);
+false
+gap> IsCorrelation(g);
+false
+gap> g := Random(CorrelationCollineationGroup(PG(4,7)));
+<projective element with Frobenius with projectivespace isomorphism: <cmat 5x
+5 over GF(7,1)>, F^0, IdentityMapping( <All elements of ProjectiveSpace(4, 
+7)> ) >
+gap> IsCorrelationCollineation(g);
+true
+gap> IsCorrelation(g);
+false
+gap> quit;

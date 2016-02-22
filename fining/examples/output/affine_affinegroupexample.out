@@ -1,0 +1,15 @@
+gap> 
+gap> #example of affine group
+gap> ag := AffineSpace(3,3);
+AG(3, 3)
+gap> g := AffineGroup(ag);
+AGL(3,3)
+gap> x:=Random(g);;
+gap> Display(x);
+<projective semilinear element, underlying matrix:
+ 2 1 . .
+ 2 2 2 .
+ 1 1 2 .
+ 1 . . 1
+, F^0>
+gap> quit;

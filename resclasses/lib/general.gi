@@ -16,19 +16,6 @@
 
 #############################################################################
 ##
-#M  ViewString( <z> ) . . . . . . . . . . . . . .  for a finite field element
-#M  ViewString( <s> ) . . . . . . . . . . . . . . . . . . . . .  for a string
-##
-InstallMethod( ViewString, "for a finite field element (ResClasses)", true,
-               [ IsFFE and IsInternalRep ], 0, String );
-
-if CompareVersionNumbers(GAPInfo.Version,"4.7.1") <> true then
-  InstallMethod( ViewString, "for a string (ResClasses)", true,
-                 [ IsString ], 5, str -> Concatenation( "\"", str, "\"" ) );
-fi;
-
-#############################################################################
-##
 #M  ViewString( <P> ) . . . . for a univariate polynomial over a finite field
 ##
 InstallMethod( ViewString,
@@ -101,22 +88,43 @@ InstallGlobalFunction( FloatQuotientsList,
 
 #############################################################################
 ##
-#F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
+#F  PositionsSublist( <list>, <sub> )
 ##
-InstallGlobalFunction( NextProbablyPrimeInt,
+InstallMethod( PositionsSublist, "default method",
+               ReturnTrue, [ IsList, IsList ],
 
-  function ( n )
-    if   -3 = n            then n := -2;
-    elif -3 < n  and n < 2 then n :=  2;
-    elif n mod 2 = 0       then n := n+1;
-    else                        n := n+2;
-    fi;
-    while not IsProbablyPrimeInt(n) do
-        if n mod 6 = 1 then n := n+4;
-        else                n := n+2;
-        fi;
+  function ( list, sub )
+
+    local  positions, pos;
+
+    pos := 0; positions := [];
+    repeat
+      pos := PositionSublist(list,sub,pos);
+      if pos <> fail then Add(positions,pos); fi;
+    until pos = fail;
+    return positions;
+  end );
+
+#############################################################################
+##
+#M  RandomCombination( S, k ) . . . . . . . . . . . . . . . .  default method
+##
+InstallMethod( RandomCombination, "default method",
+               ReturnTrue, [ IsListOrCollection, IsPosInt ],
+
+  function ( S, k )
+
+    local  c, elm, i;
+
+    if k > Size(S) then return fail; fi;
+    c := [];
+    for i in [1..k] do
+      repeat
+        elm := Random(S);
+      until not elm in c;
+      Add(c,elm);
     od;
-    return n;
+    return Set(c);
   end );
 
 #############################################################################
@@ -184,7 +192,39 @@ InstallGlobalFunction( "FetchFromCache",
 
 #############################################################################
 ##
-#S  SendEmail and EmailLogFile. /////////////////////////////////////////////
+#S  Creating timestamped logfiles. //////////////////////////////////////////
+##
+#############################################################################
+
+#############################################################################
+##
+#F LogToDatedFile( <directory> )
+##
+InstallGlobalFunction( LogToDatedFile,
+
+  function ( arg )
+
+    local  name, directory, dmy;
+
+    if   Length(arg) >= 1 and IsString(arg[1])
+    then directory := arg[1];
+    else directory := "/user/GAP/log/"; fi;
+    dmy := DMYhmsSeconds(IO_gettimeofday().tv_sec);
+    name := Concatenation(directory,
+                          String(dmy[3]),"-",
+                          String(dmy[2]+100){[2..3]},"-",
+                          String(dmy[1]+100){[2..3]}," ",
+                          String(dmy[4]+100){[2..3]},"-",
+                          String(dmy[5]+100){[2..3]},"-",
+                          String(dmy[6]+100){[2..3]},".log");
+    if IN_LOGGING_MODE <> false then LogTo(); fi;
+    LogTo(name);
+    return name;
+  end );
+
+#############################################################################
+##
+#S  SendEmail, EmailLogFile and DownloadFile ////////////////////////////////
 ##
 #############################################################################
 
@@ -292,7 +332,7 @@ InstallGlobalFunction( BlankFreeString,
 
 #############################################################################
 ##
-#F  QuotesStripped( <obj> ) . . . . . . . . . . . . . . string without quotes
+#F  QuotesStripped( <str> ) . . . . . . . . . . . . . . string without quotes
 ##
 InstallGlobalFunction( QuotesStripped,
 

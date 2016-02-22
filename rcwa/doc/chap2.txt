@@ -436,17 +436,20 @@
   [33X[0;0YRcwa mappings can be [10XView[110Xed, [10XDisplay[110Xed, [10XPrint[110Xed and written to a [10XString[110X. The
   output  of  the  [10XView[110X method is kept reasonably short. In most cases it does
   not  describe  an  rcwa  mapping  completely.  In  these cases the output is
-  enclosed  in  brackets.  There  are options [10XCycleNotation[110X, [10XPrintNotation[110X and
-  [10XAbridgedNotation[110X  to  take influence on how certain rcwa mappings are shown.
-  These  options  can  either  be not set, set to [10Xtrue[110X or set to [10Xfalse[110X. If the
-  option  [10XCycleNotation[110X  is  set,  it  is  tried  harder to write down an rcwa
-  permutation  of  ℤ  of  finite  order as a product of disjoint residue class
-  cycles,  if this is possible. The option [10XPrintNotation[110X influences the output
-  in  favour of [5XGAP[105X - readability, and the option [10XAbridgedNotation[110X can be used
-  to abridge longer names like [10XClassShift[110X, [10XClassReflection[110X etc.. The output of
-  the  methods  for  [10XDisplay[110X  and [10XPrint[110X describes an rcwa mapping in full. The
-  [10XPrint[110Xed  representation  of an rcwa mapping is [5XGAP[105X - readable if and only if
-  the [10XPrint[110Xed representation of the elements of the underlying ring is so.[133X
+  enclosed  in  brackets.  There  are  options  [10XCycleNotation[110X, [10XAsClassMapping[110X,
+  [10XPrintNotation[110X  and  [10XAbridgedNotation[110X  to  take influence on how certain rcwa
+  mappings  are shown. These options can either be not set, set to [10Xtrue[110X or set
+  to  [10Xfalse[110X.  If  the option [10XCycleNotation[110X is set, it is tried harder to write
+  down  an  rcwa  permutation  of  ℤ  of finite order as a product of disjoint
+  residue  class  cycles, if this is possible. If the option [10XAsClassMapping[110X is
+  set,  [10XDisplay[110X  shows which residue classes are mapped to which by the affine
+  partial  mappings,  and marks any loops. The option [10XPrintNotation[110X influences
+  the  output  in favour of [5XGAP[105X - readability, and the option [10XAbridgedNotation[110X
+  can  be  used to abridge longer names like [10XClassShift[110X, [10XClassReflection[110X etc..
+  By  default,  the  output  of the methods for [10XDisplay[110X and [10XPrint[110X describes an
+  rcwa mapping in full. The [10XPrint[110Xed representation of an rcwa mapping is [5XGAP[105X -
+  readable  if  and  only if the [10XPrint[110Xed representation of the elements of the
+  underlying ring is so.[133X
   
   [33X[0;0YThere  is  also an operation [10XLaTeXStringRcwaMapping[110X, which takes as argument
   an  rcwa  mapping and returns a corresponding LaTeX string. The output makes
@@ -556,8 +559,12 @@
   [4X[32X[104X
   
   [33X[0;0YThere  is a method for the operation [10XSupport[110X for computing the support of an
-  rcwa  mapping.  A synonym for [10XSupport[110X is [10XMovedPoints[110X. There is also a method
-  for [10XRestrictedPerm[110X for computing the restriction of an rcwa permutation to a
+  rcwa  mapping.  A synonym for [10XSupport[110X is [10XMovedPoints[110X. The natural density of
+  the  support  of  an  rcwa mapping of ℤ can be computed efficiently with the
+  operation  [10XDensityOfSupport[110X.  Likewise,  the  natural  density of the set of
+  fixed  points  of  an rcwa mapping of ℤ can be computed efficiently with the
+  operation   [10XDensityOfSetOfFixedPoints[110X.   There   is   also   a   method  for
+  [10XRestrictedPerm[110X  for  computing  the  restriction of an rcwa permutation to a
   union of residue classes which it fixes setwise.[133X
   
   [4X[32X  Example  [32X[104X
@@ -895,6 +902,18 @@
     [4X[28X        |[128X[104X
     [4X[28X        \[128X[104X
     [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XDisplay(PrimeSwitch(3):AsClassMapping);[127X[104X
+    [4X[28X[128X[104X
+    [4X[28XWild rcwa permutation of Z with modulus 12[128X[104X
+    [4X[28X[128X[104X
+    [4X[28X  0(12) -> 0(6)  loop[128X[104X
+    [4X[28X   1(6) -> 2(6)[128X[104X
+    [4X[28X   2(4) -> 5(6)[128X[104X
+    [4X[28X   3(6) -> 3(6)  id[128X[104X
+    [4X[28X  4(12) -> 1(12)[128X[104X
+    [4X[28X   5(6) -> 4(6)[128X[104X
+    [4X[28X  8(12) -> 7(12)[128X[104X
+    [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XFactorization(PrimeSwitch(3));[127X[104X
     [4X[28X[ ( 1(6), 0(8) ), ( 5(6), 4(8) ), ( 0(4), 1(6) ), ( 2(4), 5(6) ), [128X[104X
     [4X[28X  ( 2(6), 1(12) ), ( 4(6), 7(12) ) ][128X[104X
@@ -1072,7 +1091,7 @@
     [4X[28X[ 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1 ][128X[104X
     [4X[25Xgap>[125X [27XTrajectory(T,ResidueClass(Integers,3,0),Integers);[127X[104X
     [4X[28X[ 0(3), 0(3) U 5(9), 0(3) U 5(9) U 7(9) U 8(27), [128X[104X
-    [4X[28X  <union of 20 residue classes (mod 27)>, [128X[104X
+    [4X[28X  <union of 20 residue classes (mod 27) (6 classes)>, [128X[104X
     [4X[28X  <union of 73 residue classes (mod 81)>, Z \ 10(81) U 37(81), Integers ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
@@ -1115,6 +1134,12 @@
             |R/c_r(m)R|[122X  or  [22X|R/a_r(m)R|  < |R/c_r(m)R|[122X, respectively, where [22XR[122X
             denotes  the  source, [22Xm[122X denotes the modulus and [22Xa_r(m)[122X, [22Xb_r(m)[122X and
             [22Xc_r(m)[122X denote the coefficients of [3Xf[103X as introduced in Section [14X2.1[114X.[133X
+  
+  [33X[0;0YIf  the argument is an rcwa mapping of ℤ in sparse representation, an option
+  [10Xclasses[110X is interpreted; if set, the step of forming the union of the residue
+  classes  in question is omitted, and the list of residue classes is returned
+  instead  of  their  union.  This  may save time and memory if the modulus is
+  large.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -1240,6 +1265,9 @@
             transition  graph  of [3Xf[103X  for modulus [10XMod([3Xf[103X[10X)[110X which carry a loop. In
             general, the list of vertices of that transition graph which carry
             a loop, but which [3Xf[103X does not fix setwise.[133X
+  
+  [33X[0;0YThe  returned  list  may also include supersets of the named residue classes
+  instead if [3Xf[103X is affine even on these.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X

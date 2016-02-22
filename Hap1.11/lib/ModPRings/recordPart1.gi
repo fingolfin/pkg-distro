@@ -336,13 +336,21 @@ end;
 
 #####################################################################
 Degree:=function(x)
-local i;
+local i, w, bas;
+# returns the highest degree of a non-zero coefficient of x
 
+if IsZero(x) then return 0; fi;
 i:=Position(GeneratorsOfAlgebra(A),x);
 
 if i=1 then return 0; fi;
 
-return IntToPair(i-1)[1];
+if not i=fail then return IntToPair(i-1)[1]; fi;
+
+bas:=Basis(A);
+w:=Coefficients(bas,x);
+w:=Filtered([2..Length(bas)],i->not IsZero(w[i]));
+w:=List(w,i->IntPairList[i-1][1]);
+return Maximum(w);
 end;
 #####################################################################
 

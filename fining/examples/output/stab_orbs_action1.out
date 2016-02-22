@@ -1,0 +1,27 @@
+gap> 
+gap> #action of a group on a subset (1)
+gap> pg := PG(2,3);
+ProjectiveSpace(2, 3)
+gap> conic := Set(Points(ParabolicQuadric(2,3)));;
+gap> coll := CollineationGroup(pg);
+The FinInG collineation group PGL(3,3)
+gap> orb := Orbit(coll,conic,OnSetsProjSubspaces);;
+gap> Length(orb);
+234
+gap> hom := ActionHomomorphism(coll,orb,OnSetsProjSubspaces);
+<action homomorphism>
+gap> perm := Image(hom);
+<permutation group with 2 generators>
+gap> Order(perm);
+5616
+gap> NrMovedPoints(perm);
+234
+gap> ps := SymplecticSpace(5,2);
+W(5, 2)
+gap> coll := CollineationGroup(ps);
+PGammaSp(6,2)
+gap> perm := Action(coll,Lines(ps),OnProjSubspaces);
+<permutation group with 4 generators>
+gap> NrMovedPoints(perm);
+315
+gap> quit;

@@ -1,0 +1,15 @@
+gap> 
+gap> #iterators for subspaces of polar spaces
+gap> iter := Iterator(Lines(ParabolicQuadric(4,2)));
+<iterator>
+gap> NextIterator(iter);
+<a line in Q(4, 2)>
+gap> NextIterator(iter);
+<a line in Q(4, 2)>
+gap> NextIterator(iter);
+<a line in Q(4, 2)>
+gap> NextIterator(iter);
+<a line in Q(4, 2)>
+gap> NextIterator(iter);
+<a line in Q(4, 2)>
+gap> quit;

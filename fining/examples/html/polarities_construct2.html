@@ -1,0 +1,12 @@
+gap&gt; mat := [[Z(11)^0,0*Z(11),0*Z(11)],[0*Z(11),0*Z(11),Z(11)],<br>
+&gt;     [0*Z(11),Z(11),0*Z(11)]];<br>
+[ [ Z(11)^0, 0*Z(11), 0*Z(11) ], [ 0*Z(11), 0*Z(11), Z(11) ], <br>
+  [ 0*Z(11), Z(11), 0*Z(11) ] ]<br>
+gap&gt; frob := FrobeniusAutomorphism(GF(121));<br>
+FrobeniusAutomorphism( GF(11^2) )<br>
+gap&gt; phi := PolarityOfProjectiveSpace(mat,frob,GF(121));<br>
+&lt;polarity of PG(2, GF(11^2)),  &gt;<br>
+gap&gt; psi := HermitianPolarityOfProjectiveSpace(mat,GF(121));<br>
+&lt;polarity of PG(2, GF(11^2)),  &gt;<br>
+gap&gt; phi = psi;<br>
+true<br>

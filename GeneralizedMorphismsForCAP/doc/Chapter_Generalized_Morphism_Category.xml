@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Generalized_Morphism_Category">
+<Heading>Generalized Morphism Category</Heading>
+
+Let <Math>\mathbf{A}</Math> be an abelian category.
+We denote its generalized morphism category by <Math>\mathbf{G(A)}</Math>.
+<Section Label="Chapter_Generalized_Morphism_Category_Section_GAP_Categories">
+<Heading>GAP Categories</Heading>
+
+<ManSection>
+  <Filt Arg="object" Name="IsGeneralizedMorphismCategoryObject" Label="for IsCapCategoryObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of objects in the
+generalized morphism category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Filt Arg="object" Name="IsGeneralizedMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+The GAP category of morphisms in the
+generalized morphism category.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Generalized_Morphism_Category_Section_Attributes">
+<Heading>Attributes</Heading>
+
+<ManSection>
+  <Attr Arg="a" Name="UnderlyingHonestObject" Label="for IsGeneralizedMorphismCategoryObject"/>
+ <Returns>an object in <Math>\mathbf{A}</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math> in the generalized morphism category.
+The output is its underlying honest object
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="DomainOfGeneralizedMorphism" Label="for IsGeneralizedMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{A}}( d, a )</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is its domain <Math>d \hookrightarrow a \in \mathbf{A}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="Codomain" Label="for IsGeneralizedMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{A}}( b, c )</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is its codomain <Math>b \twoheadrightarrow c \in \mathbf{A}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="AssociatedMorphism" Label="for IsGeneralizedMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{A}}( d, c )</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is its associated morphism <Math>d \rightarrow c \in \mathbf{A}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="DomainAssociatedMorphismCodomainTriple" Label="for IsGeneralizedMorphism"/>
+ <Returns>a triple of morphisms in <Math>\mathbf{A}</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is a triple <Math>( d \hookrightarrow a, d \rightarrow c, b \twoheadrightarrow c )</Math>
+consisting of its domain, associated morphism, and codomain.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="HonestRepresentative" Label="for IsGeneralizedMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{A}}( a, b )</Math>
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is the honest representative in <Math>\mathbf{A}</Math> of <Math>\alpha</Math>,
+if it exists, otherwise an error is thrown.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="GeneralizedInverse" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(b,a)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b \in \mathbf{A}</Math>.
+The output is its generalized inverse <Math>b \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="IdempotentDefinedBySubobject" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(b,b)</Math>
+</Returns>
+ <Description>
+The argument is a subobject <Math>\alpha: a \hookrightarrow b \in \mathbf{A}</Math>.
+The output is the idempotent <Math>b \rightarrow b \in \mathbf{G(A)}</Math>
+defined by <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="IdempotentDefinedByFactorobject" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(b,b)</Math>
+</Returns>
+ <Description>
+The argument is a factorobject <Math>\alpha: b \twoheadrightarrow a \in \mathbf{A}</Math>.
+The output is the idempotent <Math>b \rightarrow b \in \mathbf{G(A)}</Math>
+defined by <Math>\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="UnderlyingHonestCategory" Label="for IsCapCategory"/>
+ <Returns>a category
+</Returns>
+ <Description>
+The argument is a generalized morphism category <Math>C = \mathbf{G(A)}</Math>.
+The output is <Math>\mathbf{A}</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Generalized_Morphism_Category_Section_Operations">
+<Heading>Operations</Heading>
+
+<ManSection>
+  <Oper Arg="beta, alpha" Name="GeneralizedMorphismFromFactorToSubobject" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}_{\mathbf{G(A)}}(c,a)</Math>
+</Returns>
+ <Description>
+The arguments are a a factorobject <Math>\beta: b \twoheadrightarrow c</Math>,
+and a subobject <Math>\alpha: a \hookrightarrow b</Math>.
+The output is the generalized morphism from the factorobject to the subobject.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="CommonRestriction" Label="for IsList"/>
+ <Returns>a list of generalized morphisms
+</Returns>
+ <Description>
+The argument is a list <Math>L</Math> of generalized morphisms by three arrows
+having the same source.
+The output is a list of generalized morphisms by three arrows
+which is the comman restriction of <Math>L</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Generalized_Morphism_Category_Section_Properties">
+<Heading>Properties</Heading>
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsHonest" Label="for IsGeneralizedMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha</Math>.
+The output is <C>true</C> if <Math>\alpha</Math> admits an honest representative,
+otherwise <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="alpha" Name="HasFullDomain" Label="for IsGeneralizedMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha</Math>.
+The output is <C>true</C> if the domain of <Math>\alpha</Math> is an isomorphism,
+otherwise <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="alpha" Name="HasFullCodomain" Label="for IsGeneralizedMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha</Math>.
+The output is <C>true</C> if the codomain of <Math>\alpha</Math> is an isomorphism,
+otherwise <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsSingleValued" Label="for IsGeneralizedMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha</Math>.
+The output is <C>true</C> if the codomain of <Math>\alpha</Math> is an isomorphism,
+otherwise <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsTotal" Label="for IsGeneralizedMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a generalized morphism <Math>\alpha</Math>.
+The output is <C>true</C> if the domain of <Math>\alpha</Math> is an isomorphism,
+otherwise <C>false</C>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Generalized_Morphism_Category_Section_Convenience_methods">
+<Heading>Convenience methods</Heading>
+
+This section contains operations which, depending on the current generalized morphism
+standard of the system and the category, might point to other Operations. Please use them
+only as convenience and never in serious code.
+<ManSection>
+  <Oper Arg="C" Name="GeneralizedMorphismCategory" Label="for IsCapCategory"/>
+ <Returns>a category
+</Returns>
+ <Description>
+Creates a new category of generalized morphisms. Might point to
+GeneralizedMorphismCategoryByThreeArrows, GeneralizedMorphismCategoryByCospans, or
+GeneralizedMorphismCategoryBySpans
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="A" Name="GeneralizedMorphismObject" Label="for IsCapCategoryObject"/>
+ <Returns>an object in the generalized morphism category
+</Returns>
+ <Description>
+Creates an object in the current generalized morphism category, depending on the standard
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="phi" Name="AsGeneralizedMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a generalized morphism
+</Returns>
+ <Description>
+Returns the corresponding morphism to phi in the current generalized morphism category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="phi, psi" Name="GeneralizedMorphism" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a generalized morphism
+</Returns>
+ <Description>
+Returns the corresponding morphism to phi and psi in the current generalized morphism category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="iota, phi, pi" Name="GeneralizedMorphism" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a generalized morphism
+</Returns>
+ <Description>
+Returns the corresponding morphism to iota, phi and psi in the current generalized morphism category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2" Name="GeneralizedMorphismWithRangeAid" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns></Returns>
+ <Description>
+Returns a generalized morphism with range aid by three arrows or by span, or a generalized morphism
+by cospan, depending on the standard.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2" Name="GeneralizedMorphismWithSourceAid" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns></Returns>
+ <Description>
+Returns a generalized morphism with source aid by three arrows or by cospan, or a generalized morphism
+by span, depending on the standard.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

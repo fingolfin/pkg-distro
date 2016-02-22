@@ -1,0 +1,22 @@
+gap> 
+gap> # in for classical generalised hexagons
+gap> ps := HyperbolicQuadric(7,5^3);
+Q+(7, 125)
+gap> gh := TwistedTrialityHexagon(ps);
+T(125, 5) in Q+(7, 125)
+gap> repeat
+> p := Random(Points(ps));
+> until p in gh;
+gap> time;
+18399
+gap> p in gh;
+true
+gap> q := ElementToElement(gh,p);
+<a point in T(125, 5) in Q+(7, 125)>
+gap> l := Random(Lines(p));
+<a line in Q+(7, 125)>
+gap> l in gh;
+false
+gap> List(Lines(q),x->x in gh);
+[ true, true, true, true, true, true ]
+gap> quit;

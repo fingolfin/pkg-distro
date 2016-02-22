@@ -1,0 +1,16 @@
+gap> 
+gap> ## affine_meet.g
+gap> ag := AffineSpace(4,5);
+AG(4, 5)
+gap> p := AffineSubspace(ag, [1,0,0,0] * One(GF(5)), 
+>        [[1,0,0,-1], [0,1,0,0],[0,0,1,3]] * One(GF(5)));
+<a solid in AG(4, 5)>
+gap> l := AffineSubspace(ag, [0,0,0,0] * One(GF(5)), [[1,1,0,0]] * One(GF(5)) );
+<a line in AG(4, 5)>
+gap> x := Meet(p, l);
+<a point in AG(4, 5)>
+gap> x^_;
+<cvec over GF(5,1) of length 4>
+gap> Display(x);
+Affine point: [11..]
+gap> quit;

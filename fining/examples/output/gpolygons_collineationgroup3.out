@@ -1,0 +1,58 @@
+gap> 
+gap> #collineation groups 3
+gap> q := 8;
+8
+gap> conic := ParabolicQuadric(2,q);
+Q(2, 8)
+gap> nucleus := NucleusOfParabolicQuadric(conic);
+<a point in ProjectiveSpace(2, 8)>
+gap> hyperoval := Union(List(Points(conic)),[nucleus]);
+[ <a point in ProjectiveSpace(2, 8)>, <a point in Q(2, 8)>, 
+  <a point in Q(2, 8)>, <a point in Q(2, 8)>, <a point in Q(2, 8)>, 
+  <a point in Q(2, 8)>, <a point in Q(2, 8)>, <a point in Q(2, 8)>, 
+  <a point in Q(2, 8)>, <a point in Q(2, 8)> ]
+gap> pg := PG(3,q);
+ProjectiveSpace(3, 8)
+gap> hyp :=  HyperplaneByDualCoordinates(pg,[1,0,0,0]*Z(q)^0);
+<a plane in ProjectiveSpace(3, 8)>
+gap> em := NaturalEmbeddingBySubspace(PG(2,q),pg,hyp);
+<geometry morphism from <All elements of ProjectiveSpace(2, 
+8)> to <All elements of ProjectiveSpace(3, 8)>>
+gap> O := List(hyperoval,x->x^em);
+[ <a point in ProjectiveSpace(3, 8)>, <a point in ProjectiveSpace(3, 8)>, 
+  <a point in ProjectiveSpace(3, 8)>, <a point in ProjectiveSpace(3, 8)>, 
+  <a point in ProjectiveSpace(3, 8)>, <a point in ProjectiveSpace(3, 8)>, 
+  <a point in ProjectiveSpace(3, 8)>, <a point in ProjectiveSpace(3, 8)>, 
+  <a point in ProjectiveSpace(3, 8)>, <a point in ProjectiveSpace(3, 8)> ]
+gap> points := Set(Filtered(Points(pg),x->not x in hyp));;
+gap> lines := Union(List(O,x->Filtered(Lines(x),y->not y in hyp)));;
+gap> inc := \*;
+<Operation "*">
+gap> gp := GeneralisedPolygonByElements(points,lines,inc);
+<generalised quadrangle of order [ 7, 9 ]>
+gap> time;
+17466
+gap> coll := CollineationGroup(gp);
+<permutation group of size 5419008 with 9 generators>
+gap> time;
+69
+gap> group := CollineationGroup(pg);
+The FinInG collineation group PGammaL(4,8)
+gap> stab := FiningSetwiseStabiliser(group,O);
+#I  Computing adjusted stabilizer chain...
+<projective collineation group with 11 generators>
+gap> time;
+2045
+gap> gp := GeneralisedPolygonByElements(points,lines,inc,stab,\^);
+<generalised quadrangle of order [ 7, 9 ]>
+gap> time;
+394
+gap> coll := CollineationGroup(gp);
+<permutation group of size 5419008 with 9 generators>
+gap> time;
+62
+gap> Order(coll);
+5419008
+gap> Order(stab);
+5419008
+gap> quit;

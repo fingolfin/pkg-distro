@@ -1,0 +1,45 @@
+gap> 
+gap> # examples_embedW.g
+gap> pg2 := PG(2,5);
+ProjectiveSpace(2, 5)
+gap> pg3 := PG(3,5);
+ProjectiveSpace(3, 5)
+gap> hyp := VectorSpaceToElement(pg3,[[1,2,4,0],[0,3,2,0],[1,1,0,1]]*Z(5)^0);
+<a plane in ProjectiveSpace(3, 5)>
+gap> em := NaturalEmbeddingBySubspace( pg2, pg3, hyp );
+<geometry morphism from <All elements of ProjectiveSpace(2, 
+5)> to <All elements of ProjectiveSpace(3, 5)>>
+gap> l := Random(Lines(pg2));
+<a line in ProjectiveSpace(2, 5)>
+gap> l^em;
+<a line in ProjectiveSpace(3, 5)>
+gap> p := Random(Points(hyp));
+<a point in ProjectiveSpace(3, 5)>
+gap> PreImageElm(em,p);
+<a point in ProjectiveSpace(2, 5)>
+gap> mat := [[0,0,0,1],[0,0,1,0],[0,-1,0,0],[-1,0,0,0]]*Z(3);
+[ [ 0*Z(3), 0*Z(3), 0*Z(3), Z(3) ], [ 0*Z(3), 0*Z(3), Z(3), 0*Z(3) ], 
+  [ 0*Z(3), Z(3)^0, 0*Z(3), 0*Z(3) ], [ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3) ] ]
+gap> form := BilinearFormByMatrix(mat,GF(3));
+< bilinear form >
+gap> w3 := PolarSpace(form);
+<polar space in ProjectiveSpace(3,GF(3)): -x1*y4-x2*y3+x3*y2+x4*y1=0 >
+gap> w5 := SymplecticSpace(5, 3);
+W(5, 3)
+gap> pg := AmbientSpace( w5 );
+ProjectiveSpace(5, 3)
+gap> solid := VectorSpaceToElement(pg,[[1,0,0,0,0,0],[0,1,0,0,0,0],
+> [0,0,1,0,0,0],[0,0,0,1,0,0]]*Z(3)^0);
+<a solid in ProjectiveSpace(5, 3)>
+gap> TypeOfSubspace(w5,solid);
+"symplectic"
+gap> em := NaturalEmbeddingBySubspace( w3, w5, solid );
+<geometry morphism from <Elements of <polar space in ProjectiveSpace(
+3,GF(3)): -x1*y4-x2*y3+x3*y2+x4*y1=0 >> to <Elements of W(5, 3)>>
+gap> points := Points( w3 );
+<points of W(3, 3): -x1*y4-x2*y3+x3*y2+x4*y1=0>
+gap> points2 := ImagesSet(em, AsSet(points));;
+#I  Computing collineation group of canonical polar space...
+gap> ForAll(points2, x -> x in solid);
+true
+gap> quit;

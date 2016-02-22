@@ -1,0 +1,19 @@
+gap&gt; g := ElementaryAbelianGroup(27);
+&lt;pc group of size 27 with 3 generators&gt;
+gap&gt; flist1 := [ Group(g.1), Group(g.2), Group(g.3), Group(g.1*g.2*g.3) ];;
+gap&gt; flist2 := [ Group([g.1, g.2^2*g.3]), Group([g.2, g.1^2*g.3 ]), 
+&gt;             Group([g.3, g.1^2*g.2]), Group([g.1^2*g.2, g.1^2*g.3 ]) ];; 
+gap&gt; IsKantorFamily( g, flist1, flist2 );
+#I  Checking tangency condition...
+#I  Checking triple condition...
+true
+gap&gt; egq := EGQByKantorFamily(g, flist1, flist2);
+&lt;EGQ of order [ 3, 3 ] and basepoint 0&gt;
+gap&gt; CategoriesOfObject(egq);
+[ "IsIncidenceStructure", "IsIncidenceGeometry", "IsGeneralisedPolygon", 
+  "IsGeneralisedQuadrangle", "IsElationGQ", "IsElationGQByKantorFamily" ]
+gap&gt; p := Random(Points(egq));
+&lt;a point of class 2 of &lt;EGQ of order [ 3, 3 ] and basepoint 0&gt;&gt;
+gap&gt; CategoriesOfObject(p);
+[ "IsElementOfIncidenceStructure", "IsElementOfIncidenceGeometry", 
+  "IsElementOfGeneralisedPolygon", "IsElementOfKantorFamily" ]

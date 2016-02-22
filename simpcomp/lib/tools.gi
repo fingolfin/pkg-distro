@@ -597,7 +597,7 @@ end;
 ## Test whether the package <Package>simpcomp</Package> is functional by calling <C>ReadTest("GAPROOT/pkg/simpcomp/tst/simpcomp.tst");</C>. The returned value of GAP4stones is a measure of your system performance and differs from system to system.
 ## <Example>
 ## gap> SCRunTest();
-## + test simpcomp package, version %%%VERSION%%%
+## + test simpcomp package, version 2.1.6
 ## + GAP4stones: 69988
 ## true
 ## </Example>

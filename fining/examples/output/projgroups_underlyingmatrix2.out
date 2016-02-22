@@ -1,0 +1,14 @@
+gap> 
+gap> #underluing matrix of a collineation.
+gap> g:=CorrelationCollineationGroup( ProjectiveSpace(4,9));
+The FinInG correlation-collineation group PGammaL(5,9) : 2
+gap> x:=Random(g);;
+gap> MatrixOfCorrelation(x);
+<cmat 5x5 over GF(3,2)>
+gap> Unpack(last);
+[ [ Z(3^2)^3, Z(3^2)^6, 0*Z(3), 0*Z(3), 0*Z(3) ], 
+  [ Z(3^2), Z(3^2)^3, Z(3^2)^2, Z(3^2)^5, Z(3^2) ], 
+  [ Z(3^2)^2, Z(3^2)^3, Z(3^2), Z(3^2), Z(3^2)^3 ], 
+  [ Z(3^2)^2, Z(3^2), Z(3^2)^6, Z(3^2), Z(3^2)^5 ], 
+  [ Z(3^2), Z(3^2)^3, Z(3)^0, 0*Z(3), Z(3^2)^6 ] ]
+gap> quit;

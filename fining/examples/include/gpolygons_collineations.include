@@ -1,0 +1,54 @@
+gap&gt; q := 4;
+4
+gap&gt; conic := ParabolicQuadric(2,q);
+Q(2, 4)
+gap&gt; nucleus := NucleusOfParabolicQuadric(conic);
+&lt;a point in ProjectiveSpace(2, 4)&gt;
+gap&gt; hyperoval := Union(List(Points(conic)),[nucleus]);
+[ &lt;a point in ProjectiveSpace(2, 4)&gt;, &lt;a point in Q(2, 4)&gt;, 
+  &lt;a point in Q(2, 4)&gt;, &lt;a point in Q(2, 4)&gt;, &lt;a point in Q(2, 4)&gt;, 
+  &lt;a point in Q(2, 4)&gt; ]
+gap&gt; pg := PG(3,q);
+ProjectiveSpace(3, 4)
+gap&gt; hyp :=  HyperplaneByDualCoordinates(pg,[1,0,0,0]*Z(q)^0);
+&lt;a plane in ProjectiveSpace(3, 4)&gt;
+gap&gt; em := NaturalEmbeddingBySubspace(PG(2,q),pg,hyp);
+&lt;geometry morphism from &lt;All elements of ProjectiveSpace(2, 
+4)&gt; to &lt;All elements of ProjectiveSpace(3, 4)&gt;&gt;
+gap&gt; O := List(hyperoval,x-&gt;x^em);
+[ &lt;a point in ProjectiveSpace(3, 4)&gt;, &lt;a point in ProjectiveSpace(3, 4)&gt;, 
+  &lt;a point in ProjectiveSpace(3, 4)&gt;, &lt;a point in ProjectiveSpace(3, 4)&gt;, 
+  &lt;a point in ProjectiveSpace(3, 4)&gt;, &lt;a point in ProjectiveSpace(3, 4)&gt; ]
+gap&gt; points := Set(Filtered(Points(pg),x-&gt;not x in hyp));;
+gap&gt; lines := Union(List(O,x-&gt;Filtered(Lines(x),y-&gt;not y in hyp)));;
+gap&gt; inc := \*;
+&lt;Operation "*"&gt;
+gap&gt; gp := GeneralisedPolygonByElements(points,lines,inc);
+&lt;generalised quadrangle of order [ 3, 5 ]&gt;
+gap&gt; coll := CollineationGroup(gp);
+&lt;permutation group of size 138240 with 8 generators&gt;
+gap&gt; act := CollineationAction(coll);
+function( el, g ) ... end
+gap&gt; g := Random(coll);
+(1,37,45,63,27,19)(2,53,13,64,11,51)(3,33,38,61,31,28)(4,49,6,62,15,60)(5,46,
+47,59,20,17)(7,42,40,57,24,26)(8,58)(9,55)(10,39,41,56,25,23)(12,35,34,54,29,
+32)(14,48,43,52,18,21)(16,44,36,50,22,30)(65,132,90,157,89,105)(66,68,131,143,
+119,103)(67,135,76,123,130,106)(69,133,112,100,81,107)(70,134,150,88,155,
+104)(71,99,79,144,93,149)(72,153,95,120,73,122)(74,125,115,128,140,87)(75,121,
+136,117,113,91)(77,124,98,83,147,146)(78,145,84,118,85,142)(80,92,137,141,108,
+97)(82,86,116,111,138,101)(94,127,126,102,109,96)(110,152,151,154,156,
+129)(114,160,139,158,148,159)
+gap&gt; l := Random(Lines(gp));
+&lt;a line in &lt;generalised quadrangle of order [ 3, 5 ]&gt;&gt;
+gap&gt; act(l,g);
+&lt;a line in &lt;generalised quadrangle of order [ 3, 5 ]&gt;&gt;
+gap&gt; p := Random(Points(gp));
+&lt;a point in &lt;generalised quadrangle of order [ 3, 5 ]&gt;&gt;
+gap&gt; act(p,g);
+&lt;a point in &lt;generalised quadrangle of order [ 3, 5 ]&gt;&gt;
+gap&gt; stab := Stabilizer(coll,p,act);
+&lt;permutation group of size 2160 with 3 generators&gt;
+gap&gt; List(Orbits(stab,List(Points(gp)),act),x-&gt;Length(x));
+[ 45, 18, 1 ]
+gap&gt; List(Orbits(stab,List(Lines(gp)),act),x-&gt;Length(x));
+[ 90, 6 ]

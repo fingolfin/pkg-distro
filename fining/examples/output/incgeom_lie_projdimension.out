@@ -1,0 +1,7 @@
+gap> 
+gap> #projective dimension of a Lie geometry
+gap> ProjectiveDimension(PG(7,7));
+7
+gap> ProjectiveDimension(EllipticQuadric(5,2));
+5
+gap> quit;

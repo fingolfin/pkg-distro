@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Examples_and_Tests">
+<Heading>Examples and Tests</Heading>
+
+<Section Label="Chapter_Examples_and_Tests_Section_Spectral_Sequences">
+<Heading>Spectral Sequences</Heading>
+
+<Example><![CDATA[
+gap> ZZ := HomalgRingOfIntegersInSingular( );
+Z
+gap> C1 := FreeLeftPresentation( 1, ZZ );
+<An object in Category of left presentations of Z>
+gap> C2 := FreeLeftPresentation( 2, ZZ );
+<An object in Category of left presentations of Z>
+gap> h1 := PresentationMorphism( C2, HomalgMatrix( [ [ 0 ], [ 4 ] ], ZZ ), C1 );
+<A morphism in Category of left presentations of Z>
+gap> h2 := PresentationMorphism( C2, HomalgMatrix( [ [ 0 ], [ 2 ] ], ZZ ), C1 );
+<A morphism in Category of left presentations of Z>
+gap> v1 := PresentationMorphism( C2, HomalgMatrix( [ [ 2, 0 ], [ 1, 2 ] ], ZZ ), C2 );
+<A morphism in Category of left presentations of Z>
+gap> v2 := PresentationMorphism( C1, HomalgMatrix( [ [ 4 ] ], ZZ ), C1 );
+<A morphism in Category of left presentations of Z>
+gap> cocomplex_h1 := CocomplexFromMorphismList( [ h1 ] );
+<An object in Cocomplex category of Category of left presentations of Z>
+gap> cocomplex_h2 := CocomplexFromMorphismList( [ h2 ] );
+<An object in Cocomplex category of Category of left presentations of Z>
+gap> cocomplex_mor := CochainMap( cocomplex_h2, [ v1, v2 ], cocomplex_h1 );
+<A morphism in Cocomplex category of Category of left presentations of Z>
+gap> Zmod := CapCategory( C1 );
+Category of left presentations of Z
+gap> CH0 := CohomologyFunctor( Zmod, 0 );
+0-th cohomology functor of Category of left presentations of Z
+gap> cmor0 := ApplyFunctor( CH0, cocomplex_mor );
+<A morphism in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( cmor0 ) );
+2
+gap> CH1 := CohomologyFunctor( Zmod, 1 );
+1-th cohomology functor of Category of left presentations of Z
+gap> cmor1 := ApplyFunctor( CH1, cocomplex_mor );
+<A morphism in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( cmor1 ) );
+4
+gap> ToComplex := CocomplexToComplexFunctor( Zmod );
+Cocomplex to complex functor of Category of left presentations of Z
+gap> complex_mor := ApplyFunctor( ToComplex, cocomplex_mor );
+<A morphism in Complex category of Category of left presentations of Z>
+gap> H0 := HomologyFunctor( Zmod, 0 );
+0-th homology functor of Category of left presentations of Z
+gap> mor0 := ApplyFunctor( H0, complex_mor );
+<A morphism in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( mor0 ) );
+2
+gap> Hm1 := HomologyFunctor( Zmod, -1 );
+-1-th homology functor of Category of left presentations of Z
+gap> mor1 := ApplyFunctor( Hm1, complex_mor );
+<A morphism in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( mor1 ) );
+4
+]]></Example>
+
+
+<Example><![CDATA[
+gap> QQ := HomalgFieldOfRationalsInSingular( );;
+gap> R := QQ * "x,y";
+Q[x,y]
+gap> SetRecursionTrapInterval( 10000 );
+gap> category := LeftPresentations( R );
+Category of left presentations of Q[x,y]
+gap> S := FreeLeftPresentation( 1, R );
+<An object in Category of left presentations of Q[x,y]>
+gap> object_func := function( i ) return S; end;
+function( i ) ... end
+gap> morphism_func := function( i ) return IdentityMorphism( S ); end;
+function( i ) ... end
+gap> C0 := ZFunctorObjectExtendedByInitialAndIdentity( object_func, morphism_func, category, 0, 4 );
+<An object in Functors from integers into Category of left presentations of Q[x,y]>
+gap> S2 := FreeLeftPresentation( 2, R );
+<An object in Category of left presentations of Q[x,y]>
+gap> C1 := ZFunctorObjectFromMorphismList( [ InjectionOfCofactor( DirectSum( S2, S ), 1 ) ], 2 );
+<An object in Functors from integers into Category of left presentations of Q[x,y]>
+gap> C1 := ZFunctorObjectExtendedByInitialAndIdentity( C1, 2, 3 );
+<An object in Functors from integers into Category of left presentations of Q[x,y]>
+gap> C2 := ZFunctorObjectFromMorphismList( [ InjectionOfCofactor( DirectSum( S, S ), 1 ) ], 3 );
+<An object in Functors from integers into Category of left presentations of Q[x,y]>
+gap> C2 := ZFunctorObjectExtendedByInitialAndIdentity( C2, 3, 4 );
+<An object in Functors from integers into Category of left presentations of Q[x,y]>
+gap> delta_1_3 := PresentationMorphism( C1[3], HomalgMatrix( [ [ "x^2" ], [ "xy" ], [ "y^3"] ], 3, 1, R ), C0[3] );
+<A morphism in Category of left presentations of Q[x,y]>
+gap> delta_1_2 := PresentationMorphism( C1[2], HomalgMatrix( [ [ "x^2" ], [ "xy" ] ], 2, 1, R ), C0[2] );
+<A morphism in Category of left presentations of Q[x,y]>
+gap> delta1 := ZFunctorMorphism( C1, [ UniversalMorphismFromInitialObject( C0[1] ), UniversalMorphismFromInitialObject( C0[1] ), delta_1_2, delta_1_3 ], 0, C0 );
+<A morphism in Functors from integers into Category of left presentations of Q[x,y]>
+gap> delta1 := ZFunctorMorphismExtendedByInitialAndIdentity( delta1, 0, 3 );
+<A morphism in Functors from integers into Category of left presentations of Q[x,y]>
+gap> delta1 := AsAscendingFilteredMorphism( delta1 );
+<A morphism in Ascending filtered object category of Category of left presentations of Q[x,y]>
+gap> delta_2_3 := PresentationMorphism( C2[3], HomalgMatrix( [ [ "y", "-x", "0" ] ], 1, 3, R ), C1[3] );
+<A morphism in Category of left presentations of Q[x,y]>
+gap> delta_2_4 := PresentationMorphism( C2[4], HomalgMatrix( [ [ "y", "-x", "0" ], [ "0", "y^2", "-x" ] ], 2, 3, R ), C1[4] );
+<A morphism in Category of left presentations of Q[x,y]>
+gap> delta2 := ZFunctorMorphism( C2, [  UniversalMorphismFromInitialObject( C1[2] ), delta_2_3, delta_2_4 ], 2, C1 );
+<A morphism in Functors from integers into Category of left presentations of Q[x,y]>
+gap> delta2 := ZFunctorMorphismExtendedByInitialAndIdentity( delta2, 2, 4 );
+<A morphism in Functors from integers into Category of left presentations of Q[x,y]>
+gap> delta2 := AsAscendingFilteredMorphism( delta2 );
+<A morphism in Ascending filtered object category of Category of left presentations of Q[x,y]>
+gap> SetIsAdditiveCategory( CategoryOfAscendingFilteredObjects( category ), true );
+gap> complex := ZFunctorObjectFromMorphismList( [ delta2, delta1 ], -2 );
+<An object in Functors from integers into Ascending filtered object category of Category of left presentations of Q[x,y]>
+gap> complex := AsComplex( complex );
+<An object in Complex category of Ascending filtered object category of Category of left presentations of Q[x,y]>
+gap> LessGenFunctor := FunctorLessGeneratorsLeft( R );
+Less generators for Category of left presentations of Q[x,y]
+gap> s := SpectralSequenceEntryOfAscendingFilteredComplex( complex, 0, 0, 0 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+(an empty 0 x 1 matrix)
+gap> s := SpectralSequenceEntryOfAscendingFilteredComplex( complex, 1, 0, 0 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+(an empty 0 x 1 matrix)
+gap> s := SpectralSequenceEntryOfAscendingFilteredComplex( complex, 2, 0, 0 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+(an empty 0 x 1 matrix)
+gap> s := SpectralSequenceEntryOfAscendingFilteredComplex( complex, 3, 0, 0 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+x*y,
+x^2
+gap> s := SpectralSequenceEntryOfAscendingFilteredComplex( complex, 4, 0, 0 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+x*y,
+x^2,
+y^3
+gap> s := SpectralSequenceEntryOfAscendingFilteredComplex( complex, 5, 0, 0 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+x*y,
+x^2,
+y^3
+gap> s := SpectralSequenceDifferentialOfAscendingFilteredComplex( complex, 3, 3, -2 );
+<A morphism in Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, s ) ) );
+y^3
+gap> AscToDescFunctor := AscendingToDescendingFilteredObjectFunctor( category );
+Ascending to descending filtered object functor of Category of left presentations of Q[x,y]
+gap> cocomplex := ZFunctorObjectFromMorphismList( [ ApplyFunctor( AscToDescFunctor, delta2 ), ApplyFunctor( AscToDescFunctor, delta1 ) ], -2 );
+<An object in Functors from integers into Descending filtered object category of Category of left presentations of Q[x,y]>
+gap> SetIsAdditiveCategory( CategoryOfDescendingFilteredObjects( category ), true );
+gap> cocomplex := AsCocomplex( cocomplex );
+<An object in Cocomplex category of Descending filtered object category of Category of left presentations of Q[x,y]>
+gap> s := SpectralSequenceEntryOfDescendingFilteredCocomplex( cocomplex, 0, -2, 1 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+(an empty 0 x 2 matrix)
+gap> s := SpectralSequenceEntryOfDescendingFilteredCocomplex( cocomplex, 1, -2, 1 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+(an empty 0 x 2 matrix)
+gap> s := SpectralSequenceEntryOfDescendingFilteredCocomplex( cocomplex, 2, -2, 1 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+-y,x
+gap> s := SpectralSequenceEntryOfDescendingFilteredCocomplex( cocomplex, 3, -2, 1 );
+<A morphism in Generalized morphism category of Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, UnderlyingHonestObject( Source( s ) ) ) ) );
+(an empty 0 x 0 matrix)
+gap> s := SpectralSequenceDifferentialOfDescendingFilteredCocomplex( cocomplex, 2, -2, 1 );
+<A morphism in Category of left presentations of Q[x,y]>
+gap> Display( UnderlyingMatrix( ApplyFunctor( LessGenFunctor, s ) ) );
+x^2,
+x*y
+]]></Example>
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_and_Tests_Section_Monoidal_Categories">
+<Heading>Monoidal Categories</Heading>
+
+<Example><![CDATA[
+gap> ZZ := HomalgRingOfIntegers();;
+gap> Ml := AsLeftPresentation( HomalgMatrix( [ [ 2 ] ], 1, 1, ZZ ) );
+<An object in Category of left presentations of Z>
+gap> Nl := AsLeftPresentation( HomalgMatrix( [ [ 3 ] ], 1, 1, ZZ ) );
+<An object in Category of left presentations of Z>
+gap> Tl := TensorProductOnObjects( Ml, Nl );
+<An object in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( Tl ) );
+[ [  3 ],
+  [  2 ] ]
+gap> IsZeroForObjects( Tl );
+true
+gap> Bl := Braiding( DirectSum( Ml, Nl ), DirectSum( Ml, Ml ) );
+<A morphism in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( Bl ) );
+[ [  1,  0,  0,  0 ],
+  [  0,  0,  1,  0 ],
+  [  0,  1,  0,  0 ],
+  [  0,  0,  0,  1 ] ]
+gap> IsWellDefined( Bl );
+true
+gap> Ul := TensorUnit( CapCategory( Ml ) );
+<An object in Category of left presentations of Z>
+gap> IntHoml := InternalHomOnObjects( DirectSum( Ml, Ul ), Nl );
+<An object in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( IntHoml ) );
+[ [  1,  2 ],
+  [  0,  3 ] ]
+gap> generator_l1 := StandardGeneratorMorphism( IntHoml, 1 );
+<A morphism in Category of left presentations of Z>
+gap> morphism_l1 := LambdaElimination( DirectSum( Ml, Ul ), Nl, generator_l1 );
+<A morphism in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( morphism_l1 ) );
+[ [  -3 ],
+  [   2 ] ]
+gap> generator_l2 := StandardGeneratorMorphism( IntHoml, 2 );
+<A morphism in Category of left presentations of Z>
+gap> morphism_l2 := LambdaElimination( DirectSum( Ml, Ul ), Nl, generator_l2 );
+<A morphism in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( morphism_l2 ) );
+[ [   0 ],
+  [  -1 ] ]
+gap> IsEqualForMorphisms( LambdaIntroduction( morphism_l1 ), generator_l1 );
+false
+gap> IsCongruentForMorphisms( LambdaIntroduction( morphism_l1 ), generator_l1 );
+true
+gap> IsEqualForMorphisms( LambdaIntroduction( morphism_l2 ), generator_l2 );
+false
+gap> IsCongruentForMorphisms( LambdaIntroduction( morphism_l2 ), generator_l2 );
+true
+gap> Mr := AsRightPresentation( HomalgMatrix( [ [ 2 ] ], 1, 1, ZZ ) );
+<An object in Category of right presentations of Z>
+gap> Nr := AsRightPresentation( HomalgMatrix( [ [ 3 ] ], 1, 1, ZZ ) );
+<An object in Category of right presentations of Z>
+gap> Tr := TensorProductOnObjects( Mr, Nr );
+<An object in Category of right presentations of Z>
+gap> Display( UnderlyingMatrix( Tr ) );
+[ [  3,  2 ] ]
+gap> IsZeroForObjects( Tr );
+true
+gap> Br := Braiding( DirectSum( Mr, Nr ), DirectSum( Mr, Mr ) );
+<A morphism in Category of right presentations of Z>
+gap> Display( UnderlyingMatrix( Br ) );
+[ [  1,  0,  0,  0 ],
+  [  0,  0,  1,  0 ],
+  [  0,  1,  0,  0 ],
+  [  0,  0,  0,  1 ] ]
+gap> IsWellDefined( Br );
+true
+gap> Ur := TensorUnit( CapCategory( Mr ) );
+<An object in Category of right presentations of Z>
+gap> IntHomr := InternalHomOnObjects( DirectSum( Mr, Ur ), Nr );
+<An object in Category of right presentations of Z>
+gap> Display( UnderlyingMatrix( IntHomr ) );
+[ [  1,  0 ],
+  [  2,  3 ] ]
+gap> generator_r1 := StandardGeneratorMorphism( IntHomr, 1 );
+<A morphism in Category of right presentations of Z>
+gap> morphism_r1 := LambdaElimination( DirectSum( Mr, Ur ), Nr, generator_r1 );
+<A morphism in Category of right presentations of Z>
+gap> Display( UnderlyingMatrix( morphism_r1 ) );
+[ [  -3,   2 ] ]
+gap> generator_r2 := StandardGeneratorMorphism( IntHoml, 2 );
+<A morphism in Category of left presentations of Z>
+gap> morphism_r2 := LambdaElimination( DirectSum( Ml, Ul ), Nl, generator_r2 );
+<A morphism in Category of left presentations of Z>
+gap> Display( UnderlyingMatrix( morphism_r2 ) );
+[ [   0 ],
+  [  -1 ] ]
+gap> IsEqualForMorphisms( LambdaIntroduction( morphism_r1 ), generator_r1 );
+false
+gap> IsCongruentForMorphisms( LambdaIntroduction( morphism_r1 ), generator_r1 );
+true
+gap> IsEqualForMorphisms( LambdaIntroduction( morphism_r2 ), generator_r2 );
+false
+gap> IsCongruentForMorphisms( LambdaIntroduction( morphism_r2 ), generator_r2 );
+true
+]]></Example>
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_and_Tests_Section_Generalized_Morphisms_Category">
+<Heading>Generalized Morphisms Category</Heading>
+
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpacesForGeneralizedMorphismsTest" );
+VectorSpacesForGeneralizedMorphismsTest
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAllMethods.gi" );
+true
+gap> LoadPackage( "GeneralizedMorphismsForCAP" );
+true
+gap> B := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> C := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> B_1 := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> C_1 := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> c1_source_aid := VectorSpaceMorphism( B_1, [ [ 1, 0 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0 ] ]
+
+gap> SetIsSubobject( c1_source_aid, true );
+gap> c1_range_aid := VectorSpaceMorphism( C, [ [ 1, 0 ], [ 0, 1 ], [ 0, 0 ] ], C_1 );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0 ],
+  [  0,  1 ],
+  [  0,  0 ] ]
+
+gap> SetIsFactorobject( c1_range_aid, true );
+gap> c1_associated := VectorSpaceMorphism( B_1, [ [ 1, 1 ] ], C_1 );
+A rational vector space homomorphism with matrix: 
+[ [  1,  1 ] ]
+
+gap> c1 := GeneralizedMorphism( c1_source_aid, c1_associated, c1_range_aid );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> B_2 := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> C_2 := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> c2_source_aid := VectorSpaceMorphism( B_2, [ [ 2, 0 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  2,  0 ] ]
+
+gap> SetIsSubobject( c2_source_aid, true );
+gap> c2_range_aid := VectorSpaceMorphism( C, [ [ 3, 0 ], [ 0, 3 ], [ 0, 0 ] ], C_2 );
+A rational vector space homomorphism with matrix: 
+[ [  3,  0 ],
+  [  0,  3 ],
+  [  0,  0 ] ]
+
+gap> SetIsFactorobject( c2_range_aid, true );
+gap> c2_associated := VectorSpaceMorphism( B_2, [ [ 6, 6 ] ], C_2 );
+A rational vector space homomorphism with matrix: 
+[ [  6,  6 ] ]
+
+gap> c2 := GeneralizedMorphism( c2_source_aid, c2_associated, c2_range_aid );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> IsCongruentForMorphisms( c1, c2 );
+true
+gap> IsCongruentForMorphisms( c1, c1 );
+true
+gap> c3_associated := VectorSpaceMorphism( B_1, [ [ 2, 2 ] ], C_1 );
+A rational vector space homomorphism with matrix: 
+[ [  2,  2 ] ]
+
+gap> c3 := GeneralizedMorphism( c1_source_aid, c3_associated, c1_range_aid );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> IsCongruentForMorphisms( c1, c3 );
+false
+gap> IsCongruentForMorphisms( c2, c3 );
+false
+gap> c1 + c2;
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> Arrow( c1 + c2 );
+A rational vector space homomorphism with matrix: 
+[ [  12,  12 ] ]
+
+]]></Example>
+
+
+First composition test:
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpacesForGeneralizedMorphismsTest" );
+VectorSpacesForGeneralizedMorphismsTest
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAllMethods.gi" );
+true
+gap> A := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> B := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> C := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> phi_tilde_associated := VectorSpaceMorphism( A, [ [ 1, 2, 0 ] ], C );
+A rational vector space homomorphism with matrix: 
+[ [  1,  2,  0 ] ]
+
+gap> phi_tilde_source_aid := VectorSpaceMorphism( A, [ [ 1, 2 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  1,  2 ] ]
+
+gap> phi_tilde := GeneralizedMorphismWithSourceAid( phi_tilde_source_aid, phi_tilde_associated );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> psi_tilde_associated := IdentityMorphism( B );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0 ],
+  [  0,  1 ] ]
+
+gap> psi_tilde_source_aid := VectorSpaceMorphism( B, [ [ 1, 0, 0 ], [ 0, 1, 0 ] ], C );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0,  0 ],
+  [  0,  1,  0 ] ]
+
+gap> psi_tilde := GeneralizedMorphismWithSourceAid( psi_tilde_source_aid, psi_tilde_associated );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> composition := PreCompose( phi_tilde, psi_tilde );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> Arrow( composition );
+A rational vector space homomorphism with matrix: 
+[ [  1/2,    1 ] ]
+
+gap> SourceAid( composition );
+A rational vector space homomorphism with matrix: 
+[ [  1/2,    1 ] ]
+
+gap> RangeAid( composition );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0 ],
+  [  0,  1 ] ]
+]]></Example>
+
+
+Second composition test
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpacesForGeneralizedMorphismsTest" );
+VectorSpacesForGeneralizedMorphismsTest
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAllMethods.gi" );
+true
+gap> A := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> B := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> C := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> phi2_tilde_associated := VectorSpaceMorphism( A, [ [ 1, 5 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  1,  5 ] ]
+
+gap> phi2_tilde_range_aid := VectorSpaceMorphism( C, [ [ 1, 0 ], [ 0, 1 ], [ 1, 1 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0 ],
+  [  0,  1 ],
+  [  1,  1 ] ]
+
+gap> phi2_tilde := GeneralizedMorphismWithRangeAid( phi2_tilde_associated, phi2_tilde_range_aid );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> psi2_tilde_associated := VectorSpaceMorphism( C, [ [ 1 ], [ 3 ], [ 4 ] ], A );
+A rational vector space homomorphism with matrix: 
+[ [  1 ],
+  [  3 ],
+  [  4 ] ]
+
+gap> psi2_tilde_range_aid := VectorSpaceMorphism( B, [ [ 1 ], [ 1 ] ], A );
+A rational vector space homomorphism with matrix: 
+[ [  1 ],
+  [  1 ] ]
+
+gap> psi2_tilde := GeneralizedMorphismWithRangeAid( psi2_tilde_associated, psi2_tilde_range_aid );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> composition2 := PreCompose( phi2_tilde, psi2_tilde );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> Arrow( composition2 );
+A rational vector space homomorphism with matrix: 
+[ [  16 ] ]
+
+gap> RangeAid( composition2 );
+A rational vector space homomorphism with matrix: 
+[ [  1 ],
+  [  1 ] ]
+
+gap> SourceAid( composition2 );
+A rational vector space homomorphism with matrix: 
+[ [  1 ] ]
+]]></Example>
+
+
+Third composition test
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpacesForGeneralizedMorphismsTest" );
+VectorSpacesForGeneralizedMorphismsTest
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAllMethods.gi" );
+true
+gap> A := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> Asub := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> B := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> Bfac := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> Bsub := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> C := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> Cfac := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> Asub_into_A := VectorSpaceMorphism( Asub, [ [ 1, 0, 0 ], [ 0, 1, 0 ] ], A );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0,  0 ],
+  [  0,  1,  0 ] ]
+
+gap> Asub_to_Bfac := VectorSpaceMorphism( Asub, [ [ 1 ], [ 1 ] ], Bfac );
+A rational vector space homomorphism with matrix: 
+[ [  1 ],
+  [  1 ] ]
+
+gap> B_onto_Bfac := VectorSpaceMorphism( B, [ [ 1 ], [ 1 ], [ 1 ] ], Bfac );
+A rational vector space homomorphism with matrix: 
+[ [  1 ],
+  [  1 ],
+  [  1 ] ]
+
+gap> Bsub_into_B := VectorSpaceMorphism( Bsub, [ [ 2, 2, 0 ], [ 0, 2, 2 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  2,  2,  0 ],
+  [  0,  2,  2 ] ]
+
+gap> Bsub_to_Cfac := VectorSpaceMorphism( Bsub, [ [ 3 ], [ 0 ] ], Cfac );
+A rational vector space homomorphism with matrix: 
+[ [  3 ],
+  [  0 ] ]
+
+gap> C_onto_Cfac := VectorSpaceMorphism( C, [ [ 1 ], [ 2 ], [ 3 ] ], Cfac );
+A rational vector space homomorphism with matrix: 
+[ [  1 ],
+  [  2 ],
+  [  3 ] ]
+
+gap> generalized_morphism1 := GeneralizedMorphism( Asub_into_A, Asub_to_Bfac, B_onto_Bfac );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> generalized_morphism2 := GeneralizedMorphism( Bsub_into_B, Bsub_to_Cfac, C_onto_Cfac );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> IsWellDefined( generalized_morphism1 );
+true
+gap> IsWellDefined( generalized_morphism2 );
+true
+gap> p := PreCompose( generalized_morphism1, generalized_morphism2 );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> SourceAid( p );
+A rational vector space homomorphism with matrix: 
+[ [  -1,   1,   0 ],
+  [   1,   0,   0 ] ]
+
+gap> Arrow( p );
+A rational vector space homomorphism with matrix: 
+(an empty 2 x 0 matrix)
+
+gap> RangeAid( p );
+A rational vector space homomorphism with matrix: 
+(an empty 3 x 0 matrix)
+gap> A := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> Asub := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> B := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> Bfac := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> Bsub := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> C := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> Cfac := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> Asub_into_A := VectorSpaceMorphism( Asub, [ [ 1, 0, 0 ], [ 0, 1, 0 ] ], A );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0,  0 ],
+  [  0,  1,  0 ] ]
+
+gap> Asub_to_Bfac := VectorSpaceMorphism( Asub, [ [ 1 ], [ 1 ] ], Bfac );
+A rational vector space homomorphism with matrix: 
+[ [  1 ],
+  [  1 ] ]
+
+gap> B_onto_Bfac := VectorSpaceMorphism( B, [ [ 1 ], [ 1 ], [ 1 ] ], Bfac );
+A rational vector space homomorphism with matrix: 
+[ [  1 ],
+  [  1 ],
+  [  1 ] ]
+
+gap> Bsub_into_B := VectorSpaceMorphism( Bsub, [ [ 2, 2, 0 ], [ 0, 2, 2 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  2,  2,  0 ],
+  [  0,  2,  2 ] ]
+
+gap> Bsub_to_Cfac := VectorSpaceMorphism( Bsub, [ [ 3, 3 ], [ 0, 0 ] ], Cfac );
+A rational vector space homomorphism with matrix: 
+[ [  3,  3 ],
+  [  0,  0 ] ]
+
+gap> C_onto_Cfac := VectorSpaceMorphism( C, [ [ 1, 0 ], [ 0, 2 ], [ 3, 3 ] ], Cfac );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0 ],
+  [  0,  2 ],
+  [  3,  3 ] ]
+
+gap> generalized_morphism1 := GeneralizedMorphism( Asub_into_A, Asub_to_Bfac, B_onto_Bfac );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> generalized_morphism2 := GeneralizedMorphism( Bsub_into_B, Bsub_to_Cfac, C_onto_Cfac );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> IsWellDefined( generalized_morphism1 );
+true
+gap> IsWellDefined( generalized_morphism2 );
+true
+gap> p := PreCompose( generalized_morphism1, generalized_morphism2 );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> SourceAid( p );
+A rational vector space homomorphism with matrix: 
+[ [  -1,   1,   0 ],
+  [   1,   0,   0 ] ]
+
+gap> Arrow( p );
+A rational vector space homomorphism with matrix: 
+[ [  0 ],
+  [  0 ] ]
+
+gap> RangeAid( p );
+A rational vector space homomorphism with matrix: 
+[ [  -1 ],
+  [   2 ],
+  [   0 ] ]
+]]></Example>
+
+
+Honest representative test
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpacesForGeneralizedMorphismsTest" );
+VectorSpacesForGeneralizedMorphismsTest
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAllMethods.gi" );
+true
+gap> A := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> B := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> phi_tilde_source_aid := VectorSpaceMorphism( A, [ [ 2 ] ], A );
+A rational vector space homomorphism with matrix: 
+[ [  2 ] ]
+
+gap> phi_tilde_associated := VectorSpaceMorphism( A, [ [ 1, 1 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  1,  1 ] ]
+
+gap> phi_tilde_range_aid := VectorSpaceMorphism( B, [ [ 1, 2 ], [ 3, 4 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  1,  2 ],
+  [  3,  4 ] ]
+
+gap> phi_tilde := GeneralizedMorphism( phi_tilde_source_aid, phi_tilde_associated, phi_tilde_range_aid );
+<A morphism in Generalized morphism category of VectorSpacesForGeneralizedMorphismsTest>
+gap> HonestRepresentative( phi_tilde );
+A rational vector space homomorphism with matrix: 
+[ [  -1/4,   1/4 ] ]
+
+gap> IsWellDefined( phi_tilde );
+true
+gap> IsWellDefined( psi_tilde );
+true
+]]></Example>
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_and_Tests_Section_IsWellDefined">
+<Heading>IsWellDefined</Heading>
+
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpacesForIsWellDefinedTest" );
+VectorSpacesForIsWellDefinedTest 
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAllMethods.gi" );
+true
+gap> LoadPackage( "GeneralizedMorphismsForCAP" );
+true
+gap> A := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> B := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> alpha := VectorSpaceMorphism( A, [ [ 1, 2 ] ], B );
+A rational vector space homomorphism with matrix: 
+[ [  1,  2 ] ]
+
+gap> g := GeneralizedMorphism( alpha, alpha, alpha );
+<A morphism in Generalized morphism category of VectorSpacesForIsWellDefinedTest>
+gap> IsWellDefined( alpha );
+true
+gap> IsWellDefined( g );
+true
+]]></Example>
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_and_Tests_Section_Kernel">
+<Heading>Kernel</Heading>
+
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpaces01" );
+VectorSpaces01
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAddKernel01.gi" );
+true
+gap> V := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> W := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> alpha := VectorSpaceMorphism( V, [ [ 1, 1, 1 ], [ -1, -1, -1 ] ], W );
+A rational vector space homomorphism with matrix: 
+[ [   1,   1,   1 ],
+  [  -1,  -1,  -1 ] ]
+
+gap> k := KernelObject( alpha );
+<A rational vector space of dimension 1>
+gap> T := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> tau := VectorSpaceMorphism( T, [ [ 2, 2 ], [ 2, 2 ] ], V );
+A rational vector space homomorphism with matrix: 
+[ [  2,  2 ],
+  [  2,  2 ] ]
+
+gap> k_lift := KernelLift( k, tau );
+A rational vector space homomorphism with matrix: 
+[ [  2 ],
+  [  2 ] ]
+
+gap> HasKernelEmbedding( k );
+false
+gap> KernelEmbedding( k );
+A rational vector space homomorphism with matrix: 
+[ [  1,  1 ] ]
+
+]]></Example>
+
+
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpaces02" );
+VectorSpaces02
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAddKernel02.gi" );
+true
+gap> V := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> W := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> alpha := VectorSpaceMorphism( V, [ [ 1, 1, 1 ], [ -1, -1, -1 ] ], W );
+A rational vector space homomorphism with matrix: 
+[ [   1,   1,   1 ],
+  [  -1,  -1,  -1 ] ]
+
+gap> k := KernelObject( alpha );
+<A rational vector space of dimension 1>
+gap> T := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> tau := VectorSpaceMorphism( T, [ [ 2, 2 ], [ 2, 2 ] ], V );
+A rational vector space homomorphism with matrix: 
+[ [  2,  2 ],
+  [  2,  2 ] ]
+
+gap> k_lift := KernelLift( k, tau );
+A rational vector space homomorphism with matrix: 
+[ [  2 ],
+  [  2 ] ]
+
+gap> HasKernelEmbedding( k );
+false
+]]></Example>
+
+
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpaces03" );
+VectorSpaces03
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAddKernel03.gi" );
+true
+gap> V := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> W := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> alpha := VectorSpaceMorphism( V, [ [ 1, 1, 1 ], [ -1, -1, -1 ] ], W );
+A rational vector space homomorphism with matrix: 
+[ [   1,   1,   1 ],
+  [  -1,  -1,  -1 ] ]
+
+gap> k := KernelObject( alpha );
+<A rational vector space of dimension 1>
+gap> k_emb := KernelEmbedding( k );
+A rational vector space homomorphism with matrix: 
+[ [  1,  1 ] ]
+
+gap> IsIdenticalObj( Source( k_emb ), k );
+true
+gap> V := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> W := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> beta := VectorSpaceMorphism( V, [ [ 1, 1, 1 ], [ -1, -1, -1 ] ], W );
+A rational vector space homomorphism with matrix: 
+[ [   1,   1,   1 ],
+  [  -1,  -1,  -1 ] ]
+
+gap> k_emb := KernelEmbedding( beta );
+A rational vector space homomorphism with matrix: 
+[ [  1,  1 ] ]
+
+gap> IsIdenticalObj( Source( k_emb ), KernelObject( beta ) );
+true
+]]></Example>
+
+
+</Section>
+
+
+<Section Label="Chapter_Examples_and_Tests_Section_FiberProduct">
+<Heading>FiberProduct</Heading>
+
+<Example><![CDATA[
+gap> vecspaces := CreateCapCategory( "VectorSpacesForFiberProductTest" );
+VectorSpacesForFiberProductTest
+gap> ReadPackage( "CAP", "examples/testfiles/VectorSpacesAllMethods.gi" );
+true
+gap> A := QVectorSpace( 1 );
+<A rational vector space of dimension 1>
+gap> B := QVectorSpace( 2 );
+<A rational vector space of dimension 2>
+gap> C := QVectorSpace( 3 );
+<A rational vector space of dimension 3>
+gap> AtoC := VectorSpaceMorphism( A, [ [ 1, 2, 0 ] ], C );
+A rational vector space homomorphism with matrix: 
+[ [  1,  2,  0 ] ]
+
+gap> BtoC := VectorSpaceMorphism( B, [ [ 1, 0, 0 ], [ 0, 1, 0 ] ], C );
+A rational vector space homomorphism with matrix: 
+[ [  1,  0,  0 ],
+  [  0,  1,  0 ] ]
+
+gap> P := FiberProduct( AtoC, BtoC );
+<A rational vector space of dimension 1>
+gap> p1 := ProjectionInFactor( P, 1 );
+A rational vector space homomorphism with matrix: 
+[ [  1/2 ] ]
+
+gap> p2 := ProjectionInFactor( P, 2 );
+A rational vector space homomorphism with matrix: 
+[ [  1/2,    1 ] ]
+
+]]></Example>
+
+
+</Section>
+
+
+</Chapter>
+

@@ -1,0 +1,23 @@
+gap> 
+gap> ## kantor family by q clan
+gap> f := GF(7);
+GF(7)
+gap> id := IdentityMat(2, f);;
+gap> list := List( f, t -> t * id );;
+gap> clan := qClan(list,f);
+<q-clan over GF(7)>
+gap> fam := KantorFamilyByqClan(clan);
+[ <matrix group with 8 generators>, 
+  [ <matrix group with 2 generators>, <matrix group with 2 generators>, 
+      <matrix group with 2 generators>, <matrix group with 2 generators>, 
+      <matrix group with 2 generators>, <matrix group with 2 generators>, 
+      <matrix group with 2 generators>, <matrix group with 4 generators> ], 
+  [ <matrix group with 4 generators>, <matrix group with 4 generators>, 
+      <matrix group with 4 generators>, <matrix group with 4 generators>, 
+      <matrix group with 4 generators>, <matrix group with 4 generators>, 
+      <matrix group with 4 generators>, <matrix group with 6 generators> ] ]
+gap> egq := EGQByKantorFamily(fam[1],fam[2],fam[3]);
+#I  Computing points from Kantor family...
+#I  Computing lines from Kantor family...
+<EGQ of order [ 49, 7 ] and basepoint 0>
+gap> quit;

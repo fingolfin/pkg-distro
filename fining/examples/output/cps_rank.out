@@ -1,0 +1,15 @@
+gap> 
+gap> #rank
+gap> ps := EllipticQuadric(5,4);
+Q-(5, 4)
+gap> Rank(ps);
+2
+gap> ps := HyperbolicQuadric(5,4);
+Q+(5, 4)
+gap> Rank(ps);
+3
+gap> ps := SymplecticSpace(7,81);
+W(7, 81)
+gap> Rank(ps);
+4
+gap> quit;

@@ -95,7 +95,7 @@ Union of the residue classes 1(30), 7(30), 11(30), 13(30), 17(30), 19(30),
 gap> M := Difference(I,J);
 Union of the residue classes 5(30) and 25(30) of Z
 gap> N := Difference(J,I);
-<union of 16 residue classes (mod 30) of Z>
+<union of 16 residue classes (mod 30) of Z (8 classes)>
 gap> Display(N);
 Union of the residue classes 2(10), 4(10), 6(10), 8(10), 3(30), 9(30), 
 21(30) and 27(30) of Z
@@ -280,7 +280,7 @@ gap> AsUnionOfFewClasses(U);
 gap> x := Indeterminate(GF(2));; SetName(x,"x");;
 gap> R := PolynomialRing(GF(2),1);;
 gap> U := ResidueClassUnion(R,x^3,[Zero(R),One(R),x,x^2,x^2+x]);
-GF(2)[x] \ <union of 3 residue classes (mod x^3) of GF(2)[x]>
+GF(2)[x] \ <union of 3 residue classes (mod x^3) of GF(2)[x] (2 classes)>
 gap> AsUnionOfFewClasses(U);
 [ The residue class 0 ( mod x ) of GF(2)[x], 
   The residue class 1 ( mod x^3 ) of GF(2)[x] ]
@@ -435,6 +435,85 @@ gap> PartitionsIntoResidueClasses(Integers,6:distinct);
   [ 1(4), 0(6), 2(6), 4(6), 3(8), 7(8) ], 
   [ 0(5), 1(5), 2(5), 3(5), 4(10), 9(10) ], 
   [ 0(6), 1(6), 2(6), 3(6), 4(6), 5(6) ] ]
+gap> S := ResidueClassUnion(Integers,[[1,2],[7,72]]);
+1(2)
+gap> S = ResidueClass(1,2);
+true
+gap> 2*S;
+2(4)
+gap> S+1;
+0(2)
+gap> -S;
+1(2)
+gap> 2*S;
+2(4)
+gap> last/2;
+1(2)
+gap> last = ResidueClass(1,2);
+true
+gap> S := Union(S,ResidueClass(4,60));
+1(2) U 4(60)
+gap> S!.cls;
+[ [ 1, 2 ], [ 4, 60 ] ]
+gap> 2*S;
+2(4) U 8(120)
+gap> S*3;
+3(6) U 12(180)
+gap> last/3;
+1(2) U 4(60)
+gap> S;
+1(2) U 4(60)
+gap> -S;
+1(2) U 56(60)
+gap> Representative(last);
+1
+gap> S := Union(S,[1..8]);
+1(2) U 4(60) U [ 2, 6, 8 ]
+gap> S := Difference(S,[7..15]);
+1(2) U 4(60) U [ 2, 6 ] \ [ 7, 9, 11, 13, 15 ]
+gap> 2*S;
+2(4) U 8(120) U [ 4, 12 ] \ [ 14, 18, 22, 26, 30 ]
+gap> last/2;
+1(2) U 4(60) U [ 2, 6 ] \ [ 7, 9, 11, 13, 15 ]
+gap> last=S;
+true
+gap> S := Difference(S,ResidueClass(0,7));
+<union of 186 residue classes (mod 420) (12 classes)> U [ 2, 6 ] \ 
+[ 9, 11, 13, 15 ]
+gap> S!.cls;
+[ [ 1, 14 ], [ 3, 14 ], [ 5, 14 ], [ 9, 14 ], [ 11, 14 ], [ 13, 14 ], 
+  [ 4, 420 ], [ 64, 420 ], [ 124, 420 ], [ 184, 420 ], [ 244, 420 ], 
+  [ 304, 420 ] ]
+gap> S0 := StandardRep(S);
+<union of 186 residue classes (mod 420)> U [ 2, 6 ] \ [ 9, 11, 13, 15 ]
+gap> S1 := Difference(Union(ResidueClass(1,2),ResidueClass(4,60)),ResidueClass(0,7));
+<union of 186 residue classes (mod 420)>
+gap> Difference(S0,S1);
+[ 2, 6 ]
+gap> TNUM_OBJ(last);
+[ 62, "list (plain,cyc,ssort)" ]
+gap> Difference(S1,S0);
+[ 9, 11, 13, 15 ]
+gap> IsResidueClassUnionOfZInClassListRep(S0);
+false
+gap> IsResidueClassUnionOfZInClassListRep(S);
+true
+gap> IsResidueClassUnionOfZInClassListRep(S1);
+false
+gap> AsUnionOfFewClasses(S1);
+[ 1(14), 3(14), 5(14), 9(14), 11(14), 13(14), 4(420), 64(420), 124(420), 
+  184(420), 244(420), 304(420) ]
+gap> S;
+<union of 186 residue classes (mod 420) (12 classes)> U [ 2, 6 ] \ 
+[ 9, 11, 13, 15 ]
+gap> S := S*5+17;
+<union of 186 residue classes (mod 2100) (12 classes)> U [ 27, 47 ] \ 
+[ 62, 72, 82, 92 ]
+gap> T := Difference(Integers,S);
+<union of 1914 residue classes (mod 2100) (17 classes)> U [ 62, 72, 82, 92 
+ ] \ [ 27, 47 ]
+gap> Union(S,T);
+Integers
 gap> ResClassesDoThingsToBeDoneAfterTest();
 gap> STOP_TEST( "resclass.tst", 60000000 );
 

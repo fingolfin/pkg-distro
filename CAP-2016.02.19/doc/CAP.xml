@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[
+<!ENTITY see '<Alt Only="LaTeX">$	o$</Alt><Alt Not="LaTeX">--&gt;</Alt>'>
+<!ENTITY CAP '<Package>CAP</Package>'>
+]
+>
+<Book Name="CAP">
+<#Include SYSTEM "title.xml">
+<TableOfContents/>
+<Body>
+<Index>&CAP;</Index>
+<#Include SYSTEM "_AutoDocMainFile.xml">
+</Body>
+<TheIndex/>
+</Book>

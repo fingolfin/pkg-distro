@@ -1,0 +1,17 @@
+gap> 
+gap> #morphisms_typesubspace.g
+gap> h1 := HermitianPolarSpace(2, 3^2);
+H(2, 3^2)
+gap> h2 := HermitianPolarSpace(3, 3^2);
+H(3, 3^2)
+gap> pg := AmbientSpace( h2 );    
+ProjectiveSpace(3, 9)
+gap> pi := VectorSpaceToElement( pg, [[1,0,0,0],[0,1,0,0],[0,0,1,0]] * Z(9)^0 );
+<a plane in ProjectiveSpace(3, 9)>
+gap> TypeOfSubspace(h2, pi);
+"hermitian"
+gap> pi := VectorSpaceToElement( pg, [[1,0,0,0],[0,1,0,0],[0,0,1,Z(9)]] * Z(9)^0 );
+<a plane in ProjectiveSpace(3, 9)>
+gap> TypeOfSubspace(h2, pi);
+"degenerate"
+gap> quit;

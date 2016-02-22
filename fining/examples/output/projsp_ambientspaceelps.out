@@ -1,0 +1,9 @@
+gap> 
+gap> #base field of a projective space
+gap> ps := PG(3,27);
+ProjectiveSpace(3, 27)
+gap> p := VectorSpaceToElement(ps,[1,2,1,0]*Z(3)^3);
+<a point in ProjectiveSpace(3, 27)>
+gap> AmbientSpace(p);
+ProjectiveSpace(3, 27)
+gap> quit;

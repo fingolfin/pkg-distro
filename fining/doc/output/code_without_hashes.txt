@@ -1,0 +1,2953 @@
+DeclareInfoClass( "InfoFinInG" );
+DeclareGlobalVariable( "FINING" );
+and CanEasilyCompareElements and CanEasilySortElements );
+DeclareCategory( "IsElementsOfIncidenceStructure", IsAnyElementsOfIncidenceStructure );
+DeclareAttribute( "IsChamberOfIncidenceStructure", IsFlagOfIncidenceStructure );
+DeclareCategoryCollections("IsElementOfIncidenceStructure");
+DeclareCategory( "IsElementsOfIncidenceGeometry", IsElementsOfIncidenceStructure );
+DeclareCategory( "IsShadowElementsOfIncidenceGeometry", IsElementsOfIncidenceStructure );
+DeclareCategory( "IsFlagOfIncidenceGeometry", IsFlagOfIncidenceStructure );
+DeclareCategory( "IsLieGeometry", IsIncidenceGeometry );
+DeclareCategory( "IsAffineSpace", IsIncidenceGeometry );
+DeclareCategory( "IsProjectiveSpace", IsLieGeometry );
+DeclareCategory( "IsProjectivePlaneCategory", IsGeneralisedPolygon );
+DeclareCategory( "IsGeneralisedHexagon", IsGeneralisedPolygon );
+DeclareCategory( "IsClassicalGQ", IsGeneralisedQuadrangle and IsClassicalPolarSpace );
+DeclareRepresentation( "IsIncidenceStructureRep", IsIncidenceStructure, ["elements", "increl", "typefun", "typeset" ] );
+DeclareRepresentation( "IsClassicalPolarSpaceRep", IsClassicalPolarSpace, [ "basefield", "vectorspace" ] );
+DeclareRepresentation( "IsElementsOfIncidenceStructureRep", IsElementsOfIncidenceStructure, [ "geometry", "type" ] );
+BindGlobal( "ElementsOfIncidenceStructureFamily", NewFamily( "ElementsOfIncidenceStructureFamily", IsElementOfIncidenceStructure ));
+IsElementOfIncidenceStructure and IsElementOfIncidenceStructureRep) );
+BindGlobal( "IsFlagOfIncidenceStructureType", NewType( FlagsOfIncidenceStructureFamily,
+DeclareOperation( "ResidueOfFlag", [IsFlagOfIncidenceStructure]);
+DeclareAttribute( "RankAttr", IsIncidenceStructure );
+DeclareAttribute( "TypesOfElementsOfIncidenceStructure", IsIncidenceStructure );
+DeclareOperation( "ElementsOfIncidenceStructure", [IsIncidenceStructure, IsPosInt] );
+DeclareOperation( "NrElementsOfIncidenceStructure", [IsIncidenceStructure, IsString] );
+DeclareOperation( "IncidenceGraph", [ IsIncidenceStructure ] );
+DeclareOperation( "Lines", [IsIncidenceStructure] );
+DeclareOperation( "Solids", [IsIncidenceStructure] );
+DeclareAttribute( "CollineationGroup", IsIncidenceStructure );
+DeclareAttribute( "CollineationAction", IsIncidenceStructure );
+DeclareAttribute( "RepresentativesOfElements", IsIncidenceStructure );
+DeclareAttribute( "AmbientGeometry", IsIncidenceStructure );
+InstallTrueMethod( IsFinite, IsAllElementsOfIncidenceStructure );
+DeclareOperation( "FlagOfIncidenceStructure", [ IsIncidenceStructure, IsElementOfIncidenceStructureCollection ]);
+DeclareOperation( "ChamberOfIncidenceStructure", [ IsElementOfIncidenceStructureCollection ]);
+DeclareOperation( "ElementsOfFlag", [ IsFlagOfIncidenceStructure ]);
+DeclareOperation( "IsIncident", [IsElementOfIncidenceStructure, IsFlagOfIncidenceStructure] );
+DeclareOperation( "IsCollinear", [IsIncidenceStructure, IsElementOfIncidenceStructure, IsElementOfIncidenceStructure]);
+DeclareOperation( "Meet", [IsElementOfIncidenceStructure, IsElementOfIncidenceStructure]);
+DeclareAttribute( "AmbientGeometry", IsElementsOfIncidenceStructure and IsElementsOfIncidenceStructureRep );
+DeclareOperation( "Type", [ IsElementOfIncidenceStructure and IsElementOfIncidenceStructureRep ] );
+DeclareOperation( "Type", [ IsFlagOfIncidenceStructure and IsFlagOfIncidenceStructureRep ] );
+DeclareOperation( "Wrap", [IsIncidenceStructure, IsPosInt, IsObject] );
+DeclareOperation( "ObjectToElement", [IsIncidenceStructure, IsPosInt, IsObject] );
+DeclareOperation( "UnderlyingObject", [IsElementOfIncidenceStructure] );
+DeclareGlobalFunction( "HashFuncForElements" );
+DeclareCategory( "IsShadowElementsOfIncidenceStructure", IsElementsOfIncidenceStructure );
+DeclareOperation( "ShadowOfElement", [IsIncidenceStructure, IsElementOfIncidenceStructure, IsPosInt] );
+DeclareOperation( "ShadowOfFlag", [IsIncidenceStructure, IsFlagOfIncidenceStructure, IsString] );
+DeclareOperation( "ShadowOfFlag", [IsIncidenceStructure, IsList, IsString] );
+DeclareOperation( "Points", [ IsElementOfIncidenceStructure ] );
+DeclareOperation( "Planes", [ IsElementOfIncidenceStructure ] );
+DeclareOperation( "Hyperplanes", [ IsElementOfIncidenceStructure ] );
+DeclareOperation( "Points", [ IsIncidenceStructure, IsElementOfIncidenceStructure ] );
+DeclareOperation( "Planes", [ IsIncidenceStructure, IsElementOfIncidenceStructure ] );
+DeclareOperation( "Hyperplanes", [ IsIncidenceStructure, IsElementOfIncidenceStructure ] );
+DeclareProperty( "IsConfiguration", IsIncidenceStructure );
+DeclareAttribute( "CollineationAction", IsGroup);
+DeclareCategoryCollections("IsElementOfLieGeometry");
+DeclareCategory( "IsElementsOfLieGeometry", IsElementsOfIncidenceGeometry );
+DeclareRepresentation( "IsEmptySubspaceRep", IsEmptySubspace, ["geo", "obj"] );
+DeclareCategory( "IsShadowElementsOfLieGeometry", IsElementsOfIncidenceStructure );
+DeclareOperation( "UnderlyingVectorSpace", [IsElementOfLieGeometry] );
+DeclareAttribute( "AmbientSpace", IsElementOfLieGeometry );
+DeclareAttribute( "ProjectiveDimension", IsLieGeometry ); #next three: more general decl in liegeometry.gd
+DeclareAttribute( "ProjectiveDimension", IsEmptySubspace );
+DeclareAttribute( "Dimension", IsLieGeometry );
+DeclareOperation( "VectorSpaceToElement", [IsLieGeometry, IsRowVector] );
+DeclareOperation( "VectorSpaceToElement", [IsLieGeometry, IsPlistRep] );
+DeclareOperation( "VectorSpaceToElement", [IsLieGeometry, IsGF2MatrixRep] );
+DeclareOperation( "VectorSpaceToElement", [IsLieGeometry, IsCMatRep] );
+DeclareOperation( "EmptySubspace", [IsLieGeometry] );
+DeclareOperation("RandomSubspace",[IsVectorSpace,IsInt]); #is for vector spaces -> moves to liegeometry.gd
+DeclareOperation( "IsIncident", [IsElementOfLieGeometry, IsEmptySubspace]);
+DeclareOperation( "IsIncident", [IsLieGeometry, IsEmptySubspace]);
+DeclareOperation( "Span", [IsElementOfLieGeometry, IsEmptySubspace]);
+DeclareOperation( "Span", [IsLieGeometry, IsEmptySubspace]);
+DeclareOperation( "Meet", [IsElementOfLieGeometry, IsEmptySubspace]);
+DeclareOperation( "Meet", [IsLieGeometry, IsEmptySubspace]);
+DeclareOperation( "ElementToElement", [IsLieGeometry, IsElementOfLieGeometry]);
+DeclareOperation( "ConvertElement", [IsLieGeometry, IsElementOfLieGeometry]);
+DeclareGlobalFunction("IsFiningScalarMatrix");
+DeclareOperation( "FindBasePointCandidates", [ IsGroup, IsRecord, IsInt ] );
+DeclareOperation( "FindBasePointCandidates", [ IsGroup, IsRecord, IsInt, IsObject ] );
+DeclareCategory( "IsProjGrpEl", IsComponentObjectRep and IsMultiplicativeElementWithInverse );
+InstallTrueMethod( IsGeneratorsOfMagmaWithInverses, IsProjGrpElCollection );
+DeclareRepresentation( "IsProjGrpElRep", IsProjGrpEl, ["mat","fld"] );
+BindGlobal( "ProjElsFamily",
+BindGlobal( "ProjElsCollFamily", CollectionsFamily(ProjElsFamily) );
+BindGlobal( "ProjElsType", NewType( ProjElsFamily,
+DeclareOperation( "ProjEls", [IsList] );
+DeclareOperation( "Projectivity", [ IsList, IsField] );
+DeclareCategoryCollections( "IsProjGrpElWithFrob" );
+NewFamily( "ProjElsWithFrobFamily",IsObject,IsProjGrpElWithFrob) );
+CollectionsFamily(ProjElsWithFrobFamily) );
+NewType( ProjElsWithFrobFamily,
+DeclareOperation( "ProjElWithFrob", [IsMatrix and IsFFECollColl, IsMapping, IsField] );
+DeclareOperation( "ProjElsWithFrob", [IsList, IsField] );
+DeclareOperation( "CollineationOfProjectiveSpace", [ IsList, IsMapping, IsField] );
+DeclareOperation( "CollineationOfProjectiveSpace", [IsProjectiveSpace, IsMatrix, IsMapping] );
+DeclareOperation( "Collineation", [IsProjectiveSpace, IsMatrix] );
+DeclareOperation( "ProjectivityByImageOfStandardFrameNC", [IsProjectiveSpace, IsList] );
+DeclareProperty( "IsProjectivity", IsProjGrpEl );
+DeclareProperty( "IsStrictlySemilinear", IsProjGrpElWithFrob );
+DeclareProperty( "IsCollineation", IsProjGrpEl );
+DeclareOperation( "UnderlyingMatrix", [ IsProjGrpElWithFrob and IsProjGrpElWithFrobRep ] );
+DeclareOperation( "FieldAutomorphism", [ IsProjGrpElWithFrob and IsProjGrpElWithFrobRep ] );
+DeclareGlobalFunction( "OnProjPoints" );
+DeclareProperty( "IsCollineationGroup", IsProjectiveGroupWithFrob );
+InstallTrueMethod( IsHandledByNiceMonomorphism, IsProjectiveGroupWithFrob );
+DeclareGlobalFunction( "OnProjSubspaces" );
+DeclareGlobalFunction( "OnProjSubspacesWithFrob" );
+DeclareOperation( "ActionOnAllProjPoints", [IsProjectiveGroupWithFrob] );
+DeclareProperty( "CanComputeActionOnPoints", IsProjectiveGroupWithFrob );
+DeclareGlobalFunction( "NiceMonomorphismByOrbit" );
+DeclareOperation( "CanonicalQuadraticForm", [IsString, IsPosInt, IsField]);
+DeclareOperation( "GOdesargues", [IsInt, IsPosInt, IsField and IsFinite]);
+DeclareOperation( "GUdesargues", [IsPosInt, IsField and IsFinite]);
+DeclareOperation( "GeneralSymplecticGroup", [IsPosInt, IsField and IsFinite]);
+DeclareOperation( "DeltaOminus", [IsPosInt, IsField and IsFinite]);
+DeclareOperation( "GammaOminus", [IsPosInt, IsField and IsFinite]);
+DeclareOperation( "GammaOplus", [IsPosInt, IsField and IsFinite]);
+DeclareOperation( "GammaSp", [IsPosInt, IsField and IsFinite]);
+DeclareCategory( "IsSubspacesOfProjectiveSpace", IsElementsOfLieGeometry );
+DeclareRepresentation( "IsAllSubspacesOfProjectiveSpaceRep", IsAllElementsOfLieGeometryRep, [ "geometry", "type" ] );
+DeclareRepresentation( "IsShadowSubspacesOfProjectiveSpaceRep", IsShadowElementsOfLieGeometryRep, [ "geometry", "type", "inner", "outer", "factorspace" ]);
+BindGlobal( "SoPSFamily",
+BindGlobal( "SoPSCollFamily", CollectionsFamily(SoPSFamily) );
+IsFlagOfProjectiveSpace and IsFlagOfIncidenceStructureRep) );
+DeclareOperation( "ProjectiveSpace", [IsInt, IsField] );
+DeclareAttribute( "ProjectivityGroup", IsProjectiveSpace );
+DeclareAttribute( "Dimension", IsSubspaceOfProjectiveSpace );
+DeclareAttribute( "CoordinatesOfHyperplane", IsSubspaceOfProjectiveSpace );
+DeclareAttribute( "StandardFrame", IsSubspaceOfProjectiveSpace );
+DeclareOperation( "IsIncident", [IsSubspaceOfProjectiveSpace, IsProjectiveSpace] );
+DeclareOperation( "IsIncident", [IsProjectiveSpace, IsProjectiveSpace]);
+DeclareSynonymAttr( "SpecialHomographyGroup", SpecialProjectivityGroup );
+DeclareSynonym( "PG", ProjectiveSpace );
+DeclareOperation( "Hyperplanes", [IsProjectiveSpace] );
+DeclareOperation( "BaerSublineOnThreePoints",
+DeclareOperation( "BaerSubplaneOnQuadrangle",
+IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace ] );
+DeclareOperation("RandomSubspace",[IsSubspaceOfProjectiveSpace,IsInt]);
+DeclareOperation("RandomSubspace",[IsProjectiveSpace]);
+DeclareOperation("Span",[IsProjectiveSpace, IsSubspaceOfProjectiveSpace]);
+DeclareOperation("Span",[IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace, IsBool]);
+DeclareOperation("Span",[IsList, IsBool]);
+DeclareOperation( "Meet", [IsProjectiveSpace, IsSubspaceOfProjectiveSpace] );
+DeclareOperation( "HyperplaneByDualCoordinates", [IsProjectiveSpace,IsList] );
+DeclareOperation( "ComplementSpace", [IsVectorSpace, IsFFECollColl]);
+DeclareOperation( "ElationOfProjectiveSpace", [ IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace ] );
+DeclareOperation( "ProjectiveElationGroup", [ IsSubspaceOfProjectiveSpace ] );
+DeclareOperation( "HomologyOfProjectiveSpace", [ IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace,
+DeclareOperation( "ProjectiveHomologyGroup", [ IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace ] );
+DeclareCategory( "IsStandardDualityOfProjectiveSpace", IsProjectiveSpaceIsomorphism );
+DeclareSynonym( "IsCorrelationCollineation", IsProjGrpElWithFrobWithPSIsom);
+DeclareProperty( "IsCorrelation", IsProjGrpElWithFrobWithPSIsom );# user-friendly functionality
+DeclareProperty( "IsCorrelation", IsProjGrpEl );# user-friendly functionality
+DeclareCategoryCollections( "IsProjGrpElWithFrobWithPSIsom" );
+NewFamily( "ProjElsWithFrobWithPSIsomFamily",IsObject,
+BindGlobal( "ProjElsWithFrobWithPSIsomCollFamily",
+NewType( ProjElsWithFrobWithPSIsomFamily,
+IsProjGrpElWithFrobWithPSIsomRep ) );
+InstallTrueMethod( IsHandledByNiceMonomorphism, IsProjectiveGroupWithFrob );
+DeclareSynonym( "IsProjGroupWithFrobWithPSIsom", IsGroup and IsProjGrpElWithFrobWithPSIsomCollection);
+DeclareGlobalFunction( "OnProjSubspacesWithFrobWithPSIsom" );
+DeclareOperation( "IdentityMappingOfElementsOfProjectiveSpace", [IsProjectiveSpace] );
+DeclareOperation( "ProjElWithFrobWithPSIsom",
+DeclareOperation( "ProjElWithFrobWithPSIsom",
+IsStandardDualityOfProjectiveSpace] );
+[IsMatrix and IsFFECollColl, IsMapping, IsField,
+DeclareOperation( "ProjElsWithFrobWithPSIsom", [IsList, IsField] );
+[IsProjGroupWithFrobWithPSIsom, IsGroupHomomorphism] );
+DeclareProperty( "CanComputeActionOnPoints", IsProjGroupWithFrobWithPSIsom );
+DeclareOperation( "CorrelationOfProjectiveSpace", [ IsList, IsField] );
+DeclareOperation( "CorrelationOfProjectiveSpace", [ IsList, IsField, IsIdentityMappingOfElementsOfProjectiveSpace] );
+DeclareOperation( "CorrelationOfProjectiveSpace", [ IsList, IsMapping, IsField, IsStandardDualityOfProjectiveSpace] );
+DeclareOperation( "CorrelationOfProjectiveSpace", [ IsProjectiveSpace, IsMatrix, IsMapping, IsIdentityMappingOfElementsOfProjectiveSpace] );
+DeclareOperation( "Correlation", [ IsProjectiveSpace, IsMatrix, IsMapping, IsStandardDualityOfProjectiveSpace] );
+DeclareOperation( "FieldAutomorphism", [ IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep ] );
+DeclareProperty( "IsProjectivity", IsProjGrpElWithFrobWithPSIsom );
+DeclareProperty( "IsCollineation", IsProjGrpElWithFrobWithPSIsom );
+DeclareProperty( "IsProjectivityGroup", IsProjGroupWithFrobWithPSIsom );
+DeclareRepresentation( "IsPolarityOfProjectiveSpaceRep", IsProjGrpElWithFrobWithPSIsomRep, ["mat","fld","frob","psisom", "form"] );
+DeclareOperation( "PolarityOfProjectiveSpace", [IsForm] );
+DeclareOperation( "PolarityOfProjectiveSpace", [IsMatrix,IsFrobeniusAutomorphism,IsField and IsFinite] );
+DeclareOperation( "BaseField", [ IsPolarityOfProjectiveSpace ]);
+DeclareAttribute( "CompanionAutomorphism", IsPolarityOfProjectiveSpace );
+DeclareProperty( "IsHermitianPolarityOfProjectiveSpace", IsPolarityOfProjectiveSpace );
+DeclareProperty( "IsOrthogonalPolarityOfProjectiveSpace", IsPolarityOfProjectiveSpace );
+DeclareOperation( "AbsolutePoints", [ IsPolarityOfProjectiveSpace ] );
+DeclareCategory( "IsSubspaceOfClassicalPolarSpace", IsSubspaceOfProjectiveSpace );
+DeclareCategory( "IsSubspacesOfClassicalPolarSpace", IsSubspacesOfProjectiveSpace );
+DeclareRepresentation( "IsAllSubspacesOfClassicalPolarSpaceRep", IsAllSubspacesOfProjectiveSpaceRep, [ "geometry", "type" ] );
+DeclareCategory( "IsShadowSubspacesOfClassicalPolarSpace", IsShadowElementsOfLieGeometry );
+IsFlagOfClassicalPolarSpace and IsFlagOfIncidenceStructureRep) );
+DeclareAttribute( "SesquilinearForm", IsClassicalPolarSpace );
+DeclareAttribute( "AmbientSpace", IsClassicalPolarSpace );
+DeclareAttribute( "IsometryGroup", IsClassicalPolarSpace );
+DeclareAttribute( "IsomorphismCanonicalPolarSpace", IsClassicalPolarSpace );
+DeclareAttribute( "IsCanonicalPolarSpace", IsClassicalPolarSpace );
+DeclareAttribute( "CompanionAutomorphism", IsClassicalPolarSpace );
+DeclareAttribute( "EquationForPolarSpace", IsClassicalPolarSpace );
+DeclareProperty( "IsSymplecticSpace", IsClassicalPolarSpace );
+DeclareProperty( "IsHyperbolicQuadric", IsClassicalPolarSpace );
+DeclareProperty( "IsStandardPolarSpace", IsClassicalPolarSpace );
+DeclareOperation( "PolarSpace", [IsForm, IsField, IsGroup, IsFunction] );
+DeclareOperation( "PolarMap", [IsClassicalPolarSpace] ); #only for internal use.
+DeclareOperation( "TangentSpace", [IsSubspaceOfClassicalPolarSpace] );
+DeclareOperation( "Pole", [IsClassicalPolarSpace, IsSubspaceOfProjectiveSpace] );
+DeclareOperation( "TypeOfSubspace", [ IsClassicalPolarSpace, IsSubspaceOfProjectiveSpace ]);
+DeclareOperation( "RandomSubspace", [IsClassicalPolarSpace, IsPosInt]);
+DeclareOperation( "EllipticQuadric", [IsPosInt, IsPosInt ]);
+DeclareOperation( "SymplecticSpace", [IsPosInt, IsPosInt] );
+DeclareOperation( "ParabolicQuadric", [IsPosInt, IsPosInt] );
+DeclareOperation( "HyperbolicQuadric", [IsPosInt, IsPosInt] );
+DeclareOperation( "HermitianPolarSpace", [IsPosInt, IsPosInt] );
+DeclareOperation( "CanonicalPolarSpace", [IsClassicalPolarSpace] );
+DeclareOperation( "GeometryMorphismByFunction",
+IsFunction, IsBool, IsFunction ] );
+DeclareOperation( "GeometryMorphismByFunction",
+IsFunction, IsFunction ] );
+DeclareOperation( "GeometryMorphismByFunction",
+IsFunction ] );
+DeclareOperation( "IsomorphismPolarSpacesProjectionFromNucleus", [IsClassicalPolarSpace, IsClassicalPolarSpace, IsBool ] );
+DeclareOperation( "IsomorphismPolarSpacesNC",
+DeclareOperation( "IsomorphismPolarSpacesNC",
+[ IsClassicalPolarSpace, IsClassicalPolarSpace, IsBool ]);
+[ IsClassicalPolarSpace, IsClassicalPolarSpace ]);
+DeclareOperation( "NaturalEmbeddingBySubspace",
+DeclareOperation( "NaturalEmbeddingBySubspaceNC",
+[ IsClassicalPolarSpace, IsSubspaceOfClassicalPolarSpace ]);
+[ IsProjectiveSpace, IsSubspaceOfProjectiveSpace ]);
+[ IsClassicalPolarSpace, IsSubspaceOfClassicalPolarSpace ]);
+[ IsProjectiveSpace, IsSubspaceOfProjectiveSpace ]);
+DeclareOperation( "ShrinkMat", [IsBasis, IsMatrix] );
+DeclareOperation( "ShrinkVec", [IsField,IsField,IsVector,IsBasis]);
+DeclareGlobalFunction( "LeukBasis" );
+DeclareOperation( "BlownUpProjectiveSpaceBySubfield", [ IsField, IsProjectiveSpace ] );
+DeclareOperation( "BlownUpSubspaceOfProjectiveSpaceBySubfield", [IsField, IsSubspaceOfProjectiveSpace ] );
+DeclareOperation( "IsBlownUpSubspaceOfProjectiveSpace", [IsBasis, IsSubspaceOfProjectiveSpace ] );
+[ IsProjectiveSpace, IsField, IsBasis ]);
+[ IsProjectiveSpace, IsField ]);
+DeclareOperation( "NaturalEmbeddingByFieldReduction",
+DeclareOperation( "NaturalEmbeddingByFieldReduction",
+DeclareOperation( "QuadraticFormFieldReduction", [ IsQuadraticForm, IsField, IsFFE, IsBasis ]);
+DeclareOperation( "QuadraticFormFieldReduction", [ IsQuadraticForm, IsField, IsFFE ]);
+DeclareOperation( "NaturalEmbeddingByFieldReduction", [ IsClassicalPolarSpace, IsField, IsFFE, IsBasis ]);
+DeclareOperation( "NaturalEmbeddingByFieldReduction", [ IsClassicalPolarSpace, IsField, IsFFE ]);
+DeclareOperation( "NaturalEmbeddingByFieldReduction", [ IsClassicalPolarSpace, IsField ]);
+DeclareOperation( "NaturalEmbeddingByFieldReduction", [ IsClassicalPolarSpace, IsClassicalPolarSpace, IsBool ]);
+DeclareOperation( "CanonicalEmbeddingByFieldReduction",
+DeclareOperation( "CanonicalEmbeddingByFieldReduction",
+[ IsProjectiveSpace, IsProjectiveSpace ]);
+[ IsClassicalPolarSpace, IsClassicalPolarSpace, IsBool ]);
+[ IsClassicalPolarSpace, IsClassicalPolarSpace ]);
+DeclareOperation( "InversePluckerCoordinates", [ IsVector ]);
+DeclareOperation( "KleinCorrespondence", [ IsField, IsBool ]);
+DeclareOperation( "KleinCorrespondence", [ IsPosInt ]);
+DeclareOperation( "KleinCorrespondence", [ IsClassicalPolarSpace, IsBool ]);
+DeclareOperation( "KleinCorrespondenceExtended", [ IsField ]);
+DeclareOperation( "KleinCorrespondenceExtended", [ IsPosInt ]);
+DeclareOperation( "KleinCorrespondenceExtended", [ IsClassicalPolarSpace ]);
+DeclareOperation( "NaturalDualityHermitian", [ IsClassicalGQ, IsClassicalGQ, IsBool, IsBool ]);
+DeclareOperation( "SelfDualitySymplectic", [ IsClassicalGQ, IsBool ]);
+DeclareOperation( "NaturalDuality", [ IsClassicalGQ, IsClassicalGQ ]);
+DeclareOperation( "NaturalDuality", [ IsClassicalGQ ]);
+DeclareOperation( "SelfDuality", [ IsClassicalGQ, IsBool ]);
+DeclareGlobalFunction( "PositionNonZeroFromRight" );
+DeclareGlobalFunction( "FG_div" );
+DeclareGlobalFunction( "FG_alpha_power" );
+DeclareGlobalFunction( "FG_beta_power" );
+DeclareGlobalFunction( "FG_norm_one_element" );
+DeclareGlobalFunction( "PG_element_normalize" );
+DeclareGlobalFunction( "FG_evaluate_hermitian_form" );
+DeclareGlobalFunction( "FG_nb_pts_Nbar" );
+DeclareGlobalFunction( "FG_nb_pts_N" );
+DeclareGlobalFunction( "FG_nb_pts_Sbar" );
+DeclareGlobalFunction( "FG_herm_nb_pts_N" );
+DeclareGlobalFunction( "FG_herm_nb_pts_N1" );
+DeclareGlobalFunction( "FG_N1_rank" );
+DeclareGlobalFunction( "FG_N_unrank" );
+DeclareGlobalFunction( "FG_Nbar_rank" );
+DeclareGlobalFunction( "FG_S_rank" );
+DeclareGlobalFunction( "FG_Sbar_unrank" );
+DeclareGlobalFunction( "FG_herm_N1_rank" );
+DeclareGlobalFunction( "FG_herm_N_unrank" );
+DeclareGlobalFunction( "FG_herm_S_rank" );
+DeclareGlobalFunction( "FG_herm_Sbar_unrank" );
+DeclareGlobalFunction( "QplusElementNumber" );
+DeclareGlobalFunction( "HermElementNumber" );
+DeclareGlobalFunction( "QNumberElement" );
+DeclareGlobalFunction( "QminusNumberElement" );
+DeclareGlobalFunction("FG_specialresidual");
+DeclareGlobalFunction("FG_enum_hermitian");
+DeclareOperation( "EnumeratorByOrbit", [IsSubspacesOfClassicalPolarSpace]);
+DeclareCategory( "IsDiagram", IsComponentObjectRep and IsAttributeStoringRep );
+DeclareCategory( "IsVertexOfDiagram", IsComponentObjectRep and IsAttributeStoringRep );
+DeclareCategory( "IsEdgeOfDiagram", IsComponentObjectRep and IsAttributeStoringRep );
+DeclareRepresentation( "IsRank2ResidueRep", IsRank2Residue, [ "edge", "geo" ] );
+DeclareCategory( "IsFlagOfCosetGeometry", IsFlagOfIncidenceStructure );
+BindGlobal( "DiagramFamily",
+BindGlobal( "VertexOfDiagramFamily",
+BindGlobal( "EdgeOfDiagramFamily",
+BindGlobal( "Rank2ResidueFamily",
+BindGlobal( "IsFlagOfCGType", NewType( FlagsOfCG,
+DeclareRepresentation( "IsCosetGeometryRep", IsCosetGeometry, [ "group", "parabolics" ] );
+DeclareCategory( "IsElementOfCosetGeometry", IsElementOfIncidenceGeometry );
+DeclareRepresentation( "IsElementOfCosetGeometryRep", IsElementOfIncidenceStructureRep, [ "geo", "type", "obj" ]);
+DeclareRepresentation( "IsElementsOfCosetGeometryRep", IsElementsOfIncidenceStructureRep, [ "geometry", "type" ] );
+DeclareCategory( "IsAllElementsOfCosetGeometry", IsAllElementsOfIncidenceStructure );
+DeclareGlobalFunction( "OnCosetGeometryElement" );
+DeclareAttribute( "DiagramOfGeometry", IsIncidenceGeometry );
+DeclareAttribute( "IsResiduallyConnected", IsIncidenceGeometry );
+DeclareAttribute( "IsFirmGeometry", IsIncidenceGeometry );
+DeclareAttribute( "IsThickGeometry", IsIncidenceGeometry );
+DeclareAttribute( "StandardFlagOfCosetGeometry", IsCosetGeometry );
+DeclareOperation( "CosetGeometry", [ IsGroup, IsHomogeneousList ] );
+DeclareOperation( "AmbientGroup", [ IsCosetGeometry ] );
+DeclareOperation( "ResidueOfFlag", [ IsFlagOfCosetGeometry ] );
+DeclareOperation( "RandomElement", [ IsCosetGeometry ] );
+DeclareOperation( "RandomChamber", [ IsCosetGeometry ] );
+DeclareOperation( "CorGroupIncidenceStructureWithNauty", [ IsCosetGeometry ]);
+DeclareOperation( "Rk2GeoDiameter", [ IsCosetGeometry, IsPosInt ] );
+DeclareOperation( "GeometryOfRank2Residue", [ IsRank2Residue ]);
+DeclareAttribute( "Rank2Parameters", IsCosetGeometry );
+if not IsBound( Graph ) then
+fi;
+DeclareOperation( "GeometryFromLabelledGraph", [ IsObject and IS_REC ] );
+DeclareAttribute( "OrderVertex", IsVertexOfDiagram );
+DeclareAttribute( "StabiliserVertex", IsVertexOfDiagram );
+DeclareAttribute( "ResidueLabelForEdge", IsEdgeOfDiagram );
+DeclareAttribute( "PointDiamEdge", IsEdgeOfDiagram );
+DeclareAttribute( "ParametersEdge", IsEdgeOfDiagram );
+DeclareAttribute( "GeometryOfDiagram", IsDiagram );
+Rank2ResiduesAttr := NewAttribute( "Rank2Residues", IsIncidenceGeometry, "mutable" );
+DeclareOperation( "MakeRank2Residue", [ IsRank2Residue ] );
+DeclareGlobalFunction( "DrawDiagram" );
+DeclareRepresentation("IsAlgebraicVarietyRep", IsAlgebraicVariety, ["geometry","polring", "listofpols"] );
+DeclareRepresentation( "IsPointsOfAlgebraicVarietyRep", IsPointsOfAlgebraicVariety, ["variety"]);
+DeclareRepresentation( "IsProjectiveVarietyRep", IsProjectiveVariety and IsAlgebraicVarietyRep, ["geometry","polring","listofpols"]);
+DeclareCategory( "IsHermitianVariety", IsProjectiveVariety );
+DeclareRepresentation( "IsQuadraticVarietyRep", IsQuadraticVariety and IsProjectiveVarietyRep, ["geometry","polring","listofpols"]);
+DeclareCategory( "IsAffineVariety", IsAlgebraicVariety );
+DeclareCategory("IsSegreVariety", IsProjectiveVariety );
+["geometry","listofpols","inverseimage", "polring"]);
+DeclareRepresentation( "IsPointsOfSegreVarietyRep", IsPointsOfSegreVariety, ["variety"]);
+DeclareCategory( "IsGeometryMap", IsAttributeStoringRep );
+DeclareRepresentation( "IsSegreMapRep", IsSegreMap, ["source", "range", "map"] );
+DeclareRepresentation("IsVeroneseVarietyRep", IsVeroneseVariety and IsProjectiveVarietyRep,
+DeclareRepresentation( "IsPointsOfVeroneseVarietyRep", IsPointsOfVeroneseVariety, ["variety"]);
+DeclareCategory( "IsVeroneseMap", IsGeometryMap );
+DeclareCategory("IsGrassmannVariety", IsProjectiveVariety );
+["geometry","listofpols","inverseimage", "polring"]);
+DeclareCategory( "IsPointsOfGrassmannVariety", IsPointsOfAlgebraicVariety );
+DeclareRepresentation( "IsGrassmannMapRep", IsGrassmannMap, ["source", "range", "map"] );
+DeclareOperation( "AlgebraicVariety", [IsAffineSpace, IsList] );
+DeclareOperation( "AlgebraicVariety", [IsAffineSpace, IsPolynomialRing, IsList] );
+DeclareOperation( "PointsOfAlgebraicVariety", [IsAlgebraicVariety] );
+DeclareAttribute( "AmbientSpace", IsAlgebraicVariety );
+DeclareOperation( "ProjectiveVariety", [IsProjectiveSpace, IsPolynomialRing, IsList] );
+DeclareOperation( "HermitianVariety", [IsPosInt,IsPosInt] );
+DeclareOperation( "HermitianVariety", [IsProjectiveSpace, IsPolynomial ] );
+DeclareOperation( "QuadraticVariety", [IsPosInt,IsField] );
+DeclareOperation( "QuadraticVariety", [IsPosInt,IsPosInt] );
+DeclareOperation( "QuadraticVariety", [IsProjectiveSpace, IsPolynomialRing, IsPolynomial ] );
+DeclareAttribute( "QuadraticForm", IsQuadraticVariety );
+DeclareProperty( "IsStandardHermitianVariety", IsHermitianVariety );
+DeclareOperation( "AffineVariety", [IsAffineSpace, IsPolynomialRing, IsList] );
+DeclareOperation( "SegreMap", [ IsHomogeneousList ] ); # list of projective spaces
+DeclareOperation( "SegreVariety", [ IsHomogeneousList, IsField ]);
+DeclareOperation("SegreMap", [IsSegreVariety]);
+DeclareOperation( "SegreMap", [ IsPosInt, IsPosInt, IsField ]);
+DeclareOperation( "SegreVariety", [ IsPosInt, IsPosInt, IsField ]);
+DeclareOperation( "VeroneseMap", [ IsProjectiveSpace ]);
+DeclareOperation( "VeroneseMap", [ IsPosInt, IsPosInt ]);
+DeclareOperation( "VeroneseVariety", [IsProjectiveSpace ]);
+DeclareOperation( "VeroneseVariety", [IsPosInt, IsPosInt]);
+DeclareOperation( "PointsOfVeroneseVariety", [IsVeroneseVariety]);
+DeclareOperation( "VeroneseMap", [IsVeroneseVariety]);
+DeclareAttribute("Range", IsGeometryMap);
+DeclareOperation( "GrassmannMap", [ IsPosInt, IsPosInt, IsPosInt ]);
+DeclareOperation( "GrassmannMap", [ IsGrassmannVariety ] );
+DeclareOperation( "GrassmannVariety", [IsPosInt, IsPosInt, IsField]);
+DeclareOperation( "GrassmannVariety", [ IsSubspacesOfProjectiveSpace ]);
+DeclareOperation( "PointsOfGrassmannVariety", [IsGrassmannVariety] );
+DeclareOperation( "ConicOnFivePoints", [ IsHomogeneousList and
+DeclareCategory( "IsSubspacesOfAffineSpace", IsElementsOfIncidenceGeometry );
+DeclareCategory( "IsShadowSubspacesOfAffineSpace", IsShadowElementsOfIncidenceGeometry );
+DeclareRepresentation( "IsAllSubspacesOfAffineSpaceRep", IsAllElementsOfIncidenceGeometry, [ "geometry", "type" ] );
+DeclareRepresentation( "IsParallelClassOfAffineSpaceRep", IsElementsOfIncidenceGeometry, [ "geometry", "element" ]);
+DeclareCategoryCollections("IsSubspaceOfAffineSpace");
+BindGlobal( "SoASFamily",
+BindGlobal( "SoASCollFamily", CollectionsFamily(SoASFamily) );
+DeclareCategory( "IsVectorSpaceTransversal", IsSubspacesVectorSpace );
+DeclareOperation( "VectorSpaceTransversalElement", [IsVectorSpace, IsFFECollColl, IsVector]);
+IsFlagOfAffineSpace and IsFlagOfIncidenceStructureRep) );
+DeclareOperation( "AffineSpace", [IsPosInt, IsField] );
+DeclareSynonym( "AG", AffineSpace );
+DeclareOperation( "AffineSubspace", [ IsAffineSpace, IsRowVector] );
+DeclareOperation( "AffineSubspace", [ IsAffineSpace, IsRowVector, IsPlistRep ] );
+DeclareOperation( "AffineSubspace", [ IsAffineSpace, IsRowVector, IsGF2MatrixRep ] );
+DeclareOperation( "IsParallel", [ IsSubspaceOfAffineSpace, IsSubspaceOfAffineSpace ] );
+DeclareOperation( "UnderlyingVectorSpace", [IsAffineSpace] );
+DeclareAttribute( "AmbientSpace", IsSubspaceOfAffineSpace );
+DeclareOperation( "ParallelClass", [IsAffineSpace, IsSubspaceOfAffineSpace] );
+DeclareAttribute( "AffineGroup", IsAffineSpace );
+DeclareGlobalFunction( "OnAffinePoints" );
+DeclareGlobalFunction( "OnAffineSubspaces" );
+DeclareCategory( "IsElementsOfGeneralisedPolygon", IsElementsOfIncidenceGeometry );
+DeclareRepresentation( "IsShadowElementsOfGeneralisedPolygonRep", IsElementsOfIncidenceStructure, [ "geometry", "type", "element", "func" ]);
+DeclareCategory( "IsElationGQ", IsGeneralisedQuadrangle );
+DeclareCategory( "IsElationGQByBLTSet", IsElationGQ );
+DeclareOperation( "GeneralisedPolygonByIncidenceMatrix", [ IsMatrix ] );
+DeclareOperation( "GeneralisedPolygonByElements", [ IsSet, IsSet, IsFunction, IsGroup, IsFunction ] );
+DeclareOperation( "DistanceBetweenElements", [IsElementOfGeneralisedPolygon, IsElementOfGeneralisedPolygon ] );
+DeclareAttribute( "Order", IsGeneralisedPolygon);
+BlockDesign := function(arg) return 1; end;
+BlockDesignOfGeneralisedPolygonAttr := NewAttribute( "BlockDesignOfGeneralisedPolygonAttr",
+DeclareGlobalFunction( "SplitCayleyPointToPlane5" );
+DeclareGlobalFunction( "TwistedTrialityHexagonPointToPlaneByTwoTimesTriality" );
+DeclareOperation( "SplitCayleyHexagon", [IsField and IsFinite] );
+DeclareOperation( "SplitCayleyHexagon", [IsClassicalPolarSpace] );
+DeclareOperation( "TwistedTrialityHexagon", [IsPosInt] );
+DeclareOperation("3D4fining", [IsField and IsFinite] );
+DeclareAttribute( "BasePointOfEGQ", IsElationGQ);
+DeclareOperation( "IsKantorFamily", [IsGroup, IsList, IsList]);
+DeclareCategory( "IsElementOfKantorFamily", IsElementOfGeneralisedPolygon );
+DeclareOperation( "Wrap", [IsElationGQByKantorFamily, IsPosInt, IsPosInt, IsObject] );
+DeclareCategory( "IsqClanObj", IsComponentObjectRep and IsAttributeStoringRep );
+DeclareOperation( "IsqClan", [ IsFFECollCollColl, IsField and IsFinite ]);
+DeclareOperation( "LinearqClan", [ IsPosInt ] );
+DeclareOperation( "KantorMonomialqClan", [ IsPosInt ] );
+DeclareOperation( "FisherqClan", [ IsPosInt ] );
+DeclareOperation( "BLTSetByqClan", [ IsqClanObj and IsqClanRep ] );
+DeclareOperation( "EGQByqClan", [ IsqClanObj and IsqClanRep ] );
+DeclareOperation( "EGQByBLTSet", [IsList, IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace] );
+DeclareAttribute( "CollineationSubgroup", IsElationGQByBLTSet);
+DeclareOperation( "FlockGQByqClan", [ IsqClanObj ] );
+"for a set, incidence, type function and type set",
+function( eles, inc, typ, typeset )
+geo := rec( elements := eles, increl := inc,
+ty := NewType( GeometriesFamily,
+typesetstrings:=[];
+for t in typeset do
+Add(typesetstringsplural, Concatenation("elements of type ", String(t)));
+ObjectifyWithAttributes( geo, ty, RankAttr, Size(typeset), TypesOfElementsOfIncidenceStructure,
+return geo;
+"for IsIncidenceStructure",
+i -> RankAttr(i) );
+"for an incidence structure",
+function( incstr )
+if IsBound(incstr!.IncidenceGraphAttr) then
+fi;
+all:=Union(all);
+if i=j then
+else
+fi;
+gamma := Graph( Group(()), [1..Size(all)], OnPoints, adj, true);
+return gamma;
+InstallMethod( ElementsOfIncidenceStructure,
+[IsIncidenceStructure, IsPosInt],
+local r;
+if j > r then
+else
+NewType( ElementsCollFamily, IsElementsOfIncidenceStructure and IsElementsOfIncidenceStructureRep ),
+type := j )
+fi;
+InstallMethod( ElementsOfIncidenceStructure,
+[IsIncidenceStructure, IsString],
+local m;
+if m = fail then
+else
+fi;
+InstallMethod( Iterator,
+[ IsElementsOfIncidenceStructure ],
+local incstr, elements, wrapped, type;
+type := vs!.type;
+wrapped:=List(elements, e -> Wrap(incstr, type, e));
+end );
+"generic method for IsElementsOfIncidenceStructure",
+function ( D )
+iter := Iterator( D );
+while not IsDoneIterator( iter ) do
+od;
+end);
+"for an incidence structure and a string",
+function( ps, str )
+end);
+InstallMethod( NrElementsOfIncidenceStructure,
+[IsIncidenceStructure, IsPosInt],
+return Size(ElementsOfIncidenceStructure(ps, typ));
+InstallGlobalFunction( HashFuncForElements,
+return data.func(v!.obj,data.data);
+function( v, data )
+end );
+InstallMethod( ChooseHashFunction,
+[ IsElementOfIncidenceStructure, IsPosInt ],
+local data;
+return rec( func := HashFuncForElements, data := data );
+"for a set of elements and a hash length",
+function( set, len )
+v := set[1];
+return rec( func := HashFuncForSetElements, data := data );
+InstallMethod( AmbientGeometry,
+x -> x!.geometry );
+[ IsAllElementsOfIncidenceStructure ],
+InstallMethod( Type,
+[IsElementsOfIncidenceStructure and IsElementsOfIncidenceStructureRep],
+InstallMethod( Wrap,
+[IsIncidenceStructure, IsPosInt, IsObject],
+local w;
+Objectify( NewType( ElementsOfIncidenceStructureFamily,
+return w;
+"for an element",
+function( v )
+end );
+"for an element of an incidence structure",
+x -> x!.obj );
+"for an incidence structure, a type, and an object",
+function(inc,t,obj)
+typeset := inc!.typeset;
+Error("<t> is not a type of elements of <inc>");
+Error("<t> does not represent any element of <inc>");
+Error("<obj> does not represent an element of type <t>");
+return Wrap(inc,t,obj);
+end );
+[ IsElementOfIncidenceStructure and IsElementOfIncidenceStructureRep ],
+InstallOtherMethod( Intersection2,
+[IsElementOfIncidenceStructure, IsElementOfIncidenceStructure],
+return Meet(el1,el2);
+InstallMethod( Type,
+x -> x!.type );
+InstallMethod( \=,
+[IsElementOfIncidenceStructure, IsElementOfIncidenceStructure],
+return a!.obj = b!.obj;
+InstallMethod( \<, "for two IsElementOfIncidenceStructure",
+function( a, b )
+return a!.obj < b!.obj;
+return a!.type < b!.type;
+end );
+"for two elements of an incidence structure",
+function( a, b )
+end );
+"for two elements of an incidence structure",
+function( x, y )
+if AmbientGeometry(x) <> AmbientGeometry(y) then
+fi;
+return geo!.increl(x!.obj,y!.obj);
+"for an incidence structure and a list of elements",
+function(incgeo,els)
+list := Set(ShallowCopy(els));
+Error("A flag can contain at most Rank(<incstr>) elements");
+test := List(list,x->AmbientGeometry(x));
+Error("not all elements have <incgeo> as ambient geometry");
+List([i..Length(list)], j -> IsIncident(list[i], list[j])))));
+Error("<els> does not determine a flag>");
+flag := rec(geo := incgeo, types := List(list,x->x!.type),
+ObjectifyWithAttributes(flag,
+Size(list));
+end);
+"for an incidence structure and an empty list",
+function(incgeo,els)
+flag := rec(geo := incgeo, types := [], els := []);
+IsFlagOfIncidenceStructureType, IsEmptyFlag, true, RankAttr, 0);
+end);
+"for a flag of an incidence structure",
+flag -> Length(flag!.types) = Rank(flag!.geo)
+InstallMethod( AmbientGeometry,
+x -> x!.geo );
+InstallMethod( ElementsOfFlag,
+[ IsFlagOfIncidenceStructure and IsFlagOfIncidenceStructureRep ],
+return flag!.els;
+"for an incidence structure flag",
+function(flag)
+end );
+InstallMethod( Rank,
+[ IsFlagOfIncidenceStructure ],
+InstallMethod( Type,
+[ IsFlagOfIncidenceStructure and IsFlagOfIncidenceStructureRep ],
+InstallMethod( ResidueOfFlag,
+[ IsFlagOfIncidenceStructure ],
+local ambigeo, geo, typfun, typset, resrank, eles, inc;
+typset:=Difference([1..Rank(ambigeo)], Type(flag));
+typfun:=function(ele)
+end;
+inc:=function(x,y)
+end;
+SetAmbientGeometry(geo,ambigeo);
+end );
+"for two IsElementOfIncidenceStructure",
+function( a, b )
+end );
+[ IsFlagOfIncidenceStructure, IsFlagOfIncidenceStructure ],
+if a!.types = b!.types then
+else
+fi;
+InstallMethod( \<, "for two IsElementOfIncidenceStructure",
+function( a, b )
+Error("<flag> and <element> do not belong to the same geometry");
+return false;
+InstallMethod( \<, "for two IsElementOfIncidenceStructure",
+function( a, b )
+Error("<element> and <flag> do not belong to the same geometry");
+return true;
+InstallMethod( IsIncident,
+[ IsElementOfIncidenceStructure, IsFlagOfIncidenceStructure ],
+local iter, inc;
+inc:=true;
+inc:=IsIncident(x,NextIterator(iter));
+return inc;
+InstallMethod( IsIncident,
+[IsFlagOfIncidenceStructure, IsElementOfIncidenceStructure],
+local iter, inc;
+inc:=true;
+inc:=IsIncident(x,NextIterator(iter));
+return inc;
+"for an element and a flag of an incidence structure",
+function( x, y )
+Error( "<x> and <y> have not the same ambient geometry" );
+return x in y!.els;
+end );
+"for an element of an incidence structure and a type",
+function( inc, f, j )
+return Objectify( NewType( ElementsCollFamily, IsElementsOfIncidenceStructure and
+rec( geometry := inc,
+parentflag := FlagOfIncidenceStructure(inc,[f]) )
+end );
+"for an incidence structure, an element of, and a string",
+function( ps, v, str )
+m := Position(TypesOfElementsOfIncidenceStructurePlural(ps), str);
+Error("No such element type!");
+return ShadowOfElement(ps, v, m);
+end);
+[ IsElementOfIncidenceStructure, IsPosInt],
+return ShadowOfElement(el!.geo, el, i);
+InstallMethod( ShadowOfFlag,
+[IsIncidenceStructure, IsFlagOfIncidenceStructure, IsPosInt],
+local iter, shad, x;
+IsShadowElementsOfIncidenceStructure),
+type := j,
+);
+"for an incidence structure, a flag, and a string",
+function( ps, vs, str )
+m := Position(TypesOfElementsOfIncidenceStructurePlural(ps), str);
+Error("No such element type!");
+return ShadowOfFlag(ps, vs, m);
+end);
+"for an incidence structure, a list, and an integer",
+function( ps, list, j )
+end);
+"for an incidence structure, a list, and an integer",
+function( ps, list, str )
+end);
+"for shadow elements of an incidence structure",
+function( vs )
+f := vs!.parentflag;
+if j in Type(f) then
+fi;
+shad:=[];
+if IsIncident(x,f) then Add(shad,x); fi;
+return IteratorList(shad);
+InstallMethod( ViewObj,
+[ IsElementOfIncidenceStructure and IsElementOfIncidenceStructureRep ],
+Print("<a ",TypesOfElementsOfIncidenceStructure(v!.geo)[v!.type]," in ");
+Print(">");
+"for IsFlagOfIncidenceStructure",
+function( v )
+ViewObj(v!.geo);
+end );
+InstallMethod( PrintObj,
+[ IsElementOfIncidenceStructure and IsElementOfIncidenceStructureRep ],
+Print( v!.obj );
+"for IsElementOfIncidenceStructure",
+function( v )
+end );
+InstallMethod( ViewObj,
+[ IsAllElementsOfIncidenceStructure ],
+Print("<Elements of ");
+Print(">");
+"for IsAllElementsOfIncidenceStructure",
+function( vs )
+end );
+InstallMethod( ViewObj,
+[ IsShadowElementsOfIncidenceStructure ],
+Print("<shadow elements of type ", vs!.type," in ");
+Print(">");
+"for IsElementsOfIncidenceStructure",
+function( vs )
+ViewObj(vs!.geometry);
+end );
+InstallMethod( PrintObj,
+[ IsElementsOfIncidenceStructure ],
+Print("ElementsOfIncidenceStructure( ",vs!.geometry," ) of type ",vs!.type);
+"for an incidence structure",
+function(x)
+end );
+InstallMethod( PrintObj,
+[ IsIncidenceStructure ],
+Print("Incidence structure of rank ", RankAttr(x)," with elements of type ",x!.typeset);
+"for an incidence structure",
+function(x)
+end );
+"for an incidence structure",
+function(x)
+return true;
+"for an incidence structure",
+function(x)
+return true;
+"for a lie geometry",
+function(ps)
+end);
+"for a lie space",
+geom -> geom!.dimension
+InstallMethod( Dimension,
+[ IsLieGeometry ],
+);
+"for a projective space",
+geom -> geom!.basefield );
+"for a Lie geometry and an object",
+function( geo, type, o )
+w := rec( geo := geo, type := type, obj := o );
+IsElementOfIncidenceStructureRep and IsElementOfLieGeometry ), w );
+end );
+"for an element of a LieGeometry",
+function( x )
+end );
+"for an element of a Lie geometry",
+function(subspace)
+end );
+InstallMethod( ViewObj, "for IsAllElementsOfLieGeometry",
+function( vs )
+ViewObj(vs!.geometry);
+end );
+InstallMethod( PrintObj, "for IsAllElementsOfLieGeometry",
+function( vs )
+end );
+InstallMethod( ViewObj, "for IsAllElementsOfLieGeometry",
+function( vs )
+ViewObj(vs!.geometry);
+end );
+InstallMethod( PrintObj, "for IsElementsOfLieGeometry",
+function( vs )
+end );
+[IsLieGeometry],
+return ElementsOfIncidenceStructure(ps, 1);
+InstallMethod( Lines, "for a Lie geometry",
+function( ps )
+end);
+[IsLieGeometry],
+return ElementsOfIncidenceStructure(ps, 3);
+InstallMethod( Solids, "for a Lie geometry",
+function( ps )
+end);
+"for a Lie geometry",
+function( g )
+vs:=UnderlyingVectorSpace(g);
+x := NewMatrix(IsCMatRep,g!.basefield,g!.dimension+1,[Zero(ShallowCopy(vs))]);
+w := rec( geo := g, obj := x[1] );
+return w;
+InstallMethod( BaseField,
+[IsEmptySubspace and IsEmptySubspaceRep],
+function(x)
+end );
+InstallMethod( PrintObj, [IsEmptySubspace],
+PrintObj(Zero(UnderlyingVectorSpace(AmbientSpace(x))));
+function(x)
+end );
+InstallMethod( \=, "for two empty subspaces",
+function(e1,e2);
+end );
+InstallOtherMethod( \in,
+[ IsEmptySubspace, IsEmptySubspace ],
+if x!.geo!.vectorspace = y!.geo!.vectorspace then
+else
+fi;
+"for the empty subspace and an element of a Lie geometry",
+function( x, y )
+return true;
+Error( "The subspaces <x> and <y> belong to different ambient spaces" );
+end );
+InstallOtherMethod( \in,
+[ IsElementOfLieGeometry, IsEmptySubspace ],
+if x!.geo!.vectorspace = y!.geo!.vectorspace then
+else
+fi;
+InstallOtherMethod( \in,
+[ IsEmptySubspace, IsLieGeometry ],
+if x!.geo!.vectorspace = y!.vectorspace then
+else
+fi;
+InstallMethod( Span,
+[ IsEmptySubspace, IsElementOfLieGeometry ],
+if x!.geo!.vectorspace = y!.geo!.vectorspace then
+else
+fi;
+"for an element of a Lie geometry and the empty subspace",
+function( x, y )
+return x;
+Error( "The subspaces <x> and <y> belong to different ambient spaces" );
+end );
+InstallMethod( Span,
+[IsEmptySubspace, IsEmptySubspace],
+if x!.geo!.vectorspace = y!.geo!.vectorspace then
+else
+fi;
+"for the empty subspace and a projective subspace",
+function( x, y )
+return x;
+Error( "The subspaces <x> and <y> belong to different ambient spaces" );
+end );
+InstallMethod( Meet,
+[ IsElementOfLieGeometry, IsEmptySubspace ],
+if x!.geo!.vectorspace = y!.geo!.vectorspace then
+else
+fi;
+"for the empty subspace and the empty subspace",
+function( x, y )
+return x;
+Error( "The subspaces <x> and <y> belong to different ambient spaces" );
+end );
+[ IsElementOfLieGeometry ],
+return ShadowOfElement(var!.geo, var, 1);
+[ IsLieGeometry, IsElementOfLieGeometry ],
+return ShadowOfElement(geo, var, 1);
+[ IsElementOfLieGeometry ],
+return ShadowOfElement(var!.geo, var, 2);
+[ IsLieGeometry, IsElementOfLieGeometry ],
+return ShadowOfElement(geo, var, 2);
+[ IsElementOfLieGeometry ],
+return ShadowOfElement(var!.geo, var, 3);
+[ IsLieGeometry, IsElementOfLieGeometry ],
+return ShadowOfElement(geo, var, 3);
+function( var )
+end );
+InstallMethod( Solids, "for IsElementOfLieGeometry",
+function( geo, var )
+end );
+InstallMethod( Hyperplanes,
+[ IsElementOfLieGeometry ],
+if var!.type = 1 then
+fi;
+end );
+InstallMethod( Hyperplanes,
+[ IsLieGeometry, IsElementOfLieGeometry ],
+return ShadowOfElement( geo, var, geo!.dimension );
+InstallMethod( ViewObj,
+[ IsShadowElementsOfLieGeometry and IsShadowElementsOfLieGeometryRep ],
+Print("<shadow ",TypesOfElementsOfIncidenceStructurePlural(vs!.geometry)[vs!.type]," in ");
+Print(">");
+InstallMethod( \in,
+[IsElementOfLieGeometry, IsElementOfLieGeometry],
+local ambx, amby, typx, typy, mat,
+nrows,
+vectors, # list of basis vectors
+i, # loop over rows
+z, # a current element
+row; # the row of current interest
+amby := y!.geo;
+typy := y!.type;
+if ambx!.vectorspace = amby!.vectorspace then
+if typx > typy then
+else
+nvectors := typy;
+nrows := typx;
+if nrows = 1 then mat := [mat]; fi;
+zero:= Zero( mat[1][1] );
+nzheads := [];
+row := vectors[i];
+Add(nzheads,j);
+for i in [ 1 .. nrows ] do
+for j in [ 1 .. Length(nzheads) ] do
+if z <> zero then
+fi;
+j := PositionNot( row, zero );
+return false;
+else
+fi;
+end );
+InstallMethod( Random,
+[ IsSubspacesVectorSpace ],
+function( subs )
+if not IsInt(subs!.dimension) then #here we must know that this field is "all" if it is not an integer.
+fi;
+d := subs!.dimension;
+repeat
+Add(V, w);
+until Dimension(W) = d;
+end );
+InstallMethod( RandomSubspace,
+[IsVectorSpace,IsInt],
+local list,W,w;
+Error("The dimension of the subspace is larger than that of the vectorspace");
+if not IsPosInt(d) then
+fi;
+repeat
+Add(list, w);
+until Dimension(W) = d;
+end );
+"for a Lie geometry and an element of a Lie geometry",
+function(ps,el)
+end );
+InstallMethod( ObjectToElement,
+[IsLieGeometry, IsPosInt, IsObject],
+local el;
+if type <> el!.type then
+else
+fi;
+InstallMethod( ObjectToElement,
+[IsLieGeometry, IsObject],
+local el;
+end );
+function(f,d)
+els := Elements(f);
+v := CVec([1..d+1]*Zero(f),f); # using cvecs (ml 31/03/13)
+sp := EmptyPlist((q^(d+1)-1)/(q-1));
+w := ShallowCopy(v);
+Add(vs,w);
+w := ShallowCopy(v);
+Add(sp,w);
+l := Length(vs);
+ww := ShallowCopy(vs[j]);
+Add(sp,ww);
+od;
+for x in els do
+for j in [1..l] do
+ww[i] := x;
+od;
+od;
+od;
+end);
+InstallGlobalFunction(IsFiningScalarMatrix,
+local n;
+if IsZero(n) then
+else
+fi;
+"for a ffe matrix",
+function( m )
+m2 := ShallowCopy( m );
+ConvertToMatrixRepNC( m2, f );
+Objectify( NewType( ProjElsFamily,
+IsProjGrpElRep ), el );
+end );
+[IsList],
+local el,fld,ll,m,ty,m2;
+ll := [];
+IsProjGrpEl and
+for m in l do
+ConvertToMatrixRepNC( m2, fld );
+Objectify( ty, el );
+od;
+end );
+local el, m2, fld, frob, cmat;
+Error("<mat> must not be singular");
+el := rec( mat := cmat, fld := gf, frob := FrobeniusAutomorphism(gf)^0 );
+return el;
+function( mat, gf )
+m2 := ShallowCopy(mat);
+if Rank(m2) <> Length(m2) then
+fi;
+el := rec( mat := m2, fld := gf, frob := FrobeniusAutomorphism(gf)^0 );
+return el;
+local d,gf,m2;
+gf:=pg!.basefield;
+Error("The arguments <mat> and <pg> are incompatible");
+m2 := ShallowCopy(mat);
+if Rank(m2) <> Size(m2) then
+fi;
+end );
+local d,gf,m2;
+gf:=pg!.basefield;
+Error("The arguments <mat> and <pg> are incompatible");
+m2 := ShallowCopy(mat);
+if Rank(m2) <> Size(m2) then
+fi;
+end );
+function( g )
+end );
+InstallMethod( IsProjectivity, [ IsProjGrpElWithFrob ],
+local F,sigma;
+sigma:=g!.frob;
+then return true;
+fi;
+function( g )
+end );
+InstallMethod( IsStrictlySemilinear, [ IsProjGrpElWithFrob],
+local F,sigma;
+sigma:=g!.frob;
+then return false;
+fi;
+function( g )
+end );
+InstallMethod( IsCollineation, [ IsProjGrpElWithFrob],
+return true;
+InstallMethod( IsProjectivityGroup, [ IsProjectiveGroupWithFrob],
+local gens, F, set, g;
+F:=gens[1]!.fld;
+if set = AsSet([FrobeniusAutomorphism(F)^0])
+else return false;
+end );
+function( G )
+end );
+"for a cmat/ffe matrix and a Frobenius automorphism, and a field",
+IsRingHomomorphism and IsMultiplicativeElementWithInverse,
+function( m, frob, f )
+m2 := ShallowCopy(m);
+el := rec( mat := m2, fld := f, frob := frob );
+return el;
+InstallMethod( ProjElWithFrob,
+[IsMatrix and IsFFECollColl,
+IsField],
+local el, m2, cmat;
+el := rec( mat := cmat, fld := f, frob := frob );
+return el;
+"for a cmat/ffe matrix and a Frobenius automorphism",
+IsRingHomomorphism and IsMultiplicativeElementWithInverse],
+function ( m, frob )
+if IsOne(frob) then
+fi;
+mchar := Characteristic(matrixfield);
+fchar := Characteristic(frobfield);
+Error("the matrix and automorphism do not agree on the characteristic");
+LogInt(Size(matrixfield),mchar),
+);
+end);
+"for a cmat/ffe matrix and a trivial Frobenius automorphism",
+IsRingHomomorphism and IsMultiplicativeElementWithInverse],
+function( m, frob )
+if not IsOne(frob) then
+fi;
+Objectify( ProjElsWithFrobType, el );
+end );
+InstallMethod( ProjElsWithFrob,
+[IsList, IsField],
+local objectlist, m;
+for m in l do
+od;
+end );
+InstallMethod( ProjElsWithFrob,
+[IsList],
+local matrixfield, frobfield, mchar, fchar, oldchar, f, dim, m, objectlist;
+return [];
+dim := 1;
+for m in l do
+mchar := Characteristic(matrixfield);
+fchar := Characteristic(frobfield);
+Error("matrices and automorphisms do not agree on the characteristic");
+LogInt(Size(frobfield),fchar));
+objectlist := [];
+Add(objectlist, ProjElWithFrob(m[1],m[2],f));
+return objectlist;
+InstallMethod( CollineationOfProjectiveSpace,
+function( mat, gf )
+Error("<mat> must not be singular");
+return ProjElWithFrob( mat, IdentityMapping(gf), gf);
+InstallMethod( CollineationOfProjectiveSpace, [ IsProjectiveSpace, IsMatrix],
+function( pg, mat )
+d:=Dimension(pg);
+if d <> Size(mat)-1 then
+fi;
+end );
+InstallMethod( CollineationOfProjectiveSpace, [ IsProjectiveSpace, IsMatrix, IsMapping],
+function( pg, mat, frob )
+d:=Dimension(pg);
+if d <> Size(mat)-1 then
+fi;
+end );
+InstallMethod( Collineation, [ IsProjectiveSpace, IsMatrix],
+function( pg, mat )
+end );
+InstallMethod( Collineation, [ IsProjectiveSpace, IsMatrix, IsMapping],
+function( pg, mat, frob )
+end );
+[ IsMatrix and IsFFECollColl, IsRingHomomorphism and
+function( mat, frob, gf )
+Error("<mat> must not be singular");
+if Source(frob) <> gf then
+fi;
+end );
+[ IsMatrix and IsFFECollColl, IsRingHomomorphism and
+function( mat, frob, gf )
+end );
+function(pg,image)
+if not Length(image)=Dimension(pg)+2 then
+fi;
+vlist:=List(image,x->x!.obj);
+coeffs:=vlist[d+2]*(mat^-1);
+return CollineationOfProjectiveSpace(mat2,pg!.basefield);
+InstallMethod( UnderlyingMatrix, [ IsProjGrpEl and IsProjGrpElRep],
+InstallMethod( UnderlyingMatrix, [ IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+InstallMethod( FieldAutomorphism, [ IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+InstallOtherMethod( Representative,
+[IsProjGrpEl and IsProjGrpElRep],
+return el!.mat;
+InstallMethod( BaseField,
+[IsProjGrpEl and IsProjGrpElRep],
+return el!.fld;
+"for a projective group element with Frobenius",
+function( el )
+end );
+"for a projective group element with Frobenius",
+function( el )
+end );
+[IsProjGrpEl and IsProjGrpElRep],
+Print("<projective element ");
+Print(">");
+[IsProjGrpEl and IsProjGrpElRep],
+Print("<projective element, underlying matrix:\n");
+Print(">\n");
+[IsProjGrpEl and IsProjGrpElRep],
+Print("ProjEl(");
+Print(")");
+[IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+Print("< a collineation: ");
+if IsOne(el!.frob) then
+else
+fi;
+[IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+Print("<a collineation , underlying matrix:\n");
+if IsOne(el!.frob) then
+else
+fi;
+[IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+Print("ProjElWithFrob(");
+Print(",");
+Print(")");
+InstallMethod( \=, "for two projective group elements",
+function( a, b )
+if a!.fld <> b!.fld then Error("different base fields"); fi;
+bb := b!.mat;
+s := bb[1][p] / aa[1][p];
+if s*aa[i] <> bb[i] then return false; fi;
+return true;
+[IsProjGrpEl, IsProjGrpEl],
+local aa,bb,pa,pb,sa,sb,i,va,vb;
+aa := a!.mat;
+pa := PositionNonZero(aa[1]);
+if pa > pb then
+elif pa < pb then
+fi;
+sb := bb[1][pb]^-1;
+va := sa*aa[i];
+if va < vb then return true; fi;
+od;
+end);
+InstallMethod( \=, "for two projective group elements with Frobenius",
+IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+local aa,bb,p,s,i;
+if a!.frob <> b!.frob then return false; fi;
+bb := b!.mat;
+s := bb[1][p] / aa[1][p];
+end );
+InstallMethod(\<,
+function(a,b)
+if a!.fld <> b!.fld then Error("different base fields"); fi;
+return true;
+return false;
+aa := a!.mat;
+pa := PositionNonZero(aa[1]);
+if pa > pb then
+elif pa < pb then
+fi;
+sb := bb[1][pb]^-1;
+va := sa*aa[i];
+if va < vb then return true; fi;
+od;
+end);
+"for a projective group element",
+function( a )
+end );
+"for a projective group element with Frobenius",
+function( a )
+b := a!.mat;
+if IsOne(frob) then
+fi;
+bfrob := b; i := 1;
+repeat
+b := b * bfrob;
+until IsFiningScalarMatrix( b ) and i mod ofrob = 0;
+else
+fi;
+end );
+"for a projective group element",
+function( el )
+s := el!.mat[1][1];
+return false;
+s := s^-1;
+end );
+"for a projective group element with Frobenius",
+function( el )
+if not(IsOne(el!.frob)) then
+fi;
+if IsZero(s) then return false; fi;
+return IsOne( s*el!.mat );
+"for projective group element",
+function( el )
+end );
+InstallOtherMethod( DegreeFFE,
+[IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+return DegreeOverPrimeField( el!.fld );
+InstallMethod( Characteristic,
+[IsProjGrpEl and IsProjGrpElRep],
+return Characteristic( el!.fld );
+InstallMethod( Characteristic,
+[IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+return Characteristic( el!.fld );
+InstallMethod( \*,
+[IsProjGrpEl and IsProjGrpElRep, IsProjGrpEl and IsProjGrpElRep],
+local el;
+Objectify( ProjElsType, el );
+end );
+"for a projective group element",
+function( el )
+m := rec( mat := InverseSameMutability(el!.mat), fld := el!.fld );
+return m;
+InstallMethod( InverseMutable,
+[IsProjGrpEl and IsProjGrpElRep],
+local m;
+Objectify( ProjElsType, m );
+end );
+"for a projective group element",
+function( el )
+o := rec( mat := OneImmutable( el!.mat ), fld := el!.fld );
+return o;
+InstallMethod( OneSameMutability,
+[IsProjGrpEl and IsProjGrpElRep],
+local o;
+Objectify( NewType(FamilyObj(el), IsProjGrpElRep), o );
+end );
+[ IsVector and IsFFECollection and IsMutable, IsFrobeniusAutomorphism ],
+return List(v,x->x^f);
+InstallOtherMethod( \^, "for a cvec/FFE vector and a Frobenius automorphism",
+function( v, f )
+end );
+InstallOtherMethod( \^, "for a FFE vector and a Frobenius automorphism",
+function( v, f )
+end );
+[ IsCVecRep and IsFFECollection, IsFrobeniusAutomorphism ],
+return MakeImmutable(CVec(List(v,x->x^f),BaseField(v)));
+"for a mutable FFE vector and a trivial Frobenius automorphism",
+function( v, f )
+end );
+"for a mutable cvec/FFE vector and a trivial Frobenius automorphism",
+function( v, f )
+end );
+InstallOtherMethod( \^,
+[ IsVector and IsFFECollection and IsGF2VectorRep, IsFrobeniusAutomorphism ],
+local w;
+ConvertToVectorRepNC(w,2);
+end );
+InstallOtherMethod( \^,
+[ IsVector and IsFFECollection and IsGF2VectorRep and IsMutable,
+function( v, f )
+w := List(v,x->x^f);
+return w;
+"for a compressed GF2 vector and a trivial Frobenius automorphism",
+function( v, f )
+end );
+InstallOtherMethod( \^,
+[ IsVector and IsFFECollection and IsGF2VectorRep and IsMutable,
+function( v, f )
+end );
+InstallOtherMethod( \^,
+[ IsVector and IsFFECollection and Is8BitVectorRep, IsFrobeniusAutomorphism ],
+local w;
+ConvertToVectorRepNC(w,Q_VEC8BIT(v));
+end );
+InstallOtherMethod( \^,
+[ IsVector and IsFFECollection and Is8BitVectorRep and IsMutable,
+function( v, f )
+w := List(v,x->x^f);
+return w;
+"for a compressed 8bit vector and a trivial Frobenius automorphism",
+function( v, f )
+end );
+InstallOtherMethod( \^,
+[ IsVector and IsFFECollection and Is8BitVectorRep and IsMutable,
+function( v, f )
+end );
+InstallOtherMethod( \^, "for a FFE matrix and a Frobenius automorphism",
+function( m, f )
+end );
+[ IsCMatRep and IsFFECollColl, IsFrobeniusAutomorphism ],
+return MakeImmutable(CMat(List(m,v->v^f)));
+[ IsMatrix and IsFFECollColl and IsMutable, IsFrobeniusAutomorphism ],
+return List(m,v->List(v,x->x^f));
+InstallOtherMethod( \^, "for a mutable FFE matrix and a Frobenius automorphism",
+function( m, f )
+end );
+InstallOtherMethod( \^, "for a FFE matrix and a trivial Frobenius automorphism",
+function( m, f )
+end );
+[ IsCMatRep and IsFFECollColl and IsMutable, IsMapping and IsOne ],
+return ShallowCopy(m);
+"for a mutable FFE matrix and a trivial Frobenius automorphism",
+function( m, f )
+end );
+[ IsCMatRep and IsFFECollColl , IsMapping and IsOne ],
+return MakeImmutable(ShallowCopy(m));
+"for a compressed GF2 matrix and a Frobenius automorphism",
+function( m, f )
+l := [];
+w := List(m[i],x->x^f);
+Add(l,w);
+ConvertToMatrixRepNC(l,2);
+end );
+InstallOtherMethod( \^,
+[ IsMatrix and IsFFECollColl and IsGF2MatrixRep and IsMutable,
+function( m, f )
+l := [];
+w := List(m[i],x->x^f);
+Add(l,w);
+ConvertToMatrixRepNC(l,2);
+end );
+InstallOtherMethod( \^,
+[ IsMatrix and IsFFECollColl and IsGF2MatrixRep, IsMapping and IsOne ],
+return m;
+"for a mutable compressed GF2 matrix and a trivial Frobenius automorphism",
+IsMapping and IsOne ],
+return MutableCopyMat(m);
+"for a compressed 8bit matrix and a Frobenius automorphism",
+function( m, f )
+l := [];
+for i in [1..Length(m)] do
+ConvertToVectorRepNC(w,q);
+od;
+return MakeImmutable(l);
+"for a mutable compressed 8bit matrix and a Frobenius automorphism",
+IsFrobeniusAutomorphism ],
+local w,l,i,q;
+q := Q_VEC8BIT(m[1]);
+w := List(m[i],x->x^f);
+Add(l,w);
+ConvertToMatrixRepNC(l,q);
+end );
+InstallOtherMethod( \^,
+[ IsMatrix and IsFFECollColl and Is8BitMatrixRep, IsMapping and IsOne ],
+return m;
+"for a mutable compressed 8bit matrix and a trivial Frobenius automorphism",
+IsMapping and IsOne ],
+return MutableCopyMat(m);
+InstallMethod( \*, "for two projective group element with Frobenious",
+IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+local el;
+frob := a!.frob * b!.frob );
+return el;
+InstallMethod( InverseSameMutability,
+[IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+local m,f;
+m := rec( mat := (InverseSameMutability(el!.mat))^f, fld := el!.fld,
+Objectify( ProjElsWithFrobType, m );
+end );
+"for a projective group element with Frobenius",
+function( el )
+f := el!.frob;
+frob := f^-1 );
+return m;
+InstallMethod( OneImmutable, "for a projective group element with Frobenius",
+function( el )
+o := rec( mat := OneImmutable( el!.mat ), fld := el!.fld,
+Objectify( ProjElsWithFrobType, o);
+end );
+"for a projective group element with Frobenius",
+function( el )
+o := rec( mat := OneImmutable( el!.mat ), fld := el!.fld,
+Objectify( ProjElsWithFrobType, o);
+end );
+InstallMethod( ViewObj,
+[IsProjectiveGroupWithFrob],
+Print("<projective collineation group>");
+"for a trivial projective collineation group",
+function( g )
+end );
+InstallMethod( ViewObj,
+[IsProjectiveGroupWithFrob and HasGeneratorsOfGroup],
+local gens;
+if Length(gens) = 0 then
+else
+" generators>");
+end );
+InstallMethod( ViewObj,
+[IsProjectiveGroupWithFrob and HasSize],
+if Size(g) = 1 then
+else
+fi;
+"for a projective collineation group with gens and size",
+function( g )
+gens := GeneratorsOfGroup(g);
+Print("<trivial projective collineation group>");
+Print("<projective collineation group of size ",Size(g)," with ",
+fi;
+"for a projective collineation group",
+function( g )
+if IsBound(g!.basefield) then
+fi;
+if HasParent(g) then # JB 22/03/2014
+if IsBound(P!.basefield) then
+g!.basefield := f;
+fi;
+if Length(gens) > 0 then
+return g!.basefield;
+g!.basefield := One(g)!.fld;
+fi;
+end );
+InstallMethod( Dimension,
+[IsProjectiveGroupWithFrob],
+local gens;
+return Dimension(Parent(g));
+if Length(gens) > 0 then
+elif IsTrivial(g) then #JB: 22/03/2014: The trivial group with no generators slipped through.
+fi;
+end );
+InstallMethod( OneImmutable,
+function( g )
+gens := GeneratorsOfGroup(g);
+if HasParent(g) and HasOneImmutable(Parent(g)) then # JB 22/03/2014
+else
+fi;
+o := rec( mat := OneImmutable( gens[1]!.mat ), fld := BaseField(g),
+Objectify( ProjElsWithFrobType, o);
+end );
+"for a projective group with frob",
+function( g )
+d := Dimension( g );
+if (q^d - 1)/(q-1) > FINING.LimitForCanComputeActionOnPoints then
+else
+fi;
+function( line, el )
+end );
+InstallGlobalFunction( OnProjPointsWithFrob,
+local vec,c;
+vec := OnLines(line,el!.mat)^el!.frob;
+return vec;
+function( matrix, el )
+local mat;
+return mat;
+end );
+InstallGlobalFunction( OnProjSubspacesWithFrob,
+vec := OnRight(matrix,el!.mat)^el!.frob;
+vec := MutableCopyMat(vec);
+TriangulizeMat(vec);
+return vec;
+"for a projective collineation group",
+function( pg )
+Info(InfoFinInG,4,"Using ActionOnAllProjPoints");
+d := Dimension(pg);
+on := One(pg);
+v[1] := o;
+orb := [];
+j := PositionNot(m, zero);
+Add(orb, CVec(m,f)); #here is the change.
+od;
+SetIsInjective(a,true);
+end );
+InstallGlobalFunction( NiceMonomorphismByOrbit,
+local cand,h,iso,nr,orb,pgens;
+orb := Orb(g,x,op,rec(orbsizelimit := orblen, hashlen := 2*orblen,
+Enumerate(orb);
+orb := Orb(g,x,op,rec(storenumbers := true));
+fi;
+h := GroupWithGenerators(pgens);
+nr := Minimum(100,Length(orb));
+ops := ListWithIdenticalEntries(nr,op) );
+rec( Cand := cand ), rec( ) );
+return iso;
+InstallGlobalFunction( NiceMonomorphismByDomain,
+local cand,gens,h,ht,i,iso,nr,pgens;
+for i in [1..Length(dom)] do
+od;
+gens := GeneratorsOfGroup(g);
+Add(pgens,PermList( List([1..Length(dom)],
+od;
+SetSize(h,Size(g));
+cand := rec( points := dom{[1..nr]}, used := 0,
+iso := GroupHomomorphismByImagesNCStabilizerChain(g,h,pgens,
+SetIsBijective(iso,true);
+end );
+InstallMethod( SetAsNiceMono,
+[IsProjectiveGroupWithFrob, IsGroupHomomorphism and IsInjective],
+SetNiceMonomorphism(pg,a);
+end );
+InstallMethod( NiceMonomorphism,
+[IsProjectivityGroup and CanComputeActionOnPoints and IsHandledByNiceMonomorphism],
+function( pg )
+Info(InfoFinInG,4,"Using NiceMonomorphism for proj. group (feasible)");
+dom := MakeAllProjectivePoints( bf, Dimension(pg) - 1);
+if FINING.Fast then
+else
+SetIsBijective(hom, true);
+return hom;
+"for a projective group (nasty case)",
+50,
+local can, dom, hom, bf;
+bf := BaseField(pg);
+if not(can) then
+else
+hom := NiceMonomorphismByDomain( pg, dom, OnProjPointsWithFrob );
+hom := ActionHomomorphism(pg, dom, OnProjPointsWithFrob, "surjective");
+fi;
+fi;
+InstallMethod( NiceMonomorphism,
+[IsProjectiveGroupWithFrob and CanComputeActionOnPoints and
+function( pg )
+end );
+"for a projective collineation group (nasty case)",
+function( pg )
+can := CanComputeActionOnPoints(pg);
+Error("action on projective points not feasible to calculate");
+return ActionOnAllProjPoints( pg );
+end );
+"for a projective group",
+function(g,opt,i)
+if IsBound(g!.basepointcandidates) and
+return g!.basepointcandidates;
+gens := GeneratorsOfGroup(g);
+f := BaseField(gens[1]!.el);
+else
+d := Dimension(g);
+cand := rec( points := NewMatrix(IsCMatRep, f,d, IdentityMat(d,f)) , used := 0,
+return cand;
+InstallMethod( FindBasePointCandidates,
+[IsProjectiveGroupWithFrob,IsRecord,IsInt],
+local cand,d,f,gens;
+g!.basepointcandidates.used < Length(g!.basepointcandidates.points) then
+fi;
+if IsObjWithMemory(gens[1]) then
+d := Length(gens[1]!.el!.mat);
+f := BaseField(g);
+fi;
+ops := ListWithIdenticalEntries(d,OnProjPointsWithFrob) );
+Add(cand.points,ShallowCopy(cand.points[1]));
+cand.points[d+1][2] := PrimitiveRoot(f);
+return cand;
+"for a projective collineation group",
+function(g,opt,i,parentS)
+if IsBound(g!.basepointcandidates) and
+return g!.basepointcandidates;
+gens := GeneratorsOfGroup(g);
+f := BaseField(gens[1]!.el);
+else
+d := Dimension(g);
+cand := rec( points := NewMatrix(IsCMatRep, f,d, IdentityMat(d,f)), used := 0,
+if d > 1 then
+Add(cand.points,ShallowCopy(cand.points[1]));
+cand.points[d+j-1][j] := PrimitiveRoot(f);
+fi;
+end );
+InstallMethod( CanonicalGramMatrix,
+[IsString, IsPosInt, IsField],
+local one, q, m, i, t, x, w, p;
+q := Size(f);
+if IsOddInt(d) then
+fi;
+for i in [ 1 .. d/2 ] do
+m[2*i-1][2*i] := one;
+elif type = "hermitian" then
+Error("field order must be a square");
+m := IdentityMat(d, f);
+m := List( 0*IdentityMat(d, f), ShallowCopy );
+if IsOddInt(p) and (p + 1) mod 4 = 0 then
+else
+fi;
+m[2*i-1][2*i] := w;
+od;
+m := List( 0*IdentityMat(d, f), ShallowCopy );
+if q mod 4 in [1,2] then
+else
+fi;
+w := one * ((p + 1) / 2);
+w := one;
+for i in [ 2 .. d/2 ] do
+m[2*i][2*i-1] := w;
+elif type = "parabolic" then
+p := Characteristic(f);
+t := Z(p);
+t := one;
+m[1][1] := t;
+else
+fi;
+m[2*i][2*i+1] := w;
+od;
+fi;
+return m;
+InstallMethod( CanonicalQuadraticForm,
+[IsString, IsPosInt, IsField],
+local m, one, q, p, j, x, R;
+if type = "hyperbolic" then
+for j in [ 1 .. d/2 ] do
+od;
+m := MutableCopyMat(0 * IdentityMat(d, f));
+m[2][1] := one;
+for j in [ 2 .. d/2-1 ] do
+od;
+q := Size(f);
+m[2][2] := one;
+R := PolynomialRing( f, 1 );
+m[2][2] := Z(q)^First( [ 0 .. q-2 ], u ->
+fi;
+m := MutableCopyMat(0 * IdentityMat(d, f));
+for j in [ 1 .. (d-1)/2 ] do
+od;
+fi;
+return m;
+InstallMethod( SOdesargues,
+[IsInt, IsPosInt, IsField and IsFinite],
+local s, m, frob, b, gens, g, q;
+elif i = 0 then s := "parabolic";
+fi;
+if IsEvenInt(q) then
+b := BaseChangeOrthogonalQuadratic(m, f)[1];
+m := InvariantBilinearForm(SO(i,d,q))!.matrix;
+fi;
+gens := GeneratorsOfGroup( SO(i,d,q) );
+gens := ProjElsWithFrob( List(gens, x -> [x,frob^0]), f );
+SetName( g, Concatenation("PSO(",String(i),",",String(d),",",String(q),")") );
+SetSize( g, Size(SO(i, d, q)) ); ##/ 2); This might be a mistake in Kleidman and Liebeck!
+SetSize( g, Size(SO(i, d, q)) / GCD_INT(2, q-1) );
+end );
+InstallMethod( GOdesargues, [IsInt, IsPosInt, IsField and IsFinite],
+local m, frob, b, gens, s, g, q;
+elif i = 0 then s := "parabolic";
+fi;
+if IsEvenInt(q) then
+b := BaseChangeOrthogonalQuadratic(m, f)[1];
+m := InvariantBilinearForm(SO(i,d,q))!.matrix;
+fi;
+gens := GeneratorsOfGroup( GO(i,d,q) );
+gens := ProjElsWithFrob( List(gens, x -> [x,frob^0]), f );
+SetName( g, Concatenation("PGO(",String(i),",",String(d),",",String(q),")") );
+return g;
+function(d, f)
+sqrtq := Sqrt(Size(f));
+frob := FrobeniusAutomorphism(f);
+gens := GeneratorsOfGroup( SU(d,sqrtq) );
+gens := ProjElsWithFrob( List(gens, x -> [x,frob^0]), f );
+SetName( g, Concatenation("PSU(",String(d),",",String(sqrtq),"^2)") );
+return g;
+function(d, f)
+sqrtq := Sqrt(Size(f));
+frob := FrobeniusAutomorphism(f);
+gens := List( gens, y -> b * y * b^-1);
+g := GroupWithGenerators( gens );
+SetSize( g, Size( GU(d, sqrtq) ) / (sqrtq+1) );
+end );
+InstallMethod( Spdesargues, [IsPosInt, IsField and IsFinite],
+local m, frob, b, gens, g, q, sp;
+m := InvariantBilinearForm(Sp(d,q))!.matrix;
+frob := FrobeniusAutomorphism(f);
+sp := Sp(d,q);
+gens := List( gens, y -> b * y * b^-1);
+g := GroupWithGenerators( gens );
+SetSize( g, Size( sp )/GCD_INT(2, q-1) );
+end );
+function(d, f)
+q := Size(f);
+Error("dimension must be an even");
+sp := Sp(d, q);
+z := PrimitiveRoot( f );
+for i in [1..d/2] do delta[i][i] := z; od;
+g := GroupWithGenerators( gens );
+SetSize( g, (q-1) * Size(sp) );
+end );
+InstallMethod( GSpdesargues, [IsPosInt, IsField and IsFinite],
+local m, frob, b, gens, g, q, gsp;
+m := InvariantBilinearForm(Sp(d,q))!.matrix;
+frob := FrobeniusAutomorphism(f);
+gsp := GeneralSymplecticGroup(d,f);
+gens := List( gens, y -> b * y * b^-1);
+g := GroupWithGenerators( gens );
+SetSize( g, Size(gsp) / (q-1) );
+end );
+function(d, f)
+q := Size(f);
+b := BaseChangeToCanonical( BilinearFormByMatrix(m, f) );
+gens := GeneratorsOfGroup( gsp );
+gens := List( gens, x -> [x, frob^0]);
+gens := ProjElsWithFrob( gens, f );
+SetName( g, Concatenation("PGammaSp(",String(d),",",String(q),")") );
+return g;
+InstallMethod( DeltaOminus, [IsPosInt, IsField and IsFinite],
+local go, gens, g, q, one, mat, i, combs, two, a, b,
+one := One(f);
+q := Size(f);
+go := GOdesargues(-1,d,f);
+if q mod 4 = 3 then
+mat[2*i-1][2*i] := one;
+od;
+combs := Combinations(AsList(f),2);;
+and t[1]^2+t[2]^2=mu);
+twobytwo := [[a,b],[b,-a]];
+elif q mod 4 = 1 then
+z := Z(q);
+mat{[2*i-1,2*i]}{[2*i-1,2*i]} := [[ zero, one ], [z, zero]];
+else
+fi;
+gens := ShallowCopy(GeneratorsOfGroup( go ));
+g := GroupWithGenerators( gens );
+return g;
+function(d, f)
+p := Characteristic( f );
+coll := go;
+gram := CanonicalGramMatrix("elliptic", d, f);
+mat[1][1] := gram[3][4] * gram[1][1]^((1-p)/2);
+ConvertToMatrixRep( mat, f );
+a := ProjElWithFrob( mat, frob, f);
+Add(gens, a);
+SetName( coll, Concatenation("PGammaO-(",String(d),",",String(q),")") );
+else
+gram := CanonicalQuadraticForm("elliptic", d, f);
+frob := FrobeniusAutomorphism( f );
+if not Forms_RESET(mat * block^(frob^-1) *TransposedMat(mat), 2, q) = block then
+fi;
+mat2 := IdentityMat(d,f);
+a := ProjElWithFrob( mat2, frob, f);
+Add(gens, a);
+SetName( coll, Concatenation("PGammaO-(",String(d),",",String(q),")") );
+fi;
+return coll;
+InstallMethod( GammaO, [IsPosInt, IsField and IsFinite],
+local q, p, go, gens, frob, m, b, lambda, g, w, one;
+q := Size(f);
+go := GO(0, d, q);
+frob := FrobeniusAutomorphism( f );
+m := InvariantBilinearForm(GO(0,d,q))!.matrix;
+gens := List(gens, t->b*t*b^-1);;
+m := InvariantQuadraticForm(GO(0,d,q))!.matrix;
+gens := List(gens, t->b*t*b^-1);;
+if IsOddInt(p) then
+w := Z(p) * ((p + 1) / 2);
+w := one * ((p + 1) / 2);
+else
+fi;
+gens := List(gens, x -> [x,frob^0]);
+gens := ProjElsWithFrob( gens, f );
+SetName( g, Concatenation("PGammaO(",String(d),",",String(q),")") );
+end );
+InstallMethod( DeltaOplus, [IsPosInt, IsField and IsFinite],
+local q, go, m, w, mu, i, gens, g, b;
+go := GO(1, d, q);
+m := InvariantBilinearForm(go)!.matrix;
+w := PrimitiveRoot( f );
+for i in [1..d/2] do
+od;
+gens := List(gens, t->b*t*b^-1);;
+else
+b := BaseChangeOrthogonalQuadratic(m, f)[1];
+fi;
+gens := ProjElsWithFrob( List(gens, x -> [x,IdentityMapping(f)]), f );
+SetName( g, Concatenation("PDeltaO+(",String(d),",",String(q),")") );
+i -> (q^(2*i)-1) )) );
+end );
+function(d, f)
+q := Size(f);
+gens := ShallowCopy(GeneratorsOfGroup(deltao));
+Add(gens, ProjElWithFrob( IdentityMat(d, f), frob, f ));
+SetName( g, Concatenation("PGammaO+(",String(d),",",String(q),")") );
+return g;
+InstallMethod( GammaU, [IsPosInt, IsField and IsFinite],
+q := Size(f);
+m := InvariantSesquilinearForm(GU(d,sqrtq))!.matrix;
+frob := FrobeniusAutomorphism(f);
+gens := GeneratorsOfGroup( gu );
+gens := List( gens, x -> [x, frob^0]);
+gens := ProjElsWithFrob( gens, f );
+SetSize( g, Order(frob) * Size(gu) / (sqrtq+1) );
+Info(InfoFinInG, 1, "Warning: We have only factored scalars out of GammaU to construct a central cover of PGammaU.\n The centre is thus nontrivial and acts trivially on totally isotropic 1-spaces.");
+else
+fi;
+end );
+InstallMethod( Wrap,
+[IsProjectiveSpace, IsPosInt, IsObject],
+local w;
+Objectify( NewType( SoPSFamily, IsElementOfIncidenceStructure and
+return w;
+InstallMethod( ProjectiveSpace, "for a proj dimension and a field",
+function( d, f )
+geo := rec( dimension := d, basefield := f,
+if d = 2 then
+IsProjectiveSpace and IsProjectiveSpaceRep and IsDesarguesianPlane);
+ty := NewType( GeometriesFamily,
+fi;
+SetAmbientSpace(geo,geo);
+SetOrder(geo,[Size(f),Size(f)]);
+return geo;
+InstallMethod( ProjectiveSpace, "for a proj dimension and a prime power",
+function( d, q )
+end );
+InstallMethod( ViewObj, [ IsProjectiveSpace and IsProjectiveSpaceRep ],
+Print("ProjectiveSpace(",p!.dimension,", ",Size(p!.basefield),")");
+"for a projective space",
+function( p )
+end );
+InstallMethod( PrintObj, [ IsProjectiveSpace and IsProjectiveSpaceRep ],
+Print("ProjectiveSpace(",p!.dimension,",",p!.basefield,")");
+function( p )
+"for two projective spaces",
+function(pg1,pg2);
+end );
+"for a projective space",
+ps -> ps!.dimension
+"for an element of a projective space",
+sub -> AmbientSpace(sub)!.basefield );
+"for a projective space",
+function( pg )
+if not pg!.dimension > 0 then
+else
+frame:=List(BasisVectors(bas),v->VectorSpaceToElement(pg,v));
+Add(frame,unitpt);
+fi;
+InstallMethod( RepresentativesOfElements,
+local d, gf, id, elts;
+gf := BaseField(ps);
+elts := List([1..d], i -> VectorSpaceToElement(ps, id{[1..i]}));
+end );
+"for a projective space",
+function( ps )
+end);
+InstallMethod( TypesOfElementsOfIncidenceStructure,
+function( ps )
+types := ["point"];
+if d >= 2 then Add(types,"line"); fi;
+if d >= 4 then Add(types,"solid"); fi;
+Add(types,Concatenation("proj. ",String(i-1),"-space"));
+return types;
+"for a projective space",
+function( ps )
+types := ["points"];
+if d >= 2 then Add(types,"lines"); fi;
+if d >= 4 then Add(types,"solids"); fi;
+Add(types,Concatenation("proj. ",String(i-1),"-subspaces"));
+return types;
+InstallMethod( ElementsOfIncidenceStructure,
+[IsProjectiveSpace, IsPosInt],
+local r;
+if j > r then
+else
+NewType( ElementsCollFamily, IsSubspacesOfProjectiveSpace and IsSubspacesOfProjectiveSpaceRep ),
+type := j,
+)
+fi;
+InstallMethod( ElementsOfIncidenceStructure,
+[IsProjectiveSpace],
+return Objectify(
+rec( geometry := ps,
+);
+"for set of all subspaces of a projective space",
+function(x,y)
+y!.geometry!.basefield));
+"for subspaces of a projective space",
+function(subs);
+end);
+InstallMethod( \in,
+function( x, dom )
+end );
+InstallMethod( \in,
+function( x, dom )
+end );
+"for a projective space and a CMatRep",
+function( geom, v )
+end );
+"for a projective space and a Plist",
+function( geom, v )
+Error("<v> does not represent any element");
+TriangulizeMat(x);
+if Length(v[1]) <> geom!.dimension + 1 then
+fi;
+n := Length(x);
+while i < n and ForAll(x[n-i], IsZero) do
+od;
+return EmptySubspace(geom);
+x := x{[1..n-i]};
+return geom;
+y := NewMatrix(IsCMatRep,geom!.basefield,Length(x[1]),x);
+if Length(y) = 1 then
+else
+fi;
+InstallMethod( VectorSpaceToElement,
+[IsProjectiveSpace, IsGF2MatrixRep],
+local x, n, i, y;
+if IsEmpty(v) then
+fi;
+TriangulizeMat(x);
+Error("Dimensions are incompatible");
+i := 0;
+i := i+1;
+if i = n then
+fi;
+if Length(x)=ProjectiveDimension(geom)+1 then
+fi;
+y := NewMatrix(IsCMatRep,geom!.basefield,Length(x[1]),x);
+return Wrap(geom, 1, y[1]);
+fi;
+InstallMethod( VectorSpaceToElement,
+[IsProjectiveSpace, Is8BitMatrixRep],
+local x, n, i, y;
+if IsEmpty(v) then
+fi;
+x := MutableCopyMat(v);
+if Length(v[1]) <> geom!.dimension + 1 then
+fi;
+i := 0;
+i := i+1;
+if i = n then
+fi;
+if Length(x)=ProjectiveDimension(geom)+1 then
+fi;
+y := NewMatrix(IsCMatRep,geom!.basefield,Length(x[1]),x);
+return Wrap(geom, 1, y[1]);
+fi;
+InstallMethod( VectorSpaceToElement,
+[IsProjectiveSpace, IsCVecRep],
+local x, y;
+Error("Dimensions are incompatible");
+return EmptySubspace(geom);
+MultRowVector(x,Inverse( x[PositionNonZero(x)] ));
+fi;
+InstallMethod( VectorSpaceToElement,
+[IsProjectiveSpace, IsRowVector],
+local x, y;
+Error("Dimensions are incompatible");
+return EmptySubspace(geom);
+MultRowVector(x,Inverse( x[PositionNonZero(x)] ));
+fi;
+"for a projective space and an 8-bit vector",
+function( geom, v )
+return EmptySubspace(geom);
+x := ShallowCopy(v);
+if Length(v) <> geom!.dimension + 1 then
+fi;
+if IsZero(x) then
+else
+y := NewMatrix(IsCMatRep,geom!.basefield,Length(x),[x]);
+return Wrap(geom, 1, y[1]);
+end );
+"for a subspace of a projective space",
+function(subspace)
+vspace:=UnderlyingVectorSpace(subspace!.geo);
+W:=SubspaceNC(vspace,[Unpack(subspace!.obj)]); #possibly unpack here to avoid bloody seg fault.
+W:=SubspaceNC(vspace,Unpack(subspace!.obj));
+return W;
+"for a subspace of a projective space",
+function( v )
+end );
+InstallMethod( Dimension,
+[ IsSubspaceOfProjectiveSpace ],
+return v!.type - 1;
+"for a subspace of a projective space",
+local list,v;
+Error("The argument needs to be a projective space of dimension at least 1!");
+list:=ShallowCopy(subspace!.obj);
+return List(list,v->VectorSpaceToElement(subspace!.geo,v));
+end );
+InstallMethod( Coordinates,
+[IsSubspaceOfProjectiveSpace],
+if not Dimension(point)=0 then
+else
+fi;
+"for a subspace of a projective space",
+function(hyp)
+if not Dimension(hyp)=Dimension(hyp!.geo)-1 then
+else
+a:=NullspaceMat(TransposedMat(mat));
+MultRowVector(x,Inverse( x[PositionNonZero(x)] ));
+fi;
+InstallMethod( HyperplaneByDualCoordinates,
+[IsProjectiveSpace,IsList],
+local mat,list;
+Error("The dual coordinates are not compatible with the projective space");
+mat:=[a];
+return VectorSpaceToElement(pg,list);
+end );
+"for a hyperplane of a projective space",
+function(hyp)
+pg:=AmbientGeometry(hyp);
+indets:=IndeterminatesOfPolynomialRing(r);
+return Sum(List([1..Size(indets)],i->v[i]*indets[i]));
+"for the empty subspace and a projective space",
+function( x, y )
+return y;
+Error( "The subspace <x> has a different ambient space than <y>" );
+end );
+InstallMethod( Span,
+[ IsProjectiveSpace, IsEmptySubspace ],
+if x!.vectorspace = y!.geo!.vectorspace then
+else
+fi;
+"for the empty subspace and a projective subspace",
+function( x, y )
+return x;
+Error( "The subspace <x> has a different ambient space than <y>" );
+end );
+InstallMethod( Meet,
+[ IsProjectiveSpace, IsEmptySubspace ],
+if x!.vectorspace = y!.geo!.vectorspace then
+else
+fi;
+InstallMethod( ShadowOfElement,
+[IsProjectiveSpace, IsSubspaceOfProjectiveSpace, IsPosInt],
+function( ps, v, j )
+if not AmbientSpace(v) = ps then
+fi;
+Error("<ps> has no elements of type <j>");
+localinner := [];
+elif j = v!.type then
+localouter := localinner;
+localinner := Unpack(v!.obj);
+fi;
+localinner := [localinner];
+if IsVector(localouter) and not IsMatrix(localouter) then
+fi;
+BaseSteinitzVectors(localouter, localinner).factorspace);
+IsShadowSubspacesOfProjectiveSpace and
+rec( geometry := ps,
+inner := localinner,
+factorspace := localfactorspace,
+size := Size(Subspaces(localfactorspace))
+);
+InstallMethod( Size,
+[IsShadowSubspacesOfProjectiveSpace and IsShadowSubspacesOfProjectiveSpaceRep ],
+return Size(Subspaces(vs!.factorspace,
+end);
+"for a full projective space",
+function( ps )
+f := ps!.basefield;
+d := ProjectiveDimension(ps);
+Error("The dimension of the projective spaces needs to be at least 0");
+g := GL(d+1,q);
+newgens := List(GeneratorsOfGroup(g),x->[x,frob^0]);
+Add(newgens,[One(g),frob]); #somehow we forgot that this is trivial if IsOne(frob)
+newgens := ProjElsWithFrob(newgens);
+pow := LogInt(q, Characteristic(f));
+if pow > 1 then
+else
+SetSize( coll, s );
+if d = 2 then
+fi;
+end );
+"for a projective space",
+function( ps )
+f := ps!.basefield;
+d := ProjectiveDimension(ps);
+Error("The dimension of the projective spaces needs to be at least 0");
+g := GL(d+1,q);
+gg := GroupWithGenerators(newgens);
+SetName( gg, Concatenation("The FinInG projectivity group PGL(",String(d+1),",",String(q),")") );
+return gg;
+InstallMethod( SpecialProjectivityGroup,
+[ IsProjectiveSpace ],
+local gg,d,f,frob,g,newgens,q,s;
+q := Size(f);
+if d <= -1 then
+fi;
+frob := FrobeniusAutomorphism(f); #needs this, jdb 05/11/2012, see two lines further.
+newgens := List(GeneratorsOfGroup(g),x->[x,frob^0]); # I changed back, and uncommented previous line (jdb 05/11/12)
+newgens := ProjElsWithFrob(newgens); # I changed back, and uncommented previous line (jdb 05/11/12)
+s := q^(d*(d+1)/2)*Product(List([2..d+1], i->q^i-1)) / GCD_INT(q-1, d+1);
+SetSize( gg, s );
+end );
+function( var, el )
+geo := var!.geo;
+newvar := OnProjPointsWithFrob(var!.obj,el);
+newvar := OnProjSubspacesWithFrob(var!.obj,el);
+newel := Wrap(AmbientSpace(geo),var!.type,newvar);
+return Wrap(geo,var!.type,newvar);
+return newel;
+end );
+InstallOtherMethod( \^,
+[IsElementOfIncidenceStructure, IsProjGrpElWithFrob],
+return OnProjSubspaces(x,em);
+InstallOtherMethod( \^,
+[IsElementOfIncidenceStructure, IsProjGrpElWithFrobWithPSIsom],
+return OnProjSubspacesExtended(x,em);
+InstallGlobalFunction( OnSetsProjSubspaces,
+return Set( var, i -> OnProjSubspaces( i, el ) );
+InstallMethod( AsList,
+[IsSubspacesOfProjectiveSpace],
+geo := vs!.geometry;
+type := vs!.type;
+if type = 1 then
+d := geo!.dimension;
+o := List(o, t -> Wrap(geo, type, t ) );;
+else
+o := Orb(g, p, OnProjSubspaces, rec( hashlen:=Int(5/4*sz),
+Enumerate(o, sz);
+return o;
+InstallMethod(Iterator,
+[IsSubspacesOfProjectiveSpace],
+local ps, j, d, F;
+j := vs!.type;
+F := ps!.basefield;
+NextIterator := function(iter)
+mat := NextIterator(iter!.S);
+return VectorSpaceToElement(ps,mat);
+IsDoneIterator := function(iter)
+end,
+return rec(
+);
+S := Iterator(Subspaces(ps!.vectorspace,j))
+end);
+"for a projective space and list of subspaces of the projective space",
+function(ps,els)
+list := Set(ShallowCopy(els));
+Error("A flag can contain at most Rank(<ps>) elements");
+test := List(list,x->AmbientSpace(x));
+Error("not all elements have <ps> as ambient space");
+if (test <> [ true ] and test <> []) then
+fi;
+ObjectifyWithAttributes(flag, IsFlagOfPSType, IsEmptyFlag, false, RankAttr, Size(list) );
+end);
+"for a projective space and an empty list",
+function(ps,els)
+flag := rec(geo := ps, types := [], els := [], vectorspace := ps!.vectorspace );
+return flag;
+"for a flag of a projective space",
+function(flag)
+end);
+[ IsFlagOfProjectiveSpace and IsFlagOfIncidenceStructureRep ],
+Print("<a flag of ProjectiveSpace(",flag!.geo!.dimension,", ",Size(flag!.geo!.basefield),")>");
+[ IsFlagOfProjectiveSpace and IsFlagOfIncidenceStructureRep ],
+PrintObj(flag!.els);
+[ IsFlagOfProjectiveSpace and IsFlagOfIncidenceStructureRep ],
+if IsEmptyFlag(flag) then
+else
+Print("respectively spanned by\n");
+fi;
+InstallMethod( ShadowOfFlag,
+[IsProjectiveSpace, IsFlagOfProjectiveSpace, IsPosInt],
+local localinner, localouter, localfactorspace, v, smallertypes, biggertypes, ceiling, floor;
+Error("<ps> has no elements of type <j>");
+return ElementsOfIncidenceStructure(ps, j);
+biggertypes:=Filtered(flag!.types,t->t >= j);
+localinner := [];
+localouter:=flag!.els[Position(flag!.types,ceiling)];
+localouter:=BasisVectors(Basis(ps!.vectorspace));
+localinner:=flag!.els[Position(flag!.types,floor)];
+floor:=Maximum(smallertypes);
+localinner:=flag!.els[Position(flag!.types,floor)];
+fi;
+if localinner!.type = 1 then
+else
+fi;
+if not biggertypes = [] then
+localouter := [Unpack(localouter!.obj)];
+localouter := Unpack(localouter!.obj);
+fi;
+BaseSteinitzVectors(localouter, localinner).factorspace);
+NewType( ElementsCollFamily, IsElementsOfIncidenceStructure and
+IsShadowSubspacesOfProjectiveSpaceRep),
+geometry := ps,
+inner := localinner,
+factorspace := localfactorspace,
+size := Size(Subspaces(localfactorspace)) #this causes a problem when localfactorspace consists of cvec/cmat.
+);
+InstallMethod( Iterator,
+[IsShadowSubspacesOfProjectiveSpace and IsShadowSubspacesOfProjectiveSpaceRep ],
+local ps, j, d, F;
+j := vs!.type;
+F := ps!.basefield;
+NextIterator := function(iter)
+mat := NextIterator(iter!.S);
+BasisVectors(Basis(mat)),
+));
+end,
+return IsDoneIterator(iter!.S);
+ShallowCopy := function(iter)
+innermat := iter!.innermat,
+);
+innermat := vs!.inner,
+));
+"for a projective space and any of its subspaces",
+function( x, y )
+return false;
+Error( "<x> is different from the ambient space of <y>" );
+end );
+InstallOtherMethod( \in,
+[ IsProjectiveSpace, IsEmptySubspace ],
+if x = y!.geo then
+else
+fi;
+InstallMethod( \in,
+[IsSubspaceOfProjectiveSpace, IsProjectiveSpace],
+local ps;
+if dom = ps then
+ps!.basefield = dom!.basefield;
+Error( "<dom> is different from the ambient space of <x>" );
+end );
+InstallMethod( \in,
+[IsProjectiveSpace, IsSubspaceOfProjectiveSpace],
+local ps;
+return ps!.dimension = dom!.dimension and
+end );
+"for two subspaces of the same projective space",
+return x in y or y in x;
+InstallMethod( Span,
+[IsProjectiveSpace, IsSubspaceOfProjectiveSpace],
+if y in x then return x; fi;
+InstallMethod( Span, "for a subspace of a projective space and a projective space",
+function(x,y)
+end );
+InstallMethod( Span,
+[IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace],
+typx := x!.type;
+vec := x!.geo!.vectorspace;
+ux := Unpack(Unwrap(x)); #here is the cvec/cmat unpack :-)
+if typx = 1 then ux := [ux]; fi;
+span := SumIntersectionMat(ux, uy)[1];
+return VectorSpaceToElement( AmbientSpace(x!.geo), span);
+return AmbientSpace(x!.geo);
+else
+fi;
+InstallMethod( Span,
+[IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace, IsBool],
+return Span(x,y);
+InstallMethod( Span, "for a homogeneous list of subspaces of a projective space",
+function( l )
+return [];
+Error("The elements in the list do not have a common ambient space");
+x := l[1];
+F := amb!.basefield;
+for r in l do
+if r!.type = 1 then unr := [unr]; fi;
+od;
+fi;
+InstallMethod( Span,
+[ IsList ],
+local pg,list,x;
+if Length(l)=0 then return [];
+else
+if not Size(AsDuplicateFreeList(List(list,x->AmbientSpace(x))))=1 then
+else
+if pg in list then return pg;
+return Span(list);
+fi;
+end );
+"for a list and a boolean",
+function( l, b )
+end );
+"for a projective space and a subspace of a projective space",
+function(x,y)
+fi;
+InstallMethod( Meet,
+[IsSubspaceOfProjectiveSpace, IsProjectiveSpace],
+if x in y then return x;
+end );
+"for two subspaces of a projective space",
+function( x, y )
+typx := x!.type;
+if x!.geo!.vectorspace = y!.geo!.vectorspace then
+uy := Unpack(Unwrap(y));
+if typy = 1 then uy := [uy]; fi;
+int := SumIntersectionMat(ux, uy)[2];
+return VectorSpaceToElement( AmbientSpace(x), int);
+return EmptySubspace(AmbientSpace(x));
+else
+fi;
+InstallMethod( Meet,
+[ IsHomogeneousList and IsSubspaceOfProjectiveSpaceCollection],
+local int, iter, ps,em;
+ps := AsDuplicateFreeList(List(l,x->AmbientSpace(x)));
+Error("The elements in the list do not have a common ambient space");
+ps := ps[1];
+if not IsEmpty(l) then
+else
+int := NextIterator(iter);
+int := Meet(int, NextIterator(iter));
+return int;
+else return []; #I think this will never happen, since IsSubspaceOfProjectiveSpaceCollection([]) is false.
+fi;
+InstallMethod( Meet,
+[ IsList ],
+local pg,checklist,list,x;
+if IsEmpty(l) then return [];
+if Length(l)=1 then return l[1];
+if not Size(AsDuplicateFreeList(List(checklist,x->AmbientSpace(x))))=1 then
+else
+else
+list:=Filtered(l,x->not x = pg);
+fi;
+fi;
+end );
+InstallMethod( RandomSubspace,
+[IsProjectiveSpace,IsInt],
+local vspace,list,W,w;
+Error("The dimension of the subspace is larger that of the projective space");
+if IsNegInt(d) then
+fi;
+W:=RandomSubspace(vspace,d+1);
+end );
+InstallMethod( RandomSubspace,
+[IsSubspaceOfProjectiveSpace,IsInt],
+local vspace,list,W,w;
+Error("The dimension of the random subspace is too large");
+if IsNegInt(d) then
+fi;
+W:=RandomSubspace(vspace,d+1);
+end );
+InstallMethod( RandomSubspace,
+[IsProjectiveSpace],
+local list,i;
+i:=Random(list);
+end );
+"for a collection of subspaces of a projective space",
+function( subs )
+vspace:=pg!.vectorspace;
+Error("The subspaces of the collection need to have the same dimension");
+W:=RandomSubspace(vspace,d);
+end );
+"for a collection of all subspaces of a projective space",
+return RandomSubspace(subs!.geometry);
+InstallMethod( Random,
+[ IsShadowSubspacesOfProjectiveSpace ],
+local rand, mat, vs, j, pg;
+pg := shad!.geometry;
+rand := BasisVectors(Basis(Random(Subspaces(shad!.factorspace,j-Size(shad!.inner)))));
+vs := Concatenation(rand,mat);
+end );
+"for three points of a projective space",
+if Length(DuplicateFreeList(List([x,y,z],t->AmbientSpace(t)))) <> 1 then
+fi;
+gfq2 := geo!.basefield;
+Error( "the order of the basefield must be a square" );
+gfq := GF(Sqrt(Size(gfq2)));
+t := First(gfq2, u -> Rank([z!.obj, x!.obj + u * y!.obj]) = 1);
+subline := List(gfq, w -> VectorSpaceToElement(geo, x!.obj + w * t * y!.obj));
+return subline;
+IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace],
+function( w, x, y, z )
+geo := AmbientSpace(w!.geo);
+gfq := GF(Sqrt(Size(gfq2)));
+coeffs := SolutionMat([w!.obj,x!.obj,y!.obj], z!.obj);
+ox := coeffs[2] * x!.obj;
+Add( subplane, VectorSpaceToElement(geo, oy) );
+for t in gfq do
+od;
+return subplane;
+InstallMethod( ComplementSpace,
+[IsVectorSpace, IsFFECollColl],
+bas := MutableCopyMat( BasisVectors( Basis(space) ));
+if Length( mat ) > 0 then
+TriangulizeMat( mat );
+dim := Length( bas[1] );
+b := [ ];
+j := 1;
+stop := false;
+if j <= dim and (Length( mat ) < i or mat[i][j] = z) then
+if v <> fail then
+v := 1 / v[j] * v;
+fi;
+stop := true;
+v := mat[i];
+else
+fi;
+if v <> fail then
+bas[k] := bas[k] - bas[k][j] / v[j] * v;
+v := Zero( v );
+fi;
+until stop;
+od;
+end );
+InstallMethod( ElationOfProjectiveSpace,
+[ IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace ],
+local en,e0,ei,mat,vssub,n,f,c,M,el,centre,p2vect,ps;
+n := Dimension(ps);
+Error("The elements <sub>, <point1>, and <point2> do not have a common ambient space");
+Error("<sub> must be a hyperplane, <point1> and <point2> must be points");
+Error("The points <point1> and <point2> must not be incident with <sub>");
+centre := Meet(sub,Span(point1,point2));
+f := BaseField(sub);
+e0 := UnderlyingObject(centre);
+en := UnderlyingObject(point1);
+el := ShallowCopy(IdentityMat(n+1,f));
+el[n+1][1] := p2vect[1]/p2vect[n+1];
+return CollineationOfProjectiveSpace(el,f);
+"for a hyperplane and a point of a projective space",
+function(sub,centre)
+ps := AmbientSpace(sub);
+if not (ps=AmbientSpace(centre)) then
+elif (Dimension(sub) <> n-1) or (Dimension(centre) <> 0) then
+elif not centre in sub then
+fi;
+f := BaseField(sub);
+e0 := UnderlyingObject(centre);
+en := BasisVectors(Basis(ComplementSpace(f^(n+1),mat)))[1];
+el := ShallowCopy(IdentityMat(n+1,f));
+fbas := BasisVectors(Basis(f));
+el[n+1][1] := x;
+od;
+group := Group(List(gens,x->CollineationOfProjectiveSpace(x,f)));
+return group;
+InstallMethod( ProjectiveElationGroup,
+[ IsSubspaceOfProjectiveSpace ],
+local en,mat,vssub,n,f,c,M,el,ps,gens,fbas,x,group,i;
+n := Dimension(ps);
+Error("<sub> must be a hyperplane");
+mat := Unpack(UnderlyingObject(sub));
+vssub := VectorSpace(f,mat);
+M := Concatenation(mat,[en]);
+gens := [];
+for x in fbas do
+el[n+1][i] := x;
+od;
+SetOrder(group,Size(f)^n);
+end );
+InstallMethod( HomologyOfProjectiveSpace,
+[ IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace ],
+local en,e0,ei,mat,vssub,n,f,c,M,el,p1vect,p2vect,ps;
+n := Dimension(ps);
+Error("The elements <sub>, <centre>, <point1>, and <point2> do not have a common ambient space");
+Error("<sub> must be a hyperplane, <centre>, <point1> and <point2> must be points");
+Error("The points <centre>, <point1> and <point2> must not be incident with <sub>");
+Error("<centre> is fixed and must be different from <point1> and <point2>");
+Error("<centre>, <point1>, and <point2> must span a line");
+mat := UnderlyingObject(sub);
+vssub := VectorSpace(f,mat);
+ei := BasisVectors(Basis(ComplementSpace(vssub,[e0])));
+M := Concatenation([e0],ei,[en]);
+p1vect := UnderlyingObject(point1)*M^-1;
+el[n+1][n+1] := (p2vect[n+1]*p1vect[1])/(p2vect[1]*p1vect[n+1]);
+return CollineationOfProjectiveSpace(el,f);
+InstallMethod( ProjectiveHomologyGroup,
+[ IsSubspaceOfProjectiveSpace, IsSubspaceOfProjectiveSpace ],
+local n,M,el,ps,x,group,f,q;
+n := Dimension(ps);
+Error("The elements <sub> and <centre> do not have a common ambient space");
+Error("<sub> must be a hyperplane, <centre> must be a point");
+Error("The point <centre> and <sub> must not be incident");
+M := Concatenation(Unpack(UnderlyingObject(sub)),[Unpack(UnderlyingObject(centre))]);
+q := Size(f);
+el[n+1][n+1] := Z(q);
+end );
+InstallMethod( IncidenceGraph,
+[ IsProjectiveSpace ],
+local elements, graph, adj, coll, sz;
+return ps!.IncidenceGraphAttr;
+coll := CollineationGroup(ps);
+adj := function(x,y)
+return IsIncident(x,y);
+return false;
+end;
+Setter( IncidenceGraphAttr )( ps, graph );
+end );
+InstallMethod( IdentityMappingOfElementsOfProjectiveSpace,
+[IsProjectiveSpace],
+local map;
+SetFilterObj(map,IsIdentityMappingOfElementsOfProjectiveSpace);
+end );
+"for a projective space",
+function( ps )
+f := function(v)
+ty := v!.type;
+if ty = 1 then
+fi;
+rk := Rank(newb);
+newb := newb[1];
+return VectorSpaceToElement(ps, newb); ## check that this normalises the element
+S := ElementsOfIncidenceStructure(ps); ## map := MappingByFunction(ElementsOfIncidenceStructure(ps), ElementsOfIncidenceStructure(ps), f, f);
+IsStandardDualityOfProjectiveSpace
+and IsBijective and HasOrder and HasIsOne);
+one := IdentityMappingOfElementsOfProjectiveSpace(ps);
+Setter(InverseAttr)(obj,obj); #cannot set this attribute in previous line, because map does not exist then
+end );
+function( g )
+return true;
+fi;
+InstallMethod( IsCorrelation, [ IsProjGrpElWithFrobWithPSIsom ],
+local delta;
+if IsIdentityMappingOfElementsOfProjectiveSpace(delta)
+else return true;
+end );
+function( g )
+end );
+function( g )
+end );
+InstallMethod( IsProjectivity,
+[ IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+InstallMethod( IsStrictlySemilinear,
+[ IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+function( G )
+gens:=GeneratorsOfMagmaWithInverses(G);
+d:=Size(gens[1]!.mat)-1;
+set2:=AsSet(List(gens,g->g!.psisom));
+set2 = AsSet([IdentityMappingOfElementsOfProjectiveSpace(PG(d,F))])
+else return false;
+end );
+function( G )
+gens:=GeneratorsOfMagmaWithInverses(G);
+d:=Size(gens[1]!.mat)-1;
+if set2 = AsSet([IdentityMappingOfElementsOfProjectiveSpace(PG(d,F))])
+else return false;
+end );
+InstallMethod( ViewObj,
+[IsStandardDualityOfProjectiveSpace and IsSPMappingByFunctionWithInverseRep],
+Print("StandardDuality( ",Source(delta)," )");
+"for such a nice looking standard duality of a projective space",
+function(delta)
+end);
+InstallMethod( PrintObj,
+[IsStandardDualityOfProjectiveSpace and IsSPMappingByFunctionWithInverseRep],
+Print("StandardDuality( ",Source(delta)," )");
+InstallMethod( \*,
+[IsStandardDualityOfProjectiveSpace, IsStandardDualityOfProjectiveSpace],
+return One(delta1);
+InstallMethod( \*,
+[IsIdentityMappingOfElementsOfProjectiveSpace, IsStandardDualityOfProjectiveSpace],
+return delta2;
+InstallMethod( \*,
+[IsStandardDualityOfProjectiveSpace, IsIdentityMappingOfElementsOfProjectiveSpace],
+return delta1;
+InstallMethod( \*,
+[IsIdentityMappingOfElementsOfProjectiveSpace, IsIdentityMappingOfElementsOfProjectiveSpace],
+return delta1;
+InstallMethod( \^,
+[ IsProjectiveSpaceIsomorphism, IsZeroCyc ],
+return One(delta);
+InstallMethod( \=,
+[IsStandardDualityOfProjectiveSpace, IsStandardDualityOfProjectiveSpace],
+return Source(delta) = Source(eta);
+"for a standard-duality of a projective space and the identitymap",
+function(delta,eta)
+end);
+InstallMethod( \=,
+[IsIdentityMappingOfElementsOfProjectiveSpace, IsStandardDualityOfProjectiveSpace],
+return false;
+InstallMethod( \=,
+[IsIdentityMappingOfElementsOfProjectiveSpace, IsIdentityMappingOfElementsOfProjectiveSpace],
+return Source(delta) = Source(eta);
+InstallMethod( ProjElWithFrobWithPSIsom,
+[IsCMatRep and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse,
+function( m, frob, f, delta )
+el := rec( mat := m, fld := f, frob := frob, psisom := delta );
+return el;
+InstallMethod( ProjElWithFrobWithPSIsom,
+[IsMatrix and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse,
+function( m, frob, f, delta )
+cmat := NewMatrix(IsCMatRep,f,Length(m[1]),m);
+Objectify( ProjElsWithFrobWithPSIsomType, el );
+end );
+InstallMethod( ProjElWithFrobWithPSIsom,
+[IsCMatRep and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse,
+function( m, frob, f )
+q := Size(f);
+isom := IdentityMappingOfElementsOfProjectiveSpace(ProjectiveSpace(n-1,f));
+el := rec( mat := m, fld := f, frob := frob, psisom := isom);
+return el;
+"for a ffe matrix, a Frobenius automorphism and a field",
+IsField],
+local el,isom,q,n,cmat;
+n := Length(m);
+isom := IdentityMappingOfElementsOfProjectiveSpace(ProjectiveSpace(n-1,f));
+el := rec( mat := cmat, fld := f, frob := frob, psisom := isom);
+return el;
+InstallMethod( ProjElWithFrobWithPSIsom,
+[IsCMatRep and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse,
+function( m, frob, f, delta )
+el := rec( mat := m, fld := f, frob := frob, psisom := delta );
+return el;
+InstallMethod( ProjElWithFrobWithPSIsom,
+[IsMatrix and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse,
+function( m, frob, f, delta )
+cmat := NewMatrix(IsCMatRep,f,Length(m[1]),m);
+Objectify( ProjElsWithFrobWithPSIsomType, el );
+end );
+InstallMethod( ViewObj,
+[IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+Print("<projective element with Frobenius with projectivespace isomorphism: ");
+if IsOne(el!.frob) then
+else
+fi;
+Print(" >");
+"for a projective group element with Frobenius with projective space isomorphism",
+function(el)
+Print(el!.mat);
+Print(", F^0");
+Print(", F^",el!.frob!.power);
+Print(", underlying projective space isomorphism:\n",el!.psisom,">\n");
+"for a projective group element with Frobenius with projective space isomorphism",
+function(el)
+PrintObj(el!.mat);
+PrintObj(el!.frob);
+PrintObj(el!.psisom);
+end );
+InstallOtherMethod( Representative,
+[IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+return [el!.mat,el!.frob,el!.psisom];
+InstallMethod( BaseField,
+[IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+return el!.fld;
+InstallMethod( BaseField, "for a projective group with Frobenius with proj space isomorphism",
+function( g )
+if IsBound(g!.basefield) then
+fi;
+f := BaseField(Parent(g));
+return f;
+if Length(gens) > 0 then
+return g!.basefield;
+end );
+"for two projective group els with Frobenius with projective space isomorphism",
+IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+local aa,bb,p,s,i;
+if a!.frob <> b!.frob then return false; fi;
+bb := b!.mat;
+s := bb[1][p] / aa[1][p];
+return true;
+InstallMethod( IsOne,
+[IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+local s;
+if not(IsOne(el!.psisom)) then return false; fi;
+if IsZero(s) then return false; fi;
+return IsOne( s*el!.mat );
+InstallOtherMethod( OneImmutable,
+[IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+local o;
+frob := el!.frob^0, psisom := el!.psisom^0);
+return o;
+InstallOtherMethod( OneImmutable,
+[IsGroup and IsProjGrpElWithFrobWithPSIsom],
+local gens, o;
+if Length(gens) = 0 then
+gens := GeneratorsOfGroup(Parent(g));
+Error("sorry, no generators, no one");
+fi;
+frob := gens[1]!.frob^0, psisom := gens[1]!.psisom^0 );
+return o;
+InstallMethod( OneSameMutability,
+[IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+local o;
+frob := el!.frob^0, psisom := el!.psisom^0 );
+return o;
+InstallOtherMethod( \^, "for a cvec/FFE vector and a id. mapping of el. of ps.",
+function( v, f )
+end );
+InstallOtherMethod( \^, "for a FFE vector and a id. mapping of el. of ps.",
+function( v, f )
+end );
+InstallOtherMethod( \^,
+[ IsVector and IsFFECollection and IsGF2VectorRep, IsIdentityMappingOfElementsOfProjectiveSpace ],
+return v;
+"for a compressed 8bit vector and a id. mapping of el. of ps.",
+function( v, f )
+end );
+[ IsCMatRep and IsFFECollColl, IsStandardDualityOfProjectiveSpace ],
+return TransposedMat(Inverse(m));
+[ IsMatrix and IsFFECollColl, IsStandardDualityOfProjectiveSpace ],
+return TransposedMat(Inverse(m));
+InstallOtherMethod( \^, "for a FFE matrix and a id. mapping of el. of ps.",
+function( m, f )
+end );
+InstallOtherMethod( \^, "for a FFE matrix and a id. mapping of el. of ps.",
+function( m, f )
+end );
+InstallOtherMethod( \^, "for an element of a projective space and a id. mapping of el. of ps.",
+function( p, f)
+end );
+InstallOtherMethod( \^, "for an elements of a projective space and a st. duality",
+function( p, f)
+end );
+"for two projective group elements with frobenius with projective space isomorphism",
+IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+local el;
+frob := a!.frob * b!.frob, psisom := a!.psisom * b!.psisom );
+return el;
+InstallMethod(\<,
+[IsProjGrpElWithFrobWithPSIsom, IsProjGrpElWithFrobWithPSIsom],
+local aa,bb,pa,pb,sa,sb,i,va,vb;
+if a!.psisom < b!.psisom then
+elif b!.psisom < a!.psisom then
+fi;
+return true;
+return false;
+aa := a!.mat;
+pa := PositionNonZero(aa[1]);
+if pa > pb then
+elif pa < pb then
+fi;
+sb := bb[1][pb]^-1;
+va := sa*aa[i];
+if va < vb then return true; fi;
+od;
+end);
+"for a projective group element with Frobenius with projective space isomorphism",
+function( el )
+f := el!.frob^-1;
+m := rec( mat := ((InverseSameMutability(el!.mat))^f)^t, fld := el!.fld,
+Objectify( ProjElsWithFrobWithPSIsomType, m );
+end );
+"for a projective group element with Frobenius with projective space isomorphism",
+function( el )
+f := el!.frob;
+m := rec( mat := ((InverseMutable(el!.mat))^f)^t, fld := el!.fld,
+Objectify( ProjElsWithFrobWithPSIsomType, m );
+end );
+"for a projective group element with frobenius and a correlation",
+IsProjGrpElWithFrobWithPSIsom and IsProjGrpElWithFrobWithPSIsomRep],
+local el;
+frob := a!.frob * b!.frob, psisom := b!.psisom );
+return el;
+"for a correlation and a projective group element with frobenius",
+IsProjGrpElWithFrob and IsProjGrpElWithFrobRep],
+local el;
+frob := a!.frob * b!.frob, psisom := a!.psisom );
+return el;
+"for a list of triples of ffe matrice + frob aut + st duality, and a field",
+function( l, f )
+objectlist := [];
+Add(objectlist, ProjElWithFrobWithPSIsom(m[1],m[2],f,m[3]));
+return objectlist;
+InstallMethod( CorrelationCollineationGroup,
+[ IsProjectiveSpace and IsProjectiveSpaceRep ],
+local corr,d,f,frob,g,newgens,q,tau,pow,string;
+q := Size(f);
+g := GL(d+1,q);
+tau := StandardDualityOfProjectiveSpace(ps);
+Add(newgens,[One(g),frob,tau^0]);
+newgens := ProjElsWithFrobWithPSIsom(newgens, f);
+SetSize(corr, Size(g) / (q - 1) * Order(frob) * 2); #* 2 for the standard duality.
+if pow > 1 then
+else
+fi;
+SetName(corr,string);
+end );
+InstallMethod( CorrelationOfProjectiveSpace,
+[ IsMatrix and IsFFECollColl, IsField],
+if Rank(mat) <> Size(mat) then
+fi;
+end );
+InstallMethod( CorrelationOfProjectiveSpace,
+[ IsMatrix and IsFFECollColl, IsRingHomomorphism and
+function( mat, frob, gf )
+Error("<mat> must not be singular");
+return ProjElWithFrobWithPSIsom( mat, frob, gf);
+"for a matrix, a finite field, and a projective space isomorphism",
+function( mat, gf, delta )
+Error("<mat> must not be singular");
+if delta!.ps!.basefield <> gf then
+fi;
+end );
+InstallMethod( CorrelationOfProjectiveSpace,
+[ IsMatrix and IsFFECollColl, IsField, IsIdentityMappingOfElementsOfProjectiveSpace],
+if Rank(mat) <> Size(mat) then
+fi;
+Error("<delta> is not the identity mapping of the correct projective space");
+return ProjElWithFrobWithPSIsom( mat, IdentityMapping(gf), gf, delta);
+InstallMethod( CorrelationOfProjectiveSpace,
+[ IsMatrix and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse, IsField,
+function( mat, frob, gf, delta )
+Error("<mat> must not be singular");
+if delta!.ps!.basefield <> gf then
+fi;
+end );
+InstallMethod( CorrelationOfProjectiveSpace,
+[ IsMatrix and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse, IsField,
+function( mat, frob, gf, delta )
+Error("<mat> must not be singular");
+if Source(delta)!.geometry <> PG(Size(mat)-1,gf) then
+fi;
+end );
+InstallMethod( CorrelationOfProjectiveSpace,
+[ IsProjectiveSpace, IsMatrix and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse,
+function( pg, mat, frob, delta )
+Error("The arguments <pg> and <mat> are not compatible");
+return CorrelationOfProjectiveSpace( mat, frob, BaseField(pg), delta);
+"for a projective space, a matrix, a field automorphism, and a projective space isomorphism",
+IsIdentityMappingOfElementsOfProjectiveSpace],
+if Dimension(pg)+1 <> Size(mat) then
+fi;
+Error("<delta> is not the identity mapping of the correct projective space");
+return CorrelationOfProjectiveSpace( mat, frob, BaseField(pg), delta);
+"for a projective space, a matrix, a field automorphism, and a projective space isomorphism",
+IsStandardDualityOfProjectiveSpace],
+if Dimension(pg)+1 <> Size(mat) then
+fi;
+end );
+InstallMethod( Correlation,
+[ IsProjectiveSpace, IsMatrix and IsFFECollColl, IsRingHomomorphism and IsMultiplicativeElementWithInverse,
+function( pg, mat, frob, delta )
+Error("The arguments <pg> and <mat> are not compatible");
+if Source(delta)!.geometry <> pg then
+fi;
+end );
+InstallMethod( UnderlyingMatrix, [ IsProjGrpElWithFrobWithPSIsom and
+c -> c!.mat );
+IsProjGrpElWithFrobWithPSIsomRep],
+InstallMethod( ProjectiveSpaceIsomorphism, [ IsProjGrpElWithFrobWithPSIsom and
+c -> c!.psisom );
+"for a collineation group",
+function(group,corr)
+if not ((BaseField(group)=BaseField(corr)) and (Dimension(group)=Dimension(corr))) then
+fi;
+y->ProjElWithFrobWithPSIsom(y!.mat,y!.frob,y!.fld),false,
+if IsOne(x!.psisom) then
+Print("method prefun");
+Error("<x> has no preimage");
+end);
+return hom;
+function( line, el )
+vec := OnPoints(line,el!.mat)^el!.frob;
+if c <= Length( vec ) then
+vec := ShallowCopy(vec);
+MultRowVector(vec,Inverse( vec[c] ));
+return vec;
+InstallGlobalFunction( OnProjSubspacesWithFrobWithPSIsom,
+local vec,c;
+if not(IsMutable(vec)) then
+fi;
+return vec;
+end );
+InstallGlobalFunction( OnProjSubspacesExtended,
+local vec,newsub,ps,ty,newvec,rk;
+ps := AmbientSpace(sub!.geo);
+newvec := (vec*el!.mat)^el!.frob;
+newvec := [newvec];
+if not IsOne(el!.psisom) then
+fi;
+if rk = 1 then
+fi;
+end );
+InstallMethod( Dimension,
+[IsProjGroupWithFrobWithPSIsom],
+local gens;
+return Dimension(Parent(g));
+if Length(gens) > 0 then
+fi;
+end );
+InstallMethod( ActionOnAllPointsHyperplanes,
+[ IsProjGroupWithFrobWithPSIsom ],
+local a,d,f,o,orb,orb2,zero, m, j, flip, vs, ps;
+d := Dimension(pg);
+vs := f^d;
+orb := [];
+j := PositionNot(m, zero);
+Add(orb, m);
+od;
+local vec;
+return vec;
+orb2 := [];
+Add(orb2, flip(m));
+orb := List(Concatenation(orb,orb2),x->VectorSpaceToElement(ps,x)); #corrected 12/4/11
+OnProjSubspacesExtended, "surjective");
+return a;
+"for a projective group with frob with pspace isomorphism",
+function( g )
+d := Dimension( g );
+if (q^d - 1)/(q-1) > FINING.LimitForCanComputeActionOnPoints then
+else
+fi;
+InstallMethod( SetAsNiceMono,
+[IsProjGroupWithFrobWithPSIsom, IsGroupHomomorphism and IsInjective],
+SetNiceMonomorphism(pg,a);
+end );
+"for a projective group with Frobenius with pspace isomorphism (feasible case)",
+IsHandledByNiceMonomorphism], 50,
+return ActionOnAllPointsHyperplanes( pg );
+InstallMethod( NiceMonomorphism,
+[IsProjGroupWithFrobWithPSIsom and IsHandledByNiceMonomorphism], 50,
+local can;
+if not(can) then
+else
+fi;
+"for a projective group with frobenius with pspace isomorphism",
+function( g )
+end );
+InstallMethod( ViewObj,
+[IsProjGroupWithFrobWithPSIsom and IsTrivial],
+Print("<trivial projective group with Frobenius with proj. space isomorphism>");
+"for a projective group with Frobenius with proj. space isomorphism with gens",
+function( g )
+gens := GeneratorsOfGroup(g);
+Print("<trivial projective group with Frobenius with proj. space isomorphism>");
+Print("<projective group with Frobenius with proj. space isomorphism with ",Length(gens),
+fi;
+"for a projective group with frobenius with pspace isomorphism with size",
+function( g )
+Print("<trivial projective group with Frobenius with proj. space isomorphism>");
+Print("<projective group with Frobenius with proj. space isomorphism of size ",Size(g),">");
+end );
+InstallMethod( ViewObj,
+[IsProjGroupWithFrobWithPSIsom and HasGeneratorsOfGroup and HasSize],
+local gens;
+if Length(gens) = 0 then
+else
+Length(gens)," generators>");
+end );
+InstallMethod(PolarityOfProjectiveSpaceOp,
+[IsSesquilinearForm and IsFormRep],
+local mat,field,n,aut,v,ps,q,delta,polarity;
+Error("<form> must not be degenerate");
+mat := GramMatrix(form);
+n := Size(mat);
+v := field^n;
+delta := StandardDualityOfProjectiveSpace(ps);
+polarity!.form := form;
+SetFilterObj( polarity, IsPolarityOfProjectiveSpaceRep );
+end );
+InstallMethod( ViewObj,
+[IsPolarityOfProjectiveSpace and IsPolarityOfProjectiveSpaceRep],
+local dim, field;
+dim := Size(el!.mat);
+Print(" >");
+"for a polarity",
+function( f )
+field := f!.fld;
+Print("<polarity of PG(", dim-1, ", ", field, ")>, underlying matrix\n");
+Print(",");
+Print(") \n");
+[IsPolarityOfProjectiveSpace and IsPolarityOfProjectiveSpaceRep],
+local dim, field;
+field := f!.fld;
+Display(f!.mat);
+Print(", F^0");
+Print(", F^",f!.frob!.power);
+Print(">\n");
+InstallMethod(PolarityOfProjectiveSpace,
+[IsSesquilinearForm and IsFormRep],
+return PolarityOfProjectiveSpaceOp(form);
+"for a matrix and a finite field",
+function(matrix,field)
+if Rank(matrix) <> Size(matrix) then
+fi;
+return PolarityOfProjectiveSpaceOp(form);
+"for a matrix, a finite field, and a frobenius automorphism",
+function(matrix,frob,field)
+if Rank(matrix) <> Size(matrix) then
+fi;
+Error("<frob> must be involutory or identity");
+form := HermitianFormByMatrix(matrix,field);
+fi;
+"for a sesquilinear form of a projective space",
+function(matrix,field)
+if Rank(matrix) <> Size(matrix) then
+fi;
+Error("Size of <field> must be a square" );
+form := HermitianFormByMatrix(matrix,field);
+end );
+InstallMethod( GramMatrix, "for a polarity of a projective space",
+x -> x!.mat );
+InstallOtherMethod( BaseField, "for a polarity of a projective space",
+x -> x!.fld );
+InstallMethod( CompanionAutomorphism, "for a polarity of a projective space",
+x -> x!.frob );
+InstallMethod( SesquilinearForm, "for a polarity of a projective space",
+el -> el!.form );
+"for a polarity of a projective space",
+x -> IsHermitianForm(x!.form) );
+InstallMethod( IsOrthogonalPolarityOfProjectiveSpace,
+[IsPolarityOfProjectiveSpace and IsPolarityOfProjectiveSpaceRep],
+"for a polarity of a projective space",
+x -> IsSymplecticForm(x!.form) );
+InstallMethod( IsPseudoPolarityOfProjectiveSpace,
+[IsPolarityOfProjectiveSpace and IsPolarityOfProjectiveSpaceRep],
+"for an element of a projective space and a polarity of a projective space",
+function(sub,phi)
+end );

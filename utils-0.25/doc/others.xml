@@ -1,0 +1,228 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  others.xml          Utils documentation                Stefan Kohl -->
+<!--                                                   Sebastian Gutsche -->
+<!--                                                            Max Horn -->
+<!--  version 0.25, 11/02/2016                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-others">
+<Heading>Various other functions</Heading>
+
+
+<Section Label="sec:SendEmailAndEmailLogFile">
+<Heading>DownloadFile, SendEmail and EmailLogFile</Heading>
+
+<ManSection>
+  <Func Name="DownloadFile" Arg="url"/>
+  <Returns>
+    the contents of the file with URL <A>url</A> in the form of a string
+    if that file exists and the download was successful, and <C>fail</C>
+    otherwise.
+  </Returns>
+  <Description>
+    This function needs the <Package>IO</Package> package, and
+    as most system-related functions it works only under UNIX.
+    Also the computer must of course be connected to the Internet.
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="SendEmail" Arg="sendto, copyto, subject, text"/>
+  <Returns>
+    zero if everything worked correctly, and a system error number otherwise.
+  </Returns>
+  <Description>
+    Sends an e-mail with subject <A>subject</A> and body <A>text</A> to the
+    addresses in the list <A>sendto</A>, and copies it to those in the list
+    <A>copyto</A>. The first two arguments must be lists of strings, and
+    the latter two must be strings. <P/>
+
+    As most system-related functions, <C>SendEmail</C> works only under UNIX.
+    Also the computer must of course be connected to the Internet.
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="EmailLogFile" Arg="addresses"/>
+  <Returns>
+    zero if everything worked correctly, and a system error number otherwise.
+  </Returns>
+  <Description>
+    Sends the current log file by e-mail to <A>addresses</A>, if &GAP; is in
+    logging mode and one is working under UNIX, and does nothing otherwise.
+    The argument <A>addresses</A> must be either a list of e-mail addresses
+    or a single e-mail address. Long log files are abbreviated, i.e. if the
+    log file is larger than 64KB, then any output is truncated at 1KB, and
+    if the log file is still longer than 64KB afterwards, it is truncated
+    at&nbsp;64KB.
+  </Description>
+</ManSection>
+
+</Section>
+
+
+<Section Label="sec:cache">
+<Heading>A simple caching facility</Heading>
+
+<ManSection>
+  <Func Name="SetupCache" 
+        Arg="name size"/>
+  <Func Name="PutIntoCache" 
+        Arg="name key value"/>
+  <Func Name="FetchFromCache" 
+        Arg="name key"/>
+<Description>
+These functions have transferred from package <Package>ResClasses</Package>. 
+<P/>
+The function <C>SetupCache</C> creates an empty cache named <C>name</C> 
+for at most <C>size</C> values.
+<P/>
+The function <C>PutIntoCache</C> puts the entry <C>value</C> 
+with key <C>key</C> into the cache named <C>name</C>.
+<P/>
+The function <C>FetchFromCache</C> picks the entry with key <C>key</C> 
+from the cache named <C>name</C>, and returns fail if no such entry exists. 
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> ## examples needed! 
+]]>
+</Example>
+
+</Section>
+
+
+<Section Label="sec:folder-ops">
+<Heading>Operations on folders</Heading>
+
+<ManSection>
+  <Func Name="FindMatchingFiles" 
+        Arg="pkg dirs extns"/>
+  <Func Name="CreateDirIfMissing" 
+        Arg="str"/>
+<Description>
+These functions have transferred from package <Package>AutoDoc</Package>. 
+<P/>
+<C>FindMatchingFiles</C> scans the given (by name) subdirectories 
+of a package directory for files with one of the given extensions, 
+and returns the corresponding filenames, 
+as paths relative to the package directory.
+<P/>
+<C>CreateDirIfMissing</C> checks whether the given directory exists 
+and, if not, attempts to create it. 
+In either case <C>true</C> is returned. 
+<P/>
+<E>Warning:</E> this function relies on the undocumented library function 
+<C>CreateDir</C>, so use it with caution. 
+<P/>
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> FindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "log" ] );
+[ "/PackageInfo.g", "/feb1.log", "/init.g", "/makedocrel.g", "/read.g", 
+  "/start.g", "/test.log", "tst/testall.g" ]
+gap> CreateDirIfMissing( "/Applications/gap/temp/" );
+true
+]]>
+</Example>
+
+
+</Section>
+
+
+<Section Label="sec:log2html">
+<Heading>File operations</Heading>
+
+<ManSection>
+  <Func Name="Log2HTML" 
+        Arg="filename"/>
+<Description>
+This function has transferred from package <Package>RCWA</Package>. 
+<P/>
+This function converts the &GAP; logfile logfilename to HTML. 
+The extension of the input file must be <A>*.log</A>. 
+The name of the output file is the same as the one of the input file 
+except that the extension <A>*.log</A> is replaced by <A>*.html</A>. 
+There is a sample CSS file in <File>utils/doc/gaplog.css</File>, 
+which you can adjust to your taste. 
+<P/>
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> LogTo("feb1.log");
+gap> FindMatchingFiles( "utils", [""], ["g"] ); 
+[ "/PackageInfo.g", "/init.g", "/makedocrel.g", "/read.g", "/start.g" ]
+gap> LogTo();
+gap> FindMatchingFiles( "utils", [""], ["log"] );
+[ "/feb1.log", "/test.log" ]
+gap> Log2HTML( "feb1.log" );
+gap> FindMatchingFiles( "utils", [""], ["html"] );
+[ "/feb1.html" ]
+]]>
+</Example>
+
+</Section>
+
+
+
+<Section Label="sec:latex">
+<Heading>&LaTeX; strings</Heading>
+
+<ManSection>
+  <Func Name="IntOrOnfinityToLaTeX" 
+        Arg="n"/>
+<Description>
+This function has transferred from package <Package>ResClasses</Package>. 
+<P/>
+<C>IntOrInfinityToLaTeX(n)</C> returns the &LaTeX; string for <A>n</A>. 
+<P/>
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> IntOrInfinityToLaTeX( 10^3 );
+"1000"
+gap> IntOrInfinityToLaTeX( infinity );
+"\\infty"
+]]>
+</Example>
+
+<ManSection>
+  <Func Name="LaTeXStringFactorsInt" 
+        Arg="n"/>
+<Description>
+This function has transferred from package <Package>RCWA</Package>. 
+<P/>
+It returns the prime factorization of the integer <M>n</M> as a string in 
+&LaTeX; format.
+<P/>
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> LaTeXStringFactorsInt( Factorial(12) );
+"2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
+]]>
+</Example>
+
+
+</Section>
+
+
+
+</Chapter>
+

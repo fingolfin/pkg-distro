@@ -1,0 +1,45 @@
+gap> 
+gap> #collineation group: elementary
+gap> pg := PG(3,4);
+ProjectiveSpace(3, 4)
+gap> coll := CollineationGroup(pg);
+The FinInG collineation group PGammaL(4,4)
+gap> gens := GeneratorsOfGroup(coll);
+[ < a collineation: <cmat 4x4 over GF(2,2)>, F^0>, 
+  < a collineation: <cmat 4x4 over GF(2,2)>, F^0>, 
+  < a collineation: <cmat 4x4 over GF(2,2)>, F^2> ]
+gap> UnderlyingMatrix(gens[2]);
+<cmat 4x4 over GF(2,2)>
+gap> Unpack(last);
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), Z(2)^0 ], [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], 
+  [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ], [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ] ]
+gap> as := AffineSpace(3,4);
+AG(3, 4)
+gap> coll := CollineationGroup(as);
+AGammaL(3,4)
+gap> GeneratorsOfGroup(coll);
+[ < a collineation: <cmat 4x4 over GF(2,2)>, F^0>, 
+  < a collineation: <cmat 4x4 over GF(2,2)>, F^0>, 
+  < a collineation: <cmat 4x4 over GF(2,2)>, F^0>, 
+  < a collineation: <cmat 4x4 over GF(2,2)>, F^2> ]
+gap> gp := SplitCayleyHexagon(3);
+H(3)
+gap> coll:= CollineationGroup(gp);
+#I  for Split Cayley Hexagon
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+G_2(3)
+gap> GeneratorsOfGroup(coll);
+[ < a collineation: <cmat 7x7 over GF(3,1)>, F^0>, 
+  < a collineation: <cmat 7x7 over GF(3,1)>, F^0>, 
+  < a collineation: <cmat 7x7 over GF(3,1)>, F^0>, 
+  < a collineation: <cmat 7x7 over GF(3,1)>, F^0>, 
+  < a collineation: <cmat 7x7 over GF(3,1)>, F^0> ]
+gap> egq := EGQByqClan(LinearqClan(3));
+#I  Computed Kantor family. Now computing EGQ...
+<EGQ of order [ 9, 3 ] and basepoint 0>
+gap> coll := CollineationGroup(egq);
+#I  Computing incidence graph of generalised polygon...
+#I  Using elation of the collineation group...
+<permutation group of size 26127360 with 6 generators>
+gap> quit;

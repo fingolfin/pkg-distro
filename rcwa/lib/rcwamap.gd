@@ -284,29 +284,6 @@ DeclareGlobalFunction( "RcwaMappingsType" );
 
 #############################################################################
 ##
-#O  SparseRepresentation( <f> )
-#O  SparseRepresentation( <M> )
-#O  SparseRep( <f> )
-#O  SparseRep( <M> )
-#O  StandardRepresentation( <f> )
-#O  StandardRepresentation( <M> )
-#O  StandardRep( <f> )
-#O  StandardRep( <M> )
-##
-##  Conversion between the two representations of rcwa mappings:
-##  `IsRcwaMappingStandardRep' and `IsRcwaMappingSparseRep'.
-##  The operations are also available for rcwa monoids, where the conversion
-##  is applied to all generators.
-##
-DeclareOperation( "SparseRepresentation", [ IsRcwaMapping ] );
-DeclareOperation( "SparseRepresentation", [ IsRcwaMonoid ] );
-DeclareOperation( "StandardRepresentation", [ IsRcwaMapping ] );
-DeclareOperation( "StandardRepresentation", [ IsRcwaMonoid ] );
-DeclareSynonym( "SparseRep", SparseRepresentation );
-DeclareSynonym( "StandardRep", StandardRepresentation );
-
-#############################################################################
-##
 #F  LocalizedRcwaMapping( <f>, <p> )
 #F  SemilocalizedRcwaMapping( <f>, <pi> )
 ##
@@ -747,6 +724,17 @@ DeclareAttribute( "ImageDensity", IsRcwaMapping );
 
 #############################################################################
 ##
+#A  DensityOfSupport( <f> )
+#A  DensityOfSetOfFixedPoints( <f> )
+##
+##  The natural density of the support / set of fixed points of the rcwa
+##  mapping <f>.
+##
+DeclareAttribute( "DensityOfSupport", IsRcwaMappingOfZ );
+DeclareAttribute( "DensityOfSetOfFixedPoints", IsRcwaMappingOfZ );
+
+#############################################################################
+##
 #A  MappedPartitions( <g> )
 ##
 DeclareAttribute( "MappedPartitions", IsRcwaMapping );
@@ -773,18 +761,20 @@ DeclareProperty( "IsTame", IsRcwaMonoid );
 #############################################################################
 ##
 #O  CheckForWildness( <f> )
-#O  CheckForWildness( <M>, <max_r>, <cheap> )
+#O  CheckForWildness( <G>, <maxlng>, <maxmod> )
 ##
 ##  Performs checks for wildness, and sets `IsTame' to `false' if wildness
-##  can be established. It is not guaranteed that a wild mapping or monoid
-##  is always recognized as such. In the operation for rcwa monoids, <max_r>
-##  is the search radius, i.e. it is attempted to find a wild element within
-##  the ball of radius <max_r> around 1. If <cheap> is true, the elements of
-##  the ball are only checked for balancedness and loops, whereas if <cheap>
-##  is false, `IsTame' is applied to them. 
+##  can be established. It is not guaranteed that a wild mapping or group
+##  is always recognized as such.
+##  In the latter case, a random walk is done in the group (start point = 1,
+##  step = multiplication by a random generator):
+##  - if an element is found which has loops, `IsTame' is set to `false';
+##  - if the length of the random walk exceeds <maxlng> or the modulus of
+##    the product exceeds <maxmod>, the operation gives up.
 ##
 DeclareOperation( "CheckForWildness", [ IsRcwaMapping ] );
-DeclareOperation( "CheckForWildness", [ IsRcwaMonoid, IsPosInt, IsBool ] );
+DeclareOperation( "CheckForWildness", [ IsRcwaMonoid, IsPosInt,
+                                        IsRingElement ] );
 
 #############################################################################
 ##
@@ -842,6 +832,20 @@ DeclareOperation( "ShortCycles", [ IsRcwaMapping, IsListOrCollection,
 DeclareOperation( "ShortCycles", [ IsRcwaMapping, IsListOrCollection,
                                    IsPosInt, IsPosInt ] );
 DeclareOperation( "ShortCycles", [ IsRcwaMapping, IsPosInt ] );
+
+#############################################################################
+##
+#F  ComputeCycleLength( <g>, <n> )
+##
+##  Returns the length of the cycle of the rcwa permutation <g> which
+##  contains the point <n>, provided that this cycle is finite.
+##  If the cycle is infinite, the function will run into an infinite loop.
+##  Iterates are not stored, to save memory.
+##  The function interprets an option "notify", which defaults to 10000;
+##  every "notify" iterations, the number of binary digits of the latest
+##  iterate is printed.
+##
+DeclareGlobalFunction( "ComputeCycleLength" );
 
 #############################################################################
 ##

@@ -1,0 +1,19 @@
+gap> 
+gap> #random element of a given type of a projective space
+gap> ps := PG(8,16);
+ProjectiveSpace(8, 16)
+gap> RandomSubspace(ps);
+<a point in ProjectiveSpace(8, 16)>
+gap> RandomSubspace(ps);
+<a proj. 5-space in ProjectiveSpace(8, 16)>
+gap> RandomSubspace(ps);
+<a proj. 7-space in ProjectiveSpace(8, 16)>
+gap> RandomSubspace(ps);
+<a proj. 4-space in ProjectiveSpace(8, 16)>
+gap> RandomSubspace(ps);
+<a plane in ProjectiveSpace(8, 16)>
+gap> RandomSubspace(ps);
+<a plane in ProjectiveSpace(8, 16)>
+gap> RandomSubspace(ps);
+<a plane in ProjectiveSpace(8, 16)>
+gap> quit;

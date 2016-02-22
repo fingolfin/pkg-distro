@@ -1,0 +1,25 @@
+gap> 
+gap> #check whether a polar space is canonical
+gap> mat := [[0,1,0,0],[0,0,0,0],[0,0,0,1],[0,0,0,0]]*Z(5)^0;
+[ [ 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0 ], [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ] ]
+gap> form := QuadraticFormByMatrix(mat,GF(5));
+< quadratic form >
+gap> ps := PolarSpace(form);
+<polar space in ProjectiveSpace(3,GF(5)): x_1*x_2+x_3*x_4=0 >
+gap> IsCanonicalPolarSpace(ps);
+true
+gap> ps;
+Q+(3, 5): x_1*x_2+x_3*x_4=0
+gap> mat := [[1,0,0],[0,0,1],[0,1,0]]*Z(3)^0;
+[ [ Z(3)^0, 0*Z(3), 0*Z(3) ], [ 0*Z(3), 0*Z(3), Z(3)^0 ], 
+  [ 0*Z(3), Z(3)^0, 0*Z(3) ] ]
+gap> form := QuadraticFormByMatrix(mat,GF(3));
+< quadratic form >
+gap> ps := PolarSpace(form);
+<polar space in ProjectiveSpace(2,GF(3)): x_1^2-x_2*x_3=0 >
+gap> IsCanonicalPolarSpace(ps);
+false
+gap> ps;
+Q(2, 3): x_1^2-x_2*x_3=0
+gap> quit;

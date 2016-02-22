@@ -1,0 +1,12 @@
+gap&gt; h := HermitianVariety(2,49);<br>
+H(2, 7^2)<br>
+gap&gt; pg := AmbientSpace(h);<br>
+PG(2, 49)<br>
+gap&gt; lines := Lines(pg);<br>
+&lt;lines of PG(2, 49)&gt;<br>
+gap&gt; curve := AsList(Points(h));;<br>
+#I  Computing nice monomorphism...<br>
+gap&gt; Size(curve);<br>
+344<br>
+gap&gt; Collected(List(lines,t -&gt; Number(curve,c -&gt; c in t)));<br>
+[ [ 1, 344 ], [ 8, 2107 ] ]<br>

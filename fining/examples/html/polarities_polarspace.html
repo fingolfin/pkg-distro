@@ -1,0 +1,22 @@
+gap&gt; mat := [[1,0,0,0],[0,0,1,1],[0,1,1,0],[0,1,0,0]]*Z(32)^0;<br>
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], [ 0*Z(2), 0*Z(2), Z(2)^0, Z(2)^0 ], <br>
+  [ 0*Z(2), Z(2)^0, Z(2)^0, 0*Z(2) ], [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ] ]<br>
+gap&gt; phi := PolarityOfProjectiveSpace(mat,GF(32));<br>
+&lt;polarity of PG(3, GF(2^5)),  &gt;<br>
+gap&gt; ps := PolarSpace(phi);<br>
+Error, &lt;polarity&gt; is pseudo and does not induce a polar space called from<br>
+&lt;function&gt;( &lt;arguments&gt; ) called from read-eval-loop<br>
+Entering break read-eval-print loop ...<br>
+you can 'quit;' to quit to outer loop, or<br>
+you can 'return;' to continue<br>
+brk&gt; quit;<br>
+gap&gt; mat := IdentityMat(5,GF(7));<br>
+[ [ Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7) ], <br>
+  [ 0*Z(7), Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7) ], <br>
+  [ 0*Z(7), 0*Z(7), Z(7)^0, 0*Z(7), 0*Z(7) ], <br>
+  [ 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^0, 0*Z(7) ], <br>
+  [ 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^0 ] ]<br>
+gap&gt; phi := PolarityOfProjectiveSpace(mat,GF(7));<br>
+&lt;polarity of PG(4, GF(7)),  &gt;<br>
+gap&gt; ps := PolarSpace(phi);<br>
+&lt;polar space over GF(7)&gt;<br>

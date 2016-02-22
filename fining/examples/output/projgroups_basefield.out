@@ -1,0 +1,10 @@
+gap> 
+gap> #basefield of a projectivity
+gap> mat := [[0,1,0],[1,0,0],[0,0,2]]*Z(3)^0;
+[ [ 0*Z(3), Z(3)^0, 0*Z(3) ], [ Z(3)^0, 0*Z(3), 0*Z(3) ], 
+  [ 0*Z(3), 0*Z(3), Z(3) ] ]
+gap> g := Projectivity(mat,GF(3^6));
+< a collineation: <cmat 3x3 over GF(3,6)>, F^0>
+gap> BaseField(g);
+GF(3^6)
+gap> quit;

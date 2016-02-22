@@ -1,0 +1,12 @@
+gap> 
+gap> # example: affine_shadow1.g
+gap> as := AffineSpace(3, 3);
+AG(3, 3)
+gap> l := Random( Lines( as ) );
+<a line in AG(3, 3)>
+gap> planesonl := Planes(l);
+<shadow planes in AG(3, 3)>
+gap> AsList(planesonl);
+[ <a plane in AG(3, 3)>, <a plane in AG(3, 3)>, <a plane in AG(3, 3)>, 
+  <a plane in AG(3, 3)> ]
+gap> quit;

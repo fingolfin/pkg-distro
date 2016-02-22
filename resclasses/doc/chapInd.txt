@@ -17,16 +17,19 @@
   [10XDensity[110X, of a union of residue classes with fixed rep's  2.2-1
   [2XDifference[102X (for unions of residue classes with fixed representatives)  2.2-4
   [10XDifference[110X, for residue class unions  1.2
+  [10XDifferencesList[110X  4.7
   [10XDisplay[110X, for a residue class union  1.2
-  [2XDownloadFile[102X  4.5-1
-  [2XEmailLogFile[102X  4.5-3
+  [2XDownloadFile[102X  4.6-1
+  [2XEmailLogFile[102X  4.6-3
   [10XExcludedElements[110X, of a residue class union  1.1-2
   [10XExtRepOfObj[110X  1.4-1
   [10XFactors[110X, of an element of a semilocalization of Z  3.2
+  [10XFloatQuotientsList[110X  4.7
   [10XGcd[110X, of elements of a semilocalization of Z  3.2
   [10XIncludedElements[110X, of a residue class union  1.1-2
   [2XIntersection[102X (for unions of residue classes with fixed representatives)  2.2-3
   [10XIntersection[110X, for residue class unions  1.2
+  [10XIsCommuting[110X  4.7
   [10XIsOverlappingFree[110X, for a union of residue classes with fixed rep's  2.2-1
   [10XIsResidueClass[110X  1.1-1
   [2XIsResidueClassUnion[102X  1.4-1
@@ -42,6 +45,7 @@
   [10XIsZ_pi[110X  3.1-1
   [10XIterator[110X, for a residue class union  1.2-5
   [10XLcm[110X, of elements of a semilocalization of Z  3.2
+  [2XLogToDatedFile[102X  4.5-1
   [10XModulus[110X, of a residue class  1.1-1
   [10XModulus[110X, of a residue class union  1.1-2
   [10XModulus[110X, of a union of residue classes with fixed rep's  2.1-2
@@ -55,6 +59,8 @@
   [2XPartitionsIntoResidueClasses[102X (of a given ring, of given length)  1.2-3
   [2XPartitionsIntoResidueClasses[102X (of a given ring, of given length, with moduli with given factors)  1.2-3
   [10XPrint[110X, for a residue class union  1.2
+  [10XQuotientsList[110X  4.7
+  [10XRandomCombination[110X  4.7
   [2XRandomPartitionIntoResidueClasses[102X (of a given ring, of given length)  1.2-4
   [2XRemoveTemporaryPackageFiles[102X  4.4-3
   [2XRepresentativeStabilizingRefinement[102X (of a union of res.-classes with fixed rep's)  2.3-2
@@ -67,8 +73,10 @@
   [2XResidueClass[102X (by modulus and residue)  1.1-1
   [2XResidueClass[102X (by residue and modulus)  1.1-1
   [2XResidueClass[102X (by ring, modulus and residue)  1.1-1
+  [2XResidueClassUnion[102X (by ring and list of classes)  1.1-2
+  [2XResidueClassUnion[102X (by ring, list of classes and included / excluded elements)  1.1-2
   [2XResidueClassUnion[102X (by ring, modulus and residues)  1.1-2
-  [2XResidueClassUnion[102X (ditto, plus included / excluded elements)  1.1-2
+  [2XResidueClassUnion[102X (by ring, modulus, residues and included / excluded elements)  1.1-2
   [2XResidueClassUnionsFamily[102X (of a ring)  1.4-2
   [2XResidueClassUnionsFamily[102X (of a ring, with fixed representatives)  1.4-2
   [10XResidueClassUnionViewingFormat[110X  1.1-2
@@ -76,9 +84,11 @@
   [2XResidueClassWithFixedRepresentative[102X (of Z, by modulus and residue)  2.1-1
   [10XResidues[110X, of a residue class union  1.1-2
   [10XRho[110X, for a union of residue classes with fixed rep's  2.3-1
-  [2XSendEmail[102X  4.5-2
+  [2XSendEmail[102X  4.6-2
+  [10XSparseRep[110X, for a residue class union  1.1-2
   [2XSplittedClass[102X (for a residue class and a number of parts)  1.2-1
   [10XStandardAssociate[110X, of an element of a semilocalization of Z  3.2
+  [10XStandardRep[110X, for a residue class union  1.1-2
   [10XString[110X, for a residue class union  1.2
   [2XUnion[102X (for unions of residue classes with fixed representatives)  2.2-2
   [10XUnion[110X, for residue class unions  1.2

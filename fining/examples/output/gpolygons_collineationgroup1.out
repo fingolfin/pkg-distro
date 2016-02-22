@@ -1,0 +1,19 @@
+gap> 
+gap> # collineation group 1.
+gap> gp := PG(2,2);
+ProjectiveSpace(2, 2)
+gap> CollineationGroup(gp);
+The FinInG collineation group PGL(3,2)
+gap> gp := EllipticQuadric(5,4);
+Q-(5, 4)
+gap> CollineationGroup(gp);
+PGammaO-(6,4)
+gap> gp := TwistedTrialityHexagon(3^3);
+T(27, 3)
+gap> CollineationGroup(gp);
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+3D_4(27)
+gap> time;
+40691
+gap> quit;

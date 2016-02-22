@@ -1,0 +1,10 @@
+gap> 
+gap> #checking the polarity (symplectic).
+gap> mat := [[0,0,1,0],[0,0,0,1],[1,0,0,0],[0,1,0,0]]*Z(8)^0;
+[ [ 0*Z(2), 0*Z(2), Z(2)^0, 0*Z(2) ], [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ], 
+  [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ] ]
+gap> phi := PolarityOfProjectiveSpace(mat,GF(8));
+<polarity of PG(3, GF(2^3)) >
+gap> IsSymplecticPolarityOfProjectiveSpace(phi);
+true
+gap> quit;

@@ -6,10 +6,10 @@
                [1X Set-Theoretic Computations with Residue Classes [101X
   
   
-                                 Version 3.4.0
+                                 Version 4.1.2
   
   
-                                 July 21, 2014
+                               February 10, 2016
   
   
                                   Stefan Kohl
@@ -22,7 +22,7 @@
   
   -------------------------------------------------------
   [1XAbstract[101X
-  [33X[0;0Y[5XResClasses[105X  is  a  package  for  [5XGAP[105X  4, which provides a fully-featured and
+  [33X[0;0Y[5XResClasses[105X  is  a  package  for  [5XGAP[105X  4  which provides a fully-featured and
   easy-to-use implementation of set-theoretic unions of residue classes of the
   integers and of a few other rings.[133X
   
@@ -36,12 +36,12 @@
   moduli.[133X
   
   [33X[0;0YThe  [5XResClasses[105X  package  is used in a group theoretical context by the [5XRCWA[105X
-  package [Koh13].[133X
+  package [Koh15].[133X
   
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2003 - 2014 by Stefan Kohl.[133X
+  [33X[0;0Y© 2003 - 2016 by Stefan Kohl.[133X
   
   [33X[0;0Y[5XResClasses[105X  is free software: you can redistribute it and/or modify it under
   the  terms  of  the  GNU  General  Public  License  as published by the Free
@@ -106,10 +106,13 @@
       4.4-1 ResClassesBuildManual
       4.4-2 ConvertPackageFilesToUNIXLineBreaks
       4.4-3 RemoveTemporaryPackageFiles
-    4.5 [33X[0;0YDownloadFile, SendEmail and EmailLogFile[133X
-      4.5-1 DownloadFile
-      4.5-2 SendEmail
-      4.5-3 EmailLogFile
+    4.5 [33X[0;0YCreating timestamped logfiles[133X
+      4.5-1 LogToDatedFile
+    4.6 [33X[0;0YDownloadFile, SendEmail and EmailLogFile[133X
+      4.6-1 DownloadFile
+      4.6-2 SendEmail
+      4.6-3 EmailLogFile
+    4.7 [33X[0;0YSome general utility functions[133X
   
   
   [32X

@@ -1,0 +1,47 @@
+gap> 
+gap> # examples_KantorKnuth.g
+gap> q := 9;
+9
+gap> f := GF(q);
+GF(3^2)
+gap> squares := AsList(Group(Z(q)^2));
+[ Z(3)^0, Z(3^2)^6, Z(3), Z(3^2)^2 ]
+gap> n := First(GF(q), x -> not IsZero(x) and not x in squares);
+Z(3^2)
+gap> sigma := FrobeniusAutomorphism( f );
+FrobeniusAutomorphism( GF(3^2) )
+gap> zero := Zero(f);
+0*Z(3)
+gap> qclan := List(GF(q), t -> [[t, zero], [zero,-n * t^sigma]] );
+[ [ [ 0*Z(3), 0*Z(3) ], [ 0*Z(3), 0*Z(3) ] ], 
+  [ [ Z(3^2), 0*Z(3) ], [ 0*Z(3), Z(3)^0 ] ], 
+  [ [ Z(3^2)^5, 0*Z(3) ], [ 0*Z(3), Z(3) ] ], 
+  [ [ Z(3)^0, 0*Z(3) ], [ 0*Z(3), Z(3^2)^5 ] ], 
+  [ [ Z(3^2)^2, 0*Z(3) ], [ 0*Z(3), Z(3^2)^3 ] ], 
+  [ [ Z(3^2)^3, 0*Z(3) ], [ 0*Z(3), Z(3^2)^6 ] ], 
+  [ [ Z(3), 0*Z(3) ], [ 0*Z(3), Z(3^2) ] ], 
+  [ [ Z(3^2)^7, 0*Z(3) ], [ 0*Z(3), Z(3^2)^2 ] ], 
+  [ [ Z(3^2)^6, 0*Z(3) ], [ 0*Z(3), Z(3^2)^7 ] ] ]
+gap> IsqClan( qclan, f );
+true
+gap> qclan := qClan(qclan , f);
+<q-clan over GF(3^2)>
+gap> egq1 := EGQByqClan( qclan);  
+#I  Computed Kantor family. Now computing EGQ...
+<EGQ of order [ 81, 9 ] and basepoint 0>
+gap> blt := BLTSetByqClan( qclan );
+[ <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0>, 
+  <a point in Q(4, 9): -x_1*x_5-x_2*x_4+Z(3^2)^5*x_3^2=0> ]
+gap> egq2 := EGQByBLTSet( blt );
+#I  Now embedding dual BLT-set into W(5,q)...
+#I  Computing elation group...
+<EGQ of order [ 81, 9 ] and basepoint in W(5, 9 ) >
+gap> quit;

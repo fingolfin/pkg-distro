@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (FinInG) - Chapter 11: Geometry Morphisms</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap11"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap10.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap12.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p><a id="X876240A479A5717C" name="X876240A479A5717C"></a></p>
+<div class="ChapSects"><a href="chap11.html#X876240A479A5717C">11 <span class="Heading">Geometry Morphisms</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X850559BF7886E0D2">11.1 <span class="Heading">Geometry morphisms in FinInG</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7A3BDDBE7BADCF0A">11.1-1 IsGeometryMorphism</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X86E0B2117DD536D2">11.1-2 Intertwiner</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X84BE8DB279C5C893">11.2 <span class="Heading">Isomorphisms between polar spaces</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8774AF5B840E488D">11.2-1 IsomorphismPolarSpaces</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X808C1D13854ED574">11.3 <span class="Heading">When will you use geometry morphisms?</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X78B6F5AC7EF0D534">11.4 <span class="Heading">Natural geometry morphisms</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X857976B679B8EC30">11.4-1 NaturalEmbeddingBySubspace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7D2D9AD287532FDB">11.4-2 NaturalEmbeddingByFieldReduction</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X86E0B2117DD536D2">11.4-3 Intertwiner</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7D2D9AD287532FDB">11.4-4 NaturalEmbeddingByFieldReduction</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X787FC91D7A92BD96">11.4-5 BlownUpProjectiveSpace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X84CD51327DD6120A">11.4-6 BlownUpProjectiveSpaceBySubfield</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7F84986879DD952A">11.4-7 BlownUpSubspaceOfProjectiveSpace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7B0BD62A86C9E432">11.4-8 BlownUpSubspaceOfProjectiveSpaceBySubfield</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X87B6C4AB7C6532CE">11.4-9 IsDesarguesianSpreadElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X82510EF078F0806E">11.4-10 NaturalEmbeddingBySubField</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7B9E8AB682EC07C2">11.4-11 NaturalProjectionBySubspace</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X84C4431E84D98765">11.5 <span class="Heading">Some special kinds of geometry morphisms</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7CD8E5187C5B7116">11.5-1 KleinCorrespondence</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8472EBA584544B51">11.5-2 NaturalDuality</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7E23CA137AEFD1D2">11.5-3 ProjectiveCompletion</a></span>
+</div></div>
+</div>
+
+<h3>11 <span class="Heading">Geometry Morphisms</span></h3>
+
+<p>Here we describe what is meant by a <em>geometry morphism</em> in <strong class="pkg">FinInG</strong> and the various operations and tools available to the user.</p>
+
+<p><a id="X850559BF7886E0D2" name="X850559BF7886E0D2"></a></p>
+
+<h4>11.1 <span class="Heading">Geometry morphisms in FinInG</span></h4>
+
+<p>Suppose that <span class="SimpleMath">S</span> and <span class="SimpleMath">S'</span> are two incidence geometries. A <em>geometry morphism</em> from <span class="SimpleMath">S</span> to <span class="SimpleMath">S'</span> is defined to be a map from the elements of <span class="SimpleMath">S</span> to the elements of <span class="SimpleMath">S'</span> which preserves incidence and induces a function from the type set of <span class="SimpleMath">S</span> to the type set of <span class="SimpleMath">S'</span>. For instance, a correlation and a collineation are examples of geometry morphisms, but they have been dealt with in more specific ways in <strong class="pkg">FinInG</strong>. We will mainly be concerned with geometry morphisms where the source and range are different. Hence, the natural embedding of a projective space in a larger projective space, the mapping induced by field reduction, and the Klein correspondence are examples of such geometry morphisms.</p>
+
+<p><a id="X7A3BDDBE7BADCF0A" name="X7A3BDDBE7BADCF0A"></a></p>
+
+<h5>11.1-1 IsGeometryMorphism</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeometryMorphism</code></td><td class="tdright">( family )</td></tr></table></div>
+<p>The category <code class="code">IsGeometryMorphism</code> represents a special object in <strong class="pkg">FinInG</strong> which carries attributes and the given element map. The element map is given as a <code class="code">IsGeneralMapping</code>, and so has a source and range.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ShowImpliedFilters(IsGeometryMorphism);</span>
+Implies:
+   IsGeneralMapping
+   IsTotal
+   Tester(IsTotal)
+   IsSingleValued
+   Tester(IsSingleValued)
+ 
+</pre></div>
+
+<p>The usual operations of <code class="code">ImagesElm</code>, <code class="code">ImagesSet</code>, <code class="code">PreImagesElm</code>, <code class="code">PreImagesSet</code> work for geometry morphisms, as well as the overload operator <code class="code">\^</code>. Since <code class="code">Image</code> is a <strong class="pkg">GAP</strong> function, we advise the user to not use this for geometry morphisms.</p>
+
+<p>For some geometry morphisms, there is also an accompanying intertwiner for the automorphism groups of the source range. Given a geometry morphism <span class="SimpleMath">f</span> from <span class="SimpleMath">S</span> to <span class="SimpleMath">S'</span>, an intertwiner φ is a map from the automorphism group of <span class="SimpleMath">S</span> to the automorphism group of <span class="SimpleMath">S'</span>, such that for every element <span class="SimpleMath">p</span> of <span class="SimpleMath">S</span> and every automorphism <span class="SimpleMath">g</span> of <span class="SimpleMath">S</span>, we have</p>
+
+<p class="pcenter">f(p<sup>g</sup>)=f(p)<sup>φ(g)</sup>.</p>
+
+<p><a id="X86E0B2117DD536D2" name="X86E0B2117DD536D2"></a></p>
+
+<h5>11.1-2 Intertwiner</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Intertwiner</code>( <var class="Arg">f</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>Returns: a group homomorphism</p>
+
+<p>The argument <var class="Arg">f</var> is a geometry morphism. If <var class="Arg">f</var> comes equipped with a natural intertwiner from an automorphism group of the source of <var class="Arg">f</var> to the automorphism group to the image of <var class="Arg">f</var>, then the user may be able to obtain the intertwiner by calling this operation (see the individual geometry morphism constructions). There is no method to compute an intertwiner for a given geometry morphism, the attribute is or is not set during the construction of the geometry morphism, depending whether the Source and Range of the morphism have the appropriate automorphism group known as an attribute. When this condition is not satisfied, the user is expected to call the appropriate automorphism groups, so that they are computed, and to recompute the geometry morphism (which will not cost a lot of computation time then), such that the attribute <code class="file">Intertwiner</code> becomes available. Here is a simple example of the intertwiner for the isomorphism of two polar spaces (see <code class="func">IsomorphismPolarSpaces</code> (<a href="chap11.html#X8774AF5B840E488D"><span class="RefLink">11.2-1</span></a>)). The source of the homomorphism is dependent on the geometry.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">form := BilinearFormByMatrix( IdentityMat(3,GF(3)), GF(3) );</span>
+&lt; bilinear form &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ps := PolarSpace(form);</span>
+&lt;polar space in ProjectiveSpace(2,GF(3)): x_1^2+x_2^2+x_3^2=0 &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pq := ParabolicQuadric(2,3);</span>
+standard Q(2, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso := IsomorphismPolarSpaces(ps, pq);</span>
+#I  Computing nice monomorphism...
+&lt;geometry morphism from &lt;Elements of &lt;polar space in ProjectiveSpace(2,GF(
+3)): x_1^2+x_2^2+x_3^2=0 &gt;&gt; to &lt;Elements of standard Q(2, 3)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownAttributesOfObject(iso);</span>
+[ "Range", "Source", "Intertwiner" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hom := Intertwiner(iso);</span>
+MappingByFunction( &lt;projective semilinear group with 
+3 generators&gt;, PGammaO(3,3), function( y ) ... end, function( x ) ... end )
+ 
+</pre></div>
+
+<p><a id="X84BE8DB279C5C893" name="X84BE8DB279C5C893"></a></p>
+
+<h4>11.2 <span class="Heading">Isomorphisms between polar spaces</span></h4>
+
+<p>An important class of geometry morphisms in <strong class="pkg">FinInG</strong> are the isomorphisms between polar spaces of the same kind that are induced by coordinate transformations.</p>
+
+<p><a id="X8774AF5B840E488D" name="X8774AF5B840E488D"></a></p>
+
+<h5>11.2-1 IsomorphismPolarSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPolarSpaces</code>( <var class="Arg">ps1</var>, <var class="Arg">ps2</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPolarSpaces</code>( <var class="Arg">ps1</var>, <var class="Arg">ps2</var>, <var class="Arg">boolean</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>The arguments <var class="Arg">ps1</var> and <var class="Arg">ps2</var> are equivalent polar spaces, and this function returns a geometry isomorphism between them. The optional third argument <var class="Arg">boolean</var> can take either <code class="code">true</code> or <code class="code">false</code> as input, and then our operation will or will not compute the intertwiner accordingly. The user may wish that the intertwiner is not computed when working with large polar spaces. The default (when calling the operation with two arguments) is set to <code class="code">true</code>, and in this case, if at least one of <var class="Arg">ps1</var> or <var class="Arg">ps2</var> has a collineation group installed as an attribute, then an intertwining homomorphism is installed as an attribute. That is, we also obtain a natural group isomorphism from the collineation group of <var class="Arg">ps1</var> onto the collineation group of <var class="Arg">ps2</var> (see also <code class="func">Intertwiner</code> (<a href="chap11.html#X86E0B2117DD536D2"><span class="RefLink">11.1-2</span></a>)).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mat1 := IdentityMat(6,GF(5));</span>
+&lt; mutable compressed matrix 6x6 over GF(5) &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">form1 := BilinearFormByMatrix(mat1,GF(5));</span>
+&lt; bilinear form &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ps1 := PolarSpace(form1);</span>
+&lt;polar space in ProjectiveSpace(
+5,GF(5)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2=0 &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mat2 := [[0,0,0,0,0,1],[0,0,0,0,1,0],[0,0,0,1,0,0],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]*Z(5)^0;</span>
+[ [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0 ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">form2 := QuadraticFormByMatrix(mat2,GF(5));</span>
+&lt; quadratic form &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ps2 := PolarSpace(form2);</span>
+&lt;polar space in ProjectiveSpace(5,GF(5)): x_1*x_6+x_2*x_5+x_3*x_4=0 &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso := IsomorphismPolarSpaces(ps1,ps2,true);</span>
+#I  No intertwiner computed. One of the polar spaces must have a collineation group computed
+&lt;geometry morphism from &lt;Elements of &lt;polar space in ProjectiveSpace(
+5
+ ,GF(5)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2=0 &gt;&gt; to &lt;Elements of &lt;polar space
+ in ProjectiveSpace(5,GF(5)): x_1*x_6+x_2*x_5+x_3*x_4=0 &gt;&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CollineationGroup(ps1);</span>
+#I  Computing collineation group of canonical polar space...
+&lt;projective collineation group of size 58032000000 with 4 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CollineationGroup(ps2);</span>
+#I  Computing collineation group of canonical polar space...
+&lt;projective collineation group of size 58032000000 with 4 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso := IsomorphismPolarSpaces(ps1,ps2,true);</span>
+&lt;geometry morphism from &lt;Elements of Q+(5, 
+5): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2=0&gt; to &lt;Elements of Q+(5, 
+5): x_1*x_6+x_2*x_5+x_3*x_4=0&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hom := Intertwiner( iso );</span>
+MappingByFunction( &lt;projective collineation group of size 58032000000 with 
+4 generators&gt;, &lt;projective collineation group of size 58032000000 with 
+4 generators&gt;, function( y ) ... end, function( x ) ... end )
+ 
+</pre></div>
+
+<p>Both functions also have a "no check" version, which does not check whether <var class="Arg">ps1</var> and <var class="Arg">ps2</var> are polar spaces of the same type.</p>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPolarSpacesNC</code>( <var class="Arg">ps1</var>, <var class="Arg">ps2</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPolarSpacesNC</code>( <var class="Arg">ps1</var>, <var class="Arg">ps2</var>, <var class="Arg">boolean</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p><a id="X808C1D13854ED574" name="X808C1D13854ED574"></a></p>
+
+<h4>11.3 <span class="Heading">When will you use geometry morphisms?</span></h4>
+
+<p>When using groups in <strong class="pkg">GAP</strong>, we often use homomorphisms to pass from one situation to another, even though mathematically it may appear to be unneccessary, there can be ambiguities if the functionality is too flexible. This also applies to finite geometry. Take for example the usual exercise of thinking of a hyperplane in a projective space as another projective space. To conform with similar things in <strong class="pkg">GAP</strong>, the right thing to do is to embed one projective space into another, rather than having one projective space automatically a substructure of another. The reason for this is that there are many ways one can do this embedding, even though we may dispense with this choice when we are working mathematically. So to avoid ambiguity, we stipulate that one should construct the embedding explicitly. How this is done will be the subject of the following section.</p>
+
+<p><a id="X78B6F5AC7EF0D534" name="X78B6F5AC7EF0D534"></a></p>
+
+<h4>11.4 <span class="Heading">Natural geometry morphisms</span></h4>
+
+<p>The most natural of geometry morphisms include, for example, the embedding of a projective space into another via a subspace, or the projection of a polar space to a smaller polar space of the same type via a totally isotropic subspace.</p>
+
+<p><a id="X857976B679B8EC30" name="X857976B679B8EC30"></a></p>
+
+<h5>11.4-1 NaturalEmbeddingBySubspace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingBySubspace</code>( <var class="Arg">geom1</var>, <var class="Arg">geom2</var>, <var class="Arg">v</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingBySubspaceNC</code>( <var class="Arg">geom1</var>, <var class="Arg">geom2</var>, <var class="Arg">v</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>The arguments <var class="Arg">geom1</var> and <var class="Arg">geom2</var> are both projective spaces, or both polar spaces, and <var class="Arg">v</var> is an element of a projective or polar space. This function returns a geometry morphism representing the natural embedding of <var class="Arg">geom1</var> into <var class="Arg">geom2</var> as the subspace <var class="Arg">v</var>. Hence <var class="Arg">geom1</var> and <var class="Arg">v</var> must be equivalent as geometries. The operation <code class="code">NaturalEmbeddingBySubspaceNC</code> is the ``no check'' version of <code class="code">NaturalEmbeddingBySubspace</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">geom1 := ProjectiveSpace(2, 3);</span>
+ProjectiveSpace(2, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">geom2 := ProjectiveSpace(3, 3);</span>
+ProjectiveSpace(3, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">planes := Planes(geom2);</span>
+&lt;planes of ProjectiveSpace(3, 3)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hyp := Random(planes);</span>
+&lt;a plane in ProjectiveSpace(3, 3)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingBySubspace(geom1, geom2, hyp);</span>
+&lt;geometry morphism from &lt;All elements of ProjectiveSpace(2, 
+3)&gt; to &lt;All elements of ProjectiveSpace(3, 3)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">points := Points(geom1);</span>
+&lt;points of ProjectiveSpace(2, 3)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Random(points);</span>
+&lt;a point in ProjectiveSpace(2, 3)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x^em;</span>
+&lt;a point in ProjectiveSpace(3, 3)&gt;
+ 
+</pre></div>
+
+<p>Another example, this time with polar spaces:</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h1 := HermitianPolarSpace(2, 3^2);</span>
+H(2, 3^2)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h2 := HermitianPolarSpace(3, 3^2);</span>
+H(3, 3^2)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pg := AmbientSpace( h2 );    </span>
+ProjectiveSpace(3, 9)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pi := VectorSpaceToElement( pg, [[1,0,0,0],[0,1,0,0],[0,0,1,0]] * Z(9)^0 );</span>
+&lt;a plane in ProjectiveSpace(3, 9)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingBySubspace( h1, h2, pi );</span>
+&lt;geometry morphism from &lt;Elements of H(2, 3^2)&gt; to &lt;Elements of H(3, 3^2)&gt;&gt;
+ 
+</pre></div>
+
+<p><a id="X7D2D9AD287532FDB" name="X7D2D9AD287532FDB"></a></p>
+
+<h5>11.4-2 NaturalEmbeddingByFieldReduction</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingByFieldReduction</code>( <var class="Arg">geom1</var>, <var class="Arg">f2</var>, <var class="Arg">B</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingByFieldReduction</code>( <var class="Arg">geom1</var>, <var class="Arg">f2</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingByFieldReduction</code>( <var class="Arg">geom1</var>, <var class="Arg">geom2</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingByFieldReduction</code>( <var class="Arg">geom1</var>, <var class="Arg">geom2</var>, <var class="Arg">B</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>This operation comes in four flavours. For the first flavour, the argument <var class="Arg">geom1</var> is a projective space over a field L=GF(q<sup>t</sup>). The argument <var class="Arg">f2</var> is a subfield <span class="SimpleMath">K=GF(q)</span> of <span class="SimpleMath">L</span>. The argument <span class="SimpleMath">B</span> is a basis for <span class="SimpleMath">L</span> as a <span class="SimpleMath">K</span>-vectorspace. When this argument is not given, a basis for <span class="SimpleMath">L</span> over <span class="SimpleMath">K</span> is computed using <code class="file">Basis(AsVectorSpace(K,L))</code>. It is checked whether <var class="Arg">f2</var> is a subfield of the basefield of <var class="Arg">geom1</var>. The third and fourth flavour are comparable, where now <span class="SimpleMath">K</span> is found as the basefield of <var class="Arg">geom2</var>. In fact the arguments <var class="Arg">geom1</var> and <var class="Arg">geom2</var> are the projective spaces PG(r-1,q<sup>t</sup>) and PG(rt-1,q) respectively. As in the previous flavours, the argument <var class="Arg">B</var> is optional.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pg1 := ProjectiveSpace(2,81);</span>
+ProjectiveSpace(2, 81)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f2 := GF(9);</span>
+GF(3^2)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingByFieldReduction(pg1,f2);</span>
+&lt;geometry morphism from &lt;All elements of ProjectiveSpace(2, 
+81)&gt; to &lt;All elements of ProjectiveSpace(5, 9)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f2 := GF(3);</span>
+GF(3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingByFieldReduction(pg1,f2);</span>
+&lt;geometry morphism from &lt;All elements of ProjectiveSpace(2, 
+81)&gt; to &lt;All elements of ProjectiveSpace(11, 3)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pg2 := ProjectiveSpace(11,3);</span>
+ProjectiveSpace(11, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingByFieldReduction(pg1,pg2);</span>
+&lt;geometry morphism from &lt;All elements of ProjectiveSpace(2, 
+81)&gt; to &lt;All elements of ProjectiveSpace(11, 3)&gt;&gt;
+ 
+</pre></div>
+
+<p><a id="X86E0B2117DD536D2" name="X86E0B2117DD536D2"></a></p>
+
+<h5>11.4-3 Intertwiner</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Intertwiner</code>( <var class="Arg">em</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: an intertwiner for a geometry morphism</p>
+
+<p>The argument <var class="Arg">em</var> is a geometry morphism constructed from PG(r-1,q<sup>t</sup>) into PG(rt-1,q). The intertwiner of <var class="Arg">em</var> will return a homomorphisms from the <em>homography</em> group of PG(r-1,q<sup>t</sup>) into the collineation group of PG(rt-1,q). Notice in the example below the difference of a factor 2 in the orders of the group, which comes of course from restricing the homomorphism to the homography group, which differes a factor 2 from the collineation group of the projective line, that has an extra automorphism of order two, corresponding with the Frobenius automorphism.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pg1 := PG(1,9);</span>
+ProjectiveSpace(1, 9)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingByFieldReduction(pg1,GF(3));</span>
+&lt;geometry morphism from &lt;All elements of ProjectiveSpace(1, 
+9)&gt; to &lt;All elements of ProjectiveSpace(3, 3)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i := Intertwiner(em);</span>
+MappingByFunction( The FinInG projectivity group PGL(2,9), &lt;projective colline
+ation group of size 720 with 
+2 generators&gt;, function( m ) ... end, function( m ) ... end )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">spread := List(Points(pg1),x-&gt;x^em);</span>
+[ &lt;a line in ProjectiveSpace(3, 3)&gt;, &lt;a line in ProjectiveSpace(3, 3)&gt;, 
+  &lt;a line in ProjectiveSpace(3, 3)&gt;, &lt;a line in ProjectiveSpace(3, 3)&gt;, 
+  &lt;a line in ProjectiveSpace(3, 3)&gt;, &lt;a line in ProjectiveSpace(3, 3)&gt;, 
+  &lt;a line in ProjectiveSpace(3, 3)&gt;, &lt;a line in ProjectiveSpace(3, 3)&gt;, 
+  &lt;a line in ProjectiveSpace(3, 3)&gt;, &lt;a line in ProjectiveSpace(3, 3)&gt; ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">stab := Stabilizer(CollineationGroup(PG(3,3)),Set(spread),OnSets);</span>
+&lt;projective collineation group of size 5760&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hom := HomographyGroup(pg1);</span>
+The FinInG projectivity group PGL(2,9)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens := GeneratorsOfGroup(hom);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">group := Group(List(gens,x-&gt;x^i));</span>
+&lt;projective collineation group with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Order(group);</span>
+2880
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubgroup(stab,group);</span>
+true
+ 
+</pre></div>
+
+<p><a id="X7D2D9AD287532FDB" name="X7D2D9AD287532FDB"></a></p>
+
+<h5>11.4-4 NaturalEmbeddingByFieldReduction</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingByFieldReduction</code>( <var class="Arg">geom1</var>, <var class="Arg">f2</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingByFieldReduction</code>( <var class="Arg">geom1</var>, <var class="Arg">f2</var>, <var class="Arg">B</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingByFieldReduction</code>( <var class="Arg">geom1</var>, <var class="Arg">f2</var>, <var class="Arg">boolean</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>The argument <var class="Arg">geom1</var> is a classical polar space over a field <span class="SimpleMath">L</span> and <var class="Arg">f2</var> is a subfield <span class="SimpleMath">K</span> of <span class="SimpleMath">L</span>, GF(q<sup>t</sup>) and <span class="SimpleMath">K=GF(q)</span>. This function returns a geometry morphism representing the natural embedding of <var class="Arg">geom1</var> into a classical polar space <span class="SimpleMath">S</span> via field reduction, based on the following principle. Consider the trace map <span class="SimpleMath">T:</span> GF(q<sup>t</sup>) → GF(q): x → x<sup>q<sup>t</sup></sup> + x<sup>q<sup>t-1</sup></sup> + … x. The polar space <var class="Arg">geom1</var> is the geometry associated to a quadratic or sequilinear form <span class="SimpleMath">f</span>, acting on an <span class="SimpleMath">r</span>-dimensional vector space <span class="SimpleMath">V1</span> over the finite field GF(q<sup>t</sup>). We first consider the <span class="SimpleMath">rt</span>-dimensional vector space <span class="SimpleMath">V2</span> over the finite field <span class="SimpleMath">GF(q)</span>. There is a bijective map Φ from <span class="SimpleMath">V1</span> to <span class="SimpleMath">V2</span>. Now it is easy to see that T • f • Φ <sup>-1</sup> will be a quadratic or sesquilinear form (depending on <span class="SimpleMath">f</span> being quadratic or sesquilinear) acting on <span class="SimpleMath">V2</span>, and hence, if not singular or degenerate, induce a polar space over the finite field <span class="SimpleMath">GF(q)</span>. An element of <var class="Arg">geom1</var> is mapped to an element of the induced polar space over <span class="SimpleMath">GF(q)</span> using the same principle as for the natural embedding by field reduction for projective spaces, of course now restricted to the elements of <var class="Arg">geom1</var>. The only such possible embeddings are listed in the table below (see <a href="chapBib.html#biBGill">[Gil08]</a>):</p>
+
+<div class="pcenter"><table class="GAPDocTable">
+<caption class="GAPDocTable"><b>Table: </b>Field reduction of polar spaces</caption>
+<tr>
+<td class="tdleft">Polar Space 1</td>
+<td class="tdleft">Polar Space 2</td>
+<td class="tdleft">Conditions</td>
+</tr>
+<tr>
+<td class="tdleft">W(2n-1,q<sup>t</sup>)</td>
+<td class="tdleft"><span class="SimpleMath">W(2nt-1,q)</span></td>
+<td class="tdleft">--</td>
+</tr>
+<tr>
+<td class="tdleft">Q<sup>+</sup>(2n-1,q<sup>t</sup>)</td>
+<td class="tdleft">Q<sup>+</sup>(2nt-1,q)</td>
+<td class="tdleft">--</td>
+</tr>
+<tr>
+<td class="tdleft">Q<sup>-</sup>(2n-1,q<sup>t</sup>)</td>
+<td class="tdleft">Q<sup>-</sup>(2nt-1,q)</td>
+<td class="tdleft">--</td>
+</tr>
+<tr>
+<td class="tdleft">Q(2n,q<sup>2a+1</sup>)</td>
+<td class="tdleft">Q((2a+1)(2n+1)-1,q)</td>
+<td class="tdleft">q odd</td>
+</tr>
+<tr>
+<td class="tdleft">Q(2n,q<sup>2a</sup>)</td>
+<td class="tdleft">Q<sup>-</sup>(2a(2n+1)-1,q)</td>
+<td class="tdleft">q=1 mod 4</td>
+</tr>
+<tr>
+<td class="tdleft">Q(2n,q<sup>4a+2</sup>)</td>
+<td class="tdleft">Q<sup>+</sup>((4a+2)(2n+1)-1,q)</td>
+<td class="tdleft">q=3 mod 4</td>
+</tr>
+<tr>
+<td class="tdleft">Q(2n,q<sup>4a</sup>)</td>
+<td class="tdleft">Q<sup>-</sup>(4a(2n+1)-1,q)</td>
+<td class="tdleft">q=3 mod 4</td>
+</tr>
+<tr>
+<td class="tdleft">H(n,q<sup>2a+1</sup>)</td>
+<td class="tdleft"><span class="SimpleMath">H((n+1)(2a+1)-1,q)</span></td>
+<td class="tdleft">q square</td>
+</tr>
+<tr>
+<td class="tdleft">H(n,q<sup>2a</sup>)</td>
+<td class="tdleft"><span class="SimpleMath">W(2a(n+1)-1,q)</span></td>
+<td class="tdleft">q even</td>
+</tr>
+<tr>
+<td class="tdleft">H(2n,q<sup>2a</sup>)</td>
+<td class="tdleft">Q<sup>-</sup>(2a(2n+1)-1,q)</td>
+<td class="tdleft">q odd</td>
+</tr>
+<tr>
+<td class="tdleft">H(2n+1,q<sup>2a</sup>)</td>
+<td class="tdleft">Q<sup>+</sup>(2a(2n+2)-1,q)</td>
+<td class="tdleft">q odd</td>
+</tr>
+</table><br /><p>&nbsp;</p><br />
+</div>
+
+<p>The geometry morphism also comes equipped with an intertwiner (see <code class="func">Intertwiner</code> (<a href="chap11.html#X86E0B2117DD536D2"><span class="RefLink">11.4-3</span></a>)). This intertwiner has as its domain the isometry group of <var class="Arg">geom1</var>. The optional third argument <var class="Arg">boolean</var> can take either <code class="code">true</code> or <code class="code">false</code> as input, and then this operation will or will not compute the intertwiner accordingly. The user may wish that the intertwiner is not computed when embedding into large polar spaces. The default (when calling the operation with two arguments) is set to <code class="code">true</code>. In the first example, we construct a spread of maximal subspaces (solids) in a 7 dimensional symplectic space. We compute a subgroup of its stabilizer group using the intertwiner. In the second example, we construct a linear blocking set of the symplectic generalised quadrangle over <span class="SimpleMath">GF(9)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ps1 := SymplecticSpace(1,3^3);</span>
+W(1, 27)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingByFieldReduction(ps1,GF(3),true);</span>
+&lt;geometry morphism from &lt;Elements of W(1, 
+27)&gt; to &lt;Elements of &lt;polar space in ProjectiveSpace(
+5,GF(3)): -x1*y6-x2*y5-x3*y4-x3*y6+x4*y3+x5*y2+x6*y1+x6*y3=0 &gt;&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ps2 := AmbientGeometry(Range(em));</span>
+&lt;polar space in ProjectiveSpace(
+5,GF(3)): -x1*y6-x2*y5-x3*y4-x3*y6+x4*y3+x5*y2+x6*y1+x6*y3=0 &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">spread := List(Points(ps1),x-&gt;x^em);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i := Intertwiner(em);</span>
+MappingByFunction( PGSp(2,27), &lt;projective collineation group of size 
+19656 with 3 generators&gt;, function( m ) ... end, function( m ) ... end )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">coll := CollineationGroup(ps2);</span>
+#I  Computing collineation group of canonical polar space...
+&lt;projective collineation group of size 9170703360 with 4 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">stab := Group(ImagesSet(i,GeneratorsOfGroup(IsometryGroup(ps1))));</span>
+&lt;projective collineation group with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubgroup(coll,stab);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(Orbit(stab,spread[1]),x-&gt;x in spread);</span>
+[ true, true, true, true, true, true, true, true, true, true, true, true, 
+  true, true, true, true, true, true, true, true, true, true, true, true, 
+  true, true, true, true ]
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ps1 := SymplecticSpace(3,9);</span>
+W(3, 9)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingByFieldReduction(ps1,GF(3),true);</span>
+&lt;geometry morphism from &lt;Elements of W(3, 
+9)&gt; to &lt;Elements of &lt;polar space in ProjectiveSpace(
+7
+ ,GF(3)): -x1*y3+x1*y4+x2*y3+x3*y1-x3*y2-x4*y1-x5*y7+x5*y8+x6*y7+x7*y5-x7*y6-x8
+*y5=0 &gt;&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ps2 := AmbientGeometry(Range(em));</span>
+&lt;polar space in ProjectiveSpace(
+7
+ ,GF(3)): -x1*y3+x1*y4+x2*y3+x3*y1-x3*y2-x4*y1-x5*y7+x5*y8+x6*y7+x7*y5-x7*y6-x8
+*y5=0 &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pg := AmbientSpace(ps2);</span>
+ProjectiveSpace(7, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">spread := List(Points(ps1),x-&gt;x^em);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">el := Random(ElementsOfIncidenceStructure(pg,5));</span>
+&lt;a proj. 4-space in ProjectiveSpace(7, 3)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">prebs := Filtered(spread,x-&gt;Meet(x,el) &lt;&gt; EmptySubspace(pg));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">bs := List(prebs,x-&gt;PreImageElm(em,x));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(bs);</span>
+118
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">lines := List(Lines(ps1));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Collected(List(lines,x-&gt;Length(Filtered(bs,y-&gt;y * x))));</span>
+[ [ 1, 702 ], [ 4, 117 ], [ 10, 1 ] ]
+ 
+</pre></div>
+
+<p><a id="X787FC91D7A92BD96" name="X787FC91D7A92BD96"></a></p>
+
+<h5>11.4-5 BlownUpProjectiveSpace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlownUpProjectiveSpace</code>( <var class="Arg">basis</var>, <var class="Arg">pg1</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a projective space</p>
+
+<p>Blows up the projective space <var class="Arg">pg1</var> with respect to the <var class="Arg">basis</var> using field reduction. If the argument <var class="Arg">pg1</var> is has projective dimension <span class="SimpleMath">r-1</span> over the finite field GF(q<sup>t</sup>), and <var class="Arg">basis</var> is a basis of GF(q<sup>t</sup>) over <span class="SimpleMath">GF(q)</span>, then this functions returns a projective space of dimension <span class="SimpleMath">rt-1</span> over GF(q).</p>
+
+<p><a id="X84CD51327DD6120A" name="X84CD51327DD6120A"></a></p>
+
+<h5>11.4-6 BlownUpProjectiveSpaceBySubfield</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlownUpProjectiveSpaceBySubfield</code>( <var class="Arg">subfield</var>, <var class="Arg">pg</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a projective space</p>
+
+<p>Blows up a projective space <var class="Arg">pg</var> with respect to the standard basis of the basefield of <var class="Arg">pg</var> over the <var class="Arg">subfield</var>.</p>
+
+<p><a id="X7F84986879DD952A" name="X7F84986879DD952A"></a></p>
+
+<h5>11.4-7 BlownUpSubspaceOfProjectiveSpace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlownUpSubspaceOfProjectiveSpace</code>( <var class="Arg">basis</var>, <var class="Arg">subspace</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a subspace of a projective space</p>
+
+<p>Blows up a <var class="Arg">subspace</var> of a projective space with respect to the <var class="Arg">basis</var> using field reduction and returns it a subspace of the projective space obtained from blowing up the ambient projective space of <var class="Arg">subspace</var> with respect to <var class="Arg">basis</var> using field reduction.</p>
+
+<p><a id="X7B0BD62A86C9E432" name="X7B0BD62A86C9E432"></a></p>
+
+<h5>11.4-8 BlownUpSubspaceOfProjectiveSpaceBySubfield</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlownUpSubspaceOfProjectiveSpaceBySubfield</code>( <var class="Arg">subfield</var>, <var class="Arg">subspace</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a subspace of a projective space</p>
+
+<p>Blows up a <var class="Arg">subspace</var> of a projective space with respect to the standard basis of the basefield of <var class="Arg">subspace</var> over the <var class="Arg">subfield</var>, using field reduction and returns it a subspace of the projective space obtained from blowing up the ambient projective space of <var class="Arg">subspace</var> over the subfield.</p>
+
+<p><a id="X87B6C4AB7C6532CE" name="X87B6C4AB7C6532CE"></a></p>
+
+<h5>11.4-9 IsDesarguesianSpreadElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDesarguesianSpreadElement</code>( <var class="Arg">basis</var>, <var class="Arg">subspace</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: true or false</p>
+
+<p>Checks wether the <var class="Arg">subspace</var> is a subspace which is obtained from a blowing up a projective point using field reduction with respect to <var class="Arg">basis</var>.</p>
+
+<p><a id="X82510EF078F0806E" name="X82510EF078F0806E"></a></p>
+
+<h5>11.4-10 NaturalEmbeddingBySubField</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingBySubField</code>( <var class="Arg">geom1</var>, <var class="Arg">geom2</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalEmbeddingBySubField</code>( <var class="Arg">geom1</var>, <var class="Arg">geom2</var>, <var class="Arg">boolean</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>The arguments <var class="Arg">geom1</var> and <var class="Arg">geom2</var> are projective or polar spaces of the same dimension. This function returns a geometry morphism representing the natural embedding of <var class="Arg">geom1</var> into <var class="Arg">geom2</var> as a subfield geometry. If <var class="Arg">geom1</var> and <var class="Arg">geom2</var> are polar spaces, then the only such possible embeddings are listed in the table below (see <a href="chapBib.html#biBKleidmanLiebeck">[KL90]</a>):</p>
+
+<div class="pcenter"><table class="GAPDocTable">
+<caption class="GAPDocTable"><b>Table: </b>Subfield embeddings of polar spaces</caption>
+<tr>
+<td class="tdleft">Polar Space 1</td>
+<td class="tdleft">Polar Space 2</td>
+<td class="tdleft">Conditions</td>
+</tr>
+<tr>
+<td class="tdleft"><span class="SimpleMath">W(2n-1,q)</span></td>
+<td class="tdleft">W(2n-1,q<sup>a</sup>)</td>
+<td class="tdleft">--</td>
+</tr>
+<tr>
+<td class="tdleft"><span class="SimpleMath">W(2n-1,q)</span></td>
+<td class="tdleft">H(2n-1,q<sup>2</sup>)</td>
+<td class="tdleft">--</td>
+</tr>
+<tr>
+<td class="tdleft">H(d,q<sup>2</sup>)</td>
+<td class="tdleft">H(d,q<sup>2r</sup>)</td>
+<td class="tdleft">r odd</td>
+</tr>
+<tr>
+<td class="tdleft">O<sup>ε</sup>(d,q)</td>
+<td class="tdleft">H(d,q<sup>2</sup>)</td>
+<td class="tdleft">q odd</td>
+</tr>
+<tr>
+<td class="tdleft">O<sup>ε</sup>(d,q)</td>
+<td class="tdleft">O<sup>ε'</sup>(d,q<sup>r</sup>)</td>
+<td class="tdleft">ε=(ε')<sup>r</sup></td>
+</tr>
+</table><br /><p>&nbsp;</p><br />
+</div>
+
+<p>The geometry morphism also comes equipped with an intertwiner (see <code class="func">Intertwiner</code> (<a href="chap11.html#X86E0B2117DD536D2"><span class="RefLink">11.4-3</span></a>)). The optional third argument <var class="Arg">boolean</var> can take either <code class="code">true</code> or <code class="code">false</code> as input, and then our operation will or will not compute the intertwiner accordingly. The user may wish that the intertwiner is not computed when embedding into large polar spaces. The default (when calling the operation with two arguments) is set to <code class="code">true</code>. Here is a simple example where the geometry morphism takes the points of <span class="SimpleMath">PG(2,3)</span> and embeds them into <span class="SimpleMath">PG(2,9)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pg1 := ProjectiveSpace(2, 3);</span>
+ProjectiveSpace(2, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pg2 := ProjectiveSpace(2, 9);</span>
+ProjectiveSpace(2, 9)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingBySubfield(pg1,pg2);</span>
+&lt;geometry morphism from &lt;All elements of ProjectiveSpace(2, 
+3)&gt; to &lt;All elements of ProjectiveSpace(2, 9)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">points := AsList(Points( pg1 ));</span>
+[ &lt;a point in ProjectiveSpace(2, 3)&gt;, &lt;a point in ProjectiveSpace(2, 3)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 3)&gt;, &lt;a point in ProjectiveSpace(2, 3)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 3)&gt;, &lt;a point in ProjectiveSpace(2, 3)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 3)&gt;, &lt;a point in ProjectiveSpace(2, 3)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 3)&gt;, &lt;a point in ProjectiveSpace(2, 3)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 3)&gt;, &lt;a point in ProjectiveSpace(2, 3)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 3)&gt; ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">image := ImagesSet(em, points);</span>
+[ &lt;a point in ProjectiveSpace(2, 9)&gt;, &lt;a point in ProjectiveSpace(2, 9)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 9)&gt;, &lt;a point in ProjectiveSpace(2, 9)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 9)&gt;, &lt;a point in ProjectiveSpace(2, 9)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 9)&gt;, &lt;a point in ProjectiveSpace(2, 9)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 9)&gt;, &lt;a point in ProjectiveSpace(2, 9)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 9)&gt;, &lt;a point in ProjectiveSpace(2, 9)&gt;, 
+  &lt;a point in ProjectiveSpace(2, 9)&gt; ]
+ 
+</pre></div>
+
+<p>In this example, we embed <span class="SimpleMath">W(5,3)</span> in H(5,3<sup>2</sup>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">w := SymplecticSpace(5, 3);</span>
+W(5, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h := HermitianPolarSpace(5, 3^2);</span>
+H(5, 3^2)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">em := NaturalEmbeddingBySubfield(w, h);</span>
+&lt;geometry morphism from &lt;Elements of W(5, 3)&gt; to &lt;Elements of H(5, 3^2)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">points := AsList(Points(w));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">image := ImagesSet(em, points);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(image, x -&gt; x in h);</span>
+true
+ 
+</pre></div>
+
+<p><a id="X7B9E8AB682EC07C2" name="X7B9E8AB682EC07C2"></a></p>
+
+<h5>11.4-11 NaturalProjectionBySubspace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalProjectionBySubspace</code>( <var class="Arg">ps</var>, <var class="Arg">v</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalProjectionBySubspaceNC</code>( <var class="Arg">ps</var>, <var class="Arg">v</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>The argument <var class="Arg">ps</var> is a projective or polar space, and <var class="Arg">v</var> is a subspace of <var class="Arg">ps</var>. In the case that <var class="Arg">ps</var> is a projective space, this operation returns a geometry morphism from the subspaces containing <var class="Arg">v</var> to the subspaces of a smaller projective space over the same field. Similarly, if <var class="Arg">ps</var> is a polar space, this operation returns a geometry morphism from the totally singular subspaces containing <var class="Arg">v</var> to a polar space of smaller dimension, but of the same polar space type. The operation <code class="code">NaturalProjectionBySubspaceNC</code> performs in exactly the same way as <code class="code">NaturalProjectionBySubspace</code> except that there are fewer checks such as whether <var class="Arg">v</var> is a subspace of <var class="Arg">ps</var>, and whether the input of the function and preimage of the returned geometry morphism is valid or not. We should also mention here a shorthand for this operation which is basically and overload of the quotient operation. So, for example, <code class="code">SymplecticSpace(3, 3) / v</code> achieves the same thing as <code class="code">NaturalProjectionBySubspace(SymplecticSpace(3,3), v)</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ps := HyperbolicQuadric(5,3);</span>
+Q+(5, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Random(Points(ps));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">planes_on_x := AsList( Planes(x) );</span>
+[ &lt;a plane in Q+(5, 3)&gt;, &lt;a plane in Q+(5, 3)&gt;, &lt;a plane in Q+(5, 3)&gt;, 
+  &lt;a plane in Q+(5, 3)&gt;, &lt;a plane in Q+(5, 3)&gt;, &lt;a plane in Q+(5, 3)&gt;, 
+  &lt;a plane in Q+(5, 3)&gt;, &lt;a plane in Q+(5, 3)&gt; ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">proj := NaturalProjectionBySubspace(ps, x);</span>
+&lt;geometry morphism from &lt;Elements of Q+(5, 
+3)&gt; to &lt;Elements of &lt;polar space in ProjectiveSpace(
+3,GF(3)): x_1*x_2+x_3*x_4=0 &gt;&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">image := ImagesSet(proj, planes_on_x);</span>
+[ &lt;a line in Q+(3, 3): x_1*x_2+x_3*x_4=0&gt;, 
+  &lt;a line in Q+(3, 3): x_1*x_2+x_3*x_4=0&gt;, 
+  &lt;a line in Q+(3, 3): x_1*x_2+x_3*x_4=0&gt;, 
+  &lt;a line in Q+(3, 3): x_1*x_2+x_3*x_4=0&gt;, 
+  &lt;a line in Q+(3, 3): x_1*x_2+x_3*x_4=0&gt;, 
+  &lt;a line in Q+(3, 3): x_1*x_2+x_3*x_4=0&gt;, 
+  &lt;a line in Q+(3, 3): x_1*x_2+x_3*x_4=0&gt;, 
+  &lt;a line in Q+(3, 3): x_1*x_2+x_3*x_4=0&gt; ]
+ 
+</pre></div>
+
+<p><a id="X84C4431E84D98765" name="X84C4431E84D98765"></a></p>
+
+<h4>11.5 <span class="Heading">Some special kinds of geometry morphisms</span></h4>
+
+<p>In this section we provide some more specialised geometry morphisms, that are commonly used in finite geometry.</p>
+
+<p><a id="X7CD8E5187C5B7116" name="X7CD8E5187C5B7116"></a></p>
+
+<h5>11.5-1 KleinCorrespondence</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KleinCorrespondence</code>( <var class="Arg">quadric</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>The argument <var class="Arg">quadric</var> is a 5-dimensional hyperbolic quadric <span class="SimpleMath">Q^+(5,q)</span>, and this function returns the Klein correspondence from the lines of <span class="SimpleMath">PG(3,q)</span> to the points of <var class="Arg">quadric</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">quadric := HyperbolicQuadric(5,3);                                         </span>
+Q+(5, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">k := KleinCorrespondence( quadric );</span>
+&lt;geometry morphism from &lt;lines of ProjectiveSpace(3, 3)&gt; to &lt;points of Q+(5, 
+3)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pg := ProjectiveSpace(3, 3);</span>
+ProjectiveSpace(3, 3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l := Random( Lines(pg) );</span>
+&lt;a line in ProjectiveSpace(3, 3)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l^k;</span>
+&lt;a point in Q+(5, 3)&gt;
+ 
+</pre></div>
+
+<p><a id="X8472EBA584544B51" name="X8472EBA584544B51"></a></p>
+
+<h5>11.5-2 NaturalDuality</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NaturalDuality</code>( <var class="Arg">gq</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>The argument <var class="Arg">gq</var> is either the symplectic generalised quadrangle <code class="code">W(3,q)</code> or the hermitian generalised quadrangle <code class="code">H(3,q^2)</code>. By the Klein correspondence, the lines of <span class="SimpleMath">W(3,q)</span> are mapped to the points of <span class="SimpleMath">Q(4,q)</span>, which results in a point-line duality from <span class="SimpleMath">W(3,q)</span> onto <span class="SimpleMath">Q(4,q)</span>. Likewise, the Klein correspondence induces a duality between <span class="SimpleMath">H(3,q^2)</span> and <span class="SimpleMath">Q^-(5,q)</span>. At the moment, the geometry morphism returned is a map from lines to points. This operation does not require that the input is the canonical version of the generalised quadrangle; it suffices that the input has the correct polarity type.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">w := SymplecticSpace(3,5);</span>
+W(3, 5)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">lines:=AsList(Lines(w));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">duality := NaturalDuality(w);</span>
+#I  No intertwiner computed. One of the polar spaces must have a collineation group computed
+&lt;geometry morphism from &lt;lines of W(3, 5)&gt; to &lt;points of Q(4, 5)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=lines[1];</span>
+&lt;a line in W(3, 5)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l^duality;</span>
+&lt;a point in Q(4, 5)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PreImageElm(duality,last);</span>
+&lt;a line in W(3, 5)&gt;
+ 
+</pre></div>
+
+<p><a id="X7E23CA137AEFD1D2" name="X7E23CA137AEFD1D2"></a></p>
+
+<h5>11.5-3 ProjectiveCompletion</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProjectiveCompletion</code>( <var class="Arg">as</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Returns: a geometry morphism</p>
+
+<p>The argument <var class="Arg">as</var> is an affine space. This operation returns an embedding of <var class="Arg">as</var> into the projective space <var class="Arg">ps</var> of the same dimension, and over the same field. For example, the point <span class="SimpleMath">(x, y, z)</span> goes to the projective point with homogeneous coordinates <span class="SimpleMath">(1, x, y, z)</span>. An intertwiner is unnecessary, <code class="file">CollineationGroup(as)</code> is a subgroup of <code class="file">CollineationGroup(ps)</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">as := AffineSpace(3,5);</span>
+AG(3, 5)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">map := ProjectiveCompletion(as);</span>
+&lt;geometry morphism from &lt;Elements of AG(3, 
+5)&gt; to &lt;All elements of ProjectiveSpace(3, 5)&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p := Random( Points(as) );</span>
+&lt;a point in AG(3, 5)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p^map;</span>
+&lt;a point in ProjectiveSpace(3, 5)&gt;
+ 
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap10.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap12.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

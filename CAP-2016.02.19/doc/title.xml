@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    CAP
+  </Title>
+  <Subtitle>
+    Categories, Algorithms, Programming
+  </Subtitle>
+  <Version>
+    2016.02.19
+  </Version>
+  <Author>
+    Sebastian Gutsche<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+TODO<Br/>
+</Address>
+<Email>gutsche@mathematik.uni-kl.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~gutsche</Homepage>
+
+  </Author>
+  <Author>
+    Sebastian Posur<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Lehrstuhl B für Mathematik RWTH - Aachen<Br/>
+Templergraben 64<Br/>
+52062 Aachen<Br/>
+Germany<Br/>
+</Address>
+<Email>sposur@momo.math.rwth-aachen.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/Mitarbeiter/posur.php</Homepage>
+
+  </Author>
+  <Author>
+    Øystein Skartsæterhagen<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+NTNU<Br/>
+Institutt for matematiske fag<Br/>
+7491 Trondheim<Br/>
+Norway<Br/>
+</Address>
+<Email>oysteini@math.ntnu.no</Email>
+<Homepage>http://www.math.ntnu.no/~oysteini/</Homepage>
+
+  </Author>
+  <Date>
+    19/02/2016
+  </Date>
+  </TitlePage>

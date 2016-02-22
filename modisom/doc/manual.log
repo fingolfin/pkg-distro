@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdftex 2014.9.4)  28 OCT 2014 11:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdftex 2015.2.16)  8 JAN 2016 12:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -90,7 +90,7 @@ Chapter `Relatively free Algebras' .
 Chapter `Bibliography' .
 (./manual.bbl) [14.7]
 Chapter `Index' .
-(./manual.ind) [15.8]
+No file manual.ind.
 ##
 ## Citations for BibTeX written on manual.aux.
 ## Index entries for makeindex written on manual.idx.
@@ -101,8 +101,11 @@ Chapter `Index' .
 ## There were undefined labels or references.
 ## Labels have changed, run again. (Or they were multiply defined.)
 ##
- )pdfTeX warning (dest): name{citation@Eic07,EKo10} has been referenced but doe
-s not exist, replaced by a fixed one
+[15.8] )pdfTeX warning (dest): name{index} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{citation@Eic07,EKo10} has been referenced but does 
+not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{citation@EKo11} has been referenced but does not ex
 ist, replaced by a fixed one
@@ -120,10 +123,10 @@ dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on manual.pdf (15 pages, 156602 bytes).
+Output written on manual.pdf (15 pages, 153858 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 225 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 262 PDF objects out of 1000 (max. 8388607)
+ 230 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,13 @@
+gap> 
+gap> # type of objects
+gap> pg := PG(2,2);
+ProjectiveSpace(2, 2)
+gap> p := Random(Points(pg));
+<a point in ProjectiveSpace(2, 2)>
+gap> Type(p);
+1
+gap> l := Random(Lines(pg));
+<a line in ProjectiveSpace(2, 2)>
+gap> Type(l);
+2
+gap> quit;

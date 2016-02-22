@@ -1,0 +1,37 @@
+gap> 
+gap> # hermitian spread of H(q)
+gap> gh := SplitCayleyHexagon(3);
+H(3)
+gap> q6 := AmbientPolarSpace(gh);
+Q(6, 3): -x_1*x_5-x_2*x_6-x_3*x_7+x_4^2=0
+gap> hyp := First(Hyperplanes(PG(6,3)),x->TypeOfSubspace(q6,x)="elliptic");
+<a proj. 5-space in ProjectiveSpace(6, 3)>
+gap> q5 := EllipticQuadric(5,3);
+Q-(5, 3)
+gap> lines := AsList(Lines(q5));
+<closed orbit, 280 points>
+gap> em := NaturalEmbeddingBySubspace(q5,q6,hyp);
+<geometry morphism from <Elements of Q-(5, 3)> to <Elements of Q(6, 
+3): -x_1*x_5-x_2*x_6-x_3*x_7+x_4^2=0>>
+gap> spread := Filtered(lines,x->x^em in gh);
+[ <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, <a line in Q-(5, 3)>, 
+  <a line in Q-(5, 3)> ]
+gap> spread := List(spread,x->ElementToElement(gh,x^em));
+[ <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, 
+  <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, 
+  <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, 
+  <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, 
+  <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, 
+  <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, 
+  <a line in H(3)>, <a line in H(3)>, <a line in H(3)>, <a line in H(3)> ]
+gap> Collected(Concatenation(List(spread,x->List(spread,y->DistanceBetweenElements(x,y)))));
+[ [ 0, 28 ], [ 6, 756 ] ]
+gap> quit;

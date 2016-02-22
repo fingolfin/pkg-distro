@@ -1,0 +1,5 @@
+gap> 
+gap> #gspdesargues
+gap> GSpdesargues(4,GF(9));
+PGSp(4,9)
+gap> quit;

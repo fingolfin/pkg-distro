@@ -1,0 +1,27 @@
+gap> 
+gap> #special projectivity group/homography group
+gap> ps := ProjectiveSpace(3,16);
+ProjectiveSpace(3, 16)
+gap> SpecialProjectivityGroup(ps);
+The FinInG PSL group PSL(4,16)
+gap> SpecialHomographyGroup(ps);
+The FinInG PSL group PSL(4,16)
+gap> ps := ProjectiveSpace(4,81);
+ProjectiveSpace(4, 81)
+gap> SpecialProjectivityGroup(ps);
+The FinInG PSL group PSL(5,81)
+gap> SpecialHomographyGroup(ps);
+The FinInG PSL group PSL(5,81)
+gap> ps := ProjectiveSpace(5,3);
+ProjectiveSpace(5, 3)
+gap> SpecialProjectivityGroup(ps);
+The FinInG PSL group PSL(6,3)
+gap> SpecialHomographyGroup(ps);
+The FinInG PSL group PSL(6,3)
+gap> ps := ProjectiveSpace(2,2);
+ProjectiveSpace(2, 2)
+gap> SpecialProjectivityGroup(ps);
+The FinInG PSL group PSL(3,2)
+gap> SpecialHomographyGroup(ps);
+The FinInG PSL group PSL(3,2)
+gap> quit;

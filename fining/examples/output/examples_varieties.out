@@ -1,0 +1,129 @@
+gap> 
+gap> #an interesting variety example
+gap> pg1 := PG(1, 7);
+ProjectiveSpace(1, 7)
+gap> pg3 := PG(3, 7);
+ProjectiveSpace(3, 7)
+gap> points := Points(pg1);
+<points of ProjectiveSpace(1, 7)>
+gap> coords := List(points, Coordinates);
+[ [ Z(7)^0, 0*Z(7) ], [ Z(7)^0, Z(7)^0 ], [ Z(7)^0, Z(7) ], 
+  [ Z(7)^0, Z(7)^2 ], [ Z(7)^0, Z(7)^3 ], [ Z(7)^0, Z(7)^4 ], 
+  [ Z(7)^0, Z(7)^5 ], [ 0*Z(7), Z(7)^0 ] ]
+gap> curve := List(coords, t -> VectorSpaceToElement(pg3, [ t[1]^3, t[1]^2 * t[2], t[1] * t[2]^2, t[2]^3  ] ));;
+gap> pgl := ProjectivityGroup( pg3 );
+The FinInG projectivity group PGL(4,7)
+gap> stabcurve := FiningSetwiseStabiliser( pgl, curve );
+#I  Computing adjusted stabilizer chain...
+<projective collineation group with 6 generators>
+gap> StructureDescription( stabcurve );
+"PSL(3,2) : C2"
+gap> Span( curve );
+ProjectiveSpace(3, 7)
+gap> pg3lines := Lines( pg3 );
+<lines of ProjectiveSpace(3, 7)>
+gap> orbits := FiningOrbits(stabcurve, pg3lines);
+2%..3%..9%..15%..16%..21%..22%..28%..34%..40%..46%..52%..64%..75%..81%..84%..88%..94%..95%..99%..100%..[ <closed orbit, 8 points>, <closed orbit, 56 points>, 
+  <closed orbit, 28 points>, <closed orbit, 168 points>, 
+  <closed orbit, 168 points>, <closed orbit, 28 points>, 
+  <closed orbit, 168 points>, <closed orbit, 28 points>, 
+  <closed orbit, 168 points>, <closed orbit, 168 points>, 
+  <closed orbit, 168 points>, <closed orbit, 168 points>, 
+  <closed orbit, 168 points>, <closed orbit, 336 points>, 
+  <closed orbit, 336 points>, <closed orbit, 168 points>, 
+  <closed orbit, 84 points>, <closed orbit, 112 points>, 
+  <closed orbit, 168 points>, <closed orbit, 21 points>, 
+  <closed orbit, 112 points>, <closed orbit, 21 points> ]
+gap> List(orbits, Size);
+[ 8, 56, 28, 168, 168, 28, 168, 28, 168, 168, 168, 168, 168, 336, 336, 168, 
+  84, 112, 168, 21, 112, 21 ]
+gap> pg3points := Points( pg3 );
+<points of ProjectiveSpace(3, 7)>
+gap> orbits := FiningOrbits(stabcurve, pg3points);
+2%..16%..30%..72%..100%..[ <closed orbit, 8 points>, <closed orbit, 56 points>, 
+  <closed orbit, 56 points>, <closed orbit, 168 points>, 
+  <closed orbit, 112 points> ]
+gap> List(orbits, Size);
+[ 8, 56, 56, 168, 112 ]
+gap> reps := List(orbits, Representative);
+[ <a point in ProjectiveSpace(3, 7)>, <a point in ProjectiveSpace(3, 7)>, 
+  <a point in ProjectiveSpace(3, 7)>, <a point in ProjectiveSpace(3, 7)>, 
+  <a point in ProjectiveSpace(3, 7)> ]
+gap> x := reps[2];
+<a point in ProjectiveSpace(3, 7)>
+gap> proj := NaturalProjectionBySubspace(pg3, x);
+<geometry morphism from <All elements of ProjectiveSpace(3, 
+7)> to <All elements of ProjectiveSpace(2, 7)>>
+gap> curveminusx := Difference(curve, [x]);
+[ <a point in ProjectiveSpace(3, 7)>, <a point in ProjectiveSpace(3, 7)>, 
+  <a point in ProjectiveSpace(3, 7)>, <a point in ProjectiveSpace(3, 7)>, 
+  <a point in ProjectiveSpace(3, 7)>, <a point in ProjectiveSpace(3, 7)>, 
+  <a point in ProjectiveSpace(3, 7)>, <a point in ProjectiveSpace(3, 7)> ]
+gap> cuspidal := ImagesSet(proj, List(curveminusx, t -> Span(x, t)));
+[ <a point in ProjectiveSpace(2, 7)>, <a point in ProjectiveSpace(2, 7)>, 
+  <a point in ProjectiveSpace(2, 7)>, <a point in ProjectiveSpace(2, 7)>, 
+  <a point in ProjectiveSpace(2, 7)>, <a point in ProjectiveSpace(2, 7)>, 
+  <a point in ProjectiveSpace(2, 7)>, <a point in ProjectiveSpace(2, 7)> ]
+gap> coords := List(cuspidal, Coordinates);
+[ [ Z(7)^0, 0*Z(7), 0*Z(7) ], [ 0*Z(7), 0*Z(7), Z(7)^0 ], 
+  [ Z(7)^0, Z(7)^0, Z(7)^0 ], [ Z(7)^0, Z(7)^2, Z(7)^0 ], 
+  [ Z(7)^0, Z(7)^4, Z(7)^0 ], [ Z(7)^0, Z(7)^0, Z(7)^3 ], 
+  [ Z(7)^0, Z(7)^2, Z(7)^3 ], [ Z(7)^0, Z(7)^4, Z(7)^3 ] ]
+gap> r := PolynomialRing(GF(7), 3);
+GF(7)[x_1,x_2,x_3]
+gap> indets := IndeterminatesOfPolynomialRing(r);
+[ x_1, x_2, x_3 ]
+gap> shapes := Filtered(Tuples([0,1,2,3], 3), t -> Sum(t) = 3);
+[ [ 0, 0, 3 ], [ 0, 1, 2 ], [ 0, 2, 1 ], [ 0, 3, 0 ], [ 1, 0, 2 ], 
+  [ 1, 1, 1 ], [ 1, 2, 0 ], [ 2, 0, 1 ], [ 2, 1, 0 ], [ 3, 0, 0 ] ]
+gap> mat := List(coords, t -> List(shapes, u -> Product([1,2,3], i -> t[i]^u[i])));
+[ [ 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 
+      Z(7)^0 ], 
+  [ Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 
+      0*Z(7) ], 
+  [ Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, 
+      Z(7)^0 ], 
+  [ Z(7)^0, Z(7)^2, Z(7)^4, Z(7)^0, Z(7)^0, Z(7)^2, Z(7)^4, Z(7)^0, Z(7)^2, 
+      Z(7)^0 ], 
+  [ Z(7)^0, Z(7)^4, Z(7)^2, Z(7)^0, Z(7)^0, Z(7)^4, Z(7)^2, Z(7)^0, Z(7)^4, 
+      Z(7)^0 ], 
+  [ Z(7)^3, Z(7)^0, Z(7)^3, Z(7)^0, Z(7)^0, Z(7)^3, Z(7)^0, Z(7)^3, Z(7)^0, 
+      Z(7)^0 ], 
+  [ Z(7)^3, Z(7)^2, Z(7), Z(7)^0, Z(7)^0, Z(7)^5, Z(7)^4, Z(7)^3, Z(7)^2, 
+      Z(7)^0 ], 
+  [ Z(7)^3, Z(7)^4, Z(7)^5, Z(7)^0, Z(7)^0, Z(7), Z(7)^2, Z(7)^3, Z(7)^4, 
+      Z(7)^0 ] ]
+gap> mat2 := ShallowCopy(mat);
+[ [ 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 
+      Z(7)^0 ], 
+  [ Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 
+      0*Z(7) ], 
+  [ Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, Z(7)^0, 
+      Z(7)^0 ], 
+  [ Z(7)^0, Z(7)^2, Z(7)^4, Z(7)^0, Z(7)^0, Z(7)^2, Z(7)^4, Z(7)^0, Z(7)^2, 
+      Z(7)^0 ], 
+  [ Z(7)^0, Z(7)^4, Z(7)^2, Z(7)^0, Z(7)^0, Z(7)^4, Z(7)^2, Z(7)^0, Z(7)^4, 
+      Z(7)^0 ], 
+  [ Z(7)^3, Z(7)^0, Z(7)^3, Z(7)^0, Z(7)^0, Z(7)^3, Z(7)^0, Z(7)^3, Z(7)^0, 
+      Z(7)^0 ], 
+  [ Z(7)^3, Z(7)^2, Z(7), Z(7)^0, Z(7)^0, Z(7)^5, Z(7)^4, Z(7)^3, Z(7)^2, 
+      Z(7)^0 ], 
+  [ Z(7)^3, Z(7)^4, Z(7)^5, Z(7)^0, Z(7)^0, Z(7), Z(7)^2, Z(7)^3, Z(7)^4, 
+      Z(7)^0 ] ]
+gap> sol := NullspaceMat(TransposedMat(mat2))[1];
+[ 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^3, Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7),
+   0*Z(7) ]
+gap> terms := List(shapes, u -> Product([1,2,3], i -> indets[i]^u[i]));
+[ x_3^3, x_2*x_3^2, x_2^2*x_3, x_2^3, x_1*x_3^2, x_1*x_2*x_3, x_1*x_2^2, 
+  x_1^2*x_3, x_1^2*x_2, x_1^3 ]
+gap> poly := terms * sol;
+x_1*x_3^2-x_2^3
+gap> pg2 := AmbientGeometry(Range(proj));
+ProjectiveSpace(2, 7)
+gap> variety := ProjectiveVariety(pg2, [poly]);
+Projective Variety in ProjectiveSpace(2, 7)
+gap> points := Points(variety);
+<points of Projective Variety in ProjectiveSpace(2, 7)>
+gap> Size(points);
+8
+gap> quit;

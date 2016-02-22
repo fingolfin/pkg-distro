@@ -1,4 +1,3 @@
-
 gap> A := GroupRing(GF(2), SmallGroup(8,3));;
 gap> T := TableByWeightedBasisOfRad(A);;
 gap> C := CanoFormWithAutGroupOfTable(T);;
@@ -37,4 +36,3 @@ gap> C.cano.tab;
       [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ] ],
   [ [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ],
       [ 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2), 0*Z(2) ] ] ]
-

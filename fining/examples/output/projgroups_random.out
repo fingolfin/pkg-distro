@@ -1,0 +1,19 @@
+gap> 
+gap> #example of using Random causing a NiceObject to be computed
+gap> pg := PG(4,8);
+ProjectiveSpace(4, 8)
+gap> group := CollineationGroup(pg);
+The FinInG collineation group PGammaL(5,8)
+gap> HasNiceMonomorphism(group);
+false
+gap> Random(group);
+< a collineation: <cmat 5x5 over GF(2,3)>, F^4>
+gap> time;
+1028
+gap> HasNiceMonomorphism(group);
+true
+gap> Random(group);
+< a collineation: <cmat 5x5 over GF(2,3)>, F^0>
+gap> time;
+3
+gap> quit;

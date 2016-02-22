@@ -1,0 +1,109 @@
+\contentsline {chapter}{\numberline {1}\leavevmode {\color {Chapter }Introduction}}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}\leavevmode {\color {Chapter }2d-groups : crossed modules and cat1-groups}}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}\leavevmode {\color {Chapter }Constructions for crossed modules}}{8}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}\leavevmode {\color {Chapter }XMod}}{8}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}\leavevmode {\color {Chapter }Source}}{9}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}\leavevmode {\color {Chapter }Size}}{9}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}\leavevmode {\color {Chapter }IsXMod}}{10}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}\leavevmode {\color {Chapter }SubXMod}}{11}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Pre-crossed modules}}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}\leavevmode {\color {Chapter }PreXModByBoundaryAndAction}}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}\leavevmode {\color {Chapter }PeifferSubgroup}}{12}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}\leavevmode {\color {Chapter }Cat1-groups and pre-cat1-groups}}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\leavevmode {\color {Chapter }Source}}{13}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}\leavevmode {\color {Chapter }Cat1}}{13}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\leavevmode {\color {Chapter }Cat1OfXMod}}{14}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}\leavevmode {\color {Chapter }Selection of a small cat1-group}}{15}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\leavevmode {\color {Chapter }Cat1Select}}{15}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\leavevmode {\color {Chapter }AllCat1sBasic}}{17}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}\leavevmode {\color {Chapter }More functions for crossed modules and cat1-groups}}{17}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}\leavevmode {\color {Chapter }IdGroup}}{17}{subsection.2.5.1}
+\contentsline {chapter}{\numberline {3}\leavevmode {\color {Chapter }2d-mappings}}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}\leavevmode {\color {Chapter }Morphisms of 2d-groups}}{18}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}\leavevmode {\color {Chapter }Source}}{18}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Morphisms of pre-crossed modules}}{18}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}\leavevmode {\color {Chapter }IsXModMorphism}}{18}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}\leavevmode {\color {Chapter }IsInjective}}{18}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}\leavevmode {\color {Chapter }XModMorphism}}{19}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Morphisms of pre-cat1-groups}}{20}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}\leavevmode {\color {Chapter }IsCat1Morphism}}{20}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}\leavevmode {\color {Chapter }Operations on morphisms}}{21}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}\leavevmode {\color {Chapter }CompositionMorphism}}{21}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}\leavevmode {\color {Chapter }Kernel}}{21}{subsection.3.4.2}
+\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Isoclinism of groups and crossed modules}}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}\leavevmode {\color {Chapter }More operations for crossed modules}}{23}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}\leavevmode {\color {Chapter }FactorXMod}}{23}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}\leavevmode {\color {Chapter }IntersectionSubXMods}}{24}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}\leavevmode {\color {Chapter }Displacement}}{24}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}\leavevmode {\color {Chapter }CommutatorSubXMod}}{25}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}\leavevmode {\color {Chapter }DerivedSubXMod}}{25}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}\leavevmode {\color {Chapter }FixedPointSubgroupXMod}}{25}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}\leavevmode {\color {Chapter }CentreXMod}}{26}{subsection.4.1.7}
+\contentsline {subsection}{\numberline {4.1.8}\leavevmode {\color {Chapter }CentralQuotient}}{26}{subsection.4.1.8}
+\contentsline {subsection}{\numberline {4.1.9}\leavevmode {\color {Chapter }IsAbelian2dGroup}}{26}{subsection.4.1.9}
+\contentsline {subsection}{\numberline {4.1.10}\leavevmode {\color {Chapter }LowerCentralSeriesOfXMod}}{27}{subsection.4.1.10}
+\contentsline {subsection}{\numberline {4.1.11}\leavevmode {\color {Chapter }AllXMods}}{28}{subsection.4.1.11}
+\contentsline {subsection}{\numberline {4.1.12}\leavevmode {\color {Chapter }IsomorphismXMods}}{28}{subsection.4.1.12}
+\contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }Isoclinism for groups}}{29}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}\leavevmode {\color {Chapter }Isoclinism}}{29}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }IsStemDomain}}{29}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}\leavevmode {\color {Chapter }IsoclinicRank}}{30}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}\leavevmode {\color {Chapter }Isoclinism for crossed modules}}{30}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}\leavevmode {\color {Chapter }Isoclinism}}{30}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}\leavevmode {\color {Chapter }IsStemDomain}}{31}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}\leavevmode {\color {Chapter }IsoclinicRank}}{31}{subsection.4.3.3}
+\contentsline {chapter}{\numberline {5}\leavevmode {\color {Chapter }Derivations and Sections}}{32}{chapter.5}
+\contentsline {section}{\numberline {5.1}\leavevmode {\color {Chapter }Whitehead Multiplication}}{32}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}\leavevmode {\color {Chapter }IsDerivation}}{32}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}\leavevmode {\color {Chapter }DerivationByImages}}{32}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}\leavevmode {\color {Chapter }SectionByImages}}{33}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}\leavevmode {\color {Chapter }Whitehead Groups and Monoids}}{34}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}\leavevmode {\color {Chapter }RegularDerivations}}{34}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}\leavevmode {\color {Chapter }CompositeDerivation}}{35}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}\leavevmode {\color {Chapter }WhiteheadGroupTable}}{35}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}\leavevmode {\color {Chapter }Actors of 2d-groups}}{37}{chapter.6}
+\contentsline {section}{\numberline {6.1}\leavevmode {\color {Chapter }Actor of a crossed module}}{37}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}\leavevmode {\color {Chapter }AutomorphismPermGroup}}{37}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}\leavevmode {\color {Chapter }WhiteheadXMod}}{38}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}\leavevmode {\color {Chapter }XModCentre}}{40}{subsection.6.1.3}
+\contentsline {chapter}{\numberline {7}\leavevmode {\color {Chapter }Induced constructions}}{41}{chapter.7}
+\contentsline {section}{\numberline {7.1}\leavevmode {\color {Chapter }Induced crossed modules}}{41}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}\leavevmode {\color {Chapter }InducedXMod}}{41}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}\leavevmode {\color {Chapter }AllInducedXMods}}{43}{subsection.7.1.2}
+\contentsline {chapter}{\numberline {8}\leavevmode {\color {Chapter }Crossed squares and their morphisms}}{44}{chapter.8}
+\contentsline {section}{\numberline {8.1}\leavevmode {\color {Chapter }Constructions for crossed squares}}{45}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}\leavevmode {\color {Chapter }CrossedSquare}}{45}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}\leavevmode {\color {Chapter }CentralQuotient}}{46}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}\leavevmode {\color {Chapter }IsCrossedSquare}}{47}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.4}\leavevmode {\color {Chapter }Up2dGroup}}{47}{subsection.8.1.4}
+\contentsline {section}{\numberline {8.2}\leavevmode {\color {Chapter }Morphisms of crossed squares}}{48}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}\leavevmode {\color {Chapter }Source}}{48}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}\leavevmode {\color {Chapter }IsCrossedSquareMorphism}}{48}{subsection.8.2.2}
+\contentsline {chapter}{\numberline {9}\leavevmode {\color {Chapter }Crossed modules of groupoids}}{50}{chapter.9}
+\contentsline {section}{\numberline {9.1}\leavevmode {\color {Chapter }Constructions for crossed modules of groupoids}}{50}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}\leavevmode {\color {Chapter }DiscreteNormalPreXModWithObjects}}{50}{subsection.9.1.1}
+\contentsline {chapter}{\numberline {10}\leavevmode {\color {Chapter }Utility functions}}{51}{chapter.10}
+\contentsline {section}{\numberline {10.1}\leavevmode {\color {Chapter }Printing Lists}}{51}{section.10.1}
+\contentsline {subsection}{\numberline {10.1.1}\leavevmode {\color {Chapter }PrintListOneItemPerLine}}{51}{subsection.10.1.1}
+\contentsline {section}{\numberline {10.2}\leavevmode {\color {Chapter }Inclusion and Restriction Mappings}}{51}{section.10.2}
+\contentsline {subsection}{\numberline {10.2.1}\leavevmode {\color {Chapter }InclusionMappingGroups}}{51}{subsection.10.2.1}
+\contentsline {subsection}{\numberline {10.2.2}\leavevmode {\color {Chapter }InnerAutomorphismsByNormalSubgroup}}{52}{subsection.10.2.2}
+\contentsline {section}{\numberline {10.3}\leavevmode {\color {Chapter }Abelian Modules}}{52}{section.10.3}
+\contentsline {subsection}{\numberline {10.3.1}\leavevmode {\color {Chapter }AbelianModuleObject}}{52}{subsection.10.3.1}
+\contentsline {section}{\numberline {10.4}\leavevmode {\color {Chapter }Distinct and Common Representatives}}{53}{section.10.4}
+\contentsline {subsection}{\numberline {10.4.1}\leavevmode {\color {Chapter }DistinctRepresentatives}}{53}{subsection.10.4.1}
+\contentsline {chapter}{\numberline {11}\leavevmode {\color {Chapter }Development history}}{54}{chapter.11}
+\contentsline {section}{\numberline {11.1}\leavevmode {\color {Chapter }Changes from version to version}}{54}{section.11.1}
+\contentsline {subsection}{\numberline {11.1.1}\leavevmode {\color {Chapter }Version 1 for \textsf {GAP} 3}}{54}{subsection.11.1.1}
+\contentsline {subsection}{\numberline {11.1.2}\leavevmode {\color {Chapter }Version 2}}{54}{subsection.11.1.2}
+\contentsline {subsection}{\numberline {11.1.3}\leavevmode {\color {Chapter }Version 2.001 for \textsf {GAP} 4}}{54}{subsection.11.1.3}
+\contentsline {subsection}{\numberline {11.1.4}\leavevmode {\color {Chapter }Induced crossed modules}}{55}{subsection.11.1.4}
+\contentsline {subsection}{\numberline {11.1.5}\leavevmode {\color {Chapter }Versions 2.002 -- 2.006}}{55}{subsection.11.1.5}
+\contentsline {subsection}{\numberline {11.1.6}\leavevmode {\color {Chapter }Versions 2.007 -- 2.010}}{55}{subsection.11.1.6}
+\contentsline {section}{\numberline {11.2}\leavevmode {\color {Chapter }Versions for \textsf {GAP} [4.5 .. 4.8]}}{55}{section.11.2}
+\contentsline {subsection}{\numberline {11.2.1}\leavevmode {\color {Chapter }AllCat1s}}{55}{subsection.11.2.1}
+\contentsline {subsection}{\numberline {11.2.2}\leavevmode {\color {Chapter }Version 2.43}}{56}{subsection.11.2.2}
+\contentsline {subsection}{\numberline {11.2.3}\leavevmode {\color {Chapter }Latest Version}}{56}{subsection.11.2.3}
+\contentsline {section}{\numberline {11.3}\leavevmode {\color {Chapter }What needs doing next?}}{56}{section.11.3}
+\contentsline {chapter}{References}{59}{chapter*.5}
+\contentsline {chapter}{Index}{60}{section*.6}

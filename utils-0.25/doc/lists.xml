@@ -1,0 +1,240 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  lists.xml           Utils documentation                            -->
+<!--                                                                     -->
+<!--  version 0.25, 11/02/2016                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-lists">
+<Heading>Lists, Sets and Strings</Heading>
+
+
+
+<Section Label="sec-lists">
+<Heading>Functions for lists</Heading>
+
+
+<ManSection>
+   <Func Name="DifferencesList"
+         Arg="L" />
+   <Func Name="QuotientsList"
+         Arg="L" />
+   <Func Name="FloatQuotientsList"
+         Arg="L" />
+<Description>
+These functions have transferred from package <Package>ResClasses</Package>. 
+<P/>
+They take a list <M>L</M> of length <M>n</M> and output 
+the lists of length <M>n-1</M> containing all the differences <M>L[i]-L[i-1]</M> 
+and all the quotients <M>L[i]/L[i-1]</M> of consecutive entries in <M>L</M>. 
+<P/>
+In the quotient functions an error is returned if an entry is zero. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> L := [ 1, 3, 5, -1, -3, -5 ];;
+gap> DifferencesList( L );        
+[ 2, 2, -6, -2, -2 ]
+gap> QuotientsList( L );
+[ 3, 5/3, -1/5, 3, 5/3 ]
+gap> FloatQuotientsList( L );
+[ 3., 1.66667, -0.2, 3., 1.66667 ]
+gap> QuotientsList( [ 2, 1, 0, -1, -2 ] );
+[ 1/2, 0, fail, 2 ]
+]]>
+</Example>
+
+
+
+<ManSection>
+   <Oper Name="SearchCycle"
+         Arg="L" />
+<Description>
+This operation has transferred from package <Package>RCWA</Package>. 
+<P/>
+A utility function for detecting cycles in lists. 
+But what <E>is</E> the <E>definition</E> of a cycle here? 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> L := [1,2,3,4,2,3,4,5];
+[ 1, 2, 3, 4, 2, 3, 4, 5 ]
+gap> SearchCycle(L);        
+fail
+gap> L := [7,7,7];
+[ 7, 7, 7 ]
+gap> SearchCycle(L);
+[ 7 ]
+gap> L := [8,9,8,9];    
+[ 8, 9, 8, 9 ]
+gap> SearchCycle(L);
+fail
+gap> L := [8,9,8,9,8,9];
+[ 8, 9, 8, 9, 8, 9 ]
+gap> SearchCycle(L);    
+[ 8, 9 ]
+gap> L := [7,7];    
+[ 7, 7 ]
+gap> SearchCycle(L);
+Error, List Elements: <positions> must be a dense list of positive integers in
+  mainpart := list{[ Int( n / 3 ) .. n ]}
+ ; at /Applications/gap/my-dev/pkg/utils/lib/lists.gi:115 called from 
+<function "SearchCycle">( <arguments> )
+ called from read-eval loop at line 23 of *stdin*
+you can replace <positions> via 'return <positions>;'
+brk> ]]>
+</Example>
+
+<ManSection>
+   <Oper Name="PrintListOneItemPerLine"
+         Arg="L" />
+<Description>
+This operation has transferred from package <Package>Gpd</Package>. 
+<P/>
+Printing lists vertically, rather than horizantally, may be useful 
+when the entries are lengthy. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> PrintListOneItemPerLine( KnownPropertiesOfObject(L) );  
+[ IsFinite,
+  IsSmallList
+  ]
+]]>
+</Example>
+
+</Section>
+
+
+<Section><Heading>Distinct and Common Representatives</Heading>
+<Index>distinct and common representatives</Index>
+
+<ManSection>
+   <Oper Name="DistinctRepresentatives"
+         Arg="list" />
+   <Oper Name="CommonRepresentatives"
+         Arg="list" />
+   <Oper Name="CommonTransversal"
+         Arg="grp subgrp" />
+   <Oper Name="IsCommonTransversal"
+         Arg="grp subgrp list" />
+<Description>
+These functions deal with lists of subsets of <M>[1 \ldots n]</M>
+and construct systems of distinct and common representatives using
+simple, non-recursive, combinatorial algorithms.
+<P/>
+When <M>L</M> is a set of <M>n</M> subsets of <M>[1 \ldots n]</M> 
+and the Hall condition is satisfied
+(the union of any <M>k</M> subsets has at least <M>k</M> elements),
+a set of <C>DistinctRepresentatives</C> exists.
+<P/>
+When <M>J,K</M> are both lists of <M>n</M> sets, 
+the function <C>CommonRepresentatives</C> returns two lists: 
+the set of representatives, 
+and a permutation of the subsets of the second list.
+It may also be used to provide a common transversal
+for sets of left and right cosets of a subgroup <M>H</M> of a group <M>G</M>,
+although a greedy algorithm is usually quicker.
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> J := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;
+gap> DistinctRepresentatives( J );
+[ 1, 3, 4, 2 ]
+gap> K := [ [3,4], [1,2], [2,3], [2,3,4] ];;
+gap> CommonRepresentatives( J, K );
+[ [ 3, 3, 3, 1 ], [ 1, 3, 4, 2 ] ]
+gap> d16 := DihedralGroup( IsPermGroup, 16 );  SetName( d16, "d16" );
+Group([ (1,2,3,4,5,6,7,8), (2,8)(3,7)(4,6) ])
+gap> c4 := Subgroup( d16, [ d16.1^2 ] );  SetName( c4, "c4" );
+Group([ (1,3,5,7)(2,4,6,8) ])
+gap> RightCosets( d16, c4 );
+[ RightCoset(c4,()), RightCoset(c4,(2,8)(3,7)(4,6)), RightCoset(c4,(1,8,7,6,5,
+   4,3,2)), RightCoset(c4,(1,8)(2,7)(3,6)(4,5)) ]
+gap> trans := CommonTransversal( d16, c4 );
+[ (), (2,8)(3,7)(4,6), (1,2,3,4,5,6,7,8), (1,2)(3,8)(4,7)(5,6) ]
+gap> IsCommonTransversal( d16, c4, trans );
+true
+]]>
+</Example>
+
+</Section>
+
+
+
+<Section Label="sec-strings">
+<Heading>Functions for strings</Heading>
+
+
+<ManSection>
+   <Func Name="BlankFreeString"
+         Arg="obj" />
+<Description>
+This function has transferred from package <Package>ResClasses</Package>. 
+<P/>
+The result of <C>BlankFreeString( obj );</C> 
+is a composite of the functions <C>String( obj )</C> and 
+<C>RemoveCharacters( obj, " " );</C>. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> D12 := DihedralGroup( 12 );; 
+gap> BlankFreeString( D12 );
+"Group([f1,f2,f3])"
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="StringDotSuffix"
+         Arg="str suf" />
+<Description>
+These functions have transferred from package <Package>AutoDoc</Package>, 
+and were originally named <C>AUTODOC_GetSuffix</C> 
+and <C>AUTODOC_HasSuffix</C>. 
+<P/>
+When <C>StringDotSuffix</C> is given a string containing a "." 
+it return its extension, i.e. the bit after the last ".". 
+<P/>
+The function <C>StringEndsWithOtherString</C> predates the &GAP;4.8 
+function <C>EndsWith</C>, and is kept for consistency. 
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> StringDotSuffix( "file.ext" );
+"ext"
+gap> StringDotSuffix( "file.ext.bak" );
+"bak"
+gap> StringDotSuffix( "file." );
+""
+gap> StringDotSuffix( "Hello" );   
+fail
+gap> StringEndsWithOtherString( "file.ext", ".txt" );
+false
+]]>
+</Example>
+
+
+
+
+
+</Section>
+
+
+</Chapter>
+

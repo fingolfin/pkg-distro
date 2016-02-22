@@ -135,7 +135,7 @@
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(List([[0,2,1,4],[0,4,1,4],[1,4,2,4],[2,4,3,4]],</span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">                   ClassTransposition));</span>
-&lt;rcwa group over Z with 4 generators&gt;
+&lt;(0(2),1(4)),(0(4),1(4)),(1(4),2(4)),(2(4),3(4))&gt;
 
 </pre></div>
 
@@ -149,7 +149,7 @@
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := ClassTransposition(0,2,1,4);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">n := ClassTransposition(1,4,2,4);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H := Group(k,l,m,n);</span>
-&lt;rcwa group over Z with 4 generators&gt;
+&lt;(0(2),1(2)),(1(2),2(4)),(0(2),1(4)),(1(4),2(4))&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G = H; # k, l, m and n generate G as well</span>
 true
 
@@ -400,7 +400,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := ClassTransposition(1,3,2,6);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c := ClassTransposition(2,3,4,6);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(a,b,c);</span>
-&lt;rcwa group over Z with 3 generators&gt;
+&lt;(1(2),4(6)),(1(3),2(6)),(2(3),4(6))&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">data := LoadDatabaseOfGroupsGeneratedBy3ClassTranspositions();;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">data.Id3CTsGroup(G,data.grps); # the 'catalogue number' of G</span>
 44132
@@ -802,7 +802,7 @@ Rcwa permutation of Z with modulus 288
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := ClassTransposition(0,5,4,5);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c := ClassTransposition(1,4,0,6);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group(a,b,c);</span>
-&lt;rcwa group over Z with 3 generators&gt;
+&lt;(0(2),1(2)),(0(5),4(5)),(1(4),0(6))&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">data := LoadDatabaseOfGroupsGeneratedBy3ClassTranspositions();;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">data.Id3CTsGroup(G,data.grps); # the 'catalogue number' of G</span>
 1284
@@ -890,7 +890,18 @@ Rcwa permutation of Z with modulus 60
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CycleRepresentativesAndLengths(g,[0..1000]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CycleRepresentativesAndLengths(g,[0..1000]:notify:=50000);</span>
+n = 736: after 50000 steps, the iterate has 157 binary digits.
+n = 736: after 100000 steps, the iterate has 135 binary digits.
+n = 736: after 150000 steps, the iterate has 131 binary digits.
+n = 736: after 200000 steps, the iterate has 507 binary digits.
+n = 736: after 250000 steps, the iterate has 414 binary digits.
+n = 736: after 300000 steps, the iterate has 457 binary digits.
+n = 736: after 350000 steps, the iterate has 465 binary digits.
+n = 736: after 400000 steps, the iterate has 325 binary digits.
+n = 736: after 450000 steps, the iterate has 534 binary digits.
+n = 896: after 50000 steps, the iterate has 359 binary digits.
+n = 896: after 100000 steps, the iterate has 206 binary digits.
 [ [ 1, 15 ], [ 2, 2 ], [ 16, 24 ], [ 22, 2 ], [ 26, 2 ], [ 32, 6296 ], 
   [ 46, 2 ], [ 52, 8 ], [ 56, 296 ], [ 62, 2 ], [ 76, 8 ], [ 82, 2 ], 
   [ 86, 2 ], [ 92, 8 ], [ 106, 2 ], [ 112, 104 ], [ 116, 8 ], 
@@ -1144,14 +1155,14 @@ true
 0(2)
 2(6) U 4(6)
 &lt;union of 8 residue classes (mod 30)&gt;
-&lt;union of 19 residue classes (mod 90)&gt;
+&lt;union of 19 residue classes (mod 90) (9 classes)&gt;
 &lt;union of 114 residue classes (mod 720)&gt;
 &lt;union of 99 residue classes (mod 720)&gt;
 &lt;union of 57 residue classes (mod 720)&gt;
 &lt;union of 54 residue classes (mod 720)&gt;
 &lt;union of 41 residue classes (mod 720)&gt;
 &lt;union of 35 residue classes (mod 720)&gt;
-&lt;union of 8 residue classes (mod 720)&gt;
+&lt;union of 8 residue classes (mod 720) (6 classes)&gt;
 4(720) U 94(720) U 148(720) U 238(720)
 &lt;union of 24 residue classes (mod 5760)&gt;
 &lt;union of 72 residue classes (mod 51840)&gt;
@@ -1164,9 +1175,9 @@ true
 &lt;union of 60 residue classes (mod 259200)&gt;
 &lt;union of 48 residue classes (mod 259200)&gt;
 &lt;union of 24 residue classes (mod 259200)&gt;
-&lt;union of 12 residue classes (mod 259200)&gt;
+&lt;union of 12 residue classes (mod 259200) (6 classes)&gt;
 &lt;union of 24 residue classes (mod 777600)&gt;
-&lt;union of 12 residue classes (mod 777600)&gt;
+&lt;union of 12 residue classes (mod 777600) (6 classes)&gt;
 111604(194400) U 14404(777600) U 208804(777600)
 [  ]
 
@@ -1234,32 +1245,32 @@ Z \ 1(8) U 7(8)
 &lt;union of 39 residue classes (mod 720)&gt;
 &lt;union of 33 residue classes (mod 720)&gt;
 &lt;union of 23 residue classes (mod 720)&gt;
-&lt;union of 19 residue classes (mod 720)&gt;
-&lt;union of 17 residue classes (mod 720)&gt;
-&lt;union of 16 residue classes (mod 720)&gt;
-&lt;union of 14 residue classes (mod 720)&gt;
-&lt;union of 8 residue classes (mod 720)&gt;
-&lt;union of 7 residue classes (mod 720)&gt;
+&lt;union of 19 residue classes (mod 720) (7 classes)&gt;
+&lt;union of 17 residue classes (mod 720) (6 classes)&gt;
+&lt;union of 16 residue classes (mod 720) (7 classes)&gt;
+&lt;union of 14 residue classes (mod 720) (9 classes)&gt;
+&lt;union of 8 residue classes (mod 720) (6 classes)&gt;
+&lt;union of 7 residue classes (mod 720) (6 classes)&gt;
 238(360) U 4(720) U 148(720) U 454(720)
 &lt;union of 38 residue classes (mod 5760)&gt;
 &lt;union of 37 residue classes (mod 5760)&gt;
 &lt;union of 25 residue classes (mod 5760)&gt;
 &lt;union of 21 residue classes (mod 5760)&gt;
-&lt;union of 17 residue classes (mod 5760)&gt;
-&lt;union of 16 residue classes (mod 5760)&gt;
+&lt;union of 17 residue classes (mod 5760) (13 classes)&gt;
+&lt;union of 16 residue classes (mod 5760) (12 classes)&gt;
 &lt;union of 138 residue classes (mod 51840)&gt;
 &lt;union of 48 residue classes (mod 51840)&gt;
 &lt;union of 32 residue classes (mod 51840)&gt;
-&lt;union of 20 residue classes (mod 51840)&gt;
-&lt;union of 16 residue classes (mod 51840)&gt;
+&lt;union of 20 residue classes (mod 51840) (14 classes)&gt;
+&lt;union of 16 residue classes (mod 51840) (12 classes)&gt;
 &lt;union of 68 residue classes (mod 259200)&gt;
 &lt;union of 42 residue classes (mod 259200)&gt;
 &lt;union of 32 residue classes (mod 259200)&gt;
 &lt;union of 26 residue classes (mod 259200)&gt;
 &lt;union of 25 residue classes (mod 259200)&gt;
-&lt;union of 11 residue classes (mod 259200)&gt;
-&lt;union of 10 residue classes (mod 259200)&gt;
-&lt;union of 7 residue classes (mod 259200)&gt;
+&lt;union of 11 residue classes (mod 259200) (10 classes)&gt;
+&lt;union of 10 residue classes (mod 259200) (9 classes)&gt;
+&lt;union of 7 residue classes (mod 259200) (6 classes)&gt;
 13414(129600) U 2164(259200) U 66964(259200) U 228964(259200)
 2164(259200) U 66964(259200) U 228964(259200)
 [  ]
@@ -1315,14 +1326,14 @@ Z \ 1(8) U 7(8)
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">   od;</span>
 Z \ 1(8) U 7(8)
 &lt;union of 46 residue classes (mod 72)&gt;
-&lt;union of 20 residue classes (mod 72)&gt;
+&lt;union of 20 residue classes (mod 72) (8 classes)&gt;
 4(18)
 &lt;union of 28 residue classes (mod 576)&gt;
 &lt;union of 22 residue classes (mod 576)&gt;
 &lt;union of 21 residue classes (mod 576)&gt;
 40(72) U 4(144) U 94(144) U 346(576) U 418(576)
-&lt;union of 16 residue classes (mod 576)&gt;
-&lt;union of 15 residue classes (mod 576)&gt;
+&lt;union of 16 residue classes (mod 576) (6 classes)&gt;
+&lt;union of 15 residue classes (mod 576) (6 classes)&gt;
 4(144) U 94(144) U 346(576) U 418(576)
 &lt;union of 30 residue classes (mod 5184)&gt;
 &lt;union of 26 residue classes (mod 5184)&gt;
@@ -1355,23 +1366,23 @@ Z \ 1(8) U 7(8)
 &lt;union of 31 residue classes (mod 259200)&gt;
 &lt;union of 24 residue classes (mod 259200)&gt;
 &lt;union of 23 residue classes (mod 259200)&gt;
-&lt;union of 13 residue classes (mod 259200)&gt;
+&lt;union of 13 residue classes (mod 259200) (8 classes)&gt;
 57406(129600) U 115006(129600) U 192676(259200) U 250276(259200)
 57406(129600) U 192676(259200) U 250276(259200) U 374206(388800)
 57406(129600) U 192676(259200) U 250276(259200)
 250276(259200) U 57406(388800) U 316606(388800) U 451876(777600)
 316606(388800) U 451876(777600) U 509476(777600) U 768676(777600)
-&lt;union of 18 residue classes (mod 3110400)&gt;
+&lt;union of 18 residue classes (mod 3110400) (6 classes)&gt;
 451876(777600) U 509476(777600) U 705406(777600) U 768676(777600)
  U 2649406(3110400)
 451876(777600) U 705406(777600) U 768676(777600) U 2649406(3110400)
 451876(777600) U 705406(777600) U 2649406(3110400)
 705406(777600) U 2007076(3110400) U 2649406(3110400) U 2784676(3110400)
-&lt;union of 14 residue classes (mod 9331200)&gt;
+&lt;union of 14 residue classes (mod 9331200) (8 classes)&gt;
 2260606(2332800) U 5759806(9331200) U 5895076(9331200) U 8227876(9331200)
 4593406(6998400) U 15091006(27993600) U 17559076(27993600)
  U 24557476(27993600)
-&lt;union of 14 residue classes (mod 83980800)&gt;
+&lt;union of 14 residue classes (mod 83980800) (8 classes)&gt;
 18590206(20995200) U 24557476(83980800) U 45552676(83980800)
  U 71078206(83980800)
 [  ]
@@ -2555,7 +2566,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S2 := S1^T;</span>
 0(3) U 5(9) U 7(9) U 8(27)
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S3 := S2^T;</span>
-&lt;union of 20 residue classes (mod 27)&gt;
+&lt;union of 20 residue classes (mod 27) (6 classes)&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S4 := S3^T;</span>
 &lt;union of 73 residue classes (mod 81)&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S5 := S4^T;</span>

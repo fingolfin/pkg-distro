@@ -1,0 +1,10 @@
+gap&gt; mat := [[0,2,7,1],[2,0,3,0],[7,3,0,1],[1,0,1,0]]*Z(19)^0;
+[ [ 0*Z(19), Z(19), Z(19)^6, Z(19)^0 ], [ Z(19), 0*Z(19), Z(19)^13, 0*Z(19) ],
+  [ Z(19)^6, Z(19)^13, 0*Z(19), Z(19)^0 ], 
+  [ Z(19)^0, 0*Z(19), Z(19)^0, 0*Z(19) ] ]
+gap&gt; frob := FrobeniusAutomorphism(GF(19^4));
+FrobeniusAutomorphism( GF(19^4) )
+gap&gt; phi := PolarityOfProjectiveSpace(mat,frob^2,GF(19^4));
+&lt;polarity of PG(3, GF(19^4)) &gt;
+gap&gt; IsHermitianPolarityOfProjectiveSpace(phi);
+true

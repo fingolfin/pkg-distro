@@ -1,0 +1,207 @@
+\begin{theindex}
+
+  \item * for groupoid elements, \hyperpage{21}
+  \item \texttt{\symbol{92}}\texttt{\symbol{94}}\texttt{\symbol{123}}\texttt{\symbol{125}} for arrows, 
+		\hyperpage{27}
+  \item \texttt{\symbol{92}}\texttt{\symbol{94}}\texttt{\symbol{123}}\texttt{\symbol{125}} for groupoids, 
+		\hyperpage{28}
+
+  \indexspace
+
+  \item \texttt{Ancestor}, \hyperpage{24}
+  \item \texttt  {Arrow}, \hyperpage{7}, \hyperpage{20}
+  \item \texttt{AutomorphismGroup}, \hyperpage{33}
+
+  \indexspace
+
+  \item \texttt  {ConjugateArrow}, \hyperpage{26}
+  \item \texttt  {ConjugateGroupoid}, \hyperpage{28}
+
+  \indexspace
+
+  \item \texttt  {DigraphOfGraphOfGroupoids}, \hyperpage{43}
+  \item \texttt  {DigraphOfGraphOfGroups}, \hyperpage{37}
+  \item \texttt  {DiscreteSubgroupoid}, \hyperpage{23}
+  \item \texttt  {DiscreteTrivialSubgroupoid}, \hyperpage{23}
+  \item \texttt  {DomainWithSingleObject}, \hyperpage{10}, 
+		\hyperpage{16}
+  \item \texttt  {DoubleCoset}, \hyperpage{25}
+  \item \texttt  {DoubleCosetRepresentatives}, \hyperpage{25}
+
+  \indexspace
+
+  \item \texttt  {ElementOfArrow}, \hyperpage{7}, \hyperpage{20}
+
+  \indexspace
+
+  \item \texttt  {FpWeightedDigraph}, \hyperpage{36}
+  \item \texttt  {FreeProductWithAmalgamation}, \hyperpage{40}
+  \item \texttt  {FullSubgroupoid}, \hyperpage{23}
+  \item \texttt  {FullTrivialSubgroupoid}, \hyperpage{23}
+
+  \indexspace
+
+  \item \texttt  {GeneratorsOfMagmaWithObjects}, \hyperpage{9}
+  \item \texttt  {GGHead}, \hyperpage{39}
+  \item \texttt  {GGTail}, \hyperpage{39}
+  \item \texttt  {GraphOfGroupoids}, \hyperpage{43}
+  \item \texttt  {GraphOfGroupoidsOfWord}, \hyperpage{44}
+  \item \texttt  {GraphOfGroupoidsWord}, \hyperpage{44}
+  \item \texttt  {GraphOfGroups}, \hyperpage{37}
+  \item \texttt  {GraphOfGroupsOfWord}, \hyperpage{39}
+  \item \texttt  {GraphOfGroupsRewritingSystem}, \hyperpage{40}
+  \item \texttt  {GraphOfGroupsWord}, \hyperpage{39}
+  \item \texttt  {Groupoid}, \hyperpage{16}
+  \item \texttt  {GroupoidAutomorphismByGroupAuto}, \hyperpage{32}
+  \item \texttt  {GroupoidAutomorphismByGroupAutos}, \hyperpage{34}
+  \item \texttt  {GroupoidAutomorphismByObjectPerm}, \hyperpage{32}
+  \item \texttt  {GroupoidAutomorphismByRayImages}, \hyperpage{32}
+  \item \texttt  {GroupoidHomomorphism}, \hyperpage{29}
+  \item \texttt  {GroupoidHomomorphismFromSinglePiece}, \hyperpage{29}
+  \item \texttt  {GroupoidsOfGraphOfGroupoids}, \hyperpage{43}
+  \item \texttt  {GroupsOfGraphOfGroups}, \hyperpage{37}
+
+  \indexspace
+
+  \item \texttt  {HeadOfArrow}, \hyperpage{7}, \hyperpage{20}
+  \item \texttt  {HnnExtension}, \hyperpage{42}
+  \item \texttt  {HomogeneousDiscreteGroupoid}, \hyperpage{19}
+  \item \texttt  {HomogeneousGroupoid}, \hyperpage{19}
+  \item \texttt  {HomomorphismByUnion}, \hyperpage{15}, \hyperpage{31}
+  \item \texttt  {HomomorphismFromSinglePiece}, \hyperpage{12}
+  \item \texttt  {HomomorphismToSinglePiece}, \hyperpage{12}, 
+		\hyperpage{30}
+  \item \texttt  {Homset}, \hyperpage{22}
+  \item \texttt  {HomsOfMapping}, \hyperpage{12}
+
+  \indexspace
+
+  \item identity subgroupoid, \hyperpage{23}
+  \item \texttt  {IdentityArrow}, \hyperpage{21}
+  \item \texttt{IdentityMapping}, \hyperpage{30}
+  \item \texttt  {InclusionMappingGroupoids}, \hyperpage{29}
+  \item \texttt  {InvolutoryArcs}, \hyperpage{36}
+  \item \texttt  {IsArrowIn}, \hyperpage{7}, \hyperpage{20}
+  \item \texttt  {IsAutomorphismWithObjects}, \hyperpage{15}
+  \item \texttt  {IsBijectiveOnObjects}, \hyperpage{15}
+  \item \texttt  {IsDirectProductWithCompleteGraph}, \hyperpage{8}
+  \item \texttt  {IsDiscrete}, \hyperpage{8}
+  \item \texttt{IsDomainWithObjects}, \hyperpage{7}
+  \item \texttt  {IsEndomorphismWithObjects}, \hyperpage{15}
+  \item \texttt  {IsFpaGroup}, \hyperpage{40}
+  \item \texttt  {IsFpGroupoid}, \hyperpage{18}
+  \item \texttt  {IsFpWeightedDigraph}, \hyperpage{36}
+  \item \texttt  {IsGraphOfFpGroupoids}, \hyperpage{43}
+  \item \texttt  {IsGraphOfFpGroups}, \hyperpage{38}
+  \item \texttt  {IsGraphOfGroupoidsWord}, \hyperpage{44}
+  \item \texttt  {IsGraphOfGroupsWord}, \hyperpage{39}
+  \item \texttt  {IsGraphOfPcGroups}, \hyperpage{38}
+  \item \texttt  {IsGraphOfPermGroupoids}, \hyperpage{43}
+  \item \texttt  {IsGraphOfPermGroups}, \hyperpage{38}
+  \item \texttt  {IsHnnGroup}, \hyperpage{42}
+  \item \texttt{IsHomogeneousDomainWithObjects}, \hyperpage{20}
+  \item \texttt{IsHomogeneousDiscreteGroupoidRep}, \hyperpage{20}
+  \item \texttt  {IsInjectiveOnObjects}, \hyperpage{15}
+  \item \texttt{IsMagmaWithObjects}, \hyperpage{7}
+  \item \texttt{IsMappingToSinglePieceRep}, \hyperpage{12}
+  \item \texttt  {IsMatrixGroupoid}, \hyperpage{18}
+  \item \texttt{IsMultiplicativeElementWithObjects}, \hyperpage{7}
+  \item \texttt  {IsomorphismNewObjects}, \hyperpage{12}, 
+		\hyperpage{29}
+  \item \texttt  {IsomorphismsOfGraphOfGroupoids}, \hyperpage{43}
+  \item \texttt  {IsomorphismsOfGraphOfGroups}, \hyperpage{37}
+  \item \texttt  {IsPcGroupoid}, \hyperpage{18}
+  \item \texttt  {IsPermGroupoid}, \hyperpage{18}
+  \item \texttt  {IsReducedGraphOfGroupoidsWord}, \hyperpage{44}
+  \item \texttt  {IsReducedGraphOfGroupsWord}, \hyperpage{40}
+  \item \texttt  {IsSinglePiece}, \hyperpage{8}
+  \item \texttt  {IsSubgroupoid}, \hyperpage{23}
+  \item \texttt  {IsSurjectiveOnObjects}, \hyperpage{15}
+  \item \texttt  {IsWide}, \hyperpage{23}
+
+  \indexspace
+
+  \item \texttt  {LeftCoset}, \hyperpage{25}
+  \item \texttt  {LeftCosetRepresentatives}, \hyperpage{25}
+  \item \texttt  {LeftCosetRepresentativesFromObject}, \hyperpage{25}
+  \item \texttt  {LeftTransversalsOfGraphOfGroupoids}, \hyperpage{43}
+  \item \texttt  {LeftTransversalsOfGraphOfGroups}, \hyperpage{38}
+  \item License, \hyperpage{2}
+  \item loop, \hyperpage{21}
+
+  \indexspace
+
+  \item \texttt  {MagmaWithObjects}, \hyperpage{6}
+  \item \texttt  {MagmaWithObjectsHomomorphism}, \hyperpage{12}
+  \item \texttt  {MaximalDiscreteSubgroupoid}, \hyperpage{23}
+  \item \texttt  {MonoidWithObjects}, \hyperpage{9}
+
+  \indexspace
+
+  \item \texttt  {NormalFormGGRWS}, \hyperpage{40}
+
+  \indexspace
+
+  \item \texttt  {ObjectCostar}, \hyperpage{22}
+  \item \texttt  {ObjectGroup}, \hyperpage{17}
+  \item \texttt  {ObjectGroupHomomorphism}, \hyperpage{35}
+  \item \texttt  {ObjectList}, \hyperpage{6}, \hyperpage{17}
+  \item \texttt{ObjectList}
+    \subitem for groupoids, \hyperpage{18}
+  \item \texttt  {ObjectStar}, \hyperpage{22}
+  \item \texttt  {Order}, \hyperpage{21}
+
+  \indexspace
+
+  \item \texttt  {PieceImages}, \hyperpage{12}
+  \item \texttt  {Pieces}, \hyperpage{10}, \hyperpage{18}
+  \item \texttt  {PiecesOfMapping}, \hyperpage{12}
+
+  \indexspace
+
+  \item \texttt{Range}, \hyperpage{12}
+  \item \texttt  {RayElementsOfGroupoid}, \hyperpage{24}
+  \item rays, \hyperpage{24}
+  \item \texttt  {RaysOfGroupoid}, \hyperpage{24}
+  \item \texttt  {ReducedGraphOfGroupoidsWord}, \hyperpage{44}
+  \item \texttt  {ReducedGraphOfGroupsWord}, \hyperpage{40}
+  \item \texttt  {ReplaceOnePieceInUnion}, \hyperpage{18}
+  \item \texttt  {RightCoset}, \hyperpage{25}
+  \item \texttt  {RightCosetRepresentatives}, \hyperpage{25}
+  \item \texttt  {RightTransversalsOfGraphOfGroupoids}, \hyperpage{43}
+  \item \texttt  {RightTransversalsOfGraphOfGroups}, \hyperpage{38}
+  \item \texttt  {RootGroup}, \hyperpage{17}
+  \item \texttt  {RootGroupHomomorphism}, \hyperpage{35}
+  \item \texttt  {RootObject}, \hyperpage{6}, \hyperpage{17}
+
+  \indexspace
+
+  \item \texttt  {SemigroupWithObjects}, \hyperpage{8}
+  \item \texttt  {SinglePieceGroupoid}, \hyperpage{16}
+  \item \texttt  {SinglePieceGroupoidByGenerators}, \hyperpage{27}
+  \item \texttt  {SinglePieceMagmaWithObjects}, \hyperpage{6}
+  \item \texttt  {SinglePieceMonoidWithObjects}, \hyperpage{9}
+  \item \texttt  {SinglePieceSemigroupWithObjects}, \hyperpage{8}
+  \item \texttt  {Size}, \hyperpage{18}
+  \item \texttt{Source}, \hyperpage{12}
+  \item \texttt  {Subgroupoid}, \hyperpage{23}
+  \item \texttt  {SubgroupoidByPieces}, \hyperpage{23}
+  \item \texttt  {SubgroupoidsOfGraphOfGroupoids}, \hyperpage{43}
+  \item \texttt  {SubgroupoidWithRays}, \hyperpage{24}
+
+  \indexspace
+
+  \item \texttt  {TailOfArrow}, \hyperpage{7}, \hyperpage{20}
+  \item tree groupoid, \hyperpage{23}
+  \item trivial subgroupoid, \hyperpage{23}
+
+  \indexspace
+
+  \item \texttt  {UnionOfPieces}, \hyperpage{10}, \hyperpage{18}
+
+  \indexspace
+
+  \item \texttt  {WordOfGraphOfGroupoidsWord}, \hyperpage{44}
+  \item \texttt  {WordOfGraphOfGroupsWord}, \hyperpage{39}
+
+\end{theindex}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd">
+<?LaTeX ExtraPreamble="\usepackage{graphicx,amsfonts,tipa}"?>
+
+
+<!--
+
+  fining.xml		FinInG package documentation
+                                                                   John Bamberg
+                                                                   Anton Betten
+                                                                  Philippe Cara
+                                                                   Jan De Beule
+                                                                 Michel Lavrauw
+                                                                Max Neunhoeffer
+
+  Copyright (C) 2015, University of Western Australia
+                      Colorado State University
+                      Vrije Universiteit Brussel
+                      Ghent University
+					  Università degli Studi di Padova
+-->
+
+<Book Name="FinInG">
+
+<TitlePage>
+    <Title>GAP 4 Package <Package>FinInG</Package></Title>
+    <Subtitle>Finite Incidence Geometry</Subtitle>
+    <Version>
+      <#Include SYSTEM "../VERSION">
+    </Version>
+<Date><#Include SYSTEM "../DATE"></Date>
+	<Author>John Bamberg, Anton Betten, Philippe Cara, Jan De Beule, Michel Lavrauw, Max Neunhoeffer.
+	</Author>
+<!--
+    <Author>John Bamberg
+<Address>
+Ghent University, Belgium.
+</Address>
+    <Email>john.bamberg@uwa.edu.au</Email>
+    <Homepage>http://school.maths.uwa.edu.au/&tilde;bamberg/</Homepage>
+</Author>
+    <Author>Anton Betten
+<Address>
+Colorado State University, USA.
+</Address>
+    <Email>betten@math.colostate.edu</Email>
+    <Homepage>http://www.math.colostate.edu/&tilde;betten/</Homepage>
+    </Author>
+    <Author>Jan De Beule
+<Address>
+Vrije Universiteit Brussel, Belgium
+</Address>
+    <Email>jan@debeule.eu</Email>
+    <Homepage>http://www.debeule.eu</Homepage>
+    </Author>
+
+ <Author>Philippe Cara
+<Address>
+Vrije Universiteit Brussel, Belgium
+</Address>
+    <Email>pcara@vub.ac.be</Email>
+    <Homepage>http://homepages.vub.ac.be/&tilde;pcara</Homepage>
+    </Author>
+<Author>Michel Lavrauw
+<Address>
+Ghent University, Belgium
+</Address>
+    <Email>ml@cage.ugent.be</Email>
+    <Homepage>http://cage.ugent.be/&tilde;ml</Homepage>
+    </Author>
+    <Author>Max Neunhoeffer
+<Address>
+St Andrews, United Kingdom.
+</Address>
+    <Email>max.neunhoeffer@math.rwth-aachen.de</Email>
+    <Homepage>http://www.math.rwth-aachen.de/&tilde;Max.Neunhoeffer</Homepage>
+    </Author>
+-->    
+
+<Copyright>
+  &copyright; <#Include SYSTEM "../DATE"> by the authors<P/>
+  This package may be distributed under the terms and conditions of the
+  GNU Public License Version 2 or higher.<P/>
+  
+  
+  
+  The development group of <Package>FinInG</Package> welcomes contact with users. In case you have obtained the package as a deposited package part of archive during the installation of GAP,
+  we call on your beneficence to register at <Homepage>http://cage.ugent.be/fining</Homepage> when you use <Package>FinInG</Package>.<P/>
+  Please tell us about the use of <Package>FinInG</Package> in your research or teaching. We are very interested in results obtained
+  using <Package>FinInG</Package> and we might refer to your work in the future.
+  If your work is published, we ask you to cite <Package>FinInG</Package> like a journal article or book. We provide the necessary BibTex and LaTeX
+  code in Section <Ref Sect="cite"/>.
+</Copyright>
+
+<Acknowledgements>
+The development phase of <Package>FinInG</Package> started roughly in 2005. The idea to write a package for 
+projective geometry in GAP had emerged before, and resulted in <Package>pg</Package>, a relic that still
+can be found in the undeposited packages section of the GAP website. 
+One of the main objectives was to develop the new package was to 
+create a tighter connection between finite geometry and the group theoretical functions present in GAP.
+<P/>
+The authors thank Michael Pauley, Maska Law and Sven Reichard, for their contributions during the early days of the project.
+<P/>
+Jan De Beule and Michel Lavrauw have been supported by the Research Foundation Flanders -- Belgium (FWO), and
+John Bamberg has been supported by a Marie Curie grant and an ARC grant during almost the whole development
+phase of <Package>FinInG</Package>. The authors are grateful for this support.
+
+
+<P/>
+John Bamberg, Philippe Cara and Jan De Beule have spent several weeks in Vicenza while developing <Package>FinInG</Package>.
+We acknowledge the hospitality of Michel Lavrauw and Corrado Zanella. Our stays in Vicenza were always fruitful and very
+enjoyable. During or daily morning and afternoon coffee breaks, we discussed several topics, while enjoying coffee in <E>Caffe Pigaffeta</E>,
+<Homepage>http://www.caffepigafetta.it</Homepage>. Although one cannot acknowledge everybody, such as the bakery who provided us with the sandwiches,
+we acknowledge very much the hospitality of Carla and Luigi, who introduced us to many different kinds of coffees from all over the world.
+</Acknowledgements>
+
+
+</TitlePage>
+
+<!--  TableOfContents  . . . . . .  generate a table of contents   -->
+<TableOfContents/>
+
+<Body>
+<#Include SYSTEM "intro.xml">
+<#Include SYSTEM "examples.xml">
+<#Include SYSTEM "incidence_geometry.xml">
+<#Include SYSTEM "projectivespaces.xml">
+<#Include SYSTEM "projgroups.xml">
+<#Include SYSTEM "polaritiesofps.xml">
+<#Include SYSTEM "classicalpolarspaces.xml">
+<#Include SYSTEM "stab_orbs.xml">
+<#Include SYSTEM "affine.xml">
+<#Include SYSTEM "morphisms.xml">
+<#Include SYSTEM "varieties.xml">
+<#Include SYSTEM "gpolygons.xml">
+<#Include SYSTEM "diagramgeometries.xml">
+</Body>
+
+<#Include SYSTEM "structure_app.xml">
+<#Include SYSTEM "groups_app.xml">
+<#Include SYSTEM "morphisms_app.xml">
+
+
+<Bibliography Databases="fining"/>
+
+<!--  And finally an index as well   -->
+<TheIndex/>
+
+</Book>

@@ -35,6 +35,12 @@ DeclareAttribute( "RayGeneratorsOfTailCone",
 DeclareAttribute( "HomogeneousPointsOfPolyhedron",
                   IsPolyhedron );
 
+DeclareAttribute( "LatticePointsGenerators",
+                  IsPolyhedron );
+
+DeclareAttribute( "BasisOfLinealitySpace",
+                  IsPolyhedron );
+
 #####################################
 ##
 ## Properties
@@ -52,6 +58,9 @@ DeclareProperty( "IsBounded",
 ## Constructors
 ##
 #####################################
+
+DeclareOperation( "PolyhedronByInequalities",
+                  [ IsList ] );
 
 DeclareOperation( "Polyhedron",
                   [ IsPolytope, IsCone ] );

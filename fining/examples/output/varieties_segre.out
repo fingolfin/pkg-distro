@@ -1,0 +1,26 @@
+gap> 
+gap> #examples for Segre varieties
+gap> sv:=SegreVariety(2,2,9);
+Segre Variety in ProjectiveSpace(8, 9)
+gap> sm:=SegreMap(sv);
+Segre Map of [ <points of ProjectiveSpace(2, 9)>, 
+  <points of ProjectiveSpace(2, 9)> ]
+gap> cart1:=Cartesian(Points(PG(2,9)),Points(PG(2,9)));;
+gap> im1:=ImagesSet(sm,cart1);;
+gap> Span(im1);
+ProjectiveSpace(8, 9)
+gap> l:=Random(Lines(PG(2,9)));
+<a line in ProjectiveSpace(2, 9)>
+gap> cart2:=Cartesian(Points(l),Points(PG(2,9)));;
+gap> im2:=ImagesSet(sm,cart2);;
+gap> Span(im2);
+<a proj. 5-space in ProjectiveSpace(8, 9)>
+gap> x:=Random(Points(PG(2,9)));
+<a point in ProjectiveSpace(2, 9)>
+gap> cart3:=Cartesian(Points(PG(2,9)),Points(x));;
+gap> im3:=ImagesSet(sm,cart3);;
+gap> pi:=Span(im3);
+<a plane in ProjectiveSpace(8, 9)>
+gap> AsSet(List(Points(pi),y->y in sv));
+[ true ]
+gap> quit;

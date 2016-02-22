@@ -1471,7 +1471,52 @@ InstallMethod( ObjByExtRep,
 
 #############################################################################
 ##
-#S  Creating rcwa mappings from rcwa mappings of different rings. ///////////
+#S  Creating new rcwa mappings from rcwa mappings of the same ring. /////////
+##
+#############################################################################
+
+#############################################################################
+##
+#M  PiecewiseMapping( <sources>, <maps> ) . . . . . .  for rcwa mappings of Z
+##
+InstallMethod( PiecewiseMapping,
+               "for rcwa mappings of Z (RCWA)",
+               ReturnTrue, [ IsList, IsList ], 0,
+
+  function ( sources, maps )
+
+    local  map, coeffs, f, c, S, t, cls, cl, i;
+
+    if  Length(sources) <> Length(maps)
+      or not ForAll(sources,IsListOrCollection)
+      or not ForAll(maps,IsMapping)
+    then return fail; fi;
+    if   not ForAll(sources,IsResidueClassUnionOfZ)
+      or not ForAll(maps,IsRcwaMappingOfZ)
+      or not IsIntegers(Union(sources))
+      or Sum(List(sources,Density)) <> 1
+    then TryNextMethod(); fi;
+
+    maps := List(maps,SparseRep);
+    coeffs := [];
+    for i in [1..Length(maps)] do
+      S := sources[i];
+      f := maps[i];
+      c := Coefficients(f);
+      for t in c do
+        cls := AsUnionOfFewClasses(Intersection(ResidueClass(t[1],t[2]),S));
+        for cl in cls do
+          Add(coeffs,[Residue(cl),Modulus(cl),t[3],t[4],t[5]]);
+        od;
+      od;
+    od;
+    map := RcwaMapping(coeffs);
+    return SparseRep(map);
+  end );
+
+#############################################################################
+##
+#S  Creating new rcwa mappings from rcwa mappings of different rings. ///////
 ##
 #############################################################################
 
@@ -2334,6 +2379,14 @@ InstallMethod( IsClassTransposition,
     local  cls;
 
     if IsOne(sigma) then return false; fi;
+    if not IsBijective(sigma) then return false; fi;
+    if HasOrder(sigma) and Order(sigma) <> 2 then return false; fi;
+    if   IsRcwaMappingStandardRep(sigma)
+     and Length(Set(Coefficients(sigma))) > 3
+    then return false; fi;
+    if   IsRcwaMappingSparseRep(sigma)
+     and Length(Set(Coefficients(sigma),c->c{[3..5]})) > 3
+    then return false; fi;
     cls := AsUnionOfFewClasses(Support(sigma));
     if Length(cls) = 1 then cls := SplittedClass(cls[1],2); fi;
     if Length(cls) > 2 then return false; fi;
@@ -3004,9 +3057,10 @@ InstallMethod( Display,
            StringAffineMappingOfZxZ, StringAffineMappingOfZ_pi,
            StringAffineMappingOfGFqx, IdChars,
 
-           R, F, F_el, F_elints, m, c, res, idcoeffs, inds,
+           R, F, F_el, F_elints, m, c, src, img, res, idcoeffs, inds,
            P, Pcl, D, affs, affstrings, maxafflng, lines, line, maxlinelng,
-           cycles, cl, str, ustr, ringname, varname, prefix, col, i, j;
+           cycles, cl, str, ustr, ringname, varname, maxsrclng, maximglng,
+           looppos, prefix, col, i, j;
 
     IdChars := function ( n, ch )
       return Concatenation( ListWithIdenticalEntries( n, ch ) );
@@ -3279,6 +3333,34 @@ InstallMethod( Display,
             else Print("\n\n");
             fi;
           od;
+          return; # done.
+        fi;
+
+        if IsRcwaMappingOfZ(f) and ValueOption("AsClassMapping") = true then
+          if   not IsRcwaMappingInSparseRep(f)
+          then c := Coefficients(SparseRep(f)); fi;
+          src := [];
+          for i in [1..Length(c)] do
+            Add(src,ResidueClass(c[i][1],c[i][2]));
+          od;
+          img := List(src,cl->cl^f);
+          looppos := Filtered([1..Length(c)],i->img[i]<>src[i]
+                              and Intersection(src[i],img[i])<>[]);
+          src := List(src,ViewString);
+          img := List(img,ViewString);
+          maxsrclng := Maximum(List(src,Length));
+          maximglng := Maximum(List(img,Length));
+          for i in [1..Length(src)] do
+            Print("  ",String(src[i],maxsrclng)," -> ",img[i]);
+            if i in looppos then
+              Print(String("",maximglng-Length(img[i]))," loop");
+            fi;
+            if c[i]{[3..5]} = [1,0,1] then
+              Print(String("",maximglng-Length(img[i]))," id");
+            fi;
+            Print("\n");
+          od;
+          if ValueOption("NoLineFeed") <> true then Print("\n"); fi;
           return; # done.
         fi;
 
@@ -3581,6 +3663,9 @@ InstallMethod( Display,
       if Length(str) > maxlng then str := "< ... >"; fi;
       Print(str);
     end;
+
+    if   ValueOption("AsTable") <> true and ValueOption("table") <> true
+    then TryNextMethod(); fi;
 
     R := Source(f);
     if   ValueOption("xdvi") = true and IsIntegers(R)
@@ -4668,8 +4753,16 @@ InstallMethod( IncreasingOn, "for rcwa mappings in standard rep. (RCWA)",
 ##
 InstallMethod( IncreasingOn, "for rcwa mappings of Z in sparse rep. (RCWA)",
                true, [ IsRcwaMappingOfZInSparseRep ], 0,
-               f -> Union(List(Filtered(f!.coeffs,c->AbsInt(c[3])>c[5]),
-                               c->ResidueClass(c[1],c[2]))) );
+
+  function ( f )
+    if ValueOption("classes") = true then
+      return Set(Filtered(f!.coeffs,c->AbsInt(c[3])>c[5]),
+                  c->ResidueClass(c[1],c[2]));
+    else
+      return Union(List(Filtered(f!.coeffs,c->AbsInt(c[3])>c[5]),
+                        c->ResidueClass(c[1],c[2])));
+    fi;
+  end );
 
 #############################################################################
 ##
@@ -4700,8 +4793,16 @@ InstallMethod( DecreasingOn, "for rcwa mappings in standard rep. (RCWA)",
 ##
 InstallMethod( DecreasingOn, "for rcwa mappings of Z in sparse rep. (RCWA)",
                true, [ IsRcwaMappingOfZInSparseRep ], 0,
-               f -> Union(List(Filtered(f!.coeffs,c->AbsInt(c[3])<c[5]),
-                               c->ResidueClass(c[1],c[2]))) );
+
+  function ( f )
+    if ValueOption("classes") = true then
+      return Set(Filtered(f!.coeffs,c->AbsInt(c[3])<c[5]),
+                  c->ResidueClass(c[1],c[2]));
+    else
+      return Union(List(Filtered(f!.coeffs,c->AbsInt(c[3])<c[5]),
+                        c->ResidueClass(c[1],c[2])));
+    fi;
+  end );
 
 #############################################################################
 ##
@@ -4715,9 +4816,18 @@ InstallMethod( ShiftsUpOn, "for rcwa mappings of Z in standard rep. (RCWA)",
                                  and Coefficients(f)[r+1][2] > 0 ) ) );
 InstallMethod( ShiftsUpOn, "for rcwa mappings of Z in sparse rep. (RCWA)",
                true, [ IsRcwaMappingOfZInSparseRep ], 0,
-               f -> Union(List(Filtered(f!.coeffs,
-                                        c->c{[3,5]}=[1,1] and c[4]>0),
-                               c->ResidueClass(c[1],c[2]))) );
+
+  function ( f )
+    if ValueOption("classes") = true then
+      return Set(Filtered(f!.coeffs,
+                           c->c{[3,5]}=[1,1] and c[4]>0),
+                  c->ResidueClass(c[1],c[2]));
+    else
+      return Union(List(Filtered(f!.coeffs,
+                                 c->c{[3,5]}=[1,1] and c[4]>0),
+                        c->ResidueClass(c[1],c[2])));
+    fi;
+  end );
 
 #############################################################################
 ##
@@ -4732,9 +4842,18 @@ InstallMethod( ShiftsDownOn,
                                  and Coefficients(f)[r+1][2] < 0 ) ) );
 InstallMethod( ShiftsDownOn, "for rcwa mappings of Z in sparse rep. (RCWA)",
                true, [ IsRcwaMappingOfZInSparseRep ], 0,
-               f -> Union(List(Filtered(f!.coeffs,
-                                        c->c{[3,5]}=[1,1] and c[4]<0),
-                               c->ResidueClass(c[1],c[2]))) );
+
+  function ( f )
+    if ValueOption("classes") = true then
+      return Set(Filtered(f!.coeffs,
+                           c->c{[3,5]}=[1,1] and c[4]<0),
+                  c->ResidueClass(c[1],c[2]));
+    else
+      return Union(List(Filtered(f!.coeffs,
+                                 c->c{[3,5]}=[1,1] and c[4]<0),
+                        c->ResidueClass(c[1],c[2])));
+    fi;
+  end );
 
 #############################################################################
 ##
@@ -4834,6 +4953,33 @@ InstallMethod( ImageDensity, "for rcwa mappings in standard rep. (RCWA)",
 InstallMethod( ImageDensity, "for rcwa mappings of Z in sparse rep. (RCWA)",
                true, [ IsRcwaMappingOfZInSparseRep ], 0,
                f -> Sum(List(f!.coeffs,c->c[5]/(c[2]*c[3]))) );
+
+#############################################################################
+##
+#M  DensityOfSetOfFixedPoints( <f> )  for rcwa mappings of Z in standard rep.
+##
+InstallMethod( DensityOfSetOfFixedPoints,
+               "for rcwa mappings in standard rep. (RCWA)",
+               true, [ IsRcwaMappingOfZInStandardRep ], 0,
+               f->Number(Coefficients(f),c->c=[1,0,1])/Mod(f) );
+
+#############################################################################
+##
+#M  DensityOfSetOfFixedPoints( <f> )  . for rcwa mappings of Z in sparse rep.
+##
+InstallMethod( DensityOfSetOfFixedPoints,
+               "for rcwa mappings in sparse rep. (RCWA)",
+               true, [ IsRcwaMappingOfZInSparseRep ], 0,
+               f->Sum(List(Filtered(Coefficients(f),c->c{[3..5]}=[1,0,1]),
+                  c->1/c[2])) );
+
+#############################################################################
+##
+#M  DensityOfSupport( <f> ) . . . . . . . . . . . . .  for rcwa mappings of Z
+##
+InstallMethod( DensityOfSupport, "for rcwa mappings (RCWA)",
+               true, [ IsRcwaMappingOfZ ], 0,
+               f -> 1 - DensityOfSetOfFixedPoints( f ) );
 
 #############################################################################
 ##
@@ -5298,9 +5444,17 @@ InstallMethod( ImagesSet,
 
     local  c;
 
-    if cl!.m mod f!.modulus <> 0 then TryNextMethod(); fi;
-    c := f!.coeffs[(cl!.r[1]) mod f!.modulus + 1];
-    return ResidueClass(Integers,c[1]*cl!.m/c[3],(c[1]*cl!.r[1]+c[2])/c[3]);
+    if IsResidueClassUnionOfZInClassListRep(cl) then
+      if cl!.m mod f!.modulus <> 0 then TryNextMethod(); fi;
+      c := f!.coeffs[(cl!.cls[1][1]) mod f!.modulus + 1];
+      return ResidueClass(Integers,c[1]*cl!.m/c[3],
+                                  (c[1]*cl!.cls[1][1]+c[2])/c[3]);
+    elif IsResidueClassUnionInResidueListRep(cl) then
+      if cl!.m mod f!.modulus <> 0 then TryNextMethod(); fi;
+      c := f!.coeffs[(cl!.r[1]) mod f!.modulus + 1];
+      return ResidueClass(Integers,c[1]*cl!.m/c[3],
+                                  (c[1]*cl!.r[1]+c[2])/c[3]);
+    else TryNextMethod(); fi;
   end );
 
 #############################################################################
@@ -5323,9 +5477,19 @@ InstallMethod( ImagesSet,
 
     local  c;
 
-    c := First(f!.coeffs,c->cl!.r[1] mod c[2] = c[1] and cl!.m mod c[2] = 0);
-    if c = fail then TryNextMethod(); fi;
-    return ResidueClass(Integers,c[3]*cl!.m/c[5],(c[3]*cl!.r[1]+c[4])/c[5]);
+    if IsResidueClassUnionOfZInClassListRep(cl) then
+      c := First(f!.coeffs,
+                    c->cl!.cls[1][1] mod c[2] = c[1] and cl!.m mod c[2] = 0);
+      if c = fail then TryNextMethod(); fi;
+      return ResidueClass(Integers,c[3]*cl!.m/c[5],
+                                  (c[3]*cl!.cls[1][1]+c[4])/c[5]);
+    elif IsResidueClassUnionInResidueListRep(cl) then
+      c := First(f!.coeffs,
+                    c->cl!.r[1] mod c[2] = c[1] and cl!.m mod c[2] = 0);
+      if c = fail then TryNextMethod(); fi;
+      return ResidueClass(Integers,c[3]*cl!.m/c[5],
+                                  (c[3]*cl!.r[1]+c[4])/c[5]);
+    else TryNextMethod(); fi;
   end );
 
 #############################################################################
@@ -7606,7 +7770,7 @@ InstallMethod( Order,
       if not IsIntegral(g) then
         loopcheckbound := ValueOption("loopcheckbound");
         if loopcheckbound = fail then
-          loopcheckbound := RootInt(Mod(g),3) + 1; # 'reasonable' limit?
+          loopcheckbound := RootInt(Mod(g),2) + 5; # necessary AT LEAST
         fi;
         pow := g;
         for k in [1..loopcheckbound] do
@@ -7979,7 +8143,7 @@ InstallMethod( Loops,
       r_img := ((c[3]*r+c[4])/c[5]) mod m_img;
       if    [r_img,m_img] <> [r,m]
         and (r_img - r) mod Gcd(m,m_img) = 0
-      then Add(loops,ResidueClass(r,modulus)); fi;
+      then Add(loops,ResidueClass(r,m)); fi;
     od;
     if loops <> [] then SetIsTame(f,false); fi;
     return loops;
@@ -8298,7 +8462,7 @@ InstallMethod( LikelyContractionCentre,
 
 #############################################################################
 ##
-#S  Finding finite cycles of an rcwa permutation. ///////////////////////////
+#S  Finite cycles of an rcwa permutation. ///////////////////////////////////
 ##
 #############################################################################
 
@@ -8433,21 +8597,66 @@ InstallMethod( CycleRepresentativesAndLengths,
 
   function ( g, S )
 
-    local  replng, rem, cyc, rep, i, j;
+    local  replng, rem, cyc, rep, n, i, j;
 
     replng := [];
     rem    := List(S,n->n^g<>n);
     for i in [1..Length(S)] do
       if rem[i] = false then continue; fi;
       rep := S[i];
-      cyc := Cycle(g,rep);
-      Add(replng,[rep,Length(cyc)]);
-      for j in [1..Length(cyc)] do
-        if   cyc[j] in S
-        then rem[PositionSorted(S,cyc[j])] := false; fi;
-      od;
+      cyc := ComputeCycleLength(g,rep:small:=S);
+      if not cyc.aborted then Add(replng,[rep,cyc.length]);
+                         else Add(replng,[rep,fail]); fi;
+      for n in cyc.smallpoints do rem[PositionSorted(S,n)] := false; od;
     od;
     return replng;
+  end );
+
+#############################################################################
+##
+#F  ComputeCycleLength( <g>, <n> )
+##
+InstallGlobalFunction( ComputeCycleLength,
+
+  function ( g, n0 )
+
+    local  n, steps, max, maxpos, smallpoints, result,
+           notify, small, abortat, aborted, quiet;
+
+    n := n0; steps := 0; max := n; maxpos := 1; smallpoints := [n0];
+    notify  := ValueOption("notify");
+    small   := ValueOption("small");
+    abortat := ValueOption("abortat");
+    quiet   := ValueOption("quiet") = true;
+    if   not IsPosInt(notify) and not notify in [0,infinity]
+    then notify := 10000; fi;
+    aborted := false;
+    repeat
+      n := n^g;
+      steps := steps + 1;
+      if n > max then
+        max    := n;
+        maxpos := steps;
+      fi;
+      if IsList(small) and n in small then Add(smallpoints,n); fi;
+      if not quiet and not notify in [0,infinity]
+        and steps mod notify = 0
+      then
+        Print("n = ",n0,": after ",steps," steps, the iterate has ",
+              LogInt(AbsInt(n),2)+1," binary digits.\n");
+      fi;
+      if IsPosInt(abortat) and steps >= abortat then
+        aborted := true; break;
+      fi; 
+    until n = n0;
+    result := rec( g       := g,
+                   n       := n0,
+                   length  := steps,
+                   maximum := max,
+                   maxpos  := maxpos,
+                   aborted := aborted );
+    if IsList(small) then result.smallpoints := Set(smallpoints); fi;
+    return result;
   end );
 
 #############################################################################

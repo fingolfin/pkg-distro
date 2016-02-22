@@ -1,0 +1,14 @@
+gap&gt; mat := IdentityMat(4,GF(3));<br>
+[ [ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3) ], [ 0*Z(3), Z(3)^0, 0*Z(3), 0*Z(3) ], <br>
+  [ 0*Z(3), 0*Z(3), Z(3)^0, 0*Z(3) ], [ 0*Z(3), 0*Z(3), 0*Z(3), Z(3)^0 ] ]<br>
+gap&gt; phi := PolarityOfProjectiveSpace(mat,GF(3));<br>
+&lt;polarity of PG(3, GF(3)),  &gt;<br>
+gap&gt; points := AbsolutePoints(phi);<br>
+&lt;All elements of Q+(3, 3)&gt;<br>
+gap&gt; List(points);<br>
+[ &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, <br>
+  &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, <br>
+  &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, <br>
+  &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, <br>
+  &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, &lt;a point in Q+(3, 3)&gt;, <br>
+  &lt;a point in Q+(3, 3)&gt; ]<br>

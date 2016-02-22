@@ -1,0 +1,55 @@
+gap> 
+gap> #morphisms_isopolar.g
+gap> mat1 := IdentityMat(6,GF(5));
+< mutable compressed matrix 6x6 over GF(5) >
+gap> form1 := BilinearFormByMatrix(mat1,GF(5));
+< bilinear form >
+gap> ps1 := PolarSpace(form1);
+<polar space in ProjectiveSpace(
+5,GF(5)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2=0 >
+gap> mat2 := [[0,0,0,0,0,1],[0,0,0,0,1,0],[0,0,0,1,0,0],
+> [0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]*Z(5)^0;
+[ [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0 ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ] ]
+gap> form2 := QuadraticFormByMatrix(mat2,GF(5));
+< quadratic form >
+gap> ps2 := PolarSpace(form2);
+<polar space in ProjectiveSpace(5,GF(5)): x_1*x_6+x_2*x_5+x_3*x_4=0 >
+gap> iso := IsomorphismPolarSpaces(ps1,ps2,true);
+#I  No intertwiner computed. One of the polar spaces must have a collineation group computed
+<geometry morphism from <Elements of Q+(5, 
+5): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2=0> to <Elements of Q+(5, 
+5): x_1*x_6+x_2*x_5+x_3*x_4=0>>
+gap> CollineationGroup(ps1);
+#I  Computing collineation group of canonical polar space...
+<projective collineation group of size 58032000000 with 4 generators>
+gap> CollineationGroup(ps2);
+#I  Computing collineation group of canonical polar space...
+<projective collineation group of size 58032000000 with 4 generators>
+gap> iso := IsomorphismPolarSpaces(ps1,ps2,true);
+<geometry morphism from <Elements of Q+(5, 
+5): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2=0> to <Elements of Q+(5, 
+5): x_1*x_6+x_2*x_5+x_3*x_4=0>>
+gap> hom := Intertwiner( iso );
+MappingByFunction( <projective collineation group of size 58032000000 with 
+4 generators>, <projective collineation group of size 58032000000 with 
+4 generators>, function( y ) ... end, function( x ) ... end )
+gap> ps1 := ParabolicQuadric(6,8);
+Q(6, 8)
+gap> ps2 := SymplecticSpace(5,8);
+W(5, 8)
+gap> em := IsomorphismPolarSpaces(ps1,ps2);
+#I  Have 36171 points.
+#I  Have 37381 points in new orbit.
+#I  Have 36171 points.
+#I  Have 37388 points in new orbit.
+<geometry morphism from <Elements of Q(6, 8)> to <Elements of W(5, 8)>>
+gap> hom := Intertwiner(em);
+MappingByFunction( PGammaO(7,8), <projective collineation group of size 
+27231016821530296320 with 
+3 generators>, function( el ) ... end, function( el ) ... end )
+gap> quit;

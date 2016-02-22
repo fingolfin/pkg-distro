@@ -1,0 +1,22 @@
+gap> 
+gap> #compare timing of setwise
+gap> ps := ParabolicQuadric(4,4);
+Q(4, 4)
+gap> g := CollineationGroup(ps);
+PGammaO(5,4)
+gap> l1 := Random(Lines(ps));
+<a line in Q(4, 4)>
+gap> l2 := Random(Lines(ps));
+<a line in Q(4, 4)>
+gap> g1 := Stabilizer(g,Set([l1,l2]),OnSets);
+<projective collineation group of size 2304 with 6 generators>
+gap> time;
+2633
+gap> g2 := FiningSetwiseStabiliser(g,Set([l1,l2]));
+#I  Computing adjusted stabilizer chain...
+<projective collineation group with 5 generators>
+gap> time;
+70
+gap> g1=g2;
+true
+gap> quit;

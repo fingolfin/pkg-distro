@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Tensor_Product_and_Internal_Hom">
+<Heading>Tensor Product and Internal Hom</Heading>
+
+<Section Label="Chapter_Tensor_Product_and_Internal_Hom_Section_Monoidal_Categories">
+<Heading>Monoidal Categories</Heading>
+
+A <Math>6</Math>-tuple <Math>( \mathbf{C}, \otimes, 1, \alpha, \lambda, \rho )</Math>
+consisting of
+<List>
+<Item>
+a category <Math>\mathbf{C}</Math>,
+</Item>
+<Item>
+a functor <Math>\otimes: \mathbf{C} \times \mathbf{C} \rightarrow \mathbf{C}</Math>,
+</Item>
+<Item>
+an object <Math>1 \in \mathbf{C}</Math>,
+</Item>
+<Item>
+a natural isomorphism <Math>\alpha_{a,b,c}: a \otimes (b \otimes c) \cong (a \otimes b) \otimes c</Math>,
+</Item>
+<Item>
+a natural isomorphism <Math>\lambda_{a}: 1 \otimes a \cong a</Math>,
+</Item>
+<Item>
+a natural isomorphism <Math>\rho_{a}: a \otimes 1 \cong a</Math>,
+</Item>
+</List>
+is called a <Emph>monoidal category</Emph>, if
+<List>
+<Item>
+for all objects <Math>a,b,c,d</Math>, the pentagon identity holds:
+<Math>(\alpha_{a,b,c} \otimes \mathrm{id}_d) \circ \alpha_{a,b \otimes c, d} \circ ( \mathrm{id}_a \otimes \alpha_{b,c,d} ) = \alpha_{a \otimes b, c, d} \circ \alpha_{a,b,c \otimes d}</Math>,
+</Item>
+<Item>
+for all objects <Math>a,c</Math>, the triangle identity holds:
+<Math>( \rho_a \otimes \mathrm{id}_c ) \circ \alpha_{a,1,c} = \mathrm{id}_a \otimes \lambda_c</Math>.
+</Item>
+</List>
+The corresponding GAP property is given by
+<C>IsMonoidalCategory</C>.
+<ManSection>
+  <Oper Arg="a,b" Name="TensorProductOnObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The arguments are two objects <Math>a, b</Math>.
+The output is the tensor product <Math>a \otimes b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTensorProductOnObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TensorProductOnObjects</C>.
+<Math>F: (a,b) \mapsto a \otimes b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="TensorProductOnMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a \otimes b, a' \otimes b')</Math>
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha: a \rightarrow a', \beta: b \rightarrow b'</Math>.
+The output is the tensor product <Math>\alpha \otimes \beta</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s, alpha, beta, r" Name="TensorProductOnMorphismsWithGivenTensorProducts" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a \otimes b, a' \otimes b')</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>s = a \otimes b</Math>,
+two morphisms <Math>\alpha: a \rightarrow a', \beta: b \rightarrow b'</Math>,
+and an object <Math>r = a' \otimes b'</Math>.
+The output is the tensor product <Math>\alpha \otimes \beta</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTensorProductOnMorphismsWithGivenTensorProducts" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TensorProductOnMorphismsWithGivenTensorProducts</C>.
+<Math>F: ( a \otimes b, \alpha: a \rightarrow a', \beta: b \rightarrow b', a' \otimes b' ) \mapsto \alpha \otimes \beta</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, b, c" Name="AssociatorRightToLeft" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a \otimes (b \otimes c), (a \otimes b) \otimes c )</Math>.
+</Returns>
+ <Description>
+The arguments are three objects <Math>a,b,c</Math>.
+The output is the associator <Math>\alpha_{a,(b,c)}: a \otimes (b \otimes c) \rightarrow (a \otimes b) \otimes c</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s, a, b, c, r" Name="AssociatorRightToLeftWithGivenTensorProducts" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a \otimes (b \otimes c), (a \otimes b) \otimes c )</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = a \otimes (b \otimes c)</Math>,
+three objects <Math>a,b,c</Math>,
+and an object <Math>r = (a \otimes b) \otimes c</Math>.
+The output is the associator <Math>\alpha_{a,(b,c)}: a \otimes (b \otimes c) \rightarrow (a \otimes b) \otimes c</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddAssociatorRightToLeftWithGivenTensorProducts" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>AssociatorRightToLeftWithGivenTensorProducts</C>.
+<Math>F: ( a \otimes (b \otimes c), a, b, c, (a \otimes b) \otimes c ) \mapsto \alpha_{a,(b,c)}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, b, c" Name="AssociatorLeftToRight" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( (a \otimes b) \otimes c \rightarrow a \otimes (b \otimes c) )</Math>.
+</Returns>
+ <Description>
+The arguments are three objects <Math>a,b,c</Math>.
+The output is the associator <Math>\alpha_{(a,b),c}: (a \otimes b) \otimes c \rightarrow a \otimes (b \otimes c)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s, a, b, c, r" Name="AssociatorLeftToRightWithGivenTensorProducts" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( (a \otimes b) \otimes c \rightarrow a \otimes (b \otimes c) )</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = (a \otimes b) \otimes c</Math>,
+three objects <Math>a,b,c</Math>,
+and an object <Math>r = a \otimes (b \otimes c)</Math>.
+The output is the associator <Math>\alpha_{(a,b),c}: (a \otimes b) \otimes c \rightarrow a \otimes (b \otimes c)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddAssociatorLeftToRightWithGivenTensorProducts" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>AssociatorLeftToRightWithGivenTensorProducts</C>.
+<Math>F: (( a \otimes b ) \otimes c, a, b, c, a \otimes (b \otimes c )) \mapsto \alpha_{(a,b),c}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="C" Name="TensorUnit" Label="for IsCapCategory"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a category <Math>\mathbf{C}</Math>.
+The output is the tensor unit <Math>1</Math> of <Math>\mathbf{C}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTensorUnit" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TensorUnit</C>.
+<Math>F: ( ) \mapsto 1</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="LeftUnitor" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(1 \otimes a, a )</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the left unitor <Math>\lambda_a: 1 \otimes a \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, s" Name="LeftUnitorWithGivenTensorProduct" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(1 \otimes a, a )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>a</Math> and an object <Math>s = 1 \otimes a</Math>.
+The output is the left unitor <Math>\lambda_a: 1 \otimes a \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddLeftUnitorWithGivenTensorProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>LeftUnitorWithGivenTensorProduct</C>.
+<Math>F: (a, 1 \otimes a) \mapsto \lambda_a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="LeftUnitorInverse" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a, 1 \otimes a)</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the inverse of the left unitor <Math>\lambda_a^{-1}: a \rightarrow 1 \otimes a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, r" Name="LeftUnitorInverseWithGivenTensorProduct" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a, 1 \otimes a)</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math> and an object <Math>r = 1 \otimes a</Math>.
+The output is the inverse of the left unitor <Math>\lambda_a^{-1}: a \rightarrow 1 \otimes a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddLeftUnitorInverseWithGivenTensorProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>LeftUnitorInverseWithGivenTensorProduct</C>.
+<Math>F: (a, 1 \otimes a) \mapsto \lambda_a^{-1}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="RightUnitor" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a \otimes 1, a )</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the right unitor <Math>\rho_a: a \otimes 1 \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, s" Name="RightUnitorWithGivenTensorProduct" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a \otimes 1, a )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>a</Math> and an object <Math>s = a \otimes 1</Math>.
+The output is the right unitor <Math>\rho_a: a \otimes 1 \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddRightUnitorWithGivenTensorProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>RightUnitorWithGivenTensorProduct</C>.
+<Math>F: (a, a \otimes 1) \mapsto \rho_a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="RightUnitorInverse" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, a \otimes 1 )</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the inverse of the right unitor <Math>\rho_a^{-1}: a \rightarrow a \otimes 1</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, r" Name="RightUnitorInverseWithGivenTensorProduct" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, a \otimes 1 )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>a</Math> and an object <Math>r = a \otimes 1</Math>.
+The output is the inverse of the right unitor <Math>\rho_a^{-1}: a \rightarrow a \otimes 1</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddRightUnitorInverseWithGivenTensorProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>RightUnitorInverseWithGivenTensorProduct</C>.
+<Math>F: (a, a \otimes 1) \mapsto \rho_a^{-1}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, L" Name="LeftDistributivityExpanding" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a \otimes (b_1 \oplus \dots \oplus b_n), (a \otimes b_1) \oplus \dots \oplus (a \otimes b_n) )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>a</Math>
+and a list of objects <Math>L = (b_1, \dots, b_n)</Math>.
+The output is the left distributivity morphism
+<Math>a \otimes (b_1 \oplus \dots \oplus b_n) \rightarrow (a \otimes b_1) \oplus \dots \oplus (a \otimes b_n)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s, a, L, r" Name="LeftDistributivityExpandingWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( s, r )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>s = a \otimes (b_1 \oplus \dots \oplus b_n)</Math>,
+an object <Math>a</Math>,
+a list of objects <Math>L = (b_1, \dots, b_n)</Math>,
+and an object <Math>r = (a \otimes b_1) \oplus \dots \oplus (a \otimes b_n)</Math>.
+The output is the left distributivity morphism
+<Math>s \rightarrow r</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddLeftDistributivityExpandingWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>LeftDistributivityExpandingWithGivenObjects</C>.
+<Math>F: (a \otimes (b_1 \oplus \dots \oplus b_n), a, L, (a \otimes b_1) \oplus \dots \oplus (a \otimes b_n)) \mapsto \mathrm{LeftDistributivityExpandingWithGivenObjects}(a,L)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, L" Name="LeftDistributivityFactoring" Label="for IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( (a \otimes b_1) \oplus \dots \oplus (a \otimes b_n), a \otimes (b_1 \oplus \dots \oplus b_n) )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>a</Math>
+and a list of objects <Math>L = (b_1, \dots, b_n)</Math>.
+The output is the left distributivity morphism
+<Math>(a \otimes b_1) \oplus \dots \oplus (a \otimes b_n) \rightarrow a \otimes (b_1 \oplus \dots \oplus b_n)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s, a, L, r" Name="LeftDistributivityFactoringWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( s, r )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>s = (a \otimes b_1) \oplus \dots \oplus (a \otimes b_n)</Math>,
+an object <Math>a</Math>,
+a list of objects <Math>L = (b_1, \dots, b_n)</Math>,
+and an object <Math>r = a \otimes (b_1 \oplus \dots \oplus b_n)</Math>.
+The output is the left distributivity morphism
+<Math>s \rightarrow r</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddLeftDistributivityFactoringWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>LeftDistributivityFactoringWithGivenObjects</C>.
+<Math>F: ((a \otimes b_1) \oplus \dots \oplus (a \otimes b_n), a, L, a \otimes (b_1 \oplus \dots \oplus b_n)) \mapsto \mathrm{LeftDistributivityFactoringWithGivenObjects}(a,L)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L, a" Name="RightDistributivityExpanding" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( (b_1 \oplus \dots \oplus b_n) \otimes a, (b_1 \otimes a) \oplus \dots \oplus (b_n \otimes a) )</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>L = (b_1, \dots, b_n)</Math>
+and an object <Math>a</Math>.
+The output is the right distributivity morphism
+<Math>(b_1 \oplus \dots \oplus b_n) \otimes a \rightarrow (b_1 \otimes a) \oplus \dots \oplus (b_n \otimes a)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s, L, a, r" Name="RightDistributivityExpandingWithGivenObjects" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( s, r )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>s = (b_1 \oplus \dots \oplus b_n) \otimes a</Math>,
+a list of objects <Math>L = (b_1, \dots, b_n)</Math>,
+an object <Math>a</Math>,
+and an object <Math>r = (b_1 \otimes a) \oplus \dots \oplus (b_n \otimes a)</Math>.
+The output is the right distributivity morphism
+<Math>s \rightarrow r</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddRightDistributivityExpandingWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>RightDistributivityExpandingWithGivenObjects</C>.
+<Math>F: ((b_1 \oplus \dots \oplus b_n) \otimes a, L, a, (b_1 \otimes a) \oplus \dots \oplus (b_n \otimes a)) \mapsto \mathrm{RightDistributivityExpandingWithGivenObjects}(L,a)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L, a" Name="RightDistributivityFactoring" Label="for IsList, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( (b_1 \otimes a) \oplus \dots \oplus (b_n \otimes a), (b_1 \oplus \dots \oplus b_n) \otimes a)</Math>
+</Returns>
+ <Description>
+The arguments are a list of objects <Math>L = (b_1, \dots, b_n)</Math>
+and an object <Math>a</Math>.
+The output is the right distributivity morphism
+<Math>(b_1 \otimes a) \oplus \dots \oplus (b_n \otimes a) \rightarrow (b_1 \oplus \dots \oplus b_n) \otimes a </Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s, L, a, r" Name="RightDistributivityFactoringWithGivenObjects" Label="for IsCapCategoryObject, IsList, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( s, r )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>s = (b_1 \otimes a) \oplus \dots \oplus (b_n \otimes a)</Math>,
+a list of objects <Math>L = (b_1, \dots, b_n)</Math>,
+an object <Math>a</Math>,
+and an object <Math>r = (b_1 \oplus \dots \oplus b_n) \otimes a</Math>.
+The output is the right distributivity morphism
+<Math>s \rightarrow r</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddRightDistributivityFactoringWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>RightDistributivityFactoringWithGivenObjects</C>.
+<Math>F: ((b_1 \otimes a) \oplus \dots \oplus (b_n \otimes a), L, a, (b_1 \oplus \dots \oplus b_n) \otimes a) \mapsto \mathrm{RightDistributivityFactoringWithGivenObjects}(L,a)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Tensor_Product_and_Internal_Hom_Section_Braided_Monoidal_Categories">
+<Heading>Braided Monoidal Categories</Heading>
+
+A monoidal category <Math>\mathbf{C}</Math> equipped with a natural isomorphism
+<Math>B_{a,b}: a \otimes b \cong b \otimes a</Math>
+is called a <Emph>braided monoidal category</Emph>
+if
+<List>
+<Item>
+<Math>\lambda_a \circ B_{a,1} = \rho_a</Math>,
+</Item>
+<Item>
+<Math>(B_{c,a} \otimes \mathrm{id}_b) \circ \alpha_{c,a,b} \circ B_{a \otimes b,c} = \alpha_{a,c,b} \circ ( \mathrm{id}_a \otimes B_{b,c}) \circ \alpha^{-1}_{a,b,c}</Math>,
+</Item>
+<Item>
+<Math>( \mathrm{id}_b \otimes B_{c,a} ) \circ \alpha^{-1}_{b,c,a} \circ B_{a,b \otimes c} = \alpha^{-1}_{b,a,c} \circ (B_{a,b} \otimes \mathrm{id}_c) \circ \alpha_{a,b,c}</Math>.
+</Item>
+</List>
+The corresponding GAP property is given by
+<C>IsBraidedMonoidalCategory</C>.
+<ManSection>
+  <Oper Arg="a,b" Name="Braiding" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a \otimes b, b \otimes a )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the braiding <Math> B_{a,b}: a \otimes b \rightarrow b \otimes a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,b,r" Name="BraidingWithGivenTensorProducts" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a \otimes b, b \otimes a )</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = a \otimes b</Math>,
+two objects <Math>a,b</Math>,
+and an object <Math>r = b \otimes a</Math>.
+The output is the braiding <Math> B_{a,b}: a \otimes b \rightarrow b \otimes a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddBraidingWithGivenTensorProducts" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>BraidingWithGivenTensorProducts</C>.
+<Math>F: (a \otimes b, a, b, b \otimes a) \rightarrow B_{a,b}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b" Name="BraidingInverse" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( b \otimes a, a \otimes b )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the inverse of the braiding <Math> B_{a,b}^{-1}: b \otimes a \rightarrow a \otimes b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,b,r" Name="BraidingInverseWithGivenTensorProducts" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( b \otimes a, a \otimes b )</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = b \otimes a</Math>,
+two objects <Math>a,b</Math>,
+and an object <Math>r = a \otimes b</Math>.
+The output is the braiding <Math> B_{a,b}^{-1}: b \otimes a \rightarrow a \otimes b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddBraidingInverseWithGivenTensorProducts" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>BraidingInverseWithGivenTensorProducts</C>.
+<Math>F: (b \otimes a, a, b, a \otimes b) \rightarrow B_{a,b}^{-1}</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Tensor_Product_and_Internal_Hom_Section_Symmetric_Monoidal_Categories">
+<Heading>Symmetric Monoidal Categories</Heading>
+
+A braided monoidal category <Math>\mathbf{C}</Math> is called <Emph>symmetric monoidal category</Emph>
+if <Math>B_{a,b}^{-1} = B_{b,a}</Math>.
+The corresponding GAP property is given by
+<C>IsSymmetricMonoidalCategory</C>.
+</Section>
+
+
+<Section Label="Chapter_Tensor_Product_and_Internal_Hom_Section_Symmetric_Closed_Monoidal_Categories">
+<Heading>Symmetric Closed Monoidal Categories</Heading>
+
+A symmetric monoidal category <Math>\mathbf{C}</Math>
+which has for each functor <Math>- \otimes b: \mathbf{C} \rightarrow \mathbf{C}</Math>
+a right adjoint (denoted by <Math>\underline{\mathrm{Hom}}(b,-)</Math>)
+is called a <Emph>symmetric closed monoidal category</Emph>.
+The corresponding GAP property is given by
+<C>IsSymmetricClosedMonoidalCategory</C>.
+<ManSection>
+  <Oper Arg="a, b" Name="InternalHomOnObjects" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the internal hom object <Math>\underline{\mathrm{Hom}}(a,b)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInternalHomOnObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InternalHomOnObjects</C>.
+<Math>F: (a,b) \mapsto \underline{\mathrm{Hom}}(a,b)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="InternalHomOnMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \underline{\mathrm{Hom}}(a',b), \underline{\mathrm{Hom}}(a,b') )</Math>
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha: a \rightarrow a', \beta: b \rightarrow b'</Math>.
+The output is the internal hom morphism
+<Math>\underline{\mathrm{Hom}}(\alpha,\beta): \underline{\mathrm{Hom}}(a',b) \rightarrow \underline{\mathrm{Hom}}(a,b')</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s, alpha, beta, r" Name="InternalHomOnMorphismsWithGivenInternalHoms" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \underline{\mathrm{Hom}}(a',b), \underline{\mathrm{Hom}}(a,b') )</Math>
+</Returns>
+ <Description>
+The arguments are an object <Math>s = \underline{\mathrm{Hom}}(a',b)</Math>,
+two morphisms <Math>\alpha: a \rightarrow a', \beta: b \rightarrow b'</Math>,
+and an object <Math>r = \underline{\mathrm{Hom}}(a,b')</Math>.
+The output is the internal hom morphism
+<Math>\underline{\mathrm{Hom}}(\alpha,\beta): \underline{\mathrm{Hom}}(a',b) \rightarrow \underline{\mathrm{Hom}}(a,b')</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInternalHomOnMorphismsWithGivenInternalHoms" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InternalHomOnMorphismsWithGivenInternalHoms</C>.
+<Math>F: (\underline{\mathrm{Hom}}(a',b), \alpha: a \rightarrow a', \beta: b \rightarrow b', \underline{\mathrm{Hom}}(a,b') ) \mapsto \underline{\mathrm{Hom}}(\alpha,\beta)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b" Name="EvaluationMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,b) \otimes a, b )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a, b</Math>.
+The output is the evaluation morphism <Math>\mathrm{ev}_{a,b}: \mathrm{\underline{Hom}}(a,b) \otimes a \rightarrow b</Math>, i.e.,
+the counit of the tensor hom adjunction.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b, s" Name="EvaluationMorphismWithGivenSource" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,b) \otimes a, b )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math> and an object <Math>s = \mathrm{\underline{Hom}}(a,b) \otimes a</Math>.
+The output is the evaluation morphism <Math>\mathrm{ev}_{a,b}: \mathrm{\underline{Hom}}(a,b) \otimes a \rightarrow b</Math>, i.e.,
+the counit of the tensor hom adjunction.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddEvaluationMorphismWithGivenSource" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>EvaluationMorphismWithGivenSource</C>.
+<Math>F: (a, b, \mathrm{\underline{Hom}}(a,b) \otimes a) \mapsto \mathrm{ev}_{a,b}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b" Name="CoevaluationMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, \mathrm{\underline{Hom}}(b, a \otimes b) )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the coevaluation morphism <Math>\mathrm{coev}_{a,b}: a \rightarrow \mathrm{\underline{Hom}(b, a \otimes b)}</Math>, i.e.,
+the unit of the tensor hom adjunction.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b,r" Name="CoevaluationMorphismWithGivenRange" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, \mathrm{\underline{Hom}}(b, a \otimes b) )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math> and an object <Math>r = \mathrm{\underline{Hom}(b, a \otimes b)}</Math>.
+The output is the coevaluation morphism <Math>\mathrm{coev}_{a,b}: a \rightarrow \mathrm{\underline{Hom}(b, a \otimes b)}</Math>, i.e.,
+the unit of the tensor hom adjunction.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoevaluationMorphismWithGivenRange" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CoevaluationMorphismWithGivenRange</C>.
+<Math>F: (a, b, \mathrm{\underline{Hom}}(b, a \otimes b)) \mapsto \mathrm{coev}_{a,b}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, b, f" Name="TensorProductToInternalHomAdjunctionMap" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, \mathrm{\underline{Hom}}(b,c) )</Math>.
+</Returns>
+ <Description>
+The arguments are objects <Math>a,b</Math> and a morphism <Math>f: a \otimes b \rightarrow c</Math>.
+The output is a morphism <Math>g: a \rightarrow \mathrm{\underline{Hom}}(b,c)</Math>
+corresponding to <Math>f</Math> under the tensor hom adjunction.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTensorProductToInternalHomAdjunctionMap" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TensorProductToInternalHomAdjunctionMap</C>.
+<Math>F: (a, b, f: a \otimes b \rightarrow c) \mapsto ( g: a \rightarrow \mathrm{\underline{Hom}}(b,c) )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="b, c, g" Name="InternalHomToTensorProductAdjunctionMap" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a \otimes b, c)</Math>.
+</Returns>
+ <Description>
+The arguments are objects <Math>b,c</Math> and a morphism <Math>g: a \rightarrow \mathrm{\underline{Hom}}(b,c)</Math>.
+The output is a morphism <Math>f: a \otimes b \rightarrow c</Math> corresponding to <Math>g</Math> under the
+tensor hom adjunction.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddInternalHomToTensorProductAdjunctionMap" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>InternalHomToTensorProductAdjunctionMap</C>.
+<Math>F: (b, c, g: a \rightarrow \mathrm{\underline{Hom}}(b,c)) \mapsto ( g: a \otimes b \rightarrow c )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b,c" Name="MonoidalPreComposeMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,b) \otimes \mathrm{\underline{Hom}}(b,c), \mathrm{\underline{Hom}}(a,c) )</Math>.
+</Returns>
+ <Description>
+The arguments are three objects <Math>a,b,c</Math>.
+The output is the precomposition morphism
+<Math>\mathrm{MonoidalPreComposeMorphismWithGivenObjects}_{a,b,c}: \mathrm{\underline{Hom}}(a,b) \otimes \mathrm{\underline{Hom}}(b,c) \rightarrow \mathrm{\underline{Hom}}(a,c)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,b,c,r" Name="MonoidalPreComposeMorphismWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,b) \otimes \mathrm{\underline{Hom}}(b,c), \mathrm{\underline{Hom}}(a,c) )</Math>.
+</Returns>
+ <Description>
+The arguments are
+an object <Math>s = \mathrm{\underline{Hom}}(a,b) \otimes \mathrm{\underline{Hom}}(b,c)</Math>,
+three objects <Math>a,b,c</Math>,
+and an object <Math>r = \mathrm{\underline{Hom}}(a,c)</Math>.
+The output is the precomposition morphism
+<Math>\mathrm{MonoidalPreComposeMorphismWithGivenObjects}_{a,b,c}: \mathrm{\underline{Hom}}(a,b) \otimes \mathrm{\underline{Hom}}(b,c) \rightarrow \mathrm{\underline{Hom}}(a,c)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddMonoidalPreComposeMorphismWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>MonoidalPreComposeMorphismWithGivenObjects</C>.
+<Math>F: (\mathrm{\underline{Hom}}(a,b) \otimes \mathrm{\underline{Hom}}(b,c),a,b,c,\mathrm{\underline{Hom}}(a,c)) \mapsto \mathrm{MonoidalPreComposeMorphismWithGivenObjects}_{a,b,c}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b,c" Name="MonoidalPostComposeMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(b,c) \otimes \mathrm{\underline{Hom}}(a,b), \mathrm{\underline{Hom}}(a,c) )</Math>.
+</Returns>
+ <Description>
+The arguments are three objects <Math>a,b,c</Math>.
+The output is the postcomposition morphism
+<Math>\mathrm{MonoidalPostComposeMorphismWithGivenObjects}_{a,b,c}: \mathrm{\underline{Hom}}(b,c) \otimes \mathrm{\underline{Hom}}(a,b) \rightarrow \mathrm{\underline{Hom}}(a,c)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,b,c,r" Name="MonoidalPostComposeMorphismWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(b,c) \otimes \mathrm{\underline{Hom}}(a,b), \mathrm{\underline{Hom}}(a,c) )</Math>.
+</Returns>
+ <Description>
+The arguments are
+an object <Math>s = \mathrm{\underline{Hom}}(b,c) \otimes \mathrm{\underline{Hom}}(a,b)</Math>,
+three objects <Math>a,b,c</Math>,
+and an object <Math>r = \mathrm{\underline{Hom}}(a,c)</Math>.
+The output is the postcomposition morphism
+<Math>\mathrm{MonoidalPostComposeMorphismWithGivenObjects}_{a,b,c}: \mathrm{\underline{Hom}}(b,c) \otimes \mathrm{\underline{Hom}}(a,b) \rightarrow \mathrm{\underline{Hom}}(a,c)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddMonoidalPostComposeMorphismWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>MonoidalPostComposeMorphismWithGivenObjects</C>.
+<Math>F: (\mathrm{\underline{Hom}}(b,c) \otimes \mathrm{\underline{Hom}}(a,b),a,b,c,\mathrm{\underline{Hom}}(a,c)) \mapsto \mathrm{MonoidalPostComposeMorphismWithGivenObjects}_{a,b,c}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="DualOnObjects" Label="for IsCapCategoryObject"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is its dual object <Math>a^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDualOnObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DualOnObjects</C>.
+<Math>F: a \mapsto a^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="DualOnMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( b^{\vee}, a^{\vee} )</Math>.
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is its dual morphism <Math>\alpha^{\vee}: b^{\vee} \rightarrow a^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,alpha,r" Name="DualOnMorphismsWithGivenDuals" Label="for IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( b^{\vee}, a^{\vee} )</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>s = b^{\vee}</Math>,
+a morphism <Math>\alpha: a \rightarrow b</Math>,
+and an object <Math>r = a^{\vee}</Math>.
+The output is the dual morphism <Math>\alpha^{\vee}: b^{\vee} \rightarrow a^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddDualOnMorphismsWithGivenDuals" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>DualOnMorphismsWithGivenDuals</C>.
+<Math>F: (b^{\vee},\alpha,a^{\vee}) \mapsto \alpha^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="EvaluationForDual" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a^{\vee} \otimes a, 1 )</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the evaluation morphism <Math>\mathrm{ev}_{a}: a^{\vee} \otimes a \rightarrow 1</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,r" Name="EvaluationForDualWithGivenTensorProduct" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a^{\vee} \otimes a, 1 )</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = a^{\vee} \otimes a</Math>,
+an object <Math>a</Math>,
+and an object <Math>r = 1</Math>.
+The output is the evaluation morphism <Math>\mathrm{ev}_{a}: a^{\vee} \otimes a \rightarrow 1</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddEvaluationForDualWithGivenTensorProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>EvaluationForDualWithGivenTensorProduct</C>.
+<Math>F: (a^{\vee} \otimes a, a, 1) \mapsto \mathrm{ev}_{a}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="CoevaluationForDual" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(1,a \otimes a^{\vee})</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the coevaluation morphism <Math>\mathrm{coev}_{a}:1 \rightarrow a \otimes a^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,r" Name="CoevaluationForDualWithGivenTensorProduct" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(1,a \otimes a^{\vee})</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = 1</Math>,
+an object <Math>a</Math>,
+and an object <Math>r = a \otimes a^{\vee}</Math>.
+The output is the coevaluation morphism <Math>\mathrm{coev}_{a}:1 \rightarrow a \otimes a^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddCoevaluationForDualWithGivenTensorProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>CoevaluationForDualWithGivenTensorProduct</C>.
+<Math>F: (1, a, a \otimes a^{\vee}) \mapsto \mathrm{coev}_{a}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="MorphismToBidual" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a, (a^{\vee})^{\vee})</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the morphism to the bidual <Math>a \rightarrow (a^{\vee})^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, r" Name="MorphismToBidualWithGivenBidual" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a, (a^{\vee})^{\vee})</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>a</Math>,
+and an object <Math>r = (a^{\vee})^{\vee}</Math>.
+The output is the morphism to the bidual <Math>a \rightarrow (a^{\vee})^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddMorphismToBidualWithGivenBidual" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>MorphismToBidualWithGivenBidual</C>.
+<Math>F: (a, (a^{\vee})^{\vee}) \mapsto (a \rightarrow (a^{\vee})^{\vee})</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,a',b,b'" Name="TensorProductInternalHomCompatibilityMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b'), \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b'))</Math>.
+</Returns>
+ <Description>
+The arguments are four objects <Math>a, a', b, b'</Math>.
+The output is the natural morphism
+<Math>\mathrm{TensorProductInternalHomCompatibilityMorphismWithGivenObjects}_{a,a',b,b'}: \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b') \rightarrow \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b')</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,a',b,b',L" Name="TensorProductInternalHomCompatibilityMorphismWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b'), \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b'))</Math>.
+</Returns>
+ <Description>
+The arguments are four objects <Math>a, a', b, b'</Math>,
+and a list <Math>L = [ \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b'), \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b') ]</Math>.
+The output is the natural morphism
+<Math>\mathrm{TensorProductInternalHomCompatibilityMorphismWithGivenObjects}_{a,a',b,b'}: \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b') \rightarrow \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b')</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTensorProductInternalHomCompatibilityMorphismWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TensorProductInternalHomCompatibilityMorphismWithGivenObjects</C>.
+<Math>F: ( a,a',b,b', [ \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b'), \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b') ]) \mapsto \mathrm{TensorProductInternalHomCompatibilityMorphismWithGivenObjects}_{a,a',b,b'}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b" Name="TensorProductDualityCompatibilityMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a^{\vee} \otimes b^{\vee}, (a \otimes b)^{\vee} )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the natural morphism
+<Math>\mathrm{TensorProductDualityCompatibilityMorphismWithGivenObjects}: a^{\vee} \otimes b^{\vee} \rightarrow (a \otimes b)^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,b,r" Name="TensorProductDualityCompatibilityMorphismWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a^{\vee} \otimes b^{\vee}, (a \otimes b)^{\vee} )</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = a^{\vee} \otimes b^{\vee}</Math>,
+two objects <Math>a,b</Math>,
+and an object <Math>r = (a \otimes b)^{\vee}</Math>.
+The output is the natural morphism
+<Math>\mathrm{TensorProductDualityCompatibilityMorphismWithGivenObjects}_{a,b}: a^{\vee} \otimes b^{\vee} \rightarrow (a \otimes b)^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTensorProductDualityCompatibilityMorphismWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TensorProductDualityCompatibilityMorphismWithGivenObjects</C>.
+<Math>F: ( a^{\vee} \otimes b^{\vee}, a, b, (a \otimes b)^{\vee} ) \mapsto \mathrm{TensorProductDualityCompatibilityMorphismWithGivenObjects}_{a,b}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b" Name="MorphismFromTensorProductToInternalHom" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a^{\vee} \otimes b, \mathrm{\underline{Hom}}(a,b) )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the natural morphism <Math>\mathrm{MorphismFromTensorProductToInternalHomWithGivenObjects}_{a,b}: a^{\vee} \otimes b \rightarrow \mathrm{\underline{Hom}}(a,b)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,b,r" Name="MorphismFromTensorProductToInternalHomWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a^{\vee} \otimes b, \mathrm{\underline{Hom}}(a,b) )</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = a^{\vee} \otimes b</Math>,
+two objects <Math>a,b</Math>,
+and an object <Math>r = \mathrm{\underline{Hom}}(a,b)</Math>.
+The output is the natural morphism <Math>\mathrm{MorphismFromTensorProductToInternalHomWithGivenObjects}_{a,b}: a^{\vee} \otimes b \rightarrow \mathrm{\underline{Hom}}(a,b)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddMorphismFromTensorProductToInternalHomWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>MorphismFromTensorProductToInternalHomWithGivenObjects</C>.
+<Math>F: ( a^{\vee} \otimes b, a, b, \mathrm{\underline{Hom}}(a,b) ) \mapsto \mathrm{MorphismFromTensorProductToInternalHomWithGivenObjects}_{a,b}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b" Name="IsomorphismFromTensorProductToInternalHom" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a^{\vee} \otimes b, \mathrm{\underline{Hom}}(a,b) )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the natural morphism <Math>\mathrm{IsomorphismFromTensorProductToInternalHom}_{a,b}: a^{\vee} \otimes b \rightarrow \mathrm{\underline{Hom}}(a,b)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromTensorProductToInternalHom" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromTensorProductToInternalHom</C>.
+<Math>F: ( a, b ) \mapsto \mathrm{IsomorphismFromTensorProductToInternalHom}_{a,b}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b" Name="MorphismFromInternalHomToTensorProduct" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,b), a^{\vee} \otimes b )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the inverse of <Math>\mathrm{MorphismFromTensorProductToInternalHomWithGivenObjects}</Math>, namely
+<Math>\mathrm{MorphismFromInternalHomToTensorProductWithGivenObjects}_{a,b}: \mathrm{\underline{Hom}}(a,b) \rightarrow a^{\vee} \otimes b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="s,a,b,r" Name="MorphismFromInternalHomToTensorProductWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,b), a^{\vee} \otimes b )</Math>.
+</Returns>
+ <Description>
+The arguments are an object <Math>s = \mathrm{\underline{Hom}}(a,b)</Math>,
+two objects <Math>a,b</Math>,
+and an object <Math>r = a^{\vee} \otimes b</Math>.
+The output is the inverse of <Math>\mathrm{MorphismFromTensorProductToInternalHomWithGivenObjects}</Math>, namely
+<Math>\mathrm{MorphismFromInternalHomToTensorProductWithGivenObjects}_{a,b}: \mathrm{\underline{Hom}}(a,b) \rightarrow a^{\vee} \otimes b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddMorphismFromInternalHomToTensorProductWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>MorphismFromInternalHomToTensorProductWithGivenObjects</C>.
+<Math>F: ( \mathrm{\underline{Hom}}(a,b),a,b,a^{\vee} \otimes b ) \mapsto \mathrm{MorphismFromInternalHomToTensorProductWithGivenObjects}_{a,b}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b" Name="IsomorphismFromInternalHomToTensorProduct" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a,b), a^{\vee} \otimes b )</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>.
+The output is the inverse of <Math>\mathrm{IsomorphismFromTensorProductToInternalHom}</Math>, namely
+<Math>\mathrm{IsomorphismFromInternalHomToTensorProduct}_{a,b}: \mathrm{\underline{Hom}}(a,b) \rightarrow a^{\vee} \otimes b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromInternalHomToTensorProduct" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromInternalHomToTensorProduct</C>.
+<Math>F: ( a,b ) \mapsto \mathrm{IsomorphismFromInternalHomToTensorProduct}_{a,b}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="TraceMap" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(1,1)</Math>.
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math>.
+The output is the trace morphism <Math>\mathrm{trace}_{\alpha}: 1 \rightarrow 1</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTraceMap" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TraceMap</C>.
+<Math>F: \alpha \mapsto \mathrm{trace}_{\alpha}</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="RankMorphism" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(1,1)</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the rank morphism <Math>\mathrm{rank}_a: 1 \rightarrow 1</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddRankMorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>RankMorphism</C>.
+<Math>F: a \mapsto \mathrm{rank}_{a}</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="IsomorphismFromDualToInternalHom" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a^{\vee}, \mathrm{Hom}(a,1))</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the isomorphism
+<Math>\mathrm{IsomorphismFromDualToInternalHom}_{a}: a^{\vee} \rightarrow \mathrm{Hom}(a,1)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromDualToInternalHom" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromDualToInternalHom</C>.
+<Math>F: a \mapsto \mathrm{IsomorphismFromDualToInternalHom}_{a}</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="IsomorphismFromInternalHomToDual" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{Hom}(a,1), a^{\vee})</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the isomorphism
+<Math>\mathrm{IsomorphismFromInternalHomToDual}_{a}: \mathrm{Hom}(a,1) \rightarrow a^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromInternalHomToDual" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromInternalHomToDual</C>.
+<Math>F: a \mapsto \mathrm{IsomorphismFromInternalHomToDual}_{a}</Math>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="t, a, alpha" Name="UniversalPropertyOfDual" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(t, a^{\vee})</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>t,a</Math>,
+and a morphism <Math>\alpha: t \otimes a \rightarrow 1</Math>.
+The output is the morphism <Math>t \rightarrow a^{\vee}</Math>
+given by the universal property of <Math>a^{\vee}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddUniversalPropertyOfDual" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>UniversalPropertyOfDual</C>.
+<Math>F: ( t,a,\alpha: t \otimes a \rightarrow 1 ) \mapsto ( t \rightarrow a^{\vee} )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="LambdaIntroduction" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( 1, \mathrm{\underline{Hom}}(a,b) )</Math>.
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is the corresponding morphism <Math>1 \rightarrow \mathrm{\underline{Hom}}(a,b)</Math>
+under the tensor hom adjunction.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddLambdaIntroduction" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>LambdaIntroduction</C>.
+<Math>F: ( \alpha: a \rightarrow b ) \mapsto ( 1 \rightarrow \mathrm{\underline{Hom}}(a,b) )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,b,alpha" Name="LambdaElimination" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>.
+</Returns>
+ <Description>
+The arguments are two objects <Math>a,b</Math>,
+and a morphism <Math>\alpha: 1 \rightarrow \mathrm{\underline{Hom}}(a,b)</Math>.
+The output is a morphism <Math>a \rightarrow b</Math> corresponding to <Math>\alpha</Math>
+under the tensor hom adjunction.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddLambdaElimination" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>LambdaElimination</C>.
+<Math>F: ( a,b,\alpha: 1 \rightarrow \mathrm{\underline{Hom}}(a,b) ) \mapsto ( a \rightarrow b )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="IsomorphismFromObjectToInternalHom" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a, \mathrm{\underline{Hom}}(1,a))</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the natural isomorphism <Math>a \rightarrow \mathrm{\underline{Hom}}(1,a)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,r" Name="IsomorphismFromObjectToInternalHomWithGivenInternalHom" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a, \mathrm{\underline{Hom}}(1,a))</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>,
+and an object <Math>r = \mathrm{\underline{Hom}}(1,a)</Math>.
+The output is the natural isomorphism <Math>a \rightarrow \mathrm{\underline{Hom}}(1,a)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromObjectToInternalHomWithGivenInternalHom" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromObjectToInternalHomWithGivenInternalHom</C>.
+<Math>F: ( a, \mathrm{\underline{Hom}}(1,a) ) \mapsto ( a \rightarrow \mathrm{\underline{Hom}}(1,a) )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="IsomorphismFromInternalHomToObject" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{\underline{Hom}}(1,a),a)</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the natural isomorphism <Math>\mathrm{\underline{Hom}}(1,a) \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,s" Name="IsomorphismFromInternalHomToObjectWithGivenInternalHom" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(\mathrm{\underline{Hom}}(1,a),a)</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>,
+and an object <Math>s = \mathrm{\underline{Hom}}(1,a)</Math>.
+The output is the natural isomorphism <Math>\mathrm{\underline{Hom}}(1,a) \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsomorphismFromInternalHomToObjectWithGivenInternalHom" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsomorphismFromInternalHomToObjectWithGivenInternalHom</C>.
+<Math>F: ( a, \mathrm{\underline{Hom}}(1,a) ) \mapsto ( \mathrm{\underline{Hom}}(1,a) \rightarrow a )</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Tensor_Product_and_Internal_Hom_Section_Rigid_Symmetric_Closed_Monoidal_Categories">
+<Heading>Rigid Symmetric Closed Monoidal Categories</Heading>
+
+A symmetric closed monoidal category <Math>\mathbf{C}</Math> satisfying
+<List>
+<Item>
+the natural morphism
+<Math>\underline{\mathrm{Hom}}(a_1,b_1) \otimes \underline{\mathrm{Hom}}(a_2,b_2) \rightarrow \underline{\mathrm{Hom}}(a_1 \otimes a_2,b_1 \otimes b_2)</Math>
+is an isomorphism,
+</Item>
+<Item>
+the natural morphism
+<Math>a \rightarrow \underline{\mathrm{Hom}}(\underline{\mathrm{Hom}}(a, 1), 1)</Math>
+is an isomorphism
+</Item>
+</List>
+is called a <Emph>rigid symmetric closed monoidal category</Emph>.
+<ManSection>
+  <Oper Arg="a,a',b,b'" Name="TensorProductInternalHomCompatibilityMorphismInverse" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b'), \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b'))</Math>.
+</Returns>
+ <Description>
+The arguments are four objects <Math>a, a', b, b'</Math>.
+The output is the natural morphism
+<Math>\mathrm{TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects}_{a,a',b,b'}: \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b') \rightarrow \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b')</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a,a',b,b',L" Name="TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects" Label="for IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b'), \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b'))</Math>.
+</Returns>
+ <Description>
+The arguments are four objects <Math>a, a', b, b'</Math>,
+and a list <Math>L = [ \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b'), \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b') ]</Math>.
+The output is the natural morphism
+<Math>\mathrm{TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects}_{a,a',b,b'}: \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b') \rightarrow \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b')</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddTensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects</C>.
+<Math>F: ( a,a',b,b', [ \mathrm{\underline{Hom}}(a,a') \otimes \mathrm{\underline{Hom}}(b,b'), \mathrm{\underline{Hom}}(a \otimes b,a' \otimes b') ]) \mapsto \mathrm{TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects}_{a,a',b,b'}</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="a" Name="MorphismFromBidual" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}((a^{\vee})^{\vee},a)</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is the inverse of the morphism to the bidual <Math>(a^{\vee})^{\vee} \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, s" Name="MorphismFromBidualWithGivenBidual" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}((a^{\vee})^{\vee},a)</Math>.
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>,
+and an object <Math>s = (a^{\vee})^{\vee}</Math>.
+The output is the inverse of the morphism to the bidual <Math>(a^{\vee})^{\vee} \rightarrow a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddMorphismFromBidualWithGivenBidual" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>MorphismFromBidualWithGivenBidual</C>.
+<Math>F: (a, (a^{\vee})^{\vee}) \mapsto ((a^{\vee})^{\vee} \rightarrow a)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

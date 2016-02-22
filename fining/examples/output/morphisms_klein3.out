@@ -1,0 +1,26 @@
+gap> 
+gap> #Klein correspondence extended
+gap> ps := HyperbolicQuadric(5,7);
+Q+(5, 7)
+gap> em := KleinCorrespondenceExtended(ps);
+<geometry morphism from <All elements of ProjectiveSpace(3, 
+7)> to <Elements of Q+(5, 7)>>
+gap> hom := Intertwiner(em);
+MappingByFunction( The FinInG collineation group PGL(4,7), <projective colline\
+ation group with 2 generators>, function( g ) ... end, function( g ) ... end )
+gap> mat := [[0,0,0,0,0,1],[0,0,0,0,1,0],[0,0,0,1,0,0],
+> 	[0,0,1,0,0,0],[0,1,0,0,0,0],[1,0,0,0,0,0]]*Z(7)^0;
+[ [ 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^0 ], 
+  [ 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^0, 0*Z(7) ], 
+  [ 0*Z(7), 0*Z(7), 0*Z(7), Z(7)^0, 0*Z(7), 0*Z(7) ], 
+  [ 0*Z(7), 0*Z(7), Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7) ], 
+  [ 0*Z(7), Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7) ], 
+  [ Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7) ] ]
+gap> g := Projectivity(mat,GF(7));
+< a collineation: <cmat 6x6 over GF(7,1)>, F^0>
+gap> g in CollineationGroup(ps);
+true
+gap> PreImageElm(hom,g);
+#I  <el> is not inducing a collineation of PG(3,q)
+fail
+gap> quit;

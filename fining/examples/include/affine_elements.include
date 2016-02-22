@@ -1,0 +1,21 @@
+gap&gt; ag := AffineSpace(9, 64);
+AG(9, 64)
+gap&gt; ElementsOfIncidenceStructure(ag,1);
+&lt;points of AG(9, 64)&gt;
+gap&gt; ElementsOfIncidenceStructure(ag,2);
+&lt;lines of AG(9, 64)&gt;
+gap&gt; ElementsOfIncidenceStructure(ag,3);
+&lt;planes of AG(9, 64)&gt;
+gap&gt; ElementsOfIncidenceStructure(ag,4);
+&lt;solids of AG(9, 64)&gt;
+gap&gt; ElementsOfIncidenceStructure(ag,6);
+&lt;affine. subspaces of dim. 5 of AG(9, 64)&gt;
+gap&gt; ElementsOfIncidenceStructure(ag,9);
+&lt;affine. subspaces of dim. 8 of AG(9, 64)&gt;
+gap&gt; ElementsOfIncidenceStructure(ag,10);
+Error, &lt;as&gt; has no elements of type &lt;j&gt; called from
+&lt;function "unknown"&gt;( &lt;arguments&gt; )
+ called from read-eval loop at line 15 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk&gt; quit;

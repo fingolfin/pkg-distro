@@ -1,0 +1,7 @@
+gap> 
+gap> #underlying vectorspace of a projective space.s
+gap> ps := ProjectiveSpace(4,7);
+ProjectiveSpace(4, 7)
+gap> vs := UnderlyingVectorSpace(ps);
+( GF(7)^5 )
+gap> quit;

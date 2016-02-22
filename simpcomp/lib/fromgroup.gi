@@ -242,8 +242,8 @@ InstallGlobalFunction(SCsFromGroupExt,
 
   t:=Transitivity(G);
   if t < 1 then
-    Info(InfoSimpcomp,2,"Automorphism is not transitive.");
-    continue;
+    Info(InfoSimpcomp,1,"Automorphism is not transitive.");
+    return fail;
   fi;
   
   #complex
@@ -659,7 +659,11 @@ InstallGlobalFunction(SCsFromGroupExt,
   
   if(matrixRows<1 or matrixCols<1) then
     Info(InfoSimpcomp,2,"No more computations needed (no more rows/cols).");
-    continue;
+    if removeDoubleEntries then
+      return isoSigs;
+    else
+      return complex_collection;
+    fi;
   fi;
     
   GASMAN("collect");
@@ -953,7 +957,7 @@ InstallGlobalFunction(SCsFromGroupByTransitivity,
     not IsPosInt(k) or not IsBool(maniflag) or not IsBool(computeAutGroup) 
     or not IsBool(removeDoubleEntries)) then
     Info(InfoSimpcomp,1,"SCsFromGroupCheckByTransitivity: 'n' and 'd' must ",
-      "be positive integers or a list of positive integers, k must be a ",
+      "be positive integers or a list of positive integers, 'k' must be a ",
       "positive integer, 'maniflag', computeAutGroup' and ",
       "'removeDoubleEntries' must be boolean");
     return fail;
@@ -1011,7 +1015,9 @@ InstallGlobalFunction(SCsFromGroupByTransitivity,
       od;
     od;
   else
-    break;
+    Info(InfoSimpcomp,1,"SCsFromGroupByTransitivity: third argument 'k' must ",
+      "be a positive integer.");
+    return fail;
   fi;
   sum:=0;
   for i in Gcollection do

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Examples_and_Tests">
+<Heading>Examples and Tests</Heading>
+
+<Section Label="Chapter_Examples_and_Tests_Section_Basic_Commands">
+<Heading>Basic Commands</Heading>
+
+<Example><![CDATA[
+gap> Q := HomalgFieldOfRationals();;
+gap> a := VectorSpaceObject( 3, Q );
+<A vector space object over Q of dimension 3>
+gap> b := VectorSpaceObject( 4, Q );
+<A vector space object over Q of dimension 4>
+gap> homalg_matrix := HomalgMatrix( [ [ 1, 0, 0, 0 ],
+>                                   [ 0, 1, 0, -1 ],
+>                                   [ -1, 0, 2, 1 ] ], 3, 4, Q );
+<A matrix over an internal ring>
+gap> alpha := VectorSpaceMorphism( a, homalg_matrix, b );
+<A morphism in Category of matrices over Q>
+gap> Display( alpha );
+[ [   1,   0,   0,   0 ],
+  [   0,   1,   0,  -1 ],
+  [  -1,   0,   2,   1 ] ]
+
+A morphism in Category of matrices over Q
+gap> homalg_matrix := HomalgMatrix( [ [ 1, 1, 0, 0 ],
+>                                   [ 0, 1, 0, -1 ],
+>                                   [ -1, 0, 2, 1 ] ], 3, 4, Q );
+<A matrix over an internal ring>
+gap> beta := VectorSpaceMorphism( a, homalg_matrix, b );
+<A morphism in Category of matrices over Q>
+gap> CokernelObject( alpha );
+<A vector space object over Q of dimension 1>
+gap> c := CokernelProjection( alpha );;
+gap> Display( c );
+[ [     0 ],
+  [     1 ],
+  [  -1/2 ],
+  [     1 ] ]
+
+A split epi morphism in Category of matrices over Q
+gap> gamma := UniversalMorphismIntoDirectSum( [ c, c ] );;
+gap> Display( gamma );
+[ [     0,     0 ],
+  [     1,     1 ],
+  [  -1/2,  -1/2 ],
+  [     1,     1 ] ]
+
+A morphism in Category of matrices over Q
+gap> colift := CokernelColift( alpha, gamma );;
+gap> IsEqualForMorphisms( PreCompose( c, colift ), gamma );
+true
+gap> FiberProduct( alpha, beta );
+<A vector space object over Q of dimension 2>
+gap> F := FiberProduct( alpha, beta );
+<A vector space object over Q of dimension 2>
+gap> p1 := ProjectionInFactorOfFiberProduct( [ alpha, beta ], 1 );
+<A morphism in Category of matrices over Q>
+gap> Display( PreCompose( p1, alpha ) );
+[ [   0,   1,   0,  -1 ],
+  [  -1,   0,   2,   1 ] ]
+
+A morphism in Category of matrices over Q
+gap> Pushout( alpha, beta );
+<A vector space object over Q of dimension 5>
+gap> i1 := InjectionOfCofactorOfPushout( [ alpha, beta ], 1 );
+<A morphism in Category of matrices over Q>
+gap> i2 := InjectionOfCofactorOfPushout( [ alpha, beta ], 2 );
+<A morphism in Category of matrices over Q>
+gap> u := UniversalMorphismFromDirectSum( [ b, b ], [ i1, i2 ] );
+<A morphism in Category of matrices over Q>
+gap> Display( u );
+[ [     0,     1,     1,     0,     0 ],
+  [     1,     0,     1,     0,    -1 ],
+  [  -1/2,     0,   1/2,     1,   1/2 ],
+  [     1,     0,     0,     0,     0 ],
+  [     0,     1,     0,     0,     0 ],
+  [     0,     0,     1,     0,     0 ],
+  [     0,     0,     0,     1,     0 ],
+  [     0,     0,     0,     0,     1 ] ]
+
+A morphism in Category of matrices over Q
+]]></Example>
+
+
+</Section>
+
+
+</Chapter>
+

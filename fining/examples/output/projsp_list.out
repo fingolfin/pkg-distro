@@ -1,0 +1,15 @@
+gap> 
+gap> #list and aslist
+gap> pg := PG(3,4);
+ProjectiveSpace(3, 4)
+gap> lines := Lines(pg);
+<lines of ProjectiveSpace(3, 4)>
+gap> list := List(lines);;
+gap> Length(list);
+357
+gap> aslist := AsList(lines);
+<closed orbit, 357 points>
+gap> list2 := List(aslist);;
+gap> Length(list2);
+357
+gap> quit;

@@ -1,0 +1,36 @@
+gap> 
+gap> #constructing canonical parabolic quadric.
+gap> ps := ParabolicQuadric(2,9);
+Q(2, 9)
+gap> Display(ps);
+Q(2, 9)
+Parabolic bilinear form
+Gram Matrix:
+ 1 . .
+ . . 2
+ . 2 .
+Polynomial: [ [  x_1^2+x_2*x_3 ] ]
+
+Witt Index: 1
+gap> ps := ParabolicQuadric(4,16);
+Q(4, 16)
+gap> Display(ps);
+Q(4, 16)
+Parabolic quadratic form
+Gram Matrix:
+ 1 . . . .
+ . . 1 . .
+ . . . . .
+ . . . . 1
+ . . . . .
+Polynomial: [ [  x_1^2+x_2*x_3+x_4*x_5 ] ]
+
+Witt Index: 2
+Bilinear form
+Gram Matrix:
+ . . . . .
+ . . 1 . .
+ . 1 . . .
+ . . . . 1
+ . . . 1 .
+gap> quit;

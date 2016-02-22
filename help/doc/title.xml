@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    HeLP
+  </Title>
+  <Subtitle>
+    Hertweck-Luthar-Passi method.
+  </Subtitle>
+  <Version>
+    2.1
+  </Version>
+  <Author>
+    Andreas Bächle<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Vrije Universiteit Brussel<Br/>
+Vakgroep Wiskunde<Br/>
+Pleinlaan 2<Br/>
+1050 Brussels<Br/>
+Belgium<Br/>
+</Address>
+<Email>ABachle@vub.ac.be</Email>
+<Homepage>http://homepages.vub.ac.be/~abachle/</Homepage>
+
+  </Author>
+  <Author>
+    Leo Margolis<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Institut für Algebra und Zahlentheorie<Br/>
+Universität Stuttgart<Br/>
+Pfaffenwaldring 57<Br/>
+D-70569 Stuttgart<Br/>
+Germany<Br/>
+</Address>
+<Email>Leo.Margolis@mathematik.uni-stuttgart.de</Email>
+<Homepage>http://www.igt.uni-stuttgart.de/LstDiffgeo/Margolis/</Homepage>
+
+  </Author>
+  <Date>
+    30/09/2015, The Lodge
+  </Date>
+  <Copyright>
+    &copyright; 2015 by Andreas Bächle and Leo Margolis<P/>
+
+This package is free software and may be distributed under the terms and conditions of the
+GNU Public License Version 2.
+
+  </Copyright>
+  <Acknowledgements>
+    The authors are grateful to Sebastian Gutsche for endowing GAP with the 4ti2-Interface.
+We also would like to thank him for many very helpful discussions.
+We also want to give credits to the developers of the software 4ti2.
+Thanks go to David Avis for writing lrslib and answering our questions about it.
+We moreover thank Wolfgang Kimmerle for introducing us to the beautiful world of group rings.
+The development of this package was partially supported by the Research Foundation Flanders 
+(FWO - Vlaanderen) and the DFG priority program SPP 1489 Algorithmic and Experimental Methods in Algebra, Geometry, and Number Theory.
+
+  </Acknowledgements>
+  </TitlePage>

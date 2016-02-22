@@ -1,0 +1,5 @@
+gap> 
+gap> #base field of an affine space
+gap> BaseField(AG(6,49));
+GF(7^2)
+gap> quit;

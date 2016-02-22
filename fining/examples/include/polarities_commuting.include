@@ -1,0 +1,21 @@
+gap&gt; mat := [[0,1,0,0],[1,0,0,0],[0,0,0,1],[0,0,1,0]]*Z(5)^0;
+[ [ 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], [ Z(5)^0, 0*Z(5), 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0 ], [ 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5) ] ]
+gap&gt; phi := HermitianPolarityOfProjectiveSpace(mat,GF(25));
+&lt;polarity of PG(3, GF(5^2)) &gt;
+gap&gt; mat2 := IdentityMat(4,GF(5));
+[ [ Z(5)^0, 0*Z(5), 0*Z(5), 0*Z(5) ], [ 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5) ], 
+  [ 0*Z(5), 0*Z(5), Z(5)^0, 0*Z(5) ], [ 0*Z(5), 0*Z(5), 0*Z(5), Z(5)^0 ] ]
+gap&gt; psi := PolarityOfProjectiveSpace(mat2,GF(25));
+&lt;polarity of PG(3, GF(5^2)) &gt;
+gap&gt; phi*psi = psi*phi;
+true
+gap&gt; g := CorrelationCollineationGroup(PG(3,25));
+The FinInG correlation-collineation group PGammaL(4,25) : 2
+gap&gt; h := CollineationGroup(PG(3,25));
+The FinInG collineation group PGammaL(4,25)
+gap&gt; hom := Embedding(h,g);
+MappingByFunction( The FinInG collineation group PGammaL(4,25), The FinInG cor
+relation-collineation group PGammaL(4,25) : 2, function( y ) ... end )
+gap&gt; coll := PreImagesRepresentative(hom,phi*psi);
+&lt; a collineation: &lt;cmat 4x4 over GF(5,2)&gt;, F^5&gt;

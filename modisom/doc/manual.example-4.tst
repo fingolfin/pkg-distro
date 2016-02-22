@@ -1,4 +1,3 @@
-
 gap> bins := BinsByGT(2,6);
 refine by abelian invariants of group (Sehgal/Ward)
 13 bins with 256 groups
@@ -42,4 +41,3 @@ refine bin
   layer 2 yields bins [ [ 1, 2 ] ]
   layer 3 yields bins [ [ 1, 2 ] ]
   layer 4 yields bins [  ]
-

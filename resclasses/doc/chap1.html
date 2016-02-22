@@ -87,13 +87,19 @@ The residue class 0 ( mod x+1 ) of GF(2)[x]
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ResidueClassUnion</code>( <var class="Arg">R</var>, <var class="Arg">m</var>, <var class="Arg">r</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ResidueClassUnion</code>( <var class="Arg">R</var>, <var class="Arg">m</var>, <var class="Arg">r</var>, <var class="Arg">included</var>, <var class="Arg">excluded</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns: the union of the residue classes <var class="Arg">r</var>[<span class="SimpleMath">i</span>] mod <var class="Arg">m</var> of the ring <var class="Arg">R</var>, plus / minus finite sets <var class="Arg">included</var> and <var class="Arg">excluded</var> of elements of <var class="Arg">R</var>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ResidueClassUnion</code>( <var class="Arg">R</var>, <var class="Arg">cls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ResidueClassUnion</code>( <var class="Arg">R</var>, <var class="Arg">cls</var>, <var class="Arg">included</var>, <var class="Arg">excluded</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns: in the first two cases, the union of the residue classes <var class="Arg">r</var>[<span class="SimpleMath">i</span>] mod <var class="Arg">m</var> of the ring <var class="Arg">R</var>, plus / minus finite sets <var class="Arg">included</var> and <var class="Arg">excluded</var> of elements of <var class="Arg">R</var>. In the last two cases, the union of the residue classes <var class="Arg">cls</var>[<span class="SimpleMath">i</span>][1] mod <var class="Arg">cls</var>[<span class="SimpleMath">i</span>][2] of the ring <var class="Arg">R</var>=ℤ, plus / minus finite sets <var class="Arg">included</var> and <var class="Arg">excluded</var> of integers.</p>
+
+<p>For unions of residue classes of the integers, two distinct representations are implemented: in the first representation, a union of residue classes is represented by its modulus <var class="Arg">m</var> and the list of residues <var class="Arg">r</var>; this is called the "standard" representation. In the second ("sparse") representation, a union of residue classes <span class="SimpleMath">r_1(m_1) ∪ dots ∪ r_k(m_k)</span> is represented by the list <var class="Arg">cls</var> of the pairs <code class="code">[r_i,m_i]</code>. One can switch between the two representations by using the operations <code class="code">StandardRep</code> and <code class="code">SparseRep</code>, respectively. The sparse representation allows more efficient computation in terms of time- and memory requirements when computing with unions of "relatively few" residue classes where the lcm of the moduli is "large"; otherwise the standard representation is advantageous. For rings other than ℤ, presently only the standard representation is available.</p>
 
 
 <div class="example"><pre>
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ResidueClassUnion(Integers,5,[1,2],[3,8],[-4,1]);</span>
 (Union of the residue classes 1(5) and 2(5) of Z) U [ 3, 8 ] \ [ -4, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ResidueClassUnion(Integers,[[1,2],[0,40],[2,1200]]);</span>
+Union of the residue classes 1(2), 0(40) and 2(1200) of Z
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ResidueClassUnion(Z_pi([2,3]),8,[3,5]);</span>
 Union of the residue classes 3(8) and 5(8) of Z_( 2, 3 )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ResidueClassUnion(R,x^2,[One(R),x],[],[One(R)]);</span>

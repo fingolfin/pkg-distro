@@ -1,0 +1,29 @@
+gap> 
+gap> #shadow of element of cps.
+gap> id := IdentityMat(8,GF(7));
+< mutable compressed matrix 8x8 over GF(7) >
+gap> form := BilinearFormByMatrix(id,GF(7));
+< bilinear form >
+gap> ps := PolarSpace(form);
+<polar space in ProjectiveSpace(
+7,GF(7)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2+x_8^2=0 >
+gap> Rank(ps);
+4
+gap> ps;
+Q+(7, 7): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2+x_8^2=0
+gap> mat := [[1,0,0,0,3,2,0,0],[0,1,0,0,0,0,3,2],[0,0,1,0,5,3,0,0]]*Z(7)^0;
+[ [ Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), Z(7), Z(7)^2, 0*Z(7), 0*Z(7) ], 
+  [ 0*Z(7), Z(7)^0, 0*Z(7), 0*Z(7), 0*Z(7), 0*Z(7), Z(7), Z(7)^2 ], 
+  [ 0*Z(7), 0*Z(7), Z(7)^0, 0*Z(7), Z(7)^5, Z(7), 0*Z(7), 0*Z(7) ] ]
+gap> plane := VectorSpaceToElement(ps,mat);
+<a plane in Q+(7, 7): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2+x_8^2=0>
+gap> time;
+1
+gap> shadow := ShadowOfElement(ps,plane,4);
+<shadow solids in Q+(7, 7): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2+x_8^2=0>
+gap> List(shadow);
+[ <a solid in Q+(7, 7): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2+x_8^2=0>, 
+  <a solid in Q+(7, 7): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2+x_8^2=0> ]
+gap> shadow := ShadowOfElement(ps,plane,2);
+<shadow lines in Q+(7, 7): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2+x_8^2=0>
+gap> quit;

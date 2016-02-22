@@ -1,0 +1,14 @@
+gap&gt; LoadPackage("atlasrep");
+true
+gap&gt; j2:=AtlasGroup("J2"); #Uses AtlasRep package
+&lt;permutation group of size 604800 with 2 generators&gt;
+gap&gt; max3:=AtlasSubgroup(j2,3); #member of 3rd ATLAS class of max. subgps
+&lt;permutation group of size 1920 with 2 generators&gt;
+gap&gt; max4:=AtlasSubgroup(j2,4); #member of 4th ATLAS class of max. subgps
+&lt;permutation group of size 1152 with 2 generators&gt;
+gap&gt; conj3:=ConjugacyClassSubgroups(j2,max3);;
+gap&gt; g1:=First(conj3, c -&gt; Size(Intersection(c,max4))=384);;
+gap&gt; g2:=max4;;
+gap&gt; cg:=CosetGeometry(j2,[g1,g2]);;
+gap&gt; Rank2Parameters(cg);
+[ [ 6, 8, 8 ], [ 2, 315 ], [ 4, 525 ] ]

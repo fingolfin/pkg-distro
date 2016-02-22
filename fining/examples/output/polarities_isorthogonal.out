@@ -1,0 +1,10 @@
+gap> 
+gap> #checking the polarity (orthogonal).
+gap> mat := [[1,0,2,0],[0,2,0,1],[2,0,0,0],[0,1,0,0]]*Z(9)^0;
+[ [ Z(3)^0, 0*Z(3), Z(3), 0*Z(3) ], [ 0*Z(3), Z(3), 0*Z(3), Z(3)^0 ], 
+  [ Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], [ 0*Z(3), Z(3)^0, 0*Z(3), 0*Z(3) ] ]
+gap> phi := PolarityOfProjectiveSpace(mat,GF(9));
+<polarity of PG(3, GF(3^2)) >
+gap> IsOrthogonalPolarityOfProjectiveSpace(phi);
+true
+gap> quit;

@@ -1,0 +1,35 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Many-object structures}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Magmas with objects; arrows}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Semigroups with objects}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Monoids with objects}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Structures with one or more pieces}{chapter.2}% 6
+\BOOKMARK [0][-]{chapter.3}{Homomorphisms of many-object structures}{}% 7
+\BOOKMARK [1][-]{section.3.1}{Homomorphisms of magmas with objects}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.2}{Homomorphisms of semigroups and monoids with objects}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.3}{Homomorphisms to more than one piece}{chapter.3}% 10
+\BOOKMARK [0][-]{chapter.4}{Groupoids}{}% 11
+\BOOKMARK [1][-]{section.4.1}{Groupoids: their properties and attributes}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.2}{Groupoid elements; stars; costars; homsets}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.3}{Subgroupoids}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.4}{Left, right and double cosets}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.5}{Conjugation}{chapter.4}% 16
+\BOOKMARK [0][-]{chapter.5}{Homomorphisms of Groupoids}{}% 17
+\BOOKMARK [1][-]{section.5.1}{Homomorphisms from a connected groupoid}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.2}{Homomorphisms to a connected groupoid}{chapter.5}% 19
+\BOOKMARK [1][-]{section.5.3}{Homomorphisms to more than one piece}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.4}{Groupoid automorphisms}{chapter.5}% 21
+\BOOKMARK [0][-]{chapter.6}{Graphs of Groups and Groupoids}{}% 22
+\BOOKMARK [1][-]{section.6.1}{Digraphs}{chapter.6}% 23
+\BOOKMARK [1][-]{section.6.2}{Graphs of Groups}{chapter.6}% 24
+\BOOKMARK [1][-]{section.6.3}{Words in a Graph of Groups and their normal forms}{chapter.6}% 25
+\BOOKMARK [1][-]{section.6.4}{Free products with amalgamation and HNN extensions}{chapter.6}% 26
+\BOOKMARK [1][-]{section.6.5}{GraphsOfGroupoids and their Words}{chapter.6}% 27
+\BOOKMARK [0][-]{chapter.7}{Technical Notes}{}% 28
+\BOOKMARK [1][-]{section.7.1}{Many object structures}{chapter.7}% 29
+\BOOKMARK [1][-]{section.7.2}{Many object homomorphisms}{chapter.7}% 30
+\BOOKMARK [0][-]{chapter.8}{Development History}{}% 31
+\BOOKMARK [1][-]{section.8.1}{Versions of the Package}{chapter.8}% 32
+\BOOKMARK [1][-]{section.8.2}{What needs to be done next?}{chapter.8}% 33
+\BOOKMARK [0][-]{chapter*.5}{References}{}% 34
+\BOOKMARK [0][-]{section*.6}{Index}{}% 35

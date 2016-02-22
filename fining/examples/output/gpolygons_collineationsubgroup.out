@@ -1,0 +1,33 @@
+gap> 
+gap> # collineation subgroup for GPS
+gap> clan := FisherThasWalkerKantorBettenqClan(5);
+<q-clan over GF(5)>
+gap> blt := BLTSetByqClan(clan);
+[ <a point in Q(4, 5): Z(5)*x_1*x_5+Z(5)*x_2*x_4+Z(5)^3*x_3^2=0>, 
+  <a point in Q(4, 5): Z(5)*x_1*x_5+Z(5)*x_2*x_4+Z(5)^3*x_3^2=0>, 
+  <a point in Q(4, 5): Z(5)*x_1*x_5+Z(5)*x_2*x_4+Z(5)^3*x_3^2=0>, 
+  <a point in Q(4, 5): Z(5)*x_1*x_5+Z(5)*x_2*x_4+Z(5)^3*x_3^2=0>, 
+  <a point in Q(4, 5): Z(5)*x_1*x_5+Z(5)*x_2*x_4+Z(5)^3*x_3^2=0>, 
+  <a point in Q(4, 5): Z(5)*x_1*x_5+Z(5)*x_2*x_4+Z(5)^3*x_3^2=0> ]
+gap> egq := EGQByBLTSet(blt);
+#I  Now embedding dual BLT-set into W(5,q)...
+#I  Computing elation group...
+<EGQ of order [ 25, 5 ] and basepoint in W(5, 5 ) >
+gap> coll := CollineationSubgroup(egq);
+#I  Computing adjusted stabilizer chain...
+<projective collineation group with 13 generators>
+gap> Order(coll);
+9000000
+gap> act := CollineationAction(coll);
+function( el, x ) ... end
+gap> orbs := Orbits(coll,Points(egq),act);;
+#I  Using elation group to enumerate elements
+gap> List(orbs,x->Length(x));
+[ 1, 3125, 150 ]
+gap> el := ElationGroup(egq);
+<projective collineation group with 5 generators>
+gap> orbs := Orbits(el,Points(egq),act);;
+#I  Using elation group to enumerate elements
+gap> List(orbs,x->Length(x));
+[ 1, 3125, 25, 25, 25, 25, 25, 25 ]
+gap> quit;

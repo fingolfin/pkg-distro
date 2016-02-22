@@ -1,0 +1,11 @@
+gap> 
+gap> #the empty subspace
+gap> ps := PG(5,8);
+ProjectiveSpace(5, 8)
+gap> ProjectiveDimension(ps);
+5
+gap> Dimension(ps);
+5
+gap> Rank(ps);
+5
+gap> quit;

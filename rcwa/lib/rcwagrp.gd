@@ -116,9 +116,12 @@ DeclareAttribute( "Sign", IsRcwaMapping );
 #############################################################################
 ##
 #O  CTCons( <R> ) . . . . . . . . . . . . . . . . . . . .  CT( R ) for ring R
+#O  CTCons( <P>, <R> )  . . . . . . . . . . . . . . . . CT( P, R ) for ring R
 #F  CT( <R> )
+#F  CT( <P>, <R> )
 ##
 DeclareConstructor( "CTCons", [ IsRcwaGroup, IsRing ] );
+DeclareConstructor( "CTCons", [ IsRcwaGroup, IsList, IsRing ] );
 DeclareConstructor( "CTCons", [ IsRcwaGroup, IsRowModule ] );
 DeclareGlobalFunction( "CT" );
 
@@ -126,12 +129,14 @@ DeclareGlobalFunction( "CT" );
 ##
 #P  IsNaturalCT( <G> ) . . . . . . . . . . . . . . . . . . . . . . .  CT( R )
 #P  IsNaturalCT_Z( <G> ) . . . . . . . . . . . . . . . . . . . . . .  CT( Z )
+#P  IsNaturalCTP_Z( <G> )  . . . . . . . . . . . . . . . . . . . . CT( P, Z )
 #P  IsNaturalCT_ZxZ( <G> ) . . . . . . . . . . . . . . . . . . . .  CT( Z^2 )
 #P  IsNaturalCT_Z_pi( <G> )  . . . . . . . . . . . . . . . . . . CT( Z_(pi) )
 #P  IsNaturalCT_GFqx( <G> )  . . . . . . . . . . . . . . . . . CT( GF(q)[x] )
 ##
 DeclareProperty( "IsNaturalCT", IsRcwaGroup );
 DeclareProperty( "IsNaturalCT_Z", IsRcwaGroup );
+DeclareProperty( "IsNaturalCTP_Z", IsRcwaGroup );
 DeclareProperty( "IsNaturalCT_ZxZ", IsRcwaGroup );
 DeclareProperty( "IsNaturalCT_Z_pi", IsRcwaGroup );
 DeclareProperty( "IsNaturalCT_GFqx", IsRcwaGroup );
@@ -291,6 +296,25 @@ DeclareRepresentation( "IsRcwaGroupOrbitsIteratorRep",
 
 #############################################################################
 ##
+#O  GrowthFunctionOfOrbit( <G>, <n>, <r_max>, <size_max> )
+#O  GrowthFunctionOfOrbit( <orbit>, <r_max>, <size_max> )
+##
+##  Returns a list whose (r+1)-th entry is the size of the sphere of radius r
+##  about <n> under the action of the group <G>.
+##
+##  The argument <r_max> is the largest possible radius to be considered,
+##  and the computation stops once the sphere size exceeds <size_max>.
+##
+##  In place of the arguments <G> and <n>, one can also supply an orbit
+##  object.
+##
+DeclareOperation( "GrowthFunctionOfOrbit",
+                  [ IsGroup, IsObject, IsPosInt, IsPosInt ] );
+DeclareOperation( "GrowthFunctionOfOrbit",
+                  [ IsListOrCollection, IsPosInt, IsPosInt ] );
+
+#############################################################################
+##
 #O  CyclesOnFiniteOrbit( <G>, <g>, <n> ) . . . cycles of <g> on orbit <n>^<G>
 ##
 ##  Returns a list of all cycles of the rcwa permutation <g> on the orbit
@@ -325,17 +349,56 @@ DeclareProperty( "IsTransitiveOnNonnegativeIntegersInSupport",
 
 #############################################################################
 ##
-#O  TryIsTransitiveOnNonnegativeIntegersInSupport( <G>, <maxmod>, <maxeq> )
+#O  TryIsTransitiveOnNonnegativeIntegersInSupport( <G>, <searchlimit> )
 ##
 ##  This operation tries to figure out whether the action of the group
 ##  G < RCWA(Z) on the set of its nonnegative moved points is transitive.
 ##  It returns a string briefly describing the situation. If the determina-
 ##  tion of transitivity is successful, the property `IsTransitiveOnNonnega-
-##  tiveIntegersInSupport' is set accordingly. The arguments <maxmod> and
-##  <maxeq> are bounds on the efforts to be made.
+##  tiveIntegersInSupport' is set accordingly. The argument <searchlimit>
+##  is a bound on the efforts to be made -- more precisely, this is the
+##  maximum search radius for a smaller point in a sphere about a point.
 ##  
 DeclareOperation( "TryIsTransitiveOnNonnegativeIntegersInSupport",
-                  [ IsRcwaGroupOverZ, IsPosInt, IsPosInt ] );
+                  [ IsRcwaGroupOverZ, IsPosInt ] );
+
+#############################################################################
+##
+#A  TransitivityCertificate( <G> )
+##
+##  Given an rcwa group <G> over Z which acts transitively on the set of
+##  nonnegative integers in its support, this attribute is a record
+##  containing components 'phi', 'words' and 'classes' as follows:
+##
+##  - 'phi' is an epimorphism from a free group to <G> which maps generators
+##    to generators.
+##
+##  - 'words' is a list, where words[i] is a preimage under phi of an element
+##    of <G> which maps all sufficiently large positive integers in the
+##    residue classes classes[i] to smaller integers.
+##
+##  There are no methods installed for `TransitivityCertificate' -- attribute
+##  values are computed with `TryToComputeTransitivityCertificate'.
+##
+DeclareAttribute( "TransitivityCertificate", IsRcwaGroup );
+
+#############################################################################
+##
+#O  TryToComputeTransitivityCertificate( <G>, <searchlimit> )
+##
+##  This operation tries to compute a "transitivity certificate" as described
+##  above for the action of the rcwa group <G> over Z on the set of nonnega-
+##  tive integers in its support. Of course this can be successful only if
+##  this action is indeed transitive. The argument <searchlimit> is the
+##  largest radius of a ball about a point within which smaller points are
+##  looked for and taken into consideration. If not for all sufficiently
+##  large positive integers n there is a number smaller than n within the
+##  ball of radius <searchlimit> about n, the operation either returns 'fail'
+##  or -- if the option "partial" is set -- the part of the result computed
+##  so far.
+##
+DeclareOperation( "TryToComputeTransitivityCertificate",
+                  [ IsRcwaGroup, IsPosInt ] );
 
 #############################################################################
 ##
@@ -365,6 +428,7 @@ DeclareOperation( "ShortResidueClassOrbits", [ IsRcwaGroup, IsRingElement,
 #A  StabilizerInfo( <G> ) . .  info. on what is stabilized under which action
 ##
 DeclareOperation( "StabilizerOp", [ IsRcwaGroup, IsRingElement ] );
+DeclareOperation( "StabilizerOp", [ IsRcwaGroup, IsListOrCollection ] );
 DeclareOperation( "StabilizerOp", [ IsRcwaGroup, IsListOrCollection,
                                     IsFunction ] );
 DeclareAttribute( "StabilizerInfo", IsRcwaGroup );
@@ -418,13 +482,13 @@ DeclareGlobalFunction( "DrawOrbitPicture" );
 
 #############################################################################
 ##
-#O  CollatzLikeMappingByOrbitTree( <G>, <root>, <max_r> )
+#O  CollatzLikeMappingByOrbitTree( <G>, <root>, <min_r>, <max_r> )
 ##
 ##  This operation is so far undocumented since its meaning has yet to be
 ##  settled.
 ##
 DeclareOperation( "CollatzLikeMappingByOrbitTree",
-                  [ IsRcwaGroup, IsRingElement, IsPosInt ] );
+                  [ IsRcwaGroup, IsRingElement, IsPosInt, IsPosInt ] );
 
 #############################################################################
 ##
@@ -632,6 +696,17 @@ DeclareGlobalFunction(
 ##
 DeclareGlobalFunction(
   "LoadDatabaseOfGroupsGeneratedBy4ClassTranspositions" );
+
+#############################################################################
+##
+#F  LoadDatabaseOfCTGraphs( )
+##
+##  This function loads the database of realizations of finite graphs as
+##  'class transposition graphs' -- the vertices are class transpositions,
+##  and there is an edge connecting two vertices iff their product has finite
+##  order, or equivalently, iff both vertices respect a common partition.
+##
+DeclareGlobalFunction( "LoadDatabaseOfCTGraphs" );
 
 #############################################################################
 ##

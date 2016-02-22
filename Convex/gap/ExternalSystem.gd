@@ -17,6 +17,9 @@
 DeclareOperation( "EXT_CREATE_CONE_BY_RAYS",
         [ IsList ] );
 
+DeclareOperation( "EXT_CREATE_CONE_BY_RAYS_UNSAVE",
+        [ IsList ] );
+
 DeclareOperation( "EXT_CREATE_CONE_BY_INEQUALITIES",
         [ IsList ] );
 
@@ -182,7 +185,16 @@ DeclareOperation( "EXT_STELLAR_SUBDIVISION",
 DeclareOperation( "EXT_INTERSECTION_OF_CONES",
         [ IsExternalObject, IsExternalObject ] );
 
+DeclareOperation( "EXT_INTERSECTION_OF_POLYTOPES",
+        [ IsExternalObject, IsExternalObject ] );
+
 DeclareOperation( "EXT_EQUALITIES_OF_POLYTOPE",
+        [ IsExternalObject ] );
+
+DeclareOperation( "EXT_LATTICE_POINTS_GENERATORS",
+        [ IsExternalObject ] );
+
+DeclareOperation( "EXT_F_VECTOR",
         [ IsExternalObject ] );
 
 ####################################

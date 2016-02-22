@@ -54,10 +54,26 @@ DeclareGlobalFunction( "ExponentOfPrime" );
 
 #############################################################################
 ##
-#O  AllProducts( <D>, <k> ) . . all products of <k>-tuples of elements of <D>
-#M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists
+#F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
 ##
-DeclareOperation( "AllProducts", [ IsListOrCollection, IsPosInt ] );
+##  Returns the smallest integer larger than <n> which passes GAP's
+##  probabilistic primality test.
+##
+##  The function `NextProbablyPrimeInt' does the same as `NextPrimeInt',
+##  except that for reasons of performance it tests numbers only for
+##  `IsProbablyPrimeInt' instead of `IsPrimeInt'.
+##  For large <n>, this function is much faster than `NextPrimeInt'.
+##
+DeclareGlobalFunction( "NextProbablyPrimeInt" );
+
+#############################################################################
+##
+#F  PrimeNumbersIterator(  )
+#F  PrimeNumbersIterator( chunksize )
+##
+##  Iterator running through the prime numbers in ascending order.
+##
+DeclareGlobalFunction ( "PrimeNumbersIterator" );
 
 #############################################################################
 ##
@@ -69,6 +85,60 @@ DeclareOperation( "AllProducts", [ IsListOrCollection, IsPosInt ] );
 ##  allowed.
 ##
 DeclareGlobalFunction( "RestrictedPartitionsWithoutRepetitions" );
+
+#############################################################################
+##
+#S  Operations to construct new mappings from given ones. ///////////////////
+##
+#############################################################################
+
+#############################################################################
+##
+#O  PiecewiseMapping( <sources>, <maps> )
+##
+##  Returns the mapping f composed from the mappings <maps> defined on
+##  <sources>. Here, <sources> and and <maps> must be lists of the same
+##  length, and for any i, <maps>[i] must be defined on <sources>[i] or
+##  on a superset thereof.
+##
+DeclareOperation( "PiecewiseMapping", [ IsList, IsList ] );
+
+#############################################################################
+##
+#S  Functions to generate and identify small graphs. ////////////////////////
+##
+#############################################################################
+
+#############################################################################
+##
+#F  AllGraphs( <n> ) . . . .  all graphs with <n> vertices, up to isomorphism
+##
+##  This function returns a list of all graphs with vertices 1, 2, ... , <n>,
+##  up to isomorphism. The graphs are represented as lists of edges.
+##
+DeclareGlobalFunction( "AllGraphs" );
+
+#############################################################################
+##
+#F  GraphClasses( <n> )  isomorphism classes of graphs with vertices 1,2,..,n
+##
+##  This function returns a list of isomorphism classes of graphs with
+##  vertices 1, 2, ... , <n>, where the graphs are represented as lists of
+##  edges.
+##
+DeclareGlobalFunction( "GraphClasses" );
+
+#############################################################################
+##
+#F  IdGraph( <graph>, <classes> ) . identify the isomorphism class of <graph>
+##
+##  Finds the index i such that <graph> lies in the i-th class in the list
+##  <classes>. The graph <graph> needs to be represented as a list of edges,
+##  and <classes> needs to have the same format as the return value of
+##  GraphClasses( n ) for some positive integer n. If the list <classes>
+##  contains no class which contains <graph>, then the function returns fail.
+##
+DeclareGlobalFunction( "IdGraph" );
 
 #############################################################################
 ##
@@ -84,8 +154,9 @@ DeclareGlobalFunction( "ListOfPowers" );
 
 #############################################################################
 ##
-#O  GeneratorsAndInverses( <D> ) list of generators of <D> and their inverses
-#M  GeneratorsAndInverses( <G> ) . . . . . . . . . . . . . . . . . for groups
+#O  GeneratorsAndInverses( <D> ) 
+##
+##  Returns the set of generators of the domain <D> and their inverses.
 ##
 DeclareOperation( "GeneratorsAndInverses", [ IsMagmaWithInverses ] );
 
@@ -185,18 +256,6 @@ DeclareGlobalFunction( "LoadBitmapPicture" );
 
 #############################################################################
 ##
-#F  ShrinkMonochromePictureToGrayscalesPicture( <filename>, <factor> )
-##
-##  Creates a greyscale picture from a monochrome bitmap picture.
-##  The greyscale picture is by a factor of <factor> smaller than the
-##  provided monochrome picture, and the grey values of its pixels are
-##  determined by the numbers of black pixels in the correspoding
-##  <factor> * <factor> squares of the input picture.
-##
-DeclareGlobalFunction( "ShrinkMonochromePictureToGrayscalesPicture" );
-
-#############################################################################
-##
 #F  DrawGrid( <U>, <range_y>, <range_x>, <filename> )
 ##
 ##  Draws a picture of the residue class union <U> of Z^2 or the partition
@@ -206,62 +265,13 @@ DeclareGlobalFunction( "DrawGrid" );
 
 #############################################################################
 ##
-#S  Functions for steganography in bitmap images. ///////////////////////////
-##
-#############################################################################
-
-#############################################################################
-##
-#F  EncryptIntoBitmapPicture( <picturefile>, <cleartextfile>, <passphrase> )
-#F  DecryptFromBitmapPicture( <picturefile>, <cleartextfile>, <passphrase> )
-##
-##  The first function encrypts the contents of the textfile <cleartextfile>
-##  into the image from the file named <picturefile>, using the passphrase
-##  <passphrase>. The modified image is written to a file whose name is
-##  derived from <picturefile> by appending the string "-out".
-##
-##  The second function decrypts an encoded text from the file named
-##  <picturefile> using the passphrase <passphrase>, and writes the obtained
-##  cleartext to a file named <cleartextfile>.
-##
-##  These steganographic utility functions are designed for security rather
-##  than speed, and are intended to be used for texts of the order of
-##  magnitude of what one would normally write into the body of an e-mail
-##  -- encoding about 100kb into a picture of usual size should be still
-##  convenient, while the functions are definitely not suitable for
-##  encoding entire backups or the like.
-##
-##  Info messages on the progress of the encryption / decryption are given
-##  at InfoLevel 2 of InfoRCWA. 
-##
-DeclareGlobalFunction( "EncryptIntoBitmapPicture");
-DeclareGlobalFunction( "DecryptFromBitmapPicture");
-
-#############################################################################
-##
-#S  Utility to run a demonstration in a talk. ///////////////////////////////
-##
-#############################################################################
-
-#############################################################################
-##
-#F  RunDemonstration( <filename> ) . . . . . . . . . . .  run a demonstration
-##
-##  This is a function to run little demonstrations, for example in talks.
-##  It is adapted from the function `Demonstration' in the file lib/demo.g
-##  of the main GAP distribution. 
-##
-DeclareGlobalFunction( "RunDemonstration" );
-
-#############################################################################
-##
 #S  Utility to convert GAP log files to XHTML 1.0 Strict. ///////////////////
 ##
 #############################################################################
 
 #############################################################################
 ##
-#F  Log2HTML ( logfilename )
+#F  Log2HTML( logfilename )
 ##
 ##  Utility to convert GAP log files to XHTML 1.0 Strict.
 ##
@@ -277,18 +287,4 @@ DeclareGlobalFunction( "Log2HTML" );
 
 #############################################################################
 ##
-#S  Test utilities. /////////////////////////////////////////////////////////
-##
-#############################################################################
-
-#############################################################################
-##
-#F  ReadTestWithTimings( <filename> ) . . . read test file and return timings
-#F  ReadTestCompareTimings( <filename> [,<timingsdir> [,<createreference> ]])
-##
-DeclareGlobalFunction( "ReadTestWithTimings" ); TEST_TIMINGS := [];
-DeclareGlobalFunction( "ReadTestCompareRuntimes" );
-
-#############################################################################
-##
-#E  general.g . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here
+#E  general.gd . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here

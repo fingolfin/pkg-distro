@@ -1,0 +1,29 @@
+gap> 
+gap> # meet
+gap> mat := [ [ 1, 1, 0, 0, 0, 1, 0 ], [ 1, 0, 0, 1, 1, 0, 0 ],
+>          [ 1, 0, 1, 0, 0, 0, 1 ], [ 0, 1, 1, 1, 0, 0, 0 ],
+>          [ 0, 1, 0, 0, 1, 0, 1 ], [ 0, 0, 0, 1, 0, 1, 1 ],
+>          [ 0, 0, 1, 0, 1, 1, 0 ] ];
+[ [ 1, 1, 0, 0, 0, 1, 0 ], [ 1, 0, 0, 1, 1, 0, 0 ], [ 1, 0, 1, 0, 0, 0, 1 ], 
+  [ 0, 1, 1, 1, 0, 0, 0 ], [ 0, 1, 0, 0, 1, 0, 1 ], [ 0, 0, 0, 1, 0, 1, 1 ], 
+  [ 0, 0, 1, 0, 1, 1, 0 ] ]
+gap> gp := GeneralisedPolygonByIncidenceMatrix(mat);
+<projective plane order 2>
+gap> l := Random(Lines(gp));
+<a line in <projective plane order 2>>
+gap> m := Random(Lines(gp));
+<a line in <projective plane order 2>>
+gap> Meet(l,m);
+<a point in <projective plane order 2>>
+gap> ps := ParabolicQuadric(4,3);
+Q(4, 3)
+gap> gp := GeneralisedPolygonByElements(Set(Points(ps)),Set(Lines(ps)),\*);
+<generalised quadrangle of order [ 3, 3 ]>
+gap> l := Random(Lines(gp));
+<a line in <generalised quadrangle of order [ 3, 3 ]>>
+gap> m := Random(Lines(gp));
+<a line in <generalised quadrangle of order [ 3, 3 ]>>
+gap> Meet(l,m);
+#I  <x> and <y> do meet in a common point of gp
+fail
+gap> quit;

@@ -1,0 +1,25 @@
+gap> 
+gap> #constructing an element of a projective space
+gap> ps := ProjectiveSpace(5,9);
+ProjectiveSpace(5, 9)
+gap> p := Random(Points(ps));
+<a point in ProjectiveSpace(5, 9)>
+gap> r := Random(Solids(ps));
+<a solid in ProjectiveSpace(5, 9)>
+gap> IsIncident(p,r);
+false
+gap> IsIncident(r,p);
+false
+gap> p*r;
+false
+gap> r*p;
+false
+gap> p in r;
+false
+gap> r in p;
+false
+gap> EmptySubspace(ps) in r;
+true
+gap> r in ps;
+true
+gap> quit;

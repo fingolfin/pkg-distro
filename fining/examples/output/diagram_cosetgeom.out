@@ -1,0 +1,27 @@
+gap> 
+gap> #Coset geometry
+gap> g:=SymmetricGroup(5);
+Sym( [ 1 .. 5 ] )
+gap> g1:=Stabilizer(g,[1,2],OnSets);
+Group([ (4,5), (3,5), (1,2)(4,5) ])
+gap> g2:=Stabilizer(g,[1,2,3],OnSets);
+Group([ (4,5), (2,3), (1,2,3) ])
+gap> cg:=CosetGeometry(g,[g1,g2]);
+CosetGeometry( SymmetricGroup( [ 1 .. 5 ] ) )
+gap> p:=Random(ElementsOfIncidenceStructure(cg,1));
+<element of type 1 of CosetGeometry( SymmetricGroup( [ 1 .. 5 ] ) )>
+gap> q:=Random(ElementsOfIncidenceStructure(cg,2));
+<element of type 2 of CosetGeometry( SymmetricGroup( [ 1 .. 5 ] ) )>
+gap> IsIncident(p,q);
+false
+gap> IsIncident(p,p);
+true
+gap> ParabolicSubgroups(cg);
+[ Group([ (4,5), (3,5), (1,2)(4,5) ]), Group([ (4,5), (2,3), (1,2,3) ]) ]
+gap> Rank(cg) = Size(last);
+true
+gap> BorelSubgroup(cg);
+Group([ (1,2), (4,5) ])
+gap> AmbientGroup(cg);
+Sym( [ 1 .. 5 ] )
+gap> quit;

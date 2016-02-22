@@ -1,0 +1,24 @@
+# gpolygons_collineations.g
+q := 4;
+conic := ParabolicQuadric(2,q);
+nucleus := NucleusOfParabolicQuadric(conic);
+hyperoval := Union(List(Points(conic)),[nucleus]);
+pg := PG(3,q);
+hyp :=  HyperplaneByDualCoordinates(pg,[1,0,0,0]*Z(q)^0);
+em := NaturalEmbeddingBySubspace(PG(2,q),pg,hyp);
+O := List(hyperoval,x->x^em);
+points := Set(Filtered(Points(pg),x->not x in hyp));;
+lines := Union(List(O,x->Filtered(Lines(x),y->not y in hyp)));;
+inc := \*;
+gp := GeneralisedPolygonByElements(points,lines,inc);
+coll := CollineationGroup(gp);
+act := CollineationAction(coll);
+g := Random(coll);
+l := Random(Lines(gp));
+act(l,g);
+p := Random(Points(gp));
+act(p,g);
+stab := Stabilizer(coll,p,act);
+List(Orbits(stab,List(Points(gp)),act),x->Length(x));
+List(Orbits(stab,List(Lines(gp)),act),x->Length(x));
+quit;

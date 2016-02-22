@@ -1,0 +1,8 @@
+gap&gt; mat := [[1,0,0],[0,0,3],[0,3,0]]*Z(11)^0;<br>
+[ [ Z(11)^0, 0*Z(11), 0*Z(11) ], [ 0*Z(11), 0*Z(11), Z(11)^8 ], <br>
+  [ 0*Z(11), Z(11)^8, 0*Z(11) ] ]<br>
+gap&gt; phi := PolarityOfProjectiveSpace(mat,GF(11));<br>
+&lt;polarity of PG(2, GF(11)),  &gt;<br>
+gap&gt; GramMatrix(phi);<br>
+[ [ Z(11)^0, 0*Z(11), 0*Z(11) ], [ 0*Z(11), 0*Z(11), Z(11)^8 ], <br>
+  [ 0*Z(11), Z(11)^8, 0*Z(11) ] ]<br>

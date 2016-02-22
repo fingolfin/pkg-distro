@@ -1,0 +1,36 @@
+gap> 
+gap> #onprojsubspacesreversing
+gap> ps := ProjectiveSpace(3,27);
+ProjectiveSpace(3, 27)
+gap> mat := IdentityMat(4,GF(27));
+[ [ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3) ], [ 0*Z(3), Z(3)^0, 0*Z(3), 0*Z(3) ], 
+  [ 0*Z(3), 0*Z(3), Z(3)^0, 0*Z(3) ], [ 0*Z(3), 0*Z(3), 0*Z(3), Z(3)^0 ] ]
+gap> delta := StandardDualityOfProjectiveSpace(ps);
+StandardDuality( AllElementsOfIncidenceStructure( ProjectiveSpace(3,GF(3^
+3)) ) )
+gap> frob := FrobeniusAutomorphism(GF(27));
+FrobeniusAutomorphism( GF(3^3) )
+gap> phi := CorrelationOfProjectiveSpace(mat,frob,GF(27),delta);
+<projective element with Frobenius with projectivespace isomorphism
+[ [ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3) ], [ 0*Z(3), Z(3)^0, 0*Z(3), 0*Z(3) ], 
+  [ 0*Z(3), 0*Z(3), Z(3)^0, 0*Z(3) ], [ 0*Z(3), 0*Z(3), 0*Z(3), Z(3)^0 ] ], F^
+3, StandardDuality( AllElementsOfIncidenceStructure( ProjectiveSpace(3,GF(3^
+3)) ) ) >
+gap> p := Random(Points(ps));
+<a point in ProjectiveSpace(3, 27)>
+gap> OnProjSubspacesReversing(p,phi);
+<a plane in ProjectiveSpace(3, 27)>
+gap> l := Random(Lines(ps));
+<a line in ProjectiveSpace(3, 27)>
+gap> OnProjSubspacesReversing(p,phi);
+<a plane in ProjectiveSpace(3, 27)>
+gap> psi := CorrelationOfProjectiveSpace(mat,frob^2,GF(27));
+<projective element with Frobenius with projectivespace isomorphism
+[ [ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3) ], [ 0*Z(3), Z(3)^0, 0*Z(3), 0*Z(3) ], 
+  [ 0*Z(3), 0*Z(3), Z(3)^0, 0*Z(3) ], [ 0*Z(3), 0*Z(3), 0*Z(3), Z(3)^0 ] ], F^
+9, IdentityMapping( <All elements of ProjectiveSpace(3, 27)> ) >
+gap> OnProjSubspacesReversing(p,psi);
+<a point in ProjectiveSpace(3, 27)>
+gap> OnProjSubspacesReversing(l,psi);
+<a line in ProjectiveSpace(3, 27)>
+gap> quit;

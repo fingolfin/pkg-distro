@@ -1,0 +1,13 @@
+gap> 
+gap> #an iterator. a simple example
+gap> ps := PG(3,7);
+ProjectiveSpace(3, 7)
+gap> planes := Planes(ps);
+<planes of ProjectiveSpace(3, 7)>
+gap> iter := Iterator(planes);
+<iterator>
+gap> NextIterator(iter);
+<a plane in ProjectiveSpace(3, 7)>
+gap> IsDoneIterator(iter);
+false
+gap> quit;

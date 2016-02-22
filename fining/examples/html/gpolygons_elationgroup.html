@@ -1,0 +1,25 @@
+gap&gt; clan := FisherThasWalkerKantorBettenqClan(11);<br>
+&lt;q-clan over GF(11)&gt;<br>
+gap&gt; egq := EGQByqClan(clan);<br>
+#I  Computed Kantor family. Now computing EGQ...<br>
+#I  Computing points from Kantor family...<br>
+#I  Computing lines from Kantor family...<br>
+&lt;EGQ of order [ 121, 11 ] and basepoint 0&gt;<br>
+gap&gt; group := ElationGroup(egq);<br>
+&lt;matrix group of size 161051 with 8 generators&gt;<br>
+gap&gt; blt := BLTSetByqClan(clan);<br>
+[ &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt;, <br>
+  &lt;a point in Q(4, 11): Z(11)*x_1*x_5+Z(11)*x_2*x_4+Z(11)^6*x_3^2=0&gt; ]<br>
+gap&gt; egq2 := EGQByBLTSet(blt);<br>
+#I  No intertwiner computed. One of the polar spaces must have a collineation <br>
+group computed<br>

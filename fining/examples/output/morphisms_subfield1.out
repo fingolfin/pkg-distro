@@ -1,0 +1,48 @@
+gap> 
+gap> #morphisms_subfield1.g
+gap> pg1 := PG(2,3);
+ProjectiveSpace(2, 3)
+gap> pg2 := PG(2,9);
+ProjectiveSpace(2, 9)
+gap> em := NaturalEmbeddingBySubfield(pg1,pg2);
+<geometry morphism from <All elements of ProjectiveSpace(2, 
+3)> to <All elements of ProjectiveSpace(2, 9)>>
+gap> points := AsList(Points( pg1 ));
+[ <a point in ProjectiveSpace(2, 3)>, <a point in ProjectiveSpace(2, 3)>, 
+  <a point in ProjectiveSpace(2, 3)>, <a point in ProjectiveSpace(2, 3)>, 
+  <a point in ProjectiveSpace(2, 3)>, <a point in ProjectiveSpace(2, 3)>, 
+  <a point in ProjectiveSpace(2, 3)>, <a point in ProjectiveSpace(2, 3)>, 
+  <a point in ProjectiveSpace(2, 3)>, <a point in ProjectiveSpace(2, 3)>, 
+  <a point in ProjectiveSpace(2, 3)>, <a point in ProjectiveSpace(2, 3)>, 
+  <a point in ProjectiveSpace(2, 3)> ]
+gap> image := ImagesSet(em, points);
+[ <a point in ProjectiveSpace(2, 9)>, <a point in ProjectiveSpace(2, 9)>, 
+  <a point in ProjectiveSpace(2, 9)>, <a point in ProjectiveSpace(2, 9)>, 
+  <a point in ProjectiveSpace(2, 9)>, <a point in ProjectiveSpace(2, 9)>, 
+  <a point in ProjectiveSpace(2, 9)>, <a point in ProjectiveSpace(2, 9)>, 
+  <a point in ProjectiveSpace(2, 9)>, <a point in ProjectiveSpace(2, 9)>, 
+  <a point in ProjectiveSpace(2, 9)>, <a point in ProjectiveSpace(2, 9)>, 
+  <a point in ProjectiveSpace(2, 9)> ]
+gap> hom := Intertwiner(em);
+MappingByFunction( The FinInG projectivity group PGL(3,3), <projective colline\
+ation group of size 5616 with 
+2 generators>, function( x ) ... end, function( y ) ... end )
+gap> group1 := ProjectivityGroup(pg1);
+The FinInG projectivity group PGL(3,3)
+gap> gens := GeneratorsOfGroup(group1);
+[ < a collineation: <cmat 3x3 over GF(3,1)>, F^0>, 
+  < a collineation: <cmat 3x3 over GF(3,1)>, F^0> ]
+gap> group1_image := Group(List(gens,x->x^hom));
+<projective collineation group with 2 generators>
+gap> Order(group1_image);
+5616
+gap> group2 := ProjectivityGroup(pg2);
+The FinInG projectivity group PGL(3,9)
+gap> Order(group2);
+42456960
+gap> g := Random(group2);
+< a collineation: <cmat 3x3 over GF(3,2)>, F^0>
+gap> PreImageElm(hom,g);
+#I  <el> is not in the range of the intertwiner
+fail
+gap> quit;

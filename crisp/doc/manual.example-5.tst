@@ -1,4 +1,3 @@
-
 gap> myNilpotentGroups := FittingClass(rec(\in := IsNilpotentGroup,
 >    rad := FittingSubgroup));
 FittingClass (in:=<Property "IsNilpotentGroup">, rad:=<Attribute "FittingSubgr\
@@ -17,9 +16,6 @@ gap> SymmetricGroup (3) in myL2_Nilp;
 false
 gap> SymmetricGroup (4) in myL2_Nilp;
 true
-# thus myL2_Nilp is not closed with respect to factor groups
-
-
 gap> FittingProduct (myNilpotentGroups, myTwoGroups);
 FittingProduct (FittingClass (in:=<Property "IsNilpotentGroup">, rad:=<Attribu\
 te "FittingSubgroup">), FittingClass (in:=function( G ) ... end, rad:=function\
@@ -27,8 +23,6 @@ te "FittingSubgroup">), FittingClass (in:=function( G ) ... end, rad:=function\
 gap> FittingProduct (myNilpotentGroups, myL2_Nilp);
 FittingProduct (FittingClass (in:=<Property "IsNilpotentGroup">, rad:=<Attribu\
 te "FittingSubgroup">), FittingClass (in:=function( G ) ... end))
-
-
 gap>  fitset := FittingSet(SymmetricGroup (4), rec(
 >        \in := S -> IsSubgroup (AlternatingGroup (4), S),
 >        rad := S -> Intersection (AlternatingGroup (4), S),
@@ -39,23 +33,17 @@ FittingSet (SymmetricGroup(
 gap> FittingSet (SymmetricGroup (3), rec(
 >       \in := H -> H in [Group (()), Group ((1,2)), Group ((1,3)), Group ((2,3))]));
 FittingSet (SymmetricGroup( [ 1 .. 3 ] ), rec (in:=function( H ) ... end))
-
-
 gap> alpha := GroupHomomorphismByImages (SymmetricGroup (4), SymmetricGroup (3),
 >  [(1,2), (1,3), (1,4)], [(1,2), (1,3), (2,3)]);;
 gap> im := ImageFittingSet (alpha, fitset);
 FittingSet (Group( [ (1,2), (1,3), (2,3)
  ] ), rec (inj:=function( G ) ... end))
 gap> Radical (Image (alpha), im);
-Group([ (1,2,3), (1,3,2) ])
-
-
+Group([ (), (), (1,2,3), (1,3,2) ])
 gap> pre := PreImageFittingSet (alpha, NilpotentGroups);
 FittingSet (SymmetricGroup( [ 1 .. 4 ] ), rec (inj:=function( G ) ... end))
 gap> Injector (Source (alpha), pre);
-Group([ (1,4,2), (1,4)(2,3) ])
-
-
+Group([ (1,2,3), (1,2)(3,4) ])
 gap> F1 := FittingSet (SymmetricGroup (3),
 > rec (\in := IsNilpotentGroup, rad := FittingSubgroup));
 FittingSet (SymmetricGroup(
@@ -71,24 +59,14 @@ FittingSet (Group(
 gap> Intersection (F1, PiGroups ([2,5]));
 FittingSet (SymmetricGroup(
 [ 1 .. 3 ] ), rec (in:=function( x ) ... end, rad:=function( G ) ... end))
-
-
 gap> Radical (SymmetricGroup (4), FittingClass (rec(\in := IsNilpotentGroup)));
 Group([ (1,4)(2,3), (1,3)(2,4) ])
 gap> Radical (SymmetricGroup (4), myL2_Nilp);
 Sym( [ 1 .. 4 ] )
 gap> Radical (SymmetricGroup (3), myL2_Nilp);
 Group([ (1,2,3) ])
-
-
 gap> Injector (SymmetricGroup (4), FittingClass (rec(\in := IsNilpotentGroup)));
 Group([ (1,4)(2,3), (1,3)(2,4), (3,4) ])
-
-
-gap> Size (Socle ( DirectProduct (DihedralGroup (8), CyclicGroup (12))));
-12
-
-
 gap> D := DihedralGroup (8);;
 gap> AllInvariantSubgroupsWithNProperty (
 > D, D,
@@ -99,4 +77,3 @@ gap> AllInvariantSubgroupsWithNProperty (
 >     fail);
 [ Group([ f3 ]), <pc group with 2 generators>, <pc group with 2 generators>,
   Group([ f1, f3 ]), Group([  ]) ]
-

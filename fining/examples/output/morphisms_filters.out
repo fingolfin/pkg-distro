@@ -1,0 +1,10 @@
+gap> 
+gap> #morphisms_filters.g
+gap> ShowImpliedFilters(IsGeometryMorphism);
+Implies:
+   IsGeneralMapping
+   IsTotal
+   Tester(IsTotal)
+   IsSingleValued
+   Tester(IsSingleValued)
+gap> quit;

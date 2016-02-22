@@ -1,0 +1,15 @@
+gap> 
+gap> #setwise stabilizers using generic stabilizer
+gap> ps := PG(3,4);
+ProjectiveSpace(3, 4)
+gap> p := Random(Points(ps));
+<a point in ProjectiveSpace(3, 4)>
+gap> q := Random(Points(ps));
+<a point in ProjectiveSpace(3, 4)>
+gap> g := CollineationGroup(ps);
+The FinInG collineation group PGammaL(4,4)
+gap> Stabilizer(g,Set([p,q]),OnSets);
+<projective collineation group of size 552960 with 5 generators>
+gap> time;
+10440
+gap> quit;

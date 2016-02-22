@@ -1,0 +1,18 @@
+gap> 
+gap> #easy example of residues of a flag.
+gap> pg := PG(4,5);
+ProjectiveSpace(4, 5)
+gap> p := Random(Points(pg));
+<a point in ProjectiveSpace(4, 5)>
+gap> l := Random(Lines(p));
+<a line in ProjectiveSpace(4, 5)>
+gap> flag := FlagOfIncidenceStructure(pg,[p,l]);
+<a flag of ProjectiveSpace(4, 5)>
+gap> res := ResidueOfFlag(flag);
+Incidence structure of rank 2
+gap> gamma := IncidenceGraph(res);;
+gap> Diameter(gamma);
+3
+gap> Girth(gamma);
+6
+gap> quit;

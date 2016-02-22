@@ -1,0 +1,10 @@
+gap> 
+gap> #base field of a projective space
+gap> ps := HermitianPolarSpace(3,7^2);
+H(3, 7^2)
+gap> line := VectorSpaceToElement(ps,[[Z(7)^0,0*Z(7),Z(7^2)^34,Z(7^2)^44],
+> [0*Z(7),Z(7)^0,Z(7^2)^2,Z(7^2)^4]]);
+<a line in H(3, 7^2)>
+gap> AmbientSpace(line);
+ProjectiveSpace(3, 49)
+gap> quit;

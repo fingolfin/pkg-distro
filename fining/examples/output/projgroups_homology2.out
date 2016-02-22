@@ -1,0 +1,15 @@
+gap> 
+gap> #homology group with axis and centre
+gap> ps := PG(2,27);
+ProjectiveSpace(2, 27)
+gap> sub := VectorSpaceToElement(ps,[[1,0,1,],[0,1,0]]*Z(3)^0);
+<a line in ProjectiveSpace(2, 27)>
+gap> p := VectorSpaceToElement(ps,[1,0,2]*Z(3)^0);
+<a point in ProjectiveSpace(2, 27)>
+gap> g := ProjectiveHomologyGroup(sub,p);
+<projective collineation group with 1 generators>
+gap> Order(g);
+26
+gap> StructureDescription(g);
+"C26"
+gap> quit;

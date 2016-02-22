@@ -1,0 +1,23 @@
+gap> 
+gap> #NAtural projection by subspace example
+gap> ps := HyperbolicQuadric(5,3);
+Q+(5, 3)
+gap> x := Random(Points(ps));;
+gap> planes_on_x := AsList( Planes(x) );
+[ <a plane in Q+(5, 3)>, <a plane in Q+(5, 3)>, <a plane in Q+(5, 3)>, 
+  <a plane in Q+(5, 3)>, <a plane in Q+(5, 3)>, <a plane in Q+(5, 3)>, 
+  <a plane in Q+(5, 3)>, <a plane in Q+(5, 3)> ]
+gap> proj := NaturalProjectionBySubspace(ps, x);
+<geometry morphism from <Elements of Q+(5, 
+3)> to <Elements of <polar space in ProjectiveSpace(
+3,GF(3)): x_1*x_2+x_3*x_4=0 >>>
+gap> image := ImagesSet(proj, planes_on_x);
+[ <a line in Q+(3, 3): x_1*x_2+x_3*x_4=0>, 
+  <a line in Q+(3, 3): x_1*x_2+x_3*x_4=0>, 
+  <a line in Q+(3, 3): x_1*x_2+x_3*x_4=0>, 
+  <a line in Q+(3, 3): x_1*x_2+x_3*x_4=0>, 
+  <a line in Q+(3, 3): x_1*x_2+x_3*x_4=0>, 
+  <a line in Q+(3, 3): x_1*x_2+x_3*x_4=0>, 
+  <a line in Q+(3, 3): x_1*x_2+x_3*x_4=0>, 
+  <a line in Q+(3, 3): x_1*x_2+x_3*x_4=0> ]
+gap> quit;

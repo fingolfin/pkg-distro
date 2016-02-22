@@ -1,0 +1,15 @@
+gap> 
+gap> #elation group with axis
+gap> ps := PG(3,4);
+ProjectiveSpace(3, 4)
+gap> sub := Random(Hyperplanes(ps));
+<a plane in ProjectiveSpace(3, 4)>
+gap> g := ProjectiveElationGroup(sub);
+<projective semilinear group with 6 generators>
+gap> Order(g);
+64
+gap> Transitivity(g,Difference(Points(ps),Points(sub)),OnProjSubspaces);
+1
+gap> StructureDescription(g);
+"C2 x C2 x C2 x C2 x C2 x C2"
+gap> quit;

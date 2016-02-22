@@ -1,0 +1,24 @@
+gap> 
+gap> #orbits of some groups on elements of the projective space
+gap> ps := HermitianPolarSpace(3,9);
+H(3, 3^2)
+gap> g := CollineationGroup(ps);
+PGammaU(4,3^2)
+gap> FiningOrbits(g,Lines(PG(3,9)));
+75%..98%..100%..[ <closed orbit, 5670 points>, <closed orbit, 1680 points>, 
+  <closed orbit, 112 points> ]
+gap> FiningOrbits(g,Planes(PG(3,9)));
+65%..100%..[ <closed orbit, 540 points>, <closed orbit, 280 points> ]
+gap> ps := ParabolicQuadric(2,5);
+Q(2, 5)
+gap> g := CollineationGroup(ps);
+PGammaO(3,5)
+gap> pts := Filtered(Points(PG(2,5)),x->not x in ps);;
+gap> Length(pts);
+25
+gap> FiningOrbits(g,Points(PG(2,5)));
+48%..67%..100%..[ <closed orbit, 15 points>, <closed orbit, 6 points>, 
+  <closed orbit, 10 points> ]
+gap> FiningOrbits(g,pts,OnProjSubspaces);
+60%..100%..[ <closed orbit, 15 points>, <closed orbit, 10 points> ]
+gap> quit;

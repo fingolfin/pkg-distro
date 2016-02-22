@@ -1,0 +1,24 @@
+gap> 
+gap> # klein correspondence (elementary)
+gap> ps := HyperbolicQuadric(5,5);
+Q+(5, 5)
+gap> klein := KleinCorrespondence(ps);
+<geometry morphism from <lines of ProjectiveSpace(3, 5)> to <points of Q+(5, 
+5)>>
+gap> line1 := Random(Lines(PG(3,5)));
+<a line in ProjectiveSpace(3, 5)>
+gap> line2 := Random(Lines(PG(3,5)));
+<a line in ProjectiveSpace(3, 5)>
+gap> p := line1^klein;
+<a point in Q+(5, 5)>
+gap> q := line2^klein;
+<a point in Q+(5, 5)>
+gap> p in ps;
+true
+gap> q in ps;
+true
+gap> IsCollinear(ps,p,q);
+false
+gap> Meet(line1,line2);
+< empty subspace >
+gap> quit;

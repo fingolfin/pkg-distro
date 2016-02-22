@@ -1,0 +1,5 @@
+gap> 
+gap> #sodesargues
+gap> SUdesargues(4,GF(9));
+PSU(4,3^2)
+gap> quit;

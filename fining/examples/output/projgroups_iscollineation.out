@@ -1,0 +1,17 @@
+gap> 
+gap> #checks if an object in IsProjGrpEtc is a collineation
+gap> g := Random(HomographyGroup(PG(2,27)));
+< a collineation: <cmat 3x3 over GF(3,3)>, F^0>
+gap> IsCollineation(g);
+true
+gap> g := Random(CollineationGroup(PG(2,27)));
+< a collineation: <cmat 3x3 over GF(3,3)>, F^0>
+gap> IsCollineation(g);
+true
+gap> g := Random(CorrelationCollineationGroup(PG(2,27)));
+<projective element with Frobenius with projectivespace isomorphism: <cmat 3x
+3 over GF(3,3)>, F^0, IdentityMapping( <All elements of ProjectiveSpace(2, 
+27)> ) >
+gap> IsCollineation(g);
+true
+gap> quit;

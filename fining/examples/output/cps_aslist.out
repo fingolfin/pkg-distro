@@ -1,0 +1,7 @@
+gap> 
+gap> # One of the best features of all of the orb package is the FindSuborbits command
+gap> ps := HyperbolicQuadric(5,3);
+Q+(5, 3)
+gap> lines := AsList(Lines(ps));
+<closed orbit, 520 points>
+gap> quit;

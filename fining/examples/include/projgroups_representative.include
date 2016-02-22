@@ -1,0 +1,5 @@
+gap&gt; g:=CollineationGroup( ProjectiveSpace(2,49));
+The FinInG collineation group PGammaL(3,49)
+gap&gt; x:=Random(g);;
+gap&gt; Representative(x);
+[ &lt;immutable cmat 3x3 over GF(7,2)&gt;, FrobeniusAutomorphism( GF(7^2) ) ]

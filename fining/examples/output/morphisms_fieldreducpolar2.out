@@ -1,0 +1,28 @@
+gap> 
+gap> #field reduction for polar spaces
+gap> ps1 := SymplecticSpace(3,9);
+W(3, 9)
+gap> em := NaturalEmbeddingByFieldReduction(ps1,GF(3),true);
+<geometry morphism from <Elements of W(3, 
+9)> to <Elements of <polar space in ProjectiveSpace(
+7
+ ,GF(3)): -x1*y3+x1*y4+x2*y3+x3*y1-x3*y2-x4*y1-x5*y7+x5*y8+x6*y7+x7*y5-x7*y6-x8\
+*y5=0 >>>
+gap> ps2 := AmbientGeometry(Range(em));
+<polar space in ProjectiveSpace(
+7
+ ,GF(3)): -x1*y3+x1*y4+x2*y3+x3*y1-x3*y2-x4*y1-x5*y7+x5*y8+x6*y7+x7*y5-x7*y6-x8\
+*y5=0 >
+gap> pg := AmbientSpace(ps2);
+ProjectiveSpace(7, 3)
+gap> spread := List(Points(ps1),x->x^em);;
+gap> el := Random(ElementsOfIncidenceStructure(pg,5));
+<a proj. 4-space in ProjectiveSpace(7, 3)>
+gap> prebs := Filtered(spread,x->Meet(x,el) <> EmptySubspace(pg));;
+gap> bs := List(prebs,x->PreImageElm(em,x));;
+gap> Length(bs);
+118
+gap> lines := List(Lines(ps1));;
+gap> Collected(List(lines,x->Length(Filtered(bs,y->y * x))));
+[ [ 1, 702 ], [ 4, 117 ], [ 10, 1 ] ]
+gap> quit;

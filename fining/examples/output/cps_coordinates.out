@@ -1,0 +1,9 @@
+gap> 
+gap> # coordinates of a point of a polar space
+gap> ps := ParabolicQuadric(6,5);
+Q(6, 5)
+gap> p := VectorSpaceToElement(ps,[0,1,0,0,0,0,0]*Z(5)^0);
+<a point in Q(6, 5)>
+gap> Coordinates(p);
+[ 0*Z(5), Z(5)^0, 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5), 0*Z(5) ]
+gap> quit;

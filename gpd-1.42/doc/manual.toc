@@ -1,0 +1,75 @@
+\contentsline {chapter}{\numberline {1}\leavevmode {\color {Chapter }Introduction}}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}\leavevmode {\color {Chapter }Many-object structures}}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}\leavevmode {\color {Chapter }Magmas with objects; arrows}}{6}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}\leavevmode {\color {Chapter }MagmaWithObjects}}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}\leavevmode {\color {Chapter }Arrow}}{7}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}\leavevmode {\color {Chapter }IsSinglePiece}}{8}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Semigroups with objects}}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}\leavevmode {\color {Chapter }SemigroupWithObjects}}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}\leavevmode {\color {Chapter }Monoids with objects}}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\leavevmode {\color {Chapter }MonoidWithObjects}}{9}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}\leavevmode {\color {Chapter }Structures with one or more pieces}}{10}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\leavevmode {\color {Chapter }DomainWithSingleObject}}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\leavevmode {\color {Chapter }UnionOfPieces}}{10}{subsection.2.4.2}
+\contentsline {chapter}{\numberline {3}\leavevmode {\color {Chapter }Homomorphisms of many-object structures}}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}\leavevmode {\color {Chapter }Homomorphisms of magmas with objects}}{12}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}\leavevmode {\color {Chapter }MagmaWithObjectsHomomorphism}}{12}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Homomorphisms of semigroups and monoids with objects}}{14}{section.3.2}
+\contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }Homomorphisms to more than one piece}}{15}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}\leavevmode {\color {Chapter }HomomorphismByUnion}}{15}{subsection.3.3.1}
+\contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Groupoids}}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}\leavevmode {\color {Chapter }Groupoids: their properties and attributes}}{16}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}\leavevmode {\color {Chapter }SinglePieceGroupoid}}{16}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}\leavevmode {\color {Chapter }ObjectList}}{17}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}\leavevmode {\color {Chapter }IsPermGroupoid}}{18}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}\leavevmode {\color {Chapter }UnionOfPieces}}{18}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}\leavevmode {\color {Chapter }HomogeneousGroupoid}}{19}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }Groupoid elements; stars; costars; homsets}}{20}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}\leavevmode {\color {Chapter }Arrow}}{20}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }IdentityArrow}}{21}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}\leavevmode {\color {Chapter }Order}}{21}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}\leavevmode {\color {Chapter }ObjectStar}}{22}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}\leavevmode {\color {Chapter }Subgroupoids}}{23}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}\leavevmode {\color {Chapter }Subgroupoid}}{23}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}\leavevmode {\color {Chapter }SubgroupoidWithRays}}{24}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}\leavevmode {\color {Chapter }Left, right and double cosets}}{25}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}\leavevmode {\color {Chapter }RightCoset}}{25}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}\leavevmode {\color {Chapter }Conjugation}}{26}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}\leavevmode {\color {Chapter }ConjugateArrow}}{26}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}\leavevmode {\color {Chapter }SinglePieceGroupoidByGenerators}}{27}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}\leavevmode {\color {Chapter }ConjugateGroupoid}}{28}{subsection.4.5.3}
+\contentsline {chapter}{\numberline {5}\leavevmode {\color {Chapter }Homomorphisms of Groupoids}}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}\leavevmode {\color {Chapter }Homomorphisms from a connected groupoid}}{29}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}\leavevmode {\color {Chapter }GroupoidHomomorphismFromSinglePiece}}{29}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}\leavevmode {\color {Chapter }Homomorphisms to a connected groupoid}}{30}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}\leavevmode {\color {Chapter }HomomorphismToSinglePiece}}{30}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}\leavevmode {\color {Chapter }Homomorphisms to more than one piece}}{31}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}\leavevmode {\color {Chapter }HomomorphismByUnion}}{31}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}\leavevmode {\color {Chapter }Groupoid automorphisms}}{32}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}\leavevmode {\color {Chapter }GroupoidAutomorphismByObjectPerm}}{32}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}\leavevmode {\color {Chapter }GroupoidAutomorphismByGroupAutos}}{34}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}\leavevmode {\color {Chapter }RootGroupHomomorphism}}{35}{subsection.5.4.3}
+\contentsline {chapter}{\numberline {6}\leavevmode {\color {Chapter }Graphs of Groups and Groupoids}}{36}{chapter.6}
+\contentsline {section}{\numberline {6.1}\leavevmode {\color {Chapter }Digraphs}}{36}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}\leavevmode {\color {Chapter }FpWeightedDigraph}}{36}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}\leavevmode {\color {Chapter }Graphs of Groups}}{37}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}\leavevmode {\color {Chapter }GraphOfGroups}}{37}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}\leavevmode {\color {Chapter }IsGraphOfFpGroups}}{38}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}\leavevmode {\color {Chapter }RightTransversalsOfGraphOfGroups}}{38}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}\leavevmode {\color {Chapter }Words in a Graph of Groups and their normal forms}}{39}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}\leavevmode {\color {Chapter }GraphOfGroupsWord}}{39}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}\leavevmode {\color {Chapter }ReducedGraphOfGroupsWord}}{40}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}\leavevmode {\color {Chapter }Free products with amalgamation and HNN extensions}}{40}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}\leavevmode {\color {Chapter }FreeProductWithAmalgamation}}{40}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}\leavevmode {\color {Chapter }HnnExtension}}{42}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}\leavevmode {\color {Chapter }GraphsOfGroupoids and their Words}}{43}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}\leavevmode {\color {Chapter }GraphOfGroupoids}}{43}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}\leavevmode {\color {Chapter }GraphOfGroupoidsWord}}{44}{subsection.6.5.2}
+\contentsline {chapter}{\numberline {7}\leavevmode {\color {Chapter }Technical Notes}}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}\leavevmode {\color {Chapter }Many object structures}}{45}{section.7.1}
+\contentsline {section}{\numberline {7.2}\leavevmode {\color {Chapter }Many object homomorphisms}}{47}{section.7.2}
+\contentsline {chapter}{\numberline {8}\leavevmode {\color {Chapter }Development History}}{48}{chapter.8}
+\contentsline {section}{\numberline {8.1}\leavevmode {\color {Chapter }Versions of the Package}}{48}{section.8.1}
+\contentsline {section}{\numberline {8.2}\leavevmode {\color {Chapter }What needs to be done next?}}{48}{section.8.2}
+\contentsline {chapter}{References}{50}{chapter*.5}
+\contentsline {chapter}{Index}{51}{section*.6}

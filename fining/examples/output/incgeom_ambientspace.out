@@ -1,0 +1,9 @@
+gap> 
+gap> #examples of ambient spaces of Lie geometries
+gap> AmbientSpace(PG(3,4));
+ProjectiveSpace(3, 4)
+gap> AmbientSpace(ParabolicQuadric(4,4));
+ProjectiveSpace(4, 4)
+gap> AmbientSpace(SplitCayleyHexagon(3));
+ProjectiveSpace(6, 3)
+gap> quit;

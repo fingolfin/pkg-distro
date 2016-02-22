@@ -1,0 +1,13 @@
+gap> 
+gap> #elations of a projective space
+gap> ps := PG(3,9);
+ProjectiveSpace(3, 9)
+gap> sub := VectorSpaceToElement(ps,[[1,0,1,0],[0,1,0,1],[1,2,3,0]]*Z(3)^0);
+<a plane in ProjectiveSpace(3, 9)>
+gap> p1 := VectorSpaceToElement(ps,[1,0,1,2]*Z(3)^0);
+<a point in ProjectiveSpace(3, 9)>
+gap> p2 := VectorSpaceToElement(ps,[1,2,0,2]*Z(3)^0);
+<a point in ProjectiveSpace(3, 9)>
+gap> phi := ElationOfProjectiveSpace(sub,p1,p2);
+< a collineation: <cmat 4x4 over GF(3,2)>, F^0>
+gap> quit;

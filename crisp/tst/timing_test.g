@@ -1,9 +1,8 @@
 ############################################################################
 ##
-##  timing_test.g                  CRISP                 Burkhard H\"ofling
+##  timing_test.g                   CRISP                   Burkhard Höfling
 ##
-##  Copyright (C) 2000 by Burkhard H\"ofling, Mathematisches Institut,
-##  Friedrich Schiller-Universit\"at Jena, Germany
+##  Copyright (C) 2000, 2015 Burkhard Höfling
 ##
 
 
@@ -14,32 +13,94 @@
 ##  global variable storing the original value of `Print'
 ##
 if not IsBound (PRINT) then
-   PRINT := Print;
-   MakeReadOnlyGlobal ("PRINT");
+    PRINT := Print;
+    MakeReadOnlyGlobal ("PRINT");
 fi;
 
 
 ############################################################################
 ##
-#F  SilentRead (g1, g2)
+#F  SilentRead (g1, g2, g3)
 ##
-##  if g1 is a function, this simply returns g1 (g2). 
+##  if g1 is a function, this simply assigns g1 (g2) to the global varable g3.
 ##  Otherwise, it behaves like ReadPackage (pkg fname), but suppresses anything 
 ##  printed while reading the file
 ##
-SilentRead := function (g1, g2)
+SilentRead := function (g1, g2, g3)
 
-   if IsFunction (g1) then
-      CallFuncList (g1, g2);
-   else
-      MakeReadWriteGlobal ("Print");
-      Print := Ignore;
-      ReadPackage (g1, g2);
-      Print := PRINT;
-      MakeReadOnlyGlobal ("Print");
-   fi;
+    if IsFunction (g1) then
+        BindGlobal (g3, CallFuncList (g1, g2));
+    else
+        MakeReadWriteGlobal ("Print");
+        Print := Ignore;
+        ReadPackage (g1, g2);
+        Print := PRINT;
+        MakeReadOnlyGlobal ("Print");
+    fi;
 end;
 
+
+############################################################################
+##
+#F  UTF8String (str, len)
+##
+UTF8String := function (str, len)
+
+    local new, w, i;
+
+    if not IsString (str) then
+        str := String (str);
+    fi;
+    w := WidthUTF8String (str);
+    if len > 0 and w < len then
+        new := [];
+        new{[len-w+1..Length(str)+len-w]} := str;
+        for i in [1..len-w] do
+            new[i] := ' ';
+        od;
+    elif len < 0 and w < -len then
+        new := ShallowCopy (str);
+        for i in [Length(str)+1..Length(str)-len-w] do
+            new[i] := ' ';
+        od;
+    else
+        new := ShallowCopy (str);
+    fi;
+    return new;
+end;
+
+
+############################################################################
+##
+#F  StringFactorsInt (n)
+##
+StringFactorsInt := function (n)
+
+    local facs, str, dot, f;
+
+    if n < 0 then
+        str := "-";
+        n := -n;
+    else
+        str := "";
+    fi;
+
+    facs := Collected (FactorsInt(n));
+    dot := false;
+
+    for f in facs do
+        if dot then
+            Add (str, '.');
+        fi;
+        Append (str, String(f[1]));
+        if f[2] > 1 then
+            Add (str, '^');
+            Append (str, String(f[2]));
+        fi;
+        dot := true;
+    od;
+    return str;
+end;
 
 ############################################################################
 ##
@@ -64,9 +125,9 @@ end;
 ##
 ##  tests consists of a list of tests to be performed. Each entry t is a list.
 ##  t[1] must be the function to be tested. t[2] is a function to be applied
-##  to the result of t[1]. t[3] is a string describing the test. This string
-##  should be short (7 chars max.) because it will be used as a column heading
-##  if DO_TIMING is true.
+##  to the result of t[1]. The results of t[2] will be compared between tests.
+##  t[3] is a string describing the test. This string should be short because
+##  it will be used as a column heading if DO_TIMING is true.
 ##  t[4] contains a list of the names of those groups for which the test
 ##  should be skipped. t[5], if bound, must contain a function which will be
 ##  called with the test group as the argument *before* the test function
@@ -82,83 +143,126 @@ end;
 ##
 DoTests := function (groups, tests)
 
-   local g, name, tmp, t, t0, t1, res, prevres, size;
-   
-   Print (String ("group",-10));
-   Print (String ("logsize", 8));
-   Print (String ("complen", 8));
-   if IsBound (DO_TIMING) and DO_TIMING then
-      for t in tests do
-         Print (String(t[3],8),"\c");
-         if IsBound (t[6]) then
-            Print (String (t[7],8), "\c");
-         fi;
-      od;
-   fi;
-   Print ("\n");
-   for g in groups do
-      if IsBoundGlobal (g[3]) then
-         UnbindGlobal (g[3]);
-      fi;
-      SilentRead (g[1],g[2]);
-      if IsBound (g[4]) then
-         name := g[4];
-      else
-         name := g[3];
-      fi;
-      Print (String (name,-10));
-      tmp := ValueGlobal (g[3]);
-      size := Size (tmp);
-      Print (String (LogInt (Size (tmp), 10), 8));
-      Print (String (Length (Pcgs(tmp)), 8), "\c");
-      UnbindGlobal (g[3]);
-      prevres := fail;
-      
-      for t in tests do
-         if name in t[4] then
-            t1 := "n/a";
-         else
-            SilentRead (g[1],g[2]);
-            tmp := ValueGlobal (g[3]);
-            if IsBound (t[5]) then
-               t[5](tmp);
-            fi;
-            if IsBound (DO_TIMING) and DO_TIMING then
-               GASMAN ("collect");
-            fi;
-            t0 := Runtime();
-            res := t[1](tmp);
-            t1 := Runtime() - t0;
-            res := t[2](res);
-            if prevres <> fail then
-               if res <> fail and res <> prevres then
-                  Error ("results do not match");
-               fi;
+    local g, name, tmp, t, t0, t1, res, prevres, size, w, colwidth, col;
+
+    colwidth := [-12,8,8];
+    Print (String ("group", colwidth[1]));
+    Print (String ("logsize", colwidth[2]));
+    Print (String ("complen", colwidth[3]));
+    col := 4;
+    if IsBound (DO_TIMING) and DO_TIMING then
+        for t in tests do
+            w := WidthUTF8String(t[3]);
+            if w < 8 then
+                colwidth[col] := 8;
             else
-               prevres := res;
+                colwidth[col] := w+1;
+            fi;
+            Print (UTF8String(t[3],colwidth[col]),"\c");
+            col := col + 1;
+            if IsBound (t[6]) then
+                w := WidthUTF8String(t[7]);
+                if w < 8 then
+                    colwidth[col] := 8;
+                else
+                    colwidth[col] := w+1;
+                fi;
+                Print (UTF8String (t[7],colwidth[col]), "\c");
+                col := col + 1;
+            fi;
+        od;
+    fi;
+    Append (colwidth, [16, 16]);
+   
+    Print ("\n");
+    for g in groups do
+        if IsBoundGlobal (g[3]) then
+            if IsReadOnlyGlobal (g[3]) then
+                MakeReadWriteGlobal (g[3]);
             fi;
             UnbindGlobal (g[3]);
-         fi;
-         
-         if IsBound (DO_TIMING) and DO_TIMING then
-            Print (String(t1,8), "\c");
-            if IsBound (t[6]) then
-               Print (String(t[6](),8), "\c");
+        fi;
+        SilentRead (g[1],g[2],g[3]);
+        if IsBound (g[4]) then
+            name := g[4];
+        else
+            name := g[3];
+        fi;
+        Print (UTF8String (name,colwidth[1]));
+        tmp := ValueGlobal (g[3]);
+        size := Size (tmp);
+        Print (String (LogInt (Size (tmp), 10), colwidth[2]));
+        Print (String (Length (Pcgs(tmp)), colwidth[3]), "\c");
+        if IsReadOnlyGlobal (g[3]) then
+            MakeReadWriteGlobal (g[3]);
+        fi;
+        UnbindGlobal (g[3]);
+        prevres := fail;
+        col := 4;
+
+        for t in tests do
+            if name in t[4] then
+                t1 := "n/a";
+            else
+                SilentRead (g[1],g[2], g[3]);
+                tmp := ValueGlobal (g[3]);
+                if IsBound (t[5]) then
+                    t[5](tmp);
+                fi;
+                if IsBound (DO_TIMING) and DO_TIMING then
+                    GASMAN ("collect");
+                fi;
+                t0 := Runtime();
+                if IsBound (TIMEOUT) and IsBound (CallWithTimeout) then
+                    res := CallWithTimeout (TIMEOUT, t[1], tmp);
+                    if IsList (res) then
+                        res := res[1];
+                    fi;
+                else
+                    res := t[1](tmp);
+                fi;
+                t1 := Runtime() - t0;
+                if res = fail then
+                    t1 := "n/a";
+                else
+                    res := t[2](res);
+                fi;
+                if prevres <> fail then
+                    if res <> fail and res <> prevres then
+                        Error ("results do not match");
+                    fi;
+                else
+                    prevres := res;
+                fi;
+                if IsReadOnlyGlobal (g[3]) then
+                    MakeReadWriteGlobal (g[3]);
+                fi;
+                UnbindGlobal (g[3]);
             fi;
-         fi;
-      od;
-      Print ("  ");
-      if IsInt (prevres) then # assume that it is the order of a subgroup
-         PrintFactorsInt (prevres);
-         Print ("  ");
-         PrintFactorsInt (size/prevres);
-      elif IsList (prevres) then # assume that it is a list of subgroups
-         Print (Length (prevres));
-      else
-         Print (prevres);
-      fi;
-      Print ("\n");
-   od;
+         
+            if IsBound (DO_TIMING) and DO_TIMING then
+                Print (String(t1,colwidth[col]), "\c");
+                col := col + 1;
+                if IsBound (t[6]) then
+                    Print (String(t[6](),colwidth[col]), "\c");
+                    col := col + 1;
+                fi;
+            fi;
+        od;
+        Print ("  ");
+        if IsInt (prevres) then # assume that it is the order of a subgroup
+            Print (String (StringFactorsInt (prevres),colwidth[col]));
+            col := col + 1;
+            Print ("  ");
+            Print (String (StringFactorsInt (size/prevres),colwidth[col]));
+            col := col + 1;
+        elif IsList (prevres) then # assume that it is a list of subgroups
+            Print (Length (prevres));
+        else
+            Print (prevres);
+        fi;
+        Print ("\n");
+    od;
 end;
 
 

@@ -1,0 +1,494 @@
+<!-- 
+
+  projectivespaces.xml    FinInG package documentation
+                                                                   John Bamberg
+                                                                   Anton Betten
+                                                                  Philippe Cara
+                                                                   Jan De Beule
+                                                                 Michel Lavrauw
+                                                                Max Neunhoeffer
+
+  Copyright (C) 2015,	Colorado State University
+						Università degli Studi di Padova
+						Universiteit Gent
+						University of St. Andrews
+						University of Western Australia
+                        Vrije Universiteit Brussel
+
+This is the chapter of the documentation describing the projective spaces.
+
+-->
+
+<Chapter Label="projective_spaces">
+<Heading>Projective Spaces</Heading>
+
+In this chapter we describe how to use <Package>FinInG</Package> to work 
+with finite projective spaces. 
+
+<Section>
+<Heading>Projective Spaces and basic operations</Heading>
+
+A <E>projective space</E> is a point-line incidence geometry, satisfying a few well known axioms. 
+An axiomatic treatment can be found in <Cite Key="VY65a"/> and <Cite Key="VY65b"/>. 
+In <Package>FinInG</Package>, we deal with <E>finite Desarguesian projective
+spaces</E>. It is well known that these geometries can be described completely using
+vector spaces over finite fields. The elements of the projective space are all nontrivial subspaces of the vector space.
+So the projective points are the one-dimensional subspaces, the projective lines are the two-dimensional subspaces, and so on.
+From the axiomatic point of view, a projective space is a point-line geometry, 
+and has rank at least 2. But a projective line is obtained if we start with a two dimensional vector space. Starting with a
+one dimensional vector space yields a single projective point. Both examples are not a projective space in the axiomatic point of 
+view, but in <Package>FinInG</Package> they are considered as projective spaces.
+
+<ManSection>
+<Filt Name="IsProjectiveSpace" Type="Category"/>
+<Description>
+This category is a subcategory of <C>IsLieGeometry</C>, and contains all finite Desarguesian projective spaces.
+</Description>
+</ManSection>
+
+We refer the reader to
+<Cite Key="HirschfeldThas"/> for the necessary background theory in case it is not provided in the manual.<P/> 
+
+<ManSection>
+<Oper Name="ProjectiveSpace" Arg="d, F"/>
+<Oper Name="ProjectiveSpace" Arg="d, q"/>    
+<Oper Name="PG" Arg="d, q"/>    
+
+<Returns>a projective space</Returns>
+<Description><A>d</A> must be a positive integer. 
+In the first form, <A>F</A> is a field and the function returns the projective
+space of dimension <A>d</A> over <A>F</A>. In the second form, <A>q</A> is
+a prime power specifying the size of the field. The user may also use an alias,
+namely, the common abbreviation <C>PG(d, q)</C>.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_projectivespace.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="ProjectiveDimension" Arg="ps"/>
+<Attr Name="Dimension" Arg="ps"/>
+<Attr Name="Rank" Arg="ps"/>
+<Returns>the projective dimension of the projective space <A>ps</A></Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_projdimension.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="BaseField" Arg="ps"/>
+<Returns>returns the base field for the projective space <A>ps</A>
+</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_basefieldps.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="UnderlyingVectorSpace" Arg="ps"/>
+
+<Returns>a vector space</Returns>
+<Description>If <A>ps</A> is a projective space of dimension <M>n</M> over the field of order
+<M>q</M>, then this operation simply returns the underlying vector space, i.e. the <M>n+1</M> dimensional
+vector space over the field of order <M>q</M>.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_underlyingvs.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Attr Name="AmbientSpace" Arg="ps"/>
+<Returns>a projective space</Returns>
+<Description>The ambient space of a projective space <A>ps</A> is the projective space itself.
+Hence, simply <A>ps</A> will be returned.
+</Description>
+</ManSection>
+
+</Section>
+
+<Section>
+<Heading>Subspaces of projective spaces</Heading>
+
+The elements of a projective space <M>PG(n,q)</M> are the subspaces of a suitable dimension. The 
+empty subspace, also called the trivial subspace, has dimension <M>-1</M> and corresponds to the zero dimensional 
+vector subspace of the underlying vector space of <M>PG(n,q)</M>, and is hence represented by the zero vector
+of length <M>n+1</M> over the underlying field <M>GF(q)</M>. The trivial subspace and the whole projective 
+space are mathematically considered as a subspace of the projective geometry, but not as elements of the 
+incidence geometry, and hence do in <Package>FinInG</Package>
+<B>not</B> belong to the category <C>IsSubspaceOfProjectiveSpace</C>.
+
+<ManSection>
+<Oper Name="VectorSpaceToElement" Arg="geo, v"/>
+<Returns>an element</Returns>
+<Description>
+<A>geo</A> is a projective space, and <A>v</A> is either a row vector (for points) or an <M>m x
+n</M> matrix (for an <M>(m-1)</M>-subspace of projective space of dimension <M>n-1</M>).
+In the case that <A>v</A> is a matrix, the rows represent generators for the subspace. An
+exceptional case is when <A>v</A> is a zero-vector, in which case the trivial subspace is
+returned.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_element1.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name = "EmptySubspace" Arg="ps"/>
+<Returns>the trivial subspace in the projective <A>ps</A></Returns>
+<Description>
+The object returned by this operation is contained in
+every projective subspace of the projective space <A>ps</A>, but is not an element of <A>ps</A>. Hence, testing
+incidence results in an error message.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_emptysubspace.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="ProjectiveDimension" Arg="sub"/>
+<Returns>the projective dimension of a subspace of a projective space. The operation <F>ProjectiveDimension</F>
+is also applicable on the EmptySubspace.
+</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_projdimension_element.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="ElementsOfIncidenceStructure" Arg="ps, j"/>
+<Returns>the collection of elements of the projective space <A>ps</A> of type <A>j</A></Returns>
+<Description>
+For the projective space <A>ps</A> of dimension <M>d</M> and the type <A>j</A> (where <M>1 &#8804; j &#8804; d</M>),
+this operation returns the collection of <M>j-1</M> dimensional subspaces. 
+An error message is produced when the projective space <A>ps</A> has no elements of the required type.<Example>
+<#Include SYSTEM "../examples/include/projsp_elements.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Short names for ElementsOfIncidenceStructure</Heading>
+<Oper Name="Points" Arg="ps"/>
+<Oper Name="Lines" Arg="ps"/>
+<Oper Name="Planes" Arg="ps"/>
+<Oper Name="Solids" Arg="ps"/>
+<Oper Name="Hyperplanes" Arg="ps"/>
+<Returns>The elements of <A>ps</A> of respective type 1, 2, 3, 4, and the hyperplanes</Returns>
+<Description>
+An error message is produced when the projective space <A>ps</A> has no elements of a required type.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_short.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Incidence and containment</Heading>
+<Oper Name="IsIncident" Arg="el1, el2"/>
+<Oper Name="\*" Arg="el1, el2"/>
+<Oper Name="\in" Arg="el1, el2"/>
+<Returns>true or false</Returns>
+<Description>
+Recall that for projective spaces, incidence is symmetrized containment, where the empty subspace and the 
+whole projective space are excluded as arguments for this operation, since they are not considered as elements
+of the geometry, but both the empty subspace and the whole projective space are allowed as arguments for <F>\in</F>.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_incident.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="StandardFrame" Arg="ps"/>
+<Returns>the standard frame of the projective space <A>ps</A></Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_standardframe.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="Coordinates" Arg="p"/>
+<Returns>the homogeneous coordinates of the projective point <A>p</A>
+</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_coordinates.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+    <Oper Name="DualCoordinatesOfHyperplane" Arg="hyp"/>
+    <Returns>a list</Returns>
+    <Description>
+        The argument <A>hyp</A> is a hyperplane of a projective space. This operation returns the dual coordinates of the hyperplane <A>hyp</A>, i.e. the list with the coefficients of the equation defining the hyperplane <A>hyp</A> as an algebraic variety.
+    </Description>
+</ManSection>
+
+<ManSection>
+    <Oper Name="HyperplaneByDualCoordinates" Arg="pg,list"/>
+    <Returns>a hyperplane of a projective space</Returns>
+    <Description>
+        The argument <A>pg</A> is a projective space, and <A>list</A> is the coordinate vector of a point of <A>pg</A>. This operation returns the hyperplane that has <A>list</A> as the list of coefficients of the equation defining the hyperplane as an algebraic variety.
+    </Description>
+</ManSection>
+
+
+<ManSection>
+<Oper Name="EquationOfHyperplane" Arg="h"/>
+<Returns>the equation of the hyperplane <A>h</A> of a projective space</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_eqhyperplane.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="AmbientSpace" Arg="el"/>
+<Returns>returns the ambient space of an element <A>el</A> of a projective space</Returns>
+<Description>
+This operation is also applicable on the empty subspace and the whole space.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_ambientspaceelps.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="BaseField" Arg="el"/>
+<Returns>returns the base field of an element <A>el</A> of a projective space</Returns>
+<Description>
+This operation is also applicable on the trivial subspace and the whole space.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_basefieldelps.include"> 
+</Example>
+</Description>
+</ManSection>
+
+
+<ManSection>
+<Oper Name="Random" Arg="elements"/>
+<Returns>a random element from the collection <A>elements</A></Returns>
+<Description>
+The collection <A>elements</A> is an object in the category <C>IsElementsOfIncidenceStructure</C>,
+i.e. an object representing the set of elements of a certain incidence structure of a given type. The 
+latter information can be derived e.g. using <C>AmbientSpace</C> and <C>Type</C>.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_randomeltsps.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="RandomSubspace" Arg="ps, i"/>
+<Oper Name="RandomSubspace" Arg="ps"/>
+<Returns>the first variant returns a random element of type <A>i</A> of the projective space <A>ps</A>.
+The second variant returns a random element of a random type of the projective space <A>ps</A>
+</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_randomeltps.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection Label="liespan">
+<Oper Name="Span" Arg="u,v"/>
+<Oper Name="Span" Arg="list"/>
+<Returns> an element or the empty subspace or the whole space</Returns>
+<Description>
+When <A>u</A> and <A>v</A> are elements of a projective space.
+This function returns the span of the two elements. When <A>list</A> is 
+a list of elements of the same projective space, then this function returns
+the span of all elements in <A>list</A>. It is checked whether the elements 
+<A>u</A> and <A>v</A> are elements of the same projective space. Although 
+the trivial subspace and the whole projective space are not objects in
+the category <C>IsSubspaceOfProjectiveSpace</C>, they are allowed as 
+arguments for this operation, and also for the second
+variant of this operation.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_span.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection Label="liemeet">
+<Oper Name="Meet" Arg="u,v"/>
+<Oper Name="Meet" Arg="list"/>
+<Returns>an element or the empty subspace or the whole space</Returns>
+<Description>
+When <A>u</A> and <A>v</A> are elements of a projective space.
+This function returns the intersection of the two elements. When <A>list</A> is 
+a list of elements of the same projective space, then this function returns
+the intersection of all elements in <A>list</A>. It is checked whether the elements 
+<A>u</A> and <A>v</A> are elements of the same projective space. Although 
+the trivial subspace and the whole projective space are not objects in
+the category <C>IsSubspaceOfProjectiveSpace</C>, they are allowed as 
+arguments for this operation, and also for the second
+variant of this operation. We remark that the result of a <F>Meet</F> operation can be the empty subspace.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_meet.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="FlagOfIncidenceStructure" Arg="ps, els"/>
+<Returns>the flag of the projetcive space <A>ps</A>, determined by
+the subspaces of <A>ps</A> in the list <A>els</A>. When <A>els</A> is empty,
+the empty flag is returned.</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_flag.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsEmptyFlag" Arg="flag"/>
+<Returns>return true if <A>flag</A> is the empty flag</Returns>
+<Description>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="IsChamberOfIncidenceStructure" Arg="flag"/>
+<Returns>true if <A>flag</A> is a chamber</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_chamber.include"> 
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="projsp:shadows">
+
+<Heading>Shadows of Projective Subspaces</Heading>
+
+<ManSection>
+<Oper Name="ShadowOfElement" Arg="ps, el, i"/>
+<Oper Name="ShadowOfElement" Arg="ps, el, str"/>
+<Returns>the elements of type <A>i</A> incident with <A>el</A>. The second variant determines 
+the type <A>i</A> from the position of <A>str</A> in the list returned by 
+<F>TypesOfElementsOfIncidenceStructurePlural</F></Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_shadowofelement.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="ShadowOfFlag" Arg="ps, flag, i"/>
+<Oper Name="ShadowOfFlag" Arg="ps, flag, str"/>
+<Returns>the type <A>i</A> shadow elements of the flag <A>flag</A>, i.e. the elements of type
+<A>i</A> incident with all elements of <A>flag</A>. The
+second variant determines the type <A>i</A> from the position of <A>str</A> in the list
+returned by <F>TypesOfElementsOfIncidenceStructurePlural</F>.
+</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_shadowofflag.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="ElementsIncidentWithElementOfIncidenceStructure" Arg="el, i"/>
+<Returns>the elements of type <A>i</A> incident with <A>el</A>, in other words,
+the type <A>i</A> shadow of the element <A>el</A>
+</Returns>
+<Description>
+Internally, the function <F>FlagOfIncidenceStructure</F> is used to create a flag from <A>list</A>. This function
+also performs the checking.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_elsel.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Heading>Short names for <F>ElementsIncidentWithElementOfIncidenceStructure</F></Heading>
+<Oper Name="Points" Arg="ps, v"/>
+<Oper Name="Lines" Arg="ps, v"/>
+<Oper Name="Planes" Arg="ps, v"/>
+<Oper Name="Solids" Arg="ps, v"/>
+<Oper Name="Hyperplanes" Arg="inc, v"/>
+<Oper Name="Points" Arg="v"/>
+<Oper Name="Lines" Arg="v"/>
+<Oper Name="Planes" Arg="v"/>
+<Oper Name="Solids" Arg="v"/>
+<Oper Name="Hyperplanes" Arg="v"/>
+<Returns>The elements of the incidence geometry of the according type. If <A>ps</A> is not given as an argument, it is deduced from <A>v</A> as its
+ambient geometry.
+</Returns>
+<Description>
+<Example>
+<#Include SYSTEM "../examples/include/projsp_short2.include"> 
+</Example>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="proj_enum">
+<Heading>Enumerating subspaces of a projective space</Heading>
+
+<ManSection>
+<Oper Name="Iterator" Arg="subspaces"/>
+<Returns>an iterator for the collection <A>subspaces</A></Returns>
+<Description>
+We refer to the GAP operation <Ref Oper="Iterator"/> for the definition of an iterator.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_iterator.include"> 
+</Example>
+</Description>
+</ManSection>
+
+
+<ManSection>
+<Oper Name="Enumerator" Arg="subspaces"/>
+<Returns>an enumerator for the collection <A>subspaces</A></Returns>
+<Description>
+For complete collections of subspaces of a given type of a projective space, currently, no non-trivial enumerator is installed, 
+i.e. this operation just returns a list containing all elements of the collection <A>subspaces</A>. Such a list can, of course, 
+be used as an enumerator, but this might be time consuming.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_enumerator.include"> 
+</Example>
+</Description>
+</ManSection>
+
+<ManSection>
+<Oper Name="List" Arg="subspaces"/>
+<Oper Name="AsList" Arg="subspaces"/>
+<Returns>the complete list of elements in the collection <A>subspaces</A></Returns>
+<Description>
+The operation <F>List</F> will return a complete list, the operation <F>AsList</F> will return an <Package>orb</Package> object,
+representing a complete orbit, i.e. representing in this case a complete list. To obtain the elements explicitly, one has
+to issue the <F>List</F> operation with as argument the <Package>orb</Package> object again. Applying <F>List</F> directly
+to a collection of subspaces, refers to the enumerator for the collection, while using <F>AsList</F> uses the <Package>orb</Package>
+to compute all subspaces as an orbit.
+<Example>
+<#Include SYSTEM "../examples/include/projsp_list.include"> 
+</Example>
+</Description>
+</ManSection>
+
+
+</Section>
+</Chapter>

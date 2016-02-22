@@ -1,0 +1,15 @@
+gap> 
+gap> #set theoretic containment.
+gap> p := VectorSpaceToElement(PG(3,3),[1,0,0,0]*Z(3)^0);
+<a point in ProjectiveSpace(3, 3)>
+gap> l := VectorSpaceToElement(PG(3,3),[[1,0,0,0],[0,1,0,0]]*Z(3)^0);
+<a line in ProjectiveSpace(3, 3)>
+gap> p in l;
+true
+gap> p in p;
+true
+gap> l in p;
+false
+gap> l in PG(3,3);
+true
+gap> quit;

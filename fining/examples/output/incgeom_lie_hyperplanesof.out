@@ -1,0 +1,17 @@
+gap> 
+gap> #hyperplanes of an element
+gap> pg := PG(3,7);
+ProjectiveSpace(3, 7)
+gap> hyp := Random(Hyperplanes(pg));
+<a plane in ProjectiveSpace(3, 7)>
+gap> h1 := Random(Hyperplanes(hyp));
+<a line in ProjectiveSpace(3, 7)>
+gap> h2 := Random(Hyperplanes(h1));
+<a point in ProjectiveSpace(3, 7)>
+gap> ps := SymplecticSpace(7,3);
+W(7, 3)
+gap> solid := Random(Solids(ps));
+<a solid in W(7, 3)>
+gap> plane := Random(Hyperplanes(solid));
+<a plane in W(7, 3)>
+gap> quit;

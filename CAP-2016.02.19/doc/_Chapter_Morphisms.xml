@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Morphisms">
+<Heading>Morphisms</Heading>
+
+Any GAP object satisfying <C>IsCapCategoryMorphism</C> can be added to a category
+and then becomes a morphism in this category.
+Any morphism can belong to one or no category.
+After a GAP object is added to the category, it knows which things can be
+computed in its category and to which category it belongs.
+It knows categorical properties and attributes, and the functions for existential quantifiers
+can be applied to the morphism.
+<Section Label="Chapter_Morphisms_Section_Attributes_for_the_Type_of_Morphisms">
+<Heading>Attributes for the Type of Morphisms</Heading>
+
+<ManSection>
+  <Attr Arg="alpha" Name="CapCategory" Label="for IsCapCategoryMorphism"/>
+ <Returns>a category
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math>.
+The output is the category <Math>\mathbf{C}</Math>
+to which <Math>\alpha</Math> was added.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="Source" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is its source <Math>a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="alpha" Name="Range" Label="for IsCapCategoryMorphism"/>
+ <Returns>an object
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is its range <Math>b</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+
+<Section Label="Chapter_Morphisms_Section_Categorical_Properties_of_Morphisms">
+<Heading>Categorical Properties of Morphisms</Heading>
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsMonomorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsMonomorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsMonomorphism}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsEpimorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsEpimorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsEpimorphism}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsIsomorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsIsomorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsIsomorphism}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsSplitMonomorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsSplitMonomorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsSplitMonomorphism}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsSplitEpimorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsSplitEpimorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsSplitEpimorphism}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsOne" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsOne</C>.
+<Math>F: \alpha \mapsto \mathtt{IsOne}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsIdempotent" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsIdempotent</C>.
+<Math>F: \alpha \mapsto \mathtt{IsIdempotent}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Non-Categorical_Properties_of_Morphisms">
+<Heading>Non-Categorical Properties of Morphisms</Heading>
+
+Non-categorical properties are not stable under equivalences of categories.
+<ManSection>
+  <Prop Arg="alpha" Name="IsIdenticalToIdentityMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is <C>true</C> if <Math>\alpha = \mathrm{id}_a</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsIdenticalToIdentityMorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsIdenticalToIdentityMorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsIdenticalToIdentityMorphism}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Prop Arg="alpha" Name="IsIdenticalToZeroMorphism" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is <C>true</C> if <Math>\alpha = 0</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsIdenticalToZeroMorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsIdenticalToZeroMorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsIdenticalToZeroMorphism }(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsEndomorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsEndomorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsEndomorphism}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsAutomorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsAutomorphism</C>.
+<Math>F: \alpha \mapsto \mathtt{IsAutomorphism}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+
+<Section Label="Chapter_Morphisms_Section_Equality_and_Congruence_for_Morphisms">
+<Heading>Equality and Congruence for Morphisms</Heading>
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsCongruentForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha, \beta: a \rightarrow b</Math>.
+The output is <C>true</C> if <Math>\alpha \sim_{a,b} \beta</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsCongruentForMorphisms" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsCongruentForMorphisms</C>.
+<Math>F: (\alpha, \beta) \mapsto \mathtt{IsCongruentForMorphisms}(\alpha, \beta)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsEqualForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha, \beta: a \rightarrow b</Math>.
+The output is <C>true</C> if <Math>\alpha = \beta</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsEqualForMorphisms" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsEqualForMorphisms</C>.
+<Math>F: (\alpha, \beta) \mapsto \mathtt{IsEqualForMorphisms}(\alpha, \beta)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsEqualForMorphismsOnMor" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha: a \rightarrow b, \beta: c \rightarrow d</Math>.
+The output is <C>true</C> if <Math>\alpha = \beta</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsEqualForMorphismsOnMor" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsEqualForMorphismsOnMor</C>.
+<Math>F: (\alpha, \beta) \mapsto \mathtt{IsEqualForMorphismsOnMor}(\alpha, \beta)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Basic_Operations_for_Morphisms_in_Ab-Categories">
+<Heading>Basic Operations for Morphisms in Ab-Categories</Heading>
+
+<ManSection>
+  <Oper Arg="alpha" Name="IsZeroForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is <C>true</C> if <Math>\alpha \sim_{a,b} 0</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsZeroForMorphisms" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsZeroForMorphisms</C>.
+<Math>F: \alpha \mapsto \mathtt{IsZeroForMorphisms}(\alpha)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="AdditionForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha, \beta: a \rightarrow b</Math>.
+The output is the addition <Math>\alpha + \beta</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddAdditionForMorphisms" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>AdditionForMorphisms</C>.
+<Math>F: (\alpha, \beta) \mapsto \alpha + \beta</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha" Name="AdditiveInverseForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha: a \rightarrow b</Math>.
+The output is its additive inverse <Math>-\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddAdditiveInverseForMorphisms" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>AdditiveInverseForMorphisms</C>.
+<Math>F: \alpha \mapsto -\alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="a, b" Name="ZeroMorphism" Label="for IsCapCategoryObject, IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b)</Math>
+</Returns>
+ <Description>
+The arguments are two objects <Math>a</Math> and <Math>b</Math>.
+The output is the zero morphism <Math>0: a \rightarrow b</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddZeroMorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ZeroMorphism</C>.
+<Math>F: (a,b) \mapsto (0: a \rightarrow b)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Subobject_and_Factorobject_Operations">
+<Heading>Subobject and Factorobject Operations</Heading>
+
+Subobjects of an object <Math>c</Math> are monomorphisms
+with range <Math>c</Math> and a special function for comparision.
+Similarly, factorobjects of an object <Math>c</Math> are epimorphisms
+with source <Math>c</Math> and a special function for comparision.
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsEqualAsSubobjects" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The arguments are two subobjects <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>.
+The output is <C>true</C> if there exists an isomorphism <Math>\iota: a \rightarrow b</Math>
+such that <Math>\beta \circ \iota \sim_{a,c} \alpha</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsEqualAsSubobjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsEqualAsSubobjects</C>.
+<Math>F: (\alpha, \beta) \mapsto \mathtt{IsEqualAsSubobjects}(\alpha,\beta)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsEqualAsFactorobjects" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The arguments are two factorobjects <Math>\alpha: c \rightarrow a</Math>, <Math>\beta: c \rightarrow b</Math>.
+The output is <C>true</C> if there exists an isomorphism <Math>\iota: b \rightarrow a</Math>
+such that <Math>\iota \circ \beta \sim_{c,a} \alpha</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsEqualAsFactorobjects" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsEqualAsFactorobjects</C>.
+<Math>F: (\alpha, \beta) \mapsto \mathtt{IsEqualAsFactorobjects}(\alpha,\beta)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsDominating" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+In short: Returns <C>true</C> iff <Math>\alpha</Math> is smaller than <Math>\beta</Math>.
+<Math>\\ </Math>
+Full description: The arguments are two subobjects <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>.
+The output is <C>true</C> if there exists a morphism <Math>\iota: a \rightarrow b</Math>
+such that <Math>\beta \circ \iota \sim_{a,c} \alpha</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsDominating" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsDominating</C>.
+<Math>F: (\alpha, \beta) \mapsto \mathtt{IsDominating}(\alpha,\beta)</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="IsCodominating" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+In short: Returns <C>true</C> iff <Math>\alpha</Math> is smaller than <Math>\beta</Math>.
+<Math>\\ </Math>
+Full description:
+The arguments are two factorobjects <Math>\alpha: c \rightarrow a</Math>, <Math>\beta: c \rightarrow b</Math>.
+The output is <C>true</C> if there exists a morphism <Math>\iota: b \rightarrow a</Math>
+such that <Math>\iota \circ \beta \sim_{c,a} \alpha</Math>,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsCodominating" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsCodominating</C>.
+<Math>F: (\alpha, \beta) \mapsto \mathtt{IsCodominating}(\alpha,\beta)</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Identity_Morphism_and_Composition_of_Morphisms">
+<Heading>Identity Morphism and Composition of Morphisms</Heading>
+
+<ManSection>
+  <Attr Arg="a" Name="IdentityMorphism" Label="for IsCapCategoryObject"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,a)</Math>
+</Returns>
+ <Description>
+The argument is an object <Math>a</Math>.
+The output is its identity morphism <Math>\mathrm{id}_a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIdentityMorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IdentityMorphism</C>.
+<Math>F: a \mapsto \mathrm{id}_a</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="PreCompose" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, c )</Math>
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha: a \rightarrow b</Math>, <Math>\beta: b \rightarrow c</Math>.
+The output is the composition <Math>\beta \circ \alpha: a \rightarrow c</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="PreCompose" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a_1, a_{n+1})</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is a list of morphisms
+<Math>L = ( \alpha_1: a_1 \rightarrow a_2, \alpha_2: a_2 \rightarrow a_3, \dots, \alpha_n: a_n \rightarrow a_{n+1} )</Math>.
+The output is the composition
+<Math>\alpha_{n} \circ ( \alpha_{n-1} \circ ( \dots ( \alpha_2 \circ \alpha_1 ) ) )</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddPreCompose" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>PreCompose</C>.
+<Math>F: (\alpha, \beta) \mapsto \beta \circ \alpha</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="beta, alpha" Name="PostCompose" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}( a, c )</Math>
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\beta: b \rightarrow c</Math>, <Math>\alpha: a \rightarrow b</Math>.
+The output is the composition <Math>\beta \circ \alpha: a \rightarrow c</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="L" Name="PostCompose" Label="for IsList"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a_1, a_{n+1})</Math>
+</Returns>
+ <Description>
+This is a convenience method.
+The argument is a list of morphisms
+<Math>L = ( \alpha_n: a_n \rightarrow a_{n+1}, \alpha_{n-1}: a_{n-1} \rightarrow a_n, \dots, \alpha_1: a_1 \rightarrow a_2 )</Math>.
+The output is the composition
+<Math>((\alpha_{n} \circ \alpha_{n-1}) \circ \dots \alpha_2) \circ \alpha_1</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddPostCompose" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>PostCompose</C>.
+<Math>F: (\alpha, \beta) \mapsto \alpha \circ \beta</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Well-Definedness_of_Morphisms">
+<Heading>Well-Definedness of Morphisms</Heading>
+
+<ManSection>
+  <Oper Arg="alpha" Name="IsWellDefinedForMorphisms" Label="for IsCapCategoryMorphism"/>
+ <Returns>a boolean
+</Returns>
+ <Description>
+The argument is a morphism <Math>\alpha</Math>.
+The output is <C>true</C> if <Math>\alpha</Math> is well-defined,
+otherwise the output is <C>false</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddIsWellDefinedForMorphisms" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>IsWellDefinedForMorphisms</C>.
+<Math>F: \alpha \mapsto \mathtt{IsWellDefinedForMorphisms}( \alpha )</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Basic_Operations_for_Morphisms_in_Abelian_Categories">
+<Heading>Basic Operations for Morphisms in Abelian Categories</Heading>
+
+<ManSection>
+  <Oper Arg="iota, tau" Name="LiftAlongMonomorphism" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(t,k)</Math>
+</Returns>
+ <Description>
+The arguments are a monomorphism <Math>\iota: k \hookrightarrow a</Math>
+and a morphism <Math>\tau: t \rightarrow a</Math>
+such that there is a morphism <Math>u: t \rightarrow k</Math> with
+<Math>\iota \circ u \sim_{t,a} \tau</Math>.
+The output is such a <Math>u</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddLiftAlongMonomorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>LiftAlongMonomorphism</C>.
+The function <Math>F</Math> maps a pair <Math>(\iota, \tau)</Math> to a lift <Math>u</Math> if it
+exists, and to <C>fail</C> otherwise.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="epsilon, tau" Name="ColiftAlongEpimorphism" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(c,t)</Math>
+</Returns>
+ <Description>
+The arguments are an epimorphism <Math>\epsilon: a \rightarrow c</Math>
+and a morphism <Math>\tau: a \rightarrow t</Math>
+such that there is a morphism <Math>u: c \rightarrow t</Math> with
+<Math>u \circ \epsilon \sim_{a,t} \tau</Math>.
+The output is such a <Math>u</Math>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddColiftAlongEpimorphism" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>ColiftAlongEpimorphism</C>.
+The function <Math>F</Math> maps a pair <Math>(\epsilon, \tau)</Math> to a lift <Math>u</Math> if it
+exists, and to <C>fail</C> otherwise.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Lift/_Colift">
+<Heading>Lift/ Colift</Heading>
+
+<List>
+<Item>
+For any pair of morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>,
+we call each morphism <Math>\alpha / \beta: a \rightarrow b</Math> such that
+<Math>\beta \circ (\alpha / \beta) \sim_{a,c} \alpha</Math> a <Emph>lift of <Math>\alpha</Math> along <Math>\beta</Math></Emph>.
+</Item>
+<Item>
+For any pair of morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: a \rightarrow b</Math>,
+we call each morphism <Math>\alpha \backslash \beta: c \rightarrow b</Math> such that
+<Math>(\alpha \backslash \beta) \circ \alpha \sim_{a,b} \beta</Math> a <Emph> colift of <Math>\beta</Math> along <Math>\alpha</Math></Emph>.
+</Item>
+</List>
+Note that such lifts (or colifts) do not have to be unique. So in general,
+we do not expect that algorithms computing lifts (or colifts) do this in a functorial way.
+Thus the operations <Math>\mathtt{Lift}</Math> and <Math>\mathtt{Colift}</Math> are not regarded as
+categorical operations, but only as set-theoretic operations.
+<ManSection>
+  <Oper Arg="alpha, beta" Name="Lift" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(a,b) + \{ \mathtt{fail} \}</Math>
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: b \rightarrow c</Math>
+such that there is a lift <Math>\alpha / \beta: a \rightarrow b</Math> of <Math>\alpha</Math> along <Math>\beta</Math>, i.e.,
+a morphism such that <Math>\beta \circ (\alpha / \beta) \sim_{a,c} \alpha</Math>.
+The output is such a lift or <Math>\mathtt{fail}</Math> if it doesn't exist.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddLift" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>Lift</C>.
+The function <Math>F</Math> maps a pair <Math>(\alpha, \beta)</Math> to a lift <Math>\alpha / \beta</Math> if it
+exists, and to <C>fail</C> otherwise.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="alpha, beta" Name="Colift" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>a morphism in <Math>\mathrm{Hom}(c,b) + \{ \mathtt{fail} \}</Math>
+</Returns>
+ <Description>
+The arguments are two morphisms <Math>\alpha: a \rightarrow c</Math>, <Math>\beta: a \rightarrow b</Math>
+such that there is a colift <Math>\alpha \backslash \beta: c \rightarrow b</Math> of <Math>\beta</Math> along <Math>\alpha</Math>., i.e.,
+a morphism such that <Math>(\alpha \backslash \beta) \circ \alpha \sim_{a,b} \beta</Math>.
+The output is such a colift or <Math>\mathtt{fail}</Math> if it doesn't exist.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, F" Name="AddColift" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>Colift</C>.
+The function <Math>F</Math> maps a pair <Math>(\alpha, \beta)</Math> to a colift <Math>\alpha \backslash \beta</Math> if it
+exists, and to <C>fail</C> otherwise.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Inverses">
+<Heading>Inverses</Heading>
+
+Let <Math>\alpha: a \rightarrow b</Math> be a morphism. An inverse of <Math>\alpha</Math>
+is a morphism <Math>\alpha^{-1}: b \rightarrow a</Math> such that
+<Math>\alpha \circ \alpha^{-1} \sim_{b,b} \mathrm{id}_b</Math>
+and <Math>\alpha^{-1} \circ \alpha \sim_{a,a} \mathrm{id}_a</Math>.
+<ManSection>
+  <Oper Arg="C, F" Name="AddInverse" Label="for IsCapCategory, IsFunction"/>
+ <Returns>nothing
+</Returns>
+ <Description>
+The arguments are a category <Math>C</Math> and a function <Math>F</Math>.
+This operations adds the given function <Math>F</Math>
+to the category for the basic operation <C>Inverse</C>.
+<Math>F: \alpha \mapsto \alpha^{-1}</Math>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Morphisms_Section_Tool_functions_for_caches">
+<Heading>Tool functions for caches</Heading>
+
+<ManSection>
+  <Oper Arg="phi, psi" Name="IsEqualForCacheForMorphisms" Label="for IsCapCategoryMorphism, IsCapCategoryMorphism"/>
+ <Returns>true or false
+</Returns>
+ <Description>
+Compares two objects in the cache
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="c,F" Name="AddIsEqualForCacheForMorphisms" Label="for IsCapCategory, IsFunction"/>
+ <Returns>northing
+</Returns>
+ <Description>
+By default, CAP uses caches to store the values of Categorical operations.
+To get a value out of the cache, one needs to compare the input of a basic operation
+with its previous input. To compare morphisms in the category, IsEqualForCacheForMorphism is
+used. By default this is an alias for IsEqualForMorphismsOnMor, where fail is substituted by false.
+If you add a function, this function
+used instead. A function <Math>F: a,b \mapsto bool</Math> is expected here. The output has to be
+true or false. Fail is not allowed in this context.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+
+</Chapter>
+

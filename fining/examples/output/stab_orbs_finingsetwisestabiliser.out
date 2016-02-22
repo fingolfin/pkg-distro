@@ -1,0 +1,14 @@
+gap> 
+gap> #finingsetwisestabiliser
+gap> ps := HyperbolicQuadric(5,5);                   
+Q+(5, 5)
+gap> g := IsometryGroup(ps);
+PGO(1,6,5)
+gap> plane1 := Random(Planes(ps));
+<a plane in Q+(5, 5)>
+gap> plane2 := Random(Planes(ps));
+<a plane in Q+(5, 5)>
+gap> FiningSetwiseStabiliser(g,Set([plane1,plane2]));
+#I  Computing adjusted stabilizer chain...
+<projective collineation group with 4 generators>
+gap> quit;

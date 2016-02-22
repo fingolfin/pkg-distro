@@ -1,0 +1,15 @@
+gap> 
+gap> # behaviour 1
+gap> g := CollineationGroup(PG(5,9));
+The FinInG collineation group PGammaL(6,9)
+gap> time;
+28
+gap> HasNiceMonomorphism(g);
+false
+gap> h := CollineationGroup(EllipticQuadric(5,9));
+PGammaO-(6,9)
+gap> time;
+1584
+gap> HasNiceMonomorphism(h);
+true
+gap> quit;

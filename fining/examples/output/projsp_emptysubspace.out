@@ -1,0 +1,17 @@
+gap> 
+gap> #the empty subspace
+gap> e := EmptySubspace(PG(5,9));
+< empty subspace >
+gap> p := VectorSpaceToElement(PG(5,9),[1,0,0,0,0,0]*Z(9)^0);
+<a point in ProjectiveSpace(5, 9)>
+gap> e*p;
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `*' on 2 arguments called from
+<function "HANDLE_METHOD_NOT_FOUND">( <arguments> )
+ called from read-eval loop at line 10 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> quit;
+gap> e in p;
+true
+gap> quit;

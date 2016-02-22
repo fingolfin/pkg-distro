@@ -1,0 +1,49 @@
+gap> 
+gap> #subspaces of projective spaces (elementary example)
+gap> pg := PG(3,8);
+ProjectiveSpace(3, 8)
+gap> vec := [0,1,0,1]*Z(8)^0;
+[ 0*Z(2), Z(2)^0, 0*Z(2), Z(2)^0 ]
+gap> point := VectorSpaceToElement(pg,vec);
+<a point in ProjectiveSpace(3, 8)>
+gap> mat := [[0,0,1,1],[0,1,0,0]]*Z(8)^0;
+[ [ 0*Z(2), 0*Z(2), Z(2)^0, Z(2)^0 ], [ 0*Z(2), Z(2)^0, 0*Z(2), 0*Z(2) ] ]
+gap> line := VectorSpaceToElement(pg,mat);
+<a line in ProjectiveSpace(3, 8)>
+gap> mat2 := [[1,0,0,1],[1,0,1,0],[1,1,0,0]]*Z(8)^0;
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), Z(2)^0 ], [ Z(2)^0, 0*Z(2), Z(2)^0, 0*Z(2) ], 
+  [ Z(2)^0, Z(2)^0, 0*Z(2), 0*Z(2) ] ]
+gap> plane := VectorSpaceToElement(pg,mat2);
+<a plane in ProjectiveSpace(3, 8)>
+gap> IsIncident(point,line);
+false
+gap> IsIncident(line,point);
+false
+gap> point * line;
+false
+gap> line * point
+> point in line;
+Syntax error: ; expected
+point in line;
+    ^
+gap> line in point;
+false
+gap> IsIncident(point,plane);
+true
+gap> IsIncident(line,plane);
+false
+gap> line in plane;
+false
+gap> plane2 := Span(point,line);
+<a plane in ProjectiveSpace(3, 8)>
+gap> Meet(plane,plane2);
+<a line in ProjectiveSpace(3, 8)>
+gap> mat3 := [[1,0,0,0],[0,0,0,1]]*Z(8)^0;
+[ [ Z(2)^0, 0*Z(2), 0*Z(2), 0*Z(2) ], [ 0*Z(2), 0*Z(2), 0*Z(2), Z(2)^0 ] ]
+gap> line2 := VectorSpaceToElement(pg,mat3);
+<a line in ProjectiveSpace(3, 8)>
+gap> Meet(line,line2);
+< empty subspace >
+gap> Span(plane,plane2);
+ProjectiveSpace(3, 8)
+gap> quit;

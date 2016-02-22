@@ -1,0 +1,9 @@
+gap> 
+gap> #nr of elements of inc structures
+gap> ps:=ProjectiveSpace(4,3);
+ProjectiveSpace(4, 3)
+gap> NrElementsOfIncidenceStructure(ps, 2);
+1210
+gap> NrElementsOfIncidenceStructure(ps, "points");
+121
+gap> quit;

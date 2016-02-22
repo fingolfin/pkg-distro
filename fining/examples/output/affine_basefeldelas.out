@@ -1,0 +1,24 @@
+gap> 
+gap> #basefield of an element of an affine space
+gap> as := AG(5,11);
+AG(5, 11)
+gap> sub := AffineSubspace(as,[1,4,3,1,0]*Z(11)^5,[[1,0,0,0,0],[0,1,1,1,0],
+> [0,0,0,0,1]]*Z(7)^0);
+Error, usage: Submodule( <M>, <gens> [, "basis"] ) called from
+Subspace( space, subspace ) called from
+VectorSpaceTransversalElement( geom!.vectorspace, x, v ) called from
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop ...
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> Basefield(sub);
+Syntax error: warning: unbound global variable in *errin* line 1
+Basefield(sub);
+         ^
+Variable: 'Basefield' must have a value
+
+Syntax error: warning: unbound global variable in *errin* line 1
+Basefield(sub);
+             ^
+brk> quit;
+gap> 

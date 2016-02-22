@@ -350,23 +350,23 @@
 ## gap&gt; c := SCSeriesHomologySphere(2,3,5);;
 ## gap&gt; SCHomologyEx(c,SCMorseRandom,SmithNormalFormIntegerMat); time;
 ## [ [ 0, [  ] ], [ 0, [  ] ], [ 0, [  ] ], [ 1, [  ] ] ]
-## 44
+## 60
 ## gap&gt; c := SCSeriesHomologySphere(2,3,5);;
 ## gap&gt; SCHomologyEx(c,SCMorseRandomLex,SmithNormalFormIntegerMat); time;
 ## [ [ 0, [  ] ], [ 0, [  ] ], [ 0, [  ] ], [ 1, [  ] ] ]
-## 76
+## 56
 ## gap&gt; c := SCSeriesHomologySphere(2,3,5);;
 ## gap&gt; SCHomologyEx(c,SCMorseRandomRevLex,SmithNormalFormIntegerMat); time;
 ## [ [ 0, [  ] ], [ 0, [  ] ], [ 0, [  ] ], [ 1, [  ] ] ]
-## 60
+## 56
 ## gap&gt; c := SCSeriesHomologySphere(2,3,5);;
 ## gap&gt; SCHomologyEx(c,SCMorseEngstroem,SmithNormalFormIntegerMat); time;
 ## [ [ 0, [  ] ], [ 0, [  ] ], [ 0, [  ] ], [ 1, [  ] ] ]
-## 132
+## 100
 ## gap&gt; c := SCSeriesHomologySphere(2,3,5);;
 ## gap&gt; SCHomologyEx(c,SCMorseUST,SmithNormalFormIntegerMat); time;
 ## [ [ 0, [  ] ], [ 0, [  ] ], [ 0, [  ] ], [ 1, [  ] ] ]
-## 160
+## 136
 ## </Example>
 ## </Description>
 ## </ManSection>

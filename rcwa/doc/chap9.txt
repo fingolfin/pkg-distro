@@ -4,7 +4,7 @@
   
   [1X9.1 [33X[0;0YRequirements[133X[101X
   
-  [33X[0;0YThis   version   of   [5XRCWA[105X   needs  at  least  [5XGAP[105X 4.7.0,  [5XResClasses[105X 3.4.0,
+  [33X[0;0YThis   version   of   [5XRCWA[105X   needs  at  least  [5XGAP[105X 4.8.1,  [5XResClasses[105X 4.0.0,
   [5XGRAPE[105X 4.3 [Soi06],   [5XPolycyclic[105X 2.6 [EN09]   and   [5XGAPDoc[105X 1.4 [LN11].   With
   possible  exception  of  the  most  recent version of [5XResClasses[105X, all needed
   packages are already present in an up-to-date standard [5XGAP[105X installation. The
@@ -93,32 +93,14 @@
   convenience: [10XRCWAInfo([110X[3Xn[103X[10X)[110X is a shorthand for [10XSetInfoLevel(InfoRCWA[110X,[3Xn[103X[10X)[110X.[133X
   
   
-  [1X9.6 [33X[0;0YRunning demonstrations[133X[101X
-  
-  [33X[0;0Y[5XRCWA[105X  provides  a  routine  to run demonstrations of its functionality or of
-  other features of [5XGAP[105X. It is intended for being used in talks.[133X
-  
-  [1X9.6-1 RunDemonstration[101X
-  
-  [29X[2XRunDemonstration[102X( [3Xfilename[103X ) [32X function
-  [6XReturns:[106X  [33X[0;10Ynothing.[133X
-  
-  [33X[0;0YThis  function  executes the commands in the file named [3Xfilename[103X. It shows a
-  command  and the corresponding output, waits for a keystroke, shows the next
-  command and the corresponding output, waits again for a keystroke, and so on
-  until  the  end of the file. The demonstration can be stopped by pressing [10Xq[110X.
-  The  function  is  adapted  from  the  function  [10XDemonstration[110X  in  the file
-  [11Xlib/demo.g[111X of the main [5XGAP[105X distribution.[133X
-  
-  
-  [1X9.7 [33X[0;0YUtility functions for bitmap pictures[133X[101X
+  [1X9.6 [33X[0;0YUtility functions for bitmap pictures[133X[101X
   
   [33X[0;0Y[5XRCWA[105X  provides  functions to create bitmap picture files from suitable pixel
   matrices  and  vice  versa.  The author has successfully tested this feature
   both  under  Linux  and  under  Windows,  and  the  produced pictures can be
   processed further with many common graphics programs:[133X
   
-  [1X9.7-1 SaveAsBitmapPicture[101X
+  [1X9.6-1 SaveAsBitmapPicture[101X
   
   [29X[2XSaveAsBitmapPicture[102X( [3Xpicture[103X, [3Xfilename[103X ) [32X function
   [6XReturns:[106X  [33X[0;10Ynothing.[133X
@@ -144,39 +126,12 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0Y[5XRCWA[105X also provides functions for steganography in bitmap pictures:[133X
   
-  [1X9.7-2 EncryptIntoBitmapPicture[101X
-  
-  [29X[2XEncryptIntoBitmapPicture[102X( [3Xpicturefile[103X, [3Xcleartextfile[103X, [3Xpassphrase[103X ) [32X function
-  [29X[2XDecryptFromBitmapPicture[102X( [3Xpicturefile[103X, [3Xcleartextfile[103X, [3Xpassphrase[103X ) [32X function
-  [6XReturns:[106X  [33X[0;10Ynothing.[133X
-  
-  [33X[0;0YThe first function encrypts the contents of the textfile named [3Xcleartextfile[103X
-  into  the  image  from  the  file  named  [3Xpicturefile[103X,  using the passphrase
-  [3Xpassphrase[103X.  The  modified  image is written to a file whose name is derived
-  from [3Xpicturefile[103X by appending the string [10X-out[110X.[133X
-  
-  [33X[0;0YThe second function decrypts an encoded text from the file named [3Xpicturefile[103X
-  using the passphrase [3Xpassphrase[103X, and writes the obtained cleartext to a file
-  named [3Xcleartextfile[103X.[133X
-  
-  [33X[0;0YThese steganographic utility functions are designed for security rather than
-  speed,  and  are  intended to be used for texts of the order of magnitude of
-  what  one  would normally write into the body of an e-mail -- encoding about
-  100kb  into  a  picture  of usual size should be still convenient, while the
-  functions  are  definitely  not  suitable for encoding entire backups or the
-  like.[133X
-  
-  [33X[0;0Y[10XInfo[110X  messages  on  the progress of the encryption / decryption are given at
-  [10XInfoLevel[110X 2 of [10XInfoRCWA[110X.[133X
-  
-  
-  [1X9.8 [33X[0;0YConverting GAP logfiles to HTML[133X[101X
+  [1X9.7 [33X[0;0YConverting GAP logfiles to HTML[133X[101X
   
   [33X[0;0Y[5XRCWA[105X provides a routine to convert [5XGAP[105X logfiles to HTML.[133X
   
-  [1X9.8-1 Log2HTML[101X
+  [1X9.7-1 Log2HTML[101X
   
   [29X[2XLog2HTML[102X( [3Xlogfilename[103X ) [32X function
   [6XReturns:[106X  [33X[0;10Ynothing.[133X
@@ -188,7 +143,7 @@
   your taste.[133X
   
   
-  [1X9.9 [33X[0;0YSome general utility functions[133X[101X
+  [1X9.8 [33X[0;0YSome general utility functions[133X[101X
   
   [33X[0;0Y[5XRCWA[105X  provides  a  couple  of small utility functions which can be used in a
   more general context. They are described in this section.[133X
@@ -197,15 +152,8 @@
   [10XGeneratorsAndInverses([3XG[103X[10X)[110X  which  returns a list of generators of [3XG[103X and their
   inverses, the function [10XEpimorphismByGenerators([3XG[103X[10X,[3XH[103X[10X)[110X which is a shorthand for
   [10XGroupHomomorphismByImages([3XG[103X[10X,[3XH[103X[10X,    GeneratorsOfGroup([3XG[103X[10X),GeneratorsOfGroup([3XH[103X[10X))[110X
-  (there  is  also  an  [10XNC[110X  version of this), the function [10XListOfPowers([3Xg[103X[10X,[3Xexp[103X[10X)[110X
-  which  returns  the  list [10X[[3Xg[103X[10X,[3Xg[103X[10X^2,...,[3Xg[103X[10X^[3Xexp[103X[10X][110X of powers of [3Xg[103X, and the function
-  [10XAllProducts([3Xl[103X[10X,[3Xk[103X[10X)[110X  which returns the list of all products of [3Xk[103X entries of the
-  list [3Xl[103X.[133X
-  
-  [33X[0;0YThe utility functions for lists are [10XDifferencesList([3Xl[103X[10X)[110X and [10XQuotientsList([3Xl[103X[10X)[110X,
-  which  return  the list of differences respectively quotients of consecutive
-  entries of the list [3Xl[103X, and the function [10XFloatQuotientsList([3Xl[103X[10X)[110X, which returns
-  the list of floating point approximations of the latter.[133X
+  (there  is also an [10XNC[110X version of this), and the function [10XListOfPowers([3Xg[103X[10X,[3Xexp[103X[10X)[110X
+  which returns the list [10X[[3Xg[103X[10X,[3Xg[103X[10X^2,...,[3Xg[103X[10X^[3Xexp[103X[10X][110X of powers of [3Xg[103X.[133X
   
   [33X[0;0YThere  are  methods [10XEquivalenceClasses([3Xl[103X[10X,[3Xinv[103X[10X)[110X and [10XEquivalenceClasses([3Xl[103X[10X,[3Xrel[103X[10X)[110X,
   which  decompose  a  list [3Xl[103X  into  equivalence  classes under an equivalence
@@ -215,14 +163,28 @@
   depending  on  whether the arguments belong to the same equivalence class or
   not.[133X
   
+  [33X[0;0YThere  is  a  function [10XGraphClasses([3Xn[103X[10X)[110X, which computes a list of isomorphism
+  classes  of  graphs with vertices [22X1, 2, dots, n[122X, and a function [10XAllGraphs([3Xn[103X[10X)[110X
+  which  computes  a  list of representatives of these classes. The graphs are
+  represented as lists of edges, where each edge is a list of the two vertices
+  it connects, and they are ordered by ascending number of edges. The function
+  [10XIdGraph([3Xgraph[103X[10X,[3Xclasses[103X[10X)[110X returns the index [10Xi[110X such that [3Xgraph[103X lies [3Xclasses[103X[10X[i][110X.[133X
+  
   [33X[0;0YYet another utility function is [10XAssignGlobals([3Xrec[103X[10X)[110X which takes as argument a
   record  [3Xrec[103X and assigns its components to global variables of the same (i.e.
   the component's) names.[133X
   
-  [33X[0;0YFinally,  the  function  [10XAllSmoothIntegers([3Xmaxp[103X[10X,[3Xmaxn[103X[10X)[110X  returns a list of all
-  integers  less  than  or  equal  to  [3Xmaxn[103X  which  do not have prime divisors
-  exceeding  [3Xmaxp[103X,  the  function [10XExponentOfPrime([3Xn[103X[10X,[3Xp[103X[10X)[110X returns the exponent of
-  the   prime   [3Xp[103X   in   the  prime  factorization  of  [3Xn[103X,  and  the  function
-  [10XLaTeXStringFactorsInt([3Xn[103X[10X)[110X  returns the prime factorization of an integer [3Xn[103X as
-  a string in LaTeX format.[133X
+  [33X[0;0YThe  function  [10XNextProbablyPrimeInt([3Xn[103X[10X)[110X  returns the smallest integer passing
+  [10XIsProbablyPrimeInt[110X  larger  than  [3Xn[103X.  The  function  [10XPrimeNumbersIterator( )[110X
+  returns an iterator which runs over the prime numbers in ascending order; it
+  takes  an  optional  argument  [3Xchunksize[103X  which  specifies the length of the
+  interval  which is sieved in one go (the default is 10000000), and which can
+  be  used  to  balance  runtime  vs.  memory  consumption. It is assumed that
+  [3Xchunksize[103X  is  larger than any gap between two consecutive primes within the
+  range    one    intends   to   run   the   iterator   over.   The   function
+  [10XAllSmoothIntegers([3Xmaxp[103X[10X,[3Xmaxn[103X[10X)[110X  returns  a  list  of all integers less than or
+  equal  to [3Xmaxn[103X which do not have prime divisors exceeding [3Xmaxp[103X, the function
+  [10XExponentOfPrime([3Xn[103X[10X,[3Xp[103X[10X)[110X  returns  the  exponent  of  the  prime  [3Xp[103X in the prime
+  factorization  of  [3Xn[103X,  and the function [10XLaTeXStringFactorsInt([3Xn[103X[10X)[110X returns the
+  prime factorization of an integer [3Xn[103X as a string in LaTeX format.[133X
   

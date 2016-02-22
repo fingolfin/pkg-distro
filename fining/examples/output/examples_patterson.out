@@ -1,0 +1,39 @@
+gap> 
+gap> #Patterson ovoid
+gap> id := IdentityMat(7, GF(3));;
+gap> form := QuadraticFormByMatrix(id, GF(3));
+< quadratic form >
+gap> ps := PolarSpace( form );
+<polar space in ProjectiveSpace(
+6,GF(3)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2=0 >
+gap> #The construction of the ovoid (a la Shult):
+gap> psl32 := PSL(3,2);
+Group([ (4,6)(5,7), (1,2,4)(3,6,5) ])
+gap> reps:=[[1,1,1,0,0,0,0], [-1,1,1,0,0,0,0],
+> [1,-1,1,0,0,0,0], [1,1,-1,0,0,0,0]]*Z(3)^0;
+[ [ Z(3)^0, Z(3)^0, Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], 
+  [ Z(3), Z(3)^0, Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], 
+  [ Z(3)^0, Z(3), Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], 
+  [ Z(3)^0, Z(3)^0, Z(3), 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ] ]
+gap> ovoid := Union( List(reps, x-> Orbit(psl32, x, Permuted)) );;
+gap> ovoid := List(ovoid, x -> VectorSpaceToElement(ps, x));;
+gap> #We check that this is indeed an ovoid...
+gap> planes := AsList(Planes( ps ));;
+#I  Computing collineation group of canonical polar space...
+gap> ForAll(planes, p -> Number(ovoid, x -> x * p) = 1);
+true
+gap> #The stabiliser is interesting since it yields the embedding of Sp(6,2) in PO(7,3). To efficiently compute the set-wise stabiliser, we refer to the induced permutation representation.
+gap> g := IsometryGroup( ps );
+<projective collineation group of size 9170703360 with 2 generators>
+gap> stabovoid := FiningSetwiseStabiliser(g, ovoid);
+#I  Computing adjusted stabilizer chain...
+<projective collineation group with 13 generators>
+gap> DisplayCompositionSeries(stabovoid);
+G (size 1451520)
+ | B(3,2) = O(7,2) ~ C(3,2) = S(6,2)
+1 (size 1)
+gap> OrbitLengths(stabovoid, ovoid);
+[ 28 ]
+gap> IsTransitive(stabovoid, ovoid);
+true
+gap> quit;

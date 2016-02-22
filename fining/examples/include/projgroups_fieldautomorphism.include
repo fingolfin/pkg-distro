@@ -1,0 +1,5 @@
+gap&gt; g:=CollineationGroup( ProjectiveSpace(3,9));
+The FinInG collineation group PGammaL(4,9)
+gap&gt; x:=Random(g);;
+gap&gt; FieldAutomorphism(x);
+IdentityMapping( GF(3^2) )

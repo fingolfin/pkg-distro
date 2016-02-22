@@ -1,0 +1,13 @@
+gap> 
+gap> #a flag of some incidence structure
+gap> ps := PG(3,7);
+ProjectiveSpace(3, 7)
+gap> point := VectorSpaceToElement(ps,[1,2,0,0]*Z(7)^0);
+<a point in ProjectiveSpace(3, 7)>
+gap> line := VectorSpaceToElement(ps,[[1,0,0,0],[0,1,0,0]]*Z(7)^0);
+<a line in ProjectiveSpace(3, 7)>
+gap> plane := VectorSpaceToElement(ps,[[1,0,0,0],[0,1,0,0],[0,0,0,1]]*Z(7)^0);
+<a plane in ProjectiveSpace(3, 7)>
+gap> flag := FlagOfIncidenceStructure(ps,[point,line,plane]);
+<a flag of ProjectiveSpace(3, 7)>
+gap> quit;

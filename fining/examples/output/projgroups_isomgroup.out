@@ -1,0 +1,8 @@
+gap> 
+gap> #isometry group of a polar space
+gap> w := SymplecticSpace(3,8);
+W(3, 8)
+gap> IsometryGroup(w);
+#I  Computing nice monomorphism...
+PSp(4,8)
+gap> quit;

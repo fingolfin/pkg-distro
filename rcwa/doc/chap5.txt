@@ -462,7 +462,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe  function  [2XDrawOrbitPicture[102X  ([14X3.3-2[114X)  can  also be used to depict orbits
+  [33X[0;0YThe  function  [2XDrawOrbitPicture[102X  ([14X3.3-3[114X)  can  also be used to depict orbits
   under  the action of rcwa groups over [22Xℤ^2[122X. Further there is a function which
   depicts residue class unions of [22Xℤ^2[122X and partitions of [22Xℤ^2[122X into such:[133X
   

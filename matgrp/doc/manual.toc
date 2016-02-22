@@ -1,0 +1,5 @@
+\chapcontents {1}{matgrp}{3}
+\seccontents {1.1}{Usage} {3}
+\seccontents {1.2}{Generic Treatment of Matrix groups} {4}
+\seccontents {1.3}{Error Messages} {4}
+\chapcontents {}{Bibliography}{6}

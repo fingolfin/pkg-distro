@@ -67,8 +67,7 @@
 ## gap&gt; SCMailIsEnabled();
 ## true
 ## gap&gt; SCMailSend("Hello, this is simpcomp.");
-## mail: cannot send message: Process exited with a non-zero status
-## false
+## true
 ## </Example>
 ## </Description>
 ## </ManSection>
@@ -84,8 +83,7 @@
 ## Tries to send a pending email of the <Package>simpcomp</Package> email notification system. Returns <K>true</K> on success or if there was no mail pending.
 ## <Example>
 ## gap&gt; SCMailSendPending();
-## mail: cannot send message: Process exited with a non-zero status
-## false
+## true
 ## </Example>
 ## </Description>
 ## </ManSection>
@@ -150,7 +148,7 @@
 ## Line 1220 : 
 ## + simpcomp package test
 ## Line 1221 : 
-## + GAP4stones: 65445
+## + GAP4stones: 67385
 ## true
 ## </Example>
 ## </Description>

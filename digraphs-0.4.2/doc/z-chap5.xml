@@ -1,0 +1,30 @@
+<Chapter Label="Properties of digraphs"><Heading>Properties of digraphs</Heading>
+  
+  <Section><Heading>Edge properties</Heading>
+    <#Include Label="DigraphHasLoops">
+    <#Include Label="IsAntisymmetricDigraph">
+    <#Include Label="IsBipartiteDigraph">
+    <#Include Label="IsCompleteDigraph">
+    <#Include Label="IsEmptyDigraph">
+    <#Include Label="IsFunctionalDigraph">
+    <#Include Label="IsMultiDigraph">
+    <#Include Label="IsReflexiveDigraph">
+    <#Include Label="IsSymmetricDigraph">
+    <#Include Label="IsTournament">
+    <#Include Label="IsTransitiveDigraph">
+  </Section>
+
+  <Section><Heading>Regularity</Heading>
+    <#Include Label="IsInRegularDigraph">
+    <#Include Label="IsOutRegularDigraph">
+    <#Include Label="IsRegularDigraph">
+    <#Include Label="IsDistanceRegularDigraph">
+  </Section>
+  
+  <Section><Heading>Connectivity and cycles</Heading>
+    <#Include Label="IsAcyclicDigraph">
+    <#Include Label="IsConnectedDigraph">
+    <#Include Label="IsStronglyConnectedDigraph">
+    <#Include Label="IsAperiodicDigraph">
+  </Section>
+</Chapter>

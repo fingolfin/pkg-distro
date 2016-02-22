@@ -1,0 +1,47 @@
+This file describes changes in the recog package.
+
+1.2.4 (2016-01-07)
+  - Fix bugs with handling of scalars in projective matrix groups (see issues #2 and #4)
+  - Fix misdetection of SL(2,q), odd q (see issue #3)
+  - Fix bug leading to "Error: Group() called with empty list of generators" (see issue #5)
+  - Workaround for problem with L2(31) (see issue #6)
+  - Fix endless loop when recognizing GL(2,q) with q <= 32 (see issue #9)
+  - Detect if DoHintedLowIndex runs into an infinite loop
+  - Add various source code comments
+  - Move FindKernelLowerLeftPGroup from recogbase to recog
+  - Move website to http://gap-packages.github.io/recog/
+  - Update documentation
+  - Splits some large source files into multiple
+  - Remove lots of unused code and files
+  - Remove GAP 4.4 compatibility code
+
+1.2.3 (2014-09-24)
+  - Update Max Neunhoeffer's contact data
+  - Use AutoDoc to generate title page of the manual from PackageInfo.g
+  - Remove Akos' contact data
+  - Add Max Horn as a maintainer
+
+1.2.2 (2014-04-04)
+  - Previous release had an invalid release date in
+    PackageInfo.g (2014-04-31 instead of 2014-03-31).
+  - Merge HISTORY and CHANGES files.
+
+1.2.1 (2014-03-31)
+  - Move package repository and website to GitHub
+
+1.2 (2012-05-28)
+  - ???
+
+1.1 (2011-07-29)
+  - Fixed some bugs in nonconstructive classical natural recognition.
+  - Added method for known stabilizer chain.
+  - Adapt to forms package.
+  - Fixed global namespace polution.
+  - Fixed too lazy generation of kernel.
+  - New SL_n natural rep method.
+  - Note IsSimpleGroup and IsAlmostSimpleGroup whenever known.
+  - Guarantee that StabilizerChain leaf method has a faithful
+    action on the first orbit.
+
+1.0 (2009-11-05)
+  - Initial release

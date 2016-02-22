@@ -24,6 +24,15 @@ InstallMethod( EXT_CREATE_CONE_BY_RAYS,
 );
 
 ##
+InstallMethod( EXT_CREATE_CONE_BY_RAYS_UNSAVE,
+               "Create Cone in Polymake",
+               [ IsList ],
+               
+    POLYMAKE_CREATE_CONE_BY_RAYS_UNSAVE
+    
+);
+
+##
 InstallMethod( EXT_CREATE_CONE_BY_INEQUALITIES,
                "create cone in polymake",
                [ IsList ],
@@ -500,10 +509,37 @@ InstallMethod( EXT_INTERSECTION_OF_CONES,
 );
 
 ##
+InstallMethod( EXT_INTERSECTION_OF_POLYTOPES,
+               "for polymake cones",
+        [ IsExternalPolymakePolytope, IsExternalPolymakePolytope ], 
+        
+  POLYMAKE_INTERSECTION_OF_POLYTOPES
+  
+);
+
+##
 InstallMethod( EXT_EQUALITIES_OF_POLYTOPE,
                "for polymake polytopes",
                [ IsExternalPolymakePolytope ],
                
   POLYMAKE_EQUALITIES_OF_POLYTOPE
+  
+);
+
+##
+InstallMethod( EXT_LATTICE_POINTS_GENERATORS,
+               "for polymake polytopes",
+               [ IsExternalPolymakePolytope ],
+               
+  POLYMAKE_LATTICE_POINTS_GENERATORS
+  
+);
+
+##
+InstallMethod( EXT_F_VECTOR,
+               "for polymake fans",
+               [ IsExternalPolymakeFan ],
+               
+  POLYMAKE_F_VECTOR_OF_FAN
   
 );

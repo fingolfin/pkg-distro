@@ -1,0 +1,26 @@
+gap> 
+gap> # Example for hermitian varieties
+gap> F:=GF(25);
+GF(5^2)
+gap> r:=PolynomialRing(F,3);
+GF(5^2)[x_1,x_2,x_3]
+gap> x:=IndeterminatesOfPolynomialRing(r);
+[ x_1, x_2, x_3 ]
+gap> pg:=PG(2,F);
+ProjectiveSpace(2, 25)
+gap> f:=x[1]^6+x[2]^6+x[3]^6;
+x_1^6+x_2^6+x_3^6
+gap> hv:=HermitianVariety(pg,f);
+Hermitian Variety in ProjectiveSpace(2, 25)
+gap> AsSet(List(Lines(pg),l->Size(Filtered(Points(l),x->x in hv))));
+[ 1, 6 ]
+gap> hv:=HermitianVariety(5,4);
+Hermitian Variety in ProjectiveSpace(5, 4)
+gap> hps:=PolarSpace(hv);
+<polar space in ProjectiveSpace(
+5,GF(2^2)): x_1^3+x_2^3+x_3^3+x_4^3+x_5^3+x_6^3=0 >
+gap> hf:=SesquilinearForm(hv);
+< hermitian form >
+gap> PolynomialOfForm(hf);
+x_1^3+x_2^3+x_3^3+x_4^3+x_5^3+x_6^3
+gap> quit;

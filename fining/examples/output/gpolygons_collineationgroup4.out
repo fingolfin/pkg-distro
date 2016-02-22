@@ -1,0 +1,27 @@
+gap> 
+gap> #collineation group of classical hexagon
+gap> mat := IdentityMat(7,GF(9));
+< mutable compressed matrix 7x7 over GF(9) >
+gap> form := BilinearFormByMatrix(mat,GF(9));
+< bilinear form >
+gap> ps := PolarSpace(form);
+<polar space in ProjectiveSpace(
+6,GF(3^2)): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2=0 >
+gap> gh := SplitCayleyHexagon(ps);
+H(9) in Q(6, 9): x_1^2+x_2^2+x_3^2+x_4^2+x_5^2+x_6^2+x_7^2
+gap> group := CollineationGroup(gh);
+#I  for Split Cayley Hexagon
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+<projective collineation group with 18 generators>
+gap> time;
+19602
+gap> HasNiceMonomorphism(group);
+true
+gap> gh := TwistedTrialityHexagon(2^3);
+T(8, 2)
+gap> group := CollineationGroup(gh);
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+3D_4(8)
+gap> quit;

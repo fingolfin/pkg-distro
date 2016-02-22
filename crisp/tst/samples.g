@@ -1,9 +1,8 @@
 ############################################################################
 ##
-##  samples.g                       CRISP                 Burkhard H\"ofling
+##  samples.g                         CRISP                 Burkhard Höfling
 ##
-##  Copyright (C) 2000 by Burkhard H\"ofling, Mathematisches Institut,
-##  Friedrich Schiller-Universit\"at Jena, Germany
+##  Copyright (C) 2000 Burkhard Höfling
 ##
 groups:= [
     function (  )
@@ -105,7 +104,7 @@ classes := function ()
     C := OrdinaryFormation (rec (
         res := function (G)
             local pi;
-            pi := Difference (Set (Factors (Size (G))), [1,2,5]);
+            pi := Difference (PrimeDivisors (Size (G)), [2,5]);
             return NormalClosure (G, HallSubgroup (G, pi));
         end));
     SetName (C, "[2,5]-grps by res");

@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Managing_Derived_Methods">
+<Heading>Managing Derived Methods</Heading>
+
+<Section Label="Chapter_Managing_Derived_Methods_Section_Info_Class">
+<Heading>Info Class</Heading>
+
+<ManSection>
+  <InfoClass Name="DerivationInfo" />
+ <Description>
+Info class for derivations.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="ActivateDerivationInfo" />
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="DeactivateDerivationInfo" />
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Managing_Derived_Methods_Section_Derivation_Objects">
+<Heading>Derivation Objects</Heading>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDerivedMethod" Label="for IsObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+A derivation object describes a derived method.
+It contains information about which operation the derived method
+implements, and which other operations it relies on.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="name, target_op, used_ops_with_multiples, weight, implementations_with_extra_filters, category_filter" Name="MakeDerivation" Label="for IsString, IsFunction, IsDenseList,IsPosInt, IsDenseList, IsFunction"/>
+ <Returns></Returns>
+ <Description>
+Creates a new derivation object.
+The argument <A>name</A> is an arbitrary name used to
+identify this derivation, and is useful only for debugging
+purposes.
+The argument <A>target_op</A> is the operation which
+the derived method implements.
+The argument <A>used_ops_with_multiples</A> contains each
+operation used by the derived method, together with a positive
+integer specifying how many times that operation is used.
+This is given as a list of lists, where each sublist has as
+first entry an operation and as second entry an integer.
+The argument <A>weight</A> is an additional number to add
+when calculating the resulting weight of the target operation
+using this derivation. Unless there is any particular reason
+to regard the derivation as exceedingly expensive, this number
+should be <C>1</C>.
+The argument <A>implementations_with_extra_filters</A> contains
+one or more functions with the actual implementation of the
+derived method, together with lists of extra argument filters
+for each function. The argument is a list with entries of the
+form <C>[fun, filters]</C>, where <C>fun</C> is a function and
+<C>filters</C> is a (not necessarily dense) list of argument
+filters. If only one function is given, then <C>filters</C>
+should be the empty list; in this case the argument's value
+would be [[fun,[]]], where <C>fun</C> is the function.
+The argument <A>category_filter</A> is a filter describing
+which categories the derivation is valid for. If it is valid
+for all categories, then this argument should have the value
+<C>IsCapCategory</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="d" Name="DerivationName" Label="for IsDerivedMethod"/>
+ <Returns></Returns>
+ <Description>
+The name of the derivation. This is a name identifying this
+particular derivation, and normally not the same as the name
+of the operation implemented by the derivation.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="d" Name="DerivationWeight" Label="for IsDerivedMethod"/>
+ <Returns></Returns>
+ <Description>
+Extra weight for the derivation.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="d" Name="DerivationFunctionsWithExtraFilters" Label="for IsDerivedMethod"/>
+ <Returns></Returns>
+ <Description>
+The implementation(s) of the derivation, together with lists
+of extra filters for each implementation.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="d" Name="CategoryFilter" Label="for IsDerivedMethod"/>
+ <Returns></Returns>
+ <Description>
+Filter describing which categories the derivation is valid for.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="d, C" Name="IsApplicableToCategory" Label="for IsDerivedMethod, IsCapCategory"/>
+ <Returns><C>true</C> if the category <A>C</A> is known to satisfy the category filter of the derivation <A>d</A>.
+</Returns>
+ <Description>
+Checks if the derivation is known to be valid for a given category.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="d" Name="TargetOperation" Label="for IsDerivedMethod"/>
+ <Returns>The name (as a string) of the operation implemented by the derivation <A>d</A>
+</Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="d" Name="UsedOperations" Label="for IsDerivedMethod"/>
+ <Returns>The names (as strings) of the operations used by the derivation <A>d</A>
+</Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="d" Name="UsedOperationMultiples" Label="for IsDerivedMethod"/>
+ <Returns>Multiplicities of each operation used by the derivation <A>d</A>, in order corresponding to the operation names returned by <C>UsedOperations(d)</C>.
+</Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="d" Name="UsedOperationsWithMultiples" Label="for IsDerivedMethod"/>
+ <Returns>The names of the operations used by the derivation <A>d</A>, together with their multiplicities. The result is a list consisting of lists of the form <C>[op_name, mult]</C>, where <C>op_name</C> is a string and <C>mult</C> a positive integer.
+</Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="d, weight, C" Name="InstallDerivationForCategory" Label="for IsDerivedMethod, IsPosInt, IsCapCategory"/>
+ <Returns></Returns>
+ <Description>
+Install the derived method <A>d</A> for the category <A>C</A>.
+The integer <A>weight</A> is the computed weight of the operation
+implemented by this derivation.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="d, op_weights" Name="DerivationResultWeight" Label="for IsDerivedMethod, IsDenseList"/>
+ <Returns></Returns>
+ <Description>
+Computes the resulting weight of the target operation of this
+derivation given a list of weights for the operations it uses.
+The argument <A>op_weights</A> should be a list of integers
+specifying weights for the operations given by
+<C>UsedOperations( d )</C>, in the same order.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Managing_Derived_Methods_Section_Derivation_Graphs">
+<Heading>Derivation Graphs</Heading>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsDerivedMethodGraph" Label="for IsObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+A derivation graph consists of a set of operations and a set of derivations
+specifying how some operations can be implemented in terms of other operations.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="operations" Name="MakeDerivationGraph" Label="for IsDenseList"/>
+ <Returns></Returns>
+ <Description>
+Make a derivation graph containing the given set of operations and no derivations.
+The argument <A>operations</A> should be a list of strings, the names of the
+operations. The set of operations is fixed once the graph is created.
+Derivations can be added to the graph by calling <C>AddDerivation</C>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="graph, operations" Name="AddOperationsToDerivationGraph" Label="for IsDerivedMethodGraph, IsDenseList"/>
+ <Returns></Returns>
+ <Description>
+Adds a list of operation names <A>operations</A> to a given derivation graph <A>graph</A>.
+This is used in extensions of CAP which want to have their own primitive operations,
+but do not want to pollute the CAP kernel any more. Please use it with caution. If
+a weight list/category was created before it will not be aware of the operations.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="G, d" Name="AddDerivation" Label="for IsDerivedMethodGraph, IsDerivedMethod"/>
+ <Returns></Returns>
+ <Description>
+Add a derivation to a derivation graph.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3,arg4" Name="AddDerivation" Label="for IsDerivedMethodGraph, IsFunction, IsDenseList, IsObject"/>
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3" Name="AddDerivation" Label="for IsDerivedMethodGraph, IsFunction, IsDenseList"/>
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3" Name="AddDerivation" Label="for IsDerivedMethodGraph, IsFunction, IsFunction"/>
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3,arg4,arg5,arg6" Name="AddDerivationPair" Label="for IsDerivedMethodGraph, IsFunction, IsFunction, IsDenseList, IsDenseList, IsDenseList"/>
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3,arg4,arg5" Name="AddDerivationPair" Label="for IsDerivedMethodGraph, IsFunction, IsFunction, IsDenseList, IsDenseList"/>
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3,arg4,arg5,arg6" Name="AddDerivationPair" Label="for IsDerivedMethodGraph, IsFunction, IsFunction, IsDenseList, IsFunction, IsFunction"/>
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3,arg4,arg5" Name="AddDerivationPair" Label="for IsDerivedMethodGraph, IsFunction, IsFunction, IsFunction, IsFunction"/>
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="AddDerivationToCAP" />
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="AddDerivationPairToCAP" />
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="AddWithGivenDerivationPairToCAP" />
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="G" Name="Operations" Label="for IsDerivedMethodGraph"/>
+ <Returns></Returns>
+ <Description>
+Gives the operations in the graph <A>G</A>, as a list of strings.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="G, op_name" Name="DerivationsUsingOperation" Label="for IsDerivedMethodGraph, IsString"/>
+ <Returns></Returns>
+ <Description>
+Finds all the derivations in the graph <A>G</A> that use the operation named
+<A>op_name</A>, and returns them as a list.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="G, op_name" Name="DerivationsOfOperation" Label="for IsDerivedMethodGraph, IsString"/>
+ <Returns></Returns>
+ <Description>
+Finds all the derivations in the graph <A>G</A> targeting the operation named
+<A>op_name</A> (that is, the derivations that provide implementations of this
+operation), and returns them as a list.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Managing_Derived_Methods_Section_Managing_Derivations_in_a_Category">
+<Heading>Managing Derivations in a Category</Heading>
+
+<ManSection>
+  <Filt Arg="arg" Name="IsOperationWeightList" Label="for IsObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+An operation weight list manages the use of derivations in a single category <Math>C</Math>.
+For every operation, it keeps a weight value which indicates how costly it is
+to perform that operation in the category <Math>C</Math>. Whenever a new operation is
+implemented in <Math>C</Math>, the operation weight list should be notified about this and
+given a weight to assign to this operation. It will then automatically install
+all possible derived methods for <Math>C</Math> in such a way that every operation has the
+smallest possible weight (the weight of a derived method is computed by using
+the weights of the operations it uses; see <C>DerivationResultWeight</C>).
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="C, G" Name="MakeOperationWeightList" Label="for IsCapCategory, IsDerivedMethodGraph"/>
+ <Returns></Returns>
+ <Description>
+Create the operation weight list for a category.
+This should only be done once for every category, and the category should
+afterwards remember the returned object.
+The argument <A>C</A> is the CAP category this operation weight list is associated to,
+and the argument <A>G</A> is a derivation graph containing operation names and derivations.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="owl" Name="DerivationGraph" Label="for IsOperationWeightList"/>
+ <Returns></Returns>
+ <Description>
+Returns the derivation graph used by the operation weight list <A>owl</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="owl" Name="CategoryOfOperationWeightList" Label="for IsOperationWeightList"/>
+ <Returns></Returns>
+ <Description>
+Returns the CAP category associated to the operation weight list <A>owl</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="owl, op_name" Name="CurrentOperationWeight" Label="for IsOperationWeightList, IsString"/>
+ <Returns></Returns>
+ <Description>
+Returns the current weight of the operation named <A>op_name</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="owl, d" Name="OperationWeightUsingDerivation" Label="for IsOperationWeightList, IsDerivedMethod"/>
+ <Returns></Returns>
+ <Description>
+Finds out what the weight of the operation implemented by the derivation <A>d</A>
+would be if we had used that derivation.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="owl, op_name" Name="DerivationOfOperation" Label="for IsOperationWeightList, IsString"/>
+ <Returns></Returns>
+ <Description>
+Returns the derivation which is currently used to implement the operation
+named <A>op_name</A>.
+If the operation is not implemented by a derivation (that is, either implemented
+directly or not implemented at all), then <C>fail</C> is returned.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="owl, op_name" Name="InstallDerivationsUsingOperation" Label="for IsOperationWeightList, IsString"/>
+ <Returns></Returns>
+ <Description>
+Performs a search from the operation <A>op_name</A>, and installs all derivations
+that give improvements over the current state.
+This is used internally by <C>AddPrimitiveOperation</C> and <C>Reevaluate</C>.
+It should normally not be necessary to call this function directly.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="owl" Name="Reevaluate" Label="for IsOperationWeightList"/>
+ <Returns></Returns>
+ <Description>
+Reevaluate the installed derivations, installing better derivations if possible.
+This should be called if new derivations become available for the category,
+either because the category has acquired more knowledge about itself
+(e.g. it is told that it is abelian)
+or because new derivations have been added to the graph.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="owl, op_name, weight" Name="AddPrimitiveOperation" Label="for IsOperationWeightList, IsString, IsInt"/>
+ <Returns></Returns>
+ <Description>
+Add the operation named <A>op_name</A> to the operation weight list <A>owl</A>
+with weight <A>weight</A>.
+This causes all operations that can be derived, directly or indirectly,
+from the newly added operation to be installed as well
+(unless they are already installed with the same or lower weight).
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="owl, op_name" Name="PrintDerivationTree" Label="for IsOperationWeightList, IsString"/>
+ <Returns></Returns>
+ <Description>
+Print a tree representation of the way the operation named <A>op_name</A>
+is implemented in the category of the operation weight list <A>owl</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3" Name="PrintTree" Label="for IsObject, IsFunction, IsFunction"/>
+ <Returns></Returns>
+ <Description>
+Prints a tree structure.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="arg1,arg2,arg3,arg4" Name="PrintTreeRec" Label="for IsObject, IsFunction, IsFunction, IsInt"/>
+ <Returns></Returns>
+ <Description>
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Managing_Derived_Methods_Section_Min_Heaps_for_Strings">
+<Heading>Min Heaps for Strings</Heading>
+
+This section describes an implementation of min heaps for storing strings with
+associated integer keys, used internally by operation weight lists.
+<ManSection>
+  <Filt Arg="arg" Name="IsStringMinHeap" Label="for IsObject"/>
+ <Returns><C>true</C> or <C>false</C>
+</Returns>
+ <Description>
+A string min heap is a min heap where every node contains a string label and an
+integer key.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="arg" Name="StringMinHeap" />
+ <Returns></Returns>
+ <Description>
+Create an empty string min heap.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="H, string, key" Name="Add" Label="for IsStringMinHeap, IsString, IsInt"/>
+ <Returns></Returns>
+ <Description>
+Add a new node containing the label <A>string</A> and the key <A>key</A>
+to the heap <A>H</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="H" Name="ExtractMin" Label="for IsStringMinHeap"/>
+ <Returns></Returns>
+ <Description>
+Remove a node with minimal key value from the heap <A>H</A>, and return it.
+The return value is a list <C>[ label, key ]</C>, where <C>label</C>
+is the extracted node's label (a string) and <C>key</C> is the
+node's key (an integer).
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="H, string, key" Name="DecreaseKey" Label="for IsStringMinHeap, IsString, IsInt"/>
+ <Returns></Returns>
+ <Description>
+Decrease the key value for the node with label <A>string</A> in the
+heap <A>H</A>. The new key value is given by <A>key</A> and must be
+smaller than the node's current value.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="H" Name="IsEmptyHeap" Label="for IsStringMinHeap"/>
+ <Returns></Returns>
+ <Description>
+Returns <C>true</C> if the heap <A>H</A> is empty, <C>false</C> otherwise.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="H" Name="HeapSize" Label="for IsStringMinHeap"/>
+ <Returns></Returns>
+ <Description>
+Returns the number of nodes in the heap <A>H</A>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="H, string" Name="Contains" Label="for IsStringMinHeap, IsString"/>
+ <Returns></Returns>
+ <Description>
+Returns <C>true</C> if the heap <A>H</A> contains a node with
+label <A>string</A>, and <C>false</C> otherwise.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="H, i, j" Name="Swap" Label="for IsStringMinHeap, IsPosInt, IsPosInt"/>
+ <Returns></Returns>
+ <Description>
+Swaps two elements in the list used to implement the heap,
+and updates the heap's internal mapping of labels to list indices.
+This is an internal function which should only be called from the
+functions that implement the heap functionality.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="H, i" Name="Heapify" Label="for IsStringMinHeap, IsPosInt"/>
+ <Returns></Returns>
+ <Description>
+Heapify the heap <A>H</A>, starting from index <A>i</A>.
+This is an internal function.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+

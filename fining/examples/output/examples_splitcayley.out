@@ -1,0 +1,46 @@
+gap> 
+gap> # a nice example with Split Cayley hexagons
+gap> hexagon := SplitCayleyHexagon(5);
+H(5)
+gap> Order(hexagon);
+[ 5, 5 ]
+gap> g := CollineationGroup( hexagon );
+#I  for Split Cayley Hexagon
+#I  Computing nice monomorphism...
+#I  Found permutation domain...
+G_2(5)
+gap> incgraph := IncidenceGraph( hexagon );;
+#I  Computing incidence graph of generalised polygon...
+gap> Diameter(incgraph);
+6
+gap> Girth(incgraph);
+12
+gap> points := Points(hexagon);
+<points of H(5)>
+gap> lines := Lines(hexagon);
+<lines of H(5)>
+gap> iter := Iterator(points);
+<iterator>
+gap> x := NextIterator(iter);
+<a point in H(5)>
+gap> Display(x);
+[.1.....]
+gap> UnderlyingObject(x);
+<cvec over GF(5,1) of length 7>
+gap> onx := Lines(x);
+<shadow lines in H(5)>
+gap> l := Random(onx);
+<a line in H(5)>
+gap> onl := Points(l);
+<shadow points in H(5)>
+gap> List(onl, t -> DistanceBetweenElements(x,t));
+[ 0, 2, 2, 2, 2, 2 ]
+gap> stabl := FiningStabiliser(g, l);
+<projective collineation group of size 1500000 with 3 generators>
+gap> gl := Action(stabl, onl);
+Group([ (1,6,5,4,3), (1,4,3,6), (1,5,4,3,6,2) ])
+gap> StructureDescription(gl);
+"S5"
+gap> Transitivity(gl);
+3
+gap> quit;

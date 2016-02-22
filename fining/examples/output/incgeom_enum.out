@@ -1,0 +1,15 @@
+gap> 
+gap> #example of an enumerator
+gap> lines := Lines( ParabolicQuadric(6,3) );
+<lines of Q(6, 3)>
+gap> enum := Enumerator( lines );
+EnumeratorOfSubspacesOfClassicalPolarSpace( <lines of Q(6, 3)> )
+gap> s := Size(enum);
+3640
+gap> n := Random([1..s]);
+3081
+gap> l := enum[n];
+<a line in Q(6, 3)>
+gap> Position(enum, l);
+3081
+gap> quit;

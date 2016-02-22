@@ -1,0 +1,18 @@
+gap> 
+gap> # example: affine_shadow2.g
+gap> as := AffineSpace(3, 3);
+AG(3, 3)
+gap> l := Random( Lines( as ) );
+<a line in AG(3, 3)>
+gap> x := Random( Points( l ) );
+<a point in AG(3, 3)>
+gap> flag := FlagOfIncidenceStructure(as,[x,l]);
+<a flag of AffineSpace(3, 3)>
+gap> shadow := ShadowOfFlag( as, flag, 3 );
+<shadow planes in AG(3, 3)>
+gap> AsList(shadow);
+Iterators of shadows of flags in affine spaces are not complete in this versio\
+n
+[ <a plane in AG(3, 3)>, <a plane in AG(3, 3)>, <a plane in AG(3, 3)>, 
+  <a plane in AG(3, 3)> ]
+gap> quit;
