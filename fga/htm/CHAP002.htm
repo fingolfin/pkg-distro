@@ -26,7 +26,7 @@ For example:
 gap&gt; f := FreeGroup( 2 );                                             
 &lt;free group on the generators [ f1, f2 ]&gt;
 gap&gt; u := Group( f.1^2, f.2^2, f.1*f.2 );
-Group([ f1^2, f2^2 ])
+Group([ f1^2, f2^2, f1*f2 ])
 gap&gt; u1 := Subgroup( u, [f.1^2, f.1^4*f.2^6] );
 Group([ f1^2, f1^4*f2^6 ])
 gap&gt; elm := f.1;
@@ -57,7 +57,7 @@ of this list, then
     <i>v</i>1 <i>v</i>2  &#8800; 1 implies &#124;<i>v</i>1 <i>v</i>2 &#124; &#8805; max(&#124;<i>v</i>1 &#124;, &#124;<i>v</i>2 &#124;), and
   <li>
     <i>v</i>1 <i>v</i>2  &#8800; 1 and <i>v</i>2 <i>v</i>3  &#8800; 1 implies
-    &#124;<i>v</i>1 &gt; <i>v</i>2 <i>v</i>3 &#124;   &#124;<i>v</i>1 &#124; &#8722; &#124;<i>v</i>2 &#124; + &#124;<i>v</i>3 &#124;
+    &#124;<i>v</i>1 <i>v</i>2 <i>v</i>3 &#124;  &gt;  &#124;<i>v</i>1 &#124; &#8722; &#124;<i>v</i>2 &#124; + &#124;<i>v</i>3 &#124;
 </ul>
 <p>
 hold, where &#124;&#183;&#124; denotes the word length.
@@ -92,7 +92,7 @@ The first variant returns the normalizer of the finitely generated
 subgroup <var>u2</var> in <var>u1</var>.
 <p>
 The second variant returns the normalizer of &#9001;<i>elm</i>  &#9002;
-in the finitely generated subgroup <var>u</var> (see <a href="../../../doc/ref/CHAP039.htm#X804F0F037F06E25E">Normalizer</a> in the
+in the finitely generated subgroup <var>u</var> (see <a href="../../../doc/ref/chap39.html#X804F0F037F06E25E">Normalizer</a> in the
 Reference Manual).
 <p>
 <a name = "SSEC002.2"></a>
@@ -181,8 +181,8 @@ gap&gt; ua := f.1^2*f.2^2;; ub := f.1^2*f.2;;
 gap&gt; u := Group( ua, ub );;
 gap&gt; g := FreeGroup( "a", "b" );;
 gap&gt; hom := GroupHomomorphismByImages( g, u,
-              GeneratorsOfGroup(g),
-              GeneratorsOfGroup(u) );
+&gt;             GeneratorsOfGroup(g),
+&gt;             GeneratorsOfGroup(u) );
 [ a, b ] -&gt; [ f1^2*f2^2, f1^2*f2 ]
 gap&gt; # how can f.1^2 be expressed?
 gap&gt; PreImagesRepresentative( hom, f.1^2 );
@@ -205,7 +205,7 @@ There are also lower level operations to get the same results.
 <li><code>AsWordLetterRepInFreeGenerators( </code><var>elm</var><code>, </code><var>u</var><code> ) O</code>
 <p>
 return a letter representation
-(see Section&nbsp;<a href="../../../doc/ref/CHAP037.htm#X80A9F39582ED296E">Representations for Associative Words</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font>
+(see Section&nbsp;<a href="../../../doc/ref/chap37.html#X80A9F39582ED296E">Representations for Associative Words</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font>
 Reference Manual)
 of the given <var>elm</var> relative to the generators the group was created
 with or the free generators as returned by <code>FreeGeneratorsOfGroup</code>.
@@ -266,7 +266,7 @@ presentation, just apply the isomorphism obtained from
 <p>
 <pre>
 gap&gt; aut := GroupHomomorphismByImages( f, f,
-               GeneratorsOfGroup( f ), [ f.1^f.2, f.1*f.2 ] );
+&gt;              GeneratorsOfGroup( f ), [ f.1^f.2, f.1*f.2 ] );
 [ f1, f2 ] -&gt; [ f2^-1*f1*f2, f1*f2 ]
 gap&gt; ImageElm( iso, aut );
 O^2*U*O*P^-1*U
@@ -318,5 +318,5 @@ return the automorphism which maps the free generators
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>FGA manual<br>August 2015
+<address>FGA manual<br>Februar 2016
 </address></body></html>

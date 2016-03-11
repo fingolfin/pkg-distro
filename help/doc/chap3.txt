@@ -44,7 +44,7 @@
     [4X[28X[ [ [ 0, 1 ] ], [ [ 1, 0 ] ] ][128X[104X
     [4X[25Xgap>[125X [27XHeLP_PrintSolution(5);[127X[104X
     [4X[28XSolutions for elements of order 5:[128X[104X
-    [4X[28X[ [               u ],[128X[104X
+    [4X[28X[ [               u ],.[128X[104X
     [4X[28X  [  [ "5a", "5b" ] ],[128X[104X
     [4X[28X  [             --- ],[128X[104X
     [4X[28X  [        [ 0, 1 ] ],[128X[104X
@@ -93,6 +93,8 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XC := CharacterTable("L2(49).2_1");   [127X[104X
     [4X[28XCharacterTable( "L2(49).2_1" )[128X[104X
+    [4X[25Xgap>[125X [27XHeLP_WithGivenOrder(Irr(C), 7);;[127X[104X
+    [4X[28X#I  Number of solutions for elements of order 7: 1; stored in HeLP_sol[7].[128X[104X
     [4X[25Xgap>[125X [27XHeLP_WithGivenOrder(Irr(C){[2]}, 14);[127X[104X
     [4X[28X#I  The given data admit infinitely many solutions for elements of order 14.[128X[104X
     [4X[25Xgap>[125X [27XHeLP_WithGivenOrder(Irr(C){[44]}, 14);[127X[104X
@@ -360,25 +362,27 @@
   [33X[0;0YThis function does almost the same as [2XHeLP_ZC[102X ([14X2.1-1[114X). It checks whether the
   Zassenhaus  Conjecture can be verified for a group, but does not compute the
   partial augmentations of elements of order [23Xk[123X, if [9XHeLP_sol[k][109X already exists.
-  Thus   some  precalculations  using  e.g.  [2XHeLP_WithGivenOrder[102X  ([14X3.1-1[114X)  are
-  respected.  In contrast to [2XHeLP_ZC[102X ([14X2.1-1[114X) this function also does not check
-  whether  the group is nilpotent to use the Weiss-result to have an immediate
-  positive solution for (ZC).[133X
+  It  does  however verify the solutions given in [9XHeLP_sol[109X using all available
+  tables   for   the   group,   see  [2XHeLP_VerifySolution[102X  ([14X3.6-1[114X).  Thus  some
+  precalculations  using  e.g.  [2XHeLP_WithGivenOrder[102X  ([14X3.1-1[114X) are respected. In
+  contrast  to  [2XHeLP_ZC[102X  ([14X2.1-1[114X) this function also does not check whether the
+  group  is  nilpotent  to  use the Weiss-result to have an immediate positive
+  solution for (ZC).[133X
   
   [33X[0;0YThis  function  is  interesting  if one wants to save time or possesses some
   information,  which  was  not  obtained  using  this package and was entered
   manually into [9XHeLP_sol[109X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XC := CharacterTable("L2(7)");[127X[104X
-    [4X[28XCharacterTable( "L3(2)" )[128X[104X
-    [4X[25Xgap>[125X [27XHeLP_WithGivenOrder(C,6);[127X[104X
-    [4X[28X#I  Number of solutions for elements of order 6: 1; stored in HeLP_sol[6].[128X[104X
-    [4X[28X[ [ [ 1 ], [ 1 ], [ -2, 3 ] ] ][128X[104X
-    [4X[25Xgap>[125X [27XHeLP_AllOrders(C);[127X[104X
+    [4X[25Xgap>[125X [27XC := CharacterTable(PSL(2,7));         [127X[104X
+    [4X[28XCharacterTable( Group([ (3,7,5)(4,8,6), (1,2,6)(3,4,8) ]) )[128X[104X
+    [4X[25Xgap>[125X [27XHeLP_ZC(C);        [127X[104X
+    [4X[28X#I  The Brauer tables for the following primes are not available: [ 2, 3, 7 ].[128X[104X
     [4X[28X#I  (ZC) can't be solved, using the given data, for the orders: [ 6 ].[128X[104X
     [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27XHeLP_ZC(C);[127X[104X
+    [4X[25Xgap>[125X [27XHeLP_sol[6] := [ ];[127X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XHeLP_AllOrders(C);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
@@ -512,20 +516,47 @@
   
   [1X3.5 [33X[0;0YInfluencing how the Systems of Inequalities are solved[133X[101X
   
-  [33X[0;0YHeLP  uses  currently two external programs (i.e. programs that are not part
-  of  the  GAP-system):  zsolve  from  4ti2  to  solve  the  systems of linear
-  inequalities  and  redund  from  lrslib  to  simplify the inequlities before
-  handing them over to zsolve (HeLP can also be used without lrslib installed,
-  but  in  general  it is recommanded to have lrslib installed). The following
-  functions  can  be  used  to  influence  the  behaviour  of  these  external
-  programms.[133X
+  [33X[0;0YHeLP uses currently three external programs (i.e. programs that are not part
+  of the GAP-system): zsolve from 4ti2 and/or normaliz to solve the systems of
+  linear  inequalities  and  redund  from  lrslib  to simplify the inequlities
+  before handing them over to the solver (HeLP can also be used without lrslib
+  installed. In general it is recommanded to have lrslib installed, if 4ti2 is
+  used  as  the  solver). The following functions can be used to influence the
+  behaviour of these external programms.[133X
   
-  [1X3.5-1 HeLP_Change4ti2Precision[101X
+  [1X3.5-1 HeLP_Solver[101X
+  
+  [29X[2XHeLP_Solver[102X( [[3Xstring[103X] ) [32X function
+  [6XReturns:[106X  [33X[0;10Ynothing[133X
+  
+  [33X[0;0YThis  function  can  be  used  to change the solver used for the HeLP-system
+  between  4ti2 and normaliz. If the function is called without an argument it
+  prints  which solver is currently used. If the argument it is called with is
+  one  of  the  stings  "4ti2"  or "normaliz", then the solver used for future
+  calculations  is changed to the one given as argument in case this solver is
+  found  by  the  HeLP-package.  If both solvers are found when the package is
+  loaded normaliz is taken as default.[133X
+  
+  [1X3.5-2 HeLP_UseRedund[101X
+  
+  [29X[2XHeLP_UseRedund[102X( [3Xbool[103X ) [32X function
+  [6XReturns:[106X  [33X[0;10Ynothing[133X
+  
+  [33X[0;0YThis  function determines whether HeLP uses 'redund' from the lrslib-package
+  to remove redundant equations from the HeLP system. If [3Xbool[103X is [9Xtrue[109X 'redund'
+  will  be  used in all calculation that follow, if it is [9Xfalse[109X, 'redund' will
+  not  be  used  (which  might take significantly longer). If 'redund' was not
+  found  by  GAP  a  warning  will  be  printed  and  the calculations will be
+  performed  without  'redund'.  As  default  'redund'  will  be  used  in all
+  calculations,  if  4ti2 is the chosen solver, and 'redund' will not be used,
+  if normaliz is used.[133X
+  
+  [1X3.5-3 HeLP_Change4ti2Precision[101X
   
   [29X[2XHeLP_Change4ti2Precision[102X( [3Xstring[103X ) [32X function
   [6XReturns:[106X  [33X[0;10Ynothing[133X
   
-  [33X[0;0YThe  function  changes  the maximum precision of the calculations of 4ti2 to
+  [33X[0;0YThis  function  changes the maximum precision of the calculations of 4ti2 to
   solve  the  occurring systems of linear inequalities. The possible arguments
   are  [9X"32"[109X, [9X"64"[109X and [9X"gmp"[109X. After calling the function the new precision will
   be  used  until  this  function  is used again. The default value is [9X"32"[109X. A
@@ -533,20 +564,8 @@
   to  increase  the  precision  of  4ti2,  when one gets an error message like
   "Error,  4ti2  Error:  Results  were  near maximum precision (32bit). Please
   restart  with  higher precision!" stating that the results were close to the
-  maximum 4ti2-precision.[133X
-  
-  [1X3.5-2 HeLP_UseRedund[101X
-  
-  [29X[2XHeLP_UseRedund[102X( [3Xbool[103X ) [32X function
-  [6XReturns:[106X  [33X[0;10Ynothing[133X
-  
-  [33X[0;0YThe  function  determines whether HeLP uses 'redund' from the lrslib-package
-  to remove redundant equations from the HeLP system. If [3Xbool[103X is [9Xtrue[109X 'redund'
-  will  be  used in all calculation that follow, if it is [9Xfalse[109X, 'redund' will
-  not  be  used  (which  might take significantly longer). If 'redund' was not
-  found  by  GAP  a  warning  will  be  printed  and  the calculations will be
-  performed  without  'redund'.  As  default  'redund'  will  be  used  in all
-  calculations.[133X
+  maximum  4ti2-precision.  normaliz  does automatically change its precision,
+  when it reaches an overflow.[133X
   
   [33X[0;0YSometimes it is desirable to perform calculations without redund (even if it
   is  installed  and in many cases improves the performance of the package) or
@@ -559,6 +578,8 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XC := CharacterTable(SmallGroup(392,30));[127X[104X
     [4X[28XCharacterTable( <pc group of size 392 with 5 generators> )[128X[104X
+    [4X[25Xgap>[125X [27XHeLP_Solver("4ti2");[127X[104X
+    [4X[28X'4ti2' will be used from now on.[128X[104X
     [4X[25Xgap>[125X [27XHeLP_UseRedund(false);[127X[104X
     [4X[28XThe calculations will be performed without using 'redund' from now on.[128X[104X
     [4X[25Xgap>[125X [27XHeLP_ZC(C);[127X[104X
@@ -583,6 +604,17 @@
     [4X[25Xgap>[125X [27XHeLP_ZC(C);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
+  
+  [1X3.5-4 HeLP_Vertices[101X
+  
+  [29X[2XHeLP_Vertices[102X( [3Xstring[103X ) [32X function
+  [6XReturns:[106X  [33X[0;10Ynothing[133X
+  
+  [33X[0;0YIf  normlaiz  is  used  as  the  solver  of  the  HeLP-system  this function
+  influences,  whether the "VerticesOfPolyhedron" are computed by normaliz. By
+  default  these  are only computed, if the system has a trivial solution. The
+  function  takes  "vertices", "novertices" and "default" as arguments. If you
+  do not understand what this means, don't worry.[133X
   
   
   [1X3.6 [33X[0;0YChecking solutions, calculating and checking solutions[133X[101X

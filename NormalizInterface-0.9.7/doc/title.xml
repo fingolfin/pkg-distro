@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    NormalizInterface
+  </Title>
+  <Subtitle>
+    &GAP; wrapper for Normaliz
+  </Subtitle>
+  <Version>
+    0.9.7
+  </Version>
+  <Author>
+    Sebastian Gutsche<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Mathematics<Br/>
+University of Kaiserslautern<Br/>
+67653 Kaiserslautern<Br/>
+Germany<Br/>
+</Address>
+<Email>gutsche@mathematik.uni-kl.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~gutsche/</Homepage>
+
+  </Author>
+  <Author>
+    Max Horn<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+AG Algebra<Br/>
+Mathematisches Institut<Br/>
+Justus-Liebig-Universität Gießen<Br/>
+Arndtstraße 2<Br/>
+35392 Gießen<Br/>
+Germany<Br/>
+</Address>
+<Email>max.horn@math.uni-giessen.de</Email>
+<Homepage>http://www.quendi.de/math</Homepage>
+
+  </Author>
+  <Author>
+    Christof Söger<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Institut für Mathematik<Br/>
+Albrechtstr. 28a<Br/>
+49076 Osnabrück<Br/>
+Germany<Br/>
+</Address>
+<Email>csoeger@uos.de</Email>
+<Homepage>https://www.normaliz.uni-osnabrueck.de</Homepage>
+
+  </Author>
+  <Date>
+    10/03/2016
+  </Date>
+  </TitlePage>

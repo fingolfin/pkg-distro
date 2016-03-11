@@ -4,18 +4,30 @@
   
   [1X6.1 [33X[0;0YMaking the HeLP-package run[133X[101X
   
-  [33X[0;0YA checklist what to do, if the package does not work:[133X
+  [33X[0;0YFor  all  basic  functionalities  of the HeLP-package (using only the solver
+  normaliz)  the  standard  GAP-installation should suffice to make everything
+  work:     Get     the    most    recent    GAP    from    the    GAP-webpage
+  ([7Xhttp://www.gap-system.org/[107X)   by   following   the   instructions   on  the
+  Download-page.  Make  sure  to  also run [9XInstPackages.sh[109X as explained there.
+  This should install all packages needed to run HeLP. Just start GAP and type
+  [9XLoadPackage("HeLP");[109X.  In  GAP 4.8.2 the NormalizInterface has to be updated
+  to   version  0.9.6  or  newer  which  can  be  obtained  from  the  website
+  ([7Xhttp://gap-packages.github.io/NormalizInterface//[107X)  of the package. For GAP
+  4.8.3 or newer this should not be necessary anymore.[133X
+  
+  [33X[0;0YHere  is  a  checklist  what to do, if the package does not work or you also
+  want to use the solver 4ti2:[133X
   
   [30X    [33X[0;6YMake  sure  you  have  sufficiently  new  versions  of  the  following
         software:[133X
   
-        [30X    [33X[0;12YGAP ([7Xhttp://www.gap-system.org/[107X) (at least 4.7.4)[133X
+        [30X    [33X[0;12YGAP ([7Xhttp://www.gap-system.org/[107X) (at least 4.8.2)[133X
   
         [30X    [33X[0;12Ythe                      GAP-package                     CTblLib
               ([7Xhttp://www.math.rwth-aachen.de/~Thomas.Breuer/ctbllib/[107X)     (at
               least 1.2.2)[133X
   
-        [30X    [33X[0;12Ythe  GAP-package  IO ([7Xhttp://gap-system.github.io/io/[107X) (at least
+        [30X    [33X[0;12Ythe GAP-package IO ([7Xhttp://gap-packages.github.io/io/[107X) (at least
               4.2;  see  also the next bullet point if this package can not be
               loaded)[133X
   
@@ -24,10 +36,14 @@
               http://wwwb.math.rwth-aachen.de/~gutsche/gap_packages/4ti2Interface/
               ) (at least 2015.04.29; this package needs the IO-package)[133X
   
-              [33X[0;12YUsually all these packages should come with a sufficently recent
-              GAP-installation (4.7.8 or newer) and should be contained in the
-              pkg-folder  of  the GAP-installation. To see if they are working
-              you   can  load  them  by  typing  [9XLoadPackage("[name]");[109X  after
+        [30X    [33X[0;12Ythe                 GAP-package                NormalizInterface
+              ([7Xhttp://gap-packages.github.io/NormalizInterface//[107X)   (at  least
+              0.9.6)[133X
+  
+              [33X[0;12YUsually  all  these  packages  should  come  with a sufficiently
+              recent GAP-installation (4.8.2 or newer) and should be contained
+              in  the  pkg-folder  of the GAP-installation. To see if they are
+              working you can load them by typing [9XLoadPackage("[name]");[109X after
               starting GAP, where [9X[name][109X is the name of the package.[133X
   
   [30X    [33X[0;6YThe  IO-package  needs  a  C-part  to  be compiled. To see if this has
@@ -36,23 +52,28 @@
         in  the  pkg-folder,  than most likely the C-part is not yet compiled.
         For  information  on  installation and in particular on how to compile
         the            C-part,            see            the            manual
-        ([7Xhttp://gap-system.github.io/io/doc/chap0.html[107X) (in particular Chapter
-        2) or the README-file of that package.[133X
+        ([7Xhttp://gap-packages.github.io/io/doc/chap0.html[107X)    (in    particular
+        Chapter 2) or the README-file of that package.[133X
   
-  [30X    [33X[0;6YPlease  make sure that www.4ti2.de ([7Xhttp://www.4ti2.de[107X) (Version 1.6.5
-        or  newer)  is  installed. In case of an error-message "The executable
-        'zsolve'  provided  by  the software 4ti2 was not found." after typing
-        [9XLoadPackage("HeLP");[109X  either the software is not properly installed or
-        installed  in  a directory where GAP can not find it, i.e. a directory
-        not  contained  in the path-variable. The content of this variable can
-        typically  be  displayed by typing [9Xecho $PATH[109X (Linux, Mac) [9Xecho %PATH%[109X
-        (Windows)  in  a  terminal  or  a  command  prompt. The manual of 4ti2
-        contains  several  pages of information on how to install the program.
-        Note  that  the  installation  of  4ti2  requires  gcc  (g++)  and gmp
-        installed  (which  come  with  many  Linux  installations  or  can  be
-        installed  using  a  package  manager).  Make sure to execute all four
-        commands   indicated   in   the  4ti2  manual  (possibly  without  the
-        [9X--prefix=[109X-command):[133X
+  [30X    [33X[0;6YThe   installation   of  normaliz  is  possible  via  the  GAP-package
+        NormalizInterface  ([7Xhttp://gap-packages.github.io/NormalizInterface//[107X)
+        (at  least  0.9.6).  Just  access  the  folder  in  a  terminal and do
+        [9X./build-normaliz.sh; ./configure; make[109X.[133X
+  
+  [30X    [33X[0;6YIf   you   want  to  use  4ti2,  please  make  sure  that  www.4ti2.de
+        ([7Xhttp://www.4ti2.de[107X)  (Version  1.6.5 or newer) is properly installed.
+        In  case  of an error-message "The executable 'zsolve' provided by the
+        software 4ti2 was not found." after typing [9XLoadPackage("HeLP");[109X either
+        the  software  is  not  properly installed or installed in a directory
+        where  GAP  can  not  find  it,  i.e. a directory not contained in the
+        path-variable. The content of this variable can typically be displayed
+        by  typing [9Xecho $PATH[109X (Linux, Mac) [9Xecho %PATH%[109X (Windows) in a terminal
+        or  a  command  prompt.  The  manual of 4ti2 contains several pages of
+        information  on how to install the program. Note that the installation
+        of  4ti2  requires  gcc  (g++) and gmp installed (which come with many
+        Linux installations or can be installed using a package manager). Make
+        sure  to  execute  all  four  commands  indicated  in  the 4ti2 manual
+        (possibly without the [9X--prefix=[109X-part):[133X
   
         [33X[0;6Y[9X./configure --prefix=INSTALLATION-DIRECTORY[109X[133X
   
@@ -67,10 +88,10 @@
         and  install  them.  To check whether the installation worked, you can
         enter  [9Xzsolve[109X in a terminal. In case one of the required programs (g++
         or  gmp)  was  not installed when running [9Xmake[109X for the first time, you
-        might  need  to run [9Xmake clean[109X and the above commands several times to
-        complie  4ti2  succesfully.  If  you  already have 4ti2 installed in a
-        directory  not  contained  in  the  path-variable  and want to avoid a
-        re-installation, in many cases the following helps:[133X
+        might  need  to run [9Xmake clean[109X and the above commands afterwards again
+        (several times) to compile 4ti2 successfully. If you already have 4ti2
+        installed  in  a directory not contained in the path-variable and want
+        to avoid a re-installation, in many cases the following helps:[133X
   
         [30X    [33X[0;12YStart  a  terminal  and  access  a  path written in your bash or
               system_bash. Typically [9Xusr/local/bin[109X should work.[133X
@@ -80,7 +101,7 @@
               place.  E.g.  [9Xln  -s /opt/4ti2/bin/zsolve zsolve[109X was used on the
               (Linux) computers in Stuttgart.[133X
   
-  [30X    [33X[0;6YWe        also        recommend        to        install        lrslib
+  [30X    [33X[0;6YIn   case   you   use  4ti2,  we  also  recommend  to  install  lrslib
         ([7Xhttp://cgm.cs.mcgill.ca/~avis/C/lrs.html[107X), at least version 4.3 (note
         that  version 4.2 or older sometimes produces unwanted behavior). This
         software  provides  the 'redund' command, which can be switched on and
@@ -94,27 +115,18 @@
   
         [33X[0;6Y(possibly as root) inside the lrslib-directory.[133X
   
-  [30X    [33X[0;6YIn  case this does not help to get HeLP running, please feel more than
+  [30X    [33X[0;6YIf  this  does  not  help  to  get HeLP running, please feel more than
         welcome to contact one of the maintainers of the package.[133X
   
   
-  [1X6.2 [33X[0;0YComputations with big coefficients - precision problems[133X[101X
+  [1X6.2 [33X[0;0YHow much 4ti2 and normaliz is really there?[133X[101X
   
-  [33X[0;0YWhen  using  4ti2,  HeLP  calls  it  per default with a maximum precision of
-  32bit.  In  case  one  gets  error  messages stating that the results of the
-  calculations  were  near  the  maximum  precision, the used precision can be
-  influenced  by  using  [2XHeLP_Change4ti2Precision[102X  ([14X3.5-1[114X).  For groups with a
-  "reasonable" order there should be no problems with the precision.[133X
-  
-  
-  [1X6.3 [33X[0;0YHow much 4ti2 is really there?[133X[101X
-  
-  [33X[0;0YThe  reason, why the program 4ti2 is used in this package, is basically that
-  it  can  solve  systems of linear inequalities efficently and there exists a
-  good  GAP-Interface  to  it.  However there is only one line of code where a
-  function  is  called  which  accesses 4ti2. Thus the effort of using another
-  solver  of inequalities would be not so big, if there is a GAP-Interface for
-  it.  If  you  are  aware  of  such a solver and would like to use it in this
-  package,  please  contact  the  authors of this package. We will be happy to
-  help.[133X
+  [33X[0;0YThe  reason, why the programs 4ti2 and normaliz are used in this package, is
+  basically that they can solve systems of linear inequalities efficiently and
+  there  exist good GAP-Interfaces for them. However there is only one line of
+  code  where  a  function  is  called  which accesses 4ti2 and a few more for
+  normaliz.  Thus  the effort of using another solver of inequalities would be
+  not  so  big, if there is a GAP-Interface for it. If you are aware of such a
+  solver  and would like to use it in this package, please contact the authors
+  of this package. We will be happy to help.[133X
   

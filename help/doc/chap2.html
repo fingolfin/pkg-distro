@@ -40,7 +40,7 @@
 
 <h4>2.1 <span class="Heading">Zassenhaus Conjecture</span></h4>
 
-<p>This function checks whether the Zassenhaus Conjecture ((ZC) for short, cf. Section <a href="chap5.html#X7CAEB4DF8506EBF9"><span class="RefLink">5.1</span></a>) can be proved using the HeLP-method with the data available in GAP.</p>
+<p>This function checks whether the Zassenhaus Conjecture ((ZC) for short, cf. Section <a href="chap5.html#X7CAEB4DF8506EBF9"><span class="RefLink">5.1</span></a>) can be proved using the HeLP method with the data available in GAP.</p>
 
 <p><a id="X81AF79A587054306" name="X81AF79A587054306"></a></p>
 
@@ -150,25 +150,10 @@ Solutions for elements of order 6:
 #I  ZC can't be solved, using the given data, for the orders: [ 4 ].
 false
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(HeLP_sol[4]);</span>
-20
+10
 </pre></div>
 
 <p>The group SmallGroup(48,30) is the smallest group for which the HeLP method does not suffice to prove the Zassenhaus Conjecture. However (ZC) was proved for this group in <a href="chapBib.html#biBHoefertKimmerle">[HK06]</a>, Proposition 4.2.</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := SmallGroup(96,65);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_ZC(G);</span>
-#I  (ZC) can't be solved, using the given data, for the orders: [ 8 ].
-false
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(HeLP_sol[8]);</span>
-40
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := SmallGroup(160,13);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_ZC(G);</span>
-true
-</pre></div>
-
-<p>The Zassenhaus Conjecture for the first group in the above example, i.e. SmallGroup(96,65), was proved by A. Herman and G. Singh <a href="chapBib.html#biBHermanSingh">[HS15]</a>. They did not do all the computations for SmallGroup(160,13).</p>
 
 
 <div class="example"><pre>
@@ -248,7 +233,7 @@ CharacterTable( "L2(19)" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_PQ(C);                   </span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_ZC(C);</span>
-#I  For the following orders ZC can not be solved, using the given data: [ 10 ].
+#I  (ZC) can't be solved, using the given data, for the orders: [ 10 ].
 false
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_sol[10];</span>
 [ [ [ 1 ], [ 0, 1 ], [ 0, -1, 1, 0, 1 ] ], 
@@ -304,7 +289,7 @@ CharacterTable( "L2(49)" )
 false
 </pre></div>
 
-<p>This example shows the limitations of the program. Using the Brauer table for the prime 7 one can prove (PQ) for PSL(2,49), but this data is not available in GAP at the moment. The fact that there are no torsion units of order 10 and 15 was proved in <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, Proposition 6.7. See also the example in Section <a href="chap4.html#X818A647182CA20B3"><span class="RefLink">4.5</span></a>.</p>
+<p>This example shows the limitations of the program. Using the Brauer table for the prime 7 one can prove (PQ) for PSL(2,49), but this data is not available in GAP at the moment. The fact that there are no torsion units of order 10 and 15 was proved in <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, Proposition 6.7. See also the example in Section <a href="chap4.html#X818A647182CA20B3"><span class="RefLink">4.5</span></a>. The other critical orders were handled in a more general context in <a href="chapBib.html#biBBaMa4prI">[BM16]</a>.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>

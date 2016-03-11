@@ -1,6 +1,10 @@
   
   [1X5 [33X[0;0YBackground[133X[101X
   
+  [33X[0;0YIn  this  chapter  we give a brief overview of the Zassenhaus Conjecture and
+  the  Prime  Graph  Questions  and the techniques used in this package. For a
+  more detailed exposition see [BM15].[133X
+  
   
   [1X5.1 [33X[0;0YThe Zassenhaus Conjecture and the Prime Graph Question[133X[101X
   
@@ -53,9 +57,9 @@
   Berman  and M. Hertweck the following is known for the partial augmentations
   of [23Xu[123X:[133X
   
-  [33X[0;0Y[13XTheorem:[113X    ([Seh93],   Proposition   (1.4);   [Her07],   Proposition   2.2)
-  [23X\varepsilon_1(u) = 0[123X if [23Xu \not= 1[123X and [23X\varepsilon_x(u) = 0[123X if the order of [23Xx[123X
-  does not divides the order of [23Xu[123X.[133X
+  [33X[0;0Y[13XTheorem:[113X ([Seh93], Proposition (1.4); [Her07], Theorem 2.3) [23X\varepsilon_1(u)
+  = 0[123X if [23Xu \not= 1[123X and [23X\varepsilon_x(u) = 0[123X if the order of [23Xx[123X does not divides
+  the order of [23Xu[123X.[133X
   
   [33X[0;0YPartial  augmentations  are  connected  to  (ZC)  and (PQ) via the following
   result,  which  is  due  to  Z. Marciniak, J. Ritter, S. Sehgal and A. Weiss
@@ -116,10 +120,10 @@
   Luthar and I.B.S. Passi [LP89].[133X
   
   [33X[0;0YLater  M. Hertweck showed that it may also be used for a representation over
-  a field of characteristic [23Xp > 0[123X with character [23X\varphi[123X, if [23Xp[123X is coprime to [23Xk[123X
-  [Her07],  §  4.  In  that  case  one  has to ignore the [23Xp[123X-singular conjugacy
-  classes  (i.e. the classes of elements with an order divisible by [23Xp[123X) and the
-  above formula becomes[133X
+  a  field  of  characteristic  [23Xp  >  0[123X with Brauer character [23X\varphi[123X, if [23Xp[123X is
+  coprime  to  [23Xk[123X  [Her07],  § 4. In that case one has to ignore the [23Xp[123X-singular
+  conjugacy  classes  (i.e. the classes of elements with an order divisible by
+  [23Xp[123X) and the above formula becomes[133X
   
   
         [33X[1;6Y[24X[33X[0;0Y\mu_l(u,\varphi) = \frac{1}{k} \sum_{1 \not= d \mid k}
@@ -152,9 +156,12 @@
   
   [33X[0;0YWe  also  included  a result motivated by a theorem R. Wagner proved 1995 in
   his  Diplomarbeit  [Wag95].  This  result gives a further restriction on the
-  partial  augmentations  of  torsion units. We included it into the functions
-  [2XHeLP_ZC[102X  ([14X2.1-1[114X),  [2XHeLP_PQ[102X ([14X2.2-1[114X), [2XHeLP_AllOrders[102X ([14X3.3-1[114X), [2XHeLP_AllOrdersPQ[102X
-  ([14X3.3-2[114X) and [2XHeLP_WagnerTest[102X ([14X3.7-1[114X) and call it "Wagner test".[133X
+  partial  augmentations  of  torsion  units.  Though the results was actually
+  available before Wagner's work, cf. [BH08] Remark 6, we named the test after
+  him,  since  he  was  the  first  to  use  the HeLP-method on a computer. We
+  included   it   into   the   functions  [2XHeLP_ZC[102X  ([14X2.1-1[114X),  [2XHeLP_PQ[102X  ([14X2.2-1[114X),
+  [2XHeLP_AllOrders[102X ([14X3.3-1[114X), [2XHeLP_AllOrdersPQ[102X ([14X3.3-2[114X) and [2XHeLP_WagnerTest[102X ([14X3.7-1[114X)
+  and call it "Wagner test".[133X
   
   [33X[0;0Y[13XTheorem:[113X  For  a  torsion unit [22Xu ∈ mathrmV(ZG)[122X, a group element [23Xs[123X, a prime [23Xp[123X
   and a natural number [23Xj[123X we have[133X
@@ -174,7 +181,7 @@
   [1X5.5 [33X[0;0Ys-constant (and (s,t)-constant) characters[133X[101X
   
   [33X[0;0YIf  one  is  interested  in  units of mixed order [23Xs*t[123X for two primes [23Xs[123X and [23Xt[123X
-  (e.g.  if one is studying the Prime Graph Question) an idea to make the HeLP
+  (e.g.  if  one  studies  the  Prime Graph Question) an idea to make the HeLP
   method more efficient was introduced by V. Bovdi and A. Konovalov in [BK10],
   page 4. Assume one has several conjugacy classes of elements of order [23Xs[123X, and
   a  character  taking  the  same  value  on  all  of  these classes. Then the
@@ -228,16 +235,15 @@
         [23Xp[123X  such  that  [23Xp[123X  is  smaller then any prime divisor of the order of [23XX[123X
         [MRSW87],[133X
   
-  [30X    [33X[0;6YAll groups of order up to 159 and some other groups of order up to 200
-        listed in [HS15],[133X
+  [30X    [33X[0;6YAll groups of order up to 71 [HK06],[133X
   
   [30X    [33X[0;6YThe   non-abelian  simple  groups  [23XA_5[123X  [LP89],  [23XA_6  \simeq  PSL(2,9)[123X
         [Her08c],  [23XPSL(2,7)[123X, [23XPSL(2,11)[123X, [23XPSL(2,13)[123X [Her07], [23XPSL(2,8)[123X, [23XPSL(2,17)[123X
-        [KK13]  /  [Gil13], [23XPSL(2,19)[123X, [23XPSL(2,23)[123X [BM14] and some extensions of
+        [KK15]  [Gil13],  [23XPSL(2,19)[123X,  [23XPSL(2,23)[123X  [BM14] and some extensions of
         these groups.[133X
   
   [33X[0;0YFor  the Prime Graph Question the following strong reduction was obtained in
-  [KK13]:[133X
+  [KK15]:[133X
   
   [33X[0;0Y[13XTheorem:[113X  Assume the Prime Graph Question holds for all almost simple images
   of a group [23XG[123X. Then (PQ) also holds for [23XG.[123X[133X
@@ -249,15 +255,20 @@
   
   [30X    [33X[0;6YSolvable groups [Kim06],[133X
   
-  [30X    [33X[0;6YThe groups [23XPSL(2,p)[123X where [23Xp[123X denotes a prime [Her07],[133X
+  [30X    [33X[0;6YGroups  whose  socle  is isomorphic to a group [23XPSL(2,p)[123X or [23XPSL(2,p^2)[123X,
+        where [23Xp[123X denotes a prime, [Her07], [BM16].[133X
   
-  [30X    [33X[0;6YHalf  of the sporadic simple groups and their automorphism groups, for
-        an overview see [KK13],[133X
+  [30X    [33X[0;6YHalf  of the sporadic simple groups and their automorphism groups; for
+        an overview see [KK15],[133X
   
-  [30X    [33X[0;6YThe groups [23XA_7, A_8[123X [Sal11], [23XA_9, A_{10}[123X [Sal13],[133X
+  [30X    [33X[0;6YGroups  whose socle is isomorphic to an alternating group of degree at
+        most 17, [Sal11] [Sal13][BC15],[133X
   
   [30X    [33X[0;6YAlmost  simple  groups  whose  order  is  divisible  by  at most three
-        different  primes  [KK13]  and [BM14]. (This implies that it holds for
+        different  primes  [KK15]  and [BM14]. (This implies that it holds for
         all  groups with an order divisible by at most three primes, using the
         reduction result above.)[133X
+  
+  [30X    [33X[0;6YMany  almost  simple groups whose order is divisible by four different
+        primes [BM16][133X
   

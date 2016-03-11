@@ -9,22 +9,24 @@
   \item \texttt  {HeLP{\textunderscore }AllOrders}, \hyperpage{18}
   \item \texttt  {HeLP{\textunderscore }AllOrdersPQ}, \hyperpage{18}
   \item \texttt  {HeL}\discretionary {-}{}{}\texttt  {P{\textunderscore }}\discretionary {-}{}{}\texttt  {Change4ti2}\discretionary {-}{}{}\texttt  {Precision}, 
-		\hyperpage{20}
+		\hyperpage{21}
   \item \texttt  {HeL}\discretionary {-}{}{}\texttt  {P{\textunderscore }}\discretionary {-}{}{}\texttt  {Change}\discretionary {-}{}{}\texttt  {Char}\discretionary {-}{}{}\texttt  {Keep}\discretionary {-}{}{}\texttt  {Sols}, 
 		\hyperpage{19}
   \item \texttt  {HeLP{\textunderscore }CharacterValue}, \hyperpage{26}
   \item \texttt  {HeL}\discretionary {-}{}{}\texttt  {P{\textunderscore }}\discretionary {-}{}{}\texttt  {Find}\discretionary {-}{}{}\texttt  {And}\discretionary {-}{}{}\texttt  {Verify}\discretionary {-}{}{}\texttt  {Solution}, 
-		\hyperpage{22}
+		\hyperpage{23}
   \item \texttt  {HeL}\discretionary {-}{}{}\texttt  {P{\textunderscore }}\discretionary {-}{}{}\texttt  {Multiplicities}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Eigenvalues}, 
-		\hyperpage{25}
+		\hyperpage{26}
   \item \texttt  {HeL}\discretionary {-}{}{}\texttt  {P{\textunderscore }}\discretionary {-}{}{}\texttt  {Possible}\discretionary {-}{}{}\texttt  {Partial}\discretionary {-}{}{}\texttt  {Augmentations}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Powers}, 
-		\hyperpage{22}
-  \item \texttt  {HeLP{\textunderscore }PQ}, \hyperpage{10}
-  \item \texttt  {HeLP{\textunderscore }PrintSolution}, \hyperpage{24}
+		\hyperpage{23}
+  \item \texttt  {HeLP{\textunderscore }PQ}, \hyperpage{9}
+  \item \texttt  {HeLP{\textunderscore }PrintSolution}, \hyperpage{25}
   \item \texttt  {HeLP{\textunderscore }Reset}, \hyperpage{20}
+  \item \texttt  {HeLP{\textunderscore }Solver}, \hyperpage{20}
   \item \texttt  {HeLP{\textunderscore }UseRedund}, \hyperpage{21}
-  \item \texttt  {HeLP{\textunderscore }VerifySolution}, \hyperpage{21}
-  \item \texttt  {HeLP{\textunderscore }WagnerTest}, \hyperpage{23}
+  \item \texttt  {HeLP{\textunderscore }VerifySolution}, \hyperpage{22}
+  \item \texttt  {HeLP{\textunderscore }Vertices}, \hyperpage{22}
+  \item \texttt  {HeLP{\textunderscore }WagnerTest}, \hyperpage{24}
   \item \texttt  {HeLP{\textunderscore }WithGivenOrder}, \hyperpage{12}
   \item \texttt  {HeL}\discretionary {-}{}{}\texttt  {P{\textunderscore }}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Given}\discretionary {-}{}{}\texttt  {Order}\discretionary {-}{}{}\texttt  {AndPA}, 
 		\hyperpage{14}

@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {2.1}\leavevmode {\color {Chapter }Zassenhaus Conjecture}}{6}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }ZC}}{6}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Prime Graph Question}}{9}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }PQ}}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }PQ}}{9}{subsection.2.2.1}
 \contentsline {chapter}{\numberline {3}\leavevmode {\color {Chapter }Further functions}}{12}{chapter.3}
 \contentsline {section}{\numberline {3.1}\leavevmode {\color {Chapter }Checks for specific orders}}{12}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }WithGivenOrder}}{12}{subsection.3.1.1}
@@ -19,18 +19,20 @@
 \contentsline {subsection}{\numberline {3.4.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }ChangeCharKeepSols}}{19}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}\leavevmode {\color {Chapter }HeLP{\textunderscore }Reset}}{20}{subsection.3.4.2}
 \contentsline {section}{\numberline {3.5}\leavevmode {\color {Chapter }Influencing how the Systems of Inequalities are solved}}{20}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }Change4ti2Precision}}{20}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }Solver}}{20}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}\leavevmode {\color {Chapter }HeLP{\textunderscore }UseRedund}}{21}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}\leavevmode {\color {Chapter }Checking solutions, calculating and checking solutions}}{21}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }VerifySolution}}{21}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}\leavevmode {\color {Chapter }HeLP{\textunderscore }FindAndVerifySolution}}{22}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}\leavevmode {\color {Chapter }HeLP{\textunderscore }PossiblePartialAugmentationsOfPowers}}{22}{subsection.3.6.3}
-\contentsline {section}{\numberline {3.7}\leavevmode {\color {Chapter }The Wagner test}}{23}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }WagnerTest}}{23}{subsection.3.7.1}
-\contentsline {section}{\numberline {3.8}\leavevmode {\color {Chapter }Output}}{24}{section.3.8}
-\contentsline {subsection}{\numberline {3.8.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }PrintSolution}}{24}{subsection.3.8.1}
-\contentsline {section}{\numberline {3.9}\leavevmode {\color {Chapter }Eigenvalue multiplicities and character values}}{25}{section.3.9}
-\contentsline {subsection}{\numberline {3.9.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }MultiplicitiesOfEigenvalues}}{25}{subsection.3.9.1}
+\contentsline {subsection}{\numberline {3.5.3}\leavevmode {\color {Chapter }HeLP{\textunderscore }Change4ti2Precision}}{21}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}\leavevmode {\color {Chapter }HeLP{\textunderscore }Vertices}}{22}{subsection.3.5.4}
+\contentsline {section}{\numberline {3.6}\leavevmode {\color {Chapter }Checking solutions, calculating and checking solutions}}{22}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }VerifySolution}}{22}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}\leavevmode {\color {Chapter }HeLP{\textunderscore }FindAndVerifySolution}}{23}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}\leavevmode {\color {Chapter }HeLP{\textunderscore }PossiblePartialAugmentationsOfPowers}}{23}{subsection.3.6.3}
+\contentsline {section}{\numberline {3.7}\leavevmode {\color {Chapter }The Wagner test}}{24}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }WagnerTest}}{24}{subsection.3.7.1}
+\contentsline {section}{\numberline {3.8}\leavevmode {\color {Chapter }Output}}{25}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }PrintSolution}}{25}{subsection.3.8.1}
+\contentsline {section}{\numberline {3.9}\leavevmode {\color {Chapter }Eigenvalue multiplicities and character values}}{26}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}\leavevmode {\color {Chapter }HeLP{\textunderscore }MultiplicitiesOfEigenvalues}}{26}{subsection.3.9.1}
 \contentsline {subsection}{\numberline {3.9.2}\leavevmode {\color {Chapter }HeLP{\textunderscore }CharacterValue}}{26}{subsection.3.9.2}
 \contentsline {chapter}{\numberline {4}\leavevmode {\color {Chapter }Extended examples}}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}\leavevmode {\color {Chapter }The Character Table Library}}{27}{section.4.1}
@@ -48,7 +50,6 @@
 \contentsline {section}{\numberline {5.6}\leavevmode {\color {Chapter }Known results about (ZC) and (PQ)}}{40}{section.5.6}
 \contentsline {chapter}{\numberline {6}\leavevmode {\color {Chapter }Remarks on technical problems and the implementation}}{41}{chapter.6}
 \contentsline {section}{\numberline {6.1}\leavevmode {\color {Chapter }Making the HeLP-package run}}{41}{section.6.1}
-\contentsline {section}{\numberline {6.2}\leavevmode {\color {Chapter }Computations with big coefficients - precision problems}}{42}{section.6.2}
-\contentsline {section}{\numberline {6.3}\leavevmode {\color {Chapter }How much 4ti2 is really there?}}{42}{section.6.3}
-\contentsline {chapter}{References}{45}{chapter*.4}
-\contentsline {chapter}{Index}{46}{section*.5}
+\contentsline {section}{\numberline {6.2}\leavevmode {\color {Chapter }How much 4ti2 and normaliz is really there?}}{43}{section.6.2}
+\contentsline {chapter}{References}{46}{chapter*.4}
+\contentsline {chapter}{Index}{47}{section*.5}

@@ -44,6 +44,8 @@
 
 <h3>5 <span class="Heading">Background</span></h3>
 
+<p>In this chapter we give a brief overview of the Zassenhaus Conjecture and the Prime Graph Questions and the techniques used in this package. For a more detailed exposition see <a href="chapBib.html#biBBaMaHeLPArticle">[BM15]</a>.</p>
+
 <p><a id="X7CAEB4DF8506EBF9" name="X7CAEB4DF8506EBF9"></a></p>
 
 <h4>5.1 <span class="Heading">The Zassenhaus Conjecture and the Prime Graph Question</span></h4>
@@ -68,7 +70,7 @@
 
 <p>Let <span class="SimpleMath">u</span> be a torsion element in <span class="SimpleMath">mathrmV(ZG)</span>. By results of G. Higman, S.D. Berman and M. Hertweck the following is known for the partial augmentations of <span class="Math">u</span>:</p>
 
-<p><em>Theorem:</em> (<a href="chapBib.html#biBSehgalBook2">[Seh93]</a>, Proposition (1.4); <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, Proposition 2.2) <span class="Math">\varepsilon_1(u) = 0</span> if <span class="Math">u \not= 1</span> and <span class="Math">\varepsilon_x(u) = 0</span> if the order of <span class="Math">x</span> does not divides the order of <span class="Math">u</span>.</p>
+<p><em>Theorem:</em> (<a href="chapBib.html#biBSehgalBook2">[Seh93]</a>, Proposition (1.4); <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, Theorem 2.3) <span class="Math">\varepsilon_1(u) = 0</span> if <span class="Math">u \not= 1</span> and <span class="Math">\varepsilon_x(u) = 0</span> if the order of <span class="Math">x</span> does not divides the order of <span class="Math">u</span>.</p>
 
 <p>Partial augmentations are connected to (ZC) and (PQ) via the following result, which is due to Z. Marciniak, J. Ritter, S. Sehgal and A. Weiss <a href="chapBib.html#biBMRSW">[MRSW87]</a>, Theorem 2.5:</p>
 
@@ -96,7 +98,7 @@
 
 <p>for all ordinary characters <span class="Math">\chi</span> and all <span class="Math">l</span>. This formula was given by I.S. Luthar and I.B.S. Passi <a href="chapBib.html#biBLP">[LP89]</a>.</p>
 
-<p>Later M. Hertweck showed that it may also be used for a representation over a field of characteristic <span class="Math">p &gt; 0</span> with character <span class="Math">\varphi</span>, if <span class="Math">p</span> is coprime to <span class="Math">k</span> <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, § 4. In that case one has to ignore the <span class="Math">p</span>-singular conjugacy classes (i.e. the classes of elements with an order divisible by <span class="Math">p</span>) and the above formula becomes</p>
+<p>Later M. Hertweck showed that it may also be used for a representation over a field of characteristic <span class="Math">p &gt; 0</span> with Brauer character <span class="Math">\varphi</span>, if <span class="Math">p</span> is coprime to <span class="Math">k</span> <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, § 4. In that case one has to ignore the <span class="Math">p</span>-singular conjugacy classes (i.e. the classes of elements with an order divisible by <span class="Math">p</span>) and the above formula becomes</p>
 
 <p class="pcenter"> \mu_l(u,\varphi) = \frac{1}{k} \sum_{1 \not= d \mid k} {\rm{Tr}}_{\mathbb{Q}(\zeta^d)/\mathbb{Q}}(\varphi(u^d)\zeta^{-dl}) + \frac{1}{k} \sum_{x^G,\ p \nmid o(x)} \varepsilon_x(u) {\rm{Tr}}_{\mathbb{Q}(\zeta)/\mathbb{Q}}(\varphi(x)\zeta^{-l}).</p>
 
@@ -114,7 +116,7 @@
 
 <h4>5.4 <span class="Heading">The Wagner test</span></h4>
 
-<p>We also included a result motivated by a theorem R. Wagner proved 1995 in his Diplomarbeit <a href="chapBib.html#biBWa">[Wag95]</a>. This result gives a further restriction on the partial augmentations of torsion units. We included it into the functions <code class="func">HeLP_ZC</code> (<a href="chap2.html#X81AF79A587054306"><span class="RefLink">2.1-1</span></a>), <code class="func">HeLP_PQ</code> (<a href="chap2.html#X813A10398218E9EE"><span class="RefLink">2.2-1</span></a>), <code class="func">HeLP_AllOrders</code> (<a href="chap3.html#X8727639883F787C5"><span class="RefLink">3.3-1</span></a>), <code class="func">HeLP_AllOrdersPQ</code> (<a href="chap3.html#X7C00E1567BFF1757"><span class="RefLink">3.3-2</span></a>) and <code class="func">HeLP_WagnerTest</code> (<a href="chap3.html#X79349D80830FA89B"><span class="RefLink">3.7-1</span></a>) and call it "Wagner test".</p>
+<p>We also included a result motivated by a theorem R. Wagner proved 1995 in his Diplomarbeit <a href="chapBib.html#biBWa">[Wag95]</a>. This result gives a further restriction on the partial augmentations of torsion units. Though the results was actually available before Wagner's work, cf. <a href="chapBib.html#biBBovdiHertweck">[BH08]</a> Remark 6, we named the test after him, since he was the first to use the HeLP-method on a computer. We included it into the functions <code class="func">HeLP_ZC</code> (<a href="chap2.html#X81AF79A587054306"><span class="RefLink">2.1-1</span></a>), <code class="func">HeLP_PQ</code> (<a href="chap2.html#X813A10398218E9EE"><span class="RefLink">2.2-1</span></a>), <code class="func">HeLP_AllOrders</code> (<a href="chap3.html#X8727639883F787C5"><span class="RefLink">3.3-1</span></a>), <code class="func">HeLP_AllOrdersPQ</code> (<a href="chap3.html#X7C00E1567BFF1757"><span class="RefLink">3.3-2</span></a>) and <code class="func">HeLP_WagnerTest</code> (<a href="chap3.html#X79349D80830FA89B"><span class="RefLink">3.7-1</span></a>) and call it "Wagner test".</p>
 
 <p><em>Theorem:</em> For a torsion unit <span class="SimpleMath">u ∈ mathrmV(ZG)</span>, a group element <span class="Math">s</span>, a prime <span class="Math">p</span> and a natural number <span class="Math">j</span> we have</p>
 
@@ -126,7 +128,7 @@
 
 <h4>5.5 <span class="Heading">s-constant (and (s,t)-constant) characters</span></h4>
 
-<p>If one is interested in units of mixed order <span class="Math">s*t</span> for two primes <span class="Math">s</span> and <span class="Math">t</span> (e.g. if one is studying the Prime Graph Question) an idea to make the HeLP method more efficient was introduced by V. Bovdi and A. Konovalov in <a href="chapBib.html#biBBKHS">[BK10]</a>, page 4. Assume one has several conjugacy classes of elements of order <span class="Math">s</span>, and a character taking the same value on all of these classes. Then the coefficient of every of these conjugacy classes in the system of inequalities of this character, which is obtained via the HeLP method, is the same. Also the constant terms of the inequalities do not depend on the partial augmentations of elements of order <span class="Math">s</span>. Thus for such characters one can reduce the number of variables in the inequalities by replacing all the partial augmentations on classes of elements of order <span class="Math">s</span> by their sum. To obtain the formulas for the multiplicities of the HeLP method one does not need the partial augmentations of elements of order <span class="Math">s</span>. Characters having the above property are called <span class="Math">s</span>-constant. In this way the existence of elements of order <span class="Math">s*t</span> can be excluded in a quite efficient way without doing calculations for elements of order <span class="Math">s</span>.</p>
+<p>If one is interested in units of mixed order <span class="Math">s*t</span> for two primes <span class="Math">s</span> and <span class="Math">t</span> (e.g. if one studies the Prime Graph Question) an idea to make the HeLP method more efficient was introduced by V. Bovdi and A. Konovalov in <a href="chapBib.html#biBBKHS">[BK10]</a>, page 4. Assume one has several conjugacy classes of elements of order <span class="Math">s</span>, and a character taking the same value on all of these classes. Then the coefficient of every of these conjugacy classes in the system of inequalities of this character, which is obtained via the HeLP method, is the same. Also the constant terms of the inequalities do not depend on the partial augmentations of elements of order <span class="Math">s</span>. Thus for such characters one can reduce the number of variables in the inequalities by replacing all the partial augmentations on classes of elements of order <span class="Math">s</span> by their sum. To obtain the formulas for the multiplicities of the HeLP method one does not need the partial augmentations of elements of order <span class="Math">s</span>. Characters having the above property are called <span class="Math">s</span>-constant. In this way the existence of elements of order <span class="Math">s*t</span> can be excluded in a quite efficient way without doing calculations for elements of order <span class="Math">s</span>.</p>
 
 <p>There is also the concept of <span class="Math">(s,t)</span>-constant characters, being constant on both, the conjugacy classes of elements of order <span class="Math">s</span> and on the conjugacy classes of elements of order <span class="Math">t</span>. The implementation of this is however not yet part of this package.</p>
 
@@ -162,14 +164,14 @@
 <li><p>Groups <span class="Math">X \rtimes A</span>, where <span class="Math">X</span> and <span class="Math">A</span> are abelian and <span class="Math">A</span> is of prime order <span class="Math">p</span> such that <span class="Math">p</span> is smaller then any prime divisor of the order of <span class="Math">X</span> <a href="chapBib.html#biBMRSW">[MRSW87]</a>,</p>
 
 </li>
-<li><p>All groups of order up to 159 and some other groups of order up to 200 listed in <a href="chapBib.html#biBHermanSingh">[HS15]</a>,</p>
+<li><p>All groups of order up to 71 <a href="chapBib.html#biBHoefertKimmerle">[HK06]</a>,</p>
 
 </li>
-<li><p>The non-abelian simple groups <span class="Math">A_5</span> <a href="chapBib.html#biBLP">[LP89]</a>, <span class="Math">A_6 \simeq PSL(2,9)</span> <a href="chapBib.html#biBHerA6">[Her08c]</a>, <span class="Math">PSL(2,7)</span>, <span class="Math">PSL(2,11)</span>, <span class="Math">PSL(2,13)</span> <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, <span class="Math">PSL(2,8)</span>, <span class="Math">PSL(2,17)</span> <a href="chapBib.html#biBKonovalovKimmiStAndrews">[KK13]</a> / <a href="chapBib.html#biBGildea">[Gil13]</a>, <span class="Math">PSL(2,19)</span>, <span class="Math">PSL(2,23)</span> <a href="chapBib.html#biBBaMaM10">[BM14]</a> and some extensions of these groups.</p>
+<li><p>The non-abelian simple groups <span class="Math">A_5</span> <a href="chapBib.html#biBLP">[LP89]</a>, <span class="Math">A_6 \simeq PSL(2,9)</span> <a href="chapBib.html#biBHerA6">[Her08c]</a>, <span class="Math">PSL(2,7)</span>, <span class="Math">PSL(2,11)</span>, <span class="Math">PSL(2,13)</span> <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, <span class="Math">PSL(2,8)</span>, <span class="Math">PSL(2,17)</span> <a href="chapBib.html#biBKonovalovKimmiStAndrews">[KK15]</a> <a href="chapBib.html#biBGildea">[Gil13]</a>, <span class="Math">PSL(2,19)</span>, <span class="Math">PSL(2,23)</span> <a href="chapBib.html#biBBaMaM10">[BM14]</a> and some extensions of these groups.</p>
 
 </li>
 </ul>
-<p>For the Prime Graph Question the following strong reduction was obtained in <a href="chapBib.html#biBKonovalovKimmiStAndrews">[KK13]</a>:</p>
+<p>For the Prime Graph Question the following strong reduction was obtained in <a href="chapBib.html#biBKonovalovKimmiStAndrews">[KK15]</a>:</p>
 
 <p><em>Theorem:</em> Assume the Prime Graph Question holds for all almost simple images of a group <span class="Math">G</span>. Then (PQ) also holds for <span class="Math">G.</span></p>
 
@@ -180,16 +182,19 @@
 <li><p>Solvable groups <a href="chapBib.html#biBKimmiPQ">[Kim06]</a>,</p>
 
 </li>
-<li><p>The groups <span class="Math">PSL(2,p)</span> where <span class="Math">p</span> denotes a prime <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>,</p>
+<li><p>Groups whose socle is isomorphic to a group <span class="Math">PSL(2,p)</span> or <span class="Math">PSL(2,p^2)</span>, where <span class="Math">p</span> denotes a prime, <a href="chapBib.html#biBHertweckBrauer">[Her07]</a>, <a href="chapBib.html#biBBaMa4prI">[BM16]</a>.</p>
 
 </li>
-<li><p>Half of the sporadic simple groups and their automorphism groups, for an overview see <a href="chapBib.html#biBKonovalovKimmiStAndrews">[KK13]</a>,</p>
+<li><p>Half of the sporadic simple groups and their automorphism groups; for an overview see <a href="chapBib.html#biBKonovalovKimmiStAndrews">[KK15]</a>,</p>
 
 </li>
-<li><p>The groups <span class="Math">A_7, A_8</span> <a href="chapBib.html#biBSalimA7A8">[Sal11]</a>, <span class="Math">A_9, A_{10}</span> <a href="chapBib.html#biBSalimA9A10">[Sal13]</a>,</p>
+<li><p>Groups whose socle is isomorphic to an alternating group of degree at most 17, <a href="chapBib.html#biBSalimA7A8">[Sal11]</a> <a href="chapBib.html#biBSalimA9A10">[Sal13]</a><a href="chapBib.html#biBBaCa">[BC15]</a>,</p>
 
 </li>
-<li><p>Almost simple groups whose order is divisible by at most three different primes <a href="chapBib.html#biBKonovalovKimmiStAndrews">[KK13]</a> and <a href="chapBib.html#biBBaMaM10">[BM14]</a>. (This implies that it holds for all groups with an order divisible by at most three primes, using the reduction result above.)</p>
+<li><p>Almost simple groups whose order is divisible by at most three different primes <a href="chapBib.html#biBKonovalovKimmiStAndrews">[KK15]</a> and <a href="chapBib.html#biBBaMaM10">[BM14]</a>. (This implies that it holds for all groups with an order divisible by at most three primes, using the reduction result above.)</p>
+
+</li>
+<li><p>Many almost simple groups whose order is divisible by four different primes <a href="chapBib.html#biBBaMa4prI">[BM16]</a></p>
 
 </li>
 </ul>

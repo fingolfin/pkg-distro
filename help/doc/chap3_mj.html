@@ -53,8 +53,10 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X7A05180B7DA5EB77">3.5 <span class="Heading">Influencing how the Systems of Inequalities are solved</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7F6C4FAD805CD7FC">3.5-1 HeLP_Change4ti2Precision</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7B2326C5813CF36B">3.5-1 HeLP_Solver</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7A7536D9790C1901">3.5-2 HeLP_UseRedund</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7F6C4FAD805CD7FC">3.5-3 HeLP_Change4ti2Precision</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X8490447A857CFD87">3.5-4 HeLP_Vertices</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X7990EC037D6AE938">3.6 <span class="Heading">Checking solutions, calculating and checking solutions</span></a>
 </span>
@@ -107,7 +109,7 @@ CharacterTable( "A5" )
 [ [ [ 0, 1 ] ], [ [ 1, 0 ] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_PrintSolution(5);</span>
 Solutions for elements of order 5:
-[ [               u ],
+[ [               u ],.
   [  [ "5a", "5b" ] ],
   [             --- ],
   [        [ 0, 1 ] ],
@@ -156,6 +158,8 @@ false
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable("L2(49).2_1");   </span>
 CharacterTable( "L2(49).2_1" )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(Irr(C), 7);;</span>
+#I  Number of solutions for elements of order 7: 1; stored in HeLP_sol[7].
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(Irr(C){[2]}, 14);</span>
 #I  The given data admit infinitely many solutions for elements of order 14.
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(Irr(C){[44]}, 14);</span>
@@ -384,21 +388,21 @@ false
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeLP_AllOrders</code>( <var class="Arg">CharacterTable|Group</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: <code class="keyw">true</code> if (ZC) can be solved using the given data, <code class="keyw">false</code> otherwise</p>
 
-<p>This function does almost the same as <code class="func">HeLP_ZC</code> (<a href="chap2_mj.html#X81AF79A587054306"><span class="RefLink">2.1-1</span></a>). It checks whether the Zassenhaus Conjecture can be verified for a group, but does not compute the partial augmentations of elements of order <span class="SimpleMath">\(k\)</span>, if <code class="keyw">HeLP_sol[k]</code> already exists. Thus some precalculations using e.g. <code class="func">HeLP_WithGivenOrder</code> (<a href="chap3_mj.html#X7F8F6E3D80A23C1D"><span class="RefLink">3.1-1</span></a>) are respected. In contrast to <code class="func">HeLP_ZC</code> (<a href="chap2_mj.html#X81AF79A587054306"><span class="RefLink">2.1-1</span></a>) this function also does not check whether the group is nilpotent to use the Weiss-result to have an immediate positive solution for (ZC).</p>
+<p>This function does almost the same as <code class="func">HeLP_ZC</code> (<a href="chap2_mj.html#X81AF79A587054306"><span class="RefLink">2.1-1</span></a>). It checks whether the Zassenhaus Conjecture can be verified for a group, but does not compute the partial augmentations of elements of order <span class="SimpleMath">\(k\)</span>, if <code class="keyw">HeLP_sol[k]</code> already exists. It does however verify the solutions given in <code class="keyw">HeLP_sol</code> using all available tables for the group, see <code class="func">HeLP_VerifySolution</code> (<a href="chap3_mj.html#X7DAA7EF785621D9E"><span class="RefLink">3.6-1</span></a>). Thus some precalculations using e.g. <code class="func">HeLP_WithGivenOrder</code> (<a href="chap3_mj.html#X7F8F6E3D80A23C1D"><span class="RefLink">3.1-1</span></a>) are respected. In contrast to <code class="func">HeLP_ZC</code> (<a href="chap2_mj.html#X81AF79A587054306"><span class="RefLink">2.1-1</span></a>) this function also does not check whether the group is nilpotent to use the Weiss-result to have an immediate positive solution for (ZC).</p>
 
 <p>This function is interesting if one wants to save time or possesses some information, which was not obtained using this package and was entered manually into <code class="keyw">HeLP_sol</code>.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable("L2(7)");</span>
-CharacterTable( "L3(2)" )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(C,6);</span>
-#I  Number of solutions for elements of order 6: 1; stored in HeLP_sol[6].
-[ [ [ 1 ], [ 1 ], [ -2, 3 ] ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_AllOrders(C);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable(PSL(2,7));         </span>
+CharacterTable( Group([ (3,7,5)(4,8,6), (1,2,6)(3,4,8) ]) )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_ZC(C);        </span>
+#I  The Brauer tables for the following primes are not available: [ 2, 3, 7 ].
 #I  (ZC) can't be solved, using the given data, for the orders: [ 6 ].
 false
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_ZC(C);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_sol[6] := [ ];</span>
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_AllOrders(C);</span>
 true
 </pre></div>
 
@@ -520,16 +524,16 @@ CharacterTable( "A5" )
 
 <h4>3.5 <span class="Heading">Influencing how the Systems of Inequalities are solved</span></h4>
 
-<p>HeLP uses currently two external programs (i.e. programs that are not part of the GAP-system): zsolve from 4ti2 to solve the systems of linear inequalities and redund from lrslib to simplify the inequlities before handing them over to zsolve (HeLP can also be used without lrslib installed, but in general it is recommanded to have lrslib installed). The following functions can be used to influence the behaviour of these external programms.</p>
+<p>HeLP uses currently three external programs (i.e. programs that are not part of the GAP-system): zsolve from 4ti2 and/or normaliz to solve the systems of linear inequalities and redund from lrslib to simplify the inequlities before handing them over to the solver (HeLP can also be used without lrslib installed. In general it is recommanded to have lrslib installed, if 4ti2 is used as the solver). The following functions can be used to influence the behaviour of these external programms.</p>
 
-<p><a id="X7F6C4FAD805CD7FC" name="X7F6C4FAD805CD7FC"></a></p>
+<p><a id="X7B2326C5813CF36B" name="X7B2326C5813CF36B"></a></p>
 
-<h5>3.5-1 HeLP_Change4ti2Precision</h5>
+<h5>3.5-1 HeLP_Solver</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeLP_Change4ti2Precision</code>( <var class="Arg">string</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeLP_Solver</code>( [<var class="Arg">string</var>] )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: nothing</p>
 
-<p>The function changes the maximum precision of the calculations of 4ti2 to solve the occurring systems of linear inequalities. The possible arguments are <code class="keyw">"32"</code>, <code class="keyw">"64"</code> and <code class="keyw">"gmp"</code>. After calling the function the new precision will be used until this function is used again. The default value is <code class="keyw">"32"</code>. A higher precision causes slower calculations. But this function might be used to increase the precision of 4ti2, when one gets an error message like "Error, 4ti2 Error: Results were near maximum precision (32bit). Please restart with higher precision!" stating that the results were close to the maximum 4ti2-precision.</p>
+<p>This function can be used to change the solver used for the HeLP-system between 4ti2 and normaliz. If the function is called without an argument it prints which solver is currently used. If the argument it is called with is one of the stings "4ti2" or "normaliz", then the solver used for future calculations is changed to the one given as argument in case this solver is found by the HeLP-package. If both solvers are found when the package is loaded normaliz is taken as default.</p>
 
 <p><a id="X7A7536D9790C1901" name="X7A7536D9790C1901"></a></p>
 
@@ -538,7 +542,16 @@ CharacterTable( "A5" )
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeLP_UseRedund</code>( <var class="Arg">bool</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: nothing</p>
 
-<p>The function determines whether HeLP uses 'redund' from the lrslib-package to remove redundant equations from the HeLP system. If <var class="Arg">bool</var> is <code class="keyw">true</code> 'redund' will be used in all calculation that follow, if it is <code class="keyw">false</code>, 'redund' will not be used (which might take significantly longer). If 'redund' was not found by GAP a warning will be printed and the calculations will be performed without 'redund'. As default 'redund' will be used in all calculations.</p>
+<p>This function determines whether HeLP uses 'redund' from the lrslib-package to remove redundant equations from the HeLP system. If <var class="Arg">bool</var> is <code class="keyw">true</code> 'redund' will be used in all calculation that follow, if it is <code class="keyw">false</code>, 'redund' will not be used (which might take significantly longer). If 'redund' was not found by GAP a warning will be printed and the calculations will be performed without 'redund'. As default 'redund' will be used in all calculations, if 4ti2 is the chosen solver, and 'redund' will not be used, if normaliz is used.</p>
+
+<p><a id="X7F6C4FAD805CD7FC" name="X7F6C4FAD805CD7FC"></a></p>
+
+<h5>3.5-3 HeLP_Change4ti2Precision</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeLP_Change4ti2Precision</code>( <var class="Arg">string</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns: nothing</p>
+
+<p>This function changes the maximum precision of the calculations of 4ti2 to solve the occurring systems of linear inequalities. The possible arguments are <code class="keyw">"32"</code>, <code class="keyw">"64"</code> and <code class="keyw">"gmp"</code>. After calling the function the new precision will be used until this function is used again. The default value is <code class="keyw">"32"</code>. A higher precision causes slower calculations. But this function might be used to increase the precision of 4ti2, when one gets an error message like "Error, 4ti2 Error: Results were near maximum precision (32bit). Please restart with higher precision!" stating that the results were close to the maximum 4ti2-precision. normaliz does automatically change its precision, when it reaches an overflow.</p>
 
 <p>Sometimes it is desirable to perform calculations without redund (even if it is installed and in many cases improves the performance of the package) or with a higher precision. For example, determining the partial augmentations for units of order <span class="SimpleMath">\(14\)</span> for <code class="keyw">SmallGroup(392, 30)</code> involves very long calculations (when called with redund and precision 32) or cause errors (when called without redund and precision 32). However, the following works in a reasonable time.</p>
 
@@ -546,6 +559,8 @@ CharacterTable( "A5" )
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable(SmallGroup(392,30));</span>
 CharacterTable( &lt;pc group of size 392 with 5 generators&gt; )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("4ti2");</span>
+'4ti2' will be used from now on.
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_UseRedund(false);</span>
 The calculations will be performed without using 'redund' from now on.
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_ZC(C);</span>
@@ -570,6 +585,15 @@ The calculations of 4ti2 will be performed with precision 64 from now on.
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_ZC(C);</span>
 true
 </pre></div>
+
+<p><a id="X8490447A857CFD87" name="X8490447A857CFD87"></a></p>
+
+<h5>3.5-4 HeLP_Vertices</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeLP_Vertices</code>( <var class="Arg">string</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns: nothing</p>
+
+<p>If normlaiz is used as the solver of the HeLP-system this function influences, whether the "VerticesOfPolyhedron" are computed by normaliz. By default these are only computed, if the system has a trivial solution. The function takes "vertices", "novertices" and "default" as arguments. If you do not understand what this means, don't worry.</p>
 
 <p><a id="X7990EC037D6AE938" name="X7990EC037D6AE938"></a></p>
 

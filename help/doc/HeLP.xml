@@ -12,7 +12,7 @@
 <TableOfContents/>
 <Body>
 <Index>&HeLP;</Index>
-<#Include SYSTEM "AutoDocMainFile.xml">
+<#Include SYSTEM "_AutoDocMainFile.xml">
 </Body>
 <Bibliography Databases="HeLP.bib"/>
 <TheIndex/>

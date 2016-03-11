@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<#Include SYSTEM "_Chapter_Introduction.xml">
+<#Include SYSTEM "_Chapter_The_main_functions.xml">
+<#Include SYSTEM "_Chapter_Further_functions.xml">
+<#Include SYSTEM "_Chapter_Extended_examples.xml">
+<#Include SYSTEM "_Chapter_Background.xml">
+<#Include SYSTEM "_Chapter_Remarks_on_technical_problems_and_the_implementation.xml">

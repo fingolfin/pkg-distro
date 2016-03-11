@@ -1,0 +1,70 @@
+#!/bin/sh
+# (C) Frank Lübeck 2011
+# configure script for Browse, EDIM and other packages
+# usage: ./configure [GAPPATH] [CONFIGNAME=myconf]
+# this script creates a "Makefile-myconf" from "Makefile.in" with
+# a link to "Makefile"
+
+# read arguments
+while [ x"$1" != "x" ]; do
+  if [ ${1#CONFIGNAME=} = ${1} ]; then
+    GAPPATH=$1
+  else
+    eval $1
+  fi
+  shift
+done
+
+if [ x"$GAPPATH" = "x" ]; then
+    GAPPATH=../..
+    echo "Using ../.. as default GAPPATH"
+fi
+
+if [ x"$CONFIGNAME" = "x" ]; then
+  CONFIGNAME="default64"
+  if [ ! -e $GAPPATH/sysinfo.gap-$CONFIGNAME ]; then
+    CONFIGNAME="default32"
+		if [ ! -e $GAPPATH/sysinfo.gap-$CONFIGNAME ]; then
+			CONFIGNAME="UNKNOWN"
+		fi
+  fi
+fi
+
+if [ x"$CONFIGNAME" != "xUNKNOWN" ]; then
+	CONFIGSUFFIX="-$CONFIGNAME"
+else
+	CONFIGSUFFIX=""
+fi
+
+if [ ! -e $GAPPATH/sysinfo.gap$CONFIGSUFFIX ]; then
+    echo
+    echo "No file $GAPPATH/sysinfo.gap$CONFIGSUFFIX found."
+    echo
+    echo "Usage: ./configure [GAPPATH] [CONFIGNAME=confnam]"
+    echo "       where GAPPATH is a path to your GAP installation"
+    echo "       and confnam is the name of the GAP configuration to use."
+    echo "       (The default for GAPPATH is \"../..\" and default confignam"
+    echo "       is \"default64\" if it exists, otherwise \"default32\".)"
+    echo
+    echo "Either your GAPPATH is incorrect or the GAP it is pointing to"
+    echo "is not properly compiled (do \"./configure ; make\" there first)."
+    echo
+    echo Aborting... No Makefile is generated.
+    echo
+    exit 1
+fi
+
+echo "Using config in $GAPPATH/sysinfo.gap$CONFIGSUFFIX"
+
+rm -f Makefile Makefile$CONFIGSUFFIX
+. $GAPPATH/sysinfo.gap$CONFIGSUFFIX
+sed \
+    -e 's|@GAPPATH@|'$GAPPATH'|g' \
+    -e 's/@GAPARCH@/'$GAParch'/g' \
+  Makefile.in > Makefile$CONFIGSUFFIX
+
+if [ x"$CONFIGNAME" != "xUNKNOWN" ]; then
+    ln -s Makefile$CONFIGSUFFIX Makefile
+    echo "Created ./Makefile$CONFIGSUFFIX with link from ./Makefile"
+fi
+

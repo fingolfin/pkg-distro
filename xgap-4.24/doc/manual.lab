@@ -1,0 +1,311 @@
+\makelabel{xgap:How to read this manual}{1}
+\makelabel{xgap:What is XGAP?}{2}
+\makelabel{xgap:Basics}{2.1}
+\makelabel{xgap:What you can do with XGAP}{2.2}
+\makelabel{xgap:How does it work?}{2.3}
+\makelabel{xgap:Historical Remarks and Acknowledgements}{2.4}
+\makelabel{xgap:Installing XGAP}{3}
+\makelabel{xgap:Overview}{3.1}
+\makelabel{xgap:What you need to install XGAP}{3.2}
+\makelabel{xgap:Getting and unpacking the sources}{3.3}
+\makelabel{xgap:Configuring and Compiling the C part}{3.4}
+\makelabel{xgap:Installing the Startup Script}{3.5}
+\makelabel{xgap:Installing in a different than the standard location}{3.6}
+\makelabel{xgap:Subgroup Lattices - Examples}{4}
+\makelabel{xgap:The Subgroup Lattice of the Dihedral Group of Order 8}{4.1}
+\makelabel{xgap:gapxgap}{4.1}
+\makelabel{xgap:A Partial Subgroup Lattice of the Symmetric Group on 6 Points}{4.2}
+\makelabel{xgap:xgapgap}{4.2}
+\makelabel{xgap:A Partial Subgroup Lattice of the Cavicchioli Group}{4.3}
+\makelabel{xgap:A Partial Subgroup Lattice of the Trefoil Knot Group}{4.4}
+\makelabel{xgap:A Partial Subgroup Lattice of a Finitely Presented Group}{4.5}
+\makelabel{xgap:A Partial Subgroup Lattice of a Space Group}{4.6}
+\makelabel{xgap:Subgroup Lattices - Systematic Description}{5}
+\makelabel{xgap:GraphicSubgroupLattice}{5.1}
+\makelabel{xgap:GraphicSubgroupLattice!default sheet size form}{5.1.1}
+\makelabel{xgap:GraphicSubgroupLattice!sheet size setting form}{5.1.2}
+\makelabel{xgap:GraphicSubgroupLattice, Protocol of Group Theoretic Constructions}{5.2}
+\makelabel{xgap:loggingfacility}{5.2}
+\makelabel{xgap:GraphicSubgroupLattice, Labelling of Levels}{5.3}
+\makelabel{xgap:levelsintro}{5.3}
+\makelabel{xgap:GraphicSubgroupLattice, Moving Vertices}{5.4}
+\makelabel{xgap:GraphicSubgroupLattice, Selecting Vertices}{5.5}
+\makelabel{xgap:GraphicSubgroupLattice, Inserting Vertices}{5.6}
+\makelabel{xgap:InsertVertex}{5.6.1}
+\makelabel{xgap:InsertVertex}{5.6.1}
+\makelabel{xgap:GraphicSubgroupLattice, Sheet Menu}{5.7}
+\makelabel{xgap:save as postscript}{5.7.1}
+\makelabel{xgap:close graphic sheet}{5.7.2}
+\makelabel{xgap:GraphicSubgroupLattice, Poset Menu}{5.8}
+\makelabel{xgap:Redraw}{5.8.1}
+\makelabel{xgap:Show Levels}{5.8.2}
+\makelabel{xgap:Show Levelparameters}{5.8.3}
+\makelabel{xgap:Delete Vertices}{5.8.4}
+\makelabel{xgap:Delete Edge}{5.8.5}
+\makelabel{xgap:Merge Classes}{5.8.6}
+\makelabel{xgap:Magnify Lattice}{5.8.7}
+\makelabel{xgap:Shrink Lattice}{5.8.8}
+\makelabel{xgap:Resize Lattice}{5.8.9}
+\makelabel{xgap:Resize Sheet}{5.8.10}
+\makelabel{xgap:Change Labels}{5.8.11}
+\makelabel{xgap:Average Y Positions}{5.8.12}
+\makelabel{xgap:Average X Positions}{5.8.13}
+\makelabel{xgap:Rearrange Classes}{5.8.14}
+\makelabel{xgap:Use BlackWhite}{5.8.15}
+\makelabel{xgap:GraphicSubgroupLattice, Subgroups Menu}{5.9}
+\makelabel{xgap:All Subgroups}{5.9.1}
+\makelabel{xgap:Centralizers}{5.9.2}
+\makelabel{xgap:Centres}{5.9.3}
+\makelabel{xgap:Closure}{5.9.4}
+\makelabel{xgap:Closures}{5.9.5}
+\makelabel{xgap:Commutator Subgroups}{5.9.6}
+\makelabel{xgap:Conjugate Subgroups}{5.9.7}
+\makelabel{xgap:Cores}{5.9.8}
+\makelabel{xgap:Derived Series}{5.9.9}
+\makelabel{xgap:Derived Subgroups}{5.9.10}
+\makelabel{xgap:Fitting Subgroups}{5.9.11}
+\makelabel{xgap:Intermediate Subgroups}{5.9.12}
+\makelabel{xgap:Intersection}{5.9.13}
+\makelabel{xgap:Intersections}{5.9.14}
+\makelabel{xgap:Normalizers}{5.9.15}
+\makelabel{xgap:Normal Closures}{5.9.16}
+\makelabel{xgap:Normal Subgroups}{5.9.17}
+\makelabel{xgap:Sylow Subgroups}{5.9.18}
+\makelabel{xgap:SelectedGroups to GAP}{5.9.19}
+\makelabel{xgap:InsertVertices from GAP}{5.9.20}
+\makelabel{xgap:Start Logging}{5.9.21}
+\makelabel{xgap:Stop Logging}{5.9.22}
+\makelabel{xgap:GraphicSubgroupLattice, Information Menu}{5.10}
+\makelabel{xgap:Size}{5.10.1}
+\makelabel{xgap:Index}{5.10.2}
+\makelabel{xgap:IsAbelian}{5.10.3}
+\makelabel{xgap:IsCyclic}{5.10.4}
+\makelabel{xgap:IsNilpotent}{5.10.5}
+\makelabel{xgap:IsPerfect}{5.10.6}
+\makelabel{xgap:IsSimple}{5.10.7}
+\makelabel{xgap:IsSolvable}{5.10.8}
+\makelabel{xgap:IsCentral}{5.10.9}
+\makelabel{xgap:IsNormal}{5.10.10}
+\makelabel{xgap:Isomorphism}{5.10.11}
+\makelabel{xgap:Vertex Shapes}{5.11}
+\makelabel{xgap:circle!vertex shape}{5.11.1}
+\makelabel{xgap:diamond!vertex shape}{5.11.2}
+\makelabel{xgap:rectangle!vertex shape}{5.11.3}
+\makelabel{xgap:GGLLimitForIsNormalCalc}{5.11.4}
+\makelabel{xgap:GraphicSubgroupLattice for FpGroups, Subgroups Menu}{5.12}
+\makelabel{xgap:Abelian Prime Quotient}{5.12.1}
+\makelabel{xgap:All Overgroups}{5.12.2}
+\makelabel{xgap:Closure!for FpGroups}{5.12.3}
+\makelabel{xgap:Compare Subgroups}{5.12.4}
+\makelabel{xgap:Conjugacy Class}{5.12.5}
+\makelabel{xgap:Cores!for FpGroups}{5.12.6}
+\makelabel{xgap:Derived SubgroupsFp}{5.12.7}
+\makelabel{xgap:Epimorphisms (GQuotients)}{5.12.8}
+\makelabel{xgap:Intermediate Subgroups!for FpGroups}{5.12.9}
+\makelabel{xgap:Intersection!for FpGroups}{5.12.10}
+\makelabel{xgap:Intersections!for FpGroups}{5.12.11}
+\makelabel{xgap:Low Index Subgroups}{5.12.12}
+\makelabel{xgap:Normalizers!for FpGroups}{5.12.13}
+\makelabel{xgap:Prime Quotient}{5.12.14}
+\makelabel{xgap:Test Conjugacy}{5.12.15}
+\makelabel{xgap:SelectedGroups to GAP!for FpGroups}{5.12.16}
+\makelabel{xgap:InsertVertices from GAP!for FpGroups}{5.12.17}
+\makelabel{xgap:Start Logging!for FpGroups}{5.12.18}
+\makelabel{xgap:Stop Logging!for FpGroups}{5.12.19}
+\makelabel{xgap:GraphicSubgroupLattice for FpGroups, Information Menu}{5.13}
+\makelabel{xgap:Index!for FpGroups}{5.13.1}
+\makelabel{xgap:IsNormal!for FpGroups}{5.13.2}
+\makelabel{xgap:IsFpGroup}{5.13.3}
+\makelabel{xgap:Abelian Invariants}{5.13.4}
+\makelabel{xgap:Coset Table}{5.13.5}
+\makelabel{xgap:IsomorphismFpGroup}{5.13.6}
+\makelabel{xgap:Factor Fp Group}{5.13.7}
+\makelabel{xgap:Graphic Sheets - Basic graphic operations}{6}
+\makelabel{xgap:Graphic Sheet Objects}{6.1}
+\makelabel{xgap:GraphicSheet}{6.1.1}
+\makelabel{xgap:Close!Callback}{6.1.2}
+\makelabel{xgap:LeftPBDown}{6.1.3}
+\makelabel{xgap:RightPBDown}{6.1.4}
+\makelabel{xgap:ShiftLeftPBDown}{6.1.5}
+\makelabel{xgap:ShiftRightPBDown}{6.1.6}
+\makelabel{xgap:CtrlLeftPBDown}{6.1.7}
+\makelabel{xgap:CtrlRightPBDown}{6.1.8}
+\makelabel{xgap:InstallCallback}{6.1.9}
+\makelabel{xgap:RemoveCallback}{6.1.10}
+\makelabel{xgap:Callback}{6.1.11}
+\makelabel{xgap:IsAlive}{6.1.12}
+\makelabel{xgap:Close}{6.1.13}
+\makelabel{xgap:Resize}{6.1.14}
+\makelabel{xgap:WindowId}{6.1.15}
+\makelabel{xgap:SetTitle}{6.1.16}
+\makelabel{xgap:SaveAsPS}{6.1.17}
+\makelabel{xgap:FastUpdate}{6.1.18}
+\makelabel{xgap:Graphic Objects in Sheets}{6.2}
+\makelabel{xgap:IsGraphicObject}{6.2.1}
+\makelabel{xgap:Box}{6.2.2}
+\makelabel{xgap:Box}{6.2.2}
+\makelabel{xgap:Circle}{6.2.3}
+\makelabel{xgap:Circle}{6.2.3}
+\makelabel{xgap:Disc}{6.2.4}
+\makelabel{xgap:Disc}{6.2.4}
+\makelabel{xgap:Diamond}{6.2.5}
+\makelabel{xgap:Diamond}{6.2.5}
+\makelabel{xgap:Rectangle}{6.2.6}
+\makelabel{xgap:Rectangle}{6.2.6}
+\makelabel{xgap:Line}{6.2.7}
+\makelabel{xgap:Line}{6.2.7}
+\makelabel{xgap:Text}{6.2.8}
+\makelabel{xgap:Text}{6.2.8}
+\makelabel{xgap:Connection}{6.2.9}
+\makelabel{xgap:Connection}{6.2.9}
+\makelabel{xgap:Disconnect}{6.2.10}
+\makelabel{xgap:Draw}{6.2.11}
+\makelabel{xgap:Delete![gobject]}{6.2.12}
+\makelabel{xgap:Delete![gobject]}{6.2.12}
+\makelabel{xgap:Destroy}{6.2.13}
+\makelabel{xgap:Revive}{6.2.14}
+\makelabel{xgap:Move![gobject]}{6.2.15}
+\makelabel{xgap:MoveDelta}{6.2.16}
+\makelabel{xgap:PSString}{6.2.17}
+\makelabel{xgap:PrintInfo}{6.2.18}
+\makelabel{xgap:Recolor![gobject]}{6.2.19}
+\makelabel{xgap:Reshape![gobject]}{6.2.20}
+\makelabel{xgap:in!for graphic objects}{6.2.21}
+\makelabel{xgap:Change}{6.2.22}
+\makelabel{xgap:Relabel![gobject]}{6.2.23}
+\makelabel{xgap:SetWidth![gobject]}{6.2.24}
+\makelabel{xgap:Highlight![gobject]}{6.2.25}
+\makelabel{xgap:Highlight![gobject]}{6.2.25}
+\makelabel{xgap:Colors in XGAP}{6.3}
+\makelabel{xgap:Color Models}{6.3}
+\makelabel{xgap:COLORS}{6.3.1}
+\makelabel{xgap:Operations for Graphic Objects}{6.4}
+\makelabel{xgap:Global Information}{6.5}
+\makelabel{xgap:VERTEX!record}{6.5.1}
+\makelabel{xgap:FONTS}{6.5.2}
+\makelabel{xgap:FontInfo}{6.5.3}
+\makelabel{xgap:BUTTONS}{6.5.4}
+\makelabel{xgap:User Communication}{7}
+\makelabel{xgap:Menus in Graphic Sheets}{7.1}
+\makelabel{xgap:Menu![menu]}{7.1.1}
+\makelabel{xgap:Menu![menu]}{7.1.1}
+\makelabel{xgap:Check}{7.1.2}
+\makelabel{xgap:Enable}{7.1.3}
+\makelabel{xgap:Enable}{7.1.3}
+\makelabel{xgap:Mouse Events}{7.2}
+\makelabel{xgap:WcQueryPointer}{7.2.1}
+\makelabel{xgap:Drag}{7.2.2}
+\makelabel{xgap:Dialogs}{7.3}
+\makelabel{xgap:Dialog}{7.3.1}
+\makelabel{xgap:Query}{7.3.2}
+\makelabel{xgap:Query}{7.3.2}
+\makelabel{xgap:Popups}{7.4}
+\makelabel{xgap:PopupMenu}{7.4.1}
+\makelabel{xgap:Query!for popup}{7.4.2}
+\makelabel{xgap:TextSelector}{7.4.3}
+\makelabel{xgap:Enable!for text selectors}{7.4.4}
+\makelabel{xgap:Enable!for text selectors}{7.4.4}
+\makelabel{xgap:Relabel!for text selectors}{7.4.5}
+\makelabel{xgap:Relabel!for text selectors}{7.4.5}
+\makelabel{xgap:SetName!for text selectors}{7.4.6}
+\makelabel{xgap:Reset!for text selectors}{7.4.7}
+\makelabel{xgap:Close!for text selectors}{7.4.8}
+\makelabel{xgap:IndexOfSelectedText}{7.4.9}
+\makelabel{xgap:IndexOfSelectedButton}{7.4.10}
+\makelabel{xgap:Graphic Posets}{8}
+\makelabel{xgap:Introduction}{8.1}
+\makelabel{xgap:Operations}{8.2}
+\makelabel{xgap:GraphicPoset}{8.2.1}
+\makelabel{xgap:CreateLevel}{8.2.2}
+\makelabel{xgap:CreateLevel}{8.2.2}
+\makelabel{xgap:CreateClass}{8.2.3}
+\makelabel{xgap:Vertex![poset]}{8.2.4}
+\makelabel{xgap:Edge}{8.2.5}
+\makelabel{xgap:Edge}{8.2.5}
+\makelabel{xgap:Delete!for edge in poset}{8.2.6}
+\makelabel{xgap:Delete!for vertex in poset}{8.2.6}
+\makelabel{xgap:Delete!for class in poset}{8.2.6}
+\makelabel{xgap:DeleteLevel}{8.2.7}
+\makelabel{xgap:ResizeLevel}{8.2.8}
+\makelabel{xgap:MoveLevel}{8.2.9}
+\makelabel{xgap:Relabel![poset]}{8.2.10}
+\makelabel{xgap:Relabel![poset]}{8.2.10}
+\makelabel{xgap:Relabel![poset]}{8.2.10}
+\makelabel{xgap:Relabel![poset]}{8.2.10}
+\makelabel{xgap:Move![poset]}{8.2.11}
+\makelabel{xgap:Move![poset]}{8.2.11}
+\makelabel{xgap:Reshape![poset]}{8.2.12}
+\makelabel{xgap:Reshape![poset]}{8.2.12}
+\makelabel{xgap:Recolor![poset]}{8.2.13}
+\makelabel{xgap:Recolor![poset]}{8.2.13}
+\makelabel{xgap:Recolor![poset]}{8.2.13}
+\makelabel{xgap:Recolor![poset]}{8.2.13}
+\makelabel{xgap:SetWidth![poset]}{8.2.14}
+\makelabel{xgap:SetWidth![poset]}{8.2.14}
+\makelabel{xgap:Highlight![poset]}{8.2.15}
+\makelabel{xgap:Highlight![poset]}{8.2.15}
+\makelabel{xgap:Select}{8.2.16}
+\makelabel{xgap:Select}{8.2.16}
+\makelabel{xgap:DeselectAll}{8.2.17}
+\makelabel{xgap:Selected}{8.2.18}
+\makelabel{xgap:ChooseLabel}{8.2.19}
+\makelabel{xgap:ChooseLabel}{8.2.19}
+\makelabel{xgap:ChooseLevel}{8.2.20}
+\makelabel{xgap:ChooseClass}{8.2.21}
+\makelabel{xgap:ChooseColor}{8.2.22}
+\makelabel{xgap:ChooseColor}{8.2.22}
+\makelabel{xgap:ChooseHighlight}{8.2.23}
+\makelabel{xgap:ChoosePosition}{8.2.24}
+\makelabel{xgap:ChoosePosition}{8.2.24}
+\makelabel{xgap:ChooseShape}{8.2.25}
+\makelabel{xgap:ChooseWidth}{8.2.26}
+\makelabel{xgap:ChooseWidth}{8.2.26}
+\makelabel{xgap:CompareLevels}{8.2.27}
+\makelabel{xgap:WhichLevel}{8.2.28}
+\makelabel{xgap:WhichClass}{8.2.29}
+\makelabel{xgap:WhichVertex}{8.2.30}
+\makelabel{xgap:WhichVertex}{8.2.30}
+\makelabel{xgap:WhichVertex}{8.2.30}
+\makelabel{xgap:WhichVertices}{8.2.31}
+\makelabel{xgap:WhichVertices}{8.2.31}
+\makelabel{xgap:WhichVertices}{8.2.31}
+\makelabel{xgap:Levels}{8.2.32}
+\makelabel{xgap:Classes}{8.2.33}
+\makelabel{xgap:Vertices}{8.2.34}
+\makelabel{xgap:Maximals}{8.2.35}
+\makelabel{xgap:MaximalIn}{8.2.36}
+\makelabel{xgap:PositionLevel}{8.2.37}
+\makelabel{xgap:Menu![poset]}{8.2.38}
+\makelabel{xgap:ModifyEnabled}{8.2.39}
+\makelabel{xgap:InstallPopup}{8.2.40}
+\makelabel{xgap:PosetLeftClick}{8.2.41}
+\makelabel{xgap:PosetCtrlLeftClick}{8.2.42}
+\makelabel{xgap:PosetRightClick}{8.2.43}
+\makelabel{xgap:UserDeleteVerticesOp}{8.2.44}
+\makelabel{xgap:UserDeleteEdgeOp}{8.2.45}
+\makelabel{xgap:UserMergeClassesOp}{8.2.46}
+\makelabel{xgap:UserMagnifyLattice}{8.2.47}
+\makelabel{xgap:UserShrinkLattice}{8.2.48}
+\makelabel{xgap:UserResizeLattice}{8.2.49}
+\makelabel{xgap:UserResizeSheet}{8.2.50}
+\makelabel{xgap:UserMoveLattice}{8.2.51}
+\makelabel{xgap:UserChangeLabels}{8.2.52}
+\makelabel{xgap:UserAverageY}{8.2.53}
+\makelabel{xgap:UserAverageX}{8.2.54}
+\makelabel{xgap:UserRearrangeClasses}{8.2.55}
+\makelabel{xgap:UserUseBlackWhite}{8.2.56}
+\makelabel{xgap:PosetShowLevels}{8.2.57}
+\makelabel{xgap:PosetShowLevelparams}{8.2.58}
+\makelabel{xgap:DoRedraw}{8.2.59}
+\makelabel{xgap:An Example}{8.3}
+\makelabel{xgap:Graphic Graphs}{9}
+\makelabel{xgap:Differences to XGAP 3}{10}
+\makelabel{xgap:Concept}{10.1}
+\makelabel{xgap:User Interface}{10.2}
+\makelabel{xgap:Where code has to be changed}{10.3}
+\makelabel{xgap:Bibliography}{}
+\setcitlab {Cav86}{Cav86}
+\setcitlab {FJ65}{FJ70}
+\setcitlab {HR91}{HR91}
+\setcitlab {SK95}{Kei95}
+\makelabel{xgap:Index}{}

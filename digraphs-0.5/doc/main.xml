@@ -1,0 +1,41 @@
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+   [ <!ENTITY Digraphs "<Package>Digraphs</Package>">
+     <!ENTITY Grape "<Alt Not='Text'><URL
+   Text='Grape'>http://www.maths.qmul.ac.uk/~leonard/grape/</URL></Alt><Alt
+   Only='Text'><Package>Grape</Package></Alt>">
+     <!ENTITY bliss "<Alt Not='Text'><URL
+   Text='bliss'>http://www.tcs.tkk.fi/Software/bliss/</URL></Alt><Alt
+   Only='Text'><Package>bliss</Package></Alt>">
+     <!ENTITY IO "<Alt Not='Text'><URL Text='IO'>
+     http://gap-packages.github.io/io/
+</URL></Alt><Alt Only='Text'><Package>IO</Package></Alt>">
+     <!ENTITY Orb "<Alt Not='Text'><URL Text='Orb'>
+     http://http://gap-packages.github.io/orb/</URL>
+     </Alt><Alt Only='Text'><Package>Orb</Package></Alt>">
+     <#Include Label="PKGVERSIONDATA">
+   ]>
+
+<Book Name="digraphs">
+<#Include SYSTEM="z-title.xml">
+
+<TableOfContents/>
+
+<Body>
+  <#Include SYSTEM="z-chap0.xml"> <!-- intro -->
+  <#Include SYSTEM="z-chap1.xml"> <!-- installing -->
+  <#Include SYSTEM="z-chap2.xml"> <!-- creating --> 
+  <#Include SYSTEM="z-chap3.xml"> <!-- operators/hashs --> 
+  <#Include SYSTEM="z-chap4.xml"> <!-- attributes, operations --> 
+  <#Include SYSTEM="z-chap5.xml"> <!-- properties --> 
+  <#Include SYSTEM="z-chap6.xml"> <!-- homomorphisms --> 
+  <#Include SYSTEM="z-chap8.xml"> <!-- cliques --> 
+  <#Include SYSTEM="z-chap9.xml"> <!-- visualising, io --> 
+</Body>
+
+<#Include SYSTEM="z-appA.xml">  <!-- Grape to Digraphs command map --> 
+
+<Bibliography Databases="digraphs" />
+<TheIndex/>
+
+</Book>
+  

@@ -1,0 +1,49 @@
+<Chapter Label="Introduction"><Heading>Introduction</Heading>
+
+<Section Label="Aims"><Heading>General aims</Heading>
+
+The overall aim of <Package>QPA</Package> is to provide computational
+tools in basic research in mathematics (algebra). It seeks to furnish
+users within and outside the area of representation theory of finite
+dimensional algebras with a computational software package that will
+help in exploring a problem and testing conjectures. As with all
+software development, new ideas and question will arise. The ability
+to study and compute examples will help in proving or disproving
+well-established questions/conjectures.  Furthermore, it will enable
+us to consider new examples which were not accessible by hand or other
+means before. In this way, we hope that <Package>QPA</Package> will
+aid in the development, not only of the area of representation theory
+of finite dimensional algebras, but also of a broad variety of other
+areas of mathematics, where such structures occur. In addition we
+aspire to create a research environment for international cooperation
+on computational representation theory of finite dimensional algebras.
+</Section> 
+
+<Section Label="Installation"><Heading>Installation and system requirements</Heading>
+
+Since the release of GAP version 4.7.8, the package
+<Package>QPA</Package> is distributed with GAP, so if you download
+this version or any later version of GAP, the package
+<Package>QPA</Package> will be installed at the same time as GAP is
+installed.  Follow the instructions for installing GAP on the web page
+
+<URL>http://www.gap-system.org/Download/index.html</URL>
+
+After having successfully started GAP, give the command
+<Example>
+gap> LoadPackage("qpa");
+</Example>
+which loads QPA and you can start using QPA.<P/>
+
+One can also clone the QPA git repository from
+<List>
+<Item><URL>https://github.com/gap-packages/qpa</URL></Item>
+</List> 
+to follow the QPA development. Follow the instructions on
+<List>
+<Item><URL>http://www.math.ntnu.no/~oyvinso/QPA/</URL></Item>
+</List>
+to install QPA by cloning the the git repository. 
+
+</Section>
+</Chapter>

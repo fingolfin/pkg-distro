@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdftex 2007.6.7)  23 OCT 2014 15:19
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdftex 2007.6.7)  25 FEB 2016 10:48
 entering extended mode
 **manual
-(./manual.tex (../../../doc/gapmacro.tex
+(./manual.tex (./gapmacro.tex
 (/usr/local/gwTeX/texmf.texlive/tex/plain/amsfonts/amssym.tex
 (/usr/local/gwTeX/texmf.texlive/tex/plain/amsfonts/amssym.def
 \msafam=\fam8

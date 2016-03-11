@@ -172,107 +172,103 @@ BrauerTable( "L3(7).2", 7 )
 
 <h4>4.3 <span class="Heading">Saving time</span></h4>
 
-<p>The most time consuming operation when using the functions of this package is solving the system of inequalities given by the HeLP method, see Section <a href="chap5_mj.html#X8663389F87B9CE62"><span class="RefLink">5.3</span></a>. This package uses the program 4ti2 to do this and it is not completely clear to the authors of this package which input is solved faster by 4ti2. In any case it is helpful to reduce the number of variables, using e.g. <span class="SimpleMath">\(p\)</span>-constant characters, and in many situations it is useful to reduce the number of inequalities, i.e. of used characters.</p>
+<p>The most time consuming operation when using the functions of this package is solving the system of inequalities given by the HeLP method, see Section <a href="chap5_mj.html#X8663389F87B9CE62"><span class="RefLink">5.3</span></a>. This package uses the programs 4ti2 and/or normaliz to do this and it is not completely clear to the authors of this package which input is solved faster by these programs. In any case it is helpful to reduce the number of variables, using e.g. <span class="SimpleMath">\(p\)</span>-constant characters, and in many situations it is useful to reduce the number of inequalities, i.e. of used characters.</p>
 
-<p>To measure the time a function needs we use <code class="keyw">IO_gettimeofday</code> from the IO-package rather than functions like <code class="keyw">time</code> or <code class="keyw">Runtime</code>, since these measure only the GAP time, but do not return the time the functions spend using 4ti2. We used the following function (which is essentially due to Alexander Konovalov) to meassure the time used for the computation:</p>
+<p>To measure the time a function needs we use <code class="keyw">IO_gettimeofday</code> from the IO-package rather than functions like <code class="keyw">time</code> or <code class="keyw">Runtime</code>, since these measure only the GAP time, but do not return the time the functions spend using 4ti2 or normaliz. We used the following function (which is essentially due to Alexander Konovalov) to meassure the time used for the computation:</p>
 
 
 <div class="example"><pre>
 TimeFunction := function(f, args)
-# input: the function of which the computing time should be measured 
-#        and the list of arguments for this function
-# output: time needed for the calculations in seconds
-local start;
-start := IO_gettimeofday();
-CallFuncList(f,args);
-return IO_gettimeofday().tv_sec - start.tv_sec;
-end; 
+ # input: the function of which the computing time should be measured 
+ #        and the list of arguments for this function
+ # output: time needed for the calculations in seconds
+ local start;
+ start := IO_gettimeofday();
+ CallFuncList(f,args);
+ return IO_gettimeofday().tv_sec - start.tv_sec;
+ end; 
 </pre></div>
 
-<p>All times will be given in seconds. The computations were perfomed on an 1,6 GHz kernel.</p>
+<p>All times will be given in seconds. The computations were perfomed on an a machine with four 2,6 GHz kernels.</p>
 
 <p>A lot of time might be saved by testing only a few characters instead of a whole character table:</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable("L2(49)");;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [C,35]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("normaliz");</span>
+'normaliz' will be used from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [C,35]);           </span>
 #I  Number of solutions for elements of order 35: 0; stored in HeLP_sol[35].
-7                 # I.e.: The computation took 7 seconds.
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_FindAndVerifySolution, [C,35]);</span>
+6  # I.e.: The computation took 6 seconds.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [Irr(C){[2]}, 35]);</span>
 #I  Number of solutions for elements of order 35: 0; stored in HeLP_sol[35].
-1
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_FindAndVerifySolution, [Irr(C){[2]}, 35]);</span>
+0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("4ti2");                                 </span>
+'4ti2' will be used from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [C,35]);           </span>
+#I  Number of solutions for elements of order 35: 0; stored in HeLP_sol[35].
+6
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [Irr(C){[2]}, 35]);</span>
 #I  Number of solutions for elements of order 35: 0; stored in HeLP_sol[35].
 1
 </pre></div>
 
-<p>I.e.: Using only one character instead of all of them is about seven times faster in this situation and this is also quickly found by <code class="keyw">HeLP_FindAndVerifySolution</code>.</p>
+<p>I.e.: Using only one character instead of all of them is about six times faster in this situation and this is also quickly found by <code class="keyw">HeLP_FindAndVerifySolution</code>.</p>
 
 <p>Using only a few characters might even be a life saver:</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable("L4(3).2^2");</span>
-CharacterTable( "L4(3).2^2" )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable("L4(3).2^2");;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(C, 3);;</span>
 #I  Number of solutions for elements of order 3: 63; stored in HeLP_sol[3].
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(C, 13);;</span>
 #I  Number of solutions for elements of order 13: 198; stored in HeLP_sol[13].
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(HeLP_Info,4);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("4ti2");</span>
+'4ti2' will be used from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_UseRedund(true);</span>
+'redund' will be used from now on.
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [Irr(C){[5,11,16]}, 39]);</span>
 #I  Number of solutions for elements of order 39: 0; stored in HeLP_sol[39].  
-1301
+438
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_UseRedund(false);</span>
+The calculations will be performed without using 'redund' from now on.
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [Irr(C){[5,11,16]}, 39]);</span>
 #I  Number of solutions for elements of order 39: 0; stored in HeLP_sol[39].  
-670
-</pre></div>
-
-<p>The command <code class="keyw">HeLP_WithGivenOrder(C,39);</code> started at the same time on another kernel was at possibility 1228 out of 12474 when the above example was already finished. Started without redund it was at possibility 5 out of 12474 and is probably still computing while you read this.</p>
-
-<p>If you want to check, if the solutions you found using only a few characters satisfy the constraints of all characters, you can use <code class="func">HeLP_VerifySolution</code> (<a href="chap3_mj.html#X7DAA7EF785621D9E"><span class="RefLink">3.6-1</span></a>):</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable("L3(7).2");</span>
-CharacterTable( "L3(7).2" )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(C,7);;</span>
-#I  Number of solutions for elements of order 7: 153; stored in HeLP_sol[7].
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(HeLP_Info,4);</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [Irr(C){[3,7,9,10]}, 21]);</span>
-#I  Number of solutions for elements of order 21: 416; stored in HeLP_sol[21].
-2757
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Set(Filtered(OrdersClassRepresentatives(C), x -&gt; IsPrime(x))); </span>
-[ 2, 3, 7, 19 ] # The primes dividing the order of the group
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_VerifySolution(C mod 2, 21);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_VerifySolution(C mod 19, 21);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(HeLP_sol[21]);</span>
-416
-</pre></div>
-
-<p>Thus the computed partial augmentations are best possible using HeLP. Compare the time to:</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [C, 21]);</span>
-#I  Number of solutions for elements of order 21: 416; stored in HeLP_sol[21].
-3460
+430
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("normaliz");</span>
+'normaliz' will be used from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [Irr(C){[5,11,16]}, 39]);</span>
+#I  Number of solutions for elements of order 39: 0; stored in HeLP_sol[39].  
+340
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_UseRedund(true); </span>
+'redund' will be used from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [Irr(C){[5,11,16]}, 39]);</span>
+#I  Number of solutions for elements of order 39: 0; stored in HeLP_sol[39].  
+419
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_UseRedund(false);</span>
+The calculations will be performed without using 'redund' from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("normaliz");</span>
+'normaliz' will be used from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [Irr(C), 39]);</span>
+#I  Number of solutions for elements of order 39: 0; stored in HeLP_sol[39].  
+6234
 </pre></div>
 
 <p>Sometimes it is helpful to look at groups containing the group of interest:</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable("2F4(2)'");</span>
-CharacterTable( "2F4(2)'" )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable("2F4(2)'");;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(C, 13);;</span>
 #I  Number of solutions for elements of order 13: 316; stored in HeLP_sol[13].
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_WithGivenOrder(C, 3);;</span>
 #I  Number of solutions for elements of order 3: 1; stored in HeLP_sol[3].
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [C, 39]);</span>
 #I  Number of solutions for elements of order 39: 0; stored in HeLP_sol[39].
-1946
+80
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C:=CharacterTable("2F4(2)'.2");</span>
 CharacterTable( "2F4(2)'.2" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrder, [C, 39]);</span>
@@ -287,31 +283,37 @@ CharacterTable( "2F4(2)'.2" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C:=CharacterTable("2F4(2)'");</span>
 CharacterTable( "2F4(2)'" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_WithGivenOrderSConstant, [C, 13, 3]);</span>
-#I    Partial augmentations for elements of order 3 not yet calculated.  Restart
- for this order.
 #I    Number of non-trivial 13-constant characters in the list: 19.           
 0
 </pre></div>
 
-<p>For some groups switching redund on and off gives major improvements.</p>
+<p>If using 4ti2, for some groups switching redund on and off gives major improvements.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable(SmallGroup(160,91));</span>
-CharacterTable( &lt;pc group of size 160 with 6 generators&gt; )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("4ti2");</span>
+'4ti2' will be used from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_UseRedund(true);</span>
+'redund' will be used from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable(SmallGroup(160,91));;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_ZC, [C]);</span>
-41                                                                            
+26
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("normaliz");</span>
+'normaliz' will be used from now on.                                                                            
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_ZC, [C]);</span>
+12
 </pre></div>
 
-<p>Without redund <code class="keyw">HeLP_ZC(C)</code> ran for over 400 hours without a result.</p>
+<p>Using 4ti2 but not redund <code class="keyw">HeLP_ZC(C)</code> ran for over 400 hours without a result.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable(SmallGroup(96,12));</span>
-CharacterTable( &lt;pc group of size 96 with 6 generators&gt; )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := CharacterTable(SmallGroup(96,12));;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_UseRedund(false);</span>
+The calculations will be performed without using 'redund' from now on.
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HeLP_Solver("4ti2");;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TimeFunction(HeLP_ZC, [C]);</span>
-6                                                                            
+2                                                                            
 </pre></div>
 
 <p>Running this example using redund the computations does not proceed for elements of order 12.</p>

@@ -1,4 +1,3 @@
-
 gap> gens:=[ [ [ -28, 3, 9 ], [ 0, -1, -6 ], [ 3, 0, 1 ] ],
 >   [ [ -1, 0, 0 ], [ -9, 1, 3 ], [ -3, 0, -1 ] ],
 >   [ [ 0, 0, 1 ], [ 1, 0, 9 ], [ 0, 1, 0 ] ] ];
@@ -16,8 +15,6 @@ gap> Size(Image(ffs.factorhom));
 704880
 gap> RelativeOrders(ffs.pcgs);
 [ 3, 2, 2, 11, 2, 2, 2, 89, 89, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
-
-
 gap> cl:=ConjugacyClasses(g);;
 gap> Collected(List(cl,Size));
 [ [ 1, 1 ], [ 7920, 1 ], [ 7921, 87 ], [ 704880, 1 ], [ 712890, 87 ],
@@ -41,4 +38,3 @@ gap> s:=HallViaRadical(g,[2])[1];
 <matrix group of size 128 with 7 generators>
 gap> n:=NormalizerViaRadical(g,s);
 <matrix group of size 1408 with 7 generators>
-

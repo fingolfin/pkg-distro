@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_The_main_functions">
+<Heading>The main functions</Heading>
+
+<Section Label="Chapter_The_main_functions_Section_Zassenhaus_Conjecture">
+<Heading>Zassenhaus Conjecture</Heading>
+
+This function checks whether the Zassenhaus Conjecture ((ZC) for short, cf. Section
+<Ref Sect='Chapter_Background_Section_The_Zassenhaus_Conjecture_and_the_Prime_Graph_Question'/>) can be proved
+using the HeLP method with the data available in GAP.
+<ManSection>
+  <Func Arg="OrdinaryCharacterTable|Group" Name="HeLP_ZC" />
+ <Returns><K>true</K> if (ZC) can be solved using the given data, <K>false</K> otherwise
+</Returns>
+ <Description>
+<K>HeLP_ZC</K> checks whether the Zassenhaus Conjecture can be solved for
+the given group using the HeLP method, the Wagner test and all character data available.
+The argument of the function can be either an ordinary character table
+or a group. In the second case it will first calculate the corresponding
+ordinary character table.
+If the group in question is nilpotent, the Zassenhaus Conjecture holds by a result of A. Weiss and the
+function will return <K>true</K> without performing any calculations.<P/>
+If the group is not solvable, the function will check all orders
+which are divisors of the exponent of the group. If the group is solvable, it will only check the orders
+of group elements, as there can't be any torsion units of another order.
+The function will use the ordinary table
+and, for the primes <Math>p</Math> for which the group is not <Math>p</Math>-solvable, all <Math>p</Math>-Brauer tables which are available in GAP
+to produce as many constraints on the torsion units as possible. Additionally, the Wagner test
+is applied to the results, cf. Section <Ref Sect='Chapter_Background_Section_The_Wagner_test'/>.
+In case the information
+suffices to obtain a proof for the Zassenhaus Conjecture for this group
+the function will return <K>true</K> and <K>false</K> otherwise.
+The possible partial augmentations for elements of order <M>k</M>
+and all its powers will also be stored in the list entry <K>HeLP_sol[k]</K>.<P/>
+The prior computed partial augmentations in <K>HeLP_sol</K> will not be used and will be overwritten.
+If you do not like the last fact, please use <Ref Func='HeLP_AllOrders'/>.
+ </Description>
+</ManSection>
+
+
+<Example><![CDATA[
+gap> G := AlternatingGroup(5);
+Alt( [ 1 .. 5 ] )
+gap> HeLP_ZC(G);
+true
+gap> C := CharacterTable("A5");
+CharacterTable( "A5" )
+gap> HeLP_ZC(C);
+true
+gap> HeLP_sol;
+[ [ [ [ 1 ] ] ], [ [ [ 1 ] ] ], [ [ [ 1 ] ] ],, 
+  [ [ [ 0, 1 ] ], [ [ 1, 0 ] ] ], [  ],,,, [  ],,,,, [  ],,,,,,,,,,,,,,, [  ] 
+ ]
+gap> HeLP_PrintSolution(); 
+Solutions for elements of order 2:
+[ [         u ],
+  [  [ "2a" ] ],
+  [       --- ],
+  [     [ 1 ] ] ]
+Solutions for elements of order 3:
+[ [         u ],
+  [  [ "3a" ] ],
+  [       --- ],
+  [     [ 1 ] ] ]
+Solutions for elements of order 5:
+[ [               u ],
+  [  [ "5a", "5b" ] ],
+  [             --- ],
+  [        [ 0, 1 ] ],
+  [        [ 1, 0 ] ] ]
+There are no admissible partial augmentations for elements of order 6.
+There are no admissible partial augmentations for elements of order 10.
+There are no admissible partial augmentations for elements of order 15.
+There are no admissible partial augmentations for elements of order 30.
+]]></Example>
+
+
+This is the classical example of Luthar and Passi to verify the Zassenhaus
+Conjecture for the alternating group of degree 5, cf. <Cite Key="LP"/>.
+In the first call of <K>HeLP_ZC</K> this is checked using the character table computed
+by GAP using the given group, the second call uses the character table from the
+character table library.
+The entries of <K>HeLP_sol</K> are
+<List>
+<Item>
+lists with entries 0 and 1 (at the spots 1, 2, 3 and 5, which correspond to torsion units that are conjugate to group elements),
+</Item>
+<Item>
+empty lists (at the spots 6, 10, 15 and 30, stating that there are no admissible partial augmentations for these orders),
+</Item>
+<Item>
+or are not bound (these orders were not checked as they don't divide the exponent of the group).
+</Item>
+</List>
+The function <Ref Func='HeLP_PrintSolution'/> can be used to display the result in a pretty way.
+<Example><![CDATA[
+gap> C := CharacterTable( "A6" );
+CharacterTable( "A6" )
+gap> SetInfoLevel(HeLP_Info, 2);
+gap> HeLP_ZC(C);
+#I  Checking order 2.
+#I  Checking order 3.
+#I  Checking order 4.
+#I  Checking order 5.
+#I  Checking order 6.
+#I  Checking order 10.
+#I  Checking order 12.
+#I  Checking order 15.
+#I  Checking order 20.
+#I  Checking order 30.
+#I  Checking order 60.
+#I  ZC can't be solved, using the given data, for the orders: [ 6 ].
+false
+gap> HeLP_sol[6];                                          
+[ [ [ 1 ], [ 0, 1 ], [ -2, 2, 1 ] ], [ [ 1 ], [ 1, 0 ], [ -2, 1, 2 ] ] ]
+gap> HeLP_PrintSolution(6);                                
+Solutions for elements of order 6:
+[ [                   u^3,                   u^2,                     u ],
+  [              [ "2a" ],        [ "3a", "3b" ],  [ "2a", "3a", "3b" ] ],
+  [                   ---,                   ---,                   --- ],
+  [                 [ 1 ],              [ 0, 1 ],          [ -2, 2, 1 ] ],
+  [                 [ 1 ],              [ 1, 0 ],          [ -2, 1, 2 ] ] ]
+gap> SetInfoLevel(HeLP_Info, 1);
+]]></Example>
+
+
+This is the example M. Hertweck deals with in his article <Cite Key="HerA6"/>. The HeLP-method is not
+sufficient to verify the Zassenhaus Conjecture for this group. There are two tuples of
+possible partial augmentations for torsion units of order 6 which are admissible by the HeLP method.
+M. Hertweck used a different argument to eliminate these possibilities.
+<Example><![CDATA[
+gap> G := SmallGroup(48,30);;
+gap> StructureDescription(G);
+"A4 : C4"
+gap> HeLP_ZC(G);
+#I  ZC can't be solved, using the given data, for the orders: [ 4 ].
+false
+gap> Size(HeLP_sol[4]);
+10
+]]></Example>
+
+
+The group SmallGroup(48,30) is the smallest group for which the HeLP method does not suffice to prove the Zassenhaus Conjecture. However
+(ZC) was proved for this group in <Cite Key="HoefertKimmerle"/>, Proposition 4.2.
+<Example><![CDATA[
+gap> C1 := CharacterTable(SymmetricGroup(5));
+CharacterTable( Sym( [ 1 .. 5 ] ) )
+gap> HeLP_ZC(C1);
+#I  The Brauer tables for the following primes are not available: [ 2, 3, 5 ].
+#I  ZC can't be solved, using the given data, for the orders: [ 4, 6 ].
+false
+gap> C2 := CharacterTable("S5");
+CharacterTable( "A5.2" )
+gap> HeLP_ZC(C2); 
+true
+]]></Example>
+
+
+This example demonstrates the advantage of using the GAP character table library: Since GAP can't
+compute the Brauer tables from the ordinary table of <Math>S_5</Math> in the current implementation, they are not used
+in the first calculation. But in the second
+calculation <K>HeLP_ZC</K> accesses the Brauer tables from the library and can prove the Zassenhaus
+Conjecture for this group, see <Cite Key="HertweckBrauer"/>, Section 5. This example might of course change
+as soon as GAP will be able to compute the needed Brauer tables.
+<Example><![CDATA[
+gap> C := CharacterTable("M11");
+CharacterTable( "M11" )
+gap> HeLP_ZC(C);
+#I  ZC can't be solved, using the given data, for the orders: [ 4, 6, 8 ].
+false
+gap> HeLP_sol[12];
+[  ]
+gap> HeLP_PrintSolution(8);
+Solutions for elements of order 8:
+[ [      u^4,                         u^2,                           u ],
+  [ [ "2a" ],              [ "2a", "4a" ],  [ "2a", "4a", "8a", "8b" ] ],
+  [      ---,                         ---,                         --- ],
+  [    [ 1 ],                    [ 0, 1 ],              [ 0, 0, 0, 1 ] ],
+  [    [ 1 ],                    [ 0, 1 ],              [ 0, 0, 1, 0 ] ],
+  [    [ 1 ],                    [ 0, 1 ],             [ 0, 2, -1, 0 ] ],
+  [    [ 1 ],                    [ 0, 1 ],             [ 0, 2, 0, -1 ] ],
+  [    [ 1 ],                   [ 2, -1 ],              [ 0, 0, 0, 1 ] ],
+  [    [ 1 ],                   [ 2, -1 ],              [ 0, 0, 1, 0 ] ],
+  [    [ 1 ],                   [ 2, -1 ],             [ 0, 2, -1, 0 ] ],
+  [    [ 1 ],                   [ 2, -1 ],             [ 0, 2, 0, -1 ] ] ]
+]]></Example>
+
+
+Comparing this example to the result in <Cite Key="KonovalovM11"/> one sees, that the existence of elements
+of order 12 in <Math>\mathrm{V}(\mathbb{Z}M_{11})</Math> may not be eliminated using only the HeLP method.
+This may be done however by applying also the Wagner test, cf. Section <Ref Sect='Chapter_Background_Section_The_Wagner_test'/> and the example for the function <Ref Func='HeLP_WagnerTest'/>.<P/>
+This example also demonstrates, why also the partial augmentations of the powers of <Math>u</Math> must be stored (and not only the partial augmentations of <Math>u</Math>).
+To prove that all elements of order <Math>8</Math> in <Math>\mathrm{V}(\mathbb{Z}M_{11})</Math> are rationally conjugate to group elements, it is not
+enough to prove that all elements <Math>u</Math> of order <Math>8</Math> in <Math>\mathrm{V}(\mathbb{Z}M_{11})</Math> have all partial augmentations <Math>1</Math> and <Math>0</Math>, as
+the fifth and sixth possibility from above still could exist in <Math>\mathrm{V}(\mathbb{Z}M_{11})</Math>, which would not be rationally conjugate to group elements.
+
+</Section>
+
+
+<Section Label="Chapter_The_main_functions_Section_Prime_Graph_Question">
+<Heading>Prime Graph Question</Heading>
+
+This function checks whether the Prime Graph Question ((PQ) for short, cf. Section
+<Ref Sect='Chapter_Background_Section_The_Zassenhaus_Conjecture_and_the_Prime_Graph_Question'/>) can be verified
+using the HeLP method with the data available in GAP.
+<ManSection>
+  <Func Arg="OrdinaryCharacterTable|Group" Name="HeLP_PQ" />
+ <Returns><K>true</K> if (PQ) can be solved using the given data, <K>false</K> otherwise
+</Returns>
+ <Description>
+<K>HeLP_PQ</K> checks whether an affirmative answer for the Prime Graph Question for
+the given group can be obtained using the HeLP method, the Wagner restrictions and the data available.
+The argument of the function can be either an ordinary character table
+or a group. In the second case it will first calculate the corresponding
+ordinary character table.
+If the group in question is solvable, the Prime Graph Question has an affirmative answer by a result of W. Kimmerle and the
+function will return <K>true</K> without performing any calculations.<P/>
+If the group is non-solvable, the ordinary character table and all <Math>p</Math>-Brauer
+tables for primes <Math>p</Math> for which the group is not <Math>p</Math>-solvable and which are available in GAP will be used to produce as many
+constraints on the torsion units as possible. Additionally, the Wagner test
+is applied to the results, cf. Section <Ref Sect='Chapter_Background_Section_The_Wagner_test'/>.
+In case the information
+suffices to obtain an affirmative answer for the Prime Graph Question,
+the function will return <K>true</K> and it will return <K>false</K> otherwise.
+Let <Math>p</Math> and <Math>q</Math> be distinct primes such that there are elements of order <Math>p</Math> and <Math>q</Math> in <Math>G</Math> but no elements of order <Math>pq</Math>.
+Then for <Math>k</Math> being <Math>p</Math>, <Math>q</Math> or <Math>pq</Math> the function will save the possible partial augmentations for elements of order <Math>k</Math>
+and its (non-trivial) powers in <K>HeLP_sol[k]</K>. The function also does not use the previously computed partial augmentations
+for elements of these orders but will overwrite the content of <K>HeLP_sol</K>.
+If you do not like the last fact, please use <Ref Func='HeLP_AllOrdersPQ'/>.
+ </Description>
+</ManSection>
+
+
+<Example><![CDATA[
+gap> C := CharacterTable("A7");
+CharacterTable( "A7" )
+gap> HeLP_PQ(C);
+true
+]]></Example>
+
+
+The Prime Graph Question for the alternating group of degree 7 was first proved by M. Salim <Cite Key="SalimA7A8"/>.
+<Example><![CDATA[
+gap> C := CharacterTable("L2(19)");
+CharacterTable( "L2(19)" )
+gap> HeLP_PQ(C);                   
+true
+gap> HeLP_ZC(C);
+#I  (ZC) can't be solved, using the given data, for the orders: [ 10 ].
+false
+gap> HeLP_sol[10];
+[ [ [ 1 ], [ 0, 1 ], [ 0, -1, 1, 0, 1 ] ], 
+  [ [ 1 ], [ 0, 1 ], [ 0, 0, 0, 1, 0 ] ], 
+  [ [ 1 ], [ 1, 0 ], [ 0, 0, 0, 0, 1 ] ], 
+  [ [ 1 ], [ 1, 0 ], [ 0, 1, -1, 1, 0 ] ] ]
+]]></Example>
+
+
+The HeLP method provides an affirmative answer to the Prime Graph Question
+for the group L2(19), although the method doesn't solve the Zassenhaus Conjecture for that
+group, as there are two sets of possible partial augmentations for units of order 10 left, which do not correspond
+to elements which are rationally conjugate to group elements. The Zassenhaus Conjecture for this group is proved in <Cite Key="BaMaM10"/>.
+<Example><![CDATA[
+gap> C1 := CharacterTable(PSL(2,7));                                  
+CharacterTable( Group([ (3,7,5)(4,8,6), (1,2,6)(3,4,8) ]) )
+gap> HeLP_PQ(C1);
+#I  The Brauer tables for the following primes are not available: [ 2, 3, 7 ].
+#I  PQ can't be solved, using the given data, for the orders: [ 6 ].
+false
+gap> C2 := CharacterTable("L2(7)");  
+CharacterTable( "L3(2)" )
+gap> HeLP_PQ(C2);                  
+true
+]]></Example>
+
+
+This example demonstrates the advantage of using tables from the GAP character table library: Since GAP can not
+compute the Brauer tables corresponding to <K>C1</K> they are not used in the first calculation. But in the second
+calculation <K>HeLP_PQ</K> accesses the Brauer tables from the library and can prove the Prime
+Graph Question for this group, see <Cite Key="HertweckBrauer"/>, Section 6. This example might change,
+as soon as GAP will be able to compute the Brauer tables needed.
+<Example><![CDATA[
+gap> SetInfoLevel(HeLP_Info,2);
+gap> C := CharacterTable("A6");
+CharacterTable( "A6" )
+gap> HeLP_PQ(C);
+#I  Checking order 2.
+#I  Checking order 3.
+#I  Checking order 5.
+#I  Checking order 6.
+#I  Checking order 10.
+#I  Checking order 15.
+#I  PQ can't be solved, using the given data, for the orders: [ 6 ].
+false
+gap> SetInfoLevel(HeLP_Info,1);
+]]></Example>
+
+
+The Prime Graph Question can not be confirmed for the alternating group of degree 6 with the HeLP-method.
+This group is handled in <Cite Key="HerA6"/> by other means.
+<Example><![CDATA[
+gap> C := CharacterTable("L2(49)");
+CharacterTable( "L2(49)" )
+gap> HeLP_PQ(C);
+#I  The Brauer tables for the following primes are not available: [ 7 ].
+#I  (PQ) can't be solved, using the given data, for the orders: [ 10, 15 ].
+false
+]]></Example>
+
+
+This example shows the limitations of the program. Using the Brauer table for the prime 7 one can prove (PQ) for PSL(2,49), but this data is not available in GAP at the moment.
+The fact that there are no torsion units of order 10 and 15 was proved in <Cite Key="HertweckBrauer"/>, Proposition 6.7. See also the example in Section <Ref Sect='Chapter_Extended_examples_Section_Non-standard_characters'/>. The other critical orders were handled in a more general context in <Cite Key="BaMa4prI"/>.
+
+</Section>
+
+
+</Chapter>
+

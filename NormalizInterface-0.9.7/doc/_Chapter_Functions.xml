@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Functions">
+<Heading>Functions</Heading>
+
+In this chapter we describe the functions offered by <A>NormalizInterface</A>.
+All functions supplied by this package start with <Q>Nmz</Q>.
+For examples see the chapter <Ref Chap="Chapter_Examples" Style="Text"/>.
+<Section Label="Chapter_Functions_Section_Create_a_NmzCone">
+<Heading>Create a NmzCone</Heading>
+
+To create a cone object use <A>NmzCone</A>.
+<ManSection>
+  <Func Arg="list" Name="NmzCone" />
+ <Returns>NmzCone
+</Returns>
+ <Description>
+Creates a NmzCone. The <A>list</A> argument should contain an even number of
+elements, alternating between a string and a integer matrix. The string has to
+correspond to a Normaliz input type string and the following matrix will be
+interpreted as input of that type.
+Currently the following strings are recognized:
+<List>
+<Item><C>integral_closure</C>,</Item>
+<Item><C>polyhedron</C>,</Item>
+<Item><C>normalization</C>,</Item>
+<Item><C>polytope</C>,</Item>
+<Item><C>rees_algebra</C>,</Item>
+<Item><C>inequalities</C>,</Item>
+<Item><C>strict_inequalities</C>,</Item>
+<Item><C>signs</C>,</Item>
+<Item><C>strict_signs</C>,</Item>
+<Item><C>equations</C>,</Item>
+<Item><C>congruences</C>,</Item>
+<Item><C>inhom_inequalities</C>,</Item>
+<Item><C>inhom_equations</C>,</Item>
+<Item><C>inhom_congruences</C>,</Item>
+<Item><C>dehomogenization</C>,</Item>
+<Item><C>lattice_ideal</C>,</Item>
+<Item><C>grading</C>,</Item>
+<Item><C>excluded_faces</C>,</Item>
+<Item><C>lattice</C>,</Item>
+<Item><C>saturation</C>,</Item>
+<Item><C>cone</C>,</Item>
+<Item><C>offset</C>,</Item>
+<Item><C>vertices</C>,</Item>
+<Item><C>support_hyperplanes</C>,</Item>
+<Item><C>cone_and_lattice</C>,</Item>
+<Item><C>subspace</C>.</Item>
+</List>
+See the Normaliz manual for a detailed description.
+<Example><![CDATA[
+gap> cone := NmzCone(["integral_closure",[[2,1],[1,3]]]);
+<a Normaliz cone>
+]]></Example>
+
+
+
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Functions_Section_Use_a_NmzCone">
+<Heading>Use a NmzCone</Heading>
+
+<ManSection>
+  <Func Arg="cone property" Name="NmzHasConeProperty" />
+ <Returns>whether the cone has already computed the given property
+</Returns>
+ <Description>
+See <Ref Func="NmzConeProperty"/> for a list of recognized properties.
+<Example><![CDATA[
+gap> NmzHasConeProperty(cone, "ExtremeRays");
+false
+]]></Example>
+
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzKnownConeProperties" />
+ <Returns>a list of strings representing the known (computed) cone properties
+</Returns>
+ <Description>
+Given a Normaliz cone object, return a list of all properties already
+computed for the cone.
+<Example><![CDATA[
+gap> NmzKnownConeProperties(cone);
+[ "Generators", "OriginalMonoidGenerators", "Sublattice" ]
+]]></Example>
+
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="verboseFlag" Name="NmzSetVerboseDefault" />
+ <Returns>the previous verbosity
+</Returns>
+ <Description>
+Set the global default verbosity state in libnormaliz.
+This will influence all NmzCone created afterwards, but not any existing ones.
+See also <Ref Func="NmzSetVerbose"/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone verboseFlag" Name="NmzSetVerbose" />
+ <Returns>the previous verbosity
+</Returns>
+ <Description>
+Set the verbosity state for a cone.
+See also <Ref Func="NmzSetVerboseDefault"/>
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone[, propnames]" Name="NmzCompute" />
+ <Returns>a boolean indicating success
+</Returns>
+ <Description>
+Start computing properties of the given cone.
+The first parameter indicates a cone object, the second parameter
+is either a single string, or a list of strings, which indicate
+what should be computed.
+<P/>
+The single parameter version is equivalent to
+<C>NmzCone(cone, ["DefaultMode"])</C>.
+See <Ref Func="NmzConeProperty"/> for a list of recognized properties.
+<Example><![CDATA[
+gap> NmzKnownConeProperties(cone);
+[ "Generators", "OriginalMonoidGenerators", "Sublattice" ]
+gap> NmzCompute(cone, ["SupportHyperplanes", "IsPointed"]);
+true
+gap> NmzKnownConeProperties(cone);
+[ "Generators", "ExtremeRays", "SupportHyperplanes", "IsPointed",
+  "IsDeg1ExtremeRays", "OriginalMonoidGenerators", "Sublattice",
+  "MaximalSubspace" ]
+gap> NmzCompute(cone);
+true
+gap> NmzKnownConeProperties(cone);
+[ "Generators", "ExtremeRays", "SupportHyperplanes", "TriangulationSize",
+  "TriangulationDetSum", "HilbertBasis", "IsPointed", "IsDeg1ExtremeRays",
+  "IsIntegrallyClosed", "OriginalMonoidGenerators", "Sublattice",
+  "ClassGroup", "MaximalSubspace"]
+]]></Example>
+
+
+
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone, property" Name="NmzConeProperty" />
+ <Returns>the result of the computation, type depends on the property
+</Returns>
+ <Description>
+Triggers the computation of the property of the cone and returns the result.
+If the property was already known, it is not recomputed.
+Currently the following strings are recognized as properties:
+<List>
+<Item><C>Generators</C> see <Ref Func="NmzGenerators"/>,</Item>
+<Item><C>ExtremeRays</C> see <Ref Func="NmzExtremeRays"/>,</Item>
+<Item><C>VerticesOfPolyhedron</C> see <Ref Func="NmzVerticesOfPolyhedron"/>,</Item>
+<Item><C>SupportHyperplanes</C> see <Ref Func="NmzSupportHyperplanes"/>,</Item>
+<Item><C>TriangulationSize</C> see <Ref Func="NmzTriangulationSize"/>,</Item>
+<Item><C>TriangulationDetSum</C> see <Ref Func="NmzTriangulationDetSum"/>,</Item>
+<Item><C>Triangulation</C> see <Ref Func="NmzTriangulation"/>,</Item>
+<Item><C>Multiplicity</C> see <Ref Func="NmzMultiplicity"/>,</Item>
+<Item><C>RecessionRank</C> see <Ref Func="NmzRecessionRank"/>,</Item>
+<Item><C>AffineDim</C> see <Ref Func="NmzAffineDim"/>,</Item>
+<Item><C>ModuleRank</C> see <Ref Func="NmzModuleRank"/>,</Item>
+<Item><C>HilbertBasis</C> see <Ref Func="NmzHilbertBasis"/>,</Item>
+<Item><C>ModuleGenerators</C> see <Ref Func="NmzModuleGenerators"/>,</Item>
+<Item><C>Deg1Elements</C> see <Ref Func="NmzDeg1Elements"/>,</Item>
+<Item><C>HilbertSeries</C> see <Ref Func="NmzHilbertSeries"/>,</Item>
+<Item><C>HilbertQuasiPolynomial</C> see <Ref Func="NmzHilbertQuasiPolynomial"/>,</Item>
+<Item><C>Grading</C> see <Ref Func="NmzGrading"/>,</Item>
+<Item><C>IsPointed</C> see <Ref Func="NmzIsPointed"/>,</Item>
+<Item><C>IsDeg1ExtremeRays</C> see <Ref Func="NmzIsDeg1ExtremeRays"/>,</Item>
+<Item><C>IsDeg1HilbertBasis</C> see <Ref Func="NmzIsDeg1HilbertBasis"/>,</Item>
+<Item><C>IsIntegrallyClosed</C> see <Ref Func="NmzIsIntegrallyClosed"/>,</Item>
+<Item><C>OriginalMonoidGenerators</C> see <Ref Func="NmzOriginalMonoidGenerators"/>,</Item>
+<Item><C>IsReesPrimary</C> see <Ref Func="NmzIsReesPrimary"/>,</Item>
+<Item><C>ReesPrimaryMultiplicity</C> see <Ref Func="NmzReesPrimaryMultiplicity"/>,</Item>
+<Item><C>ExcludedFaces</C> see <Ref Func="NmzExcludedFaces"/>,</Item>
+<Item><C>Dehomogenization</C> see <Ref Func="NmzDehomogenization"/>,</Item>
+<Item><C>InclusionExclusionData</C> see <Ref Func="NmzInclusionExclusionData"/>,</Item>
+<Item><C>ClassGroup</C> see <Ref Func="NmzClassGroup"/>,</Item>
+<Item><C>ModuleGeneratorsOverOriginalMonoid</C> see <Ref Func="NmzModuleGeneratorsOverOriginalMonoid"/>,</Item>
+<Item><C>Sublattice</C> computes the efficient sublattice and returns a bool signaling
+whether the computation was successful. Actual data connected to
+it can be accessed by <Ref Func="NmzRank"/>, <Ref Func="NmzEquations"/>,
+<Ref Func="NmzCongruences"/>, and <Ref Func="NmzBasisChange"/>.</Item>
+</List>
+Additionally also the following compute options are accepted as property. They modify what and how should be computed, and return True after a successful computation.
+<List>
+<Item><C>Approximate</C> approximate the rational polytope by an integral polytope, currently only useful in combination with <C>Deg1Elements</C>.</Item>
+<Item><C>BottomDecomposition</C> use the best possible triangulation (with respect to the sum of determinants) using the given generators.</Item>
+<Item><C>DefaultMode</C> try to compute what is possible and do not throw an exception when something cannot be computed.</Item>
+<Item><C>DualMode</C>activates the dual algorithm for the computation of the Hilbert basis and degree
+1 elements. Includes <C>HilbertBasis</C>, unless <C>Deg1Elements</C> is set. Often a good choice if you start from constraints.</Item>
+<Item><C>KeepOrder</C> forbids to reorder the generators. Blocks <C>BottomDecomposition</C>.</Item>
+</List>
+All the properties above can be given to <Ref Func="NmzCompute"/>. There you can
+combine different properties, e.g. give some properties that you would like to know and add some compute options.
+<P/>
+See the Normaliz manual for a detailed description.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzPrintConeProperties" />
+ <Returns></Returns>
+ <Description>
+Print an overview of all known properties of the given cone,
+as well as their values.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section Label="Chapter_Functions_Section_Cone_properties">
+<Heading>Cone properties</Heading>
+
+<ManSection>
+  <Func Arg="cone" Name="NmzEmbeddingDimension" />
+ <Returns>the embedding dimension of the cone
+</Returns>
+ <Description>
+The embedding dimension is the dimension of the space in which the
+computation is done. It is the number of components of the output vectors.
+This value is always known directly after the creation of the cone.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzRank" />
+ <Returns>the rank of the cone
+</Returns>
+ <Description>
+The rank is the rank of the lattice generated by the lattice points of the cone.
+<P/>
+This is part of the cone property <Q>Sublattice</Q>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzIsInhomogeneous" />
+ <Returns>whether the cone is inhomogeneous
+</Returns>
+ <Description>
+This value is always known directly after the creation of the cone.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzEquations" />
+ <Returns>a matrix whose rows represent the equations
+</Returns>
+ <Description>
+The equations cut out the linear space generated by the cone.
+Together with the support hyperplanes and the congruences it describes the
+lattice points of the cone.
+<P/>
+This is part of the cone property <Q>Sublattice</Q>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzCongruences" />
+ <Returns>a matrix whose rows represent the congruences
+</Returns>
+ <Description>
+Together with the support hyperplanes and the equations it describes the
+lattice points of the cone.
+<P/>
+This is part of the cone property <Q>Sublattice</Q>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzAffineDim" />
+ <Returns>the affine dimension
+</Returns>
+ <Description>
+The affine dimension of the polyhedron in inhomogeneous computations. Its computation is triggered if necessary.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "AffineDim" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzClassGroup" />
+ <Returns>the class group in a special format
+</Returns>
+ <Description>
+A normal affine monoid <Math>M</Math> has a well-defined divisor class group.
+It is naturally isomorphic to the divisor class group of <Math>K[M]</Math> where <Math>K</Math>
+is a field (or any unique factorization domain).
+We represent it as a vector where the first entry is the rank. It is
+followed by sequence of pairs of entries <M>n,m</M>. Such two entries
+represent a free cyclic summand <M>(\mathbb{Z}/n\mathbb{Z})^m</M>.
+Not allowed in inhomogeneous computations.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "ClassGroup" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzDeg1Elements" />
+ <Returns>a matrix whose rows are the degree 1 elements
+</Returns>
+ <Description>
+Requires the presence of a grading. Not allowed in inhomogeneous computations.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "Deg1Elements" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzDehomogenization" />
+ <Returns>the dehomgenization vector
+</Returns>
+ <Description>
+Only for inhomogeneous computations.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "Dehomogenization" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzExcludedFaces" />
+ <Returns>a matrix whose rows represent the excluded faces
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "ExcludedFaces" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzExtremeRays" />
+ <Returns>a matrix whose rows are the extreme rays
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "ExtremeRays" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzGenerators" />
+ <Returns>a matrix whose rows are the generators
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "Generators" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzGrading" />
+ <Returns>the grading vector
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "Grading" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzHilbertBasis" />
+ <Returns>a matrix whose rows are the Hilbert basis elements
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "HilbertBasis" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzHilbertQuasiPolynomial" />
+ <Returns>the Hilbert function as a quasipolynomial
+</Returns>
+ <Description>
+The Hilbert function counts the lattice points degreewise. The result is a
+quasipolynomial <M>Q</M>, that is, a polynomial with periodic coefficients. It is
+given as list of polynomials <M>P_0, \ldots, P_{(p-1)}</M> such that <M>Q(i) = P_{(i \bmod p)} (i)</M>.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "HilbertQuasiPolynomial" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzHilbertSeries" />
+ <Returns>the Hilbert series as rational function
+</Returns>
+ <Description>
+The result consists of a list with two entries. The first is the numerator
+polynomial. In inhomogeneous computations this can also be a Laurent
+polynomial. The second list entry represents the denominator. It is a list
+of pairs <M>[k_i, l_i]</M>. Such a pair represents the factor <M>(1-t^{k_i})^{l_i}</M>.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "HilbertSeries" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzInclusionExclusionData" />
+ <Returns>inclusion-exclusion data
+</Returns>
+ <Description>
+List of faces which are internally have been used in the inclusion-exclusion
+scheme. Given as a list pairs. The first pair entry is a key of generators
+contained in the face (compare also <Ref Func="NmzTriangulation"/>) and the
+multiplicity with which it was considered.
+Only available with excluded faces or strict constraints as input.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "InclusionExclusionData" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzIsDeg1ExtremeRays" />
+ <Returns><K>true</K> if all extreme rays have degree 1; <K>false</K> otherwise
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "IsDeg1ExtremeRays" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzIsDeg1HilbertBasis" />
+ <Returns><K>true</K> if all Hilbert basis elements have degree 1; <K>false</K> otherwise
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "IsDeg1HilbertBasis" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzIsIntegrallyClosed" />
+ <Returns><K>true</K> if the cone is integrally closed; <K>false</K> otherwise
+</Returns>
+ <Description>
+It is integrally closed when the Hilbert basis is a subset of the original monoid generators. So it is only computable if we have original monoid generators.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "IsIntegrallyClosed" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzIsPointed" />
+ <Returns><K>true</K> if the cone is pointed; <K>false</K> otherwise
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "IsPointed" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzMaximalSubspace" />
+ <Returns>a matrix whose rows generate the maximale linear subspace
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "MaximalSubspace" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzModuleGenerators" />
+ <Returns>a matrix whose rows are the module generators
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "ModuleGenerators" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzModuleGeneratorsOverOriginalMonoid" />
+ <Returns>a matrix whose rows are the module generators over the original monoid
+</Returns>
+ <Description>
+A minimal system of generators of the integral closure over the original monoid.
+Requires the existence of original monoid generators. Not allowed in inhomogeneous computations.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "ModuleGeneratorsOverOriginalMonoid" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzModuleRank" />
+ <Returns>the rank of the module of lattice points in the polyhedron as a module over the recession monoid
+</Returns>
+ <Description>
+Only for inhomogeneous computations.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "ModuleRank" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzMultiplicity" />
+ <Returns></Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "Multiplicity" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzOriginalMonoidGenerators" />
+ <Returns>a matrix whose rows are the original monoid generators
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "OriginalMonoidGenerators" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzRecessionRank" />
+ <Returns>the rank of the recession cone
+</Returns>
+ <Description>
+Only for inhomogeneous computations.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "RecessionRank" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzIsReesPrimary" />
+ <Returns><K>true</K> if is the monomial ideal is primary to the irrelevant maximal ideal, <K>false</K> otherwise
+</Returns>
+ <Description>
+Only used with the input type <C>rees_algebra</C>.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "IsReesPrimary" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzReesPrimaryMultiplicity" />
+ <Returns></Returns>
+ <Description>
+the multiplicity of a monomial ideal, provided it is primary to the maximal
+ideal generated by the indeterminates. Used only with the input type
+<C>rees_algebra</C>.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "ReesPrimaryMultiplicity" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzSupportHyperplanes" />
+ <Returns>a matrix whose rows represent the support hyperplanes
+</Returns>
+ <Description>
+The equations cut out the linear space generated by the cone.
+Together with the support hyperplanes and the congruences it describes the
+lattice points of the cone.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "SupportHyperplanes" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzTriangulation" />
+ <Returns>the triangulation
+</Returns>
+ <Description>
+It is given as a list of pairs representing the maximal simplicial cones in the triangulation. The first pair entry is the key of the simplex, i.e. the indices of the generators with respect th the generators obtained by <Ref Func="NmzGenerators"/> (counting from 0). The second pair entry is the absolute value of the determinant of the generator matrix.
+<P/>
+This is an alias for <C>NmzConeProperty( cone, "Triangulation" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzTriangulationDetSum" />
+ <Returns>sum of the absolute values of the determinants of the simplicial cones in the used triangulation
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "TriangulationDetSum" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzTriangulationSize" />
+ <Returns>the number of simplicial cones in the used triangulation
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "TriangulationSize" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzVerticesOfPolyhedron" />
+ <Returns>a matrix whose rows are the vertices of the polyhedron
+</Returns>
+ <Description>
+This is an alias for <C>NmzConeProperty( cone, "VerticesOfPolyhedron" );</C> see <Ref Func="NmzConeProperty"/>.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="cone" Name="NmzBasisChange" />
+ <Returns>a record describing the basis change
+</Returns>
+ <Description>
+The result record <C>r</C> has three components:
+<C>r.Embedding</C>, <C>r.Projection</C>, and <C>r.Annihilator</C>,
+where the embedding <C>A</C> and the projection <C>B</C>
+are matrices, and the annihilator <C>c</C> is an integer.
+They represent the mapping into the effective lattice
+<M>\mathbb{Z}^n \to \mathbb{Z}^r, u \mapsto (uB)/c</M>
+and the inverse operation
+<M>\mathbb{Z}^r \to \mathbb{Z}^n, v \mapsto vA</M>.
+<P/>
+This is part of the cone property <Q>Sublattice</Q>.
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+
+</Chapter>
+

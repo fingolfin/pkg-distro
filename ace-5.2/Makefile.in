@@ -1,0 +1,25 @@
+# sample makefile
+CC=cc
+
+all: src/Makefile.in
+	mkdir -p bin/@GAPARCH@;
+	sed -e "s/@DATE@/`date`/g" src/Makefile.in >src/Makefile
+	(cd src; make)
+	mv src/ace bin/@GAPARCH@/ace
+
+clean:	
+	rm -rf bin src/Makefile Makefile
+
+# use this target only if you want to build the manual from scratch.
+doc:
+	(cd doc;./make_doc)
+
+otherdoc:
+	(cd standalone-doc;latex ace3001;bibtex ace3001;latex ace3001;latex ace3001)
+	(cd standalone-doc;dvips ace3001 -o)
+	(cd standalone-doc;rm ace3001.{toc,blg,log,aux})
+
+Makefile: configure Makefile.in
+	./configure "@GAPPATH@"
+
+.PHONY: all clean doc otherdoc

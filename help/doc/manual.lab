@@ -33,8 +33,7 @@
 \makelabel{help:Known results about (ZC) and (PQ)}{5.6}{X811213427F4177C8}
 \makelabel{help:Remarks on technical problems and the implementation}{6}{X7B53A54C823744E9}
 \makelabel{help:Making the HeLP-package run}{6.1}{X7FBC46BC7A5D28AF}
-\makelabel{help:Computations with big coefficients - precision problems}{6.2}{X802D13E67EADCD32}
-\makelabel{help:How much 4ti2 is really there?}{6.3}{X7CACE0767DA99250}
+\makelabel{help:How much 4ti2 and normaliz is really there?}{6.2}{X85FD09B67E460537}
 \makelabel{help:Bibliography}{Bib}{X7A6F98FD85F02BFE}
 \makelabel{help:References}{Bib}{X7A6F98FD85F02BFE}
 \makelabel{help:Index}{Ind}{X83A0356F839C696F}
@@ -50,8 +49,10 @@
 \makelabel{help:HeLPAllOrdersPQ}{3.3.2}{X7C00E1567BFF1757}
 \makelabel{help:HeLPChangeCharKeepSols}{3.4.1}{X7BB9009482784E90}
 \makelabel{help:HeLPReset}{3.4.2}{X7C19F3A378AAF294}
-\makelabel{help:HeLPChange4ti2Precision}{3.5.1}{X7F6C4FAD805CD7FC}
+\makelabel{help:HeLPSolver}{3.5.1}{X7B2326C5813CF36B}
 \makelabel{help:HeLPUseRedund}{3.5.2}{X7A7536D9790C1901}
+\makelabel{help:HeLPChange4ti2Precision}{3.5.3}{X7F6C4FAD805CD7FC}
+\makelabel{help:HeLPVertices}{3.5.4}{X8490447A857CFD87}
 \makelabel{help:HeLPVerifySolution}{3.6.1}{X7DAA7EF785621D9E}
 \makelabel{help:HeLPFindAndVerifySolution}{3.6.2}{X8452B7F58641E7F5}
 \makelabel{help:HeLPPossiblePartialAugmentationsOfPowers}{3.6.3}{X81E4BAF2815051C4}

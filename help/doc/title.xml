@@ -9,7 +9,7 @@
     Hertweck-Luthar-Passi method.
   </Subtitle>
   <Version>
-    2.1
+    3.0
   </Version>
   <Author>
     Andreas Bächle<Alt Only="LaTeX"><Br/></Alt>
@@ -38,19 +38,20 @@ Germany<Br/>
 
   </Author>
   <Date>
-    30/09/2015, The Lodge
+    03/03/2016
   </Date>
   <Copyright>
-    &copyright; 2015 by Andreas Bächle and Leo Margolis<P/>
+    &copyright; 2016 by Andreas Bächle and Leo Margolis<P/>
 
 This package is free software and may be distributed under the terms and conditions of the
 GNU Public License Version 2.
 
   </Copyright>
   <Acknowledgements>
-    The authors are grateful to Sebastian Gutsche for endowing GAP with the 4ti2-Interface.
-We also would like to thank him for many very helpful discussions.
-We also want to give credits to the developers of the software 4ti2.
+    The authors are grateful to Sebastian Gutsche, Christof Söger and Max Horn for endowing GAP
+with a 4ti2-Interface and a normlaiz-Interface.
+We also would like to thank Gutsche and Söger for many very helpful discussions.
+We also want to give credits to the developers of the softwares 4ti2 and normaliz.
 Thanks go to David Avis for writing lrslib and answering our questions about it.
 We moreover thank Wolfgang Kimmerle for introducing us to the beautiful world of group rings.
 The development of this package was partially supported by the Research Foundation Flanders 

@@ -5,7 +5,7 @@
   [1X2.1 [33X[0;0YZassenhaus Conjecture[133X[101X
   
   [33X[0;0YThis  function checks whether the Zassenhaus Conjecture ((ZC) for short, cf.
-  Section  [14X5.1[114X) can be proved using the HeLP-method with the data available in
+  Section  [14X5.1[114X) can be proved using the HeLP method with the data available in
   GAP.[133X
   
   [1X2.1-1 HeLP_ZC[101X
@@ -135,28 +135,12 @@
     [4X[28X#I  ZC can't be solved, using the given data, for the orders: [ 4 ].[128X[104X
     [4X[28Xfalse[128X[104X
     [4X[25Xgap>[125X [27XSize(HeLP_sol[4]);[127X[104X
-    [4X[28X20[128X[104X
+    [4X[28X10[128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe  group SmallGroup(48,30) is the smallest group for which the HeLP method
   does not suffice to prove the Zassenhaus Conjecture. However (ZC) was proved
   for this group in [HK06], Proposition 4.2.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XG := SmallGroup(96,65);;[127X[104X
-    [4X[25Xgap>[125X [27XHeLP_ZC(G);[127X[104X
-    [4X[28X#I  (ZC) can't be solved, using the given data, for the orders: [ 8 ].[128X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27XSize(HeLP_sol[8]);[127X[104X
-    [4X[28X40[128X[104X
-    [4X[25Xgap>[125X [27XG := SmallGroup(160,13);;[127X[104X
-    [4X[25Xgap>[125X [27XHeLP_ZC(G);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [33X[0;0YThe  Zassenhaus  Conjecture  for  the first group in the above example, i.e.
-  SmallGroup(96,65), was proved by A. Herman and G. Singh [HS15]. They did not
-  do all the computations for SmallGroup(160,13).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XC1 := CharacterTable(SymmetricGroup(5));[127X[104X
@@ -268,7 +252,7 @@
     [4X[25Xgap>[125X [27XHeLP_PQ(C);                   [127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XHeLP_ZC(C);[127X[104X
-    [4X[28X#I  For the following orders ZC can not be solved, using the given data: [ 10 ].[128X[104X
+    [4X[28X#I  (ZC) can't be solved, using the given data, for the orders: [ 10 ].[128X[104X
     [4X[28Xfalse[128X[104X
     [4X[25Xgap>[125X [27XHeLP_sol[10];[127X[104X
     [4X[28X[ [ [ 1 ], [ 0, 1 ], [ 0, -1, 1, 0, 1 ] ], [128X[104X
@@ -338,5 +322,6 @@
   for  the  prime  7  one  can  prove (PQ) for PSL(2,49), but this data is not
   available  in GAP at the moment. The fact that there are no torsion units of
   order 10 and 15 was proved in [Her07], Proposition 6.7. See also the example
-  in Section [14X4.5[114X.[133X
+  in  Section  [14X4.5[114X.  The  other critical orders were handled in a more general
+  context in [BM16].[133X
   
