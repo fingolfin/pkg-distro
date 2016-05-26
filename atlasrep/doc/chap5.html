@@ -20,8 +20,8 @@
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
 
-<p><a id="X7DF711157F9EFA28" name="X7DF711157F9EFA28"></a></p>
-<div class="ChapSects"><a href="chap5.html#X7DF711157F9EFA28">5 <span class="Heading">Private Extensions of the <strong class="pkg">AtlasRep</strong> Package
+<p><a id="X7B33345C7B304697" name="X7B33345C7B304697"></a></p>
+<div class="ChapSects"><a href="chap5.html#X7B33345C7B304697">5 <span class="Heading">Private Extensions of the <strong class="pkg">AtlasRep</strong> Package
 </span></a>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X8072E5C9825D6CCE">5.1 <span class="Heading">Adding a Private Data Directory</span></a>
 </span>
@@ -32,7 +32,7 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7E186BFA7E59BD47">5.2 <span class="Heading">The Effect of Private Extensions on the User Interface</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X86CC8CDD866A1FC3">5.3 <span class="Heading">An Example of Extending the <strong class="pkg">AtlasRep</strong> Package
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7AB60BFC87EAB4C5">5.3 <span class="Heading">An Example of Extending the <strong class="pkg">AtlasRep</strong> Package
 </span></a>
 </span>
 </div>
@@ -56,11 +56,11 @@
 
 </li>
 </ol>
-<p>The first two issues are dealt with in Section <a href="chap5.html#X8072E5C9825D6CCE"><span class="RefLink">5.1</span></a> and Section <a href="chap5.html#X7E186BFA7E59BD47"><span class="RefLink">5.2</span></a>. The last is described in Section <a href="chap7.html#X86366BF08533DA5E"><span class="RefLink">7.5</span></a>.</p>
+<p>The first two issues are dealt with in Section <a href="chap5.html#X8072E5C9825D6CCE"><span class="RefLink">5.1</span></a> and Section <a href="chap5.html#X7E186BFA7E59BD47"><span class="RefLink">5.2</span></a>. The last is described in Section <a href="chap7.html#X7C164C4D7ECE62D0"><span class="RefLink">7.5</span></a>.</p>
 
-<p>Finally, an example of using private extensions is given in Section <a href="chap5.html#X86CC8CDD866A1FC3"><span class="RefLink">5.3</span></a>.</p>
+<p>Finally, an example of using private extensions is given in Section <a href="chap5.html#X7AB60BFC87EAB4C5"><span class="RefLink">5.3</span></a>.</p>
 
-<p>Several of the sanity checks for the official part of the <strong class="pkg">AtlasRep</strong> package make sense also for private extensions, see Section <a href="chap7.html#X84A565E482DBF4C1"><span class="RefLink">7.8</span></a> for more information.</p>
+<p>Several of the sanity checks for the official part of the <strong class="pkg">AtlasRep</strong> package make sense also for private extensions, see Section <a href="chap7.html#X7D42612882656B32"><span class="RefLink">7.8</span></a> for more information.</p>
 
 <p><a id="X8072E5C9825D6CCE" name="X8072E5C9825D6CCE"></a></p>
 
@@ -75,21 +75,21 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AtlasOfGroupRepresentationsNotifyPrivateDirectory</code>( <var class="Arg">dir</var>[, <var class="Arg">dirid</var>][, <var class="Arg">test</var>] )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: <code class="keyw">true</code> if none of the filenames with admissible format in the directory <var class="Arg">dir</var> is contained in other data directories and if the data belongs to groups whose names have been declared, otherwise <code class="keyw">false</code>.</p>
 
-<p>Let <var class="Arg">dir</var> be a directory (see <a href="../../../doc/ref/chap10.html#X85030B35865A1080"><span class="RefLink">Reference: Directories</span></a>) or a string denoting the name of a directory (such that the <strong class="pkg">GAP</strong> object describing this directory can be obtained by calling <code class="func">Directory</code> (<a href="../../../doc/ref/chap10.html#X86A71E927EEC7EAD"><span class="RefLink">Reference: Directory</span></a>) with the argument <var class="Arg">dir</var>). In the following, let <var class="Arg">dirname</var> be the name of the directory. So <var class="Arg">dirname</var> can be an absolute path or a path relative to the home directory of the user (starting with a tilde character <code class="code">~</code>) or a path relative to the directory where <strong class="pkg">GAP</strong> was started.</p>
+<p>Let <var class="Arg">dir</var> be a directory (see <a href="../../../doc/ref/chap9.html#X85030B35865A1080"><span class="RefLink">Reference: Directories</span></a>) or a string denoting the name of a directory (such that the <strong class="pkg">GAP</strong> object describing this directory can be obtained by calling <code class="func">Directory</code> (<a href="../../../doc/ref/chap9.html#X86A71E927EEC7EAD"><span class="RefLink">Reference: Directory</span></a>) with the argument <var class="Arg">dir</var>). In the following, let <var class="Arg">dirname</var> be the name of the directory. So <var class="Arg">dirname</var> can be an absolute path or a path relative to the home directory of the user (starting with a tilde character <code class="code">~</code>) or a path relative to the directory where <strong class="pkg">GAP</strong> was started.</p>
 
-<p>If the optional argument <var class="Arg">dirid</var> is given, it must be a string. This value will be used in the <code class="code">identifier</code> components of the records that are returned by interface functions (see Section <a href="chap3.html#X806ED7BB83FD848B"><span class="RefLink">3.5</span></a>) for data contained in the directory <var class="Arg">dir</var>. Note that the directory name may be different in different <strong class="pkg">GAP</strong> sessions or for different users who want to access the same data, whereas the <code class="code">identifier</code> components shall be independent of such differences. The default for <var class="Arg">dirid</var> is <var class="Arg">dirname</var>.</p>
+<p>If the optional argument <var class="Arg">dirid</var> is given, it must be a string. This value will be used in the <code class="code">identifier</code> components of the records that are returned by interface functions (see Section <a href="chap3.html#X86B07B4387A02B06"><span class="RefLink">3.5</span></a>) for data contained in the directory <var class="Arg">dir</var>. Note that the directory name may be different in different <strong class="pkg">GAP</strong> sessions or for different users who want to access the same data, whereas the <code class="code">identifier</code> components shall be independent of such differences. The default for <var class="Arg">dirid</var> is <var class="Arg">dirname</var>.</p>
 
 <p>If the optional argument <var class="Arg">test</var> is given, it must be <code class="keyw">true</code> or <code class="keyw">false</code>. In the <code class="keyw">true</code> case, consistency checks are switched on while the file <code class="file">toc.g</code> is read. This costs some extra time, but it is recommended after each extension of the file <code class="file">toc.g</code>. The default for <var class="Arg">test</var> is <code class="keyw">false</code>.</p>
 
-<p><code class="func">AtlasOfGroupRepresentationsNotifyPrivateDirectory</code> notifies the data in the directory <var class="Arg">dir</var> to the <strong class="pkg">AtlasRep</strong> package. First the pair <code class="code">[ <var class="Arg">dirname</var>, <var class="Arg">dirid</var> ]</code> is added to the <code class="code">private</code> component of <code class="func">AtlasOfGroupRepresentationsInfo</code> (<a href="chap7.html#X7BEC94A6781E126E"><span class="RefLink">7.1-6</span></a>). If the directory contains a file with the name <code class="file">toc.g</code> then this file is read; this file is useful for adding new group names using <code class="code">AGR.GNAN</code> and for adding describing data about the representations, see Section <a href="chap7.html#X7D66C94E7A0F2252"><span class="RefLink">7.7</span></a>. Next the table of contents of the private directory is built from the list of files contained in the private directory or in its subdirectories (one layer deep).</p>
+<p><code class="func">AtlasOfGroupRepresentationsNotifyPrivateDirectory</code> notifies the data in the directory <var class="Arg">dir</var> to the <strong class="pkg">AtlasRep</strong> package. First the pair <code class="code">[ <var class="Arg">dirname</var>, <var class="Arg">dirid</var> ]</code> is added to the <code class="code">private</code> component of <code class="func">AtlasOfGroupRepresentationsInfo</code> (<a href="chap7.html#X7BEC94A6781E126E"><span class="RefLink">7.1-6</span></a>). If the directory contains a file with the name <code class="file">toc.g</code> then this file is read; this file is useful for adding new group names using <code class="code">AGR.GNAN</code> and for adding describing data about the representations, see Section <a href="chap7.html#X7AD2556F87F1D40D"><span class="RefLink">7.7</span></a>. Next the table of contents of the private directory is built from the list of files contained in the private directory or in its subdirectories (one layer deep).</p>
 
-<p>Only those files are considered whose names match an admissible format (see Section <a href="chap7.html#X7D16BE31788F0E8A"><span class="RefLink">7.6</span></a>). Filenames that are already contained in another data directory of the <strong class="pkg">AtlasRep</strong> package are ignored, and messages about these filenames are printed if the info level of <code class="func">InfoAtlasRep</code> (<a href="chap7.html#X8006BE167EB81E16"><span class="RefLink">7.1-1</span></a>) is at least <span class="SimpleMath">1</span>.</p>
+<p>Only those files are considered whose names match an admissible format (see Section <a href="chap7.html#X7C2562A978319179"><span class="RefLink">7.6</span></a>). Filenames that are already contained in another data directory of the <strong class="pkg">AtlasRep</strong> package are ignored, and messages about these filenames are printed if the info level of <code class="func">InfoAtlasRep</code> (<a href="chap7.html#X8006BE167EB81E16"><span class="RefLink">7.1-1</span></a>) is at least <span class="SimpleMath">1</span>.</p>
 
 <p>Note that this implies that the files of the "official" (i.e. non-private) data directories have priority over files in private directories.</p>
 
 <p>If the directory contains files for groups whose names have not been declared before and if the info level of <code class="func">InfoAtlasRep</code> (<a href="chap7.html#X8006BE167EB81E16"><span class="RefLink">7.1-1</span></a>) is at least <span class="SimpleMath">1</span> then a message about these names is printed.</p>
 
-<p>For convenience, the user may collect the notifications of private data directories in the file <code class="file">gaprc</code> (see Section <a href="../../../doc/ref/chap4.html#X7FD66F977A3B02DF"><span class="RefLink">Reference: The gap.ini and gaprc files</span></a>).</p>
+<p>For convenience, the user may collect the notifications of private data directories in the file <code class="file">gaprc</code> (see Section <a href="../../../doc/ref/chap3.html#X7FD66F977A3B02DF"><span class="RefLink">Reference: The gap.ini and gaprc files</span></a>).</p>
 
 <p><a id="X8748A8BB7C7089EE" name="X8748A8BB7C7089EE"></a></p>
 
@@ -104,11 +104,11 @@
 
 <p>First suppose that only new groups or new data for known groups are added.</p>
 
-<p>In this case, <code class="func">DisplayAtlasInfo</code> (<a href="chap3.html#X79DACFFA7E2D1A99"><span class="RefLink">3.5-1</span></a>) lists the private representations and programs in the same way as the "official" data, except that private parts are marked with the string stored in the component <code class="code">markprivate</code> of <code class="func">AtlasOfGroupRepresentationsInfo</code> (<a href="chap7.html#X7BEC94A6781E126E"><span class="RefLink">7.1-6</span></a>); by default, this is a star <code class="code">*</code>. The ordering of representations listed by <code class="func">DisplayAtlasInfo</code> (<a href="chap3.html#X79DACFFA7E2D1A99"><span class="RefLink">3.5-1</span></a>) (and referred to by <code class="func">AtlasGenerators</code> (<a href="chap3.html#X7D1CCCF8852DFF39"><span class="RefLink">3.5-2</span></a>)) will in general change when private directories are notified. If several private directories are used then the ordering of data may depend on the ordering of notifications. For the other interface functions described in Chapter <a href="chap3.html#X87EAF8E578D95793"><span class="RefLink">3</span></a>, the only difference is that also the private data can be accessed. In particular the "free format" <code class="code"><var class="Arg">groupname</var>G<var class="Arg">i</var>-X<var class="Arg">descr</var>W<var class="Arg">n</var></code> for straight line programs (see Section <a href="chap7.html#X7D16BE31788F0E8A"><span class="RefLink">7.6</span></a>) may be used in private directories; the data can be accessed with <code class="func">AtlasProgram</code> (<a href="chap3.html#X801F2E657C8A79ED"><span class="RefLink">3.5-3</span></a>), where the last two arguments are the strings <code class="code">"other"</code> and <var class="Arg">descr</var>.</p>
+<p>In this case, <code class="func">DisplayAtlasInfo</code> (<a href="chap3.html#X79DACFFA7E2D1A99"><span class="RefLink">3.5-1</span></a>) lists the private representations and programs in the same way as the "official" data, except that private parts are marked with the string stored in the component <code class="code">markprivate</code> of <code class="func">AtlasOfGroupRepresentationsInfo</code> (<a href="chap7.html#X7BEC94A6781E126E"><span class="RefLink">7.1-6</span></a>); by default, this is a star <code class="code">*</code>. The ordering of representations listed by <code class="func">DisplayAtlasInfo</code> (<a href="chap3.html#X79DACFFA7E2D1A99"><span class="RefLink">3.5-1</span></a>) (and referred to by <code class="func">AtlasGenerators</code> (<a href="chap3.html#X7D1CCCF8852DFF39"><span class="RefLink">3.5-2</span></a>)) will in general change when private directories are notified. If several private directories are used then the ordering of data may depend on the ordering of notifications. For the other interface functions described in Chapter <a href="chap3.html#X79CC2FC07C77EB2C"><span class="RefLink">3</span></a>, the only difference is that also the private data can be accessed. In particular the "free format" <code class="code"><var class="Arg">groupname</var>G<var class="Arg">i</var>-X<var class="Arg">descr</var>W<var class="Arg">n</var></code> for straight line programs (see Section <a href="chap7.html#X7C2562A978319179"><span class="RefLink">7.6</span></a>) may be used in private directories; the data can be accessed with <code class="func">AtlasProgram</code> (<a href="chap3.html#X801F2E657C8A79ED"><span class="RefLink">3.5-3</span></a>), where the last two arguments are the strings <code class="code">"other"</code> and <var class="Arg">descr</var>.</p>
 
-<p>If also private data types are introduced (see Section <a href="chap7.html#X86366BF08533DA5E"><span class="RefLink">7.5</span></a>) then additional columns or rows can appear in the output of <code class="func">DisplayAtlasInfo</code> (<a href="chap3.html#X79DACFFA7E2D1A99"><span class="RefLink">3.5-1</span></a>), and new inputs can become meaningful for all interface functions. Examples for these changes can be found in Section <a href="chap5.html#X86CC8CDD866A1FC3"><span class="RefLink">5.3</span></a>.</p>
+<p>If also private data types are introduced (see Section <a href="chap7.html#X7C164C4D7ECE62D0"><span class="RefLink">7.5</span></a>) then additional columns or rows can appear in the output of <code class="func">DisplayAtlasInfo</code> (<a href="chap3.html#X79DACFFA7E2D1A99"><span class="RefLink">3.5-1</span></a>), and new inputs can become meaningful for all interface functions. Examples for these changes can be found in Section <a href="chap5.html#X7AB60BFC87EAB4C5"><span class="RefLink">5.3</span></a>.</p>
 
-<p><a id="X86CC8CDD866A1FC3" name="X86CC8CDD866A1FC3"></a></p>
+<p><a id="X7AB60BFC87EAB4C5" name="X7AB60BFC87EAB4C5"></a></p>
 
 <h4>5.3 <span class="Heading">An Example of Extending the <strong class="pkg">AtlasRep</strong> Package
 </span></h4>
@@ -207,7 +207,7 @@ C4*   | 2 |     1 |    |     |   2 |     |     |
 Representations for G = C4:    (all refer to std. generators 1)
 ---------------------------
 1: G &lt;= Sym(4)*   rank 4, on cosets of 1 &lt; C2
-2: G &lt;= GL(1a,C)*
+2: G &lt;= GL(1a,C)* 
 
 Programs for G = C4:    (all refer to std. generators 1)
 --------------------
@@ -224,7 +224,7 @@ Representations for G = C4:    (all refer to std. generators 1)
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DisplayAtlasInfo( "C4", IsMatrixGroup );</span>
 Representations for G = C4:    (all refer to std. generators 1)
 ---------------------------
-2: G &lt;= GL(1a,C)*
+2: G &lt;= GL(1a,C)* 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DisplayAtlasInfo( "C4", Dimension, 2 );</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DisplayAtlasInfo( "A5", NrMovedPoints, 60 );</span>
 Representations for G = A5:    (all refer to std. generators 1)
@@ -232,41 +232,47 @@ Representations for G = A5:    (all refer to std. generators 1)
 4: G &lt;= Sym(60)* rank 60, on cosets of 1 &lt; A4
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">info:= OneAtlasGeneratingSetInfo( "C4" );</span>
 rec( groupname := "C4", id := "", 
-  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],
-  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",
-  repnr := 1, size := 4, stabilizer := "1 &lt; C2", standardization := 1,
-  transitivity := 1, type := "perm" )
+  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], 
+  isPrimitive := false, p := 4, rankAction := 4, 
+  repname := "C4G1-p4B0", repnr := 1, size := 4, 
+  stabilizer := "1 &lt; C2", standardization := 1, transitivity := 1, 
+  type := "perm" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AtlasGenerators( info.identifier );</span>
-rec( generators := [ (1,2,3,4) ], groupname := "C4", id := "",
-  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],
-  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",
-  repnr := 1, size := 4, stabilizer := "1 &lt; C2", standardization := 1,
-  transitivity := 1, type := "perm" )
+rec( generators := [ (1,2,3,4) ], groupname := "C4", id := "", 
+  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], 
+  isPrimitive := false, p := 4, rankAction := 4, 
+  repname := "C4G1-p4B0", repnr := 1, size := 4, 
+  stabilizer := "1 &lt; C2", standardization := 1, transitivity := 1, 
+  type := "perm" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AtlasProgram( "C4", 1 );</span>
-rec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], 
-  program := &lt;straight line program&gt;, size := 2, standardization := 1, 
+rec( groupname := "C4", 
+  identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], 
+  program := &lt;straight line program&gt;, size := 2, standardization := 1,
   subgroupname := "C2" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AtlasProgram( "C4", "maxes", 1 );</span>
-rec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ],
-  program := &lt;straight line program&gt;, size := 2, standardization := 1, 
+rec( groupname := "C4", 
+  identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], 
+  program := &lt;straight line program&gt;, size := 2, standardization := 1,
   subgroupname := "C2" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AtlasProgram( "C4", "maxes", 2 );</span>
 fail
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AtlasGenerators( "C4", 1 );</span>
 rec( generators := [ (1,2,3,4) ], groupname := "C4", id := "", 
-  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],
-  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",
-  repnr := 1, size := 4, stabilizer := "1 &lt; C2", standardization := 1,
-  transitivity := 1, type := "perm" )
+  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], 
+  isPrimitive := false, p := 4, rankAction := 4, 
+  repname := "C4G1-p4B0", repnr := 1, size := 4, 
+  stabilizer := "1 &lt; C2", standardization := 1, transitivity := 1, 
+  type := "perm" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AtlasGenerators( "C4", 2 );</span>
-rec( dim := 1, generators := [ [ [ E(4) ] ] ], groupname := "C4", id := "a", 
-  identifier := [ [ "priv", "C4" ], "C4G1-Ar1aB0.g", 1, 1 ], 
-  repname := "C4G1-Ar1aB0", repnr := 2, size := 4, standardization := 1, 
-  type := "matalg" )
+rec( dim := 1, generators := [ [ [ E(4) ] ] ], groupname := "C4", 
+  id := "a", identifier := [ [ "priv", "C4" ], "C4G1-Ar1aB0.g", 1, 1 ]
+    , repname := "C4G1-Ar1aB0", repnr := 2, size := 4, 
+  standardization := 1, type := "matalg" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AtlasGenerators( "C4", 3 );</span>
 fail
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AtlasProgram( "C4", "other", "test" );</span>
-rec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-XtestW1", 1 ],
+rec( groupname := "C4", 
+  identifier := [ [ "priv", "C4" ], "C4G1-XtestW1", 1 ], 
   program := &lt;straight line program&gt;, standardization := 1 )
 </pre></div>
 
@@ -275,13 +281,13 @@ rec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-XtestW1", 1 ],
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DisplayAtlasInfo( "contents", "priv" );</span>
-group                    | # | maxes | cl | cyc | out | fnd | chk | prs
--------------------------+---+-------+----+-----+-----+-----+-----+----
-A5*                      | 1 |       |    |     |     |     |     |
-C4*                      | 2 |     1 |    |     |   2 |     |     |
+group                    | # | maxes | cl | cyc | out | fnd | chk | p*
+-------------------------+---+-------+----+-----+-----+-----+-----+--*
+A5*                      | 1 |       |    |     |     |     |     |  *
+C4*                      | 2 |     1 |    |     |   2 |     |     |  *
 </pre></div>
 
-<p>For checking the data in the private directory, we apply the relevant sanity checks (see Section <a href="chap7.html#X84A565E482DBF4C1"><span class="RefLink">7.8</span></a>).</p>
+<p>For checking the data in the private directory, we apply the relevant sanity checks (see Section <a href="chap7.html#X7D42612882656B32"><span class="RefLink">7.8</span></a>).</p>
 
 
 <div class="example"><pre>

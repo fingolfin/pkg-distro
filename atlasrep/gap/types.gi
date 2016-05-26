@@ -5,7 +5,7 @@
 #Y  Copyright (C)  2001,  Lehrstuhl D fuer Mathematik,  RWTH Aachen,  Germany
 ##
 ##  This file contains implementations of the functions for administrating
-##  the data types used in the {\ATLAS} of Group Representations.
+##  the data types used in the ATLAS of Group Representations.
 ##
 
 
@@ -15,7 +15,12 @@
 ##
 BindGlobal( "TOCEntryStringDefault", function( typename, entry )
     return Concatenation( [
-    "AGR.TOC(\"", typename, "\",\"", entry[ Length( entry ) ], "\");\n" ] );
+    "AGR.TOC(\"", typename, "\",\"", entry[ Length( entry ) ], "\",",
+    ReplacedString( String(
+                      [ First( AtlasOfGroupRepresentationsInfo.filenames,
+                               p -> p[1] = entry[ Length( entry ) ] )[2] ] ),
+                    " ", "" ),
+    ");\n" ] );
 end );
 
 

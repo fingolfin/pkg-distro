@@ -2,9 +2,9 @@
 ##
 #W  testall.g                automgrp package                  Dmytro Savchuk
 #W                                                             Yevgen Muntyan
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Dmytro Savchuk, Yevgen Muntyan
+#Y  Copyright (C) 2003 - 2016 Dmytro Savchuk, Yevgen Muntyan
 ##
 
 # Do this to run tests:
@@ -27,7 +27,7 @@ AG_Globals.bind_vars_autom_family := false;
 UnitTestInit("automgrp package");
 
 for name in [
-  "testexternal.g",
+#  "testexternal.g",
   "teststructures.g",
   "testorder.g",
   "testcontr.g",
@@ -36,6 +36,7 @@ for name in [
   "testselfsim.g",
   "testmanual.g",
   "testrws.g",
+  "testautom.g",
 ]
 do
 Read(Filename(DirectoriesLibrary("pkg/automgrp/tst"), name));

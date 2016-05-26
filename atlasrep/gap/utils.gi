@@ -9,19 +9,54 @@
 ##
 
 
-#T remove this as soon as GAP 4.4 need not be supported anymore!
-AGR.IsAlmostSimpleCharacterTable:= function( ordtbl )
-    local nsg, orbs;
+if IsString( InitialSubstringUTF8StringWithSuffix ) then
 
-    nsg:= ClassPositionsOfMinimalNormalSubgroups( ordtbl );
-    if Length( nsg ) <> 1 then
-      return false;
+#############################################################################
+##
+#F  InitialSubstringUTF8StringWithSuffix( <string>, <n>, <suffix> )
+##
+##  If the string <A>string</A> can be printed in at most <A>n</A> visible
+##  columns then <A>string</A> is returned.
+##  Otherwise the concatenation of the longest prefix of <A>string</A>
+##  and <A>suffix</A> (a string of visible length 1) is returned
+##  such that the result fits into exactly <A>n</A> visible columns.
+##
+##  This function is used by 'DisplayAtlasInfo'.
+##  Copies of the function are contained in the packages 'CTblLib' and
+##  'CTBlocks'.
+##  Perhaps the function should better be moved to 'GAPDoc'.
+##
+Unbind( InitialSubstringUTF8StringWithSuffix );
+
+BindGlobal( "InitialSubstringUTF8StringWithSuffix",
+    function( string, n, suffix )
+    local ints, sum, j, pos;
+
+    if WidthUTF8String( suffix ) <> 1 then
+      Error( "<suffix> must have visible length 1" );
     fi;
-    orbs:= SizesConjugacyClasses( ordtbl ){ nsg[1] };
-    nsg:= Sum( orbs );
-    return     ( not IsPrimeInt( nsg ) )
-           and IsomorphismTypeInfoFiniteSimpleGroup( nsg ) <> fail;
-    end;
+    ints:= IntListUnicodeString( Unicode( string, GAPInfo.TermEncoding ) );
+    sum:= 0;
+    for j in [ 1 .. Length( ints ) ] do
+      if ints[j] > 31 and ints[j] < 127 then
+        sum:= sum + 1;
+      else
+        pos:= POSITION_FIRST_COMPONENT_SORTED( WidthUnicodeTable, ints[j] );
+        if not IsBound( WidthUnicodeTable[ pos ] ) or
+           WidthUnicodeTable[ pos ][1] <> ints[j] then
+          pos:= pos-1;
+        fi;
+        sum:= sum + WidthUnicodeTable[ pos ][2];
+      fi;
+      if n - 1 < sum and ( j < Length( ints ) or n < sum ) then
+        return Concatenation( Encode( Unicode( ints{ [ 1 .. j-1 ] } ) ),
+                              suffix );
+      fi;
+    od;
+    return string;
+    end );
+
+fi;
 
 
 #############################################################################
@@ -196,7 +231,7 @@ InstallGlobalFunction( AtlasClassNames, function( tbl )
         fi;
       od;
       return names;
-    elif not AGR.IsAlmostSimpleCharacterTable( tbl ) then
+    elif not IsAlmostSimpleCharacterTable( tbl ) then
       Info( InfoAtlasRep, 2,
             Identifier( tbl ), " is not an almost simple table" );
       return fail;

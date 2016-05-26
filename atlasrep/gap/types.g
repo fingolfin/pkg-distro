@@ -45,6 +45,8 @@ BindGlobal( "AtlasOfGroupRepresentationsInfo", rec(
 
     private := [],
 
+    filenames := [],
+
     TableOfContents := rec( remote := rec(),
                             types  := rec( rep   := [],
                                            prg   := [],
@@ -173,7 +175,11 @@ AGR.DeclareDataType( "rep", "perm", rec(
     DisplayGroup := function( r )
       local disp, sep;
 
-      disp:= Concatenation( "G <= Sym(", String( r.p ), r.id, ")" );
+      if AGR.ShowOnlyASCII() then
+        disp:= Concatenation( "G <= Sym(", String( r.p ), r.id, ")" );
+      else
+        disp:= Concatenation( "G ≤ Sym(", String( r.p ), r.id, ")" );
+      fi;
       if IsBound( r.transitivity ) then
         disp:= [ disp ];
         if   r.transitivity = 0 then
@@ -308,13 +314,16 @@ od;
       fi;
     end,
 
-    # We store the stem of the filename and the number of generators.
+    # We store the stem of the filename and the list of CRC values.
     TOCEntryString := function( typename, entry )
       return Concatenation( [
           "AGR.TOC(\"", typename, "\",\"",
           entry[5][1]{ [ 1 .. Length( entry[5][1] ) - 1 ] },
           "\",",
-          String( Length( entry[5] ) ),
+          ReplacedString( String(
+              List( entry[5],
+                    f -> First( AtlasOfGroupRepresentationsInfo.filenames,
+                                p -> p[1] = f )[2] ) ), " ", "" ),
           ");\n" ] );
     end,
 
@@ -420,10 +429,18 @@ AGR.DeclareDataType( "rep", "matff",   rec(
     DisplayGroup := function( r )
       local disp;
 
-      disp:= Concatenation( "G <= GL(", String( r.dim ), r.id,
-                            ",", String( r.identifier[4] ), ")" );
-      if IsBound( r.charactername ) then
-        disp:= [ disp, Concatenation( "character ", r.charactername ) ];
+      if AGR.ShowOnlyASCII() then
+        disp:= Concatenation( "G <= GL(", String( r.dim ), r.id,
+                              ",", String( r.identifier[4] ), ")" );
+        if IsBound( r.charactername ) then
+          disp:= [ disp, Concatenation( "character ", r.charactername ) ];
+        fi;
+      else
+        disp:= Concatenation( "G ≤ GL(", String( r.dim ), r.id,
+                              ",", String( r.identifier[4] ), ")" );
+        if IsBound( r.charactername ) then
+          disp:= [ disp, Concatenation( "φ = ", r.charactername ) ];
+        fi;
       fi;
       return disp;
     end,
@@ -520,13 +537,16 @@ od;
       fi;
     end,
 
-    # We store the stem of the filename and the number of generators.
+    # We store the stem of the filename and the list of CRC values.
     TOCEntryString := function( typename, entry )
       return Concatenation( [
           "AGR.TOC(\"", typename, "\",\"",
           entry[6][1]{ [ 1 .. Length( entry[6][1] ) - 1 ] },
           "\",",
-          String( Length( entry[6] ) ),
+          ReplacedString( String(
+              List( entry[6],
+                    f -> First( AtlasOfGroupRepresentationsInfo.filenames,
+                                p -> p[1] = f )[2] ) ), " ", "" ),
           ");\n" ] );
     end,
 
@@ -625,11 +645,14 @@ AGR.DeclareDataType( "rep", "matint",  rec(
 
       if AGR.ShowOnlyASCII() then
         disp:= Concatenation( "G <= GL(", String( r.dim ), r.id, ",Z)" );
+        if IsBound( r.charactername ) then
+          disp:= [ disp, Concatenation( "character ", r.charactername ) ];
+        fi;
       else
-        disp:= Concatenation( "G <= GL(", String( r.dim ), r.id, ",ℤ)" );
-      fi;
-      if IsBound( r.charactername ) then
-        disp:= [ disp, Concatenation( "character ", r.charactername ) ];
+        disp:= Concatenation( "G ≤ GL(", String( r.dim ), r.id, ",ℤ)" );
+        if IsBound( r.charactername ) then
+          disp:= [ disp, Concatenation( "χ = ", r.charactername ) ];
+        fi;
       fi;
       return disp;
     end,
@@ -759,17 +782,28 @@ AGR.DeclareDataType( "rep", "matalg",  rec(
       fld:= fld{ [ 1 .. Length( fld )-2 ] };
       fld:= First( AtlasOfGroupRepresentationsInfo.ringinfo,
                    p -> p[1] = fld );
-      if fld <> fail then
-        fld:= fld[2];
-      elif AGR.ShowOnlyASCII() then
-        fld:= "C";
+      if AGR.ShowOnlyASCII() then
+        if fld <> fail then
+          fld:= fld[2];
+        else
+          fld:= "C";
+        fi;
+        disp:= Concatenation( "G <= GL(", String( r.dim ), r.id, ",",
+                              fld, ")" );
+        if IsBound( r.charactername ) then
+          disp:= [ disp, Concatenation( "character ", r.charactername ) ];
+        fi;
       else
-        fld:= "ℂ";
-      fi;
-      disp:= Concatenation( "G <= GL(", String( r.dim ), r.id, ",",
-                            fld, ")" );
-      if IsBound( r.charactername ) then
-        disp:= [ disp, Concatenation( "character ", r.charactername ) ];
+        if fld <> fail then
+          fld:= fld[2];
+        else
+          fld:= "ℂ";
+        fi;
+        disp:= Concatenation( "G ≤ GL(", String( r.dim ), r.id, ",",
+                              fld, ")" );
+        if IsBound( r.charactername ) then
+          disp:= [ disp, Concatenation( "χ = ", r.charactername ) ];
+        fi;
       fi;
       return disp;
     end,
@@ -852,7 +886,7 @@ AGR.DeclareDataType( "rep", "matmodn", rec(
         return Concatenation( "G <= GL(",String( r.dim ), r.id,
                               ",Z/", String( r.identifier[4] ),"Z)" );
       else
-        return Concatenation( "G <= GL(",String( r.dim ), r.id,
+        return Concatenation( "G ≤ GL(",String( r.dim ), r.id,
                               ",ℤ/", String( r.identifier[4] ),"ℤ)" );
       fi;
     end,
@@ -986,13 +1020,23 @@ AGR.DeclareDataType( "rep", "quat",  rec(
       fld:= fld{ [ 1 .. Length( fld )-2 ] };
       fld:= First( AtlasOfGroupRepresentationsInfo.ringinfo,
                    p -> p[1] = fld );
-      if fld = fail then
-        fld:= "QuaternionAlgebra(C)";
+      if AGR.ShowOnlyASCII() then
+        if fld = fail then
+          fld:= "QuaternionAlgebra(C)";
+        else
+          fld:= fld[2];
+        fi;
+        return Concatenation( "G <= GL(", String( r.dim ), r.id, ",", fld,
+                              ")" );
       else
-        fld:= fld[2];
+        if fld = fail then
+          fld:= "QuaternionAlgebra(ℂ)";
+        else
+          fld:= fld[2];
+        fi;
+        return Concatenation( "G ≤ GL(", String( r.dim ), r.id, ",", fld,
+                              ")" );
       fi;
-      return Concatenation( "G <= GL(", String( r.dim ), r.id, ",", fld,
-                            ")" );
     end,
 
     # Matrix representations over the quaternions are sorted according to

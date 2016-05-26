@@ -1,0 +1,163 @@
+\letter A
+  `AbsolutelyIrreducibleSolubleMatrixGroup', 6
+  `AllIrredSolMatGroups', 7
+  `AllIrreducibleSolubleMatrixGroups', 7
+  `AllIrreducibleSolvableMatrixGroups', 7
+  `AllPrimitivePcGroups', 18
+  `AllPrimitiveSolublePermGroups', 19
+  `AllPrimitiveSolublePermutationGroups', 21
+  `AllPrimitiveSolvablePermGroups', 19
+  `AllPrimitiveSolvablePermutationGroups', 21
+  attributes, basic, for matrix groups, 13
+\letter C
+  `Characteristic', for matrix groups, 13
+  `CharacteristicOfField', 13
+  compatibility, with other data libraries, 11
+  `ConjugatingMatTraceField', 16
+  copyright, 3
+\letter D
+  `DefaultFieldOfMatrixGroup', 13
+  `Degree', for matrix groups, 13
+  `DegreeOfMatrixGroup', 13
+  `Dimension', for matrix groups, 13
+  `DimensionOfMatrixGroup', 13
+\letter F
+  `FieldOfMatrixGroup', 13
+  find, matrix group, 7
+    \sub primitive pc group, 18
+    \sub primitive permutation group, 19
+\letter G
+  group, primitive soluble, 17
+\letter I
+  `IdAbsolutelyIrreducibleSolubleMatrixGroup', 11
+  `IdAbsolutelyIrreducibleSolvableMatrixGroup', 11
+  identification, of matrix groups, 10
+    \sub of primitive pc group, 20
+    \sub of primitive permutation group, 20
+  `IdIrreducibleSolubleMatrixGroup', 10
+  `IdIrreducibleSolubleMatrixGroupIndexMS', 11
+  `IdIrreducibleSolvableMatrixGroup', 10
+  `IdPrimitiveSolubleGroup', 20
+  `IdPrimitiveSolubleGroupNC', 20
+  `IdPrimitiveSolvableGroup', 20
+  `IdPrimitiveSolvableGroupNC', 20
+  `ImprimitivitySystems', 15
+  `IndexMSIdIrreducibleSolubleMatrixGroup', 12
+  `IndicesAbsolutelyIrreducible\discretionary {\char 92}{}{}Soluble\discretionary {\char 92}{}{}MatrixGroups', 6
+  `IndicesIrreducibleSolubleMatrixGroups', 6
+  `IndicesIrreducibleSolvableMatrixGroups', 6
+  `IndicesMaximalAbsolutelyIrreducible\discretionary {\char 92}{}{}Soluble\discretionary {\char 92}{}{}MatrixGroups', 6
+  `IndicesMaximalAbsolutelyIrreducible\discretionary {\char 92}{}{}Solvable\discretionary {\char 92}{}{}MatrixGroups', 6
+  IRREDSOL, 4
+    \sub accessing low level data, 6
+    \sub database design, 5
+  irreducibility, of matrix group, 14
+  `IrreducibleMatrixGroup\discretionary {\char 92}{}{}Primitive\discretionary {\char 92}{}{}SolubleGroup', 18
+  `IrreducibleMatrixGroup\discretionary {\char 92}{}{}Primitive\discretionary {\char 92}{}{}SolvableGroupNC', 18
+  `IrreducibleSolubleMatrixGroup', 6
+  `IrreducibleSolvableMatrixGroup', 6
+  `IsAbsolutelyIrreducible', 14
+  `IsAbsolutelyIrreducibleMatrixGroup', 14
+  `IsAvailableAbsolutelyIrreducibleSoluble\discretionary {\char 92}{}{}GroupData', 6
+  `IsAvailableAbsolutelyIrreducibleolvable\discretionary {\char 92}{}{}GroupData', 6
+  `IsAvailable\discretionary {\char 92}{}{}Id\discretionary {\char 92}{}{}Absolutely\discretionary {\char 92}{}{}Irreducible\discretionary {\char 92}{}{}Soluble\discretionary {\char 92}{}{}MatrixGroup', 10
+  `IsAvailable\discretionary {\char 92}{}{}Id\discretionary {\char 92}{}{}Absolutely\discretionary {\char 92}{}{}Irreducible\discretionary {\char 92}{}{}Solvable\discretionary {\char 92}{}{}MatrixGroup', 10
+  `IsAvailable\discretionary {\char 92}{}{}Id\discretionary {\char 92}{}{}Irreducible\discretionary {\char 92}{}{}Soluble\discretionary {\char 92}{}{}MatrixGroup', 10
+  `IsAvailable\discretionary {\char 92}{}{}Id\discretionary {\char 92}{}{}Irreducible\discretionary {\char 92}{}{}Solvable\discretionary {\char 92}{}{}MatrixGroup', 10
+  `IsAvailableIrreducibleSoluble\discretionary {\char 92}{}{}GroupData', 6
+  `IsAvailableIrreducibleSolvable\discretionary {\char 92}{}{}GroupData', 6
+  `IsIrreducible', for matrix groups, 14
+  `IsIrreducibleMatrixGroup', 14
+  `IsLinearlyPrimitive', 15
+  `IsMaximalAbsolutelyIrreducibleSoluble\discretionary {\char 92}{}{}MatrixGroup', 14
+  `IsMaximalAbsolutelyIrreducibleSolvable\discretionary {\char 92}{}{}MatrixGroup', 14
+  `IsPrimitive', for matrix groups, 15
+  `IsPrimitiveMatrixGroup', 15
+  `IteratorIrredSolMatGroups', 8
+  `IteratorIrreducibleSolubleMatrixGroups', 8
+  `IteratorIrreducibleSolvableMatrixGroups', 8
+  `IteratorPrimitivePcGroups', 19
+  `IteratorPrimitivePermGroups', 20
+  `IteratorPrimitivePermutationGroups', 21
+\letter L
+  `LoadAbsoIrredSolGroupData', 9
+  `LoadAbsolutelyIrreducibleSolubleGroupData', 9
+  `LoadAbsolutelyIrreducibleSolubleGroup\discretionary {\char 92}{}{}Fingerprints', 12
+  `LoadAbsolutelyIrreducibleSolvableGroupData', 9
+  `LoadedAbsoIrredSolGroupData', 9
+  `LoadedAbsolutelyIrreducibleSoluble\discretionary {\char 92}{}{}GroupData', 9
+  `LoadedAbsolutelyIrreducibleSolubleGroup\discretionary {\char 92}{}{}Fingerprints', 12
+  `LoadedAbsolutelyIrreducibleSolvable\discretionary {\char 92}{}{}GroupData', 9
+  loading, of group data, 9
+    \sub of recognition data, 12
+\letter M
+  matrix group, basic attributes, 13
+    \sub conjugating into smaller fieldss, 16
+    \sub irreducibility, 14
+    \sub maximality, 14
+    \sub primitivity, 14
+    \sub with given properties, 7
+  maximality, of matrix group, 14
+  `MinimalBlockDimension', for matrix groups, 14
+  `MinimalBlockDimensionOfMatrixGroup', 14
+\letter O
+  obsolete functions, for primitive soluble permutation groups, 21
+  `OneIrredSolMatGroup', 8
+  `OneIrreducibleSolubleMatrixGroup', 8
+  `OneIrreducibleSolvableMatrixGroup', 8
+  `OnePrimitivePcGroup', 18
+  `OnePrimitiveSolublePermGroup', 19
+  `OnePrimitiveSolublePermutationGroup', 21
+  `OnePrimitiveSolvablePermGroup', 19
+  `OnePrimitiveSolvablePermutationGroup', 21
+\letter P
+  permutation group, primitive soluble, 17
+  primitive pc group, identification, 20
+    \sub recognition, 20
+    \sub with given properties, 18
+  primitive permutation group, identification, 20
+    \sub recognition, 20
+    \sub with given properties, 19
+  primitive soluble groups, 17
+  `PrimitivePcGroup', 17
+  `PrimitivePcGroupIrreducibleMatrixGroup', 17
+  `PrimitivePcGroupIrreducibleMatrixGroupNC', 17
+  `PrimitivePermGroup\discretionary {\char 92}{}{}Irreducible\discretionary {\char 92}{}{}MatrixGroup', 18
+  `PrimitivePermGroup\discretionary {\char 92}{}{}Irreducible\discretionary {\char 92}{}{}MatrixGroupNC', 18
+  `PrimitivePermutationGroup\discretionary {\char 92}{}{}Irreducible\discretionary {\char 92}{}{}MatrixGroup', 21
+  `PrimitivePermutationGroup\discretionary {\char 92}{}{}Irreducible\discretionary {\char 92}{}{}MatrixGroupNC', 21
+  `PrimitiveSolublePermGroup', 17
+  `PrimitiveSolublePermutationGroup', 21
+  `PrimitiveSolvablePermGroup', 17
+  `PrimitiveSolvablePermutationGroup', 21
+  primitivity, of matrix group, 14
+\letter R
+  recognition, of matrix groups, 10
+    \sub of primitive pc group, 20
+    \sub of primitive permutation group, 20
+  `RecognitionAbsolutelyIrreducibleSoluble\discretionary {\char 92}{}{}MatrixGroup', 11
+  `RecognitionAbsolutelyIrreducibleSoluble\discretionary {\char 92}{}{}Matrix\discretionary {\char 92}{}{}Group\discretionary {\char 92}{}{}NC', 11
+  `RecognitionAbsolutelyIrreducibleSolvable\discretionary {\char 92}{}{}Matrix\discretionary {\char 92}{}{}Group\discretionary {\char 92}{}{}NC', 11
+  `RecognitionAbsolutelyIrreducibleSolvable\discretionary {\char 92}{}{}MatrixGroup', 11
+  `RecognitionIrreducibleSoluble\discretionary {\char 92}{}{}MatrixGroup', 10
+  `RecognitionIrreducibleSoluble\discretionary {\char 92}{}{}MatrixGroupNC', 10
+  `RecognitionIrreducibleSolvable\discretionary {\char 92}{}{}MatrixGroup', 10
+  `RecognitionIrreducibleSolvable\discretionary {\char 92}{}{}MatrixGroupNC', 10
+  `RecognitionPrimitiveSolubleGroup', 20
+  `RecognitionPrimitiveSolvableGroup', 20
+  `RepresentationIsomorphism', 13
+\letter S
+  soluble primitive groups, 17
+  `SplittingField', 13
+  structure of IRREDSOL, 4
+\letter T
+  `TraceField', 16
+\letter U
+  `UnloadAbsoIrredSolGroupData', 9
+  `UnloadAbsolutelyIrreducibleSoluble\discretionary {\char 92}{}{}GroupData', 9
+  `UnloadAbsolutelyIrreducibleSolubleGroup\discretionary {\char 92}{}{}Finger\discretionary {\char 92}{}{}prints', 12
+  `UnloadAbsolutelyIrreducibleSolvable\discretionary {\char 92}{}{}GroupData', 9
+  unloading, of group data, 9
+    \sub of recognition data, 12
+\letter W
+  workspace, running out of, 9, 12

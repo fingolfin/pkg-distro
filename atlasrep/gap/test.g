@@ -35,7 +35,7 @@
 ##  depend on the amount of locally available data.
 ##  <P/>
 ##  The file <F>tst/testall.g</F> of the package
-##  contains <Ref Func="ReadTest" BookName="ref"/> statements
+##  contains <Ref Func="Test" BookName="ref"/> statements
 ##  for executing a collection of such sanity checks;
 ##  one can run them by calling
 ##  <C>ReadPackage( "AtlasRep", "tst/testall.g" )</C>.
@@ -1026,8 +1026,8 @@ AGR.Test.ClassScripts:= function( arg )
 ##  <#/GAPDoc>
 ##
 AGR.Test.CycToCcls:= function( arg )
-    local result, groupname, gapname, toc, tbl, record, datadirs, entry,
-          tomatch, cyc2ccl, str, prg, triple;
+    local result, groupname, gapname, toc, tbl, record, pref, datadirs,
+          entry, tomatch, cyc2ccl, str, prg, triple;
 
     # Initialize the result.
     result:= true;
@@ -1066,7 +1066,8 @@ AGR.Test.CycToCcls:= function( arg )
           cyc2ccl:= [];
         fi;
 
-        datadirs:= DirectoriesPackageLibrary( "atlasrep", "dataword" );
+        pref:= UserPreference( "AtlasRep", "AtlasRepDataDirectory" );
+        datadirs:= [ Directory( Concatenation( pref, "dataword" ) ) ];
 
         for entry in record.cyclic do
 
@@ -1696,7 +1697,10 @@ facttbl;
                   # relators in terms of the generators of the big group
                   # generate the kernel of the epimorphism.
                   for std in [ 1 .. maxstd ] do
-                    gens:= OneAtlasGeneratingSet( entry[1], std );
+                    gens:= OneAtlasGeneratingSetInfo( entry[1], std );
+                    if gens <> fail then
+                      gens:= AtlasGenerators( gens.identifier );
+                    fi;
                     if gens <> fail then
                       prg:= StraightLineProgramFromStraightLineDecision(
                                 pres.program );
@@ -1844,8 +1848,11 @@ AGR.Test.CompatibleMaxes:= function( arg )
           if ForAny( ComputedClassFusions( tbl ),
                      fus -> fus.name = factname and
                             AGR.IsKernelInFrattiniSubgroup( tbl, fus ) ) then
-            gens:= OneAtlasGeneratingSet( entry[1], l[1],
-                                          NrMovedPoints, [ 1 .. maxdeg ] );
+            gens:= OneAtlasGeneratingSetInfo( entry[1], l[1],
+                       NrMovedPoints, [ 1 .. maxdeg ] );
+            if gens <> fail then
+              gens:= AtlasGenerators( gens.identifier );
+            fi;
             if gens <> fail then
               for i in [ 1 .. maxmax ] do
                 prg:= AtlasProgram( factname, factstd, "maxes", i );
@@ -2024,7 +2031,10 @@ facttbl;
           pres:= AtlasProgram( factname, factstd, "presentation" );
           if pres <> fail then
             # The two sets of generators are compatible.
-            gens:= OneAtlasGeneratingSet( entry[1], std );
+            gens:= OneAtlasGeneratingSetInfo( entry[1], std );
+            if gens <> fail then
+              gens:= AtlasGenerators( gens.identifier );
+            fi;
             if gens <> fail then
               prg:= StraightLineProgramFromStraightLineDecision(
                         pres.program );
@@ -2591,7 +2601,7 @@ AGR.PrimitivityInfo:= function( inforec )
       # (If we know their orders then we check only those that can contain
       # the point stabilizer U.)
       for i in cand do
-        prg:= AtlasStraightLineProgram( gapname, "maxes", i );
+        prg:= AtlasProgram( gapname, "maxes", i );
         if prg <> fail then
           rest:= ResultOfStraightLineProgram( prg.program, gens );
 

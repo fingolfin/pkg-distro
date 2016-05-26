@@ -1,9 +1,9 @@
 #############################################################################
 ##
 #W  scanmtx.gd     GAP 4 packages AtlasRep and MeatAxe          Thomas Breuer
-#W                                                              Frank L"ubeck
+#W                                                               Frank Lübeck
 ##
-#Y  Copyright (C)  2001,  Lehrstuhl D fuer Mathematik,  RWTH Aachen,  Germany
+#Y  Copyright (C)  2001,   Lehrstuhl D für Mathematik,  RWTH Aachen,  Germany
 ##
 ##  Whenever this file is changed in one of the packages
 ##  <Package>AtlasRep</Package> or `meataxe',
@@ -14,7 +14,7 @@
 ##  and straight line programs used in the &ATLAS; of Group Representations.
 ##
 ##  The functions <Ref Func="CMtxBinaryFFMatOrPerm"/> and
-##  <Ref Func="FFMatOrPermCMtxBinary"/> were contributed by Frank L"ubeck.
+##  <Ref Func="FFMatOrPermCMtxBinary"/> were contributed by Frank Lübeck.
 ##
 
 
@@ -89,14 +89,14 @@ DeclareInfoClass( "InfoCMeatAxe" );
 ##  It is used by <Ref Func="ScanMeatAxeFile"/>
 ##  and <Ref Func="MeatAxeString"/>.
 ##  <P/>
-##  For a finite field <A>F</A>, <Ref Func="FFList"/> returns a list <A>l</A>
+##  For a finite field <A>F</A>, <Ref Func="FFList"/> returns a list <M>l</M>
 ##  giving the correspondence between the &MeatAxe; numbering and the &GAP;
 ##  numbering of the elements in <A>F</A>.
 ##  <P/>
-##  The element of <A>F</A> corresponding to &MeatAxe; number <A>n</A> is
-##  <M><A>l</A>[ <A>n</A>+1 ]</M>,
-##  and the &MeatAxe; number of the field element <A>z</A> is
-##  <C>Position( </C><A>l</A><C>, </C><A>z</A><C> ) - 1</C>.
+##  The element of <A>F</A> corresponding to &MeatAxe; number <M>n</M> is
+##  <M>l[ n+1 ]</M>,
+##  and the &MeatAxe; number of the field element <M>z</M> is
+##  <C>Position( </C><M>l, z</M><C> ) - 1</C>.
 ##  <P/>
 ##  The global variable <Ref Var="FFLists"/> is used to store the information
 ##  about <A>F</A> once it has been computed.
@@ -213,7 +213,7 @@ SMFSTRING := "";
 ##  that contains a matrix or a permutation or a list of permutations in
 ##  &MeatAxe; text format (see the section about the program
 ##  <F>zcv</F> <Index Key="zcv"><F>zcv</F></Index>
-##  in the &MeatAxe; manual&nbsp;<Cite Key="Rin98"/>),
+##  in the <C>C</C>-&MeatAxe; documentation&nbsp;<Cite Key="CMeatAxe"/>),
 ##  and let <A>q</A> be a prime power.
 ##  <Ref Func="ScanMeatAxeFile"/> returns the corresponding &GAP; matrix
 ##  or list of permutations, respectively.
@@ -221,6 +221,7 @@ SMFSTRING := "";
 ##  If the file contains a matrix then the way how it is read by
 ##  <Ref Func="ScanMeatAxeFile"/> depends on the
 ##  value of the global variable <Ref Var="CMeatAxe.FastRead"/>.
+##  <P/>
 ##  If the parameter <A>q</A> is given then the result matrix is represented
 ##  over the field with <A>q</A> elements,
 ##  the default for <A>q</A> is the field size stored in the file.
@@ -269,7 +270,7 @@ DeclareGlobalFunction( "ScanMeatAxeFile" );
 ##  move only points up to the positive integer <A>degree</A>,
 ##  <Ref Oper="MeatAxeString"/> returns a string that encodes <A>perms</A> as
 ##  permutations of degree <A>degree</A>,
-##  in &MeatAxe; text format (see&nbsp;<Cite Key="Rin98"/>).
+##  in <C>C</C>-&MeatAxe; text format (see&nbsp;<Cite Key="CMeatAxe"/>).
 ##  <P/>
 ##  In the third form, for a permutation <A>perm</A> with largest moved point
 ##  <M>n</M>, say, a prime power <A>q</A>, and a list <A>dims</A> of length
@@ -313,6 +314,13 @@ DeclareGlobalFunction( "ScanMeatAxeFile" );
 ##  "12 1 8 1\n2\n3\n1\n4\n6\n5\n7\n8\n"
 ##  gap> perms = ScanMeatAxeFile( str, "string" );
 ##  true
+##  ]]></Example>
+##  <P/>
+##  Note that the output of <Ref Func="MeatAxeString"/> in the case of
+##  permutation matrices depends on the
+##  user preference <C>WriteMeatAxeFilesOfMode2</C>.
+##  <P/>
+##  <Example><![CDATA[
 ##  gap> perm:= (1,2,4);;
 ##  gap> str:= MeatAxeString( perm, 3, [ 5, 6 ] );
 ##  "2 3 5 6\n2\n4\n3\n1\n5\n"
@@ -322,8 +330,14 @@ DeclareGlobalFunction( "ScanMeatAxeFile" );
 ##    [ 0*Z(3), 0*Z(3), Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3) ], 
 ##    [ Z(3)^0, 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3) ], 
 ##    [ 0*Z(3), 0*Z(3), 0*Z(3), 0*Z(3), Z(3)^0, 0*Z(3) ] ]
+##  gap> pref:= UserPreference( "AtlasRep", "WriteMeatAxeFilesOfMode2" );;
+##  gap> SetUserPreference( "AtlasRep", "WriteMeatAxeFilesOfMode2", true );
 ##  gap> MeatAxeString( mat, 3 ) = str;
 ##  true
+##  gap> SetUserPreference( "AtlasRep", "WriteMeatAxeFilesOfMode2", false );
+##  gap> MeatAxeString( mat, 3 );
+##  "1 3 5 6\n010000\n000100\n001000\n100000\n000010\n"
+##  gap> SetUserPreference( "AtlasRep", "WriteMeatAxeFilesOfMode2", pref );
 ##  ]]></Example>
 ##  </Description>
 ##  </ManSection>
@@ -338,11 +352,11 @@ DeclareOperation( "MeatAxeString", [ IsPerm, IsPosInt, IsList ] );
 #############################################################################
 ##
 #F  CMtxBinaryFFMatOrPerm( <mat>, <q>, <outfile> )
-#F  CMtxBinaryFFMatOrPerm( <perm>, <deg>, <outfile> )
+#F  CMtxBinaryFFMatOrPerm( <perm>, <deg>, <outfile>[, <base>] )
 ##
 ##  <#GAPDoc Label="CMtxBinaryFFMatOrPerm">
 ##  <ManSection>
-##  <Func Name="CMtxBinaryFFMatOrPerm" Arg='elm, def, outfile'/>
+##  <Func Name="CMtxBinaryFFMatOrPerm" Arg='elm, def, outfile[, base]'/>
 ##
 ##  <Description>
 ##  Let the pair <M>(<A>elm</A>, <A>def</A>)</M> be either of the form
@@ -357,8 +371,20 @@ DeclareOperation( "MeatAxeString", [ IsPerm, IsPosInt, IsList ] );
 ##  or of <M>\pi</M>, viewed as a permutation on the points up to <M>n</M>,
 ##  to the file with name <A>outfile</A>.
 ##  <P/>
+##  In the case of a permutation <M>\pi</M>,
+##  the optional argument <A>base</A> prescribes whether the binary file
+##  contains the points from <M>0</M> to <A>deg</A><M> - 1</M>
+##  (<A>base</A><M> = 0</M>,
+##  supported by version&nbsp;2.4 of the <C>C</C>-&MeatAxe;)
+##  or the points from <M>1</M> to <A>deg</A>
+##  (<A>base</A><M> = 1</M>,
+##  supported by older versions of the <C>C</C>-&MeatAxe;).
+##  The default for <A>base</A> is given by the
+##  value of the user preference <C>BaseOfMeatAxePermutation</C>,
+##  see Section <Ref Subsect="subsect:BaseOfMeatAxePermutation"/>.
+##  <P/>
 ##  (The binary format is described
-##  in the <C>C</C>-&MeatAxe; manual&nbsp;<Cite Key="Rin98"/>.)
+##  in the <C>C</C>-&MeatAxe; manual&nbsp;<Cite Key="CMeatAxe"/>.)
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> tmpdir:= DirectoryTemporary();;
@@ -372,6 +398,8 @@ DeclareOperation( "MeatAxeString", [ IsPerm, IsPosInt, IsList ] );
 ##  gap> perms:= GeneratorsOfGroup( SymmetricGroup( n ) );;
 ##  gap> CMtxBinaryFFMatOrPerm( perms[1], n, Concatenation( prm, "1" ) );
 ##  gap> CMtxBinaryFFMatOrPerm( perms[2], n, Concatenation( prm, "2" ) );
+##  gap> CMtxBinaryFFMatOrPerm( perms[1], n, Concatenation( prm, "1a" ), 0 );
+##  gap> CMtxBinaryFFMatOrPerm( perms[2], n, Concatenation( prm, "2b" ), 1 );
 ##  ]]></Example>
 ##  </Description>
 ##  </ManSection>
@@ -395,7 +423,7 @@ DeclareGlobalFunction( "CMtxBinaryFFMatOrPerm" );
 ##  Let <A>fname</A> be the name of a file that contains the
 ##  <C>C</C>-&MeatAxe; binary format of a matrix over a finite field
 ##  or of a permutation,
-##  as is described in&nbsp;<Cite Key="Rin98"/>.
+##  as is described in&nbsp;<Cite Key="CMeatAxe"/>.
 ##  <Ref Func="FFMatOrPermCMtxBinary"/> returns the corresponding
 ##  &GAP; matrix or permutation.
 ##  <P/>
@@ -407,6 +435,10 @@ DeclareGlobalFunction( "CMtxBinaryFFMatOrPerm" );
 ##  gap> FFMatOrPermCMtxBinary( Concatenation( prm, "1" ) ) = perms[1];
 ##  true
 ##  gap> FFMatOrPermCMtxBinary( Concatenation( prm, "2" ) ) = perms[2];
+##  true
+##  gap> FFMatOrPermCMtxBinary( Concatenation( prm, "1a" ) ) = perms[1];
+##  true
+##  gap> FFMatOrPermCMtxBinary( Concatenation( prm, "2b" ) ) = perms[2];
 ##  true
 ##  ]]></Example>
 ##  </Description>
@@ -433,11 +465,11 @@ DeclareGlobalFunction( "FFMatOrPermCMtxBinary" );
 ##  program in the sense that it consists only of lines in the following
 ##  form.
 ##  <List>
-##  <Mark><C>#<A>anything</A></C></Mark>
+##  <Mark><C>#</C><M>anything</M></Mark>
 ##  <Item>
 ##      lines starting with a hash sign <C>#</C> are ignored,
 ##  </Item>
-##  <Mark><C>echo <A>anything</A></C></Mark>
+##  <Mark><C>echo </C><M>anything</M></Mark>
 ##  <Item>
 ##      lines starting with <C>echo</C> are ignored for the <C>program</C>
 ##      component of the result record (see below),
@@ -445,61 +477,61 @@ DeclareGlobalFunction( "FFMatOrPermCMtxBinary" );
 ##      the program and conjugacy class names in the case that the program
 ##      computes dedicated class representatives,
 ##  </Item>
-##  <Mark><C>inp <A>n</A></C></Mark>
+##  <Mark><C>inp </C><M>n</M></Mark>
 ##  <Item>
-##      means that there are <A>n</A> inputs, referred to via the labels
-##      <C>1</C>, <C>2</C>, <M>\ldots</M>, <A>n</A>,
+##      means that there are <M>n</M> inputs, referred to via the labels
+##      <C>1</C>, <C>2</C>, <M>\ldots</M>, <M>n</M>,
 ##  </Item>
-##  <Mark><C>inp <A>k</A> <A>a1</A> <A>a2</A> ... <A>ak</A></C></Mark>
+##  <Mark><C>inp </C><M>k</M> <M>a1</M> <M>a2</M> ... <M>ak</M></Mark>
 ##  <Item>
-##      means that the next <A>k</A> inputs are referred to via the labels
-##      <A>a1</A>, <A>a2</A>, ..., <A>ak</A>,
+##      means that the next <M>k</M> inputs are referred to via the labels
+##      <M>a1</M>, <M>a2</M>, ..., <M>ak</M>,
 ##  </Item>
-##  <Mark><C>cjr <A>a</A> <A>b</A></C></Mark>
+##  <Mark><C>cjr </C><M>a</M> <M>b</M></Mark>
 ##  <Item>
-##      means that <A>a</A> is replaced by
-##      <C><A>b</A>^(-1) * <A>a</A> * <A>b</A></C>,
+##      means that <M>a</M> is replaced by
+##      <M>b</M><C>^(-1) * </C><M>a</M><C> * </C><M>b</M>,
 ##  </Item>
-##  <Mark><C>cj <A>a</A> <A>b</A> <A>c</A></C></Mark>
+##  <Mark><C>cj </C><M>a</M> <M>b</M> <M>c</M></Mark>
 ##  <Item>
-##      means that <A>c</A> is defined as
-##      <C><A>b</A>^(-1) * <A>a</A> * <A>b</A></C>,
+##      means that <M>c</M> is defined as
+##      <M>b</M><C>^(-1) * </C><M>a</M><C> * </C><M>b</M>,
 ##  </Item>
-##  <Mark><C>com <A>a</A> <A>b</A> <A>c</A></C></Mark>
+##  <Mark><C>com </C><M>a</M> <M>b</M> <M>c</M></Mark>
 ##  <Item>
-##      means that <A>c</A> is defined as
-##      <C><A>a</A>^(-1) * <A>b</A>^(-1) * <A>a</A> * <A>b</A></C>,
+##      means that <M>c</M> is defined as
+##      <M>a</M><C>^(-1) * </C><M>b</M>^(-1)<C> * </C><M>a</M><C> * </C><M>b</M>,
 ##  </Item>
-##  <Mark><C>iv <A>a</A> <A>b</A></C></Mark>
+##  <Mark><C>iv </C><M>a</M> <M>b</M></Mark>
 ##  <Item>
-##      means that <A>b</A> is defined as <C><A>a</A>^(-1)</C>,
+##      means that <M>b</M> is defined as <M>a</M><C>^(-1)</C>,
 ##  </Item>
-##  <Mark><C>mu <A>a</A> <A>b</A> <A>c</A></C></Mark>
+##  <Mark><C>mu </C><M>a</M> <M>b</M> <M>c</M></Mark>
 ##  <Item>
-##      means that <A>c</A> is defined as <C><A>a</A> * <A>b</A></C>,
+##      means that <M>c</M> is defined as <M>a</M><C> * </C><M>b</M>,
 ##  </Item>
-##  <Mark><C>pwr <A>a</A> <A>b</A> <A>c</A></C></Mark>
+##  <Mark><C>pwr </C><M>a</M> <M>b</M> <M>c</M></Mark>
 ##  <Item>
-##      means that <A>c</A> is defined as
-##      <C><A>b</A>^<A>a</A></C>,
+##      means that <M>c</M> is defined as
+##      <M>b</M><C>^</C><M>a</M>,
 ##  </Item>
-##  <Mark><C>cp <A>a</A> <A>b</A></C></Mark>
+##  <Mark><C>cp </C><M>a</M> <M>b</M></Mark>
 ##  <Item>
-##      means that <A>b</A> is defined as a copy of <A>a</A>,
+##      means that <M>b</M> is defined as a copy of <M>a</M>,
 ##  </Item>
-##  <Mark><C>oup <A>l</A></C></Mark>
+##  <Mark><C>oup </C><M>l</M></Mark>
 ##  <Item>
-##      means that there are <A>l</A> outputs, stored in the labels
-##      <C>1</C>, <C>2</C>, <M>\ldots</M>, <A>l</A>, and
+##      means that there are <M>l</M> outputs, stored in the labels
+##      <C>1</C>, <C>2</C>, <M>\ldots</M>, <M>l</M>, and
 ##  </Item>
-##  <Mark><C>oup <A>l</A> <A>b1</A> <A>b2</A> ... <A>bl</A></C></Mark>
+##  <Mark><C>oup </C><M>l</M> <M>b1</M> <M>b2</M> ... <M>bl</M></Mark>
 ##  <Item>
-##      means that the next <A>l</A> outputs are stored in the labels
-##      <A>b1</A>, <A>b2</A>, ... <A>bl</A>.
+##      means that the next <M>l</M> outputs are stored in the labels
+##      <M>b1</M>, <M>b2</M>, ... <M>bl</M>.
 ##  </Item>
 ##  </List>
 ##  <P/>
-##  Each of the labels <A>a</A>, <A>b</A>, <A>c</A> can be any nonempty
+##  Each of the labels <M>a</M>, <M>b</M>, <M>c</M> can be any nonempty
 ##  sequence of digits and alphabet characters,
 ##  except that the first argument of <C>pwr</C> must denote an integer.
 ##  <P/>
@@ -584,10 +616,10 @@ DeclareGlobalFunction( "ScanStraightLineProgram" );
 ##  not allowed, and instead lines of the following form may occur.
 ##  <P/>
 ##  <List>
-##  <Mark><C>chor <A>a</A> <A>b</A></C></Mark>
+##  <Mark><C>chor </C><M>a</M> <M>b</M></Mark>
 ##  <Item>
 ##      means that it is checked whether the order of the element at label
-##      <A>a</A> is <A>b</A>.
+##      <M>a</M> is <M>b</M>.
 ##  </Item>
 ##  </List>
 ##  <P/>
@@ -625,8 +657,8 @@ DeclareGlobalFunction( "ScanStraightLineDecision" );
 
 #############################################################################
 ##
-#F  AtlasStringOfProgram( <prog>[, <outputnames>] )
-#F  AtlasStringOfProgram( <prog>[, "mtx"] )
+#F  AtlasStringOfProgram( <prog>[, <outputnames>[, <avoidslots>]] )
+#F  AtlasStringOfProgram( <prog>[, <format>[, <avoidslots>]] )
 ##
 ##  <#GAPDoc Label="AtlasStringOfProgram">
 ##  <ManSection>
@@ -655,7 +687,7 @@ DeclareGlobalFunction( "ScanStraightLineDecision" );
 ##  <P/>
 ##  If the string <C>"mtx"</C> is given as the second argument then the
 ##  result has the format used in the <C>C</C>-&MeatAxe;
-##  (see&nbsp;<Cite Key="Rin98"/>)
+##  (see&nbsp;<Cite Key="CMeatAxe"/>)
 ##  rather than the format described in
 ##  Section&nbsp;<Ref Sect="sect:Reading and Writing Atlas Straight Line Programs"/>.
 ##  (Note that the <C>C</C>-&MeatAxe; format does not make sense if the

@@ -2,9 +2,9 @@
 ##
 #W  automfam.gd              automgrp package                  Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -29,11 +29,11 @@ DeclareAttribute("GeneratingAutomatonList", IsAutomFamily);
 DeclareAttribute("DualAutomFamily", IsAutomFamily);
 
 
-###############################################################################
-##
-#A  One(<fam>)
-##
-DeclareAttribute("One", IsAutomFamily);
+################################################################################
+###
+##A  One(<fam>)
+###
+### DeclareAttribute("One", IsAutomFamily);
 
 
 ###############################################################################

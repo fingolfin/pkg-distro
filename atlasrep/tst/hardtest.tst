@@ -2,7 +2,7 @@
 ##
 #W  hardtest.tst         GAP 4 package AtlasRep                 Thomas Breuer
 ##
-#Y  Copyright (C)  2002,  Lehrstuhl D fuer Mathematik,  RWTH Aachen,  Germany
+#Y  Copyright (C)  2002,   Lehrstuhl D für Mathematik,  RWTH Aachen,  Germany
 ##
 ##  This file contains, among others, those checks for the AtlasRep package
 ##  that examine the transfer from a server and the matrices that are
@@ -10,22 +10,24 @@
 ##  NOTE that these tests cannot be performed without server access.
 ##
 ##  In order to run the tests, one starts GAP from the `tst' subdirectory
-##  of the `pkg/atlasrep' directory, and calls `ReadTest( "hardtest.tst" );'.
+##  of the `pkg/atlasrep' directory, and calls `Test( "hardtest.tst" );'.
+##
+##  If one of the functions `AGR.Test.Words', `AGR.Test.FileHeaders' reports
+##  an error then detailed information can be obtained by increasing the
+##  info level of `InfoAtlasRep' to at least 1 and then running the tests
+##  again.
 ##
 
 gap> START_TEST( "Input file: hardtest.tst" );
 
-
 # Load the package if necessary.
 gap> LoadPackage( "atlasrep" );
 true
-
-# The character table library is used here.
 gap> LoadPackage( "ctbllib" );
 true
-
-gap> ReadPackage( "atlasrep", "gap/test.g" );
-true
+gap> if not IsBound( AGR.Test ) then
+>      ReadPackage( "atlasrep", "gap/test.g" );
+>    fi;
 
 # Test transferring group generators in MeatAxe format (using `IO').
 gap> dir:= DirectoriesPackageLibrary( "atlasrep", "datagens" );;
@@ -45,6 +47,18 @@ gap> gens:= AtlasGenerators( id );
 gap> IsRecord( gens ) and id = gens.identifier;
 true
 gap> Unbind( AtlasOfGroupRepresentationsInfo.wget );
+
+# Test whether the locally stored straight line programs
+# can be read and processed.
+gap> if not AGR.Test.Words() then
+>      Print( "#I  Error in `AGR.Test.Words'\n" );
+> fi;
+
+# Test whether the locally stored generators are consistent
+# with their filenames.
+gap> if not AGR.Test.FileHeaders() then
+>      Print( "#I  Error in `AGR.Test.FileHeaders'\n" );
+> fi;
 
 # Read all MeatAxe format files in the local installation.
 gap> if not AGR.Test.Files() then
@@ -225,7 +239,7 @@ gap> if not AGR.Test.ClassScripts() then
 >      Print( "#I  Error in `AGR.Test.ClassScripts'\n" );
 > fi;
 
-
+##
 gap> STOP_TEST( "hardtest.tst", 10000000 );
 
 

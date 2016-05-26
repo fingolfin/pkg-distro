@@ -28,7 +28,7 @@ and the interface between the remote and the local version of the database
 and&nbsp;<Ref Sect="sect:The Tables of Contents of the AGR"/>).
 The former interface contains functions to read and write files in
 &MeatAxe; format, which may be interesting for users familiar with
-&MeatAxe; standalones (see for example&nbsp;<Cite Key="Rin98"/>).
+&MeatAxe; standalones (see for example&nbsp;<Cite Key="CMeatAxe"/>).
 Other low level functions may be undocumented in the sense that they are
 not described in this manual.
 Users interested in them may look at the actual implementation in the

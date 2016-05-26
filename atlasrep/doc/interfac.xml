@@ -80,7 +80,7 @@ of this character table.
 If <M>G</M> is almost simple, one such name is the 
 <Ref Attr="Identifier" Label="for character tables" BookName="ref"/> value
 of the character table,
-see&nbsp;<Ref Func="Access to Library Character Tables" BookName="ctbllib"/>.
+see&nbsp;<Ref Func="Accessing a Character Table from the Library" BookName="ctbllib"/>.
 This name is usually very similar to the name used in the
 &ATLAS; of Finite Groups <Cite Key="CCN85"/>.
 For example,

@@ -5,7 +5,7 @@ The GAP 4 Package `AtlasRep'
 Description
 -----------
 
-This is Version 1.5 of the package `AtlasRep' written for GAP 4,
+This is Version 1.5.1 of the package `AtlasRep' written for GAP 4,
 whose aim is to provide an interface between GAP
 and the Atlas of Group Representations,
 a database that comprises representations of many almost simple groups
@@ -27,7 +27,7 @@ The package has been developed on Linux,
 a few tests on Windows suggest that is works also there,
 it may or may not work on other platforms.
 
-The package requires GAP 4.4.12 (or a newer version of GAP).
+The package requires GAP 4.5 (or a newer version of GAP).
 
 
 Authors
@@ -66,17 +66,17 @@ With this version you should have obtained this README file
 and an archive file containing the GAP interface
 in the following files and directories:
 
-    bibl            the directory with the bibliographies from the
-                    Atlas of Finite Groups and the Atlas of Brauer Characters
-    datagens        the directory for files with generators
-    dataword        the directory for files with straight line programs
-    doc             the directory with the package manual
-    etc             the directory with a script for updating
-                    the table of contents
-    gap             the directory with the GAP code
-    init.g          the file for initializing the package
-    read.g          the file for reading in the package
-    tst             the directory with some test files
+    bibl        the directory with the bibliographies from the
+                Atlas of Finite Groups and the Atlas of Brauer Characters
+    datagens    the default directory for files with generators
+    dataword    the default directory for files with straight line programs
+    doc         the directory with the package manual
+    etc         the directory with a script for updating
+                the table of contents
+    gap         the directory with the GAP code
+    init.g      the file for initializing the package
+    read.g      the file for reading in the package
+    tst         the directory with some test files
 
 The archive does *NOT* contain the database part of the package;
 the GAP interface accesses the data on demand via the internet.
@@ -88,39 +88,21 @@ can be downloaded from the homepage of the package.
 Unpacking
 ---------
 
-You may have got the GAP interface of the package as
-a zoo archive (filename ends with .zoo)
-or a compressed tar archive (filename ends with .tar.gz).
-In each case, use the appropriate command on your system to unpack
-the archive.
+Probably you have got the GAP interface of the package as
+a compressed tar archive (filename ends with .tar.gz).
+Use the appropriate command on your system to unpack the archive.
 
-On UNIX systems the zoo archive may be unpacked by
+On UNIX systems this archive may be unpacked by
 
-    zoo x atlasrep1r5p0.zoo
-
-which will unpack the archive into a directory `atlasrep' in the
-current directory.
-
-On UNIX systems the compressed tar archive may be unpacked by
-
-    tar xzf atlasrep1r5p0.tar.gz
+    tar xzf atlasrep1r5p1.tar.gz
 
 or, if tar on your system does not understand the option z, by
 
-    gunzip atlasrep1r5p0.tar.gz
-    tar xf atlasrep1r5p0.tar
+    gunzip atlasrep1r5p1.tar.gz
+    tar xf atlasrep1r5p1.tar
 
 which will in each case unpack the code into a directory `atlasrep'
 in the current directory.
-
-If your system does not have a zoo programme, you can pick up the
-C-code for unzoo from the GAP web page and compile it on your system.
-For this your system needs to have a C-compiler.
-unzoo can be used to unpack the zoo archive, as follows:
-
-    unzoo -x atlasrep1r5p0.zoo
-
-unpacks the archive into a directory `atlasrep' in the current directory.
 
 
 Installation
@@ -180,5 +162,6 @@ Besides package archives and introductory package information, it provides
   ATLAS of Group Representations,
   similar to the information shown by the function `DisplayAtlasInfo'
   of the package;
-  more details can be found on the home page of the ATLAS (see above).
+  more details can be found on the home page of the ATLAS of Group
+  Representations (see above).
 

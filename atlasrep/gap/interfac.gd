@@ -336,8 +336,8 @@
 ##  gap> DisplayAtlasInfo( [ "M11", "A5" ] );
 ##  group |  # | maxes | cl | cyc | out | fnd | chk | prs
 ##  ------+----+-------+----+-----+-----+-----+-----+----
-##  M11   | 42 |     5 |  + |  +  |     |  +  |  +  |  +
-##  A5    | 18 |     3 |    |     |     |     |  +  |  +
+##  M11   | 42 |     5 |  + |  +  |     |  +  |  +  |  + 
+##  A5    | 18 |     3 |    |     |     |     |  +  |  + 
 ##  ]]></Example>
 ##  <P/>
 ##  The above output means that the &ATLAS; of Group Representations contains
@@ -382,21 +382,21 @@
 ##  gap> DisplayAtlasInfo( "A5", Dimension, [ 1 .. 3 ] );
 ##  Representations for G = A5:    (all refer to std. generators 1)
 ##  ---------------------------
-##   8: G <= GL(2a,4)
-##   9: G <= GL(2b,4)
-##  10: G <= GL(3,5)
-##  12: G <= GL(3a,9)
-##  13: G <= GL(3b,9)
-##  17: G <= GL(3a,Field([Sqrt(5)]))
-##  18: G <= GL(3b,Field([Sqrt(5)]))
+##   8: G <= GL(2a,4)                
+##   9: G <= GL(2b,4)                
+##  10: G <= GL(3,5)                 
+##  12: G <= GL(3a,9)                
+##  13: G <= GL(3b,9)                
+##  17: G <= GL(3a,Field([Sqrt(5)])) 
+##  18: G <= GL(3b,Field([Sqrt(5)])) 
 ##  gap> DisplayAtlasInfo( "A5", Characteristic, 0 );
 ##  Representations for G = A5:    (all refer to std. generators 1)
 ##  ---------------------------
-##  14: G <= GL(4,Z)
-##  15: G <= GL(5,Z)
-##  16: G <= GL(6,Z)
-##  17: G <= GL(3a,Field([Sqrt(5)]))
-##  18: G <= GL(3b,Field([Sqrt(5)]))
+##  14: G <= GL(4,Z)                 
+##  15: G <= GL(5,Z)                 
+##  16: G <= GL(6,Z)                 
+##  17: G <= GL(3a,Field([Sqrt(5)])) 
+##  18: G <= GL(3b,Field([Sqrt(5)])) 
 ##  ]]></Example>
 ##  <P/>
 ##  The representations with number between <M>4</M> and <M>13</M> are
@@ -410,10 +410,10 @@
 ##  gap> DisplayAtlasInfo( "A5", Identifier, "a" );
 ##  Representations for G = A5:    (all refer to std. generators 1)
 ##  ---------------------------
-##   4: G <= GL(4a,2)
-##   8: G <= GL(2a,4)
-##  12: G <= GL(3a,9)
-##  17: G <= GL(3a,Field([Sqrt(5)]))
+##   4: G <= GL(4a,2)                
+##   8: G <= GL(2a,4)                
+##  12: G <= GL(3a,9)                
+##  17: G <= GL(3a,Field([Sqrt(5)])) 
 ##  ]]></Example>
 ##  <P/>
 ##  Each of the representations with the numbers <M>4, 8, 12</M>,
@@ -427,33 +427,33 @@
 ##  gap> DisplayAtlasInfo( "A5", Characteristic, IsOddInt );
 ##  Representations for G = A5:    (all refer to std. generators 1)
 ##  ---------------------------
-##   6: G <= GL(4,3)
-##   7: G <= GL(6,3)
-##  10: G <= GL(3,5)
-##  11: G <= GL(5,5)
-##  12: G <= GL(3a,9)
-##  13: G <= GL(3b,9)
+##   6: G <= GL(4,3)  
+##   7: G <= GL(6,3)  
+##  10: G <= GL(3,5)  
+##  11: G <= GL(5,5)  
+##  12: G <= GL(3a,9) 
+##  13: G <= GL(3b,9) 
 ##  gap> DisplayAtlasInfo( "A5", Dimension, IsPrimeInt );
 ##  Representations for G = A5:    (all refer to std. generators 1)
 ##  ---------------------------
-##   8: G <= GL(2a,4)
-##   9: G <= GL(2b,4)
-##  10: G <= GL(3,5)
-##  11: G <= GL(5,5)
-##  12: G <= GL(3a,9)
-##  13: G <= GL(3b,9)
-##  15: G <= GL(5,Z)
-##  17: G <= GL(3a,Field([Sqrt(5)]))
-##  18: G <= GL(3b,Field([Sqrt(5)]))
+##   8: G <= GL(2a,4)                
+##   9: G <= GL(2b,4)                
+##  10: G <= GL(3,5)                 
+##  11: G <= GL(5,5)                 
+##  12: G <= GL(3a,9)                
+##  13: G <= GL(3b,9)                
+##  15: G <= GL(5,Z)                 
+##  17: G <= GL(3a,Field([Sqrt(5)])) 
+##  18: G <= GL(3b,Field([Sqrt(5)])) 
 ##  gap> DisplayAtlasInfo( "A5", Ring, IsFinite and IsPrimeField );
 ##  Representations for G = A5:    (all refer to std. generators 1)
 ##  ---------------------------
-##   4: G <= GL(4a,2)
-##   5: G <= GL(4b,2)
-##   6: G <= GL(4,3)
-##   7: G <= GL(6,3)
-##  10: G <= GL(3,5)
-##  11: G <= GL(5,5)
+##   4: G <= GL(4a,2) 
+##   5: G <= GL(4b,2) 
+##   6: G <= GL(4,3)  
+##   7: G <= GL(6,3)  
+##  10: G <= GL(3,5)  
+##  11: G <= GL(5,5)  
 ##  ]]></Example>
 ##  <P/>
 ##  The above examples show how the output can be restricted using a property
@@ -575,25 +575,29 @@ DeclareGlobalFunction( "DisplayAtlasInfo" );
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> gens1:= AtlasGenerators( "A5", 1 );
-##  rec( generators := [ (1,2)(3,4), (1,3,5) ], groupname := "A5", id := "", 
+##  rec( generators := [ (1,2)(3,4), (1,3,5) ], groupname := "A5", 
+##    id := "", 
 ##    identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5 ], 
 ##    isPrimitive := true, maxnr := 1, p := 5, rankAction := 2, 
 ##    repname := "A5G1-p5B0", repnr := 1, size := 60, stabilizer := "A4", 
 ##    standardization := 1, transitivity := 3, type := "perm" )
 ##  gap> gens8:= AtlasGenerators( "A5", 8 );
 ##  rec( dim := 2, 
-##    generators := [ [ [ Z(2)^0, 0*Z(2) ], [ Z(2^2), Z(2)^0 ] ], [ [ 0*Z(2), 
-##                 Z(2)^0 ], [ Z(2)^0, Z(2)^0 ] ] ], groupname := "A5", 
-##    id := "a", identifier := [ "A5", [ "A5G1-f4r2aB0.m1", "A5G1-f4r2aB0.m2" ], 
-##        1, 4 ], repname := "A5G1-f4r2aB0", repnr := 8, ring := GF(2^2), 
+##    generators := [ [ [ Z(2)^0, 0*Z(2) ], [ Z(2^2), Z(2)^0 ] ], 
+##        [ [ 0*Z(2), Z(2)^0 ], [ Z(2)^0, Z(2)^0 ] ] ], groupname := "A5",
+##    id := "a", 
+##    identifier := [ "A5", [ "A5G1-f4r2aB0.m1", "A5G1-f4r2aB0.m2" ], 1, 
+##        4 ], repname := "A5G1-f4r2aB0", repnr := 8, ring := GF(2^2), 
 ##    size := 60, standardization := 1, type := "matff" )
 ##  gap> gens17:= AtlasGenerators( "A5", 17 );
 ##  rec( dim := 3, 
-##    generators := [ [ [ -1, 0, 0 ], [ 0, -1, 0 ], [ -E(5)-E(5)^4, -E(5)-E(5)^4, 
-##                1 ] ], [ [ 0, 1, 0 ], [ 0, 0, 1 ], [ 1, 0, 0 ] ] ], 
-##    groupname := "A5", id := "a", identifier := [ "A5", "A5G1-Ar3aB0.g", 1, 3 ], 
-##    repname := "A5G1-Ar3aB0", repnr := 17, ring := NF(5,[ 1, 4 ]), size := 60, 
-##    standardization := 1, type := "matalg" )
+##    generators := 
+##      [ [ [ -1, 0, 0 ], [ 0, -1, 0 ], [ -E(5)-E(5)^4, -E(5)-E(5)^4, 1 ] 
+##           ], [ [ 0, 1, 0 ], [ 0, 0, 1 ], [ 1, 0, 0 ] ] ], 
+##    groupname := "A5", id := "a", 
+##    identifier := [ "A5", "A5G1-Ar3aB0.g", 1, 3 ], 
+##    repname := "A5G1-Ar3aB0", repnr := 17, ring := NF(5,[ 1, 4 ]), 
+##    size := 60, standardization := 1, type := "matalg" )
 ##  ]]></Example>
 ##  <P/>
 ##  Each of the above pairs of elements generates a group isomorphic to
@@ -601,7 +605,7 @@ DeclareGlobalFunction( "DisplayAtlasInfo" );
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> gens1max2:= AtlasGenerators( "A5", 1, 2 );
-##  rec( generators := [ (1,2)(3,4), (2,3)(4,5) ], groupname := "D10",
+##  rec( generators := [ (1,2)(3,4), (2,3)(4,5) ], groupname := "D10", 
 ##    identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5, 2 ],
 ##    repnr := 1, size := 10, standardization := 1 )
 ##  gap> id:= gens1max2.identifier;;
@@ -834,13 +838,14 @@ DeclareGlobalFunction( "AtlasProgramInfo" );
 ##  to <A>identifier</A>.
 ##  <Example><![CDATA[
 ##  gap> prog:= AtlasProgram( "A5", 2 );
-##  rec( groupname := "A5", identifier := [ "A5", "A5G1-max2W1", 1 ],
-##    program := <straight line program>, size := 10, standardization := 1,
-##    subgroupname := "D10" )
+##  rec( groupname := "A5", identifier := [ "A5", "A5G1-max2W1", 1 ], 
+##    program := <straight line program>, size := 10, 
+##    standardization := 1, subgroupname := "D10" )
 ##  gap> StringOfResultOfStraightLineProgram( prog.program, [ "a", "b" ] );
 ##  "[ a, bbab ]"
 ##  gap> gens1:= AtlasGenerators( "A5", 1 );
-##  rec( generators := [ (1,2)(3,4), (1,3,5) ], groupname := "A5", id := "", 
+##  rec( generators := [ (1,2)(3,4), (1,3,5) ], groupname := "A5", 
+##    id := "", 
 ##    identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5 ], 
 ##    isPrimitive := true, maxnr := 1, p := 5, rankAction := 2, 
 ##    repname := "A5G1-p5B0", repnr := 1, size := 60, stabilizer := "A4", 
@@ -865,14 +870,14 @@ DeclareGlobalFunction( "AtlasProgramInfo" );
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> prog:= AtlasProgram( "J1", "cyclic" );
-##  rec( groupname := "J1", identifier := [ "J1", "J1G1-cycW1", 1 ],
-##    outputs := [ "6A", "7A", "10B", "11A", "15B", "19A" ],
+##  rec( groupname := "J1", identifier := [ "J1", "J1G1-cycW1", 1 ], 
+##    outputs := [ "6A", "7A", "10B", "11A", "15B", "19A" ], 
 ##    program := <straight line program>, standardization := 1 )
 ##  gap> gens:= GeneratorsOfGroup( FreeGroup( "x", "y" ) );;
 ##  gap> ResultOfStraightLineProgram( prog.program, gens );
-##  [ x*y*x*y^2*x*y*x*y^2*x*y*x*y*x*y^2*x*y^2, x*y, x*y*x*y^2*x*y*x*y*x*y^2*x*y^2,
-##    x*y*x*y*x*y^2*x*y^2*x*y*x*y^2*x*y*x*y*x*y^2*x*y^2*x*y*x*y^2*x*y*x*y*x*y^
-##      2*x*y^2, x*y*x*y*x*y^2*x*y^2, x*y*x*y^2 ]
+##  [ (x*y)^2*((y*x)^2*y^2*x)^2*y^2, x*y, (x*(y*x*y)^2)^2*y, 
+##    (x*y*x*(y*x*y)^3*x*y^2)^2*x*y*x*(y*x*y)^2*y, x*y*x*(y*x*y)^2*y, 
+##    (x*y)^2*y ]
 ##  ]]></Example>
 ##  <P/>
 ##  The above example shows how to fetch and use straight line programs for
@@ -950,13 +955,14 @@ DeclareGlobalFunction( "AtlasProgram" );
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> info:= OneAtlasGeneratingSetInfo( "A5" );
-##  rec( groupname := "A5", id := "",
-##    identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5 ],
-##    isPrimitive := true, maxnr := 1, p := 5, rankAction := 2,
-##    repname := "A5G1-p5B0", repnr := 1, size := 60, stabilizer := "A4",
+##  rec( groupname := "A5", id := "", 
+##    identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5 ], 
+##    isPrimitive := true, maxnr := 1, p := 5, rankAction := 2, 
+##    repname := "A5G1-p5B0", repnr := 1, size := 60, stabilizer := "A4", 
 ##    standardization := 1, transitivity := 3, type := "perm" )
 ##  gap> gens:= AtlasGenerators( info.identifier );
-##  rec( generators := [ (1,2)(3,4), (1,3,5) ], groupname := "A5", id := "", 
+##  rec( generators := [ (1,2)(3,4), (1,3,5) ], groupname := "A5", 
+##    id := "", 
 ##    identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5 ], 
 ##    isPrimitive := true, maxnr := 1, p := 5, rankAction := 2, 
 ##    repname := "A5G1-p5B0", repnr := 1, size := 60, stabilizer := "A4", 
@@ -982,17 +988,18 @@ DeclareGlobalFunction( "AtlasProgram" );
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> info:= OneAtlasGeneratingSetInfo( "A5", IsMatrixGroup, true );
-##  rec( dim := 4, groupname := "A5", id := "a",
-##    identifier := [ "A5", [ "A5G1-f2r4aB0.m1", "A5G1-f2r4aB0.m2" ], 1, 2 ],
-##    repname := "A5G1-f2r4aB0", repnr := 4, ring := GF(2), size := 60,
-##    standardization := 1, type := "matff" )
+##  rec( dim := 4, groupname := "A5", id := "a", 
+##    identifier := [ "A5", [ "A5G1-f2r4aB0.m1", "A5G1-f2r4aB0.m2" ], 1, 
+##        2 ], repname := "A5G1-f2r4aB0", repnr := 4, ring := GF(2), 
+##    size := 60, standardization := 1, type := "matff" )
 ##  gap> gens:= AtlasGenerators( info.identifier );
 ##  rec( dim := 4, 
-##    generators := [ <an immutable 4x4 matrix over GF2>, <an immutable 4x
-##          4 matrix over GF2> ], groupname := "A5", id := "a", 
-##    identifier := [ "A5", [ "A5G1-f2r4aB0.m1", "A5G1-f2r4aB0.m2" ], 1, 2 ], 
-##    repname := "A5G1-f2r4aB0", repnr := 4, ring := GF(2), size := 60, 
-##    standardization := 1, type := "matff" )
+##    generators := [ <an immutable 4x4 matrix over GF2>, 
+##        <an immutable 4x4 matrix over GF2> ], groupname := "A5", 
+##    id := "a", 
+##    identifier := [ "A5", [ "A5G1-f2r4aB0.m1", "A5G1-f2r4aB0.m2" ], 1, 
+##        2 ], repname := "A5G1-f2r4aB0", repnr := 4, ring := GF(2), 
+##    size := 60, standardization := 1, type := "matff" )
 ##  gap> info = OneAtlasGeneratingSetInfo( "A5", Dimension, 4 );
 ##  true
 ##  gap> info = OneAtlasGeneratingSetInfo( "A5", Characteristic, 2 );
@@ -1000,23 +1007,26 @@ DeclareGlobalFunction( "AtlasProgram" );
 ##  gap> info = OneAtlasGeneratingSetInfo( "A5", Ring, GF(2) );
 ##  true
 ##  gap> OneAtlasGeneratingSetInfo( "A5", Characteristic, [2,5], Dimension, 2 );
-##  rec( dim := 2, groupname := "A5", id := "a",
-##    identifier := [ "A5", [ "A5G1-f4r2aB0.m1", "A5G1-f4r2aB0.m2" ], 1, 4 ],
-##    repname := "A5G1-f4r2aB0", repnr := 8, ring := GF(2^2), size := 60,
-##    standardization := 1, type := "matff" )
+##  rec( dim := 2, groupname := "A5", id := "a", 
+##    identifier := [ "A5", [ "A5G1-f4r2aB0.m1", "A5G1-f4r2aB0.m2" ], 1, 
+##        4 ], repname := "A5G1-f4r2aB0", repnr := 8, ring := GF(2^2), 
+##    size := 60, standardization := 1, type := "matff" )
 ##  gap> OneAtlasGeneratingSetInfo( "A5", Characteristic, [2,5], Dimension, 1 );
 ##  fail
 ##  gap> info:= OneAtlasGeneratingSetInfo( "A5", Characteristic, 0, Dimension, 4 );
-##  rec( dim := 4, groupname := "A5", id := "",
-##    identifier := [ "A5", "A5G1-Zr4B0.g", 1, 4 ], repname := "A5G1-Zr4B0",
-##    repnr := 14, ring := Integers, size := 60, standardization := 1,
-##    type := "matint" )
+##  rec( dim := 4, groupname := "A5", id := "", 
+##    identifier := [ "A5", "A5G1-Zr4B0.g", 1, 4 ], 
+##    repname := "A5G1-Zr4B0", repnr := 14, ring := Integers, size := 60, 
+##    standardization := 1, type := "matint" )
 ##  gap> gens:= AtlasGenerators( info.identifier );
 ##  rec( dim := 4, 
-##    generators := [ [ [ 1, 0, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 1, 0, 0 ], 
+##    generators := 
+##      [ 
+##        [ [ 1, 0, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 1, 0, 0 ], 
 ##            [ -1, -1, -1, -1 ] ], 
-##        [ [ 0, 1, 0, 0 ], [ 0, 0, 0, 1 ], [ 0, 0, 1, 0 ], [ 1, 0, 0, 0 ] ] ], 
-##    groupname := "A5", id := "", identifier := [ "A5", "A5G1-Zr4B0.g", 1, 4 ], 
+##        [ [ 0, 1, 0, 0 ], [ 0, 0, 0, 1 ], [ 0, 0, 1, 0 ], 
+##            [ 1, 0, 0, 0 ] ] ], groupname := "A5", id := "", 
+##    identifier := [ "A5", "A5G1-Zr4B0.g", 1, 4 ], 
 ##    repname := "A5G1-Zr4B0", repnr := 14, ring := Integers, size := 60, 
 ##    standardization := 1, type := "matint" )
 ##  gap> info = OneAtlasGeneratingSetInfo( "A5", Ring, Integers );
@@ -1026,17 +1036,19 @@ DeclareGlobalFunction( "AtlasProgram" );
 ##  gap> OneAtlasGeneratingSetInfo( "A5", Ring, Integers mod 77 );
 ##  fail
 ##  gap> info:= OneAtlasGeneratingSetInfo( "A5", Ring, CF(5), Dimension, 3 );
-##  rec( dim := 3, groupname := "A5", id := "a",
-##    identifier := [ "A5", "A5G1-Ar3aB0.g", 1, 3 ], repname := "A5G1-Ar3aB0",
-##    repnr := 17, ring := NF(5,[ 1, 4 ]), size := 60, standardization := 1,
-##    type := "matalg" )
+##  rec( dim := 3, groupname := "A5", id := "a", 
+##    identifier := [ "A5", "A5G1-Ar3aB0.g", 1, 3 ], 
+##    repname := "A5G1-Ar3aB0", repnr := 17, ring := NF(5,[ 1, 4 ]), 
+##    size := 60, standardization := 1, type := "matalg" )
 ##  gap> gens:= AtlasGenerators( info.identifier );
 ##  rec( dim := 3, 
-##    generators := [ [ [ -1, 0, 0 ], [ 0, -1, 0 ], [ -E(5)-E(5)^4, -E(5)-E(5)^4, 
-##                1 ] ], [ [ 0, 1, 0 ], [ 0, 0, 1 ], [ 1, 0, 0 ] ] ], 
-##    groupname := "A5", id := "a", identifier := [ "A5", "A5G1-Ar3aB0.g", 1, 3 ], 
-##    repname := "A5G1-Ar3aB0", repnr := 17, ring := NF(5,[ 1, 4 ]), size := 60, 
-##    standardization := 1, type := "matalg" )
+##    generators := 
+##      [ [ [ -1, 0, 0 ], [ 0, -1, 0 ], [ -E(5)-E(5)^4, -E(5)-E(5)^4, 1 ] 
+##           ], [ [ 0, 1, 0 ], [ 0, 0, 1 ], [ 1, 0, 0 ] ] ], 
+##    groupname := "A5", id := "a", 
+##    identifier := [ "A5", "A5G1-Ar3aB0.g", 1, 3 ], 
+##    repname := "A5G1-Ar3aB0", repnr := 17, ring := NF(5,[ 1, 4 ]), 
+##    size := 60, standardization := 1, type := "matalg" )
 ##  gap> OneAtlasGeneratingSetInfo( "A5", Ring, GF(17) );
 ##  fail
 ##  ]]></Example>
@@ -1077,21 +1089,24 @@ DeclareGlobalFunction( "OneAtlasGeneratingSetInfo" );
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> AllAtlasGeneratingSetInfos( "A5", IsPermGroup, true );
-##  [ rec( groupname := "A5", id := "",
-##        identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5 ],
-##        isPrimitive := true, maxnr := 1, p := 5, rankAction := 2,
-##        repname := "A5G1-p5B0", repnr := 1, size := 60, stabilizer := "A4",
-##        standardization := 1, transitivity := 3, type := "perm" ),
-##    rec( groupname := "A5", id := "",
-##        identifier := [ "A5", [ "A5G1-p6B0.m1", "A5G1-p6B0.m2" ], 1, 6 ],
-##        isPrimitive := true, maxnr := 2, p := 6, rankAction := 2,
-##        repname := "A5G1-p6B0", repnr := 2, size := 60, stabilizer := "D10",
-##        standardization := 1, transitivity := 2, type := "perm" ),
-##    rec( groupname := "A5", id := "",
-##        identifier := [ "A5", [ "A5G1-p10B0.m1", "A5G1-p10B0.m2" ], 1, 10 ],
-##        isPrimitive := true, maxnr := 3, p := 10, rankAction := 3,
-##        repname := "A5G1-p10B0", repnr := 3, size := 60, stabilizer := "S3",
-##        standardization := 1, transitivity := 1, type := "perm" ) ]
+##  [ rec( groupname := "A5", id := "", 
+##        identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5 ]
+##          , isPrimitive := true, maxnr := 1, p := 5, rankAction := 2, 
+##        repname := "A5G1-p5B0", repnr := 1, size := 60, 
+##        stabilizer := "A4", standardization := 1, transitivity := 3, 
+##        type := "perm" ), 
+##    rec( groupname := "A5", id := "", 
+##        identifier := [ "A5", [ "A5G1-p6B0.m1", "A5G1-p6B0.m2" ], 1, 6 ]
+##          , isPrimitive := true, maxnr := 2, p := 6, rankAction := 2, 
+##        repname := "A5G1-p6B0", repnr := 2, size := 60, 
+##        stabilizer := "D10", standardization := 1, transitivity := 2, 
+##        type := "perm" ), 
+##    rec( groupname := "A5", id := "", 
+##        identifier := [ "A5", [ "A5G1-p10B0.m1", "A5G1-p10B0.m2" ], 1, 
+##            10 ], isPrimitive := true, maxnr := 3, p := 10, 
+##        rankAction := 3, repname := "A5G1-p10B0", repnr := 3, 
+##        size := 60, stabilizer := "S3", standardization := 1, 
+##        transitivity := 1, type := "perm" ) ]
 ##  ]]></Example>
 ##  <P/>
 ##  Note that a matrix representation in any characteristic can be obtained by
@@ -1187,7 +1202,7 @@ DeclareAttribute( "AtlasRepInfoRecord", IsGroup );
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> info:= OneAtlasGeneratingSetInfo( "A5" );
-##  rec( groupname := "A5", id := "",
+##  rec( groupname := "A5", id := "", 
 ##    identifier := [ "A5", [ "A5G1-p5B0.m1", "A5G1-p5B0.m2" ], 1, 5 ], 
 ##    isPrimitive := true, maxnr := 1, p := 5, rankAction := 2, 
 ##    repname := "A5G1-p5B0", repnr := 1, size := 60, stabilizer := "A4", 

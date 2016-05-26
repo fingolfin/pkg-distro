@@ -2,9 +2,9 @@
 ##
 #W  selfsimgroup.gd           automgrp package                 Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -70,16 +70,6 @@ InstallTrueMethod(IsInvertibleSelfSimCollection, IsSelfSimGroup);
 ##  gap> SelfSimilarGroup([[ [1,2], [-2], ()], [ [], [2,2,1], (1,2) ]], ["a","b"]);
 ##  < a, b >
 ##  \endexample
-##  The <bind_vars> argument works as follows
-##  \beginexample
-##  gap> SelfSimilarGroup("t = (t^2, t)(1,2)", false);;
-##  gap> t;
-##  Variable: 't' must have a value
-##
-##  gap> SelfSimilarGroup("t = (t^2, t)(1,2)", true);;
-##  gap> t;
-##  t
-##  \endexample
 ##
 DeclareOperation("SelfSimilarGroup", [IsList]);
 DeclareOperation("SelfSimilarGroup", [IsList, IsList]);
@@ -115,6 +105,7 @@ DeclareAttribute("UnderlyingFreeSubgroup", IsSelfSimGroup, "mutable");
 ##  is `true' if <G> is created using the command `SelfSimilarGroup' ("SelfSimilarGroup")
 ##  or if the generators of <G> coincide with the generators of the corresponding family, and `false' otherwise.
 ##  To test whether <G> is self-similar use `IsSelfSimilar' ("IsSelfSimilar") command.
+##
 DeclareProperty("IsSelfSimilarGroup", IsSelfSimGroup);
 InstallTrueMethod(IsGroupOfSelfSimFamily, IsSelfSimilarGroup);
 
@@ -195,5 +186,12 @@ DeclareAttribute("UnderlyingAutomatonGroup", IsSelfSimGroup, "mutable");
 ##
 DeclareAttribute("MonomorphismToAutomatonGroup", IsSelfSimGroup, "mutable");
 
+
+#############################################################################
+##
+#A  GroupOfSelfSimFamily(<G>)
+##
+
+DeclareAttribute("GroupOfSelfSimFamily", IsSelfSimGroup);
 
 #E

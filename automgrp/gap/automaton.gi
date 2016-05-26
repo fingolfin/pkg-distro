@@ -2,9 +2,9 @@
 ##
 #W  automaton.gi              automgrp package                 Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -16,7 +16,7 @@ DeclareRepresentation("IsMealyAutomatonRep",
                       IsComponentObjectRep and IsAttributeStoringRep,
                       ["table",     # transitions: table[i][j] is the state automaton goes to after processing letter j
                                     # if it was in state i
-                       "perms",     # output: perms[i] is the output function at state i. it is either IsPerm or IsTransformation
+                       "perms",     # output: perms[i] is the output function at state i. It is either IsPerm or IsTransformation
                        "trans",     # images of elements of perms: i^perms[j] = trans[j][i]
                        "alphabet",  # by default it's [1..degree]; may be something different e.g. after taking "cross product"
                                     # it's used for pretty printing, internally only [1..degree] is used
@@ -113,6 +113,16 @@ function(p)
   fi;
 end);
 
+BindGlobal("__AG_PermString",
+function(p)
+  if IsPerm(p) then
+    return String(p);
+  else
+    return String(ImageListOfTransformation(p));
+  fi;
+end);
+
+
 
 InstallMethod(MealyAutomaton, [IsList, IsList, IsList],
 function(table, states, alphabet)
@@ -149,27 +159,9 @@ end);
 
 ###############################################################################
 ##
-##  MealyAutomaton( <list>, <name_func> )
-##  MealyAutomaton( <list>, <true> )
 ##
-##  Creates a noninitial automaton constructed of the states of tree
-##  homomorphisms in the <list>. If <name_func> is a function then it is used
-##  to name the states of the newly constructed automaton. If it is <true>
-##  then states of automata from the <list> are used. If it <false> then new
-##  states are named a_1, a_2, etc.
 ##
-##  \beginexample
-##  gap> g := AutomatonGroup("a=(b,a),b=(b,a)(1,2)");
-##  < a, b >
-##  gap> MealyAutomaton([a*b]);; Display(last);
-##  a1 = (a2, a4)(1,2), a2 = (a3, a1), a3 = (a3, a1)(1,2), a4 = (a2, a4)
-##  gap> MealyAutomaton([a*b], true);; Display(last);
-##  <a*b> = (<b^2>, <a^2>)(1,2), <b^2> = (<b*a>, <a*b>), <b*a> = (<b*a>, <a*b>)(1,2), <a^2> = (<b^2>, <a^2>)
-##  gap> MealyAutomaton([a*b], String);; Display(last);
-##  a*b = (b^2, a^2)(1,2), b^2 = (b*a, a*b), b*a = (b*a, a*b)(1,2), a^2 = (b^2, a^2)
-##  \endexample
-##
-InstallOtherMethod(MealyAutomaton, [IsList, IsObject],
+InstallMethod(MealyAutomaton, [IsList, IsObject],
 function(tree_hom_list, name_func)
   local a, states, names, MealyAutomatonLocal, aut_list;
 
@@ -246,12 +238,7 @@ function(aut, names)
 end);
 
 
-InstallMethod(ViewObj, [IsMealyAutomaton],
-function(a)
-  Print("<automaton>");
-end);
-
-InstallMethod(PrintObj, [IsMealyAutomaton and IsMealyAutomatonRep],
+InstallMethod(Display, [IsMealyAutomaton and IsMealyAutomatonRep],
 function(a)
   local i, j;
 
@@ -271,6 +258,40 @@ function(a)
       Print(", ");
     fi;
   od;
+end);
+
+InstallMethod(String, [IsMealyAutomaton and IsMealyAutomatonRep],
+function(a)
+  local i, j, str;
+  str := "";
+  for i in [1..a!.n_states] do
+    Append(str,Concatenation(String(a!.states[i]), " = ("));
+    for j in [1..a!.degree] do
+      Append(str,String(a!.states[a!.table[i][j]]));
+      if j <> a!.degree then
+        Append(str,", ");
+      fi;
+    od;
+    Append(str, ")");
+    if not IsOne(a!.perms[i]) then
+      Append(str,__AG_PermString(a!.perms[i]));
+    fi;
+    if i <> a!.n_states then
+      Append(str,", ");
+    fi;
+  od;
+  return str;
+end);
+
+InstallMethod(ViewObj, [IsMealyAutomaton],
+function(a)
+  Print("<automaton>");
+end);
+
+
+InstallMethod(PrintObj, [IsMealyAutomaton],
+function(a)
+  Print("MealyAutomaton(\"",String(a),"\")");
 end);
 
 
@@ -332,7 +353,7 @@ end);
 InstallGlobalFunction(MinimizationOfAutomatonTrack,
 function(a)
   local min_aut;
-  min_aut := AG_MinimizationOfAutomatonListTrack(List(AutomatonList(a), x -> List(x)), [1..a!.n_states], [1..a!.n_states]);
+  min_aut := AG_MinimizationOfAutomatonListTrack(List(AutomatonList(a), x -> List(x)));
   return [MealyAutomaton(min_aut[1], a!.states{min_aut[2]}), min_aut[2], min_aut[3]];
 end);
 
@@ -340,7 +361,7 @@ end);
 InstallGlobalFunction(MinimizationOfAutomaton,
 function(a)
   local min_aut;
-  min_aut := AG_MinimizationOfAutomatonListTrack(List(AutomatonList(a), x -> List(x)), [1..a!.n_states], [1..a!.n_states]);
+  min_aut := AG_MinimizationOfAutomatonListTrack(List(AutomatonList(a), x -> List(x)));
   return MealyAutomaton(min_aut[1], a!.states{min_aut[2]});
 end);
 

@@ -20,8 +20,8 @@ AtlasRep Package</title>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap5.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap7.html">[Next Chapter]</a>&nbsp;  </div>
 
-<p><a id="X83827EDB7D36C407" name="X83827EDB7D36C407"></a></p>
-<div class="ChapSects"><a href="chap6.html#X83827EDB7D36C407">6 <span class="Heading">New <strong class="pkg">GAP</strong> Objects and Utility Functions Provided by the
+<p><a id="X7EFB2E2A7857AC06" name="X7EFB2E2A7857AC06"></a></p>
+<div class="ChapSects"><a href="chap6.html#X7EFB2E2A7857AC06">6 <span class="Heading">New <strong class="pkg">GAP</strong> Objects and Utility Functions Provided by the
 <strong class="pkg">AtlasRep</strong> Package</span></a>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X8121E9567A7137C9">6.1 <span class="Heading">Straight Line Decisions</span></a>
 </span>
@@ -71,7 +71,7 @@ AtlasRep Package</title>
 
 <h4>6.1 <span class="Heading">Straight Line Decisions</span></h4>
 
-<p><em>Straight line decisions</em> are similar to straight line programs (see Section <a href="../../../doc/ref/chap38.html#X7DC99E4284093FBB"><span class="RefLink">Reference: Straight Line Programs</span></a>) but return <code class="keyw">true</code> or <code class="keyw">false</code>. A straight line decisions checks a property for its inputs. An important example is to check whether a given list of group generators is in fact a list of standard generators (cf. Section<a href="chap3.html#X795DB7E486E0817D"><span class="RefLink">3.3</span></a>) for this group.</p>
+<p><em>Straight line decisions</em> are similar to straight line programs (see Section <a href="../../../doc/ref/chap37.html#X7DC99E4284093FBB"><span class="RefLink">Reference: Straight Line Programs</span></a>) but return <code class="keyw">true</code> or <code class="keyw">false</code>. A straight line decisions checks a property for its inputs. An important example is to check whether a given list of group generators is in fact a list of standard generators (cf. Section<a href="chap3.html#X7F53EDAB7992C192"><span class="RefLink">3.3</span></a>) for this group.</p>
 
 <p>A straight line decision in <strong class="pkg">GAP</strong> is represented by an object in the filter <code class="func">IsStraightLineDecision</code> (<a href="chap6.html#X8787E2EC7DB85A89"><span class="RefLink">6.1-1</span></a>) that stores a list of "lines" each of which has one of the following three forms.</p>
 
@@ -86,15 +86,15 @@ AtlasRep Package</title>
 
 </li>
 </ol>
-<p>The first two forms have the same meaning as for straight line programs (see Section <a href="../../../doc/ref/chap38.html#X7DC99E4284093FBB"><span class="RefLink">Reference: Straight Line Programs</span></a>), the last form means a check whether the element stored at the label <span class="SimpleMath">i</span>-th has the order <span class="SimpleMath">n</span>.</p>
+<p>The first two forms have the same meaning as for straight line programs (see Section <a href="../../../doc/ref/chap37.html#X7DC99E4284093FBB"><span class="RefLink">Reference: Straight Line Programs</span></a>), the last form means a check whether the element stored at the label <span class="SimpleMath">i</span>-th has the order <span class="SimpleMath">n</span>.</p>
 
 <p>For the meaning of the list of lines, see <code class="func">ResultOfStraightLineDecision</code> (<a href="chap6.html#X7E7B328A84685480"><span class="RefLink">6.1-6</span></a>).</p>
 
 <p>Straight line decisions can be constructed using <code class="func">StraightLineDecision</code> (<a href="chap6.html#X825C4E4180F3D989"><span class="RefLink">6.1-5</span></a>), defining attributes for straight line decisions are <code class="func">NrInputsOfStraightLineDecision</code> (<a href="chap6.html#X7B1A43427BD97FDF"><span class="RefLink">6.1-3</span></a>) and <code class="func">LinesOfStraightLineDecision</code> (<a href="chap6.html#X82AFAD9F7FA5CE8A"><span class="RefLink">6.1-2</span></a>), an operation for straight line decisions is <code class="func">ResultOfStraightLineDecision</code> (<a href="chap6.html#X7E7B328A84685480"><span class="RefLink">6.1-6</span></a>).</p>
 
-<p>Special methods applicable to straight line decisions are installed for the operations <code class="func">Display</code> (<a href="../../../doc/ref/chap7.html#X83A5C59278E13248"><span class="RefLink">Reference: Display</span></a>), <code class="func">IsInternallyConsistent</code> (<a href="../../../doc/ref/chap13.html#X7F6C5C3287E8B816"><span class="RefLink">Reference: IsInternallyConsistent</span></a>), <code class="func">PrintObj</code> (<a href="../../../doc/ref/chap7.html#X815BF22186FD43C9"><span class="RefLink">Reference: PrintObj</span></a>), and <code class="func">ViewObj</code> (<a href="../../../doc/ref/chap7.html#X815BF22186FD43C9"><span class="RefLink">Reference: ViewObj</span></a>).</p>
+<p>Special methods applicable to straight line decisions are installed for the operations <code class="func">Display</code> (<a href="../../../doc/ref/chap6.html#X83A5C59278E13248"><span class="RefLink">Reference: Display</span></a>), <code class="func">IsInternallyConsistent</code> (<a href="../../../doc/ref/chap12.html#X7F6C5C3287E8B816"><span class="RefLink">Reference: IsInternallyConsistent</span></a>), <code class="func">PrintObj</code> (<a href="../../../doc/ref/chap6.html#X815BF22186FD43C9"><span class="RefLink">Reference: PrintObj</span></a>), and <code class="func">ViewObj</code> (<a href="../../../doc/ref/chap6.html#X815BF22186FD43C9"><span class="RefLink">Reference: ViewObj</span></a>).</p>
 
-<p>For a straight line decision <var class="Arg">prog</var>, the default <code class="func">Display</code> (<a href="../../../doc/ref/chap7.html#X83A5C59278E13248"><span class="RefLink">Reference: Display</span></a>) method prints the interpretation of <var class="Arg">prog</var> as a sequence of assignments of associative words and of order checks; a record with components <code class="code">gensnames</code> (with value a list of strings) and <code class="code">listname</code> (a string) may be entered as second argument of <code class="func">Display</code> (<a href="../../../doc/ref/chap7.html#X83A5C59278E13248"><span class="RefLink">Reference: Display</span></a>), in this case these names are used, the default for <code class="code">gensnames</code> is <code class="code">[ g1, g2, </code><span class="SimpleMath">...</span><code class="code"> ]</code>, the default for <var class="Arg">listname</var> is <span class="SimpleMath">r</span>.</p>
+<p>For a straight line decision <var class="Arg">prog</var>, the default <code class="func">Display</code> (<a href="../../../doc/ref/chap6.html#X83A5C59278E13248"><span class="RefLink">Reference: Display</span></a>) method prints the interpretation of <var class="Arg">prog</var> as a sequence of assignments of associative words and of order checks; a record with components <code class="code">gensnames</code> (with value a list of strings) and <code class="code">listname</code> (a string) may be entered as second argument of <code class="func">Display</code> (<a href="../../../doc/ref/chap6.html#X83A5C59278E13248"><span class="RefLink">Reference: Display</span></a>), in this case these names are used, the default for <code class="code">gensnames</code> is <code class="code">[ g1, g2, </code><span class="SimpleMath">...</span><code class="code"> ]</code>, the default for <var class="Arg">listname</var> is <span class="SimpleMath">r</span>.</p>
 
 <p><a id="X8787E2EC7DB85A89" name="X8787E2EC7DB85A89"></a></p>
 
@@ -110,7 +110,7 @@ AtlasRep Package</title>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LinesOfStraightLineDecision</code>( <var class="Arg">prog</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns: the list of lines that define the straight line decision.</p>
 
-<p>This defining attribute for the straight line decision <var class="Arg">prog</var> (see <code class="func">IsStraightLineDecision</code> (<a href="chap6.html#X8787E2EC7DB85A89"><span class="RefLink">6.1-1</span></a>)) corresponds to <code class="func">LinesOfStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X81A8AFC47F8E4B91"><span class="RefLink">Reference: LinesOfStraightLineProgram</span></a>) for straight line programs.</p>
+<p>This defining attribute for the straight line decision <var class="Arg">prog</var> (see <code class="func">IsStraightLineDecision</code> (<a href="chap6.html#X8787E2EC7DB85A89"><span class="RefLink">6.1-1</span></a>)) corresponds to <code class="func">LinesOfStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X81A8AFC47F8E4B91"><span class="RefLink">Reference: LinesOfStraightLineProgram</span></a>) for straight line programs.</p>
 
 
 <div class="example"><pre>
@@ -129,7 +129,7 @@ AtlasRep Package</title>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NrInputsOfStraightLineDecision</code>( <var class="Arg">prog</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns: the number of inputs required for the straight line decision.</p>
 
-<p>This defining attribute corresponds to <code class="func">NrInputsOfStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X820A592881D57802"><span class="RefLink">Reference: NrInputsOfStraightLineProgram</span></a>).</p>
+<p>This defining attribute corresponds to <code class="func">NrInputsOfStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X820A592881D57802"><span class="RefLink">Reference: NrInputsOfStraightLineProgram</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -148,8 +148,8 @@ AtlasRep Package</title>
 
 
 <dl>
-<dt><strong class="Mark"><code class="code">chor <var class="Arg">a</var> <var class="Arg">b</var></code></strong></dt>
-<dd><p>means that it is checked whether the order of the element at label <var class="Arg">a</var> is <var class="Arg">b</var>.</p>
+<dt><strong class="Mark"><code class="code">chor </code><span class="SimpleMath">a</span> <span class="SimpleMath">b</span></strong></dt>
+<dd><p>means that it is checked whether the order of the element at label <span class="SimpleMath">a</span> is <span class="SimpleMath">b</span>.</p>
 
 </dd>
 </dl>
@@ -271,24 +271,28 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">check:= AtlasProgram( "L2(8)", "check" );</span>
-rec( groupname := "L2(8)", identifier := [ "L2(8)", "L28G1-check1", 1, 1 ], 
+rec( groupname := "L2(8)", 
+  identifier := [ "L2(8)", "L28G1-check1", 1, 1 ], 
   program := &lt;straight line decision&gt;, standardization := 1 )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens:= AtlasGenerators( "L2(8)", 1 );</span>
 rec( charactername := "1a+8a", 
   generators := [ (1,2)(3,4)(6,7)(8,9), (1,3,2)(4,5,6)(7,8,9) ], 
   groupname := "L2(8)", id := "", 
-  identifier := [ "L2(8)", [ "L28G1-p9B0.m1", "L28G1-p9B0.m2" ], 1, 9 ], 
-  isPrimitive := true, maxnr := 1, p := 9, rankAction := 2, 
-  repname := "L28G1-p9B0", repnr := 1, size := 504, stabilizer := "2^3:7", 
-  standardization := 1, transitivity := 3, type := "perm" )
+  identifier := [ "L2(8)", [ "L28G1-p9B0.m1", "L28G1-p9B0.m2" ], 1, 9 
+     ], isPrimitive := true, maxnr := 1, p := 9, rankAction := 2, 
+  repname := "L28G1-p9B0", repnr := 1, size := 504, 
+  stabilizer := "2^3:7", standardization := 1, transitivity := 3, 
+  type := "perm" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ResultOfStraightLineDecision( check.program, gens.generators );</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens:= AtlasGenerators( "L3(2)", 1 );</span>
-rec( generators := [ (2,4)(3,5), (1,2,3)(5,6,7) ], groupname := "L3(2)", 
-  id := "a", identifier := [ "L3(2)", [ "L27G1-p7aB0.m1", "L27G1-p7aB0.m2" ], 
-      1, 7 ], isPrimitive := true, maxnr := 1, p := 7, rankAction := 2, 
-  repname := "L27G1-p7aB0", repnr := 1, size := 168, stabilizer := "S4", 
-  standardization := 1, transitivity := 2, type := "perm" )
+rec( generators := [ (2,4)(3,5), (1,2,3)(5,6,7) ], 
+  groupname := "L3(2)", id := "a", 
+  identifier := [ "L3(2)", [ "L27G1-p7aB0.m1", "L27G1-p7aB0.m2" ], 1, 
+      7 ], isPrimitive := true, maxnr := 1, p := 7, rankAction := 2, 
+  repname := "L27G1-p7aB0", repnr := 1, size := 168, 
+  stabilizer := "S4", standardization := 1, transitivity := 2, 
+  type := "perm" )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ResultOfStraightLineDecision( check.program, gens.generators );</span>
 true
 </pre></div>
@@ -324,11 +328,11 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StraightLineProgramFromStraightLineDecision</code>( <var class="Arg">dec</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns: the straight line program associated to the given straight line decision.</p>
 
-<p>For a straight line decision <var class="Arg">dec</var> (see <code class="func">IsStraightLineDecision</code> (<a href="chap6.html#X8787E2EC7DB85A89"><span class="RefLink">6.1-1</span></a>), <code class="func">StraightLineProgramFromStraightLineDecision</code> returns the straight line program (see <code class="func">IsStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X7F69FF3F7C6694CB"><span class="RefLink">Reference: IsStraightLineProgram</span></a>) obtained by replacing each line of type 3. (i.e, each order check) by an assignment of the power in question to a new slot, and by declaring the list of these elements as the return value.</p>
+<p>For a straight line decision <var class="Arg">dec</var> (see <code class="func">IsStraightLineDecision</code> (<a href="chap6.html#X8787E2EC7DB85A89"><span class="RefLink">6.1-1</span></a>), <code class="func">StraightLineProgramFromStraightLineDecision</code> returns the straight line program (see <code class="func">IsStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X7F69FF3F7C6694CB"><span class="RefLink">Reference: IsStraightLineProgram</span></a>) obtained by replacing each line of type 3. (i.e, each order check) by an assignment of the power in question to a new slot, and by declaring the list of these elements as the return value.</p>
 
 <p>This means that the return value describes exactly the defining relators of the presentation that is associated to the straight line decision, see <a href="chap6.html#X7C94ECAC8583CEAE"><span class="RefLink">6.1-7</span></a>.</p>
 
-<p>For example, one can use the return value for printing the relators with <code class="func">StringOfResultOfStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X8098EAAF7D344466"><span class="RefLink">Reference: StringOfResultOfStraightLineProgram</span></a>), or for explicitly constructing the relators as words in terms of free generators, by applying <code class="func">ResultOfStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X7847D32B863E822F"><span class="RefLink">Reference: ResultOfStraightLineProgram</span></a>) to the program and to these generators.</p>
+<p>For example, one can use the return value for printing the relators with <code class="func">StringOfResultOfStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X8098EAAF7D344466"><span class="RefLink">Reference: StringOfResultOfStraightLineProgram</span></a>), or for explicitly constructing the relators as words in terms of free generators, by applying <code class="func">ResultOfStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X7847D32B863E822F"><span class="RefLink">Reference: ResultOfStraightLineProgram</span></a>) to the program and to these generators.</p>
 
 
 <div class="example"><pre>
@@ -352,7 +356,7 @@ r[6]:= r[3]^5;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens:= GeneratorsOfGroup( FreeGroup( "a", "b" ) );</span>
 [ a, b ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ResultOfStraightLineProgram( prog, gens );</span>
-[ a^2, b^3, a*b*a*b*a*b*a*b*a*b ]
+[ a^2, b^3, (a*b)^5 ]
 </pre></div>
 
 <p><a id="X7BE856BC785A9E8F" name="X7BE856BC785A9E8F"></a></p>
@@ -372,7 +376,7 @@ r[6]:= r[3]^5;
 
 <dl>
 <dt><strong class="Mark"><em>straight line programs</em>,</strong></dt>
-<dd><p>which require a fixed number of input elements and form arithmetic expressions of elements but do not use random elements, tests, conditional statements and jumps; the return value is always a list of elements; these programs are described in Section <a href="../../../doc/ref/chap38.html#X7DC99E4284093FBB"><span class="RefLink">Reference: Straight Line Programs</span></a>.</p>
+<dd><p>which require a fixed number of input elements and form arithmetic expressions of elements but do not use random elements, tests, conditional statements and jumps; the return value is always a list of elements; these programs are described in Section <a href="../../../doc/ref/chap37.html#X7DC99E4284093FBB"><span class="RefLink">Reference: Straight Line Programs</span></a>.</p>
 
 </dd>
 <dt><strong class="Mark"><em>straight line decisions</em>,</strong></dt>
@@ -388,7 +392,7 @@ r[6]:= r[3]^5;
 
 <p>The special case of the "find" scripts mentioned above is also admissible as an argument of <code class="func">ResultOfBBoxProgram</code> (<a href="chap6.html#X869BACFB80A3CC87"><span class="RefLink">6.2-4</span></a>), which returns either the set of generators or <code class="keyw">fail</code>.</p>
 
-<p>Contrary to the general situation, more support is provided for straight line programs and straight line decisions in <strong class="pkg">GAP</strong>, see Section <a href="../../../doc/ref/chap38.html#X7DC99E4284093FBB"><span class="RefLink">Reference: Straight Line Programs</span></a> for functions that manipulate them (compose, restrict etc.).</p>
+<p>Contrary to the general situation, more support is provided for straight line programs and straight line decisions in <strong class="pkg">GAP</strong>, see Section <a href="../../../doc/ref/chap37.html#X7DC99E4284093FBB"><span class="RefLink">Reference: Straight Line Programs</span></a> for functions that manipulate them (compose, restrict etc.).</p>
 
 <p>The functions <code class="func">AsStraightLineProgram</code> (<a href="chap6.html#X7D36DFA87C8B2C48"><span class="RefLink">6.2-6</span></a>) and <code class="func">AsStraightLineDecision</code> (<a href="chap6.html#X7C13D08C7D55E20A"><span class="RefLink">6.1-8</span></a>) can be used to transform a general black box program object into a straight line program or a straight line decision if this is possible.</p>
 
@@ -396,7 +400,7 @@ r[6]:= r[3]^5;
 
 <p>(Computing a straight line program related to a given straight line decision is supported in the sense of <code class="func">StraightLineProgramFromStraightLineDecision</code> (<a href="chap6.html#X7EA613C57DDC67D5"><span class="RefLink">6.1-9</span></a>).)</p>
 
-<p>Note that none of these three kinds of objects is a special case of another: Running a black box program with <code class="func">RunBBoxProgram</code> (<a href="chap6.html#X7D211A5D8602B330"><span class="RefLink">6.2-3</span></a>) yields a record, running a straight line program with <code class="func">ResultOfStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X7847D32B863E822F"><span class="RefLink">Reference: ResultOfStraightLineProgram</span></a>) yields a list of elements, and running a straight line decision with <code class="func">ResultOfStraightLineDecision</code> (<a href="chap6.html#X7E7B328A84685480"><span class="RefLink">6.1-6</span></a>) yields <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
+<p>Note that none of these three kinds of objects is a special case of another: Running a black box program with <code class="func">RunBBoxProgram</code> (<a href="chap6.html#X7D211A5D8602B330"><span class="RefLink">6.2-3</span></a>) yields a record, running a straight line program with <code class="func">ResultOfStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X7847D32B863E822F"><span class="RefLink">Reference: ResultOfStraightLineProgram</span></a>) yields a list of elements, and running a straight line decision with <code class="func">ResultOfStraightLineDecision</code> (<a href="chap6.html#X7E7B328A84685480"><span class="RefLink">6.1-6</span></a>) yields <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
 
 <p><a id="X87CAF2DE870D0E3B" name="X87CAF2DE870D0E3B"></a></p>
 
@@ -412,7 +416,7 @@ r[6]:= r[3]^5;
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ScanBBoxProgram</code>( <var class="Arg">string</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns: a record containing the black box program encoded by the input string, or <code class="keyw">fail</code>.</p>
 
-<p>For a string <var class="Arg">string</var> that describes a black box program, e.g., the return value of <code class="func">StringFile</code> (<a href="../../../pkg/gapdoc/doc/chap6.html#X7E14D32181FBC3C3"><span class="RefLink">GAPDoc: StringFile</span></a>), <code class="func">ScanBBoxProgram</code> computes this black box program. If this is successful then the return value is a record containing as the value of its component <code class="code">program</code> the corresponding <strong class="pkg">GAP</strong> object that represents the program, otherwise <code class="keyw">fail</code> is returned.</p>
+<p>For a string <var class="Arg">string</var> that describes a black box program, e.g., the return value of <code class="func">StringFile</code> (<a href="../../../pkg/GAPDoc-1.5.1/doc/chap6.html#X7E14D32181FBC3C3"><span class="RefLink">GAPDoc: StringFile</span></a>), <code class="func">ScanBBoxProgram</code> computes this black box program. If this is successful then the return value is a record containing as the value of its component <code class="code">program</code> the corresponding <strong class="pkg">GAP</strong> object that represents the program, otherwise <code class="keyw">fail</code> is returned.</p>
 
 <p>As the first example, we construct a black box program that tries to find standard generators for the alternating group <span class="SimpleMath">A_5</span>; these standard generators are any pair of elements of the orders <span class="SimpleMath">2</span> and <span class="SimpleMath">3</span>, respectively, such that their product has order <span class="SimpleMath">5</span>.</p>
 
@@ -492,11 +496,11 @@ rec( program := &lt;black box program&gt; )
 
 <dl>
 <dt><strong class="Mark"><code class="code">randomfunction</code></strong></dt>
-<dd><p>the function called with argument <var class="Arg">G</var> in order to compute a random element of <var class="Arg">G</var> (default <code class="func">PseudoRandom</code> (<a href="../../../doc/ref/chap31.html#X811B5BD47DC5356B"><span class="RefLink">Reference: PseudoRandom</span></a>))</p>
+<dd><p>the function called with argument <var class="Arg">G</var> in order to compute a random element of <var class="Arg">G</var> (default <code class="func">PseudoRandom</code> (<a href="../../../doc/ref/chap30.html#X811B5BD47DC5356B"><span class="RefLink">Reference: PseudoRandom</span></a>))</p>
 
 </dd>
 <dt><strong class="Mark"><code class="code">orderfunction</code></strong></dt>
-<dd><p>the function for computing element orders (the default is <code class="func">Order</code> (<a href="../../../doc/ref/chap32.html#X84F59A2687C62763"><span class="RefLink">Reference: Order</span></a>)),</p>
+<dd><p>the function for computing element orders (the default is <code class="func">Order</code> (<a href="../../../doc/ref/chap31.html#X84F59A2687C62763"><span class="RefLink">Reference: Order</span></a>)),</p>
 
 </dd>
 <dt><strong class="Mark"><code class="code">quiet</code></strong></dt>
@@ -508,7 +512,7 @@ rec( program := &lt;black box program&gt; )
 
 </dd>
 <dt><strong class="Mark"><code class="code">allowbreaks</code></strong></dt>
-<dd><p>if <code class="keyw">true</code> then call <code class="func">Error</code> (<a href="../../../doc/ref/chap7.html#X7E7AD8D87EBA1A08"><span class="RefLink">Reference: Error</span></a>) when a <code class="code">break</code> statement is reached, otherwise ignore <code class="code">break</code> statements (default <code class="keyw">true</code>).</p>
+<dd><p>if <code class="keyw">true</code> then call <code class="func">Error</code> (<a href="../../../doc/ref/chap6.html#X7E7AD8D87EBA1A08"><span class="RefLink">Reference: Error</span></a>) when a <code class="code">break</code> statement is reached, otherwise ignore <code class="code">break</code> statements (default <code class="keyw">true</code>).</p>
 
 </dd>
 </dl>
@@ -570,7 +574,7 @@ false
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsBBoxProgram</code>( <var class="Arg">slp</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>Returns: an equivalent black box program for the given straight line program or straight line decision.</p>
 
-<p>Let <var class="Arg">slp</var> be a straight line program (see <code class="func">IsStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X7F69FF3F7C6694CB"><span class="RefLink">Reference: IsStraightLineProgram</span></a>)) or a straight line decision (see <code class="func">IsStraightLineDecision</code> (<a href="chap6.html#X8787E2EC7DB85A89"><span class="RefLink">6.1-1</span></a>)). Then <code class="func">AsBBoxProgram</code> returns a black box program <var class="Arg">bbox</var> (see <code class="func">IsBBoxProgram</code> (<a href="chap6.html#X87CAF2DE870D0E3B"><span class="RefLink">6.2-1</span></a>)) with the "same" output as <var class="Arg">slp</var>, in the sense that <code class="func">ResultOfBBoxProgram</code> (<a href="chap6.html#X869BACFB80A3CC87"><span class="RefLink">6.2-4</span></a>) yields the same result for <var class="Arg">bbox</var> as <code class="func">ResultOfStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X7847D32B863E822F"><span class="RefLink">Reference: ResultOfStraightLineProgram</span></a>) or <code class="func">ResultOfStraightLineDecision</code> (<a href="chap6.html#X7E7B328A84685480"><span class="RefLink">6.1-6</span></a>), respectively, for <var class="Arg">slp</var>.</p>
+<p>Let <var class="Arg">slp</var> be a straight line program (see <code class="func">IsStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X7F69FF3F7C6694CB"><span class="RefLink">Reference: IsStraightLineProgram</span></a>)) or a straight line decision (see <code class="func">IsStraightLineDecision</code> (<a href="chap6.html#X8787E2EC7DB85A89"><span class="RefLink">6.1-1</span></a>)). Then <code class="func">AsBBoxProgram</code> returns a black box program <var class="Arg">bbox</var> (see <code class="func">IsBBoxProgram</code> (<a href="chap6.html#X87CAF2DE870D0E3B"><span class="RefLink">6.2-1</span></a>)) with the "same" output as <var class="Arg">slp</var>, in the sense that <code class="func">ResultOfBBoxProgram</code> (<a href="chap6.html#X869BACFB80A3CC87"><span class="RefLink">6.2-4</span></a>) yields the same result for <var class="Arg">bbox</var> as <code class="func">ResultOfStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X7847D32B863E822F"><span class="RefLink">Reference: ResultOfStraightLineProgram</span></a>) or <code class="func">ResultOfStraightLineDecision</code> (<a href="chap6.html#X7E7B328A84685480"><span class="RefLink">6.1-6</span></a>), respectively, for <var class="Arg">slp</var>.</p>
 
 
 <div class="example"><pre>
@@ -606,7 +610,7 @@ false
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsStraightLineProgram</code>( <var class="Arg">bbox</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>Returns: an equivalent straight line program for the given black box program, or <code class="keyw">fail</code>.</p>
 
-<p>For a black box program (see <code class="func">AsBBoxProgram</code> (<a href="chap6.html#X826ACFE887E0B6B8"><span class="RefLink">6.2-5</span></a>)) <var class="Arg">bbox</var>, <code class="func">AsStraightLineProgram</code> returns a straight line program (see <code class="func">IsStraightLineProgram</code> (<a href="../../../doc/ref/chap38.html#X7F69FF3F7C6694CB"><span class="RefLink">Reference: IsStraightLineProgram</span></a>)) with the same output as <var class="Arg">bbox</var> if such a straight line program exists, and <code class="keyw">fail</code> otherwise.</p>
+<p>For a black box program (see <code class="func">AsBBoxProgram</code> (<a href="chap6.html#X826ACFE887E0B6B8"><span class="RefLink">6.2-5</span></a>)) <var class="Arg">bbox</var>, <code class="func">AsStraightLineProgram</code> returns a straight line program (see <code class="func">IsStraightLineProgram</code> (<a href="../../../doc/ref/chap37.html#X7F69FF3F7C6694CB"><span class="RefLink">Reference: IsStraightLineProgram</span></a>)) with the same output as <var class="Arg">bbox</var> if such a straight line program exists, and <code class="keyw">fail</code> otherwise.</p>
 
 
 <div class="example"><pre>
@@ -645,13 +649,13 @@ fail
 
 
 <ul>
-<li><p>If <var class="Arg">conditions</var> is <code class="func">NrMovedPoints</code> (<a href="../../../doc/ref/chap43.html#X85E7B1E28430F49E"><span class="RefLink">Reference: NrMovedPoints (for a permutation)</span></a>) then <code class="code">value</code>, if known, is the degree of a minimal faithful (not necessarily transitive) permutation representation for <span class="SimpleMath">G</span>.</p>
+<li><p>If <var class="Arg">conditions</var> is <code class="func">NrMovedPoints</code> (<a href="../../../doc/ref/chap42.html#X85E7B1E28430F49E"><span class="RefLink">Reference: NrMovedPoints (for a permutation)</span></a>) then <code class="code">value</code>, if known, is the degree of a minimal faithful (not necessarily transitive) permutation representation for <span class="SimpleMath">G</span>.</p>
 
 </li>
-<li><p>If <var class="Arg">conditions</var> consists of <code class="func">Characteristic</code> (<a href="../../../doc/ref/chap32.html#X81278E53800BF64D"><span class="RefLink">Reference: Characteristic</span></a>) and a prime integer <var class="Arg">p</var> then <code class="code">value</code>, if known, is the dimension of a minimal faithful (not necessarily irreducible) matrix representation in characteristic <var class="Arg">p</var> for <span class="SimpleMath">G</span>.</p>
+<li><p>If <var class="Arg">conditions</var> consists of <code class="func">Characteristic</code> (<a href="../../../doc/ref/chap31.html#X81278E53800BF64D"><span class="RefLink">Reference: Characteristic</span></a>) and a prime integer <var class="Arg">p</var> then <code class="code">value</code>, if known, is the dimension of a minimal faithful (not necessarily irreducible) matrix representation in characteristic <var class="Arg">p</var> for <span class="SimpleMath">G</span>.</p>
 
 </li>
-<li><p>If <var class="Arg">conditions</var> consists of <code class="func">Size</code> (<a href="../../../doc/ref/chap31.html#X858ADA3B7A684421"><span class="RefLink">Reference: Size</span></a>) and a prime power <var class="Arg">q</var> then <code class="code">value</code>, if known, is the dimension of a minimal faithful (not necessarily irreducible) matrix representation over the field of size <var class="Arg">q</var> for <span class="SimpleMath">G</span>.</p>
+<li><p>If <var class="Arg">conditions</var> consists of <code class="func">Size</code> (<a href="../../../doc/ref/chap30.html#X858ADA3B7A684421"><span class="RefLink">Reference: Size</span></a>) and a prime power <var class="Arg">q</var> then <code class="code">value</code>, if known, is the dimension of a minimal faithful (not necessarily irreducible) matrix representation over the field of size <var class="Arg">q</var> for <span class="SimpleMath">G</span>.</p>
 
 </li>
 </ul>
@@ -683,9 +687,10 @@ fail
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalRepresentationInfo( "A5", NrMovedPoints );</span>
-rec( source := [ "computed (alternating group)", "computed (char. table)",
-      "computed (subgroup tables)",
-      "computed (subgroup tables, known repres.)",
+rec( 
+  source := [ "computed (alternating group)", 
+      "computed (char. table)", "computed (subgroup tables)", 
+      "computed (subgroup tables, known repres.)", 
       "computed (table of marks)" ], value := 5 )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalRepresentationInfo( "A5", Characteristic, 2 );</span>
 rec( source := [ "computed (char. table)" ], value := 2 )
@@ -730,16 +735,16 @@ rec( source := [ "computed (char. table)" ], value := 4 )
 
 
 <ul>
-<li><p><code class="code">"NrMovedPoints"</code> (see <code class="func">NrMovedPoints</code> (<a href="../../../doc/ref/chap43.html#X85E7B1E28430F49E"><span class="RefLink">Reference: NrMovedPoints (for a permutation)</span></a>)), which means that <var class="Arg">value</var> is the degree of minimal faithful (not necessarily transitive) permutation representations of <span class="SimpleMath">G</span>,</p>
+<li><p><code class="code">"NrMovedPoints"</code> (see <code class="func">NrMovedPoints</code> (<a href="../../../doc/ref/chap42.html#X85E7B1E28430F49E"><span class="RefLink">Reference: NrMovedPoints (for a permutation)</span></a>)), which means that <var class="Arg">value</var> is the degree of minimal faithful (not necessarily transitive) permutation representations of <span class="SimpleMath">G</span>,</p>
 
 </li>
-<li><p>a list of length two with first entry <code class="code">"Characteristic"</code> (see <code class="func">Characteristic</code> (<a href="../../../doc/ref/chap32.html#X81278E53800BF64D"><span class="RefLink">Reference: Characteristic</span></a>)) and second entry <var class="Arg">char</var> either zero or a prime integer, which means that <var class="Arg">value</var> is the dimension of minimal faithful (not necessarily irreducible) matrix representations of <span class="SimpleMath">G</span> in characteristic <var class="Arg">char</var>,</p>
+<li><p>a list of length two with first entry <code class="code">"Characteristic"</code> (see <code class="func">Characteristic</code> (<a href="../../../doc/ref/chap31.html#X81278E53800BF64D"><span class="RefLink">Reference: Characteristic</span></a>)) and second entry <var class="Arg">char</var> either zero or a prime integer, which means that <var class="Arg">value</var> is the dimension of minimal faithful (not necessarily irreducible) matrix representations of <span class="SimpleMath">G</span> in characteristic <var class="Arg">char</var>,</p>
 
 </li>
-<li><p>a list of length two with first entry <code class="code">"Size"</code> (see <code class="func">Size</code> (<a href="../../../doc/ref/chap31.html#X858ADA3B7A684421"><span class="RefLink">Reference: Size</span></a>)) and second entry a prime power <var class="Arg">q</var>, which means that <var class="Arg">value</var> is the dimension of minimal faithful (not necessarily irreducible) matrix representations of <span class="SimpleMath">G</span> over the field with <var class="Arg">q</var> elements, and</p>
+<li><p>a list of length two with first entry <code class="code">"Size"</code> (see <code class="func">Size</code> (<a href="../../../doc/ref/chap30.html#X858ADA3B7A684421"><span class="RefLink">Reference: Size</span></a>)) and second entry a prime power <var class="Arg">q</var>, which means that <var class="Arg">value</var> is the dimension of minimal faithful (not necessarily irreducible) matrix representations of <span class="SimpleMath">G</span> over the field with <var class="Arg">q</var> elements, and</p>
 
 </li>
-<li><p>a list of length three with first entry <code class="code">"Characteristic"</code> (see <code class="func">Characteristic</code> (<a href="../../../doc/ref/chap32.html#X81278E53800BF64D"><span class="RefLink">Reference: Characteristic</span></a>)), second entry a prime integer <var class="Arg">p</var>, and third entry the string <code class="code">"complete"</code>, which means that the information stored for characteristic <var class="Arg">p</var> is complete in the sense that for any given power <span class="SimpleMath">q</span> of <var class="Arg">p</var>, the minimal faithful degree over the field with <span class="SimpleMath">q</span> elements equals that for the largest stored field size of which <span class="SimpleMath">q</span> is a power.</p>
+<li><p>a list of length three with first entry <code class="code">"Characteristic"</code> (see <code class="func">Characteristic</code> (<a href="../../../doc/ref/chap31.html#X81278E53800BF64D"><span class="RefLink">Reference: Characteristic</span></a>)), second entry a prime integer <var class="Arg">p</var>, and third entry the string <code class="code">"complete"</code>, which means that the information stored for characteristic <var class="Arg">p</var> is complete in the sense that for any given power <span class="SimpleMath">q</span> of <var class="Arg">p</var>, the minimal faithful degree over the field with <span class="SimpleMath">q</span> elements equals that for the largest stored field size of which <span class="SimpleMath">q</span> is a power.</p>
 
 </li>
 </ul>
@@ -785,12 +790,12 @@ true
 <li><p>If the name of <span class="SimpleMath">G</span> has the form <code class="code">"L2(</code><span class="SimpleMath">q</span><code class="code">)"</code> (denoting projective special linear groups in dimension two) then the minimal degree is <span class="SimpleMath">q + 1</span>, except if <span class="SimpleMath">q ∈ { 2, 3, 5, 7, 9, 11 }</span>, see <a href="chapBib.html#biBHup67">[Hup67, Satz II.8.28]</a>.</p>
 
 </li>
-<li><p>If the largest maximal subgroup of <span class="SimpleMath">G</span> is core-free then the index of this subgroup is the minimal degree. (This is used when the two character tables in question and the class fusion are available in <strong class="pkg">GAP</strong>'s Character Table Library (<a href="chapBib.html#biBCTblLib1.1.3">[Bre04]</a>); this happens for many character tables of simple groups.)</p>
+<li><p>If the largest maximal subgroup of <span class="SimpleMath">G</span> is core-free then the index of this subgroup is the minimal degree. (This is used when the two character tables in question and the class fusion are available in <strong class="pkg">GAP</strong>'s Character Table Library (<a href="chapBib.html#biBCTblLib">[Bre13]</a>); this happens for many character tables of simple groups.)</p>
 
 </li>
 <li><p>If <span class="SimpleMath">G</span> has a unique minimal normal subgroup then each minimal faithful permutation representation is transitive.</p>
 
-<p>In this case, the minimal degree can be computed directly from the information in the table of marks of <span class="SimpleMath">G</span> if this is available in <strong class="pkg">GAP</strong>'s Library of Tables of Marks (<a href="chapBib.html#biBTomLib">[NMP11]</a>).</p>
+<p>In this case, the minimal degree can be computed directly from the information in the table of marks of <span class="SimpleMath">G</span> if this is available in <strong class="pkg">GAP</strong>'s Library of Tables of Marks (<a href="chapBib.html#biBTomLib">[NMP13]</a>).</p>
 
 <p>Suppose that the largest maximal subgroup of <span class="SimpleMath">G</span> is not core-free but simple and normal in <span class="SimpleMath">G</span>, and that the other maximal subgroups of <span class="SimpleMath">G</span> are core-free. In this case, we take the minimum of the indices of the core-free maximal subgroups and of the product of index and minimal degree of the normal maximal subgroup. (This suffices since no core-free subgroup of the whole group can contain a nontrivial normal subgroup of a normal maximal subgroup.)</p>
 

@@ -51,8 +51,8 @@
   [2XFFList[102X  7.3-3
   [2XFFLists[102X  7.3-3
   [2XFFMatOrPermCMtxBinary[102X  7.3-5
-  [11Xftp[111X  1.3-4
-  [11Xgzip[111X  1.3-6
+  [11Xftp[111X  1.3-5
+  [11Xgzip[111X  1.3-7
   [11Xgzip[111X  4.3-4
   [11Xgzip[111X  7.1-6
   [2XInfoAtlasRep[102X  7.1-1
@@ -80,7 +80,7 @@
   [2XMinimalRepresentationInfoData[102X  6.3-2
   [2XNrInputsOfStraightLineDecision[102X  6.1-3
   [2XOneAtlasGeneratingSetInfo[102X  3.5-5
-  [11Xperl[111X  1.3-4
+  [11Xperl[111X  1.3-5
   [11Xperl[111X  1.4
   permutation, MeatAxe format  7.3
   presentation  6.1-7
@@ -114,8 +114,8 @@
   [2XStraightLineDecisionNC[102X  6.1-5
   [2XStraightLineProgramFromStraightLineDecision[102X  6.1-9
   [10Xtouch[110X  4.2-4
-  [11Xwget[111X  1.3-4
-  [11Xwget[111X  1.3-6
+  [11Xwget[111X  1.3-5
+  [11Xwget[111X  1.3-7
   [11Xwget[111X  4.3-3
   [11Xwget[111X  4.3-3
   [11Xwget[111X  7.1-6

@@ -49,7 +49,7 @@
 ##    then the index of this subgroup is the minimal degree.
 ##    (This is used when the two character tables in question and the class
 ##    fusion are available in &GAP;'s Character Table Library
-##    (<Cite Key="CTblLib1.1.3"/>);
+##    (<Cite Key="CTblLib"/>);
 ##    this happens for many character tables of simple groups.)
 ##  </Item>
 ##  <Item>
@@ -191,9 +191,10 @@ DeclareGlobalFunction( "MinimalPermutationRepresentationInfo" );
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> MinimalRepresentationInfo( "A5", NrMovedPoints );
-##  rec( source := [ "computed (alternating group)", "computed (char. table)",
-##        "computed (subgroup tables)",
-##        "computed (subgroup tables, known repres.)",
+##  rec( 
+##    source := [ "computed (alternating group)", 
+##        "computed (char. table)", "computed (subgroup tables)", 
+##        "computed (subgroup tables, known repres.)", 
 ##        "computed (table of marks)" ], value := 5 )
 ##  gap> MinimalRepresentationInfo( "A5", Characteristic, 2 );
 ##  rec( source := [ "computed (char. table)" ], value := 2 )

@@ -2,9 +2,9 @@
 ##
 #W  teststructures.g           automgrp package                Dmytro Savchuk
 #W                                                             Yevgen Muntyan
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Dmytro Savchuk, Yevgen Muntyan
+#Y  Copyright (C) 2003 - 2016 Dmytro Savchuk, Yevgen Muntyan
 ##
 
 _ST_Groups := [
@@ -229,7 +229,6 @@ UnitTest("Decompose", function()
   local l, group, a, b, count;
   for l in _ST_Semigroups do
     group := AutomatonSemigroup(l[1]);
-
     for count in [1..10] do
       a := Random(group);
       AssertEqual(Decompose(a), a);

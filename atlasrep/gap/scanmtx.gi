@@ -1,9 +1,9 @@
 #############################################################################
 ##
 #W  scanmtx.gi     GAP 4 packages AtlasRep and MeatAxe          Thomas Breuer
-#W                                                              Frank L"ubeck
+#W                                                               Frank Lübeck
 ##
-#Y  Copyright (C)  2001,  Lehrstuhl D fuer Mathematik,  RWTH Aachen,  Germany
+#Y  Copyright (C)  2001,   Lehrstuhl D für Mathematik,  RWTH Aachen,  Germany
 ##
 ##  Whenever this file is changed in one of the packages
 ##  `atlasrep' or `meataxe',
@@ -14,7 +14,7 @@
 ##  and straight line programs used in the ATLAS of Group Representations.
 ##
 ##  The functions `CMtxBinaryFFMatOrPerm' and `FFMatOrPermCMtxBinary'
-##  were contributed by Frank L"ubeck.
+##  were contributed by Frank Lübeck.
 ##
 
 
@@ -294,7 +294,7 @@ InstallGlobalFunction( ScanMeatAxeFile, function( arg )
       # Do we want to read the file *fast* (but using more space)?
       InfoRead1( "#I  reading `", filename, "' started\n" );
       if IsBound( CMeatAxe.FastRead ) and CMeatAxe.FastRead = true then
-        string:= StringFile( filename );
+        string:= AGR.StringFile( filename );
         if Length( arg ) = 1 then
           return ScanMeatAxeFile( string, "string" );
         else
@@ -312,9 +312,9 @@ InstallGlobalFunction( ScanMeatAxeFile, function( arg )
         CloseStream( file );
         return fail;
       fi;
-while not '\n' in line do
-  Append( line, ReadLine( file ) );
-od;
+      while not '\n' in line do
+        Append( line, ReadLine( file ) );
+      od;
       if Length( arg ) = 2 then
         q:= arg[2];
       fi;
@@ -359,7 +359,7 @@ od;
       # a permutation, to be converted to a matrix,
       # or a list of permutations
       if not IsBound( string ) then
-        string:= StringFile( filename );
+        string:= AGR.StringFile( filename );
 
         # Omit the header line.
         headlen:= Position( string, '\n' );
@@ -688,8 +688,7 @@ end );
 #M  MeatAxeString( <mat>, <q> )
 ##
 InstallMethod( MeatAxeString,
-    "for matrix over a finite field, and field order",
-    [ IsTable and IsFFECollColl, IsPosInt ],
+    [ "IsTable and IsFFECollColl", "IsPosInt" ],
     function( mat, q )
     local nrows,     # number of rows of `mat'
           ncols,     # number of columns of `mat'
@@ -723,36 +722,39 @@ InstallMethod( MeatAxeString,
       Error( "<q> and the characteristic of <mat> are incompatible" );
     fi;
 
-    # If the matrix is a ``generalized permutation matrix''
-    # then construct a string of MeatAxe mode 2.
     one:= One( mat[1][1] );
     zero:= Zero( one );
-    perm:= [];
-    for i in [ 1 .. nrows ] do
-      noone:= true;
-      row:= mat[i];
-      if IsZero( row ) then
-        perm:= fail;
-      else
-        for j in [ 1 .. ncols ] do
-          if row[j] = one then
-            if noone and not j in perm then
-              perm[i]:= j;
-              noone:= false;
-            else
+    perm:= fail;
+    if UserPreference( "AtlasRep", "WriteMeatAxeFilesOfMode2" ) = true then
+      # If the matrix is a ``generalized permutation matrix''
+      # then construct a string of MeatAxe mode 2.
+      perm:= [];
+      for i in [ 1 .. nrows ] do
+        noone:= true;
+        row:= mat[i];
+        if IsZero( row ) then
+          perm:= fail;
+        else
+          for j in [ 1 .. ncols ] do
+            if row[j] = one then
+              if noone and not j in perm then
+                perm[i]:= j;
+                noone:= false;
+              else
+                perm:= fail;
+                break;
+              fi;
+            elif row[j] <> zero then
               perm:= fail;
               break;
             fi;
-          elif row[j] <> zero then
-            perm:= fail;
-            break;
-          fi;
-        od;
-      fi;
-      if perm = fail then
-        break;
-      fi;
-    od;
+          od;
+        fi;
+        if perm = fail then
+          break;
+        fi;
+      od;
+    fi;
 
     # Start with the header line.
     # We try to keep the files as small as possible by using the (old)
@@ -850,8 +852,7 @@ InstallMethod( MeatAxeString,
 #M  MeatAxeString( <perms>, <degree> )
 ##
 InstallMethod( MeatAxeString,
-    "for list of permutations, and degree",
-    [ IsPermCollection and IsList, IsPosInt ],
+    [ "IsPermCollection and IsList", "IsPosInt" ],
     function( perms, degree )
     local str, perm, i;
 
@@ -880,8 +881,7 @@ InstallMethod( MeatAxeString,
 #M  MeatAxeString( <perm>, <q>, <dims> )
 ##
 InstallMethod( MeatAxeString,
-    "for permutation, field order, and dimensions",
-    [ IsPerm, IsPosInt, IsList ],
+    [ "IsPerm", "IsPosInt", "IsList" ],
     function( perm, q, dims )
     local str, i;
 
@@ -909,10 +909,19 @@ InstallMethod( MeatAxeString,
 #############################################################################
 ##
 #F  CMtxBinaryFFMatOrPerm( <mat>, <q>, <outfile> )
-#F  CMtxBinaryFFMatOrPerm( <perm>, <deg>, <outfile> )
+#F  CMtxBinaryFFMatOrPerm( <perm>, <deg>, <outfile>[, <base>] )
 ##
-InstallGlobalFunction( CMtxBinaryFFMatOrPerm, function( mat, q, outfile )
-  local res, qr, i, f, a, epb, qpwrs, ffloglist, z, len, ind, row, x;
+InstallGlobalFunction( CMtxBinaryFFMatOrPerm, function( arg )
+  local mat, q, outfile, res, qr, imgs, i, f, a, epb, qpwrs, ffloglist, z,
+        len, ind, row, x;
+
+  if Length( arg ) < 3 or 4 < Length( arg ) then
+    Error( "usage: ",
+           "CMtxBinaryFFMatOrPerm( <perm>, <deg>, <outfile>[, <base>] )" );
+  fi;
+  mat:= arg[1];
+  q:= arg[2];
+  outfile:= arg[3];
 
   if IsPerm( mat ) then
     res:= [ 255, 255, 255, 255 ];
@@ -922,7 +931,11 @@ InstallGlobalFunction( CMtxBinaryFFMatOrPerm, function( mat, q, outfile )
       qr:= QuoInt( qr, 256 );
     od;
     Append( res, [ 1, 0, 0, 0 ] );
-    for qr in OnTuples( [ 1 .. q ], mat ) do
+    imgs:= OnTuples( [ 1 .. q ], mat );
+    if Length( arg ) = 4 and arg[4] = 0 then
+      imgs:= imgs - 1;
+    fi;
+    for qr in imgs do
       for i in [ 1 .. 4 ] do
         Add( res, RemInt( qr, 256 ) );
         qr:= QuoInt( qr, 256 );
@@ -988,8 +1001,8 @@ end );
 #F  FFMatOrPermCMtxBinary( <fname> )
 ##
 InstallGlobalFunction( FFMatOrPermCMtxBinary, function( fname )
-  local f, head, v, q, deg, bytes, list, j, i, res, nrows, ncols, a, epb,
-        lenrow, fflist, poslist, eltsbyte, row;
+  local f, head, v, q, deg, bytes, list, j, zero, i, res, nrows, ncols, a,
+        epb, lenrow, fflist, poslist, eltsbyte, row;
   # open file and read first 12 bytes as header
   # header is 12 = 3x4 bytes,
   # (in the matrix case field size, nrrows, nrcols;
@@ -1018,21 +1031,40 @@ InstallGlobalFunction( FFMatOrPermCMtxBinary, function( fname )
     CloseStream( f );
     list:= [];
     j:= 1;
+    zero:= false;
     for i in [ 1 .. deg ] do
       list[i]:= v * bytes{ [ j .. j+3 ] };
+      if list[i] = 0 then
+        zero:= true;
+      fi;
       j:= j + 4;
     od;
+    if zero then
+      # format used in C-MeatAxe 2.4 (zero-based): add 1 to all entries
+      for i in [ 1 .. deg ] do
+        list[i]:= list[i] + 1;
+      od;
+    fi;
     res:= PermList( list );
-#T perhaps zero based, i.e., we have to add 1 to all entries??
     # ugly hack:
     # several of the data files on the server are stored in a wrong format.
     if res = fail then
       v:= [ 256^3, 256^2, 256, 1 ];
       j:= 1;
+      zero:= false;
       for i in [ 1 .. deg ] do
         list[i]:= v * bytes{ [ j .. j+3 ] };
+        if list[i] = 0 then
+          zero:= true;
+        fi;
         j:= j + 4;
       od;
+      if zero then
+        # format used in C-MeatAxe 2.4 (zero-based): add 1 to all entries
+        for i in [ 1 .. deg ] do
+          list[i]:= list[i] + 1;
+        od;
+      fi;
       res:= PermList( list );
       if res = fail then
         Info( InfoCMeatAxe, 1,
@@ -1302,7 +1334,7 @@ InstallGlobalFunction( ScanStraightLineProgram, function( arg )
       # Read the data.
       filename:= arg[1];
       InfoRead1( "#I  reading `", filename, "' started\n" );
-      strdata:= StringFile( filename );
+      strdata:= AGR.StringFile( filename );
       InfoRead1( "#I  reading `", filename, "' done\n" );
       if strdata = fail then
         Error( "cannot read file <filename>" );
@@ -1319,11 +1351,14 @@ end );
 
 #############################################################################
 ##
-#F  AtlasStringOfProgram( <prog>[, <outputnames>] )
-#F  AtlasStringOfProgram( <prog>[, "mtx"] )
+#F  AtlasStringOfProgram( <prog>[, <outputnames>[, <avoidslots>]] )
+#F  AtlasStringOfProgram( <prog>[, <format>[, <avoidslots>]] )
+##
+##  <avoidslots> refers only to the result list.
 ##
 InstallGlobalFunction( AtlasStringOfProgram, function( arg )
     local format,         # "ATLAS" or "mtx"
+          avoidslots,     # optional third argument
           prog,           # straight line program, first argument
           outputnames,    # list of strings, optional second argument
           resused,        # maximal label currently used in the program
@@ -1340,16 +1375,20 @@ InstallGlobalFunction( AtlasStringOfProgram, function( arg )
 
     # Get and check the arguments.
     format:= "ATLAS";
+    avoidslots:= [];
     if   Length( arg ) = 1 then
       prog:= arg[1];
-    elif Length( arg ) = 2 and IsString( arg[2] ) then
+    elif 2 <= Length( arg ) and IsString( arg[2] ) then
       prog:= arg[1];
       if LowercaseString( arg[2] ) = "mtx" then
         format:= "mtx";
       fi;
-    elif Length( arg ) = 2 and IsList( arg[2] ) then
+    elif 2 <= Length( arg ) and IsList( arg[2] ) then
       prog:= arg[1];
       outputnames:= arg[2];
+    fi;
+    if Length( arg ) = 3 and IsList( arg[3] ) then
+      avoidslots:= arg[3];
     fi;
     if   IsBound( prog ) and IsStraightLineProgram( prog ) then
       resused:= NrInputsOfStraightLineProgram( prog );
@@ -1504,7 +1543,9 @@ InstallGlobalFunction( AtlasStringOfProgram, function( arg )
           if Length( line[i] ) = 2 and line[i][2] = 1 then
             Add( lastresult, String( line[i][1] ) );
           else
-            resused:= resused + 1;
+            repeat
+              resused:= resused + 1;
+            until not resused in avoidslots;
             translateword( line[i], resused );
             Add( lastresult, String( resused ) );
           fi;

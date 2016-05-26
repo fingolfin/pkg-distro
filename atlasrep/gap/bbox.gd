@@ -758,24 +758,28 @@ DeclareOperation( "ResultOfStraightLineDecision",
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> check:= AtlasProgram( "L2(8)", "check" );
-##  rec( groupname := "L2(8)", identifier := [ "L2(8)", "L28G1-check1", 1, 1 ], 
+##  rec( groupname := "L2(8)", 
+##    identifier := [ "L2(8)", "L28G1-check1", 1, 1 ], 
 ##    program := <straight line decision>, standardization := 1 )
 ##  gap> gens:= AtlasGenerators( "L2(8)", 1 );
 ##  rec( charactername := "1a+8a", 
 ##    generators := [ (1,2)(3,4)(6,7)(8,9), (1,3,2)(4,5,6)(7,8,9) ], 
 ##    groupname := "L2(8)", id := "", 
-##    identifier := [ "L2(8)", [ "L28G1-p9B0.m1", "L28G1-p9B0.m2" ], 1, 9 ], 
-##    isPrimitive := true, maxnr := 1, p := 9, rankAction := 2, 
-##    repname := "L28G1-p9B0", repnr := 1, size := 504, stabilizer := "2^3:7", 
-##    standardization := 1, transitivity := 3, type := "perm" )
+##    identifier := [ "L2(8)", [ "L28G1-p9B0.m1", "L28G1-p9B0.m2" ], 1, 9 
+##       ], isPrimitive := true, maxnr := 1, p := 9, rankAction := 2, 
+##    repname := "L28G1-p9B0", repnr := 1, size := 504, 
+##    stabilizer := "2^3:7", standardization := 1, transitivity := 3, 
+##    type := "perm" )
 ##  gap> ResultOfStraightLineDecision( check.program, gens.generators );
 ##  true
 ##  gap> gens:= AtlasGenerators( "L3(2)", 1 );
-##  rec( generators := [ (2,4)(3,5), (1,2,3)(5,6,7) ], groupname := "L3(2)", 
-##    id := "a", identifier := [ "L3(2)", [ "L27G1-p7aB0.m1", "L27G1-p7aB0.m2" ], 
-##        1, 7 ], isPrimitive := true, maxnr := 1, p := 7, rankAction := 2, 
-##    repname := "L27G1-p7aB0", repnr := 1, size := 168, stabilizer := "S4", 
-##    standardization := 1, transitivity := 2, type := "perm" )
+##  rec( generators := [ (2,4)(3,5), (1,2,3)(5,6,7) ], 
+##    groupname := "L3(2)", id := "a", 
+##    identifier := [ "L3(2)", [ "L27G1-p7aB0.m1", "L27G1-p7aB0.m2" ], 1, 
+##        7 ], isPrimitive := true, maxnr := 1, p := 7, rankAction := 2, 
+##    repname := "L27G1-p7aB0", repnr := 1, size := 168, 
+##    stabilizer := "S4", standardization := 1, transitivity := 2, 
+##    type := "perm" )
 ##  gap> ResultOfStraightLineDecision( check.program, gens.generators );
 ##  true
 ##  ]]></Example>
@@ -837,7 +841,7 @@ DeclareOperation( "ResultOfStraightLineDecision",
 ##  gap> gens:= GeneratorsOfGroup( FreeGroup( "a", "b" ) );
 ##  [ a, b ]
 ##  gap> ResultOfStraightLineProgram( prog, gens );
-##  [ a^2, b^3, a*b*a*b*a*b*a*b*a*b ]
+##  [ a^2, b^3, (a*b)^5 ]
 ##  ]]></Example>
 ##  </Description>
 ##  </ManSection>

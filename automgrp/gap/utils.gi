@@ -2,26 +2,11 @@
 ##
 #W  utils.gi                   automgrp package                Yevgen Muntyan
 ##                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
-
-#############################################################################
-##
-##  AG_IsInvertibleTransformation( <tr> )
-##
-InstallGlobalFunction(AG_IsInvertibleTransformation,
-function(tr)
-  local img;
-  if IsPerm(tr) then
-    return true;
-  else
-    img := ImageListOfTransformation(tr);
-    return SortedList(img) = AsSet(img);
-  fi;
-end);
 
 #############################################################################
 ##
@@ -29,18 +14,13 @@ end);
 ##
 InstallGlobalFunction(AG_PermFromTransformation,
 function(tr)
-  local perm;
-
   if IsPerm(tr) then
     return tr;
-  fi;
-
-  perm := PermList(ImageListOfTransformation(tr));
-  if not IsPerm(perm) then
+  elif tr^-1=fail then
     Error(tr, " is not invertible");
+  else
+    return AsPermutation(tr);
   fi;
-
-  return perm;
 end);
 
 #############################################################################
@@ -66,6 +46,31 @@ function(tr)
 end);
 
 
+#############################################################################
+##
+##  AG_TransformationString( <tr> )
+##
+InstallGlobalFunction(AG_TransformationString,
+function(tr)
+  local list, i, str;
+  if IsPerm(tr) then
+    return String(tr);
+  else
+    list := ImageListOfTransformation(tr);
+    str:="[";
+    for i in [1..Length(list)] do
+      if i <> 1 then
+        Append(str, ",");
+      fi;
+      Append(str, String(list[i]));
+    od;
+    Append(str, "]");
+  fi;
+  return str;
+end);
+
+
+
 InstallGlobalFunction(AG_TrCmp,
 function(p1, p2, d)
   local l1, l2, getlist;
@@ -79,7 +84,7 @@ function(p1, p2, d)
     if IsTransformation(p) then
       return ImageListOfTransformation(p);
     else
-      return [1..d]^p;
+      return Permuted([1..d],p);
     fi;
   end;
 

@@ -2,9 +2,9 @@
 ##
 #W  tree.gi                 automgrp package                   Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -55,7 +55,7 @@ end);
 InstallMethod(DegreeOfTree, "for [IsActingOnTree]",
               [IsActingOnTree],
 function(obj)
-  if not IsActingOnRegularTree(obj) then Error(); fi;
+  if not IsActingOnRegularTree(obj) then Error("The object ",obj," is not acting on a regular tree"); fi;
   return SphericalIndex(obj).period[1];
 end);
 

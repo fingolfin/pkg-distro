@@ -2,9 +2,9 @@
 ##
 #W  selfsimfam.gi            automgrp package                  Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -149,7 +149,7 @@ function(list, oldstates, names)
       od;
     else
       isgroup := false;
-      if AG_IsInvertibleTransformation(list[i][deg + 1]) then
+      if list[i][deg + 1]^-1<>fail then
         list[i][deg + 1] := AG_PermFromTransformation(list[i][deg + 1]);
       fi;
     fi;
@@ -311,7 +311,7 @@ end);
 ##
 #M  One( <fam> )
 ##
-InstallOtherMethod(One, "for [IsSelfSimFamily]", [IsSelfSimFamily],
+InstallMethod(One, "for [IsSelfSimFamily]", [IsSelfSimFamily],
 function(fam)
   return __AG_CreateSelfSim(fam, One(fam!.freegroup),
                          List([1..fam!.deg], i -> One(fam!.freegroup)),
@@ -378,6 +378,7 @@ function(fam)
   SetDegreeOfTree(g, fam!.deg);
   SetTopDegreeOfTree(g, fam!.deg);
   SetIsActingOnBinaryTree(g, fam!.deg = 2);
+  SetIsSelfSimilarSemigroup(g, true);
 
   return g;
 end);
@@ -438,7 +439,7 @@ end);
 ##
 #M  GeneratorsOfOrderTwo( <fam> )
 ##
-InstallOtherMethod(GeneratorsOfOrderTwo, "for [IsObject]", [IsSelfSimFamily],
+InstallMethod(GeneratorsOfOrderTwo, "for [IsSelfSimFamily]", [IsSelfSimFamily],
 function(fam)
   if not fam!.isgroup then
     Error("not all generators of the family are invertible");

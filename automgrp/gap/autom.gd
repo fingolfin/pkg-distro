@@ -2,9 +2,9 @@
 ##
 #W  autom.gd                 automgrp package                  Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -47,6 +47,7 @@ DeclareCategoryCollections("IsInvertibleAutom");
 ##
 DeclareOperation("Autom", [IsAssocWord, IsAutom]);
 DeclareOperation("Autom", [IsAssocWord, IsAutomFamily]);
+DeclareOperation("Autom", [IsAssocWord, IsList]);
 
 
 ###############################################################################
@@ -55,6 +56,7 @@ DeclareOperation("Autom", [IsAssocWord, IsAutomFamily]);
 ##
 DeclareOperation("StatesWords", [IsAutom]);
 
+#DeclareOperation("Perm", [IsAutom]);
 
 DeclareGlobalFunction("__AG_CreateAutom");
 

@@ -2,9 +2,9 @@
 ##
 #W  utils.gd                   automgrp package                Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -38,9 +38,9 @@ DeclareGlobalFunction("AG_ParseAutomatonStringFR");
 ##
 DeclareGlobalFunction("AG_AbelImageAutomatonInList");
 
-DeclareGlobalFunction("AG_IsInvertibleTransformation");
 DeclareGlobalFunction("AG_PermFromTransformation");
 DeclareGlobalFunction("AG_PrintTransformation");
+DeclareGlobalFunction("AG_TransformationString");
 DeclareGlobalFunction("AG_TrCmp");
 
 

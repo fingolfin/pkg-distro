@@ -1,11 +1,11 @@
   
-  [1X1 [33X[0;0YIntroduction to the [5XAtlasRep[105X[101X[1X Package[133X[101X
+  [1X1 [33X[0;0YIntroduction to the [5XAtlasRep[105X[101X[1X Package[133X[101X
   
   [33X[0;0YThe  aim  of the [5XGAP[105X 4 package [5XAtlasRep[105X is to provide a link between [5XGAP[105X and
-  the  [21X[5XATLAS[105X  of  Group  Representations[121X, a database that comprises generating
-  permutations  and  matrices  for  many almost simple groups, and information
-  about their maximal subgroups. This database is available independent of [5XGAP[105X
-  at[133X
+  the  [21X[5XATLAS[105X  of  Group  Representations[121X  [ATLAS],  a  database that comprises
+  generating  permutations  and  matrices  for  many almost simple groups, and
+  information  about  their  maximal  subgroups.  This  database  is available
+  independent of [5XGAP[105X at[133X
   
   [33X[0;0Y[7Xhttp://brauer.maths.qmul.ac.uk/Atlas[107X[133X
   
@@ -34,7 +34,7 @@
         sanity checks).[133X
   
   
-  [1X1.1 [33X[0;0YThe [5XATLAS[105X[101X[1X of Group Representations[133X[101X
+  [1X1.1 [33X[0;0YThe [5XATLAS[105X[101X[1X of Group Representations[133X[101X
   
   [33X[0;0YThe  [5XATLAS[105X of Group Representations consists of matrices over various rings,
   permutations,  and  shell scripts encoding so-called black box programs (see
@@ -51,7 +51,7 @@
   alphabetical order).[133X
   
   [33X[0;0YThe  information  was  computed  and composed using computer algebra systems
-  such  as  [5XMeatAxe[105X  (see [Rin98]),  Magma  (see [CP96]),  and [5XGAP[105X (in reverse
+  such  as  [5XMeatAxe[105X  (see [Rin]),  Magma  (see [CP96]),  and  [5XGAP[105X  (in reverse
   alphabetical  order).  Part of the constructions have been documented in the
   literature  on  almost  simple groups, or the results have been used in such
   publications, see for example the references in [CCNPW85] and [BN95].[133X
@@ -65,15 +65,15 @@
   then you should also reference this interface, as follows.[133X
   
   [4X[32X[104X
-    [4X@misc{ AtlasRep1.5,[104X
+    [4X@misc{ AtlasRep1.5.1,[104X
     [4X  author =       {Wilson, R. A. and Parker, R. A. and Nickerson, S. and[104X
     [4X                  Bray, J. N. and Breuer, T.},[104X
     [4X  title =        {{AtlasRep}, A \textsf{GAP} Interface to the Atlas of[104X
     [4X                  Group Representations,[104X
-    [4X                  {V}ersion 1.5},[104X
-    [4X  month =        {July},[104X
-    [4X  year =         {2011},[104X
-    [4X  note =         {Refereed \textsf{GAP} package},[104X
+    [4X                  {V}ersion 1.5.1},[104X
+    [4X  month =        {March},[104X
+    [4X  year =         {2016},[104X
+    [4X  note =         {\textsf{GAP} package},[104X
     [4X  howpublished = {http://www.math.rwth-aachen.de/\~{}Thomas.Breuer/atlasrep}[104X
     [4X}[104X
   [4X[32X[104X
@@ -84,7 +84,7 @@
   [33X[0;0Y[7Xhttp://www.gap-system.org[107X.[133X
   
   
-  [1X1.2 [33X[0;0YThe GAP Interface to the [5XATLAS[105X[101X[1X of Group Representations[133X[101X
+  [1X1.2 [33X[0;0YThe GAP Interface to the [5XATLAS[105X[101X[1X of Group Representations[133X[101X
   
   [33X[0;0YThe  [5XGAP[105X  interface  to  the  [5XATLAS[105X  of  Group  Representations  consists of
   essentially two parts.[133X
@@ -98,10 +98,10 @@
         declaration  of  [5XGAP[105X objects such as straight line decisions and black
         box  programs.  This  is  important mainly for users interested in the
         actual  implementation  (e. g., for modifying the package) or in using
-        it  together  with  the  [10XC[110X-[5XMeatAxe[105X  standalone  (see [Rin98]); this is
+        it  together  with  the  [10XC[110X-[5XMeatAxe[105X  standalone  (see [Rin]);  this  is
         described in Chapter [14X7[114X.[133X
   
-  [33X[0;0YInformation  concerning  the [10XC[110X-[5XMeatAxe[105X, including the manual [Rin98], can be
+  [33X[0;0YInformation  concerning  the  [10XC[110X-[5XMeatAxe[105X,  including the manual [Rin], can be
   found at[133X
   
   [33X[0;0Y[7Xhttp://www.math.rwth-aachen.de/LDFM/homes/MTX[107X[133X
@@ -112,10 +112,59 @@
   interface can be sent to [7Xmailto:sam@math.rwth-aachen.de[107X.[133X
   
   
-  [1X1.3 [33X[0;0YWhat's New in [5XAtlasRep[105X[101X[1X, Compared to Older Versions?[133X[101X
+  [1X1.3 [33X[0;0YWhat's New in [5XAtlasRep[105X[101X[1X, Compared to Older Versions?[133X[101X
   
   
-  [1X1.3-1 [33X[0;0YWhat's New in Version 1.5?[133X[101X
+  [1X1.3-1 [33X[0;0YWhat's New in Version 1.5.1? (March 2016)[133X[101X
+  
+  [30X    [33X[0;6YThe  paths  of  the directories where downloaded data files get stored
+        are  now  customizable,  see  Section  [14X4.3-9[114X. Up to now, the data were
+        stored  in  subdirectories of the package directory, which might cause
+        problems  with write permissions, depending on the installation of the
+        package. (Note that choosing other data directories can be useful also
+        in  order  to keep existing local data files when a new version of [5XGAP[105X
+        or  of  the [5XAtlasRep[105X package gets installed.) Thanks to Bill Allombert
+        for pointing out this problem.[133X
+  
+  [30X    [33X[0;6YThe   information   about   data   files   from  the  [5XATLAS[105X  of  Group
+        Representations  has  been  extended  by  [2XCrcFile[102X ([14XReference: CrcFile[114X)
+        values.  These  values  are checked whenever data from such a file are
+        read,  and  an  error is signalled if the checksum does not fit to the
+        expected  one. Note that several users may access the same data files,
+        and  a  user  should not suffer from perhaps corrupted files that have
+        been downloaded by other users. Thanks to Frank Lübeck for the idea to
+        introduce this consistency test.[133X
+  
+  [30X    [33X[0;6YWhenever [2XStringFile[102X ([14XGAPDoc: StringFile[114X) is called by functions of the
+        package, this happens in the wrapper function [10XAGR.StringFile[110X, in order
+        to  replace  occasional  line  breaks  of  the  form  [10X"\r\n"[110X  by [10X"\n"[110X.
+        Apparently  it  may  happen that the [10X"\r"[110X is silently smuggled in when
+        data  files  get  copied to the local computer. Thanks to Marek Mitros
+        for help with detecting and fixing this problem.[133X
+  
+  [30X    [33X[0;6YThe   function   [2XFFMatOrPermCMtxBinary[102X   ([14X7.3-5[114X)  can  now  read  also
+        permutations  stored  in  binary  files  that  have  been created with
+        version  2.4 of the C-[5XMeatAxe[105X; note that this format is different from
+        the    one    that    is   written   by   version   2.3.   Conversely,
+        [2XCMtxBinaryFFMatOrPerm[102X  ([14X7.3-4[114X)  has  been  generalized  such that both
+        formats  can  be written. The reference to the C-[5XMeatAxe[105X documentation
+        now  points  to  that  of  version  2.4.  Thanks  to Jürgen Müller for
+        pointing out this problem.[133X
+  
+  [30X    [33X[0;6YThe function [2XMeatAxeString[102X ([14X7.3-2[114X) can now encode permutation matrices
+        in  different  ways. The mode (the first header entry) can be either 2
+        (then the positions of the nonzero entries are listed) or 1 or 6 (then
+        all  entries  of  the  matrix  are  listed). In previous versions, the
+        function  produced  a matrix of mode 2 whenever this was possible, but
+        this  behaviour  is  not  useful if the result is not processed by the
+        C-[5XMeatAxe[105X. Thanks to Klaus Lux for pointing out this problem.[133X
+  
+  [30X    [33X[0;6YDepending   on   the   terminal   capabilities   and   the   value  of
+        [10XAtlasOfGroupRepresentationsInfo.displayFunction[110X,     some    non-ASCII
+        characters may appear in the output shown by [2XDisplayAtlasInfo[102X ([14X3.5-1[114X).[133X
+  
+  
+  [1X1.3-2 [33X[0;0YWhat's New in Version 1.5? (July 2011)[133X[101X
   
   [30X    [33X[0;6YThe function [2XAtlasSubgroup[102X ([14X3.5-8[114X) now admits also the return value of
         [2XOneAtlasGeneratingSetInfo[102X  ([14X3.5-5[114X)  or  the return value of [2XAtlasGroup[102X
@@ -187,10 +236,10 @@
         Thanks to Jack Schmidt for reporting this bug.[133X
   
   
-  [1X1.3-2 [33X[0;0YWhat's New in Version 1.4?[133X[101X
+  [1X1.3-3 [33X[0;0YWhat's New in Version 1.4? (June 2008)[133X[101X
   
   [30X    [33X[0;6YIn  addition  to  the group orders that were added in version 1.3 (see
-        Section  [14X1.3-4[114X),  also  many  orders  of  maximal  subgroups  are  now
+        Section  [14X1.3-5[114X),  also  many  orders  of  maximal  subgroups  are  now
         available.  These values occur in the records returned by [2XAtlasProgram[102X
         ([14X3.5-3[114X)  (for  the  case  of  [10X"maxes"[110X  type programs) and of the three
         argument  version of [2XAtlasGenerators[102X ([14X3.5-2[114X); now a [10Xsize[110X component may
@@ -225,7 +274,7 @@
         and  in the [5XATLAS[105X of Brauer Characters [JLPW95] are now available, see
         [2XBrowseBibliographySporadicSimple[102X ([14X3.6-2[114X).[133X
   
-  [30X    [33X[0;6YIf  the  [5XGAP[105X  package  [5XBrowse[105X  (see  [BL11])  is  loaded  then the new
+  [30X    [33X[0;6YIf  the  [5XGAP[105X  package  [5XBrowse[105X  (see  [BL14])  is  loaded  then the new
         functions           [2XBrowseMinimalDegrees[102X          ([14X3.6-1[114X)          and
         [2XBrowseBibliographySporadicSimple[102X    ([14X3.6-2[114X)   are   available;   these
         functions  can  be  called  also  by  choosing  the corresponding menu
@@ -236,11 +285,11 @@
         [2XOneAtlasGeneratingSetInfo[102X ([14X3.5-5[114X) as its argument.[133X
   
   
-  [1X1.3-3 [33X[0;0YWhat's New in Version 1.3.1?[133X[101X
+  [1X1.3-4 [33X[0;0YWhat's New in Version 1.3.1? (October 2007)[133X[101X
   
   [33X[0;0YThis  version  was  mainly  released in order to fix a few problems. Now one
   does not get warnings about unbound variables when the package is loaded and
-  the  [5XGAP[105X package [5XIO[105X [Neu11] is not available, and pathological situations in
+  the  [5XGAP[105X package [5XIO[105X [Neu14] is not available, and pathological situations in
   [2XFFMatOrPermCMtxBinary[102X  ([14X7.3-5[114X)  (concerning  extremely  short corrupted data
   files  and  different  byte  orderings  in  binary  files)  are handled more
   carefully.[133X
@@ -253,7 +302,7 @@
   version 4.4.10 of [5XGAP[105X.)[133X
   
   
-  [1X1.3-4 [33X[0;0YWhat's New in Version 1.3?[133X[101X
+  [1X1.3-5 [33X[0;0YWhat's New in Version 1.3? (June 2007)[133X[101X
   
   [30X    [33X[0;6YThe  database  was extended, see Section [14X4.3-4[114X for the number and size
         of files.[133X
@@ -284,7 +333,7 @@
   
         [33X[0;6YAn  interactive alternative to [2XDisplayAtlasInfo[102X ([14X3.5-1[114X) is provided by
         the  function  [2XBrowseAtlasInfo[102X  ([14XBrowse: BrowseAtlasInfo[114X) from the new
-        (recommended) [5XGAP[105X package [5XBrowse[105X [BL11].[133X
+        (recommended) [5XGAP[105X package [5XBrowse[105X [BL14].[133X
   
   [30X    [33X[0;6YThe      functions      [2XOneAtlasGeneratingSetInfo[102X      ([14X3.5-5[114X)     and
         [2XAllAtlasGeneratingSetInfos[102X  ([14X3.5-6[114X)  now  admit  also  a list of group
@@ -293,7 +342,7 @@
   [30X    [33X[0;6YThe  functions  for actually accessing the data are more flexible now,
         see Section [14X4.3-6[114X.[133X
   
-  [30X    [33X[0;6YFor  transferring  remote  data, the [5XGAP[105X package [5XIO[105X [Neu11] can now be
+  [30X    [33X[0;6YFor  transferring  remote  data, the [5XGAP[105X package [5XIO[105X [Neu14] can now be
         used   (and   is   recommended)   as   an  alternative  to  [11Xwget[111X,  see
         Section [14X4.3-3[114X.[133X
   
@@ -309,13 +358,13 @@
         install [11Xperl[111X.[133X
   
         [33X[0;6YAnother consequence is that the system program [11Xls[111X is no longer needed,
-        see Section [14X1.3-6[114X.[133X
+        see Section [14X1.3-7[114X.[133X
   
   [30X    [33X[0;6YThe package manual has been restructured, extended and improved. It is
-        now based on the package [5XGAPDoc[105X [LN11].[133X
+        now based on the package [5XGAPDoc[105X [LN12].[133X
   
   
-  [1X1.3-5 [33X[0;0YWhat's New in Version 1.2?[133X[101X
+  [1X1.3-6 [33X[0;0YWhat's New in Version 1.2? (November 2003)[133X[101X
   
   [33X[0;0YNot much.[133X
   
@@ -331,7 +380,7 @@
         mechanism that is recommended for [5XGAP[105X 4.4,[133X
   
   [30X    [33X[0;6Yto  extend  the  test  suite, which now covers more consistency checks
-        using the [5XGAP[105X Character Table Library [Bre04],[133X
+        using the [5XGAP[105X Character Table Library [Bre13],[133X
   
   [30X    [33X[0;6Yto  make  the function [2XScanMeatAxeFile[102X ([14X7.3-1[114X) more robust, due to the
         fact  that the [5XGAP[105X function [2XPermList[102X ([14XReference: PermList[114X) now returns
@@ -352,13 +401,13 @@
   is now faster than it was in [5XGAP[105X 4.3.[133X
   
   
-  [1X1.3-6 [33X[0;0YWhat's New in Version 1.1?[133X[101X
+  [1X1.3-7 [33X[0;0YWhat's New in Version 1.1? (October 2002)[133X[101X
   
   [33X[0;0YThe  biggest change w.r.t. Version 1.1 is the addition of private extensions
   (see  Chapter [14X5[114X).  It  includes a new [21Xfree format[121X for straight line programs
   (see  Section [14X5.2[114X).  Unfortunately, this feature requires the system program
   [11Xls[111X,  so  it  may  be  not  available  for example under MS Windows operating
-  systems. [But see Section [14X1.3-4[114X.][133X
+  systems. [But see Section [14X1.3-5[114X.][133X
   
   [33X[0;0YIn order to admit the addition of other types of data, the implementation of
   several functions has been changed. Data types are described in Section [14X7.5[114X.
@@ -396,39 +445,38 @@
   syntax checks for [5XATLAS[105X straight line programs (see [14X7.4[114X) have been improved.[133X
   
   
-  [1X1.4 [33X[0;0YAcknowledgments[133X[101X
+  [1X1.4 [33X[0;0YAcknowledgements[133X[101X
   
-  [33X[0;0YThe  perl  script  that  had  been  used  for  fetching  remote  data  until
-  version 1.2  had  been  kindly  provided by Frank Lübeck and Max Neunhöffer.
-  Thanks  also  to  Greg  Gamble  and  Alexander  Hulpke  for  technical hints
-  concerning [21Xstandard[121X perl.[133X
+  [30X    [33X[0;6YFrank  Lübeck  and Max Neunhöffer kindly provided the perl script that
+        had  been used for fetching remote data until version 1.2. Thanks also
+        to  Greg  Gamble  and  Alexander Hulpke for technical hints concerning
+        [21Xstandard[121X perl.[133X
   
-  [33X[0;0YUlrich Kaiser helped with preparing the package for MS Windows.[133X
+  [30X    [33X[0;6YUlrich Kaiser helped with preparing the package for MS Windows.[133X
   
-  [33X[0;0YThe idea to support private extensions of the package (see Chapter [14X5[114X) is due
-  to  Klaus  Lux.  He  used a preliminary version of [5XAtlasRep[105X Version 1.1, and
-  helped to fix several bugs.[133X
+  [30X    [33X[0;6YKlaus  Lux  had the idea to support private extensions of the package,
+        see Chapter [14X5[114X and helped to fix several bugs.[133X
   
-  [33X[0;0YThe   functions   [2XCMtxBinaryFFMatOrPerm[102X  ([14X7.3-4[114X)  and  [2XFFMatOrPermCMtxBinary[102X
-  ([14X7.3-5[114X) were contributed by Frank Lübeck.[133X
+  [30X    [33X[0;6YFrank  Lübeck  contributed the functions [2XCMtxBinaryFFMatOrPerm[102X ([14X7.3-4[114X)
+        and [2XFFMatOrPermCMtxBinary[102X ([14X7.3-5[114X).[133X
   
-  [33X[0;0YThe  [5XGAPDoc[105X  package  [LN11], which is used for processing the manual of the
-  [5XAtlasRep[105X  package  and  for  processing  the bibliographies included in this
-  package (see [2XBrowseBibliographySporadicSimple[102X ([14X3.6-2[114X)), was written by Frank
-  Lübeck and Max Neunhöffer.[133X
+  [30X    [33X[0;6YFrank Lübeck and Max Neunhöffer wrote the [5XGAPDoc[105X package [LN12], which
+        is  used  for processing the documentation of the [5XAtlasRep[105X package and
+        for  processing  the  bibliographies  included  in  this  package (see
+        [2XBrowseBibliographySporadicSimple[102X ([14X3.6-2[114X)),[133X
   
-  [33X[0;0YThe  [5XGAP[105X package [5XIO[105X [Neu11], which is recommended for transferring data, was
-  written by Max Neunhöffer.[133X
+  [30X    [33X[0;6YMax  Neunhöffer wrote the [5XGAP[105X package [5XIO[105X [Neu14], which is recommended
+        for transferring data.[133X
   
-  [33X[0;0YMax  has  also  suggested the generalization of the data access described in
-  Section [14X4.3-6[114X,  and  the admissibility of the function [2XCharacter[102X ([14XReference:
-  Character   (for   a   character   table   and  a  list)[114X)  as  a  filter  in
-  [2XDisplayAtlasInfo[102X    ([14X3.5-1[114X),    [2XOneAtlasGeneratingSetInfo[102X    ([14X3.5-5[114X),    and
-  [2XAllAtlasGeneratingSetInfos[102X ([14X3.5-6[114X).[133X
+  [30X    [33X[0;6YMax has also suggested the generalization of the data access described
+        in  Section [14X7.2[114X,  and  the  admissibility  of  the  function [2XCharacter[102X
+        ([14XReference:  Character (for a character table and a list)[114X) as a filter
+        in  [2XDisplayAtlasInfo[102X  ([14X3.5-1[114X),  [2XOneAtlasGeneratingSetInfo[102X ([14X3.5-5[114X), and
+        [2XAllAtlasGeneratingSetInfos[102X ([14X3.5-6[114X).[133X
   
-  [33X[0;0YGunter  Malle  suggested  to  make  the information about representations of
-  minimal degree accessible, see Section [14X6.3[114X.[133X
+  [30X    [33X[0;6YGunter  Malle  suggested to make the information about representations
+        of minimal degree accessible, see Section [14X6.3[114X.[133X
   
-  [33X[0;0YAndries  Brouwer  suggested  to  add  a  tutorial,  see Chapter [14X2[114X. Klaus Lux
-  suggested several improvements of this new chapter.[133X
+  [30X    [33X[0;6YAndries Brouwer suggested to add a tutorial (see Chapter [14X2[114X), Klaus Lux
+        suggested several improvements of this chapter.[133X
   

@@ -2,9 +2,9 @@
 ##
 #W  selfsimsg.gi             automgrp package                  Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -101,6 +101,29 @@ function(A, bind_vars)
 end);
 
 
+
+###############################################################################
+##
+#M  SemigroupOfSelfSimFamily(<G>)
+##
+InstallMethod(SemigroupOfSelfSimFamily, "for [IsSelfSimSemigroup]",
+                   [IsSelfSimSemigroup],
+function(G)
+  return SemigroupOfSelfSimFamily(UnderlyingSelfSimFamily(G));
+end);
+
+
+###############################################################################
+##
+#M  IsSemigroupOfSelfSimFamily(<G>)
+##
+InstallMethod(IsSemigroupOfSelfSimFamily, "for [IsSelfSimSemigroup]",
+              [IsSelfSimSemigroup],
+function(G)
+  return G = SemigroupOfSelfSimFamily(G);
+end);
+
+
 ###############################################################################
 ##
 #M  IsSelfSimilar(<G>)
@@ -156,9 +179,9 @@ end);
 
 ###############################################################################
 ##
-#M  PrintObj(<G>)
+#M  Display(<G>)
 ##
-InstallMethod(PrintObj, "for [IsSelfSimSemigroup]",
+InstallMethod(Display, "for [IsSelfSimSemigroup]",
               [IsSelfSimSemigroup],
 function(G)
   local i, gens, printone;
@@ -204,6 +227,46 @@ function(G)
   else
     Print(gens[Length(gens)], " >");
   fi;
+end);
+
+#############################################################################
+##
+#M  String(<G>)
+##
+InstallMethod(String, "for [IsSelfSimSemigroup]", [IsSelfSimSemigroup],
+function(G)
+  local i, gens, formatone, s;
+
+  formatone := function(a)
+    return Concatenation(String(a), " = ", String(Decompose(a)));
+  end;
+
+  if IsMonoid(G) then
+    gens := GeneratorsOfMonoid(G);
+  else
+    gens := GeneratorsOfSemigroup(G);
+  fi;
+
+  s := "";
+  for i in [1..Length(gens)] do
+    Append(s, formatone(gens[i]));
+    if i <> Length(gens) then
+      Append(s, ", ");
+    fi;
+  od;
+
+  return s;
+end);
+
+
+###############################################################################
+##
+#M  PrintObj(<G>)
+##
+InstallMethod(PrintObj, "for [IsSelfSimilarSemigroup]",
+              [IsSelfSimilarSemigroup],
+function(G)
+  Print("SelfSimilarSemigroup(\"", String(G), "\")");
 end);
 
 
@@ -377,6 +440,7 @@ end);
 
 
 
+
 ###############################################################################
 ##
 #M  IsFiniteState(<G>)
@@ -471,10 +535,10 @@ function(G)
 #            pi_bar
 
     pi := GroupHomomorphismByImages(F,                     Group(gens_in_freegrp),
-                                  GeneratorsOfGroup(F),  gens_in_freegrp);
+                                    GeneratorsOfGroup(F),  gens_in_freegrp);
 
     pi_bar := GroupHomomorphismByImages(F,                     UnderlyingFreeGroup(H),
-                                      GeneratorsOfGroup(F),  images_in_freegrp);
+                                        GeneratorsOfGroup(F),  images_in_freegrp);
 
     hom_function := function(g)
       return Autom(Image(pi_bar, PreImagesRepresentative(pi, g!.word)), UnderlyingAutomFamily(H));

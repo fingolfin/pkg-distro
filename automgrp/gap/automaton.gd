@@ -2,9 +2,9 @@
 ##
 #W  automaton.gd              automgrp package                 Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -27,6 +27,8 @@ DeclareCategoryCollections("IsMealyAutomaton");
 #O  MealyAutomaton( <string> )
 #O  MealyAutomaton( <autom> )
 #O  MealyAutomaton( <tree_hom_list> )
+#O  MealyAutomaton( <list>, <name_func> )
+#O  MealyAutomaton( <list>, <true> )
 ##
 ##  Creates the Mealy automaton (see "Short math background") defined by the argument <table>, <string>
 ##  or <autom>. Format of the argument <table> is
@@ -42,25 +44,44 @@ DeclareCategoryCollections("IsMealyAutomaton");
 ##  \beginexample
 ##  gap> A := MealyAutomaton([[1,2,(1,2)],[3,1,()],[3,3,(1,2)]], ["a","b","c"]);
 ##  <automaton>
-##  gap> Print(A, "\n");
+##  gap> Display(A);
 ##  a = (a, b)(1,2), b = (c, a), c = (c, c)(1,2)
 ##  gap> B:=MealyAutomaton([[1,2,Transformation([1,1])],[3,1,()],[3,3,(1,2)]],["a","b","c"]);
 ##  <automaton>
-##  gap> Print(B, "\n");
+##  gap> Display(B);
 ##  a = (a, b)[ 1, 1 ], b = (c, a), c = (c, c)[ 2, 1 ]
 ##  gap> D := MealyAutomaton("a=(a,b)(1,2), b=(b,a)");
 ##  <automaton>
+##  gap> Display(D);
+##  a = (a, b)(1,2), b = (b, a)
 ##  gap> Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 ##  < u, v >
 ##  gap> M := MealyAutomaton(u*v*u^-3);
 ##  <automaton>
-##  gap> Print(M);
+##  gap> Display(M);
 ##  a1 = (a2, a5), a2 = (a3, a4), a3 = (a4, a2)(1,2), a4 = (a4, a4), a5 = (a6, a3)
 ##  (1,2), a6 = (a7, a4), a7 = (a6, a4)(1,2)
 ##  \endexample
 ##
+##  If <list> consists of tree homomorphisms, it creates a noninitial automaton
+##  constructed of their states. If <name_func> is a function then it is used
+##  to name the states of the newly constructed automaton. If it is <true>
+##  then states of automata from the <list> are used. If it <false> then new
+##  states are named a_1, a_2, etc.
+##
+##  \beginexample
+##  gap> G := AutomatonGroup("a=(b,a),b=(b,a)(1,2)");
+##  < a, b >
+##  gap> MealyAutomaton([a*b]);; Display(last);
+##  a1 = (a2, a4)(1,2), a2 = (a3, a1), a3 = (a3, a1)(1,2), a4 = (a2, a4)
+##  gap> MealyAutomaton([a*b], true);; Display(last);
+##  <a*b> = (<b^2>, <a^2>)(1,2), <b^2> = (<b*a>, <a*b>), <b*a> = (<b*a>, <a*b>)(1,2), <a^2> = (<b^2>, <a^2>)
+##  gap> MealyAutomaton([a*b], String);; Display(last);
+##  a*b = (b^2, a^2)(1,2), b^2 = (b*a, a*b), b*a = (b*a, a*b)(1,2), a^2 = (b^2, a^2)
+##  \endexample
+
 DeclareOperation("MealyAutomaton", [IsList]);
-DeclareOperation("MealyAutomaton", [IsList, IsList]);
+DeclareOperation("MealyAutomaton", [IsList, IsObject]);
 DeclareOperation("MealyAutomaton", [IsList, IsList, IsList]);
 DeclareOperation("MealyAutomaton", [IsTreeHomomorphism]);
 
@@ -92,7 +113,7 @@ DeclareOperation("SetStateNames", [IsMealyAutomaton, IsList]);
 ##
 #A  AutomatonList( <A> )
 ##
-##  Returns the list of <A> acceptible by `MealyAutomaton' (see "MealyAutomaton")
+##  Returns the list of <A> acceptable by `MealyAutomaton' (see "MealyAutomaton")
 ##
 ##
 DeclareAttribute("AutomatonList", IsMealyAutomaton);
@@ -133,13 +154,15 @@ DeclareAttribute( "AG_MinimizedAutomatonList", IsMealyAutomaton, "mutable" );
 ##
 #F  MinimizationOfAutomaton ( <A> )
 ##
-##  Returns the automaton obtained from automaton <A> by minimization.
+##  Returns the automaton obtained from automaton <A> by minimization. The
+##  implementation of this function was significantly optimized by Andrey Russev
+##  starting from Version 1.3.
 ##  \beginexample
 ##  gap> B := MealyAutomaton("a=(1,a)(1,2), b=(1,a)(1,2), c=(a,b), d=(a,b)");
 ##  <automaton>
 ##  gap> C := MinimizationOfAutomaton(B);
 ##  <automaton>
-##  gap> Print(C);
+##  gap> Display(C);
 ##  a = (1, a)(1,2), c = (a, a), 1 = (1, 1)
 ##  \endexample
 ##
@@ -154,12 +177,14 @@ DeclareGlobalFunction("MinimizationOfAutomaton");
 ##  automaton obtained from automaton <A> by minimization,
 ##  `new_via_old' describes how new states are expressed in terms of the old ones, and
 ##  `old_via_new' describes how old states are expressed in terms of the new ones.
+##  The implementation of this function was significantly optimized by Andrey Russev
+##  starting from Version 1.3.
 ##  \beginexample
 ##  gap> B := MealyAutomaton("a=(1,a)(1,2), b=(1,a)(1,2), c=(a,b), d=(a,b)");
 ##  <automaton>
 ##  gap> B_min := MinimizationOfAutomatonTrack(B);
 ##  [ <automaton>, [ 1, 3, 5 ], [ 1, 1, 2, 2, 3 ] ]
-##  gap> Print(B_min[1]);
+##  gap> Display(B_min[1]);
 ##  a = (1, a)(1,2), c = (a, a), 1 = (1, 1)
 ##  \endexample
 ##
@@ -254,7 +279,7 @@ DeclareAttribute("PolynomialDegreeOfGrowth", IsMealyAutomaton);
 ##  <automaton>
 ##  gap> D := DualAutomaton(A);
 ##  <automaton>
-##  gap> Print(D);
+##  gap> Display(D);
 ##  d1 = (d2, d1)[ 2, 2 ], d2 = (d1, d2)[ 1, 1 ]
 ##  \endexample
 ##
@@ -271,7 +296,7 @@ DeclareOperation("DualAutomaton", [IsMealyAutomaton]);
 ##  <automaton>
 ##  gap> B := InverseAutomaton(A);
 ##  <automaton>
-##  gap> Print(B);
+##  gap> Display(B);
 ##  a1 = (a1, a2)(1,2), a2 = (a2, a1)
 ##  \endexample
 ##
@@ -355,9 +380,9 @@ DeclareProperty("IsTrivial", IsMealyAutomaton);
 ##  4
 ##  gap> MDR:=MDReduction(A);
 ##  [ <automaton>, <automaton> ]
-##  gap> Print(MDR[1]);
+##  gap> Display(MDR[1]);
 ##  d1 = (d2, d2, d1, d1)(1,4,3), d2 = (d1, d1, d2, d2)(1,4)
-##  gap> Print(MDR[2]);
+##  gap> Display(MDR[2]);
 ##  d1 = (d4, d4)(1,2), d2 = (d2, d2)(1,2), d3 = (d1, d3), d4 = (d3, d1)
 ##  \endexample
 DeclareOperation("MDReduction", [IsMealyAutomaton]);
@@ -390,7 +415,7 @@ DeclareProperty("IsMDReduced", IsMealyAutomaton);
 ##  <automaton>
 ##  gap> B := MealyAutomaton("c=(d,c), d=(c,e)(1,2), e=(e,d)");
 ##  <automaton>
-##  gap> Print(DisjointUnion(A, B));
+##  gap> Display(DisjointUnion(A, B));
 ##  a1 = (a1, a2)(1,2), a2 = (a1, a2), a3 = (a4, a3), a4 = (a3, a5)
 ##  (1,2), a5 = (a5, a4)
 ##  \endexample
@@ -426,7 +451,7 @@ DeclareOperation("AreEquivalentAutomata", [IsMealyAutomaton, IsMealyAutomaton]);
 ##  \beginexample
 ##  gap> A := MealyAutomaton("a=(e,d)(1,2),b=(c,c),c=(b,c)(1,2),d=(a,e)(1,2),e=(e,d)");
 ##  <automaton>
-##  gap> Print(SubautomatonWithStates(A, [1, 4]));
+##  gap> Display(SubautomatonWithStates(A, [1, 4]));
 ##  a = (e, d)(1,2), d = (a, e)(1,2), e = (e, d)
 ##  \endexample
 ##
@@ -444,7 +469,7 @@ DeclareOperation("SubautomatonWithStates", [IsMealyAutomaton, IsList]);
 ##  \beginexample
 ##  gap> A := MealyAutomaton("a=(b,c)(1,2),b=(d,d),c=(d,b)(1,2),d=(d,b)(1,2),e=(a,d)");
 ##  <automaton>
-##  gap> Print(AutomatonNucleus(A));
+##  gap> Display(AutomatonNucleus(A));
 ##  b = (d, d), d = (d, b)(1,2)
 ##  \endexample
 ##
@@ -476,11 +501,11 @@ DeclareAttribute("AdjacencyMatrix", IsMealyAutomaton);
 ##  I.e. returns `true' if the Moore diagram of <A> does not contain cycles with two or more
 ##  states and `false' otherwise.
 ##  \beginexample
-##  gap> A:=MealyAutomaton("a=(a,a,b)(1,2,3),b=(c,c,b)(1,2),c=(d,c,1),d=(d,1,d)");
+##  gap> A := MealyAutomaton("a=(a,a,b)(1,2,3),b=(c,c,b)(1,2),c=(d,c,1),d=(d,1,d)");
 ##  <automaton>
 ##  gap> IsAcyclic(A);
 ##  true
-##  gap> A:=MealyAutomaton("a=(a,a,b)(1,2,3),b=(c,c,d)(1,2),c=(d,c,1),d=(b,1,d)");
+##  gap> A := MealyAutomaton("a=(a,a,b)(1,2,3),b=(c,c,d)(1,2),c=(d,c,1),d=(b,1,d)");
 ##  <automaton>
 ##  gap> IsAcyclic(A);
 ##  false

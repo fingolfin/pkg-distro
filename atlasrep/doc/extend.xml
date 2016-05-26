@@ -242,7 +242,7 @@ gap> DisplayAtlasInfo( "C4" );
 Representations for G = C4:    (all refer to std. generators 1)
 ---------------------------
 1: G <= Sym(4)*   rank 4, on cosets of 1 < C2
-2: G <= GL(1a,C)*
+2: G <= GL(1a,C)* 
 
 Programs for G = C4:    (all refer to std. generators 1)
 --------------------
@@ -259,7 +259,7 @@ Representations for G = C4:    (all refer to std. generators 1)
 gap> DisplayAtlasInfo( "C4", IsMatrixGroup );
 Representations for G = C4:    (all refer to std. generators 1)
 ---------------------------
-2: G <= GL(1a,C)*
+2: G <= GL(1a,C)* 
 gap> DisplayAtlasInfo( "C4", Dimension, 2 );
 gap> DisplayAtlasInfo( "A5", NrMovedPoints, 60 );
 Representations for G = A5:    (all refer to std. generators 1)
@@ -267,41 +267,47 @@ Representations for G = A5:    (all refer to std. generators 1)
 4: G <= Sym(60)* rank 60, on cosets of 1 < A4
 gap> info:= OneAtlasGeneratingSetInfo( "C4" );
 rec( groupname := "C4", id := "", 
-  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],
-  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",
-  repnr := 1, size := 4, stabilizer := "1 < C2", standardization := 1,
-  transitivity := 1, type := "perm" )
+  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], 
+  isPrimitive := false, p := 4, rankAction := 4, 
+  repname := "C4G1-p4B0", repnr := 1, size := 4, 
+  stabilizer := "1 < C2", standardization := 1, transitivity := 1, 
+  type := "perm" )
 gap> AtlasGenerators( info.identifier );
-rec( generators := [ (1,2,3,4) ], groupname := "C4", id := "",
-  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],
-  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",
-  repnr := 1, size := 4, stabilizer := "1 < C2", standardization := 1,
-  transitivity := 1, type := "perm" )
+rec( generators := [ (1,2,3,4) ], groupname := "C4", id := "", 
+  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], 
+  isPrimitive := false, p := 4, rankAction := 4, 
+  repname := "C4G1-p4B0", repnr := 1, size := 4, 
+  stabilizer := "1 < C2", standardization := 1, transitivity := 1, 
+  type := "perm" )
 gap> AtlasProgram( "C4", 1 );
-rec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], 
-  program := <straight line program>, size := 2, standardization := 1, 
+rec( groupname := "C4", 
+  identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], 
+  program := <straight line program>, size := 2, standardization := 1,
   subgroupname := "C2" )
 gap> AtlasProgram( "C4", "maxes", 1 );
-rec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ],
-  program := <straight line program>, size := 2, standardization := 1, 
+rec( groupname := "C4", 
+  identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], 
+  program := <straight line program>, size := 2, standardization := 1,
   subgroupname := "C2" )
 gap> AtlasProgram( "C4", "maxes", 2 );
 fail
 gap> AtlasGenerators( "C4", 1 );
 rec( generators := [ (1,2,3,4) ], groupname := "C4", id := "", 
-  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],
-  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",
-  repnr := 1, size := 4, stabilizer := "1 < C2", standardization := 1,
-  transitivity := 1, type := "perm" )
+  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], 
+  isPrimitive := false, p := 4, rankAction := 4, 
+  repname := "C4G1-p4B0", repnr := 1, size := 4, 
+  stabilizer := "1 < C2", standardization := 1, transitivity := 1, 
+  type := "perm" )
 gap> AtlasGenerators( "C4", 2 );
-rec( dim := 1, generators := [ [ [ E(4) ] ] ], groupname := "C4", id := "a", 
-  identifier := [ [ "priv", "C4" ], "C4G1-Ar1aB0.g", 1, 1 ], 
-  repname := "C4G1-Ar1aB0", repnr := 2, size := 4, standardization := 1, 
-  type := "matalg" )
+rec( dim := 1, generators := [ [ [ E(4) ] ] ], groupname := "C4", 
+  id := "a", identifier := [ [ "priv", "C4" ], "C4G1-Ar1aB0.g", 1, 1 ]
+    , repname := "C4G1-Ar1aB0", repnr := 2, size := 4, 
+  standardization := 1, type := "matalg" )
 gap> AtlasGenerators( "C4", 3 );
 fail
 gap> AtlasProgram( "C4", "other", "test" );
-rec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-XtestW1", 1 ],
+rec( groupname := "C4", 
+  identifier := [ [ "priv", "C4" ], "C4G1-XtestW1", 1 ], 
   program := <straight line program>, standardization := 1 )
 ]]></Example>
 
@@ -314,10 +320,10 @@ private directory, as follows.
 
 <Example><![CDATA[
 gap> DisplayAtlasInfo( "contents", "priv" );
-group                    | # | maxes | cl | cyc | out | fnd | chk | prs
--------------------------+---+-------+----+-----+-----+-----+-----+----
-A5*                      | 1 |       |    |     |     |     |     |
-C4*                      | 2 |     1 |    |     |   2 |     |     |
+group                    | # | maxes | cl | cyc | out | fnd | chk | p*
+-------------------------+---+-------+----+-----+-----+-----+-----+--*
+A5*                      | 1 |       |    |     |     |     |     |  *
+C4*                      | 2 |     1 |    |     |   2 |     |     |  *
 ]]></Example>
 
 <P/>

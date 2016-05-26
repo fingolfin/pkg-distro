@@ -15,13 +15,13 @@ if not IsBound( CMeatAxe.FastRead ) or CMeatAxe.FastRead <> true then
 fi;
 
 # Run the standard tests with this value.
-ReadTest( Filename( dirs, "docxpl.tst" ) );
-ReadTest( Filename( dirs, "atlasrep.tst" ) );
+Test( Filename( dirs, "docxpl.tst" ) );
+Test( Filename( dirs, "atlasrep.tst" ) );
 
 # Now run the tests with the other value.
 CMeatAxe.FastRead:= not CMeatAxe.FastRead;
-ReadTest( Filename( dirs, "docxpl.tst" ) );
-ReadTest( Filename( dirs, "atlasrep.tst" ) );
+Test( Filename( dirs, "docxpl.tst" ) );
+Test( Filename( dirs, "atlasrep.tst" ) );
 
 # Reset the value.
 CMeatAxe.FastRead:= not CMeatAxe.FastRead;

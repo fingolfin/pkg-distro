@@ -54,5 +54,13 @@ Version 2.1.4
 
   - fixed file permissions
 
+Version 2.1.5
+
+  - build only static version of gmplib, so that this one must be used
+
+Version 2.1.6
+
+  - updated config.guess
+
 
 

@@ -9,6 +9,23 @@
 ##
 
 
+if not IsBound( InitialSubstringUTF8StringWithSuffix ) then
+
+#############################################################################
+##
+#F  InitialSubstringUTF8StringWithSuffix( <string>, <n>, <suffix> )
+##
+##  If the string <A>string</A> can be printed in at most <A>n</A> visible
+##  columns then <A>string</A> is returned.
+##  Otherwise the concatenation of the longest prefix of <A>string</A>
+##  and <A>suffix</A> (a string of visible length 1) is returned
+##  such that the result fits into exactly <A>n</A> visible columns.
+##
+InitialSubstringUTF8StringWithSuffix:= "2b defined";
+
+fi;
+
+
 #############################################################################
 ##
 ##  Class Names Used in the AtlasRep Package
@@ -183,24 +200,26 @@
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> AtlasClassNames( CharacterTable( "L3(4).3" ) );
-##  [ "1A", "2A", "3A", "4ABC", "5A", "5B", "7A", "7B", "3B", "3B'", "3C", "3C'", 
-##    "6B", "6B'", "15A", "15A'", "15B", "15B'", "21A", "21A'", "21B", "21B'" ]
+##  [ "1A", "2A", "3A", "4ABC", "5A", "5B", "7A", "7B", "3B", "3B'", 
+##    "3C", "3C'", "6B", "6B'", "15A", "15A'", "15B", "15B'", "21A", 
+##    "21A'", "21B", "21B'" ]
 ##  gap> AtlasClassNames( CharacterTable( "U3(5).2" ) );
-##  [ "1A", "2A", "3A", "4A", "5A", "5B", "5CD", "6A", "7AB", "8AB", "10A", "2B", 
-##    "4B", "6D", "8C", "10B", "12B", "20A", "20B" ]
+##  [ "1A", "2A", "3A", "4A", "5A", "5B", "5CD", "6A", "7AB", "8AB", 
+##    "10A", "2B", "4B", "6D", "8C", "10B", "12B", "20A", "20B" ]
 ##  gap> AtlasClassNames( CharacterTable( "L2(27).6" ) );
-##  [ "1A", "2A", "3AB", "7ABC", "13ABC", "13DEF", "14ABC", "2B", "4A", "26ABC", 
-##    "26DEF", "28ABC", "28DEF", "3C", "3C'", "6A", "6A'", "9AB", "9A'B'", "6B", 
-##    "6B'", "12A", "12A'" ]
+##  [ "1A", "2A", "3AB", "7ABC", "13ABC", "13DEF", "14ABC", "2B", "4A", 
+##    "26ABC", "26DEF", "28ABC", "28DEF", "3C", "3C'", "6A", "6A'", 
+##    "9AB", "9A'B'", "6B", "6B'", "12A", "12A'" ]
 ##  gap> AtlasClassNames( CharacterTable( "L3(4).3.2_2" ) );
-##  [ "1A", "2A", "3A", "4ABC", "5AB", "7A", "7B", "3B", "3C", "6B", "15A", 
-##    "15B", "21A", "21B", "2C", "4E", "6E", "8D", "14A", "14B" ]
+##  [ "1A", "2A", "3A", "4ABC", "5AB", "7A", "7B", "3B", "3C", "6B", 
+##    "15A", "15B", "21A", "21B", "2C", "4E", "6E", "8D", "14A", "14B" ]
 ##  gap> AtlasClassNames( CharacterTable( "3.A6" ) );
-##  [ "1A_0", "1A_1", "1A_2", "2A_0", "2A_1", "2A_2", "3A_0", "3B_0", "4A_0", 
-##    "4A_1", "4A_2", "5A_0", "5A_1", "5A_2", "5B_0", "5B_1", "5B_2" ]
+##  [ "1A_0", "1A_1", "1A_2", "2A_0", "2A_1", "2A_2", "3A_0", "3B_0", 
+##    "4A_0", "4A_1", "4A_2", "5A_0", "5A_1", "5A_2", "5B_0", "5B_1", 
+##    "5B_2" ]
 ##  gap> AtlasClassNames( CharacterTable( "2.A5.2" ) );
-##  [ "1A_0", "1A_1", "2A_0", "3A_0", "3A_1", "5AB_0", "5AB_1", "2B_0", "4A_0", 
-##    "4A_1", "6A_0", "6A_1" ]
+##  [ "1A_0", "1A_1", "2A_0", "3A_0", "3A_1", "5AB_0", "5AB_1", "2B_0", 
+##    "4A_0", "4A_1", "6A_0", "6A_1" ]
 ##  ]]></Example>
 ##  </Description>
 ##  </ManSection>

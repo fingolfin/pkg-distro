@@ -8,7 +8,8 @@
 <Heading>Introduction to the <Package>AtlasRep</Package> Package</Heading>
 
 The aim of the &GAP;&nbsp;4 package <Package>AtlasRep</Package> is to provide
-a link between &GAP; and the <Q>&ATLAS; of Group Representations</Q>,
+a link between &GAP; and the <Q>&ATLAS; of Group Representations</Q>
+<Cite Key="AGRv3"/>,
 a database that comprises generating permutations and matrices
 for many almost simple groups,
 and information about their maximal subgroups.
@@ -90,7 +91,7 @@ Simon Norton, Simon Nickerson, Steve Linton, John Bray, and Rachel Abbott
 <P/>
 
 The information was computed and composed using computer algebra systems
-such as &MeatAxe; (see&nbsp;<Cite Key="Rin98"/>),
+such as &MeatAxe; (see&nbsp;<Cite Key="CMeatAxe"/>),
 Magma (see&nbsp;<Cite Key="CP96"/>), and &GAP;
 (in reverse alphabetical order).
 <Index Key="MeatAxe">&MeatAxe;</Index>
@@ -105,7 +106,7 @@ and&nbsp;<Cite Key="BN95"/>.
 If you use the &ATLAS; of Group Representations to solve a problem then
 please send a short email to&nbsp;&WILSONMAIL; about it.
 The &ATLAS; of Group Representations database should be referenced
-with the entry&nbsp;<Cite Key="AGR"/> in the bibliography of this manual.
+with the entry&nbsp;<Cite Key="AGRv3"/> in the bibliography of this manual.
 
 <P/>
 
@@ -123,7 +124,7 @@ as follows.
                   {V}ersion &VERSIONNUMBER;},
   month =        {&RELEASEMONTH;},
   year =         {&RELEASEYEAR;},
-  note =         {Refereed \textsf{GAP} package},
+  note =         {\textsf{GAP} package},
   howpublished = {http://www.math.rwth-aachen.de/\~{}Thomas.Breuer/atlasrep}
 }
 </Listing>
@@ -131,7 +132,7 @@ as follows.
 <P/>
 
 For referencing the &GAP; system in general,
-use the entry&nbsp;<Cite Key="GAP4412"/> in the bibliography of this manual,
+use the entry&nbsp;<Cite Key="GAP"/> in the bibliography of this manual,
 see also
 <P/>
 <URL>http://www.gap-system.org</URL>.
@@ -163,14 +164,14 @@ essentially two parts.
   such as straight line decisions and black box programs.
   This is important mainly for users interested in the actual implementation
   (e.&nbsp;g., for modifying the package) or in using it together with the
-  <C>C</C>-&MeatAxe; standalone (see&nbsp;<Cite Key="Rin98"/>);
+  <C>C</C>-&MeatAxe; standalone (see&nbsp;<Cite Key="CMeatAxe"/>);
   this is described in
   Chapter&nbsp;<Ref Chap="chap:Technicalities of the AtlasRep Package"/>.
 </Item>
 </List>
 
 Information concerning the <C>C</C>-&MeatAxe;,
-including the manual&nbsp;<Cite Key="Rin98"/>,
+including the manual&nbsp;<Cite Key="CMeatAxe"/>,
 can be found at
 
 <P/>
@@ -200,8 +201,79 @@ Compared to Older Versions?</Heading>
 <!-- The section title is referenced in index.html. -->
 <Alt Only="HTML"><![CDATA[<a id="sect:news"/>]]></Alt>
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<Subsection Label="sect:What's New in Version 1.5.1?">
+<Heading>What's New in Version &VERSIONNUMBER;?
+(&RELEASEMONTH; &RELEASEYEAR;)</Heading>
+
+<List>
+<Item>
+  The paths of the directories where downloaded data files get stored
+  are now customizable,
+  see Section <Ref Subsect="subsect:AtlasRepDataDirectory"/>.
+  Up to now, the data were stored in subdirectories of the package directory,
+  which might cause problems with write permissions, depending on the
+  installation of the package.
+  (Note that choosing other data directories can be useful also in order to
+  keep existing local data files when a new version of &GAP;
+  or of the <Package>AtlasRep</Package> package gets installed.)
+  Thanks to Bill Allombert for pointing out this problem.
+</Item>
+<Item>
+  The information about data files from the &ATLAS; of Group Representations
+  has been extended by <Ref Func="CrcFile" BookName="ref"/> values.
+  These values are checked whenever data from such a file are read,
+  and an error is signalled if the checksum does not fit to the expected one.
+  Note that several users may access the same data files,
+  and a user should not suffer from perhaps corrupted files that have been
+  downloaded by other users.
+  Thanks to Frank Lübeck for the idea to introduce this consistency test.
+</Item>
+<Item>
+  Whenever <Ref Func="StringFile" BookName="gapdoc"/> is called by functions
+  of the package, this happens in the wrapper function <C>AGR.StringFile</C>,
+  in order to replace occasional line breaks of the form <C>"\r\n"</C>
+  by <C>"\n"</C>.
+  Apparently it may happen that the <C>"\r"</C> is silently smuggled in
+  when data files get copied to the local computer.
+  Thanks to Marek Mitros for help with detecting and fixing this problem.
+</Item>
+<Item>
+  The function <Ref Func="FFMatOrPermCMtxBinary"/> can now read also
+  permutations stored in binary files that have been created with
+  version 2.4 of the C-&MeatAxe;;
+  note that this format is different from the one that is written by
+  version 2.3.
+  Conversely, <Ref Func="CMtxBinaryFFMatOrPerm"/> has been generalized
+  such that both formats can be written.
+  The reference to the C-&MeatAxe; documentation now points to that
+  of version 2.4.
+  Thanks to Jürgen Müller for pointing out this problem.
+</Item>
+<Item>
+  The function <Ref Func="MeatAxeString"/> can now encode
+  permutation matrices in different ways.
+  The mode (the first header entry) can be either 2 (then the positions of
+  the nonzero entries are listed) or 1 or 6 (then all entries of the matrix
+  are listed).
+  In previous versions, the function produced a matrix of mode 2
+  whenever this was possible, but this behaviour is not useful if the result
+  is not processed by the C-&MeatAxe;.
+  Thanks to Klaus Lux for pointing out this problem.
+</Item>
+<Item>
+  Depending on the terminal capabilities and the value of
+  <C>AtlasOfGroupRepresentationsInfo.displayFunction</C>,
+  some non-ASCII characters may appear in the output shown by
+  <Ref Func="DisplayAtlasInfo"/>.
+</Item>
+</List>
+
+</Subsection>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Subsection Label="sect:What's New in Version 1.5?">
-<Heading>What's New in Version 1.5?</Heading>
+<Heading>What's New in Version 1.5? (July 2011)</Heading>
  
 <List>
 <Item>
@@ -318,7 +390,7 @@ Compared to Older Versions?</Heading>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Subsection Label="sect:What's New in Version 1.4?">
-<Heading>What's New in Version 1.4?</Heading>
+<Heading>What's New in Version 1.4? (June 2008)</Heading>
  
 <List>
 <Item>
@@ -388,7 +460,7 @@ Compared to Older Versions?</Heading>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Subsection Label="sect:What's New in Version 1.3.1?">
-<Heading>What's New in Version 1.3.1?</Heading>
+<Heading>What's New in Version 1.3.1? (October 2007)</Heading>
  
 This version was mainly released in order to fix a few problems.
 Now one does not get warnings about unbound variables
@@ -416,7 +488,7 @@ version 4.4.10 of &GAP;.)
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Subsection Label="sect:What's New in Version 1.3?">
-<Heading>What's New in Version 1.3?</Heading>
+<Heading>What's New in Version 1.3? (June 2007)</Heading>
  
 <List>
 <Item>
@@ -519,7 +591,7 @@ version 4.4.10 of &GAP;.)
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Subsection Label="sect:What's New in Version 1.2?">
-<Heading>What's New in Version 1.2?</Heading>
+<Heading>What's New in Version 1.2? (November 2003)</Heading>
 
 Not much.
 
@@ -544,7 +616,7 @@ This opportunity was used
 <Item>
     to extend the test suite, 
     which now covers more consistency checks using
-    the &GAP; Character Table Library&nbsp;<Cite Key="CTblLib1.1.3"/>,
+    the &GAP; Character Table Library&nbsp;<Cite Key="CTblLib"/>,
 </Item>
 <Item>
     to make the function <Ref Func="ScanMeatAxeFile"/> more robust,
@@ -578,7 +650,7 @@ over finite fields is now faster than it was in &GAP;&nbsp;4.3.
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Subsection Label="sect:What's New in Version 1.1?">
-<Heading>What's New in Version 1.1?</Heading>
+<Heading>What's New in Version 1.1? (October 2002)</Heading>
 
 The biggest change w.r.t.&nbsp;Version&nbsp;1.1 is the addition of
 private extensions
@@ -665,67 +737,62 @@ have been improved.
 
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<Section Label="sect:Acknowledgments">
-<Heading>Acknowledgments</Heading>
+<Section Label="sect:Acknowledgements">
+<Heading>Acknowledgements</Heading>
 
-The perl script<Index Key="perl"><F>perl</F></Index>
-that had been used for fetching remote data until version&nbsp;1.2
-had been kindly provided by Frank Lübeck and Max Neunhöffer.
-Thanks also to Greg Gamble and Alexander Hulpke for technical hints
-concerning <Q>standard</Q> perl.
-
-<P/>
-
-Ulrich Kaiser helped with preparing the package for MS Windows.
-
-<P/>
-
-The idea to support private extensions of the package
-(see Chapter&nbsp;<Ref Chap="chap:Private Extensions"/>)
-is due to Klaus Lux.
-He used a preliminary version of <Package>AtlasRep</Package> Version&nbsp;1.1,
-and helped to fix several bugs.
-
-<P/>
-
-The functions <Ref Func="CMtxBinaryFFMatOrPerm"/> and
-<Ref Func="FFMatOrPermCMtxBinary"/> were contributed by Frank Lübeck.
-
-<P/>
-
-The &GAPDoc; package <Cite Key="GAPDoc"/>,
-which is used for processing the manual of the <Package>AtlasRep</Package>
-package and for processing the bibliographies included in this package
-(see <Ref Func="BrowseBibliographySporadicSimple"/>),
-was written by Frank Lübeck and Max Neunhöffer.
-
-<P/>
-
-The &GAP; package <Package>IO</Package> <Cite Key="IO"/>,
-which is recommended for transferring data,
-was written by Max Neunhöffer.
-
-<P/>
-
-Max has also suggested the generalization of the data access described in
-Section&nbsp;<Ref Subsect="subsect:Customizing the Access to Data files"/>,
-and the admissibility of the function
-<Ref Func="Character" Label="for a character table and a list" BookName="ref"/>
-as a filter in <Ref Func="DisplayAtlasInfo"/>,
-<Ref Func="OneAtlasGeneratingSetInfo"/>, and
-<Ref Func="AllAtlasGeneratingSetInfos"/>.
-
-<P/>
-
-Gunter Malle suggested to make the information about representations
-of minimal degree accessible,
-see Section&nbsp;<Ref Sect="sect:Representations of Minimal Degree"/>.
-
-<P/>
-
-Andries Brouwer suggested to add a tutorial,
-see Chapter <Ref Chap="chap:tutorial"/>.
-Klaus Lux suggested several improvements of this new chapter.
+<List>
+<Item>
+    Frank Lübeck and Max Neunhöffer kindly provided
+    the perl script<Index Key="perl"><F>perl</F></Index> that had been used
+    for fetching remote data until version&nbsp;1.2.
+    Thanks also to Greg Gamble and Alexander Hulpke for technical hints
+    concerning <Q>standard</Q> perl.
+</Item>
+<Item>
+    Ulrich Kaiser helped with preparing the package for MS Windows.
+</Item>
+<Item>
+    Klaus Lux had the idea to support private extensions of the package,
+    see Chapter&nbsp;<Ref Chap="chap:Private Extensions"/>
+    and helped to fix several bugs.
+</Item>
+<Item>
+    Frank Lübeck contributed the functions
+    <Ref Func="CMtxBinaryFFMatOrPerm"/> and
+    <Ref Func="FFMatOrPermCMtxBinary"/>.
+</Item>
+<Item>
+    Frank Lübeck and Max Neunhöffer wrote
+    the &GAPDoc; package <Cite Key="GAPDoc"/>,
+    which is used for processing the documentation of the
+    <Package>AtlasRep</Package> package
+    and for processing the bibliographies included in this package
+    (see <Ref Func="BrowseBibliographySporadicSimple"/>),
+</Item>
+<Item>
+    Max Neunhöffer wrote the &GAP; package <Package>IO</Package>
+    <Cite Key="IO"/>, which is recommended for transferring data.
+</Item>
+<Item>
+    Max has also suggested the generalization of the data access described in
+    Section&nbsp;<Ref Sect="sect:How to Customize the Access to Data files"/>,
+    and the admissibility of the function
+    <Ref Func="Character" Label="for a character table and a list" BookName="ref"/>
+    as a filter in <Ref Func="DisplayAtlasInfo"/>,
+    <Ref Func="OneAtlasGeneratingSetInfo"/>, and
+    <Ref Func="AllAtlasGeneratingSetInfos"/>.
+</Item>
+<Item>
+    Gunter Malle suggested to make the information about representations
+    of minimal degree accessible,
+    see Section&nbsp;<Ref Sect="sect:Representations of Minimal Degree"/>.
+</Item>
+<Item>
+    Andries Brouwer suggested to add a tutorial
+    (see Chapter <Ref Chap="chap:tutorial"/>),
+    Klaus Lux suggested several improvements of this chapter.
+</Item>
+</List>
 
 </Section>
 

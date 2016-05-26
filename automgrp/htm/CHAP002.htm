@@ -8,10 +8,12 @@
 <li> <A HREF="CHAP002.htm#SECT001">Creation of groups and semigroups</a>
 <li> <A HREF="CHAP002.htm#SECT002">Basic properties of groups and semigroups</a>
 <li> <A HREF="CHAP002.htm#SECT003">Operations with groups and semigroups</a>
-<li> <A HREF="CHAP002.htm#SECT004">Self-similar groups and semigroups defined by wreath recursion</a>
+<li> <A HREF="CHAP002.htm#SECT004">Self-similar groups and semigroups defined by the wreath recursion</a>
 <li> <A HREF="CHAP002.htm#SECT005">Contracting groups</a>
 <li> <A HREF="CHAP002.htm#SECT006">Rewriting Systems</a>
 </ol><p>
+<p>
+In this chapter we present the functionality applicable to groups and semigroups.
 <p>
 <p>
 <h2><a name="SECT001">2.1 Creation of groups and semigroups</a></h2>
@@ -64,16 +66,6 @@ looks like
 <pre>
 gap&gt; AutomatonGroup([ [ 1, 2, ()], [ 1, 2, (1,2) ] ], [ "a", "b" ]);
 &lt; a, b &gt;
-</pre>
-The <var>bind_vars</var> argument works as follows
-<pre>
-gap&gt; AutomatonGroup("t = (1, t)(1,2)", false);;
-gap&gt; t;
-Variable: 't' must have a value
-
-gap&gt; AutomatonGroup("t = (1, t)(1,2)", true);;
-gap&gt; t;
-t
 </pre>
 <p>
 <a name = "SSEC001.2"></a>
@@ -168,16 +160,6 @@ looks like
 gap&gt; SelfSimilarGroup([[ [1,2], [-2], ()], [ [], [2,2,1], (1,2) ]], ["a","b"]);
 &lt; a, b &gt;
 </pre>
-The <var>bind_vars</var> argument works as follows
-<pre>
-gap&gt; SelfSimilarGroup("t = (t^2, t)(1,2)", false);;
-gap&gt; t;
-Variable: 't' must have a value
-
-gap&gt; SelfSimilarGroup("t = (t^2, t)(1,2)", true);;
-gap&gt; t;
-t
-</pre>
 <p>
 <a name = "SSEC001.4"></a>
 <li><code>SelfSimilarSemigroup( </code><var>string</var><code>[, </code><var>bind_vars</var><code>] ) O</code>
@@ -227,16 +209,6 @@ looks like
 <pre>
 gap&gt; SelfSimilarSemigroup([[[1,2], [2], ()], [[1], [2,2,1], (1,2)]],["a","b"]);
 &lt; a, b &gt;
-</pre>
-The <var>bind_vars</var> argument works as follows
-<pre>
-gap&gt; SelfSimilarSemigroup("t = (t^2, t)(1,2)", false);;
-gap&gt; t;
-Variable: 't' must have a value
-
-gap&gt; SelfSimilarSemigroup("t = (t^2, t)(1,2)", true);;
-gap&gt; t;
-t
 </pre>
 <p>
 <a name = "SSEC001.5"></a>
@@ -294,9 +266,9 @@ words, if <var>G</var> acts transitively on the first level and for any vertex <
 the projection of the stabilizer of <i>v</i> in <var>G</var>
 on this vertex coincides with the whole group <var>G</var>.
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; IsFractal(GrigorchukGroup);
+gap&gt; IsFractal(Grigorchuk_Group);
 true
 </pre>
 <p>
@@ -310,14 +282,13 @@ group for each stabilizer, and the <var>G</var> acts transitively on the first l
 This is sufficient but not necessary condition for <var>G</var> to be fractal. See also
 <code>IsFractal</code> (<a href="CHAP002.htm#SSEC002.3">IsFractal</a>).
 <p>
-<a name = "SSEC002.5"></a>
-<li><code>IsSphericallyTransitive( </code><var>G</var><code> ) P</code>
+<li><code>IsSphericallyTransitive( </code><var>G</var><code> ) [treehomsg] P</code>
 <p>
 Returns whether the group <var>G</var> is spherically transitive (see&nbsp;<a href="CHAP001.htm#SECT001">Short math background</a>).
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; IsSphericallyTransitive(GrigorchukGroup);
+gap&gt; IsSphericallyTransitive(Grigorchuk_Group);
 true
 </pre>
 <p>
@@ -338,13 +309,12 @@ gap&gt; ContainsSphericallyTransitiveElement(G);
 false
 </pre>
 <p>
-<a name = "SSEC002.7"></a>
-<li><code>IsTransitiveOnLevel( </code><var>G</var><code>, </code><var>lev</var><code> ) O</code>
+<li><code>IsTransitiveOnLevel( </code><var>G</var><code>, </code><var>lev</var><code> ) [treehomsg] O</code>
 <p>
 Returns whether the group (semigroup) <var>G</var> acts transitively on level <var>lev</var>.
 <p>
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
 gap&gt; IsTransitiveOnLevel(Group([a,b]),3);
 true
@@ -481,11 +451,10 @@ print for each length the words that are not contracted.  It also sometimes help
 <code>AG_UseRewritingSystem</code> (see <a href="CHAP002.htm#SSEC006.1">AG_UseRewritingSystem</a>).
 <p>
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; UseAGRewritingSystem(GrigorchukGroup);
-true
-gap&gt; IsOfSubexponentialGrowth(GrigorchukGroup,10,6);
+gap&gt; AG_UseRewritingSystem(Grigorchuk_Group);
+gap&gt; IsOfSubexponentialGrowth(Grigorchuk_Group,10,6);
 true
 </pre>
 <p>
@@ -497,9 +466,9 @@ some virtually abelian groups or finite groups) returns <code>true</code> if <va
 amenable.
 <p>
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; IsAmenable(GrigorchukGroup);
+gap&gt; IsAmenable(Grigorchuk_Group);
 true
 </pre>
 <p>
@@ -513,19 +482,18 @@ gap&gt; GS := AutomatonSemigroup("x=(x,y)[1,1], y=(y,y)(1,2)");
 &lt; x, y &gt;
 gap&gt; A := UnderlyingAutomaton(GS);
 &lt;automaton&gt;
-gap&gt; Print(A);
+gap&gt; Display(A);
 a1 = (a1, a2)[ 1, 1 ], a2 = (a2, a2)[ 2, 1 ]
 </pre>
 For a subgroup of Basilica group we get the automaton generating Basilica group.
 <pre>
 gap&gt; H := Group([u*v^-1,v^2]);
 &lt; u*v^-1, v^2 &gt;
-gap&gt; Print(UnderlyingAutomaton(H));
+gap&gt; Display(UnderlyingAutomaton(H));
 a1 = (a1, a1), a2 = (a3, a1)(1,2), a3 = (a2, a1)
 </pre>
 <p>
-<a name = "SSEC002.17"></a>
-<li><code>AutomatonList( </code><var>G</var><code> ) AM</code>
+<li><code>AutomatonList( </code><var>G</var><code> ) [automsg] AM</code>
 <p>
 Returns an <code>AutomatonList</code> of <code>UnderlyingAutomaton</code>(<var>G</var>) (see <a href="CHAP002.htm#SSEC002.16">UnderlyingAutomaton</a>).
 <pre>
@@ -535,8 +503,7 @@ gap&gt; AutomatonList(Basilica);
 [ [ 2, 5, (1,2) ], [ 1, 5, () ], [ 5, 4, (1,2) ], [ 3, 5, () ], [ 5, 5, () ] ]
 </pre>
 <p>
-<a name = "SSEC002.18"></a>
-<li><code>RecurList( </code><var>G</var><code> ) AM</code>
+<li><code>RecurList( </code><var>G</var><code> ) [selfsimsg] AM</code>
 <p>
 Returns an internal representation of the wreath recursion of the
 self-similar group (semigroup) containing <var>G</var>.
@@ -573,10 +540,10 @@ gap&gt; Size(H);
 Returns the semigroup of transformations induced by the action of the semigroup <var>G</var> at the <var>k</var>-th
 level.
 <pre>
-gap&gt; S:=AutomatonSemigroup("y=(1,u)[1,1],u=(y,u)(1,2)");
+gap&gt; S := AutomatonSemigroup("y=(1,u)[1,1],u=(y,u)(1,2)");
 &lt; 1, y, u &gt;
-gap&gt; T:=TransformationSemigroupOnLevel(S,3);
-&lt;semigroup with 3 generators&gt;
+gap&gt; T := TransformationSemigroupOnLevel(S,3);
+&lt;transformation monoid on 8 pts with 2 generators&gt;
 gap&gt; Size(T);
 11
 </pre>
@@ -589,8 +556,8 @@ Returns the stabilizer of the <var>k</var>-th level.
 gap&gt; Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 &lt; u, v &gt;
 gap&gt; StabilizerOfLevel(Basilica, 2);
-&lt; u*v^2*u^-1, u*v*u*v^2*u^-1*v^-1*u^-1, v^2, v*u^2*v^-1, u*v*u^2*v^-1*u^-1, u^
-2, v*u*v*u*v^-1*u^-1*v^-1*u^-1 &gt;
+&lt; u^2, v^2, u*v^2*u^-1, v*u^2*v^-1, u*v*u^2*v^-1*u^-1, (v*u)^2*(v^-1*u^-1)^2, v*u*\
+v^2*u^-1*v^-1, (u*v)^2*u*v^-1*u^-1*v^-1, (u*v)^2*v*u^-1*v^-1*u^-1 &gt;
 </pre>
 <p>
 <a name = "SSEC003.4"></a>
@@ -601,7 +568,7 @@ Returns the stabilizer of the first level, see also&nbsp;<a href="CHAP002.htm#SS
 gap&gt; Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 &lt; u, v &gt;
 gap&gt; StabilizerOfFirstLevel(Basilica);
-&lt; u^2, u*v*u^-1, v &gt;
+&lt; v, u^2, u*v*u^-1 &gt;
 </pre>
 <p>
 <a name = "SSEC003.5"></a>
@@ -613,8 +580,8 @@ vertex, or a positive integer representing a vertex at the first level.
 gap&gt; Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 &lt; u, v &gt;
 gap&gt; StabilizerOfVertex(Basilica, [1,2,1]);
-&lt; v*u^4*v^-1, v*u^2*v^2*u^-2*v^-1, v^2, u^2, v*u^2*v*u^2*v^-1*u^-2*v^
--1, u*v*u^-1, v*u^-1*v*u*v^-1, v*u^2*v*u*v*u^-1*v^-1*u^-2*v^-1 &gt;
+&lt; u^2, u*v*u^-1, v^2, v*u*v*u^-1*v^-1, v*u^-1*v*u*v^-1, v*u^4*v^-1, v*u^2*v^2*u^-2\
+*v^-1, (v*u^2)^2*v^-1*u^-2*v^-1, v*u*(u*v)^2*u^-1*v^-1*u^-2*v^-1 &gt;
 </pre>
 <p>
 <a name = "SSEC003.6"></a>
@@ -642,7 +609,7 @@ same thing, except it does not check whether <var>G</var> fixes the vertex <var>
 gap&gt; Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 &lt; u, v &gt;
 gap&gt; Projection(StabilizerOfVertex(Basilica, [1,2,1]), [1,2,1]);
-&lt; v, u &gt;
+&lt; u, v &gt;
 </pre>
 <p>
 <a name = "SSEC003.9"></a>
@@ -655,7 +622,7 @@ Returns the projection of the stabilizer of <var>v</var> at itself. It is a shor
 gap&gt; Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 &lt; u, v &gt;
 gap&gt; ProjStab(Basilica, [1,2,1]);
-&lt; v, u &gt;
+&lt; u, v &gt;
 </pre>
 <p>
 <a name = "SSEC003.10"></a>
@@ -690,8 +657,8 @@ u^-2*v*u^-2*v^-1*u^2*v*u^2*v^-1
 gap&gt; FindGroupRelations([(1,2)(3,4), (1,2,3)], ["x", "y"]);
 x^2
 y^-3
-y^-1*x*y^-1*x*y^-1*x
-[ x^2, y^-3, y^-1*x*y^-1*x*y^-1*x ]
+(y^-1*x)^3
+[ x^2, y^-3, (y^-1*x)^3 ]
 </pre>
 <p>
 <a name = "SSEC003.11"></a>
@@ -718,12 +685,12 @@ y*x^3*y^2=x^2*y^3*x
 y^2*x^3*y=x*y^3*x^2
 [ [ y*x^2*y, x*y^2*x ], [ y*x^3*y^2, x^2*y^3*x ], [ y^2*x^3*y, x*y^3*x^2 ] ]
 gap&gt; FindSemigroupRelations([u*v^-1, v*u],6);
-v*u^2*v^-1*u^2=u^2*v*u^2*v^-1
-v*u^2*v^-1*u*v^-1*u^2*v*u=u*v^-1*u^2*v*u*v*u^2*v^-1
-v*u*v*u^2*v^-1*u*v^-1*u^2=u^2*v*u*v*u^2*v^-1*u*v^-1
+v*u^2*v^-1*u^2 = u^2*v*u^2*v^-1
+v*u*(u*v^-1)^2*u^2*v*u = u*v^-1*u*(u*v)^2*u^2*v^-1
+(v*u)^2*(u*v^-1)^2*u^2 = u*(u*v)^2*u*(u*v^-1)^2
 [ [ v*u^2*v^-1*u^2, u^2*v*u^2*v^-1 ],
-  [ v*u^2*v^-1*u*v^-1*u^2*v*u, u*v^-1*u^2*v*u*v*u^2*v^-1 ],
-  [ v*u*v*u^2*v^-1*u*v^-1*u^2, u^2*v*u*v*u^2*v^-1*u*v^-1 ] ]
+  [ v*u*(u*v^-1)^2*u^2*v*u, u*v^-1*u*(u*v)^2*u^2*v^-1 ],
+  [ (v*u)^2*(u*v^-1)^2*u^2, u*(u*v)^2*u*(u*v^-1)^2 ] ]
 gap&gt; x := Transformation([1,1,2]);;
 gap&gt; y := Transformation([2,2,3]);;
 gap&gt; FindSemigroupRelations([x,y],["x","y"]);
@@ -738,12 +705,12 @@ x^2*y=x*y
 <li><code>Iterator( </code><var>G</var><code>[, </code><var>max_len</var><code>] ) M</code>
 <p>
 Provides a possibility to loop over elements of a group (semigroup, monoid)
-generated by automata. If <var>max_len</var>  is given stops after enumerating all elements
+generated by automata. If <var>max_len</var>  is given, it stops after enumerating all elements
 of length up to <var>max_len</var>.
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; iter := Iterator(GrigorchukGroup, 5);
+gap&gt; iter := Iterator(Grigorchuk_Group, 5);
 &lt;iterator&gt;
 gap&gt; l:=[];;
 gap&gt; for g in iter do
@@ -772,14 +739,14 @@ more general settings whenever <font face="Gill Sans,Helvetica,Arial">GAP</font>
 The following example illustrates how to find an element of order 16 in
 Grigorchuk group and the list of all such elements of length at most 5.
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; FindElement(GrigorchukGroup, Order, 16, 5);
+gap&gt; FindElement(Grigorchuk_Group, Order, 16, 5);
 a*b
-gap&gt; FindElements(GrigorchukGroup,Order,16,5);
-[ a*b, b*a, c*a*d, d*a*c, a*b*a*d, a*c*a*d, a*d*a*b, a*d*a*c, b*a*d*a,
-  c*a*d*a, d*a*b*a, d*a*c*a, a*c*a*d*a, a*d*a*c*a, b*a*b*a*c, b*a*c*a*c,
-  c*a*b*a*b, c*a*c*a*b ]
+gap&gt; FindElements(Grigorchuk_Group,Order,16,5);
+[ a*b, b*a, c*a*d, d*a*c, a*b*a*d, a*c*a*d, a*d*a*b, a*d*a*c, b*a*d*a, c*a*d*a,
+  d*a*b*a, d*a*c*a, a*c*a*d*a, a*d*a*c*a, (b*a)^2*c, b*(a*c)^2, c*(a*b)^2,
+  (c*a)^2*b ]
 </pre>
 <p>
 <a name = "SSEC003.14"></a>
@@ -830,9 +797,9 @@ Returns a list of the first values of the growth function of a group
 If <var>G</var> is a monoid it computes the growth function at {0,1,&#8230;,<i>max</i><sub><i>l</i></sub><i>en</i> },
 and for a semigroup without identity at {1,&#8230;,<i>max</i><sub><i>l</i></sub><i>en</i> }.
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; Growth(GrigorchukGroup, 7);
+gap&gt; Growth(Grigorchuk_Group, 7);
 There are 11 elements of length up to 2
 There are 23 elements of length up to 3
 There are 40 elements of length up to 4
@@ -852,9 +819,9 @@ gap&gt; Growth(H,6);
 Returns the list of all different elements of a group (semigroup, monoid)
 <var>G</var> up to length <var>max_len</var>.
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; ListOfElements(GrigorchukGroup, 3);
+gap&gt; ListOfElements(Grigorchuk_Group, 3);
 [ 1, a, b, c, d, a*b, a*c, a*d, b*a, c*a, d*a, a*b*a, a*c*a, a*d*a, b*a*b,
   b*a*c, b*a*d, c*a*b, c*a*c, c*a*d, d*a*b, d*a*c, d*a*d ]
 </pre>
@@ -862,7 +829,7 @@ gap&gt; ListOfElements(GrigorchukGroup, 3);
 <a name = "SSEC003.18"></a>
 <li><code>FindNucleus( </code><var>G</var><code>[, </code><var>max_nucl</var><code>, </code><var>print_info</var><code>] ) O</code>
 <p>
-Given a self-similar group <var>G</var> it tries to find its nucleus. If the group
+Given a self-similar group <var>G</var> it tries to find its nucleus. If <var>G</var>
 is not contracting it will loop forever. When it finds the nucleus it returns
 the triple [<code>GroupNucleus</code>(<var>G</var>), <code>GeneratingSetWithNucleus</code>(<var>G</var>),
 <code>GeneratingSetWithNucleusAutom</code>(<var>G</var>)] (see <a href="CHAP002.htm#SSEC005.1">GroupNucleus</a>, <a href="CHAP002.htm#SSEC005.2">GeneratingSetWithNucleus</a>,
@@ -907,7 +874,9 @@ gap&gt; LevelOfFaithfulAction(H);
 3
 gap&gt; Size(H);
 16
-gap&gt; LevelOfFaithfulAction(AddingMachine, 10);
+gap&gt; Adding_Machine := AutomatonGroup("a=(1,a)(1,2)");
+&lt; a &gt;
+gap&gt; LevelOfFaithfulAction(Adding_Machine, 10);
 fail
 </pre>
 <p>
@@ -928,7 +897,7 @@ If <var>G</var> is infinite and <var>max_lev</var> is not specified it will loop
 <p>
 For example, consider a subgroup &#9001;<i>a</i>, <i>b</i>&#9002; of Grigorchuk group.
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
 gap&gt; f := IsomorphismPermGroup(Group(a, b));
 MappingByFunction( &lt; a, b &gt;, Group(
@@ -994,7 +963,7 @@ gap&gt; MarkovOperator(L,3,["a","b","c","d"]);
 </pre>
 In the case of semigroups we have:
 <pre>
-gap&gt; S:=AutomatonSemigroup("c=(c,d)[1,1],d=(c,c)(1,2)");
+gap&gt; S := AutomatonSemigroup("c=(c,d)[1,1],d=(c,c)(1,2)");
 &lt; c, d &gt;
 gap&gt; MarkovOperator(S,3,["w1","w2"]);
 [ [ w1, 0, 0, 0, w2, 0, 0, 0 ], [ w1, 0, 0, 0, w2, 0, 0, 0 ],
@@ -1008,8 +977,7 @@ gap&gt; MarkovOperator(S,3,[1/3,2/3]);
   [ 1/3, 2/3, 0, 0, 0, 0, 0, 0 ], [ 1, 0, 0, 0, 0, 0, 0, 0 ] ]
 </pre>
 <p>
-<a name = "SSEC003.23"></a>
-<li><code>MihailovaSystem( </code><var>G</var><code> ) AM</code>
+<li><code>MihailovaSystem( </code><var>G</var><code> ) [automgroup] AM</code>
 <p>
 In the case when <var>G</var> is an automaton fractal group acting on a binary
 tree, computes the generating set for the first level stabilizer in G
@@ -1018,10 +986,10 @@ viewed as elements of <i>F</i><sub><i>r</i></sub>&times;<i>F</i><sub><i>r</i></s
 See&nbsp;<a href="biblio.htm#GSESS"><cite>GSESS</cite></a> for details.
 <p>
 <pre>
-gap&gt; G:=AutomatonGroup("a=(b,c)(1,2),b=(a,c),c=(a,a)");
+gap&gt; G := AutomatonGroup("a=(b,c)(1,2),b=(a,c),c=(a,a)");
 &lt; a, b, c &gt;
-gap&gt; M:=MihailovaSystem(G);
-[ c^-1*b, c^-1*b^-1*c*a^-1*b*c*b^-1*a, a^-1*b*c*b^-1*a, a*c^-1*b^-1*a*c, 
+gap&gt; M := MihailovaSystem(G);
+[ c^-1*b, c^-1*b^-1*c*a^-1*b*c*b^-1*a, a^-1*b*c*b^-1*a, a*c^-1*b^-1*a*c,
   c^-1*a^-1*b*c*a ]
 gap&gt; for g in M do
 &gt;      Print(g,"=",Decompose(g),"\n");
@@ -1066,7 +1034,7 @@ gap&gt; Decompose(uu);
 Returns the family to which the elements of <var>G</var> belong.
 <p>
 <p>
-<h2><a name="SECT004">2.4 Self-similar groups and semigroups defined by wreath recursion</a></h2>
+<h2><a name="SECT004">2.4 Self-similar groups and semigroups defined by the wreath recursion</a></h2>
 <p><p>
 <a name = "SSEC004.1"></a>
 <li><code>IsFiniteState( </code><var>G</var><code> ) P</code>
@@ -1086,7 +1054,7 @@ For a finite-state semigroup it computes the corresponding attributes
 <code>IsomorphicAutomSemigroup</code>(<var>G</var>) (<a href="CHAP002.htm#SSEC004.3">IsomorphicAutomSemigroup</a>) and
 <code>MonomorphismToAutomatonSemigroup</code>(<var>G</var>) (<a href="CHAP002.htm#SSEC004.7">MonomorphismToAutomatonSemigroup</a>).
 <pre>
-gap&gt; W:=SelfSimilarGroup("x=(x^-1,y)(1,2), y=(z^-1,1)(1,2), z=(1,x*y)");
+gap&gt; W := SelfSimilarGroup("x=(x^-1,y)(1,2), y=(z^-1,1)(1,2), z=(1,x*y)");
 &lt; x, y, z &gt;
 gap&gt; IsFiniteState(W);
 true
@@ -1249,14 +1217,14 @@ gap&gt; GeneratingSetWithNucleus(Basilica);
 <a name = "SSEC005.3"></a>
 <li><code>GeneratingSetWithNucleusAutom( </code><var>G</var><code> ) AM</code>
 <p>
-Computes the automaton of the generating set that includes the nucleus of the contracting group <var>G</var>.
+Computes the automaton of the generating set that includes the nucleus of a contracting group <var>G</var>.
 See also <code>GeneratingSetWithNucleus</code> (<a href="CHAP002.htm#SSEC005.2">GeneratingSetWithNucleus</a>).
 <pre>
 gap&gt; Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 &lt; u, v &gt;
 gap&gt; B_autom := GeneratingSetWithNucleusAutom(Basilica);
 &lt;automaton&gt;
-gap&gt; Print(B_autom);
+gap&gt; Display(B_autom);
 a1 = (a1, a1), a2 = (a3, a1)(1,2), a3 = (a2, a1), a4 = (a1, a5)
 (1,2), a5 = (a4, a1), a6 = (a1, a7)(1,2), a7 = (a6, a1)(1,2)
 </pre>
@@ -1269,15 +1237,17 @@ Given a contracting group <var>G</var> with generating set <i>N</i> that include
 minimal level <i>n</i>, such that for every vertex <i>v</i> of the <i>n</i>-th
 level and all <i>g</i>, <i>h</i>  &#8712; <i>N</i> the section <i>gh</i>&#124;<sub><i>v</i></sub>  &#8712; <i>N</i>.
 <p>
-In case if it is not known whether <var>G</var> is contracting it first tries to compute
+In the case if it is not known whether <var>G</var> is contracting, it first tries to compute
 the nucleus. If <var>G</var> happens to be noncontracting, it will loop forever. One can
 also use <code>IsNoncontracting</code> (see <a href="CHAP002.htm#SSEC002.10">IsNoncontracting</a>) or <code>FindNucleus</code> (see
 <a href="CHAP002.htm#SSEC003.18">FindNucleus</a>) directly.
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; ContractingLevel(GrigorchukGroup);
+gap&gt; ContractingLevel(Grigorchuk_Group);
 1
+gap&gt; Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
+&lt; u, v &gt;
 gap&gt; ContractingLevel(Basilica);
 2
 </pre>
@@ -1285,7 +1255,7 @@ gap&gt; ContractingLevel(Basilica);
 <a name = "SSEC005.5"></a>
 <li><code>ContractingTable( </code><var>G</var><code> ) AM</code>
 <p>
-Given a contracting group <var>G</var> with generating set <i>N</i>  of size <i>k</i> that includes the nucleus, stored in
+Given a contracting group <var>G</var> with a generating set <i>N</i>  of size <i>k</i> that includes the nucleus, stored in
 <code>GeneratingSetWithNucleus</code>(<var>G</var>)&nbsp;(see <a href="CHAP002.htm#SSEC005.2">GeneratingSetWithNucleus</a>)
 computes the <i>k</i>&times;<i>k</i> table, whose
 [i][j]-th entry contains decomposition of <i>N</i>[i]<i>N</i>[j] on
@@ -1293,14 +1263,14 @@ the <code>ContractingLevel</code>(<var>G</var>) level&nbsp;(see <a href="CHAP002
 <i>N</i>[i]<i>N</i>[j] on this level belong to <i>N</i>. This table is used in the
 algorithm solving the word problem in polynomial time.
 <p>
-In case if it is not known whether <var>G</var> is contracting it first tries to compute
+In the case if it is not known whether <var>G</var> is contracting it first tries to compute
 the nucleus. If <var>G</var> happens to be noncontracting, it will loop forever. One can
 also use <code>IsNoncontracting</code> (see <a href="CHAP002.htm#SSEC002.10">IsNoncontracting</a>) or <code>FindNucleus</code> (see
 <a href="CHAP002.htm#SSEC003.18">FindNucleus</a>) directly.
 <pre>
-gap&gt; GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+gap&gt; Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 &lt; a, b, c, d &gt;
-gap&gt; ContractingTable(GrigorchukGroup);
+gap&gt; ContractingTable(Grigorchuk_Group);
 [ [ (1, 1), (1, 1)(1,2), (a, c), (a, d), (1, b) ],
   [ (1, 1)(1,2), (1, 1), (c, a)(1,2), (d, a)(1,2), (b, 1)(1,2) ],
   [ (a, c), (a, c)(1,2), (1, 1), (1, b), (a, d) ],
@@ -1338,31 +1308,35 @@ gap&gt; Size(GroupNucleus(G));
 gap&gt; ContractingLevel(G);
 6
 gap&gt; ContractingTable(G);; time;
-11336
+4719
 gap&gt; v := a*b*a*b^2*c*b*c*b^-1*a^-1*b^-1*a^-1;;
 gap&gt; w := b*c*a*b*a*b*c^-1*b^-2*a^-1*b^-1*a^-1;;
 gap&gt; UseContraction(G);;
 gap&gt; IsOne(Comm(v,w)); time;
 true
-251
-gap&gt; FindGroupRelations(G, 5);; time;
+110
+gap&gt; FindGroupRelations(G, 9);; time;
 a^2
 b^2
 c^2
-b*a*b*c*a*b*a*b*c*a
-b*c*a*c*a*b*c*a*c*a
-881
+(b*a*b*c*a)^2
+(b*(c*a)^2)^2
+(b*c*b*a*(b*c)^2*a)^2
+(b*(c*b*c*a)^2)^2
+11578
 gap&gt; DoNotUseContraction(G);;
 gap&gt; IsOne(Comm(v,w)); time;
 true
-3855
-gap&gt; FindGroupRelations(G, 5);; time;
+922
+gap&gt; FindGroupRelations(G, 9);; time;
 a^2
 b^2
 c^2
-b*a*b*c*a*b*a*b*c*a
-b*c*a*c*a*b*c*a*c*a
-451
+(b*a*b*c*a)^2
+(b*(c*a)^2)^2
+(b*c*b*a*(b*c)^2*a)^2
+(b*(c*b*c*a)^2)^2
+23719
 </pre>
 <p>
 <p>
@@ -1463,5 +1437,5 @@ gap&gt; AG_RewritingSystemRules(G);
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>automgrp manual<br>January 2014
+<address>automgrp manual<br>March 2016
 </address></body></html>

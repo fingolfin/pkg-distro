@@ -8,7 +8,7 @@ the <font face="Gill Sans,Helvetica,Arial">GAP</font> 4 root directories. We ass
 <p>
 <pre>
 cd /gap4/pkg
-tar zpxf carat-2.1.4.tar.gz
+tar zpxf carat-2.1.6.tar.gz
 </pre>
 <p>
 This creates a subdirectory <code>carat</code>, the home directory of the present
@@ -27,12 +27,14 @@ cd carat-2.1b1
 </pre>
 <p>
 This creates a subdirectory <code>carat-2.1b1</code>, the <font face="Gill Sans,Helvetica,Arial">CARAT</font> top level directory. 
-You have to edit the Makefile in that directory. In particular, you have 
-to set the variables TOPDIR (to <code>/gap4/pkg/carat/carat-2.1b1</code>), CC, and 
-CFLAGS (to your favourite set of compiler options). Then do 
+For the compilation of <font face="Gill Sans,Helvetica,Arial">CARAT</font>, you have to set the variable <code>TOPDIR</code> to the 
+full path of this new directory, possibly along with new values for <code>CC</code> and 
+<code>CFLAGS</code>. You can do this either in the <code>Makefile</code>, or directly on the command 
+line:
 <p>
 <pre>
-make
+make TOPDIR=`pwd`
+chmod -R a+rX .
 </pre>
 <p>
 If you build for more than one architecture, make sure to do a 
@@ -42,14 +44,17 @@ You now have to check which subdirectory containing the CARAT
 binaries has been created in the bin directory. The name of this
 subdirectory must be the same as that in the main GAP bin directory,
 '/gap4/bin'. If the names differ, you might have to add a symbolic
-link to correct this. For instance, if the CARAT bin directory
-contains 'i686-pc-linux-gnu-gcc', but in the GAP bin directory,
-you find 'i686-pc-linux-gnu-gcc-default32', you would have to do this:
+link to correct this. For instance, if the <font face="Gill Sans,Helvetica,Arial">CARAT</font> bin directory
+contains <code>x86_64-pc-linux-gnu</code>, but in the GAP bin directory, you find 
+<code>x86_64-pc-linux-gnu-gcc-default32</code>, you would have to do this:
 <p>
 <pre>
 cd bin
-ln -s i686-pc-linux-gnu-gcc i686-pc-linux-gnu-gcc-default32
+ln -s x86_64-pc-linux-gnu x86_64-pc-linux-gnu-gcc-default32
+ln -s x86_64-pc-linux-gnu x86_64-pc-linux-gnu-gcc-default64
 </pre>
+<p>
+You can use one installation of <font face="Gill Sans,Helvetica,Arial">CARAT</font> for both 32bit and 64bit gap.
 <p>
 Like any other <font face="Gill Sans,Helvetica,Arial">GAP</font> 4 package, <font face="Gill Sans,Helvetica,Arial">CARAT</font> is then loaded in <font face="Gill Sans,Helvetica,Arial">GAP</font> with
 <p>
@@ -79,5 +84,5 @@ make Qcatalog
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>CARAT manual<br>May 2012
+<address>CARAT manual<br>May 2016
 </address></body></html>

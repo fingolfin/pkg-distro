@@ -2,9 +2,9 @@
 ##
 #W  treehom.gi                 automgrp package                Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -73,10 +73,10 @@ function(states, perm)
   local top_deg, bot_deg, ind, fam, a;
 
   if not IsPerm(perm) and not IsTransformation(perm) then
-    Error();
+    Error("The second argument ",perm, "must be a permutation or transformation");
   fi;
 
-  if AG_IsInvertibleTransformation(perm) and
+  if perm^-1<>fail and
      ForAll(states, IsTreeAutomorphism)
   then
     return TreeAutomorphism(states, AG_PermFromTransformation(perm));
@@ -86,11 +86,11 @@ function(states, perm)
 
   if IsPerm(perm) then
     if not IsOne(perm) and top_deg < Maximum(MovedPoints(perm)) then
-      Error();
+      Error("The root permutation ", perm, " must move only points from 1 to the degree ", top_deg, " of the tree");
     fi;
   else
     if not IsOne(perm) and top_deg < DegreeOfTransformation(perm) then
-      Error();
+      Error("The root transformation ", perm, " must move only points from 1 to the degree ", top_deg, " of the tree");
     fi;
   fi;
 
@@ -143,17 +143,17 @@ end);
 ##
 #M  TreeHomomorphism(<state_1>, <state_2>, ..., <state_n>, <perm>)
 ##
-InstallOtherMethod(TreeHomomorphism, [IsObject, IsObject, IsTransformation],
+InstallMethod(TreeHomomorphism, [IsObject, IsObject, IsTransformation],
   function(a1, a2, perm) return TreeHomomorphism([a1, a2], perm); end);
-InstallOtherMethod(TreeHomomorphism, [IsObject, IsObject, IsObject, IsTransformation],
+InstallMethod(TreeHomomorphism, [IsObject, IsObject, IsObject, IsTransformation],
   function(a1, a2, a3, perm) return TreeHomomorphism([a1, a2, a3], perm); end);
-InstallOtherMethod(TreeHomomorphism, [IsObject, IsObject, IsObject, IsObject, IsTransformation],
+InstallMethod(TreeHomomorphism, [IsObject, IsObject, IsObject, IsObject, IsTransformation],
   function(a1, a2, a3, a4, perm) return TreeHomomorphism([a1, a2, a3, a4], perm); end);
-InstallOtherMethod(TreeHomomorphism, [IsObject, IsObject, IsPerm],
+InstallMethod(TreeHomomorphism, [IsObject, IsObject, IsPerm],
   function(a1, a2, perm) return TreeHomomorphism([a1, a2], perm); end);
-InstallOtherMethod(TreeHomomorphism, [IsObject, IsObject, IsObject, IsPerm],
+InstallMethod(TreeHomomorphism, [IsObject, IsObject, IsObject, IsPerm],
   function(a1, a2, a3, perm) return TreeHomomorphism([a1, a2, a3], perm); end);
-InstallOtherMethod(TreeHomomorphism, [IsObject, IsObject, IsObject, IsObject, IsPerm],
+InstallMethod(TreeHomomorphism, [IsObject, IsObject, IsObject, IsObject, IsPerm],
   function(a1, a2, a3, a4, perm) return TreeHomomorphism([a1, a2, a3, a4], perm); end);
 
 ###############################################################################
@@ -210,6 +210,31 @@ end);
 
 ###############################################################################
 ##
+#M  String(<a>)
+##
+InstallMethod(String, "for [IsTreeHomomorphism]", [IsTreeHomomorphism],
+function (a)
+    local deg, printword, i, perm, states, str;
+
+    states := Sections(a);
+    deg := Length(states);
+    perm := TransformationOnLevel(a, 1);
+    str:= "(";
+
+    for i in [1..deg] do
+        Append(str, String(states[i]));
+        if i <> deg then Append(str, ", "); fi;
+    od;
+    Append(str, ")");
+    if not IsOne(perm) then
+      Append(str, AG_TransformationString(perm));
+    fi;
+    return str;
+end);
+
+
+###############################################################################
+##
 #M  SphericalIndex (<a>)
 ##
 InstallMethod(SphericalIndex, [IsTreeHomomorphism and IsTreeHomomorphismRep],
@@ -252,17 +277,18 @@ function(a, k)
     od;
   od;
 
-  p := PermList(permuted);
-  if p = fail then
-    p := Transformation(permuted);
-  fi;
+#  p := PermList(permuted);
+#  if p = fail then
+#    p := Transformation(permuted);
+#  fi;
+#  return p;
 
-  return p;
+  return Transformation(permuted);
 end);
 
 InstallMethod(TransformationOnFirstLevel, [IsTreeHomomorphism and IsTreeHomomorphismRep],
 function(a)
-  return a!.perm;
+  return AsTransformation(a!.perm);
 end);
 
 
@@ -270,7 +296,7 @@ end);
 ##
 #M  k ^ a
 ##
-InstallOtherMethod(\^, "for [IsPosInt, IsTreeHomomorphism]", [IsPosInt, IsTreeHomomorphism],
+InstallMethod(\^, "for [IsPosInt, IsTreeHomomorphism]", [IsPosInt, IsTreeHomomorphism],
 function(k, a)
     return k ^ TransformationOnLevel(a, 1);
 end);
@@ -279,7 +305,7 @@ end);
 ##
 #M  seq ^ a
 ##
-InstallOtherMethod(\^, "for [IsList, IsTreeHomomorphism]", [IsList, IsTreeHomomorphism],
+InstallMethod(\^, "for [IsList, IsTreeHomomorphism]", [IsList, IsTreeHomomorphism],
 function(seq, a)
   if Length(seq) = 0 then
     return [];
@@ -386,7 +412,7 @@ end);
 ##
 #M  Sections(a, k)
 ##
-InstallOtherMethod(Sections, "for [IsTreeHomomorphism, IsPosInt]",
+InstallMethod(Sections, "for [IsTreeHomomorphism, IsPosInt]",
                    [IsTreeHomomorphism, IsPosInt],
 function(a, level)
   if level = 1 then
@@ -394,6 +420,11 @@ function(a, level)
   else
     return Concatenation(List(Sections(a), s -> Sections(s, level-1)));
   fi;
+end);
+
+InstallMethod(Sections, "for [IsTreeHomomorphism, IsInt and IsZero]", [IsTreeHomomorphism, IsInt and IsZero],
+function(a, level)
+  return [a];
 end);
 
 
@@ -407,7 +438,7 @@ function(a, level)
   return TreeHomomorphism(Sections(a, level), TransformationOnLevel(a, level));
 end);
 
-InstallOtherMethod(Decompose, [IsTreeHomomorphism, IsInt and IsZero],
+InstallMethod(Decompose, [IsTreeHomomorphism, IsInt and IsZero],
 function(a, level)
   return a;
 end);

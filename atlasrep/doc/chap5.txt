@@ -1,5 +1,5 @@
   
-  [1X5 [33X[0;0YPrivate Extensions of the [5XAtlasRep[105X[101X[1X Package[133X[101X
+  [1X5 [33X[0;0YPrivate Extensions of the [5XAtlasRep[105X[101X[1X Package[133X[101X
   
   [33X[0;0YIt  may  be  interesting  to use the functions of the [5XGAP[105X interface also for
   representations  or  programs  that  are  [13Xnot[113X  part  of  the  [5XATLAS[105X of Group
@@ -68,7 +68,7 @@
   the file [11Xtoc.g[111X. The default for [3Xtest[103X is [9Xfalse[109X.[133X
   
   [33X[0;0Y[2XAtlasOfGroupRepresentationsNotifyPrivateDirectory[102X  notifies  the data in the
-  directory  [3Xdir[103X to the [5XAtlasRep[105X package. First the pair [10X[ [3Xdirname[103X[10X, [3Xdirid[103X[10X ][110X is
+  directory  [3Xdir[103X to the [5XAtlasRep[105X package. First the pair [10X[ [3Xdirname[103X[10X, [3Xdirid[103X[10X ][110X is
   added  to  the [10Xprivate[110X component of [2XAtlasOfGroupRepresentationsInfo[102X ([14X7.1-6[114X).
   If the directory contains a file with the name [11Xtoc.g[111X then this file is read;
   this file is useful for adding new group names using [10XAGR.GNAN[110X and for adding
@@ -118,7 +118,7 @@
   ordering  of data may depend on the ordering of notifications. For the other
   interface functions described in Chapter [14X3[114X, the only difference is that also
   the   private   data   can  be  accessed.  In  particular  the  [21Xfree  format[121X
-  [10X[3Xgroupname[103X[10XG[3Xi[103X[10X-X[3Xdescr[103X[10XW[3Xn[103X[10X[110X  for  straight  line  programs (see Section [14X7.6[114X) may be
+  [10X[3Xgroupname[103X[10XG[3Xi[103X[10X-X[3Xdescr[103X[10XW[3Xn[103X[10X[110X  for  straight  line  programs (see Section [14X7.6[114X) may be
   used  in  private  directories;  the  data can be accessed with [2XAtlasProgram[102X
   ([14X3.5-3[114X), where the last two arguments are the strings [10X"other"[110X and [3Xdescr[103X.[133X
   
@@ -128,7 +128,7 @@
   these changes can be found in Section [14X5.3[114X.[133X
   
   
-  [1X5.3 [33X[0;0YAn Example of Extending the [5XAtlasRep[105X[101X[1X Package[133X[101X
+  [1X5.3 [33X[0;0YAn Example of Extending the [5XAtlasRep[105X[101X[1X Package[133X[101X
   
   [33X[0;0YIn the beginning we set the info level of [2XInfoAtlasRep[102X ([14X7.1-1[114X) to [22X1[122X.[133X
   
@@ -225,7 +225,7 @@
     [4X[28XRepresentations for G = C4:    (all refer to std. generators 1)[128X[104X
     [4X[28X---------------------------[128X[104X
     [4X[28X1: G <= Sym(4)*   rank 4, on cosets of 1 < C2[128X[104X
-    [4X[28X2: G <= GL(1a,C)*[128X[104X
+    [4X[28X2: G <= GL(1a,C)* [128X[104X
     [4X[28X[128X[104X
     [4X[28XPrograms for G = C4:    (all refer to std. generators 1)[128X[104X
     [4X[28X--------------------[128X[104X
@@ -242,7 +242,7 @@
     [4X[25Xgap>[125X [27XDisplayAtlasInfo( "C4", IsMatrixGroup );[127X[104X
     [4X[28XRepresentations for G = C4:    (all refer to std. generators 1)[128X[104X
     [4X[28X---------------------------[128X[104X
-    [4X[28X2: G <= GL(1a,C)*[128X[104X
+    [4X[28X2: G <= GL(1a,C)* [128X[104X
     [4X[25Xgap>[125X [27XDisplayAtlasInfo( "C4", Dimension, 2 );[127X[104X
     [4X[25Xgap>[125X [27XDisplayAtlasInfo( "A5", NrMovedPoints, 60 );[127X[104X
     [4X[28XRepresentations for G = A5:    (all refer to std. generators 1)[128X[104X
@@ -250,41 +250,47 @@
     [4X[28X4: G <= Sym(60)* rank 60, on cosets of 1 < A4[128X[104X
     [4X[25Xgap>[125X [27Xinfo:= OneAtlasGeneratingSetInfo( "C4" );[127X[104X
     [4X[28Xrec( groupname := "C4", id := "", [128X[104X
-    [4X[28X  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],[128X[104X
-    [4X[28X  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",[128X[104X
-    [4X[28X  repnr := 1, size := 4, stabilizer := "1 < C2", standardization := 1,[128X[104X
-    [4X[28X  transitivity := 1, type := "perm" )[128X[104X
+    [4X[28X  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], [128X[104X
+    [4X[28X  isPrimitive := false, p := 4, rankAction := 4, [128X[104X
+    [4X[28X  repname := "C4G1-p4B0", repnr := 1, size := 4, [128X[104X
+    [4X[28X  stabilizer := "1 < C2", standardization := 1, transitivity := 1, [128X[104X
+    [4X[28X  type := "perm" )[128X[104X
     [4X[25Xgap>[125X [27XAtlasGenerators( info.identifier );[127X[104X
-    [4X[28Xrec( generators := [ (1,2,3,4) ], groupname := "C4", id := "",[128X[104X
-    [4X[28X  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],[128X[104X
-    [4X[28X  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",[128X[104X
-    [4X[28X  repnr := 1, size := 4, stabilizer := "1 < C2", standardization := 1,[128X[104X
-    [4X[28X  transitivity := 1, type := "perm" )[128X[104X
+    [4X[28Xrec( generators := [ (1,2,3,4) ], groupname := "C4", id := "", [128X[104X
+    [4X[28X  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], [128X[104X
+    [4X[28X  isPrimitive := false, p := 4, rankAction := 4, [128X[104X
+    [4X[28X  repname := "C4G1-p4B0", repnr := 1, size := 4, [128X[104X
+    [4X[28X  stabilizer := "1 < C2", standardization := 1, transitivity := 1, [128X[104X
+    [4X[28X  type := "perm" )[128X[104X
     [4X[25Xgap>[125X [27XAtlasProgram( "C4", 1 );[127X[104X
-    [4X[28Xrec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], [128X[104X
-    [4X[28X  program := <straight line program>, size := 2, standardization := 1, [128X[104X
+    [4X[28Xrec( groupname := "C4", [128X[104X
+    [4X[28X  identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], [128X[104X
+    [4X[28X  program := <straight line program>, size := 2, standardization := 1,[128X[104X
     [4X[28X  subgroupname := "C2" )[128X[104X
     [4X[25Xgap>[125X [27XAtlasProgram( "C4", "maxes", 1 );[127X[104X
-    [4X[28Xrec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ],[128X[104X
-    [4X[28X  program := <straight line program>, size := 2, standardization := 1, [128X[104X
+    [4X[28Xrec( groupname := "C4", [128X[104X
+    [4X[28X  identifier := [ [ "priv", "C4" ], "C4G1-max1W1", 1 ], [128X[104X
+    [4X[28X  program := <straight line program>, size := 2, standardization := 1,[128X[104X
     [4X[28X  subgroupname := "C2" )[128X[104X
     [4X[25Xgap>[125X [27XAtlasProgram( "C4", "maxes", 2 );[127X[104X
     [4X[28Xfail[128X[104X
     [4X[25Xgap>[125X [27XAtlasGenerators( "C4", 1 );[127X[104X
     [4X[28Xrec( generators := [ (1,2,3,4) ], groupname := "C4", id := "", [128X[104X
-    [4X[28X  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ],[128X[104X
-    [4X[28X  isPrimitive := false, p := 4, rankAction := 4, repname := "C4G1-p4B0",[128X[104X
-    [4X[28X  repnr := 1, size := 4, stabilizer := "1 < C2", standardization := 1,[128X[104X
-    [4X[28X  transitivity := 1, type := "perm" )[128X[104X
+    [4X[28X  identifier := [ [ "priv", "C4" ], [ "C4G1-p4B0.m1" ], 1, 4 ], [128X[104X
+    [4X[28X  isPrimitive := false, p := 4, rankAction := 4, [128X[104X
+    [4X[28X  repname := "C4G1-p4B0", repnr := 1, size := 4, [128X[104X
+    [4X[28X  stabilizer := "1 < C2", standardization := 1, transitivity := 1, [128X[104X
+    [4X[28X  type := "perm" )[128X[104X
     [4X[25Xgap>[125X [27XAtlasGenerators( "C4", 2 );[127X[104X
-    [4X[28Xrec( dim := 1, generators := [ [ [ E(4) ] ] ], groupname := "C4", id := "a", [128X[104X
-    [4X[28X  identifier := [ [ "priv", "C4" ], "C4G1-Ar1aB0.g", 1, 1 ], [128X[104X
-    [4X[28X  repname := "C4G1-Ar1aB0", repnr := 2, size := 4, standardization := 1, [128X[104X
-    [4X[28X  type := "matalg" )[128X[104X
+    [4X[28Xrec( dim := 1, generators := [ [ [ E(4) ] ] ], groupname := "C4", [128X[104X
+    [4X[28X  id := "a", identifier := [ [ "priv", "C4" ], "C4G1-Ar1aB0.g", 1, 1 ][128X[104X
+    [4X[28X    , repname := "C4G1-Ar1aB0", repnr := 2, size := 4, [128X[104X
+    [4X[28X  standardization := 1, type := "matalg" )[128X[104X
     [4X[25Xgap>[125X [27XAtlasGenerators( "C4", 3 );[127X[104X
     [4X[28Xfail[128X[104X
     [4X[25Xgap>[125X [27XAtlasProgram( "C4", "other", "test" );[127X[104X
-    [4X[28Xrec( groupname := "C4", identifier := [ [ "priv", "C4" ], "C4G1-XtestW1", 1 ],[128X[104X
+    [4X[28Xrec( groupname := "C4", [128X[104X
+    [4X[28X  identifier := [ [ "priv", "C4" ], "C4G1-XtestW1", 1 ], [128X[104X
     [4X[28X  program := <straight line program>, standardization := 1 )[128X[104X
   [4X[32X[104X
   
@@ -293,10 +299,10 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDisplayAtlasInfo( "contents", "priv" );[127X[104X
-    [4X[28Xgroup                    | # | maxes | cl | cyc | out | fnd | chk | prs[128X[104X
-    [4X[28X-------------------------+---+-------+----+-----+-----+-----+-----+----[128X[104X
-    [4X[28XA5*                      | 1 |       |    |     |     |     |     |[128X[104X
-    [4X[28XC4*                      | 2 |     1 |    |     |   2 |     |     |[128X[104X
+    [4X[28Xgroup                    | # | maxes | cl | cyc | out | fnd | chk | p*[128X[104X
+    [4X[28X-------------------------+---+-------+----+-----+-----+-----+-----+--*[128X[104X
+    [4X[28XA5*                      | 1 |       |    |     |     |     |     |  *[128X[104X
+    [4X[28XC4*                      | 2 |     1 |    |     |   2 |     |     |  *[128X[104X
   [4X[32X[104X
   
   [33X[0;0YFor checking the data in the private directory, we apply the relevant sanity

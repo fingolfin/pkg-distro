@@ -3,7 +3,7 @@
                           [1X[5XAtlasRep[105X --- A GAP 4 Package[101X
   
   
-                                 (Version 1.5)
+                                (Version 1.5.1)
   
   
                                 Robert A. Wilson
@@ -24,8 +24,7 @@
   Richard A. Parker
       Email:    [7Xmailto:richpark@gmx.co.uk[107X
   Simon Nickerson
-      Email:    [7Xmailto:simonn@maths.bham.ac.uk[107X
-      Homepage: [7Xhttp://web.mat.bham.ac.uk/S.Nickerson[107X
+      Homepage: [7Xhttp://nickerson.org.uk/groups[107X
   John N. Bray
       Email:    [7Xmailto:J.N.Bray@qmul.ac.uk[107X
       Homepage: [7Xhttp://www.maths.qmw.ac.uk/~jnb[107X
@@ -35,7 +34,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2002–2011[133X
+  [33X[0;0Y© 2002–2016[133X
   
   [33X[0;0YThis  package  may  be distributed under the terms and conditions of the GNU
   Public License Version 3 or later, see [7Xhttp://www.gnu.org/licenses[107X.[133X
@@ -50,13 +49,14 @@
     1.1 [33X[0;0YThe [5XATLAS[105X of Group Representations[133X
     1.2 [33X[0;0YThe GAP Interface to the [5XATLAS[105X of Group Representations[133X
     1.3 [33X[0;0YWhat's New in [5XAtlasRep[105X, Compared to Older Versions?[133X
-      1.3-1 [33X[0;0YWhat's New in Version 1.5?[133X
-      1.3-2 [33X[0;0YWhat's New in Version 1.4?[133X
-      1.3-3 [33X[0;0YWhat's New in Version 1.3.1?[133X
-      1.3-4 [33X[0;0YWhat's New in Version 1.3?[133X
-      1.3-5 [33X[0;0YWhat's New in Version 1.2?[133X
-      1.3-6 [33X[0;0YWhat's New in Version 1.1?[133X
-    1.4 [33X[0;0YAcknowledgments[133X
+      1.3-1 [33X[0;0YWhat's New in Version 1.5.1? (March 2016)[133X
+      1.3-2 [33X[0;0YWhat's New in Version 1.5? (July 2011)[133X
+      1.3-3 [33X[0;0YWhat's New in Version 1.4? (June 2008)[133X
+      1.3-4 [33X[0;0YWhat's New in Version 1.3.1? (October 2007)[133X
+      1.3-5 [33X[0;0YWhat's New in Version 1.3? (June 2007)[133X
+      1.3-6 [33X[0;0YWhat's New in Version 1.2? (November 2003)[133X
+      1.3-7 [33X[0;0YWhat's New in Version 1.1? (October 2002)[133X
+    1.4 [33X[0;0YAcknowledgements[133X
   2 [33X[0;0YTutorial for the [5XAtlasRep[105X Package[133X
     2.1 [33X[0;0YAccessing a Specific Group in [5XAtlasRep[105X[133X
       2.1-1 [33X[0;0YAccessing a Group in [5XAtlasRep[105X via its Name[133X
@@ -110,6 +110,9 @@
       4.3-6 [33X[0;0YCustomizing the Access to Data Files[133X
       4.3-7 [33X[0;0YReading Large Matrices over Finite Fields[133X
       4.3-8 AtlasOfGroupRepresentationsUserParameters
+      4.3-9 [33X[0;0YUser preference [10XAtlasRepDataDirectory[110X[133X
+      4.3-10 [33X[0;0YUser preference [10XWriteMeatAxeFilesOfMode2[110X[133X
+      4.3-11 [33X[0;0YUser preference [10XBaseOfMeatAxePermutation[110X[133X
     4.4 [33X[0;0YWeb Services for the [5XAtlasRep[105X Package[133X
     4.5 [33X[0;0YExtending the [5XATLAS[105X Database[133X
   5 [33X[0;0YPrivate Extensions of the [5XAtlasRep[105X Package[133X

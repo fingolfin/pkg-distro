@@ -2,9 +2,9 @@
 ##
 #W  automgroup.gi             automgrp package                 Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -98,7 +98,7 @@ end);
 ##
 #M  GroupOfAutomFamily(<G>)
 ##
-InstallOtherMethod(GroupOfAutomFamily, "for [IsAutomGroup]",
+InstallMethod(GroupOfAutomFamily, "for [IsAutomGroup]",
                    [IsAutomGroup],
 function(G)
   return GroupOfAutomFamily(UnderlyingAutomFamily(G));
@@ -129,7 +129,6 @@ function(super, sub)
   if HasIsGroupOfAutomFamily(super) then
     if not IsGroupOfAutomFamily(super) then
       SetIsGroupOfAutomFamily(sub, false); fi; fi;
-InstallTrueMethod(IsFractal, IsFractalByWords);
   TryNextMethod();
 end);
 
@@ -202,12 +201,22 @@ function(gens)
   return List(words, w -> Autom(w, fam));
 end);
 
-
 ###############################################################################
 ##
 #M  PrintObj(<G>)
 ##
-InstallMethod(PrintObj, "for [IsAutomGroup]",
+InstallMethod(PrintObj, "for [IsAutomatonGroup]",
+              [IsAutomatonGroup],
+function(G)
+  Print("AutomatonGroup(\"", String(G), "\")");
+end);
+
+
+###############################################################################
+##
+#M  Display(<G>)
+##
+InstallMethod(Display, "for [IsAutomGroup]",
               [IsAutomGroup],
 function(G)
   local i, gens, printone;
@@ -228,6 +237,7 @@ function(G)
     Print("  "); printone(gens[Length(gens)]); Print(" >");
   fi;
 end);
+
 
 #############################################################################
 ##
@@ -485,7 +495,7 @@ end);
 InstallMethod(IsSphericallyTransitive, "for [IsAutomGroup]",
               [IsAutomGroup],
 function (G)
-  local x, rat_gens, abel_hom;
+  local x, rat_gens, abel_hom, lev;
 
   if DegreeOfTree(G)=1 then
     Info(InfoAutomGrp, 3, "IsSphericallyTransitive(G): true");
@@ -524,6 +534,14 @@ function (G)
       return true;
     fi;
   fi;
+
+  for lev in [1..8] do
+    if not IsTransitiveOnLevel(G,lev) then
+      Info(InfoAutomGrp, 3, "IsSphericallyTransitive(G): false");
+      Info(InfoAutomGrp, 3, "  the group does not act transitively on level ", lev);
+      return false;
+    fi;
+  od;
 
   TryNextMethod();
 end);

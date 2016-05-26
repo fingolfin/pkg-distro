@@ -12,9 +12,9 @@
 
      <!ENTITY mdash "<Alt Only='HTML'>&#8212;</Alt><Alt Not='HTML'>---</Alt>">
 
-     <!ENTITY VERSIONNUMBER "1.5">
-     <!ENTITY RELEASEMONTH "July">
-     <!ENTITY RELEASEYEAR "2011">
+     <!ENTITY VERSIONNUMBER "1.5.1">
+     <!ENTITY RELEASEMONTH "March">
+     <!ENTITY RELEASEYEAR "2016">
    ]>
 
 <Book Name="AtlasRep">
@@ -31,8 +31,7 @@
     <Email>richpark@gmx.co.uk</Email>
   </Author>
   <Author>Simon Nickerson
-    <Email>simonn@maths.bham.ac.uk</Email>
-    <Homepage>http://web.mat.bham.ac.uk/S.Nickerson</Homepage>
+    <Homepage>http://nickerson.org.uk/groups</Homepage>
   </Author>
   <Author>John N. Bray
     <Email>J.N.Bray@qmul.ac.uk</Email>
@@ -43,7 +42,7 @@
     <Homepage>http://www.math.rwth-aachen.de/~Thomas.Breuer</Homepage>
   </Author>
   <Copyright>
-    &copyright; 2002&ndash;2011
+    &copyright; 2002&ndash;2016
     <P/>
     This package may be distributed under the terms and conditions of the
     GNU Public License Version 3 or later,

@@ -2,9 +2,9 @@
 ##
 #W  treeautgrp.gi              automgrp package                Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -128,7 +128,8 @@ function (G)
     return IsSphericallyTransitive(Projection(stab, 1));
   fi;
 
-  TryNextMethod();
+#  TryNextMethod();
+  return fail;
 end);
 
 
@@ -178,7 +179,7 @@ InstallMethod(IsFractal, "for [IsTreeAutomorphismGroup]", [IsTreeAutomorphismGro
 function(G)
   local i;
 
-  if DegreeOfTree(G)=1 then 
+  if DegreeOfTree(G)=1 then
     SetIsSphericallyTransitive(G, true);
     Info(InfoAutomGrp, 3, "IsFractal(G): true");
     Info(InfoAutomGrp, 3, "  G acts on 1-ary tree");

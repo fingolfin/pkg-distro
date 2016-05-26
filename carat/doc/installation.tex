@@ -6,7 +6,7 @@ the {\GAP} 4 root directories. We assume here that this is `/gap4/pkg'.
 
 \begintt
 cd /gap4/pkg
-tar zpxf carat-2.1.4.tar.gz
+tar zpxf carat-2.1.6.tar.gz
 \endtt
 
 This creates a subdirectory `carat', the home directory of the present
@@ -25,12 +25,14 @@ cd carat-2.1b1
 \endtt
 
 This creates a subdirectory `carat-2.1b1', the {\CARAT} top level directory. 
-You have to edit the Makefile in that directory. In particular, you have 
-to set the variables TOPDIR (to `/gap4/pkg/carat/carat-2.1b1'), CC, and 
-CFLAGS (to your favourite set of compiler options). Then do 
+For the compilation of {\CARAT}, you have to set the variable `TOPDIR' to the 
+full path of this new directory, possibly along with new values for `CC' and 
+`CFLAGS'. You can do this either in the `Makefile', or directly on the command 
+line:
 
 \begintt
-make
+make TOPDIR=`pwd`
+chmod -R a+rX .
 \endtt
 
 If you build for more than one architecture, make sure to do a 
@@ -40,14 +42,17 @@ You now have to check which subdirectory containing the CARAT
 binaries has been created in the bin directory. The name of this
 subdirectory must be the same as that in the main GAP bin directory,
 '/gap4/bin'. If the names differ, you might have to add a symbolic
-link to correct this. For instance, if the CARAT bin directory
-contains 'i686-pc-linux-gnu-gcc', but in the GAP bin directory,
-you find 'i686-pc-linux-gnu-gcc-default32', you would have to do this:
+link to correct this. For instance, if the {\CARAT} bin directory
+contains `x86_64-pc-linux-gnu', but in the GAP bin directory, you find 
+`x86_64-pc-linux-gnu-gcc-default32', you would have to do this:
 
 \begintt
 cd bin
-ln -s i686-pc-linux-gnu-gcc i686-pc-linux-gnu-gcc-default32
+ln -s x86_64-pc-linux-gnu x86_64-pc-linux-gnu-gcc-default32
+ln -s x86_64-pc-linux-gnu x86_64-pc-linux-gnu-gcc-default64
 \endtt
+
+You can use one installation of {\CARAT} for both 32bit and 64bit gap.
 
 Like any other {\GAP} 4 package, {\CARAT} is then loaded in {\GAP} with
 

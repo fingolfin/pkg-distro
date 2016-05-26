@@ -2,9 +2,9 @@
 ##
 #W  automsg.gi               automgrp package                  Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -146,7 +146,6 @@ end);
 #   if HasIsGroupOfAutomFamily(super) then
 #     if not IsGroupOfAutomFamily(super) then
 #       SetIsGroupOfAutomFamily(sub, false); fi; fi;
-# InstallTrueMethod(IsFractal, IsFractalByWords);
 #   TryNextMethod();
 # end);
 
@@ -235,7 +234,48 @@ end);
 ##
 #M  PrintObj(<G>)
 ##
-InstallMethod(PrintObj, "for [IsAutomSemigroup]",
+InstallMethod(PrintObj, "for [IsAutomatonSemigroup]",
+              [IsAutomatonSemigroup],
+function(G)
+  Print("AutomatonSemigroup(\"", String(G), "\")");
+end);
+
+
+#############################################################################
+##
+#M  String(<G>)
+##
+InstallMethod(String, "for [IsAutomSemigroup]", [IsAutomSemigroup],
+function(G)
+  local i, gens, formatone, s;
+
+  formatone := function(a)
+    return Concatenation(String(a), " = ", String(Decompose(a)));
+  end;
+
+  if IsMonoid(G) then
+    gens := GeneratorsOfMonoid(G);
+  else
+    gens := GeneratorsOfSemigroup(G);
+  fi;
+
+  s := "";
+  for i in [1..Length(gens)] do
+    Append(s, formatone(gens[i]));
+    if i <> Length(gens) then
+      Append(s, ", ");
+    fi;
+  od;
+
+  return s;
+end);
+
+
+###############################################################################
+##
+#M  Display(<G>)
+##
+InstallMethod(Display, "for [IsAutomSemigroup]",
               [IsAutomSemigroup],
 function(G)
   local i, gens, printone;
@@ -587,6 +627,15 @@ function(G)
 end);
 
 
+###############################################################################
+##
+#M  SemigroupOfAutomFamily(<G>)
+##
+InstallMethod(SemigroupOfAutomFamily, "for [IsAutomSemigroup]",
+                   [IsAutomSemigroup],
+function(G)
+  return SemigroupOfAutomFamily(UnderlyingAutomFamily(G));
+end);
 
 
 #E

@@ -2,9 +2,9 @@
 ##
 #W  treeaut.gi                 automgrp package                Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -68,7 +68,7 @@ function(list_states, permutation)
   top_deg := Length(list_states);
   if not IsOne(permutation) and
       top_deg < Maximum(MovedPoints(permutation)) then
-    Error();
+    Error("The root permutation ", permutation, " must move only points from 1 to the degree ", top_deg, " of the tree");
   fi;
 
   Orbs := OrbitsPerms([permutation], [1..Length(list_states)]);
@@ -132,15 +132,15 @@ end);
 ##
 #M  TreeAutomorphism(<state_1>, <state_2>, ..., <state_n>, <perm>)
 ##
-InstallOtherMethod(TreeAutomorphism, [IsObject, IsObject, IsPerm],
+InstallMethod(TreeAutomorphism, [IsObject, IsObject, IsPerm],
   function(a1, a2, perm) return TreeAutomorphism([a1, a2], perm); end);
-InstallOtherMethod(TreeAutomorphism, [IsObject, IsObject, IsObject, IsPerm],
+InstallMethod(TreeAutomorphism, [IsObject, IsObject, IsObject, IsPerm],
   function(a1, a2, a3, perm) return TreeAutomorphism([a1, a2, a3], perm); end);
-InstallOtherMethod(TreeAutomorphism, [IsObject, IsObject, IsObject, IsObject, IsPerm],
+InstallMethod(TreeAutomorphism, [IsObject, IsObject, IsObject, IsObject, IsPerm],
   function(a1, a2, a3, a4, perm) return TreeAutomorphism([a1, a2, a3, a4], perm); end);
-InstallOtherMethod(TreeAutomorphism, [IsObject, IsObject, IsObject, IsObject, IsObject, IsPerm],
+InstallMethod(TreeAutomorphism, [IsObject, IsObject, IsObject, IsObject, IsObject, IsPerm],
   function(a1, a2, a3, a4, a5, perm) return TreeAutomorphism([a1, a2, a3, a4, a5], perm); end);
-#InstallOtherMethod(TreeAutomorphism, [IsObject, IsObject, IsObject, IsObject, IsObject, IsObject, IsPerm],
+#InstallMethod(TreeAutomorphism, [IsObject, IsObject, IsObject, IsObject, IsObject, IsObject, IsPerm],
 #  function(a1, a2, a3, a4, a5, a6, perm) return TreeAutomorphism([a1, a2, a3, a4, a5, a6], perm); end);
 
 
@@ -189,6 +189,31 @@ end);
 
 ###############################################################################
 ##
+#M  String(<a>)
+##
+InstallMethod(String, "for [IsTreeAutomorphism]", [IsTreeAutomorphism],
+function (a)
+    local deg, printword, i, perm, states, str;
+
+    states := Sections(a);
+    deg := Length(states);
+    perm := PermOnLevel(a, 1);
+    str:= "(";
+
+    for i in [1..deg] do
+        Append(str, String(states[i]));
+        if i <> deg then Append(str, ", "); fi;
+    od;
+    Append(str, ")");
+    if not IsOne(perm) then
+      Append(str, AG_TransformationString(perm));
+    fi;
+    return str;
+end);
+
+
+###############################################################################
+##
 #M  SphericalIndex(<a>)
 ##
 InstallMethod(SphericalIndex, [IsTreeAutomorphism and IsTreeAutomorphismRep],
@@ -201,7 +226,7 @@ end);
 ##
 #M  Perm(<a>)
 ##
-InstallOtherMethod(Perm, "for [IsTreeAutomorphism and IsTreeAutomorphismRep]",
+InstallMethod(Perm, "for [IsTreeAutomorphism and IsTreeAutomorphismRep]",
               [IsTreeAutomorphism and IsTreeAutomorphismRep],
 function(a)
   return a!.perm;
@@ -252,10 +277,11 @@ function(a, k)
   od;
 
   p := PermList(permuted);
-  if not IsPerm(p) then
-    Error();
+  if p<>fail then
+    return p;
+  else
+    Error("An element ",a," does not induce a permutation on the level ",k);
   fi;
-  return p;
 end);
 
 
@@ -263,7 +289,7 @@ end);
 ##
 #M  k ^ a
 ##
-InstallOtherMethod(\^, "for [IsPosInt, IsTreeAutomorphism]",
+InstallMethod(\^, "for [IsPosInt, IsTreeAutomorphism]",
                    [IsPosInt, IsTreeAutomorphism],
 function(k, a)
     return k ^ Perm(a);
@@ -274,7 +300,7 @@ end);
 ##
 #M  seq ^ a
 ##
-InstallOtherMethod(\^, "for [IsList, IsTreeAutomorphism]",
+InstallMethod(\^, "for [IsList, IsTreeAutomorphism]",
                    [IsList, IsTreeAutomorphism],
 function(seq, a)
   if Length(seq) = 0 then return []; fi;
@@ -310,7 +336,7 @@ end);
 ##
 #M  FixesVertex(<a>, <v>)
 ##
-InstallOtherMethod(FixesVertex,  "for [IsTreeAutomorphism, IsObject]",
+InstallMethod(FixesVertex,  "for [IsTreeAutomorphism, IsObject]",
                    [IsTreeAutomorphism, IsObject],
 function(a, v)
   if HasIsSphericallyTransitive(a) then
@@ -430,28 +456,11 @@ end);
 ##
 #M  Section(<a>, <k>)
 ##
-InstallOtherMethod(Section, [IsTreeAutomorphism, IsPosInt],
-function(a, k)
-  return Sections(a)[k];
-end);
 
-InstallOtherMethod(Section, [IsTreeAutomorphism and IsTreeAutomorphismRep, IsPosInt],
+InstallMethod(Section, [IsTreeAutomorphism and IsTreeAutomorphismRep, IsPosInt],
 function(a, k)
   return a!.states[k];
 end);
-
-
-###############################################################################
-##
-#M  Section(<a>, <v>)
-##
-InstallMethod(Section, [IsTreeAutomorphism, IsList],
-function(a, v)
-  if Length(v) = 1 then return Section(a, v[1]);
-  else return Section(Section(a, v[1]), v{[2..Length(v)]});
-  fi;
-end);
-
 
 ###############################################################################
 ##
@@ -462,20 +471,6 @@ function(a)
   return a!.states;
 end);
 
-
-###############################################################################
-##
-#M  Sections(a, k)
-##
-InstallOtherMethod(Sections, "for [IsTreeAutomorphism, IsPosInt]",
-                   [IsTreeAutomorphism, IsPosInt],
-function(a, level)
-  if level = 1 then
-    return Sections(a);
-  else
-    return Concatenation(List(Sections(a), s -> Sections(s, level-1)));
-  fi;
-end);
 
 
 ###############################################################################
@@ -488,17 +483,13 @@ function(a, level)
   return TreeAutomorphism(Sections(a, level), PermOnLevel(a, level));
 end);
 
-InstallOtherMethod(Decompose, [IsTreeAutomorphism, IsInt and IsZero],
-function(a, level)
-  return a;
-end);
 
 
 ###############################################################################
 ##
 #M  Decompose(<a>)
 ##
-InstallOtherMethod(Decompose, "for [IsTreeAutomorphism]", [IsTreeAutomorphism],
+InstallMethod(Decompose, "for [IsTreeAutomorphism]", [IsTreeAutomorphism],
 function(a)
   return Decompose(a, 1);
 end);
@@ -508,7 +499,7 @@ end);
 ##
 #M  IsOne(<a>)
 ##
-InstallOtherMethod(IsOne, "for [IsTreeAutomorphism and IsTreeAutomorphismRep]",
+InstallMethod(IsOne, "for [IsTreeAutomorphism and IsTreeAutomorphismRep]",
                    [IsTreeAutomorphism and IsTreeAutomorphismRep],
 function(a)
   local i;
@@ -524,7 +515,7 @@ end);
 ##
 #M  IsOne(<a>)
 ##
-InstallOtherMethod(IsOne, [IsTreeAutomorphism],
+InstallMethod(IsOne, [IsTreeAutomorphism],
 function(a)
   local i;
   if not IsOne(Perm(a)) then return false; fi;

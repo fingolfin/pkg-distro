@@ -9,6 +9,8 @@
 <li> <A HREF="CHAP004.htm#SECT002">Tools</a>
 </ol><p>
 <p>
+In this chapter we present the functionality applicable to noninitial automata.
+<p>
 <p>
 <h2><a name="SECT001">4.1 Definition</a></h2>
 <p><p>
@@ -17,6 +19,8 @@
 <li><code>MealyAutomaton( </code><var>string</var><code> ) O</code>
 <li><code>MealyAutomaton( </code><var>autom</var><code> ) O</code>
 <li><code>MealyAutomaton( </code><var>tree_hom_list</var><code> ) O</code>
+<li><code>MealyAutomaton( </code><var>list</var><code>, </code><var>name_func</var><code> ) O</code>
+<li><code>MealyAutomaton( </code><var>list</var><code>, </code><var>true</var><code> ) O</code>
 <p>
 Creates the Mealy automaton (see <a href="CHAP001.htm#SECT001">Short math background</a>) defined by the argument <var>table</var>, <var>string</var>
 or <var>autom</var>. Format of the argument <var>table</var> is
@@ -32,21 +36,40 @@ of the states of all tree homomorphisms from the <var>tree_hom_list</var>.
 <pre>
 gap&gt; A := MealyAutomaton([[1,2,(1,2)],[3,1,()],[3,3,(1,2)]], ["a","b","c"]);
 &lt;automaton&gt;
-gap&gt; Print(A, "\n");
+gap&gt; Display(A);
 a = (a, b)(1,2), b = (c, a), c = (c, c)(1,2)
 gap&gt; B:=MealyAutomaton([[1,2,Transformation([1,1])],[3,1,()],[3,3,(1,2)]],["a","b","c"]);
 &lt;automaton&gt;
-gap&gt; Print(B, "\n");
+gap&gt; Display(B);
 a = (a, b)[ 1, 1 ], b = (c, a), c = (c, c)[ 2, 1 ]
 gap&gt; D := MealyAutomaton("a=(a,b)(1,2), b=(b,a)");
 &lt;automaton&gt;
+gap&gt; Display(D);
+a = (a, b)(1,2), b = (b, a)
 gap&gt; Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 &lt; u, v &gt;
 gap&gt; M := MealyAutomaton(u*v*u^-3);
 &lt;automaton&gt;
-gap&gt; Print(M);
+gap&gt; Display(M);
 a1 = (a2, a5), a2 = (a3, a4), a3 = (a4, a2)(1,2), a4 = (a4, a4), a5 = (a6, a3)
 (1,2), a6 = (a7, a4), a7 = (a6, a4)(1,2)
+</pre>
+<p>
+If <var>list</var> consists of tree homomorphisms, it creates a noninitial automaton
+constructed of their states. If <var>name_func</var> is a function then it is used
+to name the states of the newly constructed automaton. If it is <var>true</var>
+then states of automata from the <var>list</var> are used. If it <var>false</var> then new
+states are named a_1, a_2, etc.
+<p>
+<pre>
+gap&gt; G := AutomatonGroup("a=(b,a),b=(b,a)(1,2)");
+&lt; a, b &gt;
+gap&gt; MealyAutomaton([a*b]);; Display(last);
+a1 = (a2, a4)(1,2), a2 = (a3, a1), a3 = (a3, a1)(1,2), a4 = (a2, a4)
+gap&gt; MealyAutomaton([a*b], true);; Display(last);
+&lt;a*b&gt; = (&lt;b^2&gt;, &lt;a^2&gt;)(1,2), &lt;b^2&gt; = (&lt;b*a&gt;, &lt;a*b&gt;), &lt;b*a&gt; = (&lt;b*a&gt;, &lt;a*b&gt;)(1,2), &lt;a^2&gt; = (&lt;b^2&gt;, &lt;a^2&gt;)
+gap&gt; MealyAutomaton([a*b], String);; Display(last);
+a*b = (b^2, a^2)(1,2), b^2 = (b*a, a*b), b*a = (b*a, a*b)(1,2), a^2 = (b^2, a^2)
 </pre>
 <p>
 <a name = "SSEC001.2"></a>
@@ -65,10 +88,9 @@ Returns the number of states of the automaton <var>A</var>.
 <p>
 Returns the number of letters in the alphabet the automaton <var>A</var> acts on.
 <p>
-<a name = "SSEC001.5"></a>
-<li><code>AutomatonList( </code><var>A</var><code> ) A</code>
+<li><code>AutomatonList( </code><var>A</var><code> ) [automaton] A</code>
 <p>
-Returns the list of <var>A</var> acceptible by <code>MealyAutomaton</code> (see <a href="CHAP004.htm#SSEC001.1">MealyAutomaton</a>)
+Returns the list of <var>A</var> acceptable by <code>MealyAutomaton</code> (see <a href="CHAP004.htm#SSEC001.1">MealyAutomaton</a>)
 <p>
 <p>
 <h2><a name="SECT002">4.2 Tools</a></h2>
@@ -92,13 +114,15 @@ Is <code>true</code> if <var>A</var> is invertible and <code>false</code> otherw
 <a name = "SSEC002.3"></a>
 <li><code>MinimizationOfAutomaton( </code><var>A</var><code> ) F</code>
 <p>
-Returns the automaton obtained from automaton <var>A</var> by minimization.
+Returns the automaton obtained from automaton <var>A</var> by minimization. The
+implementation of this function was significantly optimized by Andrey Russev
+starting from Version 1.3.
 <pre>
 gap&gt; B := MealyAutomaton("a=(1,a)(1,2), b=(1,a)(1,2), c=(a,b), d=(a,b)");
 &lt;automaton&gt;
 gap&gt; C := MinimizationOfAutomaton(B);
 &lt;automaton&gt;
-gap&gt; Print(C);
+gap&gt; Display(C);
 a = (1, a)(1,2), c = (a, a), 1 = (1, 1)
 </pre>
 <p>
@@ -109,12 +133,14 @@ Returns the list <code>[A_new, new_via_old, old_via_new]</code>, where <code>A_n
 automaton obtained from automaton <var>A</var> by minimization,
 <code>new_via_old</code> describes how new states are expressed in terms of the old ones, and
 <code>old_via_new</code> describes how old states are expressed in terms of the new ones.
+The implementation of this function was significantly optimized by Andrey Russev
+starting from Version 1.3.
 <pre>
 gap&gt; B := MealyAutomaton("a=(1,a)(1,2), b=(1,a)(1,2), c=(a,b), d=(a,b)");
 &lt;automaton&gt;
 gap&gt; B_min := MinimizationOfAutomatonTrack(B);
 [ &lt;automaton&gt;, [ 1, 3, 5 ], [ 1, 1, 2, 2, 3 ] ]
-gap&gt; Print(B_min[1]);
+gap&gt; Display(B_min[1]);
 a = (1, a)(1,2), c = (a, a), 1 = (1, 1)
 </pre>
 <p>
@@ -195,11 +221,11 @@ Computes whether or not an automaton <var>A</var> is acyclic in the sense of Sid
 I.e. returns <code>true</code> if the Moore diagram of <var>A</var> does not contain cycles with two or more
 states and <code>false</code> otherwise.
 <pre>
-gap&gt; A:=MealyAutomaton("a=(a,a,b)(1,2,3),b=(c,c,b)(1,2),c=(d,c,1),d=(d,1,d)");
+gap&gt; A := MealyAutomaton("a=(a,a,b)(1,2,3),b=(c,c,b)(1,2),c=(d,c,1),d=(d,1,d)");
 &lt;automaton&gt;
 gap&gt; IsAcyclic(A);
 true
-gap&gt; A:=MealyAutomaton("a=(a,a,b)(1,2,3),b=(c,c,d)(1,2),c=(d,c,1),d=(b,1,d)");
+gap&gt; A := MealyAutomaton("a=(a,a,b)(1,2,3),b=(c,c,d)(1,2),c=(d,c,1),d=(b,1,d)");
 &lt;automaton&gt;
 gap&gt; IsAcyclic(A);
 false
@@ -214,7 +240,7 @@ gap&gt; A := MealyAutomaton("a=(b,a)(1,2), b=(b,a)");
 &lt;automaton&gt;
 gap&gt; D := DualAutomaton(A);
 &lt;automaton&gt;
-gap&gt; Print(D);
+gap&gt; Display(D);
 d1 = (d2, d1)[ 2, 2 ], d2 = (d1, d2)[ 1, 1 ]
 </pre>
 <p>
@@ -227,7 +253,7 @@ gap&gt; A := MealyAutomaton("a=(b,a)(1,2), b=(b,a)");
 &lt;automaton&gt;
 gap&gt; B := InverseAutomaton(A);
 &lt;automaton&gt;
-gap&gt; Print(B);
+gap&gt; Display(B);
 a1 = (a1, a2)(1,2), a2 = (a2, a1)
 </pre>
 <p>
@@ -262,11 +288,11 @@ gap&gt; IsIRAutomaton(L);
 true
 </pre>
 <p>
-The next three commands deal with a procedure called MD-reduction developed
+The next three commands deal with the, so-called, MD-reduction procedure developed
 in&nbsp;<a href="biblio.htm#AKL"><cite>AKL</cite></a>. Particularly, according
 to&nbsp;<a href="biblio.htm#KLI"><cite>KLI</cite></a>, a 2-letter or 2-state invertible reversible automaton
-generates a finite group if and only if the MD-reduction procedure terminates with a
-trivial automaton. In the last case the automaton is called MD-trivial.
+generates a finite group if and only if the MD-reduction procedure terminates with the
+trivial automaton. In this case an automaton is called MD-trivial.
 <p>
 <a name = "SSEC002.15"></a>
 <li><code>MDReduction( </code><var>A</var><code> ) O</code>
@@ -285,9 +311,9 @@ gap&gt; NumberOfStates(MinimizationOfAutomaton(A));
 4
 gap&gt; MDR:=MDReduction(A);
 [ &lt;automaton&gt;, &lt;automaton&gt; ]
-gap&gt; Print(MDR[1]);
+gap&gt; Display(MDR[1]);
 d1 = (d2, d2, d1, d1)(1,4,3), d2 = (d1, d1, d2, d2)(1,4)
-gap&gt; Print(MDR[2]);
+gap&gt; Display(MDR[2]);
 d1 = (d4, d4)(1,2), d2 = (d2, d2)(1,2), d3 = (d1, d3), d4 = (d3, d1)
 </pre>
 <p>
@@ -311,7 +337,7 @@ gap&gt; A := MealyAutomaton("a=(a,b)(1,2), b=(a,b)");
 &lt;automaton&gt;
 gap&gt; B := MealyAutomaton("c=(d,c), d=(c,e)(1,2), e=(e,d)");
 &lt;automaton&gt;
-gap&gt; Print(DisjointUnion(A, B));
+gap&gt; Display(DisjointUnion(A, B));
 a1 = (a1, a2)(1,2), a2 = (a1, a2), a3 = (a4, a3), a4 = (a3, a5)
 (1,2), a5 = (a5, a4)
 </pre>
@@ -337,7 +363,7 @@ Returns the minimal subautomaton of the automaton <var>A</var> containing states
 <pre>
 gap&gt; A := MealyAutomaton("a=(e,d)(1,2),b=(c,c),c=(b,c)(1,2),d=(a,e)(1,2),e=(e,d)");
 &lt;automaton&gt;
-gap&gt; Print(SubautomatonWithStates(A, [1, 4]));
+gap&gt; Display(SubautomatonWithStates(A, [1, 4]));
 a = (e, d)(1,2), d = (a, e)(1,2), e = (e, d)
 </pre>
 <p>
@@ -349,7 +375,7 @@ containing all cycles in <var>A</var>.
 <pre>
 gap&gt; A := MealyAutomaton("a=(b,c)(1,2),b=(d,d),c=(d,b)(1,2),d=(d,b)(1,2),e=(a,d)");
 &lt;automaton&gt;
-gap&gt; Print(AutomatonNucleus(A));
+gap&gt; Display(AutomatonNucleus(A));
 b = (d, d), d = (d, b)(1,2)
 </pre>
 <p>
@@ -370,5 +396,5 @@ true
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP003.htm">Previous</a>] [<a href ="CHAP005.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>automgrp manual<br>January 2014
+<address>automgrp manual<br>March 2016
 </address></body></html>

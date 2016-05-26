@@ -2,9 +2,9 @@
 ##
 #W  autom.gi                 automgrp package                  Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -33,7 +33,7 @@ function(family, word, states, perm, invertible)
   if invertible then
     cat := IsInvertibleAutom and IsAutomRep;
 
-    if not AG_IsInvertibleTransformation(perm) then
+    if perm^-1=fail then
       Error(perm, " is not invertible");
     else
       perm := AG_PermFromTransformation(perm);
@@ -154,7 +154,7 @@ end);
 ##
 #M  Autom(<word>, <list>)
 ##
-InstallOtherMethod(Autom, "for [IsAssocWord, IsList]",
+InstallMethod(Autom, "for [IsAssocWord, IsList]",
                    [IsAssocWord, IsList],
 function(w, list)
   local fam;
@@ -225,7 +225,7 @@ end);
 ##
 #M  Perm(<a>)
 ##
-InstallOtherMethod(Perm, "for [IsAutom]", [IsAutom],
+InstallMethod(Perm, "for [IsAutom]", [IsAutom],
 function(a)
     return a!.perm;
 end);
@@ -311,7 +311,7 @@ end;
 ##
 #M  IsOne(a)
 ##
-InstallOtherMethod(IsOne, "for [IsAutom]", [IsAutom],
+InstallMethod(IsOne, "for [IsAutom]", [IsAutom],
 function(a)
   local i, w, nw, d, to_check, checked, deb_i, perm, autlist, pos, istrivstate, exp, G, trivstate;
 
@@ -543,7 +543,7 @@ end);
 ##
 #M  Section(a, k)
 ##
-InstallOtherMethod(Section, "for [IsAutom, IsPosInt]", [IsAutom, IsPosInt],
+InstallMethod(Section, "for [IsAutom, IsPosInt]", [IsAutom, IsPosInt],
 function(a, k)
   if k > a!.deg then
     Error("in Section(IsAutom, IsPosInt): invalid vertex ", k);
@@ -575,7 +575,7 @@ end);
 ##
 #M  k ^ a
 ##
-InstallOtherMethod(\^, "for [IsPosInt, IsAutom]", [IsPosInt, IsAutom],
+InstallMethod(\^, "for [IsPosInt, IsAutom]", [IsPosInt, IsAutom],
 function(k, a)
     return k ^ Perm(a);
 end);
@@ -585,16 +585,18 @@ end);
 ##
 #M  seq ^ a
 ##
-InstallOtherMethod(\^, "for [IsList, IsAutom]", [IsList, IsAutom],
+InstallMethod(\^, "for [IsList, IsAutom]", [IsList, IsAutom],
 function(seq, a)
     local i, deg, img, cur;
 
     deg := DegreeOfTree(a);
     for i in seq do
       if not IsInt(i) or i < 1 or i > deg then
-        Print("\^(IsList, IsAutom): ",
-              i, "is out of range 1..", deg, "\n");
-        return seq;
+         Error("\^(IsList, IsAutom): ",
+              i, " is out of range 1..", deg, " and is not a letter of the alphabet\n");
+#        Print("\^(IsList, IsAutom): ",
+#             i, " is out of range 1..", deg, " and is not a letter of the alphabet\n");
+#        return seq;
       fi;
     od;
 
@@ -641,7 +643,7 @@ end);
 
 InstallMethod(TransformationOnFirstLevel, [IsAutom],
 function(a)
-  return a!.perm;
+  return AsTransformation(a!.perm);
 end);
 
 
@@ -706,7 +708,7 @@ end);
 ##
 #M  Order(<a>)
 ##
-InstallOtherMethod(Order, "for [IsInvertibleAutom]", true,
+InstallMethod(Order, "for [IsInvertibleAutom]", true,
                    [IsInvertibleAutom],
 function(a)
   local ord_loc;

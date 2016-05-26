@@ -9,12 +9,12 @@ PackageName := "Carat",
 
 Subtitle := "Interface to CARAT, a crystallographic groups package",
 
-Version := "2.1.4",
+Version := "2.1.6",
 
-Date := "29/05/2012",
+Date := "23/05/2016",
 
 ArchiveURL := 
-  "http://www.math.uni-bielefeld.de/~gaehler/gap45/Carat/carat-2.1.4",
+  "http://www.math.uni-bielefeld.de/~gaehler/gap45/Carat/carat-2.1.6",
 
 ArchiveFormats := ".tar.gz",
 

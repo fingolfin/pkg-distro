@@ -19,14 +19,13 @@ see&nbsp;<Ref Sect="Installing a GAP Package" BookName="ref"/>
 for details.
 It is however also possible to keep an additional <F>pkg</F> directory
 in your private directories,
-see Section&nbsp;<Ref Sect="GAP Root Directory" BookName="ref"/>.
+see Section&nbsp;<Ref Sect="GAP Root Directories" BookName="ref"/>.
 The latter possibility <E>must</E> be chosen if you do not have write access
 to the &GAP; root directory.
 
 <P/>
 
-Data files (in the subdirectories <F>datagens</F> and <F>dataword</F>
-of the package) that are available from an earlier version
+Data files that are available from an earlier version
 of the package are in principle kept;
 see&nbsp;<Ref
 Func="AtlasOfGroupRepresentationsTestTableOfContentsRemoteUpdates"/>
@@ -50,10 +49,14 @@ then its external binary must be available.
 <P/>
 
 After unpacking the package archive,
-it should be checked whether the subdirectories
-<F>datagens</F> and <F>dataword</F> of the package directory have
-write permissions for those users who will download files from the servers.
-The recommended permissions under UNIX are set as follows.
+the write permissions for those directories should be checked
+into which users will download files.
+Every user can customize these paths via a user preference,
+see Section <Ref Subsect="subsect:AtlasRepDataDirectory"/>,
+the defaults are the subdirectories
+<F>datagens</F> and <F>dataword</F> of the package directory.
+The recommended permissions under UNIX for the default directories
+are set as follows.
 
 <P/>
 
@@ -129,12 +132,11 @@ and read it with <Ref Func="ReplaceAtlasTableOfContents"/>.
 <Heading>User Parameters for the <Package>AtlasRep</Package> Package</Heading>
 
 This section lists global parameters for which it might make sense
-to change their defaults by assignments to global variables,
-either just for the current &GAP; session or as user preferences
-in the user's <F>gaprc</F> file
-(see&nbsp;<Ref Sect="The gap.ini and gaprc files" BookName="ref"/>).
-For an overview of these parameters,
-see <Ref Func="AtlasOfGroupRepresentationsUserParameters"/>.
+to change their defaults by assignments to global variables
+(see <Ref Func="AtlasOfGroupRepresentationsUserParameters"/>
+for an overview of these parameters)
+or using &GAP;'s user preferences
+(see <Ref Subsect="Configuring User preferences" BookName="ref"/>).
 
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -203,7 +205,7 @@ it might be impossible to actually <E>store</E> these files
 in the data directories of the installed package;
 in this case, it is advisable to install the whole package
 or just its data directories in a private directory,
-see&nbsp;<Ref Sect="GAP Root Directory" BookName="ref"/> for details.
+see&nbsp;<Ref Sect="GAP Root Directories" BookName="ref"/> for details.
 
 </Subsection>
 
@@ -261,7 +263,7 @@ server is afterwards compressed with <F>gzip</F>.
 <Index Key ="gzip"><F>gzip</F></Index>
 This saves a lot of space if many &MeatAxe; format files are accessed.
 (Note that data files in other formats are very small.)
-For example, at the time of the release of version&nbsp;1.5 there were about
+For example, at the time of the release of version&nbsp;1.5.1 there were about
 <M>8\,400</M> data files in &MeatAxe; format,
 which needed about <M>1\,400</M> MB in uncompressed text format
 and about <M>275</M> MB in compressed text format.
@@ -291,8 +293,10 @@ option, which is necessary for switching off &GAP;'s automatic line breaking.
 <Heading>Customizing the Access to Data Files</Heading>
 
 By default, local data files are stored in the subdirectories <F>datagens</F>
-and <F>dataword</F> of the package, and the files are exactly the text files
-provided on the servers.
+and <F>dataword</F> of the directory given by the user preference
+<C>AtlasRepDataDirectory</C>
+(see Section <Ref Subsect="subsect:AtlasRepDataDirectory"/>),
+and the files are exactly the text files provided on the servers.
 However, a more flexible approach may be useful.
 
 <P/>
@@ -369,6 +373,10 @@ cf.&nbsp;<Ref Func="FFMatOrPermCMtxBinary"/>.
 
 <#Include Label="AtlasOfGroupRepresentationsShowUserParameters">
 
+<#Include Label="AtlasRepDataDirectory">
+<#Include Label="WriteMeatAxeFilesOfMode2">
+<#Include Label="BaseOfMeatAxePermutation">
+
 </Section>
 
 
@@ -394,13 +402,13 @@ Besides package archives and introductory package information, it provides
   cf.&nbsp;<Ref Func="ReloadAtlasTableOfContents"/>,
 </Item>
 <Item>
-  a <E>starter archive</E> (see
-  <URL>&ATLASREPHOME;/atlasrepdata.tar.gz</URL>),
-  containing many small representations and programs,
+  a <E>starter archive</E>
+  containing many small representations and programs
+  (see <URL>&ATLASREPHOME;/atlasrepdata.tar.gz</URL>),
 </Item>
 <Item>
-  the list of <E>changes of server files</E> in HTML format (see
-  <URL>&ATLASREPHOME;/htm/data/changes.htm</URL>),
+  the list of <E>changes of server files</E> in HTML format
+  (see <URL>&ATLASREPHOME;/htm/data/changes.htm</URL>),
   cf.&nbsp;<Ref Func="AtlasOfGroupRepresentationsTestTableOfContentsRemoteUpdates"/>,
   and
 </Item>

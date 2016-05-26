@@ -2,45 +2,25 @@
 ##
 #W  atlasrep.tst         GAP 4 package AtlasRep                 Thomas Breuer
 ##
-#Y  Copyright (C)  2001,  Lehrstuhl D fuer Mathematik,  RWTH Aachen,  Germany
+#Y  Copyright (C)  2001,   Lehrstuhl D für Mathematik,  RWTH Aachen,  Germany
 ##
 ##  This file contains among others the function calls needed to perform some
 ##  of the sanity checks mentioned in the manual section about sanity checks.
 ##
 ##  In order to run the tests, one starts GAP from the `tst' subdirectory
-##  of the `pkg/atlasrep' directory, and calls `ReadTest( "atlasrep.tst" );'.
-##
-##  If one of the functions `AGR.Test.Words', `AGR.Test.FileHeaders' reports
-##  an error then detailed information can be obtained by increasing the
-##  info level of `InfoAtlasRep' to at least 1 and then running the tests
-##  again.
+##  of the `pkg/atlasrep' directory, and calls `Test( "atlasrep.tst" );'.
 ##
 
 gap> START_TEST( "Input file: atlasrep.tst" );
-
 
 # Load the package.
 gap> LoadPackage( "atlasrep" );
 true
 gap> LoadPackage( "ctbllib" );
 true
-gap> ReadPackage( "atlasrep", "gap/test.g" );
-true
-
-# Test whether the locally stored straight line programs
-# can be read and processed.
-gap> if not AGR.Test.Words() then
->      Print( "#I  Error in `AGR.Test.Words'\n" );
-> fi;
-
-# Test whether the locally stored generators are consistent
-# with their filenames.
-gap> if not AGR.Test.FileHeaders() then
->      Print( "#I  Error in `AGR.Test.FileHeaders'\n" );
-> fi;
-
-# Test the standardization of the available generators.
-#T missing!
+gap> if not IsBound( AGR.Test ) then
+>      ReadPackage( "atlasrep", "gap/test.g" );
+>    fi;
 
 # Test reading and writing straight line programs.
 gap> str:= "\
@@ -145,7 +125,7 @@ gap> prg:= ScanStraightLineProgram( str, "string" );;
 gap> AtlasStringOfProgram( prg.program );
 "inp 2\ncj 1 2 3\noup 1 3\n"
 
-# Test reading group generators in {\MeatAxe} format.
+# Test reading group generators in MeatAxe format.
 gap> dir:= DirectoriesPackageLibrary( "atlasrep", "tst" );;
 
 # mode 12
@@ -208,23 +188,23 @@ gap> str:= "\
 gap> scan:= ScanMeatAxeFile( str, "string" );;
 gap> Print( scan, "\n" );
 [ [ 0*Z(11), Z(11)^0, 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11),
-       0*Z(11), 0*Z(11) ],
+       0*Z(11), 0*Z(11) ], 
   [ Z(11)^0, 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11),
-       0*Z(11), 0*Z(11) ],
+       0*Z(11), 0*Z(11) ], 
   [ 0*Z(11), 0*Z(11), 0*Z(11), Z(11)^0, 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11),
-       0*Z(11), 0*Z(11) ],
+       0*Z(11), 0*Z(11) ], 
   [ 0*Z(11), 0*Z(11), Z(11)^0, 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11),
-       0*Z(11), 0*Z(11) ],
+       0*Z(11), 0*Z(11) ], 
   [ 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), Z(11)^0, 0*Z(11),
-       0*Z(11), 0*Z(11) ],
+       0*Z(11), 0*Z(11) ], 
   [ 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), Z(11)^0,
-       0*Z(11), 0*Z(11) ],
+       0*Z(11), 0*Z(11) ], 
   [ 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), Z(11)^0, 0*Z(11), 0*Z(11), 0*Z(11),
-       0*Z(11), 0*Z(11) ],
+       0*Z(11), 0*Z(11) ], 
   [ 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), 0*Z(11), Z(11)^0, 0*Z(11), 0*Z(11),
-       0*Z(11), 0*Z(11) ],
+       0*Z(11), 0*Z(11) ], 
   [ Z(11)^9, Z(11)^9, Z(11)^5, Z(11)^5, Z(11)^6, Z(11)^5, Z(11)^6, Z(11)^5,
-       Z(11)^5, 0*Z(11) ],
+       Z(11)^5, 0*Z(11) ], 
   [ Z(11)^5, Z(11)^5, Z(11)^6, Z(11)^6, Z(11)^0, Z(11)^9, Z(11)^0, Z(11)^9,
        0*Z(11), Z(11)^5 ] ]
 gap> str:= "\
@@ -278,7 +258,7 @@ gap> scan:= ScanMeatAxeFile( Filename( dir, "permmat7.tst" ) );;
 gap> scan = PermutationMat( (1,2,3)(4,6), 7, GF(3) );
 true
 
-# Test writing group generators in {\MeatAxe} format.
+# Test writing group generators in MeatAxe format.
 # (Cover the cases of matrices over small fields, over large prime fields,
 # and over large nonprime fields.)
 gap> mat:= [ [ 1, 0 ], [ 0, 0 ] ] * Z(3)^0;; # (not a permutation matrix)
@@ -328,6 +308,7 @@ gap> newval = oldval;
 true
 gap> SetInfoLevel( InfoAtlasRep, level );
 
+##
 gap> STOP_TEST( "atlasrep.tst", 10000000 );
 
 

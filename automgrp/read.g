@@ -2,19 +2,10 @@
 ##
 #W  read.g                  automgrp package                   Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
-
-if false then
-  MakeReadWriteGlobal("InstallMethod");
-  AG_saved_InstallMethod := InstallMethod;
-  InstallMethod := function(arg)
-    Print("InstallMethod: ", arg[1], "\n");
-    CallFuncList(AG_saved_InstallMethod, arg);
-  end;
-fi;
 
 ReadPkg("automgrp", "gap/globals.g");
 ReadPkg("automgrp", "gap/parser.g");
@@ -37,16 +28,12 @@ ReadPkg("automgrp", "gap/selfsim.gi");
 ReadPkg("automgrp", "gap/selfsimfam.gi");
 ReadPkg("automgrp", "gap/selfsimsg.gi");
 ReadPkg("automgrp", "gap/selfsimgroup.gi");
-ReadPkg("automgrp", "gap/data.g");
 ReadPkg("automgrp", "gap/groups.g");
-ReadPkg("automgrp", "gap/scilab.gi");
+#ReadPkg("automgrp", "gap/scilab.gi");
 
-
-
-if IsBoundGlobal("AG_saved_InstallMethod") then
-  InstallMethod := AG_saved_InstallMethod;
-  MakeReadOnlyGlobal("InstallMethod");
-  UnbindGlobal("AG_saved_InstallMethod");
+if IsPackageMarkedForLoading("FR", ">= 2.0.0" ) then
+  ReadPkg("automgrp", "gap/convertersfr.gi");
 fi;
+
 
 #E

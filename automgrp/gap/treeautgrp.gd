@@ -2,9 +2,9 @@
 ##
 #W  treeautgrp.gd              automgrp package                Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -37,9 +37,9 @@ DeclareOperation("TreeAutomorphismGroup", [IsTreeAutomorphismGroup, IsPermGroup]
 ##  the projection of the stabilizer of $v$ in <G>
 ##  on this vertex coincides with the whole group <G>.
 ##  \beginexample
-##  gap> GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+##  gap> Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 ##  < a, b, c, d >
-##  gap> IsFractal(GrigorchukGroup);
+##  gap> IsFractal(Grigorchuk_Group);
 ##  true
 ##  \endexample
 ##
@@ -81,7 +81,9 @@ InstallTrueMethod(IsFractal, IsFractalByWords);
 ##  3
 ##  gap> Size(H);
 ##  16
-##  gap> LevelOfFaithfulAction(AddingMachine, 10);
+##  gap> Adding_Machine := AutomatonGroup("a=(1,a)(1,2)");
+##  < a >
+##  gap> LevelOfFaithfulAction(Adding_Machine, 10);
 ##  fail
 ##  \endexample
 ##
@@ -121,7 +123,7 @@ DeclareProperty("IsContracting", IsTreeAutomorphismGroup);
 ##  gap> Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 ##  < u, v >
 ##  gap> StabilizerOfFirstLevel(Basilica);
-##  < u^2, u*v*u^-1, v >
+##  < v, u^2, u*v*u^-1 >
 ##  \endexample
 ##
 DeclareAttribute("StabilizerOfFirstLevel", IsTreeAutomorphismGroup);
@@ -135,8 +137,8 @@ DeclareAttribute("StabilizerOfFirstLevel", IsTreeAutomorphismGroup);
 ##  gap> Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 ##  < u, v >
 ##  gap> StabilizerOfLevel(Basilica, 2);
-##  < u*v^2*u^-1, u*v*u*v^2*u^-1*v^-1*u^-1, v^2, v*u^2*v^-1, u*v*u^2*v^-1*u^-1, u^
-##  2, v*u*v*u*v^-1*u^-1*v^-1*u^-1 >
+##  < u^2, v^2, u*v^2*u^-1, v*u^2*v^-1, u*v*u^2*v^-1*u^-1, (v*u)^2*(v^-1*u^-1)^2, v*u*\
+##  v^2*u^-1*v^-1, (u*v)^2*u*v^-1*u^-1*v^-1, (u*v)^2*v*u^-1*v^-1*u^-1 >
 ##  \endexample
 ##
 KeyDependentOperation("StabilizerOfLevel", IsTreeAutomorphismGroup, IsPosInt, ReturnTrue);
@@ -151,8 +153,8 @@ KeyDependentOperation("StabilizerOfLevel", IsTreeAutomorphismGroup, IsPosInt, Re
 ##  gap> Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 ##  < u, v >
 ##  gap> StabilizerOfVertex(Basilica, [1,2,1]);
-##  < v*u^4*v^-1, v*u^2*v^2*u^-2*v^-1, v^2, u^2, v*u^2*v*u^2*v^-1*u^-2*v^
-##  -1, u*v*u^-1, v*u^-1*v*u*v^-1, v*u^2*v*u*v*u^-1*v^-1*u^-2*v^-1 >
+##  < u^2, u*v*u^-1, v^2, v*u*v*u^-1*v^-1, v*u^-1*v*u*v^-1, v*u^4*v^-1, v*u^2*v^2*u^-2\
+##  *v^-1, (v*u^2)^2*v^-1*u^-2*v^-1, v*u*(u*v)^2*u^-1*v^-1*u^-2*v^-1 >
 ##  \endexample
 ##
 DeclareOperation("StabilizerOfVertex", [IsTreeAutomorphismGroup, IsObject]);
@@ -170,7 +172,7 @@ DeclareOperation("StabilizerOfVertex", [IsTreeAutomorphismGroup, IsObject]);
 ##  gap> Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 ##  < u, v >
 ##  gap> Projection(StabilizerOfVertex(Basilica, [1,2,1]), [1,2,1]);
-##  < v, u >
+##  < u, v >
 ##  \endexample
 ##
 KeyDependentOperation("Projection", IsTreeAutomorphismGroup, IsPosInt, ReturnTrue);
@@ -188,7 +190,7 @@ DeclareOperation("ProjectionNC", [IsTreeAutomorphismGroup, IsObject]);
 ##  gap> Basilica := AutomatonGroup( "u=(v,1)(1,2), v=(u,1)" );
 ##  < u, v >
 ##  gap> ProjStab(Basilica, [1,2,1]);
-##  < v, u >
+##  < u, v >
 ##  \endexample
 ##
 DeclareOperation("ProjStab", [IsTreeAutomorphismGroup, IsObject]);

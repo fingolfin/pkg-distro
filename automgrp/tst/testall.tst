@@ -2,9 +2,9 @@
 ##
 #W  testall.tst              automgrp package                  Dmytro Savchuk
 #W                                                             Yevgen Muntyan
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Dmytro Savchuk, Yevgen Muntyan
+#Y  Copyright (C) 2003 - 2016 Dmytro Savchuk, Yevgen Muntyan
 ##
 
 # Do this to run tests:
@@ -18,7 +18,6 @@ false
 gap> Read(Filename(DirectoriesLibrary("pkg/automgrp/tst"), "testall.g"));
 Testing automgrp package
 
-list^perm  done
 Parsing automaton string  done
 Groups  done
 Semigroups  done
@@ -36,8 +35,9 @@ Miscellaneous  done
 SelfSim  done
 Examples from manual  done
 RWS 1  done
+Automaton  done
 
-All 6553 tests passed
+All 6480 tests passed
 gap> AG_Globals.unit_test_dots := __save_AG_Globals_unit_test_dots;
 false
 gap> STOP_TEST("automgrp/tst/testall.tst", 10000);

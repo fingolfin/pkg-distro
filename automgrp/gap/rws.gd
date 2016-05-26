@@ -2,9 +2,9 @@
 ##
 #W  rws.gd                  automgrp package                   Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -31,6 +31,7 @@
 ##  b^-1*a^-2*b^-1*a*b^2*a
 ##  \endexample
 ##
+DeclareOperation("AG_UseRewritingSystem", [IsObject]);
 DeclareOperation("AG_UseRewritingSystem", [IsObject, IsBool]);
 
 
@@ -123,7 +124,7 @@ DeclareOperation("AG_RewritingSystem", [IsObject]);
 ##
 DeclareOperation("AG_RewritingSystemRules", [IsObject]);
 
-
+DeclareOperation("AG_ReducedForm", [IsObject]);
 DeclareOperation("AG_ReducedForm", [IsObject, IsObject]);
 
 

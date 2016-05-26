@@ -6,7 +6,7 @@ SetPackageInfo( rec(
 PackageName :=
   "AtlasRep",
 MyVersion :=
-  "1r5p0",
+  "1r5p1",
 MyWWWHome :=
   "http://www.math.rwth-aachen.de/~Thomas.Breuer",
 Subtitle :=
@@ -21,14 +21,15 @@ Date :=
   # "06/06/2007" -- Version 1.3
   # "01/10/2007" -- Version 1.3.1
   # "23/06/2008" -- Version 1.4
-  "12/07/2011", # -- Version 1.5.0
+  # "12/07/2011" -- Version 1.5.0
+  "30/03/2016", # -- Version 1.5.1
 PackageWWWHome :=
   Concatenation( ~.MyWWWHome, "/", LowercaseString( ~.PackageName ) ),
 ArchiveURL :=
   Concatenation( ~.PackageWWWHome, "/", LowercaseString( ~.PackageName ),
                  ~.MyVersion ),
 ArchiveFormats :=
-  ".tar.gz,.zoo",
+  ".tar.gz",
 Persons := [
   rec(
     LastName := "Wilson",
@@ -55,8 +56,7 @@ Persons := [
     FirstNames := "Simon",
     IsAuthor := true,
     IsMaintainer := false,
-    Email := "simonn@maths.bham.ac.uk",
-    WWWHome := "http://web.mat.bham.ac.uk/S.Nickerson",
+    WWWHome := "http://nickerson.org.uk/groups",
     Institution := Concatenation( [
       "School of Mathematics, ",
       "University of Birmingham",
@@ -83,11 +83,11 @@ Persons := [
     Email := "sam@math.rwth-aachen.de",
     WWWHome := ~.MyWWWHome,
     Place := "Aachen",
-    Institution := "Lehrstuhl D f&uuml;r Mathematik, RWTH Aachen",
+    Institution := "Lehrstuhl D für Mathematik, RWTH Aachen",
     PostalAddress := Concatenation( [
       "Thomas Breuer\n",
-      "Lehrstuhl D f&uuml;r Mathematik\n",
-      "Templergraben 64\n",
+      "Lehrstuhl D für Mathematik\n",
+      "Pontdriesch 14/16\n",
       "52062 Aachen\n",
       "Germany"
       ] ),
@@ -105,7 +105,7 @@ PackageInfoURL :=
   Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
 AbstractHTML := Concatenation( [
   "The package provides a <span class=\"pkgname\">GAP</span> interface ",
-  "to the <a href=\"http://brauer.maths.qmul.ac.uk/Atlas\">",
+  "to the <a href=\"http://brauer.maths.qmul.ac.uk/Atlas/v3\">",
   "Atlas of Group Representations</a>"
   ] ),
 PackageDoc := rec(
@@ -124,17 +124,15 @@ PackageDoc := rec(
   ),
 Dependencies := rec(
   GAP :=
-    ">= 4.4.12",                 # do not really need GAP 4.5 features
+    ">= 4.5",                  # need GAP 4.5's user preferences format
   NeededOtherPackages :=
-    [ [ "gapdoc", ">= 1.2" ],
-#     [ "gpisotyp", ">= 1.0" ],
+    [ [ "gapdoc", ">= 1.5" ],  # want `RepeatedUTF8String'
     ],
   SuggestedOtherPackages :=
-    [ [ "browse", ">= 1.4" ],    # want `BrowseData.SortKeyFunctionBibRec'
-      [ "ctbllib", ">= 1.1.4" ], # want `LIBTABLE.NameReplacements'
+    [ [ "browse", ">= 1.4" ],  # want `BrowseData.SortKeyFunctionBibRec'
+      [ "ctbllib", ">= 1.2" ], # want `StructureDescriptionCharacterTableName'
       [ "tomlib", ">= 1.2.1" ],
       [ "io", ">= 3.3" ] ],
-#T suggest also mfer! -> yields data extensions
   # needed external conditions (programs, operating system, ...)  provide
   # just strings as text or
   # pairs [text, URL] where URL  provides further information
@@ -149,7 +147,7 @@ AvailabilityTest :=
 TestFile :=
   "tst/testall.g",
 Keywords :=
-  ["group representations", "finite simple groups"]
+  [ "group representations", "finite simple groups" ]
 ) );
 
 

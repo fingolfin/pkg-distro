@@ -2,9 +2,9 @@
 ##
 #W  selfsimgroup.gi           automgrp package                 Yevgen Muntyan
 #W                                                             Dmytro Savchuk
-##  automgrp v 1.2.4
+##  automgrp v 1.3
 ##
-#Y  Copyright (C) 2003 - 2014 Yevgen Muntyan, Dmytro Savchuk
+#Y  Copyright (C) 2003 - 2016 Yevgen Muntyan, Dmytro Savchuk
 ##
 
 
@@ -104,7 +104,7 @@ end);
 ##
 #M  GroupOfSelfSimFamily(<G>)
 ##
-InstallOtherMethod(GroupOfSelfSimFamily, "for [IsSelfSimGroup]",
+InstallMethod(GroupOfSelfSimFamily, "for [IsSelfSimGroup]",
                    [IsSelfSimGroup],
 function(G)
   return GroupOfSelfSimFamily(UnderlyingSelfSimFamily(G));
@@ -135,7 +135,6 @@ function(super, sub)
   if HasIsGroupOfSelfSimFamily(super) then
     if not IsGroupOfSelfSimFamily(super) then
       SetIsGroupOfSelfSimFamily(sub, false); fi; fi;
-InstallTrueMethod(IsFractal, IsFractalByWords);
   TryNextMethod();
 end);
 
@@ -206,12 +205,22 @@ function(gens)
   return List(words, w -> SelfSim(w, fam));
 end);
 
-
 ###############################################################################
 ##
 #M  PrintObj(<G>)
 ##
-InstallMethod(PrintObj, "for [IsSelfSimGroup]",
+InstallMethod(PrintObj, "for [IsSelfSimilarGroup]",
+              [IsSelfSimilarGroup],
+function(G)
+  Print("SelfSimilarGroup(\"", String(G), "\")");
+end);
+
+
+###############################################################################
+##
+#M  Display(<G>)
+##
+InstallMethod(Display, "for [IsSelfSimGroup]",
               [IsSelfSimGroup],
 function(G)
   local i, gens, printone;
@@ -231,6 +240,32 @@ function(G)
     od;
     Print("  "); printone(gens[Length(gens)]); Print(" >");
   fi;
+end);
+
+
+#############################################################################
+##
+#M  String(<G>)
+##
+InstallMethod(String, "for [IsSelfSimGroup]", [IsSelfSimGroup],
+function(G)
+  local i, gens, formatone, s;
+
+  formatone := function(a)
+    return Concatenation(String(a), " = ", String(Decompose(a)));
+  end;
+
+  gens := GeneratorsOfGroup(G);
+
+  s := "";
+  for i in [1..Length(gens)] do
+    Append(s, formatone(gens[i]));
+    if i <> Length(gens) then
+      Append(s, ", ");
+    fi;
+  od;
+
+  return s;
 end);
 
 
@@ -379,7 +414,7 @@ end);
 ##
 ##  For example, consider a subgroup $\langle a, b\rangle$ of Grigorchuk group.
 ##  \beginexample
-##  gap> GrigorchukGroup := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
+##  gap> Grigorchuk_Group := AutomatonGroup("a=(1,1)(1,2),b=(a,c),c=(a,d),d=(1,b)");
 ##  < a, b, c, d >
 ##  gap> f := IsomorphismPermGroup(Group(a, b));
 ##  MappingByFunction( < a, b >, Group(
@@ -422,7 +457,7 @@ end);
 InstallMethod(IsSphericallyTransitive, "for [IsSelfSimGroup]",
               [IsSelfSimGroup],
 function (G)
-  local x, rat_gens, abel_hom;
+  local x, rat_gens, abel_hom, lev;
 
   if IsFractalByWords(G) then
     Info(InfoAutomGrp, 3, "IsSphericallyTransitive(G): true");
@@ -454,6 +489,14 @@ function (G)
       return true;
     fi;
   fi;
+
+  for lev in [1..8] do
+    if not IsTransitiveOnLevel(G,lev) then
+      Info(InfoAutomGrp, 3, "IsSphericallyTransitive(G): false");
+      Info(InfoAutomGrp, 3, "  the group does not act transitively on level ", lev);
+      return false;
+    fi;
+  od;
 
   TryNextMethod();
 end);
@@ -781,7 +824,7 @@ function(G)
 
   H := AutomatonGroup(aut_list);
 
-  if IsTrivial(H) then 
+  if IsTrivial(H) then
     SetIsTrivial( G, true);
     return true;
   fi;

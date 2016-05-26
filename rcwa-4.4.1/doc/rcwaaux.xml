@@ -1,0 +1,145 @@
+<!-- #################################################################### -->
+<!-- ##                                                                ## -->
+<!-- ##  rcwaaux.xml         RCWA documentation           Stefan Kohl  ## -->
+<!-- ##                                                                ## -->
+<!-- #################################################################### -->
+
+<Chapter Label="ch:InstallationAndAuxiliaryFunctions">
+<Heading>Installation and Auxiliary Functions</Heading>
+
+<!-- #################################################################### -->
+
+<Section Label="sec:Requirements">
+<Heading>Requirements</Heading>
+
+This version of &RCWA; needs at least &GAP;&nbsp;4.8.3,
+&ResClasses;&nbsp;4.5.0,
+<Package>GRAPE</Package>&nbsp;4.7&nbsp;<Cite Key="GRAPE"/>,
+<Package>Polycyclic</Package>&nbsp;2.11&nbsp;<Cite Key="Polycyclic"/>,
+<Package>FR</Package>&nbsp;2.2.1&nbsp;<Cite Key="FR"/>,
+&GAPDoc;&nbsp;1.5.1&nbsp;<Cite Key="GAPDoc"/>, and
+<Package>Utils</Package>&nbsp;0.39&nbsp;<Cite Key="Utils"/>.
+With possible exception of the most recent version of &ResClasses;,
+all needed packages are already present in an up-to-date standard &GAP;
+installation. The &RCWA; package is completely written in the &GAP; language
+and can be used on all platforms for which &GAP; is available.
+
+</Section>
+
+<!-- #################################################################### -->
+
+<Section Label="sec:Installation">
+<Heading>Installation</Heading>
+
+Like any other &GAP; package, &RCWA; is usually installed in the <F>pkg</F>
+subdirectory of the &GAP; distribution. This is accomplished by extracting
+the distribution file in this directory. If you have done this, you can
+load the package as usual via <C>LoadPackage( "rcwa" );</C>.
+
+</Section>
+
+<!-- #################################################################### -->
+
+<Section Label="sec:BuildingTheManual">
+<Heading>Building the manual</Heading>
+
+The following routine is a development tool. As all files it generates
+are included in the distribution file anyway, users will not need it.
+
+<ManSection>
+  <Func Name="RCWABuildManual" Arg=""/>
+  <Returns> nothing. </Returns>
+  <Description>
+    This function builds the manual of the &RCWA; package in the file
+    formats &LaTeX;, PDF, HTML and ASCII text.
+    This is accomplished using the &GAPDoc; package by Frank Lübeck and
+    Max Neunhöffer. Building the manual is possible only on UNIX-type
+    systems and requires PDF&LaTeX;.
+  </Description>
+</ManSection>
+
+</Section>
+
+<!-- #################################################################### -->
+
+<Section Label="sec:TheTestingRoutines">
+<Heading>The testing routines</Heading>
+
+<ManSection>
+  <Func Name="RCWATestInstall" Arg=""/>
+  <Returns>
+    <C>true</C> if no errors were found, and <C>false</C> otherwise.
+  </Returns>
+  <Description>
+    Performs a nontrivial computation to check whether an installation of
+    &RCWA; appears to work. Errors, i.e. differences to the correct results
+    of the test computation, are reported. The processed test file is
+    <F>pkg/rcwa/tst/testinstall.tst</F>.
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="RCWATestAll" Arg=""/>
+  <Returns>
+    <C>true</C> if no errors were found, and <C>false</C> otherwise.
+  </Returns>
+  <Description>
+    Runs the full test suite of the &RCWA; package.
+    Any differences to the supposed results of the test computations
+    are reported. The processed test files are in the directory
+    <F>pkg/rcwa/tst</F>. <P/>
+
+    Please note that the test suite is a tool for developing.
+    The tests are deliberately very volatile to allow to spot possible
+    problems of any kind also in other packages or in the &GAP; Library.
+    For this reason you may see reports of differences
+    which simply reflect improved methods in other packages or in the
+    &GAP; Library (for example an object may already know more of its
+    attributes or properties than it is expected to, or an object may
+    be represented in a better way), or which are caused by changes of
+    the way certain objects are printed, and which are therefore harmless.
+    However if the correct and the actual output look different
+    mathematically or if you see error messages or if &GAP; crashes,
+    then something went wrong. Also, reports about significantly
+    increased run times of individual commands as well as run times of
+    test files which are much longer than the predicted times shown
+    may indicate a problem.
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="RCWATestExamples" Arg=""/>
+  <Returns> nothing. </Returns>
+  <Description>
+    Runs all examples in the manual of the &RCWA; package,
+    and reports any differences between the actual output and the
+    output printed in the manual.
+  </Description>
+</ManSection>
+
+</Section>
+
+<!-- #################################################################### -->
+
+<Section Label="sec:TheInfoClass">
+<Heading>The Info class of the package</Heading>
+
+<ManSection>
+  <InfoClass Name="InfoRCWA"/>
+  <Description>
+    This is the Info class of the <Package>RCWA</Package> package.
+    See section <E>Info Functions</E> in the &GAP;
+    Reference Manual for a description of the Info mechanism.
+    For convenience: <C>RCWAInfo(</C><A>n</A><C>)</C> is a shorthand for
+    <C>SetInfoLevel(InfoRCWA</C>,<A>n</A><C>)</C>.
+    <Index Key="RCWAInfo"><C>RCWAInfo</C></Index>
+  </Description>
+</ManSection>
+
+</Section>
+
+<!-- #################################################################### -->
+
+</Chapter>
+
+<!-- #################################################################### -->

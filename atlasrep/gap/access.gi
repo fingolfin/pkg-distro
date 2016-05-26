@@ -11,6 +11,28 @@
 
 #############################################################################
 ##
+#F  AGR.StringFile( <filename> )
+##
+##  In unfortunate cases, files may contain line breaks of the form "\r\n"
+##  instead of "\n".
+##  'Read' would recognize this situation, and would silently replace these
+##  line breaks, but 'StringFile' keeps the file contents.
+##  Therefore we remove the '\r' characters.
+##
+AGR.StringFile:= function( filename )
+    local str;
+
+    str:= StringFile( filename );
+    if IsString( str ) then
+      str:= ReplacedString( str, "\r", "" );
+    fi;
+
+    return str;
+    end;
+
+
+#############################################################################
+##
 #V  AGR.ExtensionInfoCharacterTable
 #V  AGR.HasExtensionInfoCharacterTable
 #V  AGR.LibInfoCharacterTable
@@ -89,7 +111,24 @@ fi;
 ##
 BindGlobal( "AtlasOfGroupRepresentationsTransferFile",
     function( server, srvfile, dstfile )
-    local wget, io, result;
+    local pos, dstdir, wget, io, result;
+
+    # Check whether 'dstfile' can be written.
+    pos:= Positions( dstfile, '/' );
+    if pos = [] then
+      dstdir:= ".";
+    else
+      dstdir:= dstfile{ [ 1 .. pos[ Length( pos ) ] - 1 ] };
+    fi;
+    if not IsWritableFile( dstdir ) then
+      Info( InfoWarning, 1,
+            "Package AtlasRep:\n",
+            "#I    cannot write to the directory '", dstdir, "',\n",
+            "#I    perhaps change the AtlasRep data directories using\n",
+            "#I    'SetUserPreference( \"AtlasRep\",",
+            " \"AtlasRepDataDirectory\", ... )'" );
+      return false;
+    fi;
 
     # Determine admissible alternatives.
     wget:= true;
@@ -161,10 +200,11 @@ InstallValue( AtlasOfGroupRepresentationsAccessFunctionsDefault, [
     active:= true,
 
     location:= function( filename, groupname, dirname, type )
-      local datadirs, info, name, namegz, names, fname;
+      local pref, datadirs, info, name, namegz, names, fname;
 
+      pref:= UserPreference( "AtlasRep", "AtlasRepDataDirectory" );
       if dirname in [ "datagens", "dataword" ] then
-        datadirs:= DirectoriesPackageLibrary( "atlasrep", dirname );
+        datadirs:= [ Directory( Concatenation( pref, dirname ) ) ];
       else
         for info in AtlasOfGroupRepresentationsInfo.private do
           if dirname = info[2] then
@@ -243,7 +283,8 @@ InstallValue( AtlasOfGroupRepresentationsAccessFunctionsDefault, [
                      filepath );
         if result = false then
           Info( InfoAtlasRep, 2,
-                "no connection to AtlasRep server ", info[1] );
+                "cannot transfer file from '", info[1], "'\n",
+                "#I  to '", filepath, "'" );
         else
           break;
         fi;
@@ -251,7 +292,7 @@ InstallValue( AtlasOfGroupRepresentationsAccessFunctionsDefault, [
       od;
       if result = false then
         Info( InfoAtlasRep, 1,
-              "no file `", filename, "' found on the servers" );
+              "file '", filename, "' not fetched" );
         return false;
       fi;
 
@@ -302,13 +343,16 @@ InstallValue( AtlasOfGroupRepresentationsAccessFunctionsDefault, [
     active:= false,
 
     location:= function( filename, groupname, dirname, type )
-      local datadirs, info, names, fname, name;
+      local pref, datadirs, info, names, fname, name;
 
       if not type[1] in [ "perm", "matff" ] then
         return fail;
       fi;
+
+      pref:= UserPreference( "AtlasRep", "AtlasRepDataDirectory" );
+
       if dirname = "datagens" then
-        datadirs:= DirectoriesPackageLibrary( "atlasrep", dirname );
+        datadirs:= [ Directory( Concatenation( pref, dirname ) ) ];
       else
         for info in AtlasOfGroupRepresentationsInfo.private do
           if dirname = info[2] then
@@ -554,27 +598,61 @@ InstallValue( AtlasOfGroupRepresentationsAccessFunctionsDefault, [
 
 #############################################################################
 ##
+#F  AGR.CrcFileFits( <filename>, <path> )
+##
+AGR.CrcFileFits:= function( filename, path )
+    local crc, len;
+
+    crc:= First( AtlasOfGroupRepresentationsInfo.filenames,
+                 p -> p[1] = filename );
+    if crc = fail then
+      return false;
+    fi;
+
+    len:= Length( path );
+    if path{ [ len - 2 .. len ] } = ".gz" then
+      path:= path{ [ 1 .. len - 3 ] };
+    fi;
+    if crc[2] = CrcFile( path ) then
+      return true;
+    else
+      Info( InfoWarning, 1,
+            "CrcFile value of\n",
+            "#I  '", path, "'\n",
+            "#I  does not match, ignoring this file" );
+      return false;
+    fi;
+    end;
+
+
+#############################################################################
+##
 #F  AtlasOfGroupRepresentationsLocalFilename( <dirname>, <groupname>,
 #F      <filename>, <type> )
 ##
 InstallGlobalFunction( AtlasOfGroupRepresentationsLocalFilename,
     function( dirname, groupname, filename, type )
-    local cand, r, path;
+    local cand, r, path, i;
 
     cand:= [];
     for r in Reversed( AtlasOfGroupRepresentationsInfo.accessFunctions ) do
       if r.active = true then
         path:= r.location( filename, groupname, dirname, type );
         if path <> fail then
+          # Check whether the CRC values fit.
           if IsString( path ) then
             path:= [ path ];
+            filename:= [ filename ];
           fi;
-          if ForAll( path, IsExistingFile ) then
+          for i in [ 1 .. Length( filename ) ] do
+            path[i]:= [ path[i], IsExistingFile( path[i] ) ];
+          od;
+          if ForAll( path, x -> x[2] ) then
             # This has priority, do not consider other sources.
-            cand:= [ [ r, List( path, x -> [ x, true ] ) ] ];
+            cand:= [ [ r, path ] ];
             break;
           else
-            Add( cand, [ r, List( path, x -> [ x, IsExistingFile( x ) ] ) ] );
+            Add( cand, [ r, path ] );
           fi;
         fi;
       fi;
@@ -590,49 +668,60 @@ end );
 ##
 InstallGlobalFunction( AtlasOfGroupRepresentationsLocalFilenameTransfer,
     function( dirname, groupname, filename, type )
-    local cand, list;
+    local cand, list, filenamex, result, ok, i;
 
-    # 1. Determine the local directory where to look for the file,
-    #    and the functions that claim to be applicable.
+    # Determine the local directory where to look for the file,
+    # and the functions that claim to be applicable.
     cand:= AtlasOfGroupRepresentationsLocalFilename( dirname, groupname,
                filename, type );
 
-    if not IsEmpty( cand ) then
-      # 2. Check whether the file is already stored.
-      #    If not and if it is not private and if remote access is allowed
-      #    then try to transfer it.
-      if   ForAll( cand[1][2], x -> x[2] ) then
-        # 3. We have the local file(s).  Return path(s) and access functions.
-        if IsString( filename )  then
-          return [ cand[1][2][1][1], cand[1][1] ];
-        else
-          return [ List( cand[1][2], x -> x[1] ), cand[1][1] ];
-        fi;
-      elif AtlasOfGroupRepresentationsInfo.remote = true
-           and dirname in [ "datagens", "dataword" ] then
-        # Try to fetch the remote file(s) from the servers,
-        # using the applicable methods.
-        for list in cand do
-          if   IsString( filename ) and Length( list[2] ) = 1
-               and ( list[2][1][2] or list[1].fetch( list[2][1][1], filename,
-                                        groupname, dirname, type ) ) then
-            # 3. We have the local file.
-            #    Return path and access functions.
-            return [ list[2][1][1], list[1] ];
-          elif not IsString( filename )
-               and Length( list[2] ) = Length( filename )
-               and ForAll( [ 1 .. Length( list[2] ) ],
-                     i -> list[2][i][2] or list[1].fetch( list[2][i][1],
-                              filename[i], groupname, dirname, type ) ) then
-            # 3. We have the local file(s).
-            #    Return path(s) and access functions.
-            return [ List( list[2], x -> x[1] ), list[1] ];
-          fi;
-        od;
-      fi;
+    if IsString( filename ) then
+      filenamex:= [ filename ];
+    else
+      filenamex:= filename;
     fi;
 
-    # The file cannot be made available.
+    for list in cand do
+      if Length( list[2] ) = Length( filenamex ) then
+        # This is the situation we can handle.
+        if IsString( filename ) then
+          result:= [ list[2][1][1], list[1] ];
+        else
+          result:= [ List( list[2], x -> x[1] ), list[1] ];
+        fi;
+        ok:= true;
+        for i in [ 1 .. Length( list[2] ) ] do
+          if list[2][i][2] then
+            # This file is already available.
+            if dirname in [ "datagens", "dataword" ] then
+              # Check its crc value.
+              if not AGR.CrcFileFits( filenamex[i], list[2][i][1] ) then
+                return fail;
+              fi;
+            fi;
+          elif AtlasOfGroupRepresentationsInfo.remote = true and
+               dirname in [ "datagens", "dataword" ] and
+               list[1].fetch( list[2][i][1],
+                              filenamex[i], groupname, dirname, type ) then
+            # We have created a new local file.
+            # Check its crc value,
+            if not AGR.CrcFileFits( filenamex[i], list[2][i][1] ) then
+              return fail;
+            fi;
+          else
+            # We cannot fetch the file.
+            ok:= false;
+            break;
+          fi;
+        od;
+        if ok then
+          # Return path(s) and access functions.
+          return result;
+        fi;
+      fi;
+    od;
+
+    # Not all files can be made available, or not all crc values fit.
     Info( InfoAtlasRep, 1,
           "no file(s) `", filename, "' found in the local directories" );
     return fail;
@@ -647,7 +736,8 @@ InstallGlobalFunction(
     AtlasOfGroupRepresentationsTestTableOfContentsRemoteUpdates, function()
 
     local version, inforec, home, server, path, dstfilename, result, lines,
-          datadirs, line, pos, pos2, filename, localfile, servdate, stat;
+          pref, datadirs, line, pos, pos2, filename, filenames, localfile,
+          servdate, stat;
 
     if LoadPackage( "io" ) <> true then
       Info( InfoAtlasRep, 1, "the package IO is not available" );
@@ -670,37 +760,45 @@ InstallGlobalFunction(
     if AtlasOfGroupRepresentationsTransferFile( server,
                Concatenation( path, "/htm/data/changes.htm" ),
                dstfilename ) then
-      lines:= SplitString( StringFile( dstfilename ), "\n" );
+      lines:= SplitString( AGR.StringFile( dstfilename ), "\n" );
       lines:= Filtered( lines,
                   x ->     20 < Length( x ) and x{ [ 1 .. 4 ] } = "<tr>"
                        and x{ [ -3 .. 0 ] + Length( x ) } = " -->" );
-      datadirs:= Concatenation(
-                     DirectoriesPackageLibrary( "atlasrep", "datagens" ),
-                     DirectoriesPackageLibrary( "atlasrep", "dataword" ) );
+      pref:= UserPreference( "AtlasRep", "AtlasRepDataDirectory" );
+      datadirs:= [ Directory( Concatenation( pref, "datagens" ) ),
+                   Directory( Concatenation( pref, "dataword" ) ) ];
       for line in lines do
         pos:= PositionSublist( line, "</td><td>" );
         if pos <> fail then
           pos2:= PositionSublist( line, "</td><td>", pos );
           filename:= line{ [ pos+9 .. pos2-1 ] };
-          localfile:= Filename( datadirs, filename );
-          if localfile <> fail then
-            if not IsExistingFile( localfile ) then
-              localfile:= Concatenation( localfile, ".gz" );
-            fi;
-            if IsExistingFile( localfile ) then
-              # There is something to compare.
-              pos:= PositionSublist( line, "<!-- " );
-              if pos <> fail then
-                servdate:= Int( line{ [ pos+5 .. Length( line )-4 ] } );
-                stat:= IO_stat( localfile );
-                if stat <> fail then
-                  if stat.mtime < servdate then
-                    Add( result, localfile );
+          if PositionSublist( filename, "<it>i</it>" ) <> fail then
+            filenames:= List( [ "1", "2" ],
+                i -> ReplacedString( filename, "<it>i</it>", i ) );
+          else
+            filenames:= [ filename ];
+          fi;
+          for filename in filenames do
+            localfile:= Filename( datadirs, filename );
+            if localfile <> fail then
+              if not IsExistingFile( localfile ) then
+                localfile:= Concatenation( localfile, ".gz" );
+              fi;
+              if IsExistingFile( localfile ) then
+                # There is something to compare.
+                pos:= PositionSublist( line, "<!-- " );
+                if pos <> fail then
+                  servdate:= Int( line{ [ pos+5 .. Length( line )-4 ] } );
+                  stat:= IO_stat( localfile );
+                  if stat <> fail then
+                    if stat.mtime < servdate then
+                      Add( result, localfile );
+                    fi;
                   fi;
                 fi;
               fi;
             fi;
-          fi;
+          od;
         fi;
       od;
     fi;
@@ -1043,37 +1141,33 @@ AGR.GRP:= function( dirname, simpname, groupname )
 
 #############################################################################
 ##
-#F  AGR.TOC( <typename>, <filename>[, <n>] )
+#F  AGR.TOC( <typename>, <filename>, <crc> )
 ##
 ##  <#GAPDoc Label="AGR.TOC">
-##  <Mark><C>AGR.TOC( <A>typename</A>, <A>filename</A>[, <A>n</A>] )</C></Mark>
+##  <Mark><C>AGR.TOC( <A>typename</A>, <A>filename</A>, <A>crcfile</A> )</C></Mark>
 ##  <Item>
 ##    Called with two strings <A>typename</A> and <A>filename</A>,
+##    and a list <A>crc</A> of integers,
 ##    <C>AGR.TOC</C> notifies an entry to the <C>TableOfContents.remote</C>
 ##    component of <Ref Var="AtlasOfGroupRepresentationsInfo"/>,
 ##    where <A>typename</A> must be the name of the data type to which
-##    the entry belongs and <A>filename</A> must be the prefix of the data
-##    file(s); the optional third argument <A>n</A> indicates that the
-##    generators are located in <A>n</A> files.
+##    the entry belongs,
+##    <A>filename</A> must be the prefix of the data file(s),
+##    and <A>crc</A> must be the list of <Ref BookName="ref" Func="CrcFile"/>
+##    values of the file(s).
 ##    <P/>
 ##    This function is <E>not</E> intended for private extensions of the
 ##    database.
 ##    <P/>
 ##    An example of a valid call is
-##    <C>AGR.TOC("perm","S5G1-p5B0.m",2)</C>.
+##    <C>AGR.TOC("perm","S5G1-p5B0.m",[-3581724,115937465])</C>.
 ##  </Item>
 ##  <#/GAPDoc>
 ##
-AGR.TOC:= function( arg )
-    local type, string, t, record, entry, groupname, added, j;
+AGR.TOC:= function( type, string, crc )
+    local n, t, stringx, record, entry, groupname, added, j;
 
-    # Get the arguments.
-    type:= arg[1];
-    if Length( arg ) = 3 then
-      string:= Concatenation( arg[2], "1" );
-    else
-      string:= arg[2];
-    fi;
+    n:= Length( crc );
 
     # Parse the filename with the given format info.
     # type:= First( AGR.DataTypes( "rep", "prg" ), x -> x[1] = type );
@@ -1083,10 +1177,18 @@ AGR.TOC:= function( arg )
         break;
       fi;
     od;
+
+    if 1 < n then
+      stringx:= Concatenation( string, "1" );
+    else
+      stringx:= string;
+    fi;
+
     record:= AtlasTableOfContents( "remote" ).TableOfContents;
-    entry:= AGR.ParseFilenameFormat( string, type[2].FilenameFormat );
+    entry:= AGR.ParseFilenameFormat( stringx, type[2].FilenameFormat );
     if entry = fail then
-      Info( InfoAtlasRep, 1, "`", arg, "' is not a valid t.o.c. entry" );
+      Info( InfoAtlasRep, 1, "`", [ type, string, crc ],
+            "' is not a valid t.o.c. entry" );
       return;
     fi;
 
@@ -1106,20 +1208,25 @@ AGR.TOC:= function( arg )
     fi;
 
     # Add the first filename.
-    added:= type[2].AddFileInfo( record.( type[1] ), entry, string );
+    added:= type[2].AddFileInfo( record.( type[1] ), entry, stringx );
+    Add( AtlasOfGroupRepresentationsInfo.filenames,
+         Immutable( [ stringx, crc[1] ] ) );
 
     # Add the other filenames if necessary.
-    if added and Length( arg ) = 3 then
-      for j in [ 2 .. arg[3] ] do
+    if added then
+      for j in [ 2 .. n ] do
         entry[ Length( entry ) ]:= j;
-        added:= type[2].AddFileInfo( record.( type[1] ), entry,
-                    Concatenation( arg[2], String( j ) ) )
+        stringx:= Concatenation( string, String( j ) );
+        added:= type[2].AddFileInfo( record.( type[1] ), entry, stringx )
                 and added;
+        Add( AtlasOfGroupRepresentationsInfo.filenames,
+             Immutable( [ stringx, crc[j] ] ) );
       od;
     fi;
 
     if not added then
-      Info( InfoAtlasRep, 1, "`", arg, "' is not a valid t.o.c. entry" );
+      Info( InfoAtlasRep, 1, "`", [ type, string, crc ],
+            "' is not a valid t.o.c. entry" );
     fi;
     end;
 
@@ -2212,7 +2319,7 @@ InstallGlobalFunction( StringOfAtlasTableOfContents, function( string )
     Append( str, "In the following, the table of contents is built\n" );
     Append( str, "##  using `AGR.GRP' and `AGR.TOC'.\n" );
     Append( str, "##  This part of the file is created by the function\n" );
-    Append( str, "##  `RecomputeAtlasTableOfContents',\n" );
+    Append( str, "##  `StringOfAtlasTableOfContents',\n" );
     Append( str, "##  do not edit below this line!\n" );
     Append( str, "##\n\n" );
 
@@ -2744,6 +2851,7 @@ InstallGlobalFunction( AtlasOfGroupRepresentationsForgetPrivateDirectory,
     AtlasOfGroupRepresentationsInfo.GAPnames:= Compacted( GAPnames );
     AGR.SetGAPnamesSortDisp();
     AtlasOfGroupRepresentationsInfo.TOC_Cache:= rec();
+    AtlasOfGroupRepresentationsInfo.TableOfContents.merged:= rec();
     end );
 
 
@@ -2758,7 +2866,4 @@ fi;
 #############################################################################
 ##
 #E
-
-#str:= StringOfAtlasTableOfContents( "remote" );;
-#FileString( "fil", str );
 

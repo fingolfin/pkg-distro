@@ -11,23 +11,19 @@
 
 #############################################################################
 ##
-##  Avoid error messages when old GAPDoc versions are used.
-##
-if not IsBound( RepeatedUTF8String ) then
-  RepeatedUTF8String:= "dummy";
-fi;
-
-
-#############################################################################
-##
 #F  AGR.Pager( <string> )
 ##
 ##  Simply calling `Pager' is not good enough, because GAP introduces
 ##  line breaks in too long lines, and GAP does not compute the printable
 ##  length of the line but the length as a string.
 ##
+##  If <string> is empty then the builtin pager runs into an error,
+##  therefore we catch this case.
+##
 AGR.Pager:= function( string )
-    Pager( rec( lines:= string, formatted:= true ) );
+    if string <> "" then
+      Pager( rec( lines:= string, formatted:= true ) );
+    fi;
     end;
 
 
@@ -40,10 +36,7 @@ AGR.Pager:= function( string )
 ##  because of the automatically inserted line breaks.
 ##
 AGR.ShowOnlyASCII:= function()
-    return not IsBound( RepeatedUTF8String ) or
-           IsIdenticalObj( AtlasOfGroupRepresentationsInfo.displayFunction,
-#   return IsIdenticalObj( AtlasOfGroupRepresentationsInfo.displayFunction,
-#T change the code as soon as GAP 4.4 need not be supported anymore!
+    return IsIdenticalObj( AtlasOfGroupRepresentationsInfo.displayFunction,
                            Print ) or GAPInfo.TermEncoding <> "UTF-8";
     end;
 
@@ -501,7 +494,7 @@ AGR.StringAtlasInfoGroup:= function( conditions )
 #F                    [, IsStraightLineProgram[, true]] )
 ##
 InstallGlobalFunction( DisplayAtlasInfo, function( arg )
-    local result, width, toowide, i, line, ints, sum, j, pos;
+    local result, width;
 
     # Distinguish the summary overview for at least one group
     # from the detailed overview for exactly one group.
@@ -517,44 +510,12 @@ InstallGlobalFunction( DisplayAtlasInfo, function( arg )
     fi;
 
     width:= SizeScreen()[1] - 2;
-    toowide:= false;
-    for i in [ 1 .. Length( result ) ] do
-      line:= result[i];
-      if width < WidthUTF8String( line ) then
-        # Shorten the lines; in particular the output of `Pager' is unusable
-        # if the lines are longer than the screen width.
-        toowide:= true;
-#T Is there a function that cuts a unicode string after n visible columns?
-        if not IsUnicodeString( line ) then
-          line:= Unicode( line,  "UTF-8" );
-        fi;
-        ints:= IntListUnicodeString( line );
-        sum:= 0;
-        for j in [ 1 .. Length( ints ) ] do
-          if ints[j] > 31 and ints[j] < 127 then
-            sum:= sum + 1;
-          else
-            pos := POSITION_FIRST_COMPONENT_SORTED(WidthUnicodeTable, ints[j]);
-            if not IsBound(WidthUnicodeTable[pos]) or WidthUnicodeTable[pos][1] <> ints[j] then
-              pos := pos-1;
-            fi;
-            sum:= sum + WidthUnicodeTable[pos][2];
-          fi;
-          if width-1 < sum then
-            break;
-          fi;
-        od;
-        result[i]:= Concatenation( line{ [ 1 .. j-1 ] }, "*" );
-      fi;
-    od;
+    result:= List( result,
+               l -> InitialSubstringUTF8StringWithSuffix( l, width, "*" ) );
     Add( result, "" );
 
     AtlasOfGroupRepresentationsInfo.displayFunction(
         JoinStringsWithSeparator( result, "\n" ) );
-
-    if toowide then
-      InfoWarning( 1, "screen width is too small, lines were shortened" );
-    fi;
     end );
 
 
@@ -1482,10 +1443,6 @@ InstallGlobalFunction( AtlasOfGroupRepresentationsUserParameters,
     return str;
 end );
 
-
-if IsString( RepeatedUTF8String ) then
-  Unbind( RepeatedUTF8String );
-fi;
 
 #############################################################################
 ##
