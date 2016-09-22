@@ -1,0 +1,59 @@
+<TitlePage>
+  <Title>&Digraphs;</Title>
+  <Subtitle>Methods for digraphs</Subtitle>
+  <Version>Version &VERSION;</Version>
+
+  <Author>Jan De Beule
+    <Email>jdebeule@cage.ugent.be</Email>
+    <Homepage>http://homepages.vub.ac.be/~jdbeule/</Homepage>
+  </Author>
+
+  <Author>Julius Jonu&#353;as
+    <Email>jj252@st-andrews.ac.uk</Email>
+    <Homepage>http://www-circa.mcs.st-andrews.ac.uk/~julius</Homepage>
+  </Author>
+
+  <Author>James D. Mitchell
+    <Email>jdm3@st-andrews.ac.uk</Email>
+    <Homepage>http://goo.gl/ZtViV6</Homepage>
+  </Author>
+  
+  <Author>Finn Smith
+    <Email>fls3@st-andrews.ac.uk</Email>
+  </Author>
+
+  <Author>Michael Torpey
+    <Email>mct25@st-andrews.ac.uk</Email>
+    <Homepage>http://www-circa.mcs.st-andrews.ac.uk/~mct25</Homepage>
+  </Author>
+
+  <Author>Wilf Wilson
+    <Email>waw7@st-andrews.ac.uk</Email>
+    <Homepage>http://www-circa.mcs.st-andrews.ac.uk/~waw7</Homepage>
+  </Author>
+
+  <Copyright>&copyright; &COPYRIGHTYEARS; by
+    Jan De Beule, Julius Jonu&#353;as, James D. Mitchell, Finn Smith, Michael
+    Torpey, Wilf Wilson.<P/>
+
+    &Digraphs; is free software; you can redistribute it and/or modify it
+    under the terms of the <URL Text="GNU General Public License">
+    http://www.fsf.org/licenses/gpl.html</URL> as published by the Free Software
+    Foundation; either version 3 of the License, or (at your option) any later
+    version.
+  </Copyright>
+
+  <Abstract>
+    The &Digraphs; package is a &GAP; package containing methods for graphs,
+    digraphs, and multidigraphs. 
+  </Abstract>
+
+  <Acknowledgements>
+    We would like to thank Chris Jefferson for his help in including the &bliss;
+    tool in the package.
+
+    This package's methods for computing digraph homomorphisms are based on work
+    by Max Neunh&#246;ffer, and independently Artur Sch&#228;fer.
+  </Acknowledgements>
+
+</TitlePage>

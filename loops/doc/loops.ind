@@ -3,7 +3,8 @@
   \item \texttt  {AllLoopsWithMltGroup}, \hyperpage{48}
   \item \texttt  {AllLoopTablesInGroup}, \hyperpage{47}
   \item \texttt  {AllProperLoopTablesInGroup}, \hyperpage{47}
-  \item \texttt  {AllSubloops}, \hyperpage{27}
+  \item \texttt  {AllSubloops}, \hyperpage{28}
+  \item \texttt  {AllSubquasigroups}, \hyperpage{27}
   \item alternative loop, \hyperpage{39}
     \subitem left, \hyperpage{39}
     \subitem right, \hyperpage{39}
@@ -37,6 +38,7 @@
 
   \item C loop, \hyperpage{39}
   \item \texttt  {CanonicalCayleyTable}, \hyperpage{15}
+  \item \texttt  {CanonicalCopy}, \hyperpage{15}
   \item Cayley table, \hyperpage{14}
     \subitem canonical, \hyperpage{15}
   \item \texttt  {CayleyTable}, \hyperpage{22}
@@ -59,7 +61,7 @@
     \subitem left, \hyperpage{42}
     \subitem right, \hyperpage{42}
   \item \texttt  {ConjugacyClosedLoop}, \hyperpage{52}
-  \item conjugation, \hyperpage{29}
+  \item conjugation, \hyperpage{30}
   \item coset, \hyperpage{28}
 
   \indexspace
@@ -69,8 +71,8 @@
   \item \texttt  {DerivedLength}, \hyperpage{33}
   \item \texttt  {DerivedSubloop}, \hyperpage{33}
   \item diassociative loop, \hyperpage{36}
-  \item \texttt  {DirectProduct}, \hyperpage{20}
-  \item \texttt  {Discriminator}, \hyperpage{34}
+  \item \texttt  {DirectProduct}, \hyperpage{21}
+  \item \texttt  {Discriminator}, \hyperpage{35}
   \item \texttt  {DisplayLibraryInfo}, \hyperpage{50}
   \item distributive quasigroup, \hyperpage{38}
     \subitem left, \hyperpage{38}
@@ -95,7 +97,7 @@
   \item \texttt  {FactorLoop}, \hyperpage{32}
   \item flexible loop, \hyperpage{39}
   \item folder
-    \subitem quasigroup, \hyperpage{17}
+    \subitem quasigroup, \hyperpage{18}
   \item Frattini subloop, \hyperpage{33}
   \item \texttt  {FrattinifactorSize}, \hyperpage{33}
   \item \texttt  {FrattiniSubloop}, \hyperpage{33}
@@ -129,11 +131,11 @@
     \subitem of Bol-Moufang type, \hyperpage{39}
   \item inner mapping
     \subitem left, \hyperpage{29}
-    \subitem middle, \hyperpage{29}
+    \subitem middle, \hyperpage{30}
     \subitem right, \hyperpage{29}
   \item inner mapping group, \hyperpage{9}
     \subitem left, \hyperpage{9}
-    \subitem middle, \hyperpage{29}
+    \subitem middle, \hyperpage{30}
     \subitem right, \hyperpage{9}
   \item \texttt  {InnerMappingGroup}, \hyperpage{30}
   \item \texttt  {InterestingLoop}, \hyperpage{54}
@@ -194,7 +196,8 @@
   \item \texttt  {IsomorphicCopyByNormalSubloop}, \hyperpage{34}
   \item \texttt  {IsomorphicCopyByPerm}, \hyperpage{34}
   \item isomorphism, \hyperpage{9}
-  \item \texttt  {IsomorphismLoops}, \hyperpage{33}
+  \item \texttt  {IsomorphismLoops}, \hyperpage{34}
+  \item \texttt  {IsomorphismQuasigroups}, \hyperpage{33}
   \item \texttt  {IsOsbornLoop}, \hyperpage{42}
   \item isotopism, \hyperpage{10}
     \subitem principal, \hyperpage{10}
@@ -218,7 +221,7 @@
   \item \texttt  {IsRightNuclearSquareLoop}, \hyperpage{40}
   \item \texttt  {IsRightPowerAlternative}, \hyperpage{42}
   \item \texttt  {IsSemisymmetric}, \hyperpage{38}
-  \item \texttt  {IsSimple}, \hyperpage{31}
+  \item \texttt  {IsSimple}, \hyperpage{32}
   \item \texttt  {IsSolvable}, \hyperpage{33}
   \item \texttt  {IsSteinerLoop}, \hyperpage{44}
   \item \texttt  {IsSteinerQuasigroup}, \hyperpage{38}
@@ -294,7 +297,7 @@
     \subitem right nuclear square, \hyperpage{39}
     \subitem right power alternative, \hyperpage{42}
     \subitem sedenion, \hyperpage{53}
-    \subitem simple, \hyperpage{12}, \hyperpage{31}
+    \subitem simple, \hyperpage{12}, \hyperpage{32}
     \subitem solvable, \hyperpage{9}
     \subitem Steiner, \hyperpage{44}
     \subitem strongly nilpotent, \hyperpage{32}
@@ -308,7 +311,7 @@
   \item \texttt  {LoopByLeftSection}, \hyperpage{17}
   \item \texttt  {LoopByRightFolder}, \hyperpage{18}
   \item \texttt  {LoopByRightSection}, \hyperpage{17}
-  \item \texttt  {LoopFromFile}, \hyperpage{16}
+  \item \texttt  {LoopFromFile}, \hyperpage{17}
   \item \texttt  {LoopMG2}, \hyperpage{46}
   \item \texttt  {LoopsUpToIsomorphism}, \hyperpage{34}
   \item \texttt  {LoopsUpToIsotopism}, \hyperpage{35}
@@ -350,7 +353,7 @@
   \item normal subloop, \hyperpage{31}
   \item \texttt  {NormalClosure}, \hyperpage{31}
   \item \texttt  {NormalizedQuasigroupTable}, \hyperpage{15}
-  \item \texttt  {Nuc}, \hyperpage{30}
+  \item \texttt  {Nuc}, \hyperpage{31}
   \item nuclear square loop, \hyperpage{39}
     \subitem left, \hyperpage{39}
     \subitem middle, \hyperpage{39}
@@ -361,7 +364,7 @@
     \subitem middle, \hyperpage{9}
     \subitem right, \hyperpage{9}
   \item \texttt  {NucleusOfLoop}, \hyperpage{31}
-  \item \texttt  {NucleusOfQuasigroup}, \hyperpage{30}
+  \item \texttt  {NucleusOfQuasigroup}, \hyperpage{31}
 
   \indexspace
 
@@ -408,7 +411,8 @@
   \item \texttt  {QuasigroupByLeftSection}, \hyperpage{17}
   \item \texttt  {QuasigroupByRightFolder}, \hyperpage{18}
   \item \texttt  {QuasigroupByRightSection}, \hyperpage{17}
-  \item \texttt  {QuasigroupFromFile}, \hyperpage{16}
+  \item \texttt  {QuasigroupFromFile}, \hyperpage{17}
+  \item \texttt  {QuasigroupsUpToIsomorphism}, \hyperpage{34}
 
   \indexspace
 
@@ -445,7 +449,7 @@
   \item semisymmetric quasigroup, \hyperpage{38}
   \item \texttt  {SetLoopElmName}, \hyperpage{13}
   \item \texttt  {SetQuasigroupElmName}, \hyperpage{13}
-  \item simple loop, \hyperpage{12}, \hyperpage{31}
+  \item simple loop, \hyperpage{12}, \hyperpage{32}
   \item \texttt  {Size}, \hyperpage{22}
   \item \texttt  {SmallLoop}, \hyperpage{53}
   \item solvability class, \hyperpage{9}
@@ -473,6 +477,6 @@
   \indexspace
 
   \item unipotent quasigroup, \hyperpage{38}
-  \item \texttt  {UpperCentralSeries}, \hyperpage{32}
+  \item \texttt  {UpperCentralSeries}, \hyperpage{33}
 
 \end{theindex}

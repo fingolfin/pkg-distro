@@ -26,16 +26,17 @@
 \contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }IsLoopTable and IsLoopCayleyTable}}{14}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}\leavevmode {\color {Chapter }Canonical and Normalized Cayley Tables}}{15}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}\leavevmode {\color {Chapter }CanonicalCayleyTable}}{15}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}\leavevmode {\color {Chapter }NormalizedQuasigroupTable}}{15}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}\leavevmode {\color {Chapter }CanonicalCopy}}{15}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}\leavevmode {\color {Chapter }NormalizedQuasigroupTable}}{15}{subsection.4.3.3}
 \contentsline {section}{\numberline {4.4}\leavevmode {\color {Chapter }Creating Quasigroups and Loops From Cayley Tables}}{15}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}\leavevmode {\color {Chapter }QuasigroupByCayleyTable and LoopByCayleyTable}}{15}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}\leavevmode {\color {Chapter }Creating Quasigroups and Loops from a File}}{15}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}\leavevmode {\color {Chapter }QuasigroupFromFile and LoopFromFile}}{16}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.5}\leavevmode {\color {Chapter }Creating Quasigroups and Loops from a File}}{16}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}\leavevmode {\color {Chapter }QuasigroupFromFile and LoopFromFile}}{17}{subsection.4.5.1}
 \contentsline {section}{\numberline {4.6}\leavevmode {\color {Chapter }Creating Quasigroups and Loops From Sections}}{17}{section.4.6}
 \contentsline {subsection}{\numberline {4.6.1}\leavevmode {\color {Chapter }CayleyTableByPerms}}{17}{subsection.4.6.1}
 \contentsline {subsection}{\numberline {4.6.2}\leavevmode {\color {Chapter }QuasigroupByLeftSection and LoopByLeftSection}}{17}{subsection.4.6.2}
 \contentsline {subsection}{\numberline {4.6.3}\leavevmode {\color {Chapter }QuasigroupByRightSection and LoopByRightSection}}{17}{subsection.4.6.3}
-\contentsline {section}{\numberline {4.7}\leavevmode {\color {Chapter }Creating Quasigroups and Loops From Folders}}{17}{section.4.7}
+\contentsline {section}{\numberline {4.7}\leavevmode {\color {Chapter }Creating Quasigroups and Loops From Folders}}{18}{section.4.7}
 \contentsline {subsection}{\numberline {4.7.1}\leavevmode {\color {Chapter }QuasigroupByRightFolder and LoopByRightFolder}}{18}{subsection.4.7.1}
 \contentsline {section}{\numberline {4.8}\leavevmode {\color {Chapter }Creating Quasigroups and Loops By Nuclear Extensions}}{18}{section.4.8}
 \contentsline {subsection}{\numberline {4.8.1}\leavevmode {\color {Chapter }NuclearExtension}}{18}{subsection.4.8.1}
@@ -43,13 +44,13 @@
 \contentsline {section}{\numberline {4.9}\leavevmode {\color {Chapter }Random Quasigroups and Loops}}{19}{section.4.9}
 \contentsline {subsection}{\numberline {4.9.1}\leavevmode {\color {Chapter }RandomQuasigroup and RandomLoop}}{19}{subsection.4.9.1}
 \contentsline {subsection}{\numberline {4.9.2}\leavevmode {\color {Chapter }RandomNilpotentLoop}}{19}{subsection.4.9.2}
-\contentsline {section}{\numberline {4.10}\leavevmode {\color {Chapter }Conversions}}{19}{section.4.10}
+\contentsline {section}{\numberline {4.10}\leavevmode {\color {Chapter }Conversions}}{20}{section.4.10}
 \contentsline {subsection}{\numberline {4.10.1}\leavevmode {\color {Chapter }IntoQuasigroup}}{20}{subsection.4.10.1}
 \contentsline {subsection}{\numberline {4.10.2}\leavevmode {\color {Chapter }PrincipalLoopIsotope}}{20}{subsection.4.10.2}
 \contentsline {subsection}{\numberline {4.10.3}\leavevmode {\color {Chapter }IntoLoop}}{20}{subsection.4.10.3}
 \contentsline {subsection}{\numberline {4.10.4}\leavevmode {\color {Chapter }IntoGroup}}{20}{subsection.4.10.4}
-\contentsline {section}{\numberline {4.11}\leavevmode {\color {Chapter }Products of Loops}}{20}{section.4.11}
-\contentsline {subsection}{\numberline {4.11.1}\leavevmode {\color {Chapter }DirectProduct}}{20}{subsection.4.11.1}
+\contentsline {section}{\numberline {4.11}\leavevmode {\color {Chapter }Products of Quasigroups and Loops}}{21}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}\leavevmode {\color {Chapter }DirectProduct}}{21}{subsection.4.11.1}
 \contentsline {section}{\numberline {4.12}\leavevmode {\color {Chapter }Opposite Quasigroups and Loops}}{21}{section.4.12}
 \contentsline {subsection}{\numberline {4.12.1}\leavevmode {\color {Chapter }Opposite, OppositeQuasigroup and OppositeLoop}}{21}{subsection.4.12.1}
 \contentsline {chapter}{\numberline {5}\leavevmode {\color {Chapter }Basic Methods And Attributes}}{22}{chapter.5}
@@ -79,9 +80,10 @@
 \contentsline {subsection}{\numberline {6.2.1}\leavevmode {\color {Chapter }Subquasigroup}}{27}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}\leavevmode {\color {Chapter }Subloop}}{27}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}\leavevmode {\color {Chapter }IsSubquasigroup and IsSubloop}}{27}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}\leavevmode {\color {Chapter }AllSubloops}}{27}{subsection.6.2.4}
-\contentsline {subsection}{\numberline {6.2.5}\leavevmode {\color {Chapter }RightCosets}}{28}{subsection.6.2.5}
-\contentsline {subsection}{\numberline {6.2.6}\leavevmode {\color {Chapter }RightTransversal}}{28}{subsection.6.2.6}
+\contentsline {subsection}{\numberline {6.2.4}\leavevmode {\color {Chapter }AllSubquasigroups}}{27}{subsection.6.2.4}
+\contentsline {subsection}{\numberline {6.2.5}\leavevmode {\color {Chapter }AllSubloops}}{28}{subsection.6.2.5}
+\contentsline {subsection}{\numberline {6.2.6}\leavevmode {\color {Chapter }RightCosets}}{28}{subsection.6.2.6}
+\contentsline {subsection}{\numberline {6.2.7}\leavevmode {\color {Chapter }RightTransversal}}{28}{subsection.6.2.7}
 \contentsline {section}{\numberline {6.3}\leavevmode {\color {Chapter }Translations and Sections}}{28}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}\leavevmode {\color {Chapter }LeftTranslation and RightTranslation}}{28}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}\leavevmode {\color {Chapter }LeftSection and RightSection}}{28}{subsection.6.3.2}
@@ -94,14 +96,14 @@
 \contentsline {subsection}{\numberline {6.5.3}\leavevmode {\color {Chapter }InnerMappingGroup}}{30}{subsection.6.5.3}
 \contentsline {section}{\numberline {6.6}\leavevmode {\color {Chapter }Nuclei, Commutant, Center, and Associator Subloop}}{30}{section.6.6}
 \contentsline {subsection}{\numberline {6.6.1}\leavevmode {\color {Chapter }LeftNucles, MiddleNucleus, and RightNucleus}}{30}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}\leavevmode {\color {Chapter }Nuc, NucleusOfQuasigroup and NucleusOfLoop}}{30}{subsection.6.6.2}
+\contentsline {subsection}{\numberline {6.6.2}\leavevmode {\color {Chapter }Nuc, NucleusOfQuasigroup and NucleusOfLoop}}{31}{subsection.6.6.2}
 \contentsline {subsection}{\numberline {6.6.3}\leavevmode {\color {Chapter }Commutant}}{31}{subsection.6.6.3}
 \contentsline {subsection}{\numberline {6.6.4}\leavevmode {\color {Chapter }Center}}{31}{subsection.6.6.4}
 \contentsline {subsection}{\numberline {6.6.5}\leavevmode {\color {Chapter }AssociatorSubloop}}{31}{subsection.6.6.5}
 \contentsline {section}{\numberline {6.7}\leavevmode {\color {Chapter }Normal Subloops and Simple Loops}}{31}{section.6.7}
 \contentsline {subsection}{\numberline {6.7.1}\leavevmode {\color {Chapter }IsNormal}}{31}{subsection.6.7.1}
 \contentsline {subsection}{\numberline {6.7.2}\leavevmode {\color {Chapter }NormalClosure}}{31}{subsection.6.7.2}
-\contentsline {subsection}{\numberline {6.7.3}\leavevmode {\color {Chapter }IsSimple}}{31}{subsection.6.7.3}
+\contentsline {subsection}{\numberline {6.7.3}\leavevmode {\color {Chapter }IsSimple}}{32}{subsection.6.7.3}
 \contentsline {section}{\numberline {6.8}\leavevmode {\color {Chapter }Factor Loops}}{32}{section.6.8}
 \contentsline {subsection}{\numberline {6.8.1}\leavevmode {\color {Chapter }FactorLoop}}{32}{subsection.6.8.1}
 \contentsline {subsection}{\numberline {6.8.2}\leavevmode {\color {Chapter }NaturalHomomorphismByNormalSubloop}}{32}{subsection.6.8.2}
@@ -109,7 +111,7 @@
 \contentsline {subsection}{\numberline {6.9.1}\leavevmode {\color {Chapter }IsNilpotent}}{32}{subsection.6.9.1}
 \contentsline {subsection}{\numberline {6.9.2}\leavevmode {\color {Chapter }NilpotencyClassOfLoop}}{32}{subsection.6.9.2}
 \contentsline {subsection}{\numberline {6.9.3}\leavevmode {\color {Chapter }IsStronglyNilpotent}}{32}{subsection.6.9.3}
-\contentsline {subsection}{\numberline {6.9.4}\leavevmode {\color {Chapter }UpperCentralSeries}}{32}{subsection.6.9.4}
+\contentsline {subsection}{\numberline {6.9.4}\leavevmode {\color {Chapter }UpperCentralSeries}}{33}{subsection.6.9.4}
 \contentsline {subsection}{\numberline {6.9.5}\leavevmode {\color {Chapter }LowerCentralSeries}}{33}{subsection.6.9.5}
 \contentsline {section}{\numberline {6.10}\leavevmode {\color {Chapter }Solvability, Derived Series and Frattini Subloop}}{33}{section.6.10}
 \contentsline {subsection}{\numberline {6.10.1}\leavevmode {\color {Chapter }IsSolvable}}{33}{subsection.6.10.1}
@@ -118,13 +120,15 @@
 \contentsline {subsection}{\numberline {6.10.4}\leavevmode {\color {Chapter }FrattiniSubloop and FrattinifactorSize}}{33}{subsection.6.10.4}
 \contentsline {subsection}{\numberline {6.10.5}\leavevmode {\color {Chapter }FrattinifactorSize}}{33}{subsection.6.10.5}
 \contentsline {section}{\numberline {6.11}\leavevmode {\color {Chapter }Isomorphisms and Automorphisms}}{33}{section.6.11}
-\contentsline {subsection}{\numberline {6.11.1}\leavevmode {\color {Chapter }IsomorphismLoops}}{33}{subsection.6.11.1}
-\contentsline {subsection}{\numberline {6.11.2}\leavevmode {\color {Chapter }LoopsUpToIsomorphism}}{34}{subsection.6.11.2}
-\contentsline {subsection}{\numberline {6.11.3}\leavevmode {\color {Chapter }AutomorphismGroup}}{34}{subsection.6.11.3}
-\contentsline {subsection}{\numberline {6.11.4}\leavevmode {\color {Chapter }IsomorphicCopyByPerm}}{34}{subsection.6.11.4}
-\contentsline {subsection}{\numberline {6.11.5}\leavevmode {\color {Chapter }IsomorphicCopyByNormalSubloop}}{34}{subsection.6.11.5}
-\contentsline {subsection}{\numberline {6.11.6}\leavevmode {\color {Chapter }Discriminator}}{34}{subsection.6.11.6}
-\contentsline {subsection}{\numberline {6.11.7}\leavevmode {\color {Chapter }AreEqualDiscriminators}}{35}{subsection.6.11.7}
+\contentsline {subsection}{\numberline {6.11.1}\leavevmode {\color {Chapter }IsomorphismQuasigroups}}{33}{subsection.6.11.1}
+\contentsline {subsection}{\numberline {6.11.2}\leavevmode {\color {Chapter }IsomorphismLoops}}{34}{subsection.6.11.2}
+\contentsline {subsection}{\numberline {6.11.3}\leavevmode {\color {Chapter }QuasigroupsUpToIsomorphism}}{34}{subsection.6.11.3}
+\contentsline {subsection}{\numberline {6.11.4}\leavevmode {\color {Chapter }LoopsUpToIsomorphism}}{34}{subsection.6.11.4}
+\contentsline {subsection}{\numberline {6.11.5}\leavevmode {\color {Chapter }AutomorphismGroup}}{34}{subsection.6.11.5}
+\contentsline {subsection}{\numberline {6.11.6}\leavevmode {\color {Chapter }IsomorphicCopyByPerm}}{34}{subsection.6.11.6}
+\contentsline {subsection}{\numberline {6.11.7}\leavevmode {\color {Chapter }IsomorphicCopyByNormalSubloop}}{34}{subsection.6.11.7}
+\contentsline {subsection}{\numberline {6.11.8}\leavevmode {\color {Chapter }Discriminator}}{35}{subsection.6.11.8}
+\contentsline {subsection}{\numberline {6.11.9}\leavevmode {\color {Chapter }AreEqualDiscriminators}}{35}{subsection.6.11.9}
 \contentsline {section}{\numberline {6.12}\leavevmode {\color {Chapter }Isotopisms}}{35}{section.6.12}
 \contentsline {subsection}{\numberline {6.12.1}\leavevmode {\color {Chapter }IsotopismLoops}}{35}{subsection.6.12.1}
 \contentsline {subsection}{\numberline {6.12.2}\leavevmode {\color {Chapter }LoopsUpToIsotopism}}{35}{subsection.6.12.2}

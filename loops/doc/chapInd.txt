@@ -5,12 +5,13 @@
   [2XAllLoopsWithMltGroup[102X  8.4-5
   [2XAllLoopTablesInGroup[102X  8.4-1
   [2XAllProperLoopTablesInGroup[102X  8.4-2
-  [2XAllSubloops[102X  6.2-4
+  [2XAllSubloops[102X  6.2-5
+  [2XAllSubquasigroups[102X  6.2-4
   alternative loop  7.4
   alternative loop, left  7.4
   alternative loop, right  7.4
   antiautomorphic inverse property  7.2-5
-  [2XAreEqualDiscriminators[102X  6.11-7
+  [2XAreEqualDiscriminators[102X  6.11-9
   [2XAssociatedLeftBruckLoop[102X  8.1-1
   [2XAssociatedRightBruckLoop[102X  8.1-1
   associator  2.5
@@ -23,7 +24,7 @@
   automorphic loop, middle  7.7
   automorphic loop, right  7.7
   [2XAutomorphicLoop[102X  9.10-1
-  [2XAutomorphismGroup[102X  6.11-3
+  [2XAutomorphismGroup[102X  6.11-5
   Bol loop, left  3.3
   Bol loop, left  7.4
   Bol loop, left  8.1-1
@@ -33,6 +34,7 @@
   Bruck loop, right  7.8-4
   C loop  7.4
   [2XCanonicalCayleyTable[102X  4.3-1
+  [2XCanonicalCopy[102X  4.3-2
   Cayley table  4.1
   Cayley table, canonical  4.3-1
   [2XCayleyTable[102X  5.1-2
@@ -55,14 +57,14 @@
   conjugacy closed loop, right  7.6
   [2XConjugacyClosedLoop[102X  9.6-3
   conjugation  6.5
-  coset  6.2-5
+  coset  6.2-6
   derived series  2.4
   derived subloop  2.4
   [2XDerivedLength[102X  6.10-3
   [2XDerivedSubloop[102X  6.10-2
   diassociative loop  7.1-4
   [2XDirectProduct[102X  4.11-1
-  [2XDiscriminator[102X  6.11-6
+  [2XDiscriminator[102X  6.11-8
   [2XDisplayLibraryInfo[102X  9.1-3
   distributive quasigroup  7.3-6
   distributive quasigroup, left  7.3-6
@@ -167,10 +169,11 @@
   [2XIsNilpotent[102X  6.9-1
   [2XIsNormal[102X  6.7-1
   [2XIsNuclearSquareLoop[102X  7.4-11
-  [2XIsomorphicCopyByNormalSubloop[102X  6.11-5
-  [2XIsomorphicCopyByPerm[102X  6.11-4
+  [2XIsomorphicCopyByNormalSubloop[102X  6.11-7
+  [2XIsomorphicCopyByPerm[102X  6.11-6
   isomorphism  2.6
-  [2XIsomorphismLoops[102X  6.11-1
+  [2XIsomorphismLoops[102X  6.11-2
+  [2XIsomorphismQuasigroups[102X  6.11-1
   [2XIsOsbornLoop[102X  7.6-4
   isotopism  2.6
   isotopism, principal  2.6
@@ -286,7 +289,7 @@
   [2XLoopByRightSection[102X  4.6-3
   [2XLoopFromFile[102X  4.5-1
   [2XLoopMG2[102X  8.2-3
-  [2XLoopsUpToIsomorphism[102X  6.11-2
+  [2XLoopsUpToIsomorphism[102X  6.11-4
   [2XLoopsUpToIsotopism[102X  6.12-2
   [2XLowerCentralSeries[102X  6.9-5
   magma  2.1
@@ -318,7 +321,7 @@
   normal closure  6.7-2
   normal subloop  6.7-1
   [2XNormalClosure[102X  6.7-2
-  [2XNormalizedQuasigroupTable[102X  4.3-2
+  [2XNormalizedQuasigroupTable[102X  4.3-3
   [2XNuc[102X  6.6-2
   nuclear square loop  7.4
   nuclear square loop, left  7.4
@@ -370,6 +373,7 @@
   [2XQuasigroupByRightFolder[102X  4.7-1
   [2XQuasigroupByRightSection[102X  4.6-3
   [2XQuasigroupFromFile[102X  4.5-1
+  [2XQuasigroupsUpToIsomorphism[102X  6.11-3
   [2XRandomLoop[102X  4.9-1
   [2XRandomNilpotentLoop[102X  4.9-2
   [2XRandomQuasigroup[102X  4.9-1
@@ -381,7 +385,7 @@
   [2XRightBolLoop[102X  9.2-2
   [2XRightBolLoopByExactGroupFactorization[102X  8.1-3
   [2XRightConjugacyClosedLoop[102X  9.6-1
-  [2XRightCosets[102X  6.2-5
+  [2XRightCosets[102X  6.2-6
   [2XRightDivision[102X  5.2-1
   [2XRightDivision[102X  5.2-1
   [2XRightDivision[102X  5.2-1
@@ -393,7 +397,7 @@
   [2XRightNucleus[102X  6.6-1
   [2XRightSection[102X  6.3-2
   [2XRightTranslation[102X  6.3-1
-  [2XRightTransversal[102X  6.2-6
+  [2XRightTransversal[102X  6.2-7
   section, left  2.2
   section, right  2.2
   sedenion loop  9.11
@@ -419,7 +423,7 @@
   totally symmetric quasigroup  7.3-2
   translation, left  2.2
   translation, right  2.2
-  transversal  6.2-6
+  transversal  6.2-7
   [2XTrialityPcGroup[102X  8.3-2
   [2XTrialityPermGroup[102X  8.3-1
   unipotent quasigroup  7.3-5

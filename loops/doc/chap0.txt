@@ -6,7 +6,7 @@
                   [1XComputing with quasigroups and loops in [5XGAP[105X[101X
   
   
-                                 Version 3.1.0
+                                 Version 3.2.0
   
   
                                  Gábor P. Nagy
@@ -28,7 +28,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2015 Gábor P. Nagy and Petr Vojtěchovský.[133X
+  [33X[0;0Y© 2016 Gábor P. Nagy and Petr Vojtěchovský.[133X
   
   
   -------------------------------------------------------
@@ -64,7 +64,8 @@
       4.2-2 [33X[0;0YIsLoopTable and IsLoopCayleyTable[133X
     4.3 [33X[0;0YCanonical and Normalized Cayley Tables[133X
       4.3-1 CanonicalCayleyTable
-      4.3-2 NormalizedQuasigroupTable
+      4.3-2 CanonicalCopy
+      4.3-3 NormalizedQuasigroupTable
     4.4 [33X[0;0YCreating Quasigroups and Loops From Cayley Tables[133X
       4.4-1 [33X[0;0YQuasigroupByCayleyTable and LoopByCayleyTable[133X
     4.5 [33X[0;0YCreating Quasigroups and Loops from a File[133X
@@ -86,7 +87,7 @@
       4.10-2 PrincipalLoopIsotope
       4.10-3 IntoLoop
       4.10-4 IntoGroup
-    4.11 [33X[0;0YProducts of Loops[133X
+    4.11 [33X[0;0YProducts of Quasigroups and Loops[133X
       4.11-1 DirectProduct
     4.12 [33X[0;0YOpposite Quasigroups and Loops[133X
       4.12-1 [33X[0;0YOpposite, OppositeQuasigroup and OppositeLoop[133X
@@ -117,9 +118,10 @@
       6.2-1 Subquasigroup
       6.2-2 Subloop
       6.2-3 [33X[0;0YIsSubquasigroup and IsSubloop[133X
-      6.2-4 AllSubloops
-      6.2-5 RightCosets
-      6.2-6 RightTransversal
+      6.2-4 AllSubquasigroups
+      6.2-5 AllSubloops
+      6.2-6 RightCosets
+      6.2-7 RightTransversal
     6.3 [33X[0;0YTranslations and Sections[133X
       6.3-1 [33X[0;0YLeftTranslation and RightTranslation[133X
       6.3-2 [33X[0;0YLeftSection and RightSection[133X
@@ -159,13 +161,15 @@
       6.10-4 [33X[0;0YFrattiniSubloop and FrattinifactorSize[133X
       6.10-5 FrattinifactorSize
     6.11 [33X[0;0YIsomorphisms and Automorphisms[133X
-      6.11-1 IsomorphismLoops
-      6.11-2 LoopsUpToIsomorphism
-      6.11-3 AutomorphismGroup
-      6.11-4 IsomorphicCopyByPerm
-      6.11-5 IsomorphicCopyByNormalSubloop
-      6.11-6 Discriminator
-      6.11-7 AreEqualDiscriminators
+      6.11-1 IsomorphismQuasigroups
+      6.11-2 IsomorphismLoops
+      6.11-3 QuasigroupsUpToIsomorphism
+      6.11-4 LoopsUpToIsomorphism
+      6.11-5 AutomorphismGroup
+      6.11-6 IsomorphicCopyByPerm
+      6.11-7 IsomorphicCopyByNormalSubloop
+      6.11-8 Discriminator
+      6.11-9 AreEqualDiscriminators
     6.12 [33X[0;0YIsotopisms[133X
       6.12-1 IsotopismLoops
       6.12-2 LoopsUpToIsotopism

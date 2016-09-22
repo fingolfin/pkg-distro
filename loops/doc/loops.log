@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.24)  20 NOV 2015 12:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.24)  29 MAY 2016 06:32
 entering extended mode
-**loops.tex
-(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.tex
+**loops
+(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -359,7 +359,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box27
 \enitdp@description=\count102
 )
-(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.aux
+(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.aux
 
 LaTeX Warning: Label `LeftDivision' multiply defined.
 
@@ -430,8 +430,8 @@ LaTeX Info: Redefining \ref on input line 87.
 LaTeX Info: Redefining \pageref on input line 87.
 LaTeX Info: Redefining \nameref on input line 87.
 
-(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.out)
-(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.out)
+(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.out)
+(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.out)
 \@outlinefile=\write6
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <50> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
@@ -478,7 +478,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
-[2] (C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.toc
+[2] (c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 2.
@@ -590,32 +590,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 537--545
 [14
 
 ] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 653--655
+Underfull \hbox (badness 10000) in paragraph at lines 668--670
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 747--753
+Underfull \hbox (badness 10000) in paragraph at lines 762--768
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 797--799
+Underfull \hbox (badness 10000) in paragraph at lines 812--814
 
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 929--931
-
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 968--974
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 944--946
 
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 985--991
+Underfull \hbox (badness 10000) in paragraph at lines 983--989
+
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 1000--1006
 []\T1/ptm/b/n/10.95 Returns:  \T1/ptm/m/n/10.95 If [] is a de-clared magma that
  hap-pens to be a group, the cor-re-spond-
  []
@@ -625,12 +625,12 @@ Chapter 5.
 [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1148--1156
+Underfull \hbox (badness 10000) in paragraph at lines 1164--1172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1158--1173
+Underfull \hbox (badness 10000) in paragraph at lines 1174--1189
 
  []
 
@@ -638,16 +638,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 1158--1173
 977869E53D}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1246 \hyperdef{L}{X7E0849977869E53D}{}
+l.1262 \hyperdef{L}{X7E0849977869E53D}{}
                                          [24] [25]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1348--1353
+Underfull \hbox (badness 10000) in paragraph at lines 1364--1369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1371--1377
+Underfull \hbox (badness 10000) in paragraph at lines 1387--1393
 
  []
 
@@ -657,51 +657,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 1371--1377
 952143F}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1388 \hyperdef{L}{X83EDF04F7952143F}{}
+l.1404 \hyperdef{L}{X83EDF04F7952143F}{}
                                         
-Underfull \hbox (badness 10000) in paragraph at lines 1406--1407
+Underfull \hbox (badness 10000) in paragraph at lines 1422--1423
 []\T1/ptm/m/n/10.95 If [] is empty, \T1/cmtt/m/n/10.95 Subloop([],[]) \T1/ptm/m
 /n/10.95 re-turns the one-element subloop of [], while
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1416--1419
+Underfull \hbox (badness 10000) in paragraph at lines 1432--1435
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1511--1519
+Underfull \hbox (badness 10000) in paragraph at lines 1540--1548
 
  []
 
 [28] [29]
-Underfull \hbox (badness 1221) in paragraph at lines 1642--1642
+Underfull \hbox (badness 1221) in paragraph at lines 1671--1671
 [][]\T1/ptm/b/n/12 LeftInnerMappingGroup, Right-In-nerMap-ping-Group, Mid-dleIn
 -nerMap-ping-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1665--1670
+Underfull \hbox (badness 10000) in paragraph at lines 1694--1699
 
  []
 
 [30] [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 2025--2029
+Underfull \hbox (badness 10000) in paragraph at lines 2054--2058
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 2070--2075
+Underfull \hbox (badness 10000) in paragraph at lines 2125--2130
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2081--2082
+Underfull \hbox (badness 10000) in paragraph at lines 2136--2137
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2104--2109
+Underfull \hbox (badness 10000) in paragraph at lines 2159--2164
 
  []
 
@@ -710,17 +710,17 @@ Chapter 7.
 [36
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2345--2347
+Underfull \hbox (badness 10000) in paragraph at lines 2403--2405
 
  []
 
 [37] [38] [39] [40]
-Underfull \hbox (badness 10000) in paragraph at lines 2695--2700
+Underfull \hbox (badness 10000) in paragraph at lines 2753--2758
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2706--2708
+Underfull \hbox (badness 10000) in paragraph at lines 2764--2766
 
  []
 
@@ -729,32 +729,32 @@ Chapter 8.
 [45
 
 ] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 3136--3139
+Underfull \hbox (badness 10000) in paragraph at lines 3194--3197
 
  []
 
 [47] [48]
 Chapter 9.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3273--3274
+Underfull \hbox (badness 10000) in paragraph at lines 3331--3332
 []\T1/cmtt/m/n/10.95 LOOPS_my_library_data[2][k] \T1/ptm/m/n/10.95 is the num-b
 er of loops of or-der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3295--3298
+Underfull \hbox (badness 10000) in paragraph at lines 3353--3356
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3309--3314
+Underfull \hbox (badness 10000) in paragraph at lines 3367--3372
 
  []
 
 [49
 
 ] [50] [51]
-Underfull \hbox (badness 10000) in paragraph at lines 3500--3503
+Underfull \hbox (badness 10000) in paragraph at lines 3558--3561
 
  []
 
@@ -762,11 +762,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 3500--3503
 EA8643C667}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3606 \hyperdef{L}{X793B22EA8643C667}{}
+l.3664 \hyperdef{L}{X793B22EA8643C667}{}
                                          [53] [54]
 Appendix A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3698--3742
+Underfull \hbox (badness 10000) in paragraph at lines 3756--3800
 
  []
 
@@ -775,56 +775,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 3698--3742
 ] [56]
 Appendix B.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3751--3871
+Underfull \hbox (badness 10000) in paragraph at lines 3809--3929
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3751--3871
+Underfull \hbox (badness 10000) in paragraph at lines 3809--3929
 \T1/cmtt/m/n/10.95 ( HasAntiautomorphicInverseProperty, HasAutomorphicInversePr
 operty and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3751--3871
+Underfull \hbox (badness 10000) in paragraph at lines 3809--3929
 \T1/cmtt/m/n/10.95 ( HasAutomorphicInverseProperty, HasAntiautomorphicInversePr
 operty and
  []
 
 
-Overfull \hbox (21.33267pt too wide) in paragraph at lines 3751--3871
+Overfull \hbox (21.33267pt too wide) in paragraph at lines 3809--3929
 \T1/cmtt/m/n/10.95 ( HasInverseProperty, HasLeftInverseProperty and HasAntiauto
 morphicInverseProperty
  []
 
 
-Overfull \hbox (26.99104pt too wide) in paragraph at lines 3751--3871
+Overfull \hbox (26.99104pt too wide) in paragraph at lines 3809--3929
 \T1/cmtt/m/n/10.95 ( HasInverseProperty, HasRightInverseProperty and HasAntiaut
 omorphicInverseProperty
  []
 
 
-Overfull \hbox (21.33267pt too wide) in paragraph at lines 3751--3871
+Overfull \hbox (21.33267pt too wide) in paragraph at lines 3809--3929
 \T1/cmtt/m/n/10.95 ( HasInverseProperty, HasWeakInverseProperty and HasAntiauto
 morphicInverseProperty
  []
 
 
-Overfull \hbox (38.30779pt too wide) in paragraph at lines 3751--3871
+Overfull \hbox (38.30779pt too wide) in paragraph at lines 3809--3929
 \T1/cmtt/m/n/10.95 ( IsLeftAutomorphicLoop, IsRightAutomorphicLoop and HasAntia
 utomorphicInverseProperty
  []
 
 
-Overfull \hbox (38.30779pt too wide) in paragraph at lines 3751--3871
+Overfull \hbox (38.30779pt too wide) in paragraph at lines 3809--3929
 \T1/cmtt/m/n/10.95 ( IsRightAutomorphicLoop, IsLeftAutomorphicLoop and HasAntia
 utomorphicInverseProperty
  []
 
 [57
 
-] [58] (C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.bbl
-(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.brf)
+] [58] (c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.bbl
+(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.brf)
 \tf@brf=\write8
  [59]
 Underfull \hbox (badness 1052) in paragraph at lines 77--77
@@ -834,12 +834,12 @@ Underfull \hbox (badness 1052) in paragraph at lines 77--77
 
 [60
 
-]) [61] (C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.ind [62
+]) [61] (c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.ind [62
 
 
 ] [63] [64]
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 424--426
+Underfull \hbox (badness 10000) in paragraph at lines 428--430
 []\T1/cmtt/m/n/10.95 Right\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Bol\T1/ptm/m/n/
 10.95 -\T1/cmtt/m/n/10.95 Loop\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Exact\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Group\T
@@ -847,30 +847,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 424--426
  []
 
 [66])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3895.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3895.
- (C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3895.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3895.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3953.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3953.
+ (c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3953.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3953.
 
 Package rerunfilecheck Info: File `loops.out' has not changed.
-(rerunfilecheck)             Checksum: F7534B6D726A8013BFFFABBD31AFF73E;5877.
+(rerunfilecheck)             Checksum: B35AC9998206B5E4DDDBB0BB03F0A272;5893.
 Package rerunfilecheck Info: File `loops.brf' has not changed.
-(rerunfilecheck)             Checksum: 1C7D3EFBC91DDE3C5980117554509222;1160.
+(rerunfilecheck)             Checksum: 8DC22135B6CD01E3158796F2CB84C662;1160.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3895.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3953.
  ) 
 Here is how much of TeX's memory you used:
- 7973 strings out of 493921
- 118934 string characters out of 3147246
- 203273 words of memory out of 3000000
- 10562 multiletter control sequences out of 15000+200000
+ 7985 strings out of 493921
+ 119162 string characters out of 3147246
+ 203563 words of memory out of 3000000
+ 10566 multiletter control sequences out of 15000+200000
  85356 words of font info for 107 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 32i,7n,28p,918b,615s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,7n,28p,914b,621s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\petr.vojtechovsky\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\ecst1095.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8
 r.enc} <C:\Users\petr.vojtechovsky\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
@@ -887,9 +887,9 @@ les/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.
 times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on loops.pdf (66 pages, 527611 bytes).
+Output written on loops.pdf (66 pages, 530064 bytes).
 PDF statistics:
- 1965 PDF objects out of 2073 (max. 8388607)
- 561 named destinations out of 1000 (max. 500000)
+ 1978 PDF objects out of 2073 (max. 8388607)
+ 569 named destinations out of 1000 (max. 500000)
  665 words of extra memory for PDF output out of 10000 (max. 10000000)
 

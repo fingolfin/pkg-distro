@@ -98,7 +98,7 @@
 {\Huge \textbf{Computing with quasigroups and loops in \textsf{GAP}\mbox{}}}\\
 \vfill
 
-{\Huge Version 3.1.0\mbox{}}\\[1cm]
+{\Huge Version 3.2.0\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{G{\a'a}bor P. Nagy   \mbox{}}}\\
 {\Large \textbf{Petr Vojt{\v e}chovsk{\a'y}   \mbox{}}}\\
@@ -122,7 +122,7 @@ Department of Mathematics, University of Denver\end{minipage}
 {\small 
 \section*{Copyright}
 \logpage{[ 0, 0, 1 ]}
-{\copyright} 2015 G{\a'a}bor P. Nagy and Petr Vojt{\v e}chovsk{\a'y}. \mbox{}}\\[1cm]
+{\copyright} 2016 G{\a'a}bor P. Nagy and Petr Vojt{\v e}chovsk{\a'y}. \mbox{}}\\[1cm]
 \newpage
 
 \def\contentsname{Contents\logpage{[ 0, 0, 2 ]}}
@@ -569,8 +569,23 @@ often desirable to present quasigroup tables in canonical way.}
 
  
 
-\subsection{\textcolor{Chapter }{NormalizedQuasigroupTable}}
+\subsection{\textcolor{Chapter }{CanonicalCopy}}
 \logpage{[ 4, 3, 2 ]}\nobreak
+\hyperdef{L}{X7B816D887F46E6B7}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CanonicalCopy({\mdseries\slshape Q})\index{CanonicalCopy@\texttt{CanonicalCopy}}
+\label{CanonicalCopy}
+}\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+A canonical copy of the quasigroup or loop \mbox{\texttt{\mdseries\slshape Q}}.
+
+
+
+This is a shorthand for \texttt{QuasigroupByCayleyTable(CanonicalCayleyTable(\mbox{\texttt{\mdseries\slshape Q}})} when \mbox{\texttt{\mdseries\slshape Q}} is a declared quasigroup, and \texttt{LoopByCayleyTable(CanonicalCayleyTable(\mbox{\texttt{\mdseries\slshape Q}})} when \mbox{\texttt{\mdseries\slshape Q}} is a loop.}
+
+ 
+
+\subsection{\textcolor{Chapter }{NormalizedQuasigroupTable}}
+\logpage{[ 4, 3, 3 ]}\nobreak
 \hyperdef{L}{X821A2F9E85FAD8BF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NormalizedQuasigroupTable({\mdseries\slshape T})\index{NormalizedQuasigroupTable@\texttt{NormalizedQuasigroupTable}}
 \label{NormalizedQuasigroupTable}
@@ -973,20 +988,21 @@ returned as follows: If \mbox{\texttt{\mdseries\slshape M}} is already declared 
  }
 
   
-\section{\textcolor{Chapter }{Products of Loops}}\label{Sec:ProductsOfLoops}
+\section{\textcolor{Chapter }{Products of Quasigroups and Loops}}\label{Sec:ProductsOfLoops}
 \logpage{[ 4, 11, 0 ]}
-\hyperdef{L}{X8328348F855B1482}{}
+\hyperdef{L}{X79B7327C79029086}{}
 {
   
 
 \subsection{\textcolor{Chapter }{DirectProduct}}
 \logpage{[ 4, 11, 1 ]}\nobreak
 \hyperdef{L}{X861BA02C7902A4F4}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DirectProduct({\mdseries\slshape L1, ..., Ln})\index{DirectProduct@\texttt{DirectProduct}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DirectProduct({\mdseries\slshape Q1, ..., Qn})\index{DirectProduct@\texttt{DirectProduct}}
 \label{DirectProduct}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
-If each \mbox{\texttt{\mdseries\slshape Li}} is either a declared loop or a declared group, the direct product of \mbox{\texttt{\mdseries\slshape L1}}, $\dots$, \mbox{\texttt{\mdseries\slshape Ln}} is returned. If every \mbox{\texttt{\mdseries\slshape Li}} is a declared group, a group is returned, otherwise a loop is returned.
+If each \mbox{\texttt{\mdseries\slshape Qi}} is either a declared quasigroup, declared loop or a declared group, the direct
+product of \mbox{\texttt{\mdseries\slshape Q1}}, $\dots$, \mbox{\texttt{\mdseries\slshape Qn}} is returned. If every \mbox{\texttt{\mdseries\slshape Qi}} is a declared group, a group is returned; if every \mbox{\texttt{\mdseries\slshape Qi}} is a declared loop, a loop is returned; otherwise a quasigroup is returned.
 
 }
 
@@ -1412,8 +1428,21 @@ This is a loop analog of \texttt{IsSubquasigroup(\mbox{\texttt{\mdseries\slshape
 
  
 
-\subsection{\textcolor{Chapter }{AllSubloops}}
+\subsection{\textcolor{Chapter }{AllSubquasigroups}}
 \logpage{[ 6, 2, 4 ]}\nobreak
+\hyperdef{L}{X859B6C8183537E75}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AllSubquasigroups({\mdseries\slshape Q})\index{AllSubquasigroups@\texttt{AllSubquasigroups}}
+\label{AllSubquasigroups}
+}\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+A list of all subquasigroups of a loop \mbox{\texttt{\mdseries\slshape Q}}.
+
+}
+
+ 
+
+\subsection{\textcolor{Chapter }{AllSubloops}}
+\logpage{[ 6, 2, 5 ]}\nobreak
 \hyperdef{L}{X81EF252585592001}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AllSubloops({\mdseries\slshape Q})\index{AllSubloops@\texttt{AllSubloops}}
 \label{AllSubloops}
@@ -1426,7 +1455,7 @@ A list of all subloops of a loop \mbox{\texttt{\mdseries\slshape Q}}.
  
 
 \subsection{\textcolor{Chapter }{RightCosets}}
-\logpage{[ 6, 2, 5 ]}\nobreak
+\logpage{[ 6, 2, 6 ]}\nobreak
 \hyperdef{L}{X835F48248571364F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RightCosets({\mdseries\slshape Q, S})\index{RightCosets@\texttt{RightCosets}}
 \label{RightCosets}
@@ -1442,7 +1471,7 @@ the elements of \mbox{\texttt{\mdseries\slshape S}}, i.e., if \mbox{\texttt{\mds
  
 
 \subsection{\textcolor{Chapter }{RightTransversal}}
-\logpage{[ 6, 2, 6 ]}\nobreak
+\logpage{[ 6, 2, 7 ]}\nobreak
 \hyperdef{L}{X85C65D06822E716F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RightTransversal({\mdseries\slshape Q, S})\index{RightTransversal@\texttt{RightTransversal}}
 \label{RightTransversal}
@@ -1993,23 +2022,49 @@ The Frattini subloop of \mbox{\texttt{\mdseries\slshape Q}}. The method is imple
 {
   
 
-\subsection{\textcolor{Chapter }{IsomorphismLoops}}
+\subsection{\textcolor{Chapter }{IsomorphismQuasigroups}}
 \logpage{[ 6, 11, 1 ]}\nobreak
+\hyperdef{L}{X801067F67E5292F7}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsomorphismQuasigroups({\mdseries\slshape Q, L})\index{IsomorphismQuasigroups@\texttt{IsomorphismQuasigroups}}
+\label{IsomorphismQuasigroups}
+}\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+An isomorphism from a quasigroup \mbox{\texttt{\mdseries\slshape Q}} to a quasigroup \mbox{\texttt{\mdseries\slshape L}} if the quasigroups are isomorphic, \texttt{fail} otherwise.
+
+
+
+If an isomorphism exists, it is returned as a permutation $f$ of $1,\dots,|$\mbox{\texttt{\mdseries\slshape Q}}$|$, where $i^f=j$ means that the $i$th element of \mbox{\texttt{\mdseries\slshape Q}} is mapped onto the $j$th element of \mbox{\texttt{\mdseries\slshape L}}. Note that this convention is used even if the underlying sets of \mbox{\texttt{\mdseries\slshape Q}}, \mbox{\texttt{\mdseries\slshape L}} are not indexed by consecutive integers.}
+
+ 
+
+\subsection{\textcolor{Chapter }{IsomorphismLoops}}
+\logpage{[ 6, 11, 2 ]}\nobreak
 \hyperdef{L}{X7D7B10D6836FCA9F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsomorphismLoops({\mdseries\slshape Q, L})\index{IsomorphismLoops@\texttt{IsomorphismLoops}}
 \label{IsomorphismLoops}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
-An isomorphism from a loop \mbox{\texttt{\mdseries\slshape Q}} to a loop \mbox{\texttt{\mdseries\slshape L}} if the loops are isomorphic, \texttt{fail} otherwise.
+An isomorphism from a loop \mbox{\texttt{\mdseries\slshape Q}} to a loop \mbox{\texttt{\mdseries\slshape L}} if the loops are isomorphic, \texttt{fail} otherwise, with the same convention as in \texttt{IsomorphismQuasigroups}.
 
+}
 
+ 
 
-If an isomorphism exists, it is returned as a permutation $f$ of $1,\dots,|$\mbox{\texttt{\mdseries\slshape Q}}$|$, where $i^f=j$ means that the $i$th element of \mbox{\texttt{\mdseries\slshape Q}} is mapped onto the $j$th element of \mbox{\texttt{\mdseries\slshape L}}. Note that this convention is used even if the underlying sets of \mbox{\texttt{\mdseries\slshape L}}, \mbox{\texttt{\mdseries\slshape M}} are not indexed by consecutive integers.}
+\subsection{\textcolor{Chapter }{QuasigroupsUpToIsomorphism}}
+\logpage{[ 6, 11, 3 ]}\nobreak
+\hyperdef{L}{X82373C5479574F22}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{QuasigroupsUpToIsomorphism({\mdseries\slshape ls})\index{QuasigroupsUpToIsomorphism@\texttt{QuasigroupsUpToIsomorphism}}
+\label{QuasigroupsUpToIsomorphism}
+}\hfill{\scriptsize (operation)}}\\
+\textbf{\indent Returns:\ }
+Given a list \mbox{\texttt{\mdseries\slshape ls}} of quasigroups, returns a sublist of \mbox{\texttt{\mdseries\slshape ls}} consisting of representatives of isomorphism classes of quasigroups from \mbox{\texttt{\mdseries\slshape ls}}.
+
+}
 
  
 
 \subsection{\textcolor{Chapter }{LoopsUpToIsomorphism}}
-\logpage{[ 6, 11, 2 ]}\nobreak
+\logpage{[ 6, 11, 4 ]}\nobreak
 \hyperdef{L}{X8308F38283C61B20}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LoopsUpToIsomorphism({\mdseries\slshape ls})\index{LoopsUpToIsomorphism@\texttt{LoopsUpToIsomorphism}}
 \label{LoopsUpToIsomorphism}
@@ -2022,20 +2077,20 @@ Given a list \mbox{\texttt{\mdseries\slshape ls}} of loops, returns a sublist of
  
 
 \subsection{\textcolor{Chapter }{AutomorphismGroup}}
-\logpage{[ 6, 11, 3 ]}\nobreak
+\logpage{[ 6, 11, 5 ]}\nobreak
 \hyperdef{L}{X87677B0787B4461A}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AutomorphismGroup({\mdseries\slshape Q})\index{AutomorphismGroup@\texttt{AutomorphismGroup}}
 \label{AutomorphismGroup}
 }\hfill{\scriptsize (attribute)}}\\
 \textbf{\indent Returns:\ }
-The automorphism group of a loop \mbox{\texttt{\mdseries\slshape Q}}, with the same convention on permutations as in the case of \texttt{IsomorphismLoops}.\\
+The automorphism group of a loop or quasigroups \mbox{\texttt{\mdseries\slshape Q}}, with the same convention on permutations as in \texttt{IsomorphismQuasigroups}.\\
 
 
 }
 
  
 
-\textsc{Remark:} Since two isomorphisms differ by an automorphism, all isomorphisms from \mbox{\texttt{\mdseries\slshape Q}} to \mbox{\texttt{\mdseries\slshape L}} can be obtained by a combination of \texttt{IsomorphismLoops(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape L}})} and \texttt{AutomorphismGroup(\mbox{\texttt{\mdseries\slshape L}})}. \\
+\textsc{Remark:} Since two isomorphisms differ by an automorphism, all isomorphisms from \mbox{\texttt{\mdseries\slshape Q}} to \mbox{\texttt{\mdseries\slshape L}} can be obtained by a combination of \texttt{IsomorphismLoops(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape L}})} (or \texttt{IsomorphismQuasigroups(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape L}})}) and \texttt{AutomorphismGroup(\mbox{\texttt{\mdseries\slshape L}})}. \\
 
 
 While dealing with Cayley tables, it is often useful to rename or reorder the
@@ -2043,7 +2098,7 @@ elements of the underlying quasigroup without changing the isomorphism type of
 the quasigroups. \textsf{LOOPS} contains several functions for this purpose. 
 
 \subsection{\textcolor{Chapter }{IsomorphicCopyByPerm}}
-\logpage{[ 6, 11, 4 ]}\nobreak
+\logpage{[ 6, 11, 6 ]}\nobreak
 \hyperdef{L}{X85B3E22679FD8D81}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsomorphicCopyByPerm({\mdseries\slshape Q, f})\index{IsomorphicCopyByPerm@\texttt{IsomorphicCopyByPerm}}
 \label{IsomorphicCopyByPerm}
@@ -2056,7 +2111,7 @@ When \mbox{\texttt{\mdseries\slshape Q}} is a quasigroup and \mbox{\texttt{\mdse
  
 
 \subsection{\textcolor{Chapter }{IsomorphicCopyByNormalSubloop}}
-\logpage{[ 6, 11, 5 ]}\nobreak
+\logpage{[ 6, 11, 7 ]}\nobreak
 \hyperdef{L}{X8121DE3A78795040}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsomorphicCopyByNormalSubloop({\mdseries\slshape Q, S})\index{IsomorphicCopyByNormalSubloop@\texttt{IsomorphicCopyByNormalSubloop}}
 \label{IsomorphicCopyByNormalSubloop}
@@ -2075,15 +2130,18 @@ these invariants to partition the loop into blocks of elements preserved under
 isomorphisms. The following two operations are used in the search. 
 
 \subsection{\textcolor{Chapter }{Discriminator}}
-\logpage{[ 6, 11, 6 ]}\nobreak
+\logpage{[ 6, 11, 8 ]}\nobreak
 \hyperdef{L}{X7D09D8957E4A0973}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Discriminator({\mdseries\slshape Q})\index{Discriminator@\texttt{Discriminator}}
 \label{Discriminator}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
-A data structure with isomorphism invariants of a loop \mbox{\texttt{\mdseries\slshape Q}}. See \cite{Vo} or the file \texttt{iso.gi} for more details.
+A data structure with isomorphism invariants of a loop \mbox{\texttt{\mdseries\slshape Q}}.
 
-}
+
+
+See \cite{Vo} or the file \texttt{iso.gi} for more details. The format of the discriminator has been changed from
+version 3.2.0 up to accommodate isomorphism searches for quasigroups.}
 
  
 
@@ -2091,7 +2149,7 @@ If two loops have different discriminators, they are not isomorphic. If they
 have identical discriminators, they may or may not be isomorphic. 
 
 \subsection{\textcolor{Chapter }{AreEqualDiscriminators}}
-\logpage{[ 6, 11, 7 ]}\nobreak
+\logpage{[ 6, 11, 9 ]}\nobreak
 \hyperdef{L}{X812F0DEE7C896E18}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AreEqualDiscriminators({\mdseries\slshape D1, D2})\index{AreEqualDiscriminators@\texttt{AreEqualDiscriminators}}
 \label{AreEqualDiscriminators}

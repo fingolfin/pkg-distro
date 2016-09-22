@@ -97,12 +97,17 @@
             and  [3XQ[103X are quasigroups (resp. loops) with the same parent and [3XS[103X is
             a subset of [3XQ[103X.[133X
   
-  [1X6.2-4 AllSubloops[101X
+  [1X6.2-4 AllSubquasigroups[101X
+  
+  [29X[2XAllSubquasigroups[102X( [3XQ[103X ) [32X operation
+  [6XReturns:[106X  [33X[0;10YA list of all subquasigroups of a loop [3XQ[103X.[133X
+  
+  [1X6.2-5 AllSubloops[101X
   
   [29X[2XAllSubloops[102X( [3XQ[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10YA list of all subloops of a loop [3XQ[103X.[133X
   
-  [1X6.2-5 RightCosets[101X
+  [1X6.2-6 RightCosets[101X
   
   [29X[2XRightCosets[102X( [3XQ[103X, [3XS[103X ) [32X function
   [6XReturns:[106X  [33X[0;10YIf [3XS[103X is a subloop of [3XQ[103X, returns a list of all right cosets of [3XS[103X in
@@ -112,7 +117,7 @@
   the  same  way  as  the  elements  of  [3XS[103X,  i.e.,  if [3XS[103X[22X= [s_1,dots,s_m][122X, then
   [3XS[103X[22Xx=[s_1x,dots,s_mx][122X.[133X
   
-  [1X6.2-6 RightTransversal[101X
+  [1X6.2-7 RightTransversal[101X
   
   [29X[2XRightTransversal[102X( [3XQ[103X, [3XS[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10YA  right  transversal  of a subloop [3XS[103X in a loop [3XQ[103X. The transversal
@@ -436,38 +441,51 @@
   
   [1X6.11 [33X[0;0YIsomorphisms and Automorphisms[133X[101X
   
-  [1X6.11-1 IsomorphismLoops[101X
+  [1X6.11-1 IsomorphismQuasigroups[101X
   
-  [29X[2XIsomorphismLoops[102X( [3XQ[103X, [3XL[103X ) [32X operation
-  [6XReturns:[106X  [33X[0;10YAn  isomorphism  from  a  loop  [3XQ[103X  to  a  loop  [3XL[103X if the loops are
-            isomorphic, [10Xfail[110X otherwise.[133X
+  [29X[2XIsomorphismQuasigroups[102X( [3XQ[103X, [3XL[103X ) [32X operation
+  [6XReturns:[106X  [33X[0;10YAn  isomorphism  from  a  quasigroup  [3XQ[103X  to  a quasigroup [3XL[103X if the
+            quasigroups are isomorphic, [10Xfail[110X otherwise.[133X
   
   [33X[0;0YIf  an  isomorphism exists, it is returned as a permutation [22Xf[122X of [22X1,dots,|[122X[3XQ[103X[22X|[122X,
   where  [22Xi^f=j[122X  means that the [22Xi[122Xth element of [3XQ[103X is mapped onto the [22Xj[122Xth element
-  of  [3XL[103X. Note that this convention is used even if the underlying sets of [3XL[103X, [3XM[103X
+  of  [3XL[103X. Note that this convention is used even if the underlying sets of [3XQ[103X, [3XL[103X
   are not indexed by consecutive integers.[133X
   
-  [1X6.11-2 LoopsUpToIsomorphism[101X
+  [1X6.11-2 IsomorphismLoops[101X
+  
+  [29X[2XIsomorphismLoops[102X( [3XQ[103X, [3XL[103X ) [32X operation
+  [6XReturns:[106X  [33X[0;10YAn  isomorphism  from  a  loop  [3XQ[103X  to  a  loop  [3XL[103X if the loops are
+            isomorphic,  [10Xfail[110X  otherwise,  with  the  same  convention  as  in
+            [10XIsomorphismQuasigroups[110X.[133X
+  
+  [1X6.11-3 QuasigroupsUpToIsomorphism[101X
+  
+  [29X[2XQuasigroupsUpToIsomorphism[102X( [3Xls[103X ) [32X operation
+  [6XReturns:[106X  [33X[0;10YGiven a list [3Xls[103X of quasigroups, returns a sublist of [3Xls[103X consisting
+            of representatives of isomorphism classes of quasigroups from [3Xls[103X.[133X
+  
+  [1X6.11-4 LoopsUpToIsomorphism[101X
   
   [29X[2XLoopsUpToIsomorphism[102X( [3Xls[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10YGiven  a  list  [3Xls[103X of loops, returns a sublist of [3Xls[103X consisting of
             representatives of isomorphism classes of loops from [3Xls[103X.[133X
   
-  [1X6.11-3 AutomorphismGroup[101X
+  [1X6.11-5 AutomorphismGroup[101X
   
   [29X[2XAutomorphismGroup[102X( [3XQ[103X ) [32X attribute
-  [6XReturns:[106X  [33X[0;10YThe  automorphism  group  of a loop [3XQ[103X, with the same convention on
-            permutations as in the case of [10XIsomorphismLoops[110X.[133X
+  [6XReturns:[106X  [33X[0;10YThe  automorphism  group of a loop or quasigroups [3XQ[103X, with the same
+            convention on permutations as in [10XIsomorphismQuasigroups[110X.[133X
   
   [33X[0;0Y[12XRemark:[112X  Since  two isomorphisms differ by an automorphism, all isomorphisms
-  from  [3XQ[103X  to  [3XL[103X can be obtained by a combination of [10XIsomorphismLoops([3XQ[103X[10X,[3XL[103X[10X)[110X and
-  [10XAutomorphismGroup([3XL[103X[10X)[110X.[133X
+  from  [3XQ[103X  to  [3XL[103X can be obtained by a combination of [10XIsomorphismLoops([3XQ[103X[10X,[3XL[103X[10X)[110X (or
+  [10XIsomorphismQuasigroups([3XQ[103X[10X,[3XL[103X[10X)[110X) and [10XAutomorphismGroup([3XL[103X[10X)[110X.[133X
   
   [33X[0;0YWhile  dealing  with  Cayley tables, it is often useful to rename or reorder
   the  elements  of the underlying quasigroup without changing the isomorphism
   type of the quasigroups. [5XLOOPS[105X contains several functions for this purpose.[133X
   
-  [1X6.11-4 IsomorphicCopyByPerm[101X
+  [1X6.11-6 IsomorphicCopyByPerm[101X
   
   [29X[2XIsomorphicCopyByPerm[102X( [3XQ[103X, [3Xf[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10YWhen  [3XQ[103X  is  a  quasigroup  and  [3Xf[103X is a permutation of [22X1,dots,|[122X[3XQ[103X[22X|[122X,
@@ -477,7 +495,7 @@
             declared  loop  and [3Xf[103X[22X(1) = kne 1[122X, then [3Xf[103X is first replaced with [3Xf[103X[22X∘
             (1,k)[122X, to make sure that the resulting Cayley table is normalized.[133X
   
-  [1X6.11-5 IsomorphicCopyByNormalSubloop[101X
+  [1X6.11-7 IsomorphicCopyByNormalSubloop[101X
   
   [29X[2XIsomorphicCopyByNormalSubloop[102X( [3XQ[103X, [3XS[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10YWhen [3XS[103X is a normal subloop of a loop [3XQ[103X, returns an isomorphic copy
@@ -490,16 +508,19 @@
   these  invariants  to  partition  the loop into blocks of elements preserved
   under isomorphisms. The following two operations are used in the search.[133X
   
-  [1X6.11-6 Discriminator[101X
+  [1X6.11-8 Discriminator[101X
   
   [29X[2XDiscriminator[102X( [3XQ[103X ) [32X operation
-  [6XReturns:[106X  [33X[0;10YA  data  structure  with  isomorphism  invariants of a loop [3XQ[103X. See
-            [Voj06] or the file [11Xiso.gi[111X for more details.[133X
+  [6XReturns:[106X  [33X[0;10YA data structure with isomorphism invariants of a loop [3XQ[103X.[133X
+  
+  [33X[0;0YSee  [Voj06]  or  the  file  [11Xiso.gi[111X  for  more  details.  The  format of the
+  discriminator  has  been  changed  from  version  3.2.0  up  to  accommodate
+  isomorphism searches for quasigroups.[133X
   
   [33X[0;0YIf two loops have different discriminators, they are not isomorphic. If they
   have identical discriminators, they may or may not be isomorphic.[133X
   
-  [1X6.11-7 AreEqualDiscriminators[101X
+  [1X6.11-9 AreEqualDiscriminators[101X
   
   [29X[2XAreEqualDiscriminators[102X( [3XD1[103X, [3XD2[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X  if  [3XD1[103X,  [3XD2[103X  are  equal  discriminators  for the purposes of

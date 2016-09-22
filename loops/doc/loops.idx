@@ -67,17 +67,18 @@
 \indexentry{IsLoopCayleyTable@\texttt  {IsLoopCayleyTable}|hyperpage}{14}
 \indexentry{CanonicalCayleyTable@\texttt  {CanonicalCayleyTable}|hyperpage}{15}
 \indexentry{Cayley table!canonical|hyperpage}{15}
+\indexentry{CanonicalCopy@\texttt  {CanonicalCopy}|hyperpage}{15}
 \indexentry{NormalizedQuasigroupTable@\texttt  {NormalizedQuasigroupTable}|hyperpage}{15}
 \indexentry{QuasigroupByCayleyTable@\texttt  {QuasigroupByCayleyTable}|hyperpage}{15}
 \indexentry{LoopByCayleyTable@\texttt  {LoopByCayleyTable}|hyperpage}{15}
-\indexentry{QuasigroupFromFile@\texttt  {QuasigroupFromFile}|hyperpage}{16}
-\indexentry{LoopFromFile@\texttt  {LoopFromFile}|hyperpage}{16}
+\indexentry{QuasigroupFromFile@\texttt  {QuasigroupFromFile}|hyperpage}{17}
+\indexentry{LoopFromFile@\texttt  {LoopFromFile}|hyperpage}{17}
 \indexentry{CayleyTableByPerms@\texttt  {CayleyTableByPerms}|hyperpage}{17}
 \indexentry{QuasigroupByLeftSection@\texttt  {QuasigroupByLeftSection}|hyperpage}{17}
 \indexentry{LoopByLeftSection@\texttt  {LoopByLeftSection}|hyperpage}{17}
 \indexentry{QuasigroupByRightSection@\texttt  {QuasigroupByRightSection}|hyperpage}{17}
 \indexentry{LoopByRightSection@\texttt  {LoopByRightSection}|hyperpage}{17}
-\indexentry{folder!quasigroup|hyperpage}{17}
+\indexentry{folder!quasigroup|hyperpage}{18}
 \indexentry{QuasigroupByRightFolder@\texttt  {QuasigroupByRightFolder}|hyperpage}{18}
 \indexentry{LoopByRightFolder@\texttt  {LoopByRightFolder}|hyperpage}{18}
 \indexentry{extension|hyperpage}{18}
@@ -94,7 +95,7 @@
 \indexentry{PrincipalLoopIsotope@\texttt  {PrincipalLoopIsotope}|hyperpage}{20}
 \indexentry{IntoLoop@\texttt  {IntoLoop}|hyperpage}{20}
 \indexentry{IntoGroup@\texttt  {IntoGroup}|hyperpage}{20}
-\indexentry{DirectProduct@\texttt  {DirectProduct}|hyperpage}{20}
+\indexentry{DirectProduct@\texttt  {DirectProduct}|hyperpage}{21}
 \indexentry{opposite quasigroup|hyperpage}{21}
 \indexentry{quasigroup!opposite|hyperpage}{21}
 \indexentry{Opposite@\texttt  {Opposite}|hyperpage}{21}
@@ -134,7 +135,8 @@
 \indexentry{Subloop@\texttt  {Subloop}|hyperpage}{27}
 \indexentry{IsSubquasigroup@\texttt  {IsSubquasigroup}|hyperpage}{27}
 \indexentry{IsSubloop@\texttt  {IsSubloop}|hyperpage}{27}
-\indexentry{AllSubloops@\texttt  {AllSubloops}|hyperpage}{27}
+\indexentry{AllSubquasigroups@\texttt  {AllSubquasigroups}|hyperpage}{27}
+\indexentry{AllSubloops@\texttt  {AllSubloops}|hyperpage}{28}
 \indexentry{RightCosets@\texttt  {RightCosets}|hyperpage}{28}
 \indexentry{coset|hyperpage}{28}
 \indexentry{RightTransversal@\texttt  {RightTransversal}|hyperpage}{28}
@@ -154,9 +156,9 @@
 \indexentry{multiplication group!relative|hyperpage}{29}
 \indexentry{inner mapping!left|hyperpage}{29}
 \indexentry{inner mapping!right|hyperpage}{29}
-\indexentry{conjugation|hyperpage}{29}
-\indexentry{inner mapping!middle|hyperpage}{29}
-\indexentry{inner mapping group!middle|hyperpage}{29}
+\indexentry{conjugation|hyperpage}{30}
+\indexentry{inner mapping!middle|hyperpage}{30}
+\indexentry{inner mapping group!middle|hyperpage}{30}
 \indexentry{LeftInnerMapping@\texttt  {LeftInnerMapping}|hyperpage}{30}
 \indexentry{RightInnerMapping@\texttt  {RightInnerMapping}|hyperpage}{30}
 \indexentry{MiddleInnerMapping@\texttt  {MiddleInnerMapping}|hyperpage}{30}
@@ -167,8 +169,8 @@
 \indexentry{LeftNucleus@\texttt  {LeftNucleus}|hyperpage}{30}
 \indexentry{MiddleNucleus@\texttt  {MiddleNucleus}|hyperpage}{30}
 \indexentry{RightNucleus@\texttt  {RightNucleus}|hyperpage}{30}
-\indexentry{Nuc@\texttt  {Nuc}|hyperpage}{30}
-\indexentry{NucleusOfQuasigroup@\texttt  {NucleusOfQuasigroup}|hyperpage}{30}
+\indexentry{Nuc@\texttt  {Nuc}|hyperpage}{31}
+\indexentry{NucleusOfQuasigroup@\texttt  {NucleusOfQuasigroup}|hyperpage}{31}
 \indexentry{NucleusOfLoop@\texttt  {NucleusOfLoop}|hyperpage}{31}
 \indexentry{Commutant@\texttt  {Commutant}|hyperpage}{31}
 \indexentry{Center@\texttt  {Center}|hyperpage}{31}
@@ -178,9 +180,9 @@
 \indexentry{normal subloop|hyperpage}{31}
 \indexentry{NormalClosure@\texttt  {NormalClosure}|hyperpage}{31}
 \indexentry{normal closure|hyperpage}{31}
-\indexentry{IsSimple@\texttt  {IsSimple}|hyperpage}{31}
-\indexentry{simple loop|hyperpage}{31}
-\indexentry{loop!simple|hyperpage}{31}
+\indexentry{IsSimple@\texttt  {IsSimple}|hyperpage}{32}
+\indexentry{simple loop|hyperpage}{32}
+\indexentry{loop!simple|hyperpage}{32}
 \indexentry{FactorLoop@\texttt  {FactorLoop}|hyperpage}{32}
 \indexentry{NaturalHomomorphismByNormalSubloop@\texttt  {NaturalHomomorphismByNormalSubloop}|hyperpage}{32}
 \indexentry{IsNilpotent@\texttt  {IsNilpotent}|hyperpage}{32}
@@ -189,7 +191,7 @@
 \indexentry{strongly nilpotent loop|hyperpage}{32}
 \indexentry{nilpotent loop!strongly|hyperpage}{32}
 \indexentry{loop!strongly nilpotent|hyperpage}{32}
-\indexentry{UpperCentralSeries@\texttt  {UpperCentralSeries}|hyperpage}{32}
+\indexentry{UpperCentralSeries@\texttt  {UpperCentralSeries}|hyperpage}{33}
 \indexentry{LowerCentralSeries@\texttt  {LowerCentralSeries}|hyperpage}{33}
 \indexentry{central series!lower|hyperpage}{33}
 \indexentry{IsSolvable@\texttt  {IsSolvable}|hyperpage}{33}
@@ -198,12 +200,14 @@
 \indexentry{FrattiniSubloop@\texttt  {FrattiniSubloop}|hyperpage}{33}
 \indexentry{Frattini subloop|hyperpage}{33}
 \indexentry{FrattinifactorSize@\texttt  {FrattinifactorSize}|hyperpage}{33}
-\indexentry{IsomorphismLoops@\texttt  {IsomorphismLoops}|hyperpage}{33}
+\indexentry{IsomorphismQuasigroups@\texttt  {IsomorphismQuasigroups}|hyperpage}{33}
+\indexentry{IsomorphismLoops@\texttt  {IsomorphismLoops}|hyperpage}{34}
+\indexentry{QuasigroupsUpToIsomorphism@\texttt  {QuasigroupsUpToIsomorphism}|hyperpage}{34}
 \indexentry{LoopsUpToIsomorphism@\texttt  {LoopsUpToIsomorphism}|hyperpage}{34}
 \indexentry{AutomorphismGroup@\texttt  {AutomorphismGroup}|hyperpage}{34}
 \indexentry{IsomorphicCopyByPerm@\texttt  {IsomorphicCopyByPerm}|hyperpage}{34}
 \indexentry{IsomorphicCopyByNormalSubloop@\texttt  {IsomorphicCopyByNormalSubloop}|hyperpage}{34}
-\indexentry{Discriminator@\texttt  {Discriminator}|hyperpage}{34}
+\indexentry{Discriminator@\texttt  {Discriminator}|hyperpage}{35}
 \indexentry{AreEqualDiscriminators@\texttt  {AreEqualDiscriminators}|hyperpage}{35}
 \indexentry{IsotopismLoops@\texttt  {IsotopismLoops}|hyperpage}{35}
 \indexentry{LoopsUpToIsotopism@\texttt  {LoopsUpToIsotopism}|hyperpage}{35}

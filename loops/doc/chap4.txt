@@ -62,7 +62,16 @@
   [22Xn[122X. Although we do not assume that every quasigroup table is canonical, it is
   often desirable to present quasigroup tables in canonical way.[133X
   
-  [1X4.3-2 NormalizedQuasigroupTable[101X
+  [1X4.3-2 CanonicalCopy[101X
+  
+  [29X[2XCanonicalCopy[102X( [3XQ[103X ) [32X operation
+  [6XReturns:[106X  [33X[0;10YA canonical copy of the quasigroup or loop [3XQ[103X.[133X
+  
+  [33X[0;0YThis is a shorthand for [10XQuasigroupByCayleyTable(CanonicalCayleyTable([3XQ[103X[10X)[110X when
+  [3XQ[103X  is  a  declared quasigroup, and [10XLoopByCayleyTable(CanonicalCayleyTable([3XQ[103X[10X)[110X
+  when [3XQ[103X is a loop.[133X
+  
+  [1X4.3-3 NormalizedQuasigroupTable[101X
   
   [29X[2XNormalizedQuasigroupTable[102X( [3XT[103X ) [32X operation
   [6XReturns:[106X  [33X[0;10YA normalized version of the Cayley table [3XT[103X.[133X
@@ -414,14 +423,16 @@
             permutation group isomorphic to [3XM[103X.[133X
   
   
-  [1X4.11 [33X[0;0YProducts of Loops[133X[101X
+  [1X4.11 [33X[0;0YProducts of Quasigroups and Loops[133X[101X
   
   [1X4.11-1 DirectProduct[101X
   
-  [29X[2XDirectProduct[102X( [3XL1[103X, [3X...[103X, [3XLn[103X ) [32X operation
-  [6XReturns:[106X  [33X[0;10YIf  each  [3XLi[103X  is  either  a declared loop or a declared group, the
-            direct  product  of  [3XL1[103X,  [22Xdots[122X,  [3XLn[103X  is returned. If every [3XLi[103X is a
-            declared group, a group is returned, otherwise a loop is returned.[133X
+  [29X[2XDirectProduct[102X( [3XQ1[103X, [3X...[103X, [3XQn[103X ) [32X operation
+  [6XReturns:[106X  [33X[0;10YIf  each  [3XQi[103X  is  either a declared quasigroup, declared loop or a
+            declared group, the direct product of [3XQ1[103X, [22Xdots[122X, [3XQn[103X is returned. If
+            every  [3XQi[103X is a declared group, a group is returned; if every [3XQi[103X is
+            a  declared  loop,  a  loop is returned; otherwise a quasigroup is
+            returned.[133X
   
   
   [1X4.12 [33X[0;0YOpposite Quasigroups and Loops[133X[101X

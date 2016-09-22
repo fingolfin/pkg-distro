@@ -31,7 +31,7 @@
 
 <h2>Computing with quasigroups and loops in <strong class="pkg">GAP</strong></h2>
 
-<p>Version 3.1.0</p>
+<p>Version 3.2.0</p>
 
 </div>
 <p><b>Gábor P. Nagy
@@ -50,7 +50,7 @@
 
 <p><a id="X81488B807F2A1CF1" name="X81488B807F2A1CF1"></a></p>
 <h3>Copyright</h3>
-<p>© 2015 Gábor P. Nagy and Petr Vojtěchovský.</p>
+<p>© 2016 Gábor P. Nagy and Petr Vojtěchovský.</p>
 
 <p><a id="X8537FEB07AF2BEC8" name="X8537FEB07AF2BEC8"></a></p>
 
@@ -133,7 +133,8 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7971CCB87DAFF7B9">4.3-1 CanonicalCayleyTable</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X821A2F9E85FAD8BF">4.3-2 NormalizedQuasigroupTable</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7B816D887F46E6B7">4.3-2 CanonicalCopy</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X821A2F9E85FAD8BF">4.3-3 NormalizedQuasigroupTable</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X7C2372BB8739C5A2">4.4 <span class="Heading">Creating Quasigroups and Loops From Cayley Tables</span></a>
 </span>
@@ -183,7 +184,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7A59C36683118E5A">4.10-3 IntoLoop</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7B5C6C64831B866E">4.10-4 IntoGroup</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X8328348F855B1482">4.11 <span class="Heading">Products of Loops</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X79B7327C79029086">4.11 <span class="Heading">Products of Quasigroups and Loops</span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X861BA02C7902A4F4">4.11-1 DirectProduct</a></span>
@@ -248,9 +249,10 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84E6744E804AE830">6.2-2 Subloop</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X87AC8B7E80CE9260">6.2-3 <span class="Heading">IsSubquasigroup and IsSubloop</span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X81EF252585592001">6.2-4 AllSubloops</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X835F48248571364F">6.2-5 RightCosets</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85C65D06822E716F">6.2-6 RightTransversal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X859B6C8183537E75">6.2-4 AllSubquasigroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X81EF252585592001">6.2-5 AllSubloops</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X835F48248571364F">6.2-6 RightCosets</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85C65D06822E716F">6.2-7 RightTransversal</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X78AA3D177CCA49FF">6.3 <span class="Heading">Translations and Sections</span></a>
 </span>
@@ -323,13 +325,15 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X81F3496578EAA74E">6.11 <span class="Heading">Isomorphisms and Automorphisms</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D7B10D6836FCA9F">6.11-1 IsomorphismLoops</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8308F38283C61B20">6.11-2 LoopsUpToIsomorphism</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X87677B0787B4461A">6.11-3 AutomorphismGroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85B3E22679FD8D81">6.11-4 IsomorphicCopyByPerm</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8121DE3A78795040">6.11-5 IsomorphicCopyByNormalSubloop</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D09D8957E4A0973">6.11-6 Discriminator</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X812F0DEE7C896E18">6.11-7 AreEqualDiscriminators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X801067F67E5292F7">6.11-1 IsomorphismQuasigroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D7B10D6836FCA9F">6.11-2 IsomorphismLoops</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82373C5479574F22">6.11-3 QuasigroupsUpToIsomorphism</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8308F38283C61B20">6.11-4 LoopsUpToIsomorphism</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X87677B0787B4461A">6.11-5 AutomorphismGroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85B3E22679FD8D81">6.11-6 IsomorphicCopyByPerm</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8121DE3A78795040">6.11-7 IsomorphicCopyByNormalSubloop</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D09D8957E4A0973">6.11-8 Discriminator</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X812F0DEE7C896E18">6.11-9 AreEqualDiscriminators</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7E996BDD81E594F9">6.12 <span class="Heading">Isotopisms</span></a>
 </span>
