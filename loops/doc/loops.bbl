@@ -1,4 +1,4 @@
-\begin{thebibliography}{GMR99}
+\begin{thebibliography}{DBGV12}
 
 \bibitem[Art59]{Ar}
 R.~Artzy.
@@ -9,6 +9,11 @@ R.~Artzy.
 K.~Artic.
 \newblock {\em On conjugacy closed loops and conjugacy closed loop folders}.
 \newblock PhD thesis, RWTH Aachen University, 2015.
+
+\bibitem[BP56]{BrPa}
+R.~H. Bruck and L.~J. Paige.
+\newblock Loops whose inner mappings are automorphisms.
+\newblock {\em Ann. of Math. (2)}, 63:308{\textendash}323, 1956.
 
 \bibitem[Bru58]{Br}
 R.~H. Bruck.
@@ -26,6 +31,11 @@ C.~J. Colbourn and A.~Rosa.
 \newblock {\em Triple systems}.
 \newblock Oxford Mathematical Monographs. The Clarendon Press Oxford University
   Press, New York, 1999.
+
+\bibitem[DBGV12]{BaGrVo}
+D.~A.~S. De~Barros, A.~Grishkov, and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Commutative automorphic loops of order {$p^3$}.
+\newblock {\em J. Algebra Appl.}, 11(5):1250100, 15, 2012.
 
 \bibitem[Dr{\a'a}03]{DrapalCD}
 A.~Dr{\a'a}pal.
@@ -49,10 +59,25 @@ F.~Fenyves.
   type.
 \newblock {\em Publ. Math. Debrecen}, 16:187{\textendash}192, 1969.
 
+\bibitem[GKN14]{GrKiNa}
+A.~Grishkov, M.~Kinyon, and G.~P. Nagy.
+\newblock Solvability of commutative automorphic loops.
+\newblock {\em Proc. Amer. Math. Soc.}, 142(9):3029{\textendash}3037, 2014.
+
 \bibitem[GMR99]{Go}
 E.~G. Goodaire, S.~May, and M.~Raman.
 \newblock {\em The {M}oufang loops of order less than 64}.
 \newblock Nova Science Publishers Inc., Commack, NY, 1999.
+
+\bibitem[JKNV11]{JoKiNaVo}
+K.~W. Johnson, M.~K. Kinyon, G.~P. Nagy, and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Searching for small simple automorphic loops.
+\newblock {\em LMS J. Comput. Math.}, 14:200{\textendash}213, 2011.
+
+\bibitem[JKV12]{JeKiVo}
+P.~Jedli{\v c}ka, M.~Kinyon, and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Nilpotency in automorphic loops of prime power order.
+\newblock {\em J. Algebra}, 350:64{\textendash}76, 2012.
 
 \bibitem[JM96]{JaMa}
 M.~T. Jacobson and P.~Matthews.
@@ -63,6 +88,11 @@ M.~T. Jacobson and P.~Matthews.
 M.~K. Kinyon, K.~Kunen, and J.~D. Phillips.
 \newblock Every diassociative {$A$}-loop is {M}oufang.
 \newblock {\em Proc. Amer. Math. Soc.}, 130(3):619{\textendash}624, 2002.
+
+\bibitem[KKPV16]{KiKuPhVo}
+M.~K. Kinyon, K.~Kunen, J.~D. Phillips, and P.~Vojt{\v e}chovsk{\a'y}.
+\newblock The structure of automorphic loops.
+\newblock {\em Trans. Amer. Math. Soc.}, 368(12):8901{\textendash}8927, 2016.
 
 \bibitem[KNV15]{KiNaVo2015}
 M.~K. Kinyon, G.~P. Nagy, and P.~Vojt{\v e}chovsk{\a'y}.
@@ -117,6 +147,11 @@ M.~Slattery and A.~Zenisek.
 P.~Vojt{\v e}chovsk{\a'y}.
 \newblock Toward the classification of {M}oufang loops of order 64.
 \newblock {\em European J. Combin.}, 27(3):444{\textendash}460, 2006.
+
+\bibitem[Voj15]{VoQRS}
+P.~Vojt{\v e}chovsk{\a'y}.
+\newblock Three lectures on automorphic loops.
+\newblock {\em Quasigroups Related Systems}, 23(1):129{\textendash}163, 2015.
 
 \bibitem[WJ75]{Wi}
 R.~L. Wilson~Jr.

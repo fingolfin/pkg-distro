@@ -91,9 +91,10 @@
   [33X[0;0YThe  library  of Moufang loops of order 243 was generated from data provided
   by Michael C. Slattery and Ashley L. Zenisek. The library of right conjugacy
   closed  loops  of  order  less  than  28 was generated from data provided by
-  Katharina Artic.[133X
+  Katharina  Artic.  The library of commutative automorphic loops of order 27,
+  81 and 243 was obtained jointly with Izabella Stuhl.[133X
   
   [33X[0;0YGábor  P.  Nagy  was  supported by OTKA grants F042959 and T043758, and Petr
-  Vojtěchovský  was  supported  by  the  2006  PROF grant of the University of
-  Denver and by the Simons Foundation Collaboration Grant 210176.[133X
+  Vojtěchovský  was  supported  by the 2006 and 2016 University of Denver PROF
+  grants and the Simons Foundation Collaboration Grant 210176.[133X
   

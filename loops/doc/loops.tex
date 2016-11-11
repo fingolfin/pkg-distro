@@ -98,7 +98,7 @@
 {\Huge \textbf{Computing with quasigroups and loops in \textsf{GAP}\mbox{}}}\\
 \vfill
 
-{\Huge Version 3.2.0\mbox{}}\\[1cm]
+{\Huge Version 3.3.0\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{G{\a'a}bor P. Nagy   \mbox{}}}\\
 {\Large \textbf{Petr Vojt{\v e}chovsk{\a'y}   \mbox{}}}\\
@@ -223,11 +223,12 @@ Smith.
 The library of Moufang loops of order 243 was generated from data provided by
 Michael C. Slattery and Ashley L. Zenisek. The library of right conjugacy
 closed loops of order less than 28 was generated from data provided by
-Katharina Artic. 
+Katharina Artic. The library of commutative automorphic loops of order 27, 81
+and 243 was obtained jointly with Izabella Stuhl. 
 
 G{\a'a}bor P. Nagy was supported by OTKA grants F042959 and T043758, and Petr
-Vojt{\v e}chovsk{\a'y} was supported by the 2006 PROF grant of the University
-of Denver and by the Simons Foundation Collaboration Grant 210176. }
+Vojt{\v e}chovsk{\a'y} was supported by the 2006 and 2016 University of Denver
+PROF grants and the Simons Foundation Collaboration Grant 210176. }
 
  }
 
@@ -1299,6 +1300,19 @@ A generating set $\{q_0$, $\dots$, $q_m\}$ of \mbox{\texttt{\mdseries\slshape Q}
 
 }
 
+ 
+
+\subsection{\textcolor{Chapter }{SmallGeneratingSet}}
+\logpage{[ 5, 5, 3 ]}\nobreak
+\hyperdef{L}{X814DBABC878D5232}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallGeneratingSet({\mdseries\slshape Q})\index{SmallGeneratingSet@\texttt{SmallGeneratingSet}}
+\label{SmallGeneratingSet}
+}\hfill{\scriptsize (attribute)}}\\
+\textbf{\indent Returns:\ }
+A small generating set $\{q_0$, $\dots$, $q_m\}$ of \mbox{\texttt{\mdseries\slshape Q}} obtained as follows: $q_0$ is the least element for which $\langle q_0\rangle$ is largest possible, $q_1$\$ is the least element for which $\langle q_0,q_1$ is largest possible, and so on.
+
+}
+
  }
 
  }
@@ -1387,14 +1401,14 @@ Quasigroups with the same parent can be compared as follows. Assume that $A$, $B
 \label{Subquasigroup}
 }\hfill{\scriptsize (operation)}}\\
 \textbf{\indent Returns:\ }
-When \mbox{\texttt{\mdseries\slshape S}} is a subset (of elements or indices) of a quasigroup \mbox{\texttt{\mdseries\slshape Q}}, returns the smallest subquasigroup (resp. subloop) of \mbox{\texttt{\mdseries\slshape Q}} containing \mbox{\texttt{\mdseries\slshape S}}.
+When \mbox{\texttt{\mdseries\slshape S}} is a subset of elements or indices of a quasigroup (resp. loop) \mbox{\texttt{\mdseries\slshape Q}}, returns the smallest subquasigroup (resp. subloop) of \mbox{\texttt{\mdseries\slshape Q}} containing \mbox{\texttt{\mdseries\slshape S}}.
 
 
 
 We allow \mbox{\texttt{\mdseries\slshape S}} to be a list of elements of \mbox{\texttt{\mdseries\slshape Q}}, or a list of integers representing the positions of the respective elements
 in the parent quasigroup (resp. loop) of \mbox{\texttt{\mdseries\slshape Q}}. 
 
-If \mbox{\texttt{\mdseries\slshape S}} is empty, \texttt{Subloop(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape S}})} returns the one-element subloop of \mbox{\texttt{\mdseries\slshape Q}}, while \texttt{Subquasigroup(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape S}})} returns the empty set. 
+If \mbox{\texttt{\mdseries\slshape S}} is empty, \texttt{Subquasigroup(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape S}})} returns the empty set if \mbox{\texttt{\mdseries\slshape Q}} is a quasigroup, and it returns the one-element subloop of \mbox{\texttt{\mdseries\slshape Q}} if \mbox{\texttt{\mdseries\slshape Q}} is a loop. 
 
 \textsc{Remark:} The empty set is sometimes considered to be a subquasigroup of \mbox{\texttt{\mdseries\slshape Q}} (although not in \textsf{LOOPS}). The above convention is useful for handling certain situations, for
 instance when the user calls \texttt{Center(\mbox{\texttt{\mdseries\slshape Q}})} for a quasigroup \mbox{\texttt{\mdseries\slshape Q}} with empty center.}
@@ -1409,7 +1423,7 @@ instance when the user calls \texttt{Center(\mbox{\texttt{\mdseries\slshape Q}})
 }\hfill{\scriptsize (operation)}}\\
 
 
-This is a loop analog of \texttt{IsSubquasigroup(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape S}})}.}
+This is an analog of \texttt{Subquasigroup(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape S}})} that can be used only when \mbox{\texttt{\mdseries\slshape Q}} is a loop. Since there is no difference in the outcome while calling \texttt{Subquasigroup(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape S}})} or \texttt{Subloop(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape S}})} when \mbox{\texttt{\mdseries\slshape Q}} is a loop, it is safe to always call \texttt{Subquasigroup(\mbox{\texttt{\mdseries\slshape Q}},\mbox{\texttt{\mdseries\slshape S}})}, whether \mbox{\texttt{\mdseries\slshape Q}} is a loop or not. }
 
  
 \subsection{\textcolor{Chapter }{IsSubquasigroup and IsSubloop}}\logpage{[ 6, 2, 3 ]}
@@ -2251,11 +2265,11 @@ therefore do not include \texttt{Loop}, \texttt{Quasigroup} as part of the name 
 \label{IsPowerAssociative}
 }\hfill{\scriptsize (property)}}\\
 \textbf{\indent Returns:\ }
-\texttt{true} if \mbox{\texttt{\mdseries\slshape Q}} is a power associative loop.
+\texttt{true} if \mbox{\texttt{\mdseries\slshape Q}} is a power associative quasigroup.
 
 
 
-A loop $Q$ is said to be \emph{power associative}\index{loop!power associative}\index{power associative loop} if every element of $Q$ generates an associative loop.}
+A quasigroup $Q$ is said to be \emph{power associative}\index{quasigroup!power associative}\index{power associative quasigroup} if every element of $Q$ generates an associative quasigroup, that is, a group.}
 
  
 
@@ -2266,11 +2280,13 @@ A loop $Q$ is said to be \emph{power associative}\index{loop!power associative}\
 \label{IsDiassociative}
 }\hfill{\scriptsize (property)}}\\
 \textbf{\indent Returns:\ }
-\texttt{true} if \mbox{\texttt{\mdseries\slshape Q}} is a diassociative loop.
+\texttt{true} if \mbox{\texttt{\mdseries\slshape Q}} is a diassociative quasigroup.
 
 
 
-A loop $Q$ is said to be \emph{diassociative}\index{loop!diassociative}\index{diassociative loop} if any two elements of $Q$ generate an associative sublop.}
+A quasigroup $Q$ is said to be \emph{diassociative}\index{quasigroup!diassociative}\index{diassociative quasigroup} if any two elements of $Q$ generate an associative quasigroup, that is, a group. Note that a
+diassociative quasigroup is necessarily a loop, but it need not be so declared
+in \textsf{LOOPS}.}
 
  }
 
@@ -2856,7 +2872,21 @@ A loop $Q$ is an \emph{automorphic loop}\index{automorphic loop}\index{loop!auto
 
 Automorphic loops are also known as \emph{A loops}, and similar terminology exists for left, right and middle automorphic loops. 
 
-Diassociative automorphic loops are Moufang by \cite{KiKuPh}. See the built-in filters for additional properties of automorphic loops. 
+The following results hold for automorphic loops: 
+\begin{itemize}
+\item automorphic loops are power associative \cite{BrPa}
+\item in an automorphic loop $Q$ we have ${\rm Nuc}(Q) = {\rm Nuc}_{\lambda}(Q) = {\rm Nuc}_{\rho}(Q)\le {\rm
+Nuc}_{\mu}(Q)$ and all nuclei are normal \cite{BrPa}
+\item a loop that is left automorphic and right automorphic satisfies the
+anti-automorphic inverse property and is automorphic \cite{JoKiNaVo}
+\item diassociative automorphic loops are Moufang \cite{KiKuPh}
+\item automorphic loops of odd order are solvable \cite{KiKuPhVo}
+\item finite commutative automorphic loops are solvable \cite{GrKiNa}
+\item commutative automorphic loops of order $p$, $2p$, $4p$, $p^2$, $2p^2$, $4p^2$ ($p$ an odd prime) are abelian groups \cite{VoQRS}
+\item commutative automorphic loops of odd prime power order are centrally nilpotent \cite{JeKiVo}
+\item for any prime $p$, there are $7$ commutative automorphic loops of order $p^3$ up to isomorphism \cite{BaGrVo}
+\end{itemize}
+ See the built-in filters and the survey \cite{VoQRS} for additional properties of automorphic loops. 
 
 \subsection{\textcolor{Chapter }{IsLeftAutomorphicLoop}}
 \logpage{[ 7, 7, 1 ]}\nobreak
@@ -3611,8 +3641,10 @@ The \mbox{\texttt{\mdseries\slshape m}}th nilpotent loop of order \mbox{\texttt{
 \hyperdef{L}{X793B22EA8643C667}{}
 {
   The library named \emph{automorphic} contains all nonassociative automorphic loops of order less than 16 up to
-isomorphism. There is 1 such loop of order 6, 7 of order 8, 3 of order 10, 2
-of order 12, 5 of order 14, and 2 of order 15. 
+isomorphism (there is 1 such loop of order 6, 7 of order 8, 3 of order 10, 2
+of order 12, 5 of order 14, and 2 of order 15), all commutative automorphic
+loops of order 3, 9, 27 and 81 (there are 1, 2, 7 and 72 such loops,
+respectively, including abelian groups), and commutative automorphic loops $Q$ of order 243 possessing a central subloop $S$ of order 3 such that $Q/S$ is not the elementary abelian group of order 81 (there are 118451 such loops). 
 
 \subsection{\textcolor{Chapter }{AutomorphicLoop}}
 \logpage{[ 9, 10, 1 ]}\nobreak
@@ -3705,6 +3737,7 @@ to know any of this information. All paths are relative to the \texttt{pkg/loops
 \texttt{PackageInfo.g} (loading info for GAP 4.4) \\
 \texttt{read.g} (implementations) \\
 \texttt{data/automorphic.tbl} (library of automorphic loops) \\
+\texttt{data/automorphic/*.*} (addition files for the library of automorphic loops) \\
 \texttt{data/cc.tbl} (library of conjugacy closed loops) \\
 \texttt{data/code.tbl} (library of code loops) \\
 \texttt{data/interesting.tbl} (library of interesting loops) \\
@@ -3756,7 +3789,7 @@ All filters of \textsf{LOOPS} are summarized below, using the \textsf{GAP} conve
  \texttt{( IsExtraLoop, IsAssociative and IsLoop )} \\
 \texttt{( IsExtraLoop, IsCodeLoop )} \\
 \texttt{( IsCCLoop, IsCodeLoop )} \\
-\texttt{( HasTwosidedInverses, IsPowerAssociative )} \\
+\texttt{( HasTwosidedInverses, IsPowerAssociative and IsLoop )} \\
 \texttt{( IsPowerAlternative, IsDiassociative )} \\
 \texttt{( IsFlexible, IsDiassociative )} \\
 \texttt{( HasAntiautomorphicInverseProperty, HasAutomorphicInverseProperty and

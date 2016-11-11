@@ -51,7 +51,7 @@
     \subitem upper, \hyperpage{9}
   \item Chein loop, \hyperpage{46}
   \item cocycle, \hyperpage{18}
-  \item code loop, \hyperpage{43}
+  \item code loop, \hyperpage{44}
   \item \texttt  {CodeLoop}, \hyperpage{51}
   \item \texttt  {Commutant}, \hyperpage{31}
   \item commutant, \hyperpage{9}
@@ -70,7 +70,7 @@
   \item derived subloop, \hyperpage{9}
   \item \texttt  {DerivedLength}, \hyperpage{33}
   \item \texttt  {DerivedSubloop}, \hyperpage{33}
-  \item diassociative loop, \hyperpage{36}
+  \item diassociative quasigroup, \hyperpage{37}
   \item \texttt  {DirectProduct}, \hyperpage{21}
   \item \texttt  {Discriminator}, \hyperpage{35}
   \item \texttt  {DisplayLibraryInfo}, \hyperpage{50}
@@ -153,13 +153,13 @@
     \subitem left, \hyperpage{37}
     \subitem right, \hyperpage{37}
     \subitem weak, \hyperpage{37}
-  \item \texttt  {IsALoop}, \hyperpage{43}
+  \item \texttt  {IsALoop}, \hyperpage{44}
   \item \texttt  {IsAlternative}, \hyperpage{41}
   \item \texttt  {IsAssociative}, \hyperpage{36}
-  \item \texttt  {IsAutomorphicLoop}, \hyperpage{43}
+  \item \texttt  {IsAutomorphicLoop}, \hyperpage{44}
   \item \texttt  {IsCCLoop}, \hyperpage{42}
   \item \texttt  {IsCLoop}, \hyperpage{40}
-  \item \texttt  {IsCodeLoop}, \hyperpage{43}
+  \item \texttt  {IsCodeLoop}, \hyperpage{44}
   \item \texttt  {IsCommutative}, \hyperpage{36}
   \item \texttt  {IsConjugacyClosedLoop}, \hyperpage{42}
   \item \texttt  {IsDiassociative}, \hyperpage{36}
@@ -210,9 +210,9 @@
   \item \texttt  {IsQuasigroupTable}, \hyperpage{14}
   \item \texttt  {IsRCCLoop}, \hyperpage{42}
   \item \texttt  {IsRCLoop}, \hyperpage{40}
-  \item \texttt  {IsRightALoop}, \hyperpage{43}
+  \item \texttt  {IsRightALoop}, \hyperpage{44}
   \item \texttt  {IsRightAlternative}, \hyperpage{41}
-  \item \texttt  {IsRightAutomorphicLoop}, \hyperpage{43}
+  \item \texttt  {IsRightAutomorphicLoop}, \hyperpage{44}
   \item \texttt  {IsRightBolLoop}, \hyperpage{40}
   \item \texttt  {IsRightBruckLoop}, \hyperpage{44}
   \item \texttt  {IsRightConjugacyClosedLoop}, \hyperpage{42}
@@ -262,9 +262,8 @@
     \subitem automorphic, \hyperpage{43}
     \subitem C, \hyperpage{39}
     \subitem Chein, \hyperpage{46}
-    \subitem code, \hyperpage{43}
+    \subitem code, \hyperpage{44}
     \subitem conjugacy closed, \hyperpage{42}
-    \subitem diassociative, \hyperpage{36}
     \subitem extra, \hyperpage{39}
     \subitem flexible, \hyperpage{39}
     \subitem LC, \hyperpage{39}
@@ -286,7 +285,7 @@
     \subitem Osborn, \hyperpage{43}
     \subitem Paige, \hyperpage{53}
     \subitem power alternative, \hyperpage{42}
-    \subitem power associative, \hyperpage{23}, \hyperpage{36}
+    \subitem power associative, \hyperpage{23}
     \subitem RC, \hyperpage{39}
     \subitem right alternative, \hyperpage{39}
     \subitem right automorphic, \hyperpage{43}
@@ -296,7 +295,7 @@
     \subitem right K, \hyperpage{44}
     \subitem right nuclear square, \hyperpage{39}
     \subitem right power alternative, \hyperpage{42}
-    \subitem sedenion, \hyperpage{53}
+    \subitem sedenion, \hyperpage{54}
     \subitem simple, \hyperpage{12}, \hyperpage{32}
     \subitem solvable, \hyperpage{9}
     \subitem Steiner, \hyperpage{44}
@@ -389,18 +388,21 @@
   \item power alternative loop, \hyperpage{42}
     \subitem left, \hyperpage{42}
     \subitem right, \hyperpage{42}
-  \item power associative loop, \hyperpage{23}, \hyperpage{36}
+  \item power associative loop, \hyperpage{23}
+  \item power associative quasigroup, \hyperpage{36}
   \item \texttt  {PrincipalLoopIsotope}, \hyperpage{20}
 
   \indexspace
 
   \item quasigroup, \hyperpage{8}
+    \subitem diassociative, \hyperpage{37}
     \subitem distributive, \hyperpage{38}
     \subitem entropic, \hyperpage{39}
     \subitem idempotent, \hyperpage{38}
     \subitem left distributive, \hyperpage{38}
     \subitem medial, \hyperpage{39}
     \subitem opposite, \hyperpage{21}
+    \subitem power associative, \hyperpage{36}
     \subitem right distributive, \hyperpage{38}
     \subitem semisymmetric, \hyperpage{38}
     \subitem Steiner, \hyperpage{38}
@@ -445,12 +447,13 @@
   \item section
     \subitem left, \hyperpage{8}
     \subitem right, \hyperpage{8}
-  \item sedenion loop, \hyperpage{53}
+  \item sedenion loop, \hyperpage{54}
   \item semisymmetric quasigroup, \hyperpage{38}
   \item \texttt  {SetLoopElmName}, \hyperpage{13}
   \item \texttt  {SetQuasigroupElmName}, \hyperpage{13}
   \item simple loop, \hyperpage{12}, \hyperpage{32}
   \item \texttt  {Size}, \hyperpage{22}
+  \item \texttt  {SmallGeneratingSet}, \hyperpage{25}
   \item \texttt  {SmallLoop}, \hyperpage{53}
   \item solvability class, \hyperpage{9}
   \item solvable loop, \hyperpage{9}

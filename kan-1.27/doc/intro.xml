@@ -1,0 +1,93 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  intro.xml             KAN documentation             Chris Wensley  -->
+<!--                                                    & Anne Heyworth  -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="intro">
+<Heading>Introduction</Heading>
+
+The &kan; package started out as part of Anne Heyworth's thesis 
+<Cite Key="anne-thesis" />, and was designed to compute 
+induced actions of categories (see also <Cite Key="BrHe" />). 
+<P/>
+This version of &kan; only provides functions for the computation of
+normal forms of representatives of double cosets of finitely presented groups, 
+and is made available in support of the paper <Cite Key="BrGhHeWe" />. 
+Existing methods for computing double cosets in &GAP; are described 
+in <Cite Key="SteveL" />.
+<P/>
+The package is loaded into &GAP; with the command
+<Example>
+<![CDATA[
+gap> LoadPackage( "kan" ); 
+]]>
+</Example>
+
+The package may be obtained as a compressed tar file 
+<File>&KANTARFILENAME;</File>
+by ftp from one of the following sites: 
+<List>
+<Item>
+any &GAP; archive, e.g. 
+<URL>http://www.gap-system.org/Packages/packages.html</URL>; 
+</Item>
+<Item>
+the package GitHub repository: 
+<URL>https://gap-packages.github.io/kan</URL>. 
+</Item>
+</List>
+
+Some of the functions in the <Package>automata</Package> package 
+are used to compute word acceptors and regular expressions 
+for the languages they accept.
+<P/>
+The <Package>kbmag</Package> package is also used 
+to compute a word acceptor of a group <C>G</C> 
+when <C>G</C> has no finite rewriting system. 
+If <Package>kbmag</Package> is not available 
+(the user is not on a UNIX system, or the C-programs have not been compiled), 
+the file <File>dckbmag.gi</File> will not be read, 
+so methods for the functions detailed in section 2.4.1 will not be available. 
+<P/>
+Once the package is loaded, it is possible to check the installation 
+is correct by running a test file of the manual examples with the
+following command. 
+(The test file itself is <F>tst/fulltest.tst</F> or <F>tst/parttest.tst</F>, 
+depending whether or not <Package>kbmag</Package> is available.) 
+<Example>
+<![CDATA[
+gap> ReadPackage( "kan", "tst/testall.g" );
+#I  Testing /Applications/gap/my-dev/pkg/kan/tst/fulltest.tst
+#I  No errors detected while testing package kan
+true
+]]>
+</Example>
+<P/>
+The information parameter <C>InfoKan</C> takes default value <C>0</C>.
+When raised to a higher value, additional information is printed out.
+<P/> 
+Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
+can be found in the documentation folder. 
+The <Code>html</Code> versions, with or without MathJax, 
+may be rebuilt as follows. 
+<P/>
+<Example>
+<![CDATA[
+gap> InfoLevel( InfoKan );
+0
+gap> ReadPackage( "kan, "makedoc.g" ); 
+]]>
+</Example>
+<P/>
+Please send bug reports, suggestions and other comments to the second author,
+or use the GitHub issue tracker at 
+<URL>https://github.com/gap-packages/kan/issues/new</URL>.  
+<P/>
+Additional information can be found on the
+<E>Computational Higher-dimensional Discrete Algebra</E> website at
+<URL>http://pages.bangor.ac.uk/~mas023/chda/</URL>. 
+
+</Chapter>

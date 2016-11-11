@@ -267,8 +267,13 @@
   [1X9.10 [33X[0;0YAutomorphic Loops[133X[101X
   
   [33X[0;0YThe  library named [13Xautomorphic[113X contains all nonassociative automorphic loops
-  of  order less than 16 up to isomorphism. There is 1 such loop of order 6, 7
-  of order 8, 3 of order 10, 2 of order 12, 5 of order 14, and 2 of order 15.[133X
+  of  order less than 16 up to isomorphism (there is 1 such loop of order 6, 7
+  of order 8, 3 of order 10, 2 of order 12, 5 of order 14, and 2 of order 15),
+  all  commutative automorphic loops of order 3, 9, 27 and 81 (there are 1, 2,
+  7   and   72  such  loops,  respectively,  including  abelian  groups),  and
+  commutative  automorphic loops [22XQ[122X of order 243 possessing a central subloop [22XS[122X
+  of  order  3  such  that [22XQ/S[122X is not the elementary abelian group of order 81
+  (there are 118451 such loops).[133X
   
   [1X9.10-1 AutomorphicLoop[101X
   

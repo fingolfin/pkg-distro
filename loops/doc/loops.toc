@@ -71,6 +71,7 @@
 \contentsline {section}{\numberline {5.5}\leavevmode {\color {Chapter }Generators}}{24}{section.5.5}
 \contentsline {subsection}{\numberline {5.5.1}\leavevmode {\color {Chapter }GeneratorsOfQuasigroup and GeneratorsOfLoop}}{24}{subsection.5.5.1}
 \contentsline {subsection}{\numberline {5.5.2}\leavevmode {\color {Chapter }GeneratorsSmallest}}{25}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}\leavevmode {\color {Chapter }SmallGeneratingSet}}{25}{subsection.5.5.3}
 \contentsline {chapter}{\numberline {6}\leavevmode {\color {Chapter }Methods Based on Permutation Groups}}{26}{chapter.6}
 \contentsline {section}{\numberline {6.1}\leavevmode {\color {Chapter }Parent of a Quasigroup}}{26}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}\leavevmode {\color {Chapter }Parent}}{26}{subsection.6.1.1}
@@ -178,10 +179,10 @@
 \contentsline {section}{\numberline {7.7}\leavevmode {\color {Chapter }Automorphic Loops}}{43}{section.7.7}
 \contentsline {subsection}{\numberline {7.7.1}\leavevmode {\color {Chapter }IsLeftAutomorphicLoop}}{43}{subsection.7.7.1}
 \contentsline {subsection}{\numberline {7.7.2}\leavevmode {\color {Chapter }IsMiddleAutomorphicLoop}}{43}{subsection.7.7.2}
-\contentsline {subsection}{\numberline {7.7.3}\leavevmode {\color {Chapter }IsRightAutomorphicLoop}}{43}{subsection.7.7.3}
-\contentsline {subsection}{\numberline {7.7.4}\leavevmode {\color {Chapter }IsAutomorphicLoop}}{43}{subsection.7.7.4}
-\contentsline {section}{\numberline {7.8}\leavevmode {\color {Chapter }Additonal Varieties of Loops}}{43}{section.7.8}
-\contentsline {subsection}{\numberline {7.8.1}\leavevmode {\color {Chapter }IsCodeLoop}}{43}{subsection.7.8.1}
+\contentsline {subsection}{\numberline {7.7.3}\leavevmode {\color {Chapter }IsRightAutomorphicLoop}}{44}{subsection.7.7.3}
+\contentsline {subsection}{\numberline {7.7.4}\leavevmode {\color {Chapter }IsAutomorphicLoop}}{44}{subsection.7.7.4}
+\contentsline {section}{\numberline {7.8}\leavevmode {\color {Chapter }Additonal Varieties of Loops}}{44}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}\leavevmode {\color {Chapter }IsCodeLoop}}{44}{subsection.7.8.1}
 \contentsline {subsection}{\numberline {7.8.2}\leavevmode {\color {Chapter }IsSteinerLoop}}{44}{subsection.7.8.2}
 \contentsline {subsection}{\numberline {7.8.3}\leavevmode {\color {Chapter }IsLeftBruckLoop and IsLeftKLoop}}{44}{subsection.7.8.3}
 \contentsline {subsection}{\numberline {7.8.4}\leavevmode {\color {Chapter }IsRightBruckLoop and IsRightKLoop}}{44}{subsection.7.8.4}
@@ -230,7 +231,7 @@
 \contentsline {subsection}{\numberline {9.9.1}\leavevmode {\color {Chapter }NilpotentLoop}}{53}{subsection.9.9.1}
 \contentsline {section}{\numberline {9.10}\leavevmode {\color {Chapter }Automorphic Loops}}{53}{section.9.10}
 \contentsline {subsection}{\numberline {9.10.1}\leavevmode {\color {Chapter }AutomorphicLoop}}{53}{subsection.9.10.1}
-\contentsline {section}{\numberline {9.11}\leavevmode {\color {Chapter }Interesting Loops}}{53}{section.9.11}
+\contentsline {section}{\numberline {9.11}\leavevmode {\color {Chapter }Interesting Loops}}{54}{section.9.11}
 \contentsline {subsection}{\numberline {9.11.1}\leavevmode {\color {Chapter }InterestingLoop}}{54}{subsection.9.11.1}
 \contentsline {section}{\numberline {9.12}\leavevmode {\color {Chapter }Libraries of Loops Up To Isotopism}}{54}{section.9.12}
 \contentsline {subsection}{\numberline {9.12.1}\leavevmode {\color {Chapter }ItpSmallLoop}}{54}{subsection.9.12.1}

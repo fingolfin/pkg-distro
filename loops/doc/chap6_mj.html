@@ -183,11 +183,11 @@
 <h5>6.2-1 Subquasigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Subquasigroup</code>( <var class="Arg">Q</var>, <var class="Arg">S</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns: When <var class="Arg">S</var> is a subset (of elements or indices) of a quasigroup <var class="Arg">Q</var>, returns the smallest subquasigroup (resp. subloop) of <var class="Arg">Q</var> containing <var class="Arg">S</var>.</p>
+<p>Returns: When <var class="Arg">S</var> is a subset of elements or indices of a quasigroup (resp. loop) <var class="Arg">Q</var>, returns the smallest subquasigroup (resp. subloop) of <var class="Arg">Q</var> containing <var class="Arg">S</var>.</p>
 
 <p>We allow <var class="Arg">S</var> to be a list of elements of <var class="Arg">Q</var>, or a list of integers representing the positions of the respective elements in the parent quasigroup (resp. loop) of <var class="Arg">Q</var>.</p>
 
-<p>If <var class="Arg">S</var> is empty, <code class="code">Subloop(<var class="Arg">Q</var>,<var class="Arg">S</var>)</code> returns the one-element subloop of <var class="Arg">Q</var>, while <code class="code">Subquasigroup(<var class="Arg">Q</var>,<var class="Arg">S</var>)</code> returns the empty set.</p>
+<p>If <var class="Arg">S</var> is empty, <code class="code">Subquasigroup(<var class="Arg">Q</var>,<var class="Arg">S</var>)</code> returns the empty set if <var class="Arg">Q</var> is a quasigroup, and it returns the one-element subloop of <var class="Arg">Q</var> if <var class="Arg">Q</var> is a loop.</p>
 
 <p><strong class="button">Remark:</strong> The empty set is sometimes considered to be a subquasigroup of <var class="Arg">Q</var> (although not in <strong class="pkg">LOOPS</strong>). The above convention is useful for handling certain situations, for instance when the user calls <code class="code">Center(<var class="Arg">Q</var>)</code> for a quasigroup <var class="Arg">Q</var> with empty center.</p>
 
@@ -196,7 +196,7 @@
 <h5>6.2-2 Subloop</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Subloop</code>( <var class="Arg">Q</var>, <var class="Arg">S</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This is a loop analog of <code class="code">IsSubquasigroup(<var class="Arg">Q</var>,<var class="Arg">S</var>)</code>.</p>
+<p>This is an analog of <code class="code">Subquasigroup(<var class="Arg">Q</var>,<var class="Arg">S</var>)</code> that can be used only when <var class="Arg">Q</var> is a loop. Since there is no difference in the outcome while calling <code class="code">Subquasigroup(<var class="Arg">Q</var>,<var class="Arg">S</var>)</code> or <code class="code">Subloop(<var class="Arg">Q</var>,<var class="Arg">S</var>)</code> when <var class="Arg">Q</var> is a loop, it is safe to always call <code class="code">Subquasigroup(<var class="Arg">Q</var>,<var class="Arg">S</var>)</code>, whether <var class="Arg">Q</var> is a loop or not.</p>
 
 <p><a id="X87AC8B7E80CE9260" name="X87AC8B7E80CE9260"></a></p>
 
@@ -573,14 +573,14 @@ MappingByFunction( &lt;loop of order 12&gt;, &lt;loop of order 4&gt;,
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismQuasigroups</code>( <var class="Arg">Q</var>, <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns: An isomorphism from a quasigroup <var class="Arg">Q</var> to a quasigroup <var class="Arg">L</var> if the quasigroups are isomorphic, <code class="code">fail</code> otherwise.</p>
 
-<p>If an isomorphism exists, it is returned as a permutation <span class="SimpleMath">\(f\)</span> of <span class="SimpleMath">\(1,\dots,|\)</span><var class="Arg">Q</var><span class="SimpleMath">\(|\)</span>, where <span class="SimpleMath">\(i^f=j\)</span> means that the <span class="SimpleMath">\(i\)</span>th element of <var class="Arg">Q</var> is mapped onto the <span class="SimpleMath">\(j\)</span>th element of <var class="Arg">L</var>. Note that this convention is used even if the underlying sets of <var class="Arg">L</var>, <var class="Arg">M</var> are not indexed by consecutive integers.</p>
+<p>If an isomorphism exists, it is returned as a permutation <span class="SimpleMath">\(f\)</span> of <span class="SimpleMath">\(1,\dots,|\)</span><var class="Arg">Q</var><span class="SimpleMath">\(|\)</span>, where <span class="SimpleMath">\(i^f=j\)</span> means that the <span class="SimpleMath">\(i\)</span>th element of <var class="Arg">Q</var> is mapped onto the <span class="SimpleMath">\(j\)</span>th element of <var class="Arg">L</var>. Note that this convention is used even if the underlying sets of <var class="Arg">Q</var>, <var class="Arg">L</var> are not indexed by consecutive integers.</p>
 
 <p><a id="X7D7B10D6836FCA9F" name="X7D7B10D6836FCA9F"></a></p>
 
 <h5>6.11-2 IsomorphismLoops</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismLoops</code>( <var class="Arg">Q</var>, <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Returns: An isomorphism from a quasigroup or loop <var class="Arg">Q</var> to a quasigroup or loop <var class="Arg">L</var> if the loops are isomorphic, <code class="code">fail</code> otherwise, with the same convention as in <code class="code">IsomorphismQuasigroups</code>.</p>
+<p>Returns: An isomorphism from a loop <var class="Arg">Q</var> to a loop <var class="Arg">L</var> if the loops are isomorphic, <code class="code">fail</code> otherwise, with the same convention as in <code class="code">IsomorphismQuasigroups</code>.</p>
 
 <p><a id="X82373C5479574F22" name="X82373C5479574F22"></a></p>
 
@@ -601,7 +601,7 @@ MappingByFunction( &lt;loop of order 12&gt;, &lt;loop of order 4&gt;,
 <h5>6.11-5 AutomorphismGroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroup</code>( <var class="Arg">Q</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>Returns: The automorphism group of a loop or quasigroups <var class="Arg">Q</var>, with the same convention on permutations as in the case of <code class="code">IsomorphismLoops</code>.<br /></p>
+<p>Returns: The automorphism group of a loop or quasigroups <var class="Arg">Q</var>, with the same convention on permutations as in <code class="code">IsomorphismQuasigroups</code>.<br /></p>
 
 <p><strong class="button">Remark:</strong> Since two isomorphisms differ by an automorphism, all isomorphisms from <var class="Arg">Q</var> to <var class="Arg">L</var> can be obtained by a combination of <code class="code">IsomorphismLoops(<var class="Arg">Q</var>,<var class="Arg">L</var>)</code> (or <code class="code">IsomorphismQuasigroups(<var class="Arg">Q</var>,<var class="Arg">L</var>)</code>) and <code class="code">AutomorphismGroup(<var class="Arg">L</var>)</code>. <br /></p>
 
@@ -630,7 +630,7 @@ MappingByFunction( &lt;loop of order 12&gt;, &lt;loop of order 4&gt;,
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Discriminator</code>( <var class="Arg">Q</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>Returns: A data structure with isomorphism invariants of a loop <var class="Arg">Q</var>.</p>
 
-<p>See <a href="chapBib_mj.html#biBVo">[Voj06]</a> or the file <code class="file">iso.gi</code> for more details. The format of the discriminator has been changed in from version 3.2.0 up to accommodate isomorphism searches for quasigroups.</p>
+<p>See <a href="chapBib_mj.html#biBVo">[Voj06]</a> or the file <code class="file">iso.gi</code> for more details. The format of the discriminator has been changed from version 3.2.0 up to accommodate isomorphism searches for quasigroups.</p>
 
 <p>If two loops have different discriminators, they are not isomorphic. If they have identical discriminators, they may or may not be isomorphic.</p>
 

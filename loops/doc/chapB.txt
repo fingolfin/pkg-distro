@@ -11,7 +11,7 @@
   [33X[0;0Y[10X( IsExtraLoop, IsAssociative and IsLoop )[110X[133X
   [33X[0;0Y[10X( IsExtraLoop, IsCodeLoop )[110X[133X
   [33X[0;0Y[10X( IsCCLoop, IsCodeLoop )[110X[133X
-  [33X[0;0Y[10X( HasTwosidedInverses, IsPowerAssociative )[110X[133X
+  [33X[0;0Y[10X( HasTwosidedInverses, IsPowerAssociative and IsLoop )[110X[133X
   [33X[0;0Y[10X( IsPowerAlternative, IsDiassociative )[110X[133X
   [33X[0;0Y[10X( IsFlexible, IsDiassociative )[110X[133X
   [33X[0;0Y[10X(   HasAntiautomorphicInverseProperty,   HasAutomorphicInverseProperty   and

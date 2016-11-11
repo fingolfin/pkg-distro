@@ -60,6 +60,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X83944A777D161D10">5.5-1 <span class="Heading">GeneratorsOfQuasigroup and GeneratorsOfLoop</span></a>
 </span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X82FD78AF7F80A0E2">5.5-2 GeneratorsSmallest</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X814DBABC878D5232">5.5-3 SmallGeneratingSet</a></span>
 </div></div>
 </div>
 
@@ -219,6 +220,13 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsSmallest</code>( <var class="Arg">Q</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>Returns: A generating set <span class="SimpleMath">\(\{q_0\)</span>, <span class="SimpleMath">\(\dots\)</span>, <span class="SimpleMath">\(q_m\}\)</span> of <var class="Arg">Q</var> such that <span class="SimpleMath">\(Q_0=\emptyset\)</span>, <span class="SimpleMath">\(Q_m=\)</span><var class="Arg">Q</var>, <span class="SimpleMath">\(Q_i=\langle q_1\)</span>, <span class="SimpleMath">\(\dots\)</span>, <span class="SimpleMath">\(q_i \rangle\)</span>, and <span class="SimpleMath">\(q_{i+1}\)</span> is the least element of <var class="Arg">Q</var><span class="SimpleMath">\(\setminus Q_i\)</span>.</p>
+
+<p><a id="X814DBABC878D5232" name="X814DBABC878D5232"></a></p>
+
+<h5>5.5-3 SmallGeneratingSet</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallGeneratingSet</code>( <var class="Arg">Q</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>Returns: A small generating set <span class="SimpleMath">\(\{q_0\)</span>, <span class="SimpleMath">\(\dots\)</span>, <span class="SimpleMath">\(q_m\}\)</span> of <var class="Arg">Q</var> obtained as follows: <span class="SimpleMath">\(q_0\)</span> is the least element for which <span class="SimpleMath">\(\langle q_0\rangle\)</span> is largest possible, <span class="SimpleMath">\(q_1\)</span>$ is the least element for which <span class="SimpleMath">\(\langle q_0,q_1\)</span> is largest possible, and so on.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6_mj.html">[Next Chapter]</a>&nbsp;  </div>

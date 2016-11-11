@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    profiling
+  </Title>
+  <Subtitle>
+    Line by line profiling and code coverage for &GAP;
+  </Subtitle>
+  <Version>
+    1.1.0
+  </Version>
+  <Author>
+    Christopher Jefferson<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+St Andrews<Br/>
+Scotland<Br/>
+UK<Br/>
+</Address>
+<Email>caj21@st-andrews.ac.uk</Email>
+<Homepage>http://caj.host.cs.st-andrews.ac.uk/</Homepage>
+
+  </Author>
+  <Date>
+    01/11/2016
+  </Date>
+  </TitlePage>

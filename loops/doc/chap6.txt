@@ -65,16 +65,16 @@
   [1X6.2-1 Subquasigroup[101X
   
   [29X[2XSubquasigroup[102X( [3XQ[103X, [3XS[103X ) [32X operation
-  [6XReturns:[106X  [33X[0;10YWhen  [3XS[103X  is  a  subset (of elements or indices) of a quasigroup [3XQ[103X,
-            returns the smallest subquasigroup (resp. subloop) of [3XQ[103X containing
-            [3XS[103X.[133X
+  [6XReturns:[106X  [33X[0;10YWhen  [3XS[103X  is a subset of elements or indices of a quasigroup (resp.
+            loop)  [3XQ[103X,  returns the smallest subquasigroup (resp. subloop) of [3XQ[103X
+            containing [3XS[103X.[133X
   
   [33X[0;0YWe allow [3XS[103X to be a list of elements of [3XQ[103X, or a list of integers representing
   the  positions  of  the  respective elements in the parent quasigroup (resp.
   loop) of [3XQ[103X.[133X
   
-  [33X[0;0YIf  [3XS[103X  is  empty,  [10XSubloop([3XQ[103X[10X,[3XS[103X[10X)[110X  returns the one-element subloop of [3XQ[103X, while
-  [10XSubquasigroup([3XQ[103X[10X,[3XS[103X[10X)[110X returns the empty set.[133X
+  [33X[0;0YIf  [3XS[103X  is  empty,  [10XSubquasigroup([3XQ[103X[10X,[3XS[103X[10X)[110X  returns  the  empty  set  if  [3XQ[103X  is a
+  quasigroup, and it returns the one-element subloop of [3XQ[103X if [3XQ[103X is a loop.[133X
   
   [33X[0;0Y[12XRemark:[112X  The  empty  set  is sometimes considered to be a subquasigroup of [3XQ[103X
   (although not in [5XLOOPS[105X). The above convention is useful for handling certain
@@ -85,7 +85,10 @@
   
   [29X[2XSubloop[102X( [3XQ[103X, [3XS[103X ) [32X operation
   
-  [33X[0;0YThis is a loop analog of [10XIsSubquasigroup([3XQ[103X[10X,[3XS[103X[10X)[110X.[133X
+  [33X[0;0YThis  is  an  analog of [10XSubquasigroup([3XQ[103X[10X,[3XS[103X[10X)[110X that can be used only when [3XQ[103X is a
+  loop.   Since   there   is  no  difference  in  the  outcome  while  calling
+  [10XSubquasigroup([3XQ[103X[10X,[3XS[103X[10X)[110X  or  [10XSubloop([3XQ[103X[10X,[3XS[103X[10X)[110X  when [3XQ[103X is a loop, it is safe to always
+  call [10XSubquasigroup([3XQ[103X[10X,[3XS[103X[10X)[110X, whether [3XQ[103X is a loop or not.[133X
   
   
   [1X6.2-3 [33X[0;0YIsSubquasigroup and IsSubloop[133X[101X

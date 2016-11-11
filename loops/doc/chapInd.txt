@@ -62,7 +62,7 @@
   derived subloop  2.4
   [2XDerivedLength[102X  6.10-3
   [2XDerivedSubloop[102X  6.10-2
-  diassociative loop  7.1-4
+  diassociative quasigroup  7.1-4
   [2XDirectProduct[102X  4.11-1
   [2XDiscriminator[102X  6.11-8
   [2XDisplayLibraryInfo[102X  9.1-3
@@ -242,7 +242,6 @@
   loop, automorphic  7.7
   loop, code  7.8-1
   loop, conjugacy closed  7.6
-  loop, diassociative  7.1-4
   loop, extra  7.4
   loop, flexible  7.4
   loop, left Bol  3.3
@@ -264,7 +263,6 @@
   loop, of Bol-Moufang type  7.4
   loop, power alternative  7.5
   loop, power associative  5.1-5
-  loop, power associative  7.1-3
   loop, right Bol  7.4
   loop, right Bruck  7.8-4
   loop, right K  7.8-4
@@ -353,16 +351,18 @@
   power alternative loop, left  7.5
   power alternative loop, right  7.5
   power associative loop  5.1-5
-  power associative loop  7.1-3
+  power associative quasigroup  7.1-3
   [2XPrincipalLoopIsotope[102X  4.10-2
   quasigroup  2.1
   quasigroup, Steiner  7.3-4
+  quasigroup, diassociative  7.1-4
   quasigroup, distributive  7.3-6
   quasigroup, entropic  7.3-7
   quasigroup, idempotent  7.3-3
   quasigroup, left distributive  7.3-6
   quasigroup, medial  7.3-7
   quasigroup, opposite  4.12
+  quasigroup, power associative  7.1-3
   quasigroup, right distributive  7.3-6
   quasigroup, semisymmetric  7.3-1
   quasigroup, totally symmetric  7.3-2
@@ -407,6 +407,7 @@
   simple loop  3.3
   simple loop  6.7-3
   [2XSize[102X  5.1-4
+  [2XSmallGeneratingSet[102X  5.5-3
   [2XSmallLoop[102X  9.7-1
   solvability class  2.4
   solvable loop  2.4

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.24)  29 MAY 2016 06:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=latex 2014.9.18)  27 OCT 2016 11:38
 entering extended mode
-**loops
-(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.tex
+**loops.tex
+(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -68,18 +68,13 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: dvips.def on input line 130.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count88
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
 Package: fancyvrb 2008/02/07
@@ -89,11 +84,11 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-\FV@CodeLineNo=\count89
+\FV@CodeLineNo=\count88
 \FV@InFile=\read1
 \FV@TabBox=\box26
-\c@FancyVerbLine=\count90
-\FV@StepNumber=\count91
+\c@FancyVerbLine=\count89
+\FV@StepNumber=\count90
 \FV@OutFile=\write4
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\mathptmx.sty"
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
@@ -232,15 +227,15 @@ Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -253,7 +248,7 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
@@ -280,13 +275,13 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen103
-\Hy@linkcounter=\count92
-\Hy@pagecounter=\count93
+\Hy@linkcounter=\count91
+\Hy@pagecounter=\count92
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count94
+\Hy@SavedSpaceFactor=\count93
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -295,6 +290,17 @@ File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 Package hyperref Warning: Unexpected value for option `pdftex'
 (hyperref)                is ignored on input line 4319.
 
+
+! Package hyperref Error: Wrong driver option `pdftex',
+(hyperref)                because pdfTeX in PDF mode is not detected.
+
+See the hyperref package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4319 \ProcessKeyvalOptions{Hyp}
+                                 
+? 
 Package hyperref Info: Option `bookmarks' set `true' on input line 4319.
 
 Package hyperref Warning: Option `a4paper' is no longer used.
@@ -316,7 +322,7 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count95
+\c@Hy@tempcnt=\count94
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
@@ -324,7 +330,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen104
-\Fld@menulength=\count96
+\Fld@menulength=\count95
 \Field@Width=\dimen105
 \Fld@charsize=\dimen106
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -336,30 +342,43 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count97
-\c@Item=\count98
-\c@Hfootnote=\count99
+\Hy@abspage=\count96
+\c@Item=\count97
+\c@Hfootnote=\count98
 )
 
-Package hyperref Message: Driver: hpdftex.
+Package hyperref Message: Driver (default): hdvips.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hdvips.def"
+File: hdvips.def 2012/11/06 v6.83m Hyperref driver for dvips
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pdfmark.def"
+File: pdfmark.def 2012/11/06 v6.83m Hyperref definitions for pdfmark specials
+
+
+Package hyperref Warning: You have enabled option `breaklinks'.
+(hyperref)                But driver `hdvips.def' does not suppport this.
+(hyperref)                Expect trouble with the link areas of broken links.
+
+\pdf@docset=\toks18
+\pdf@box=\box27
+\pdf@toks=\toks19
+\pdf@defaulttoks=\toks20
+\HyField@AnnotCount=\count99
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
 \Hy@SectionHShift=\skip43
-)
+))
 \pagenrlog=\write5
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip44
 \enit@outerparindent=\dimen107
-\enit@toks=\toks18
-\enit@inbox=\box27
+\enit@toks=\toks21
+\enit@inbox=\box28
 \enitdp@description=\count102
 )
-(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.aux
+(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.aux
 
 LaTeX Warning: Label `LeftDivision' multiply defined.
 
@@ -401,42 +420,32 @@ LaTeX Font Info:    Try loading font information for T1+ptm on input line 87.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen108
-\scratchbox=\box28
-\nofMPsegments=\count104
-\nofMParguments=\count105
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen109
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks20
-)
-\big@size=\dimen110
+\big@size=\dimen108
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 87.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count109
+\c@section@level=\count103
 )
 LaTeX Info: Redefining \ref on input line 87.
 LaTeX Info: Redefining \pageref on input line 87.
 LaTeX Info: Redefining \nameref on input line 87.
 
-(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.out)
-(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.out)
+(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.out)
+(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.out)
 \@outlinefile=\write6
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <50> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 93.
-
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
@@ -467,18 +476,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--119
 
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+]
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 125.
 
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
-[2] (c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.toc
+[2] (C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 2.
@@ -535,87 +543,87 @@ Chapter 3.
 [11
 
 ]
-Underfull \hbox (badness 1264) in paragraph at lines 393--395
-[]\T1/ptm/m/n/10.95 In some spe-cial sit-u-a-tions, the func-tion \T1/cmtt/m/n/
-10.95 IntoSomething([]) \T1/ptm/m/n/10.95 al-lows to con-vert [] into
+Underfull \hbox (badness 1264) in paragraph at lines 394--396
+[][]\T1/ptm/m/n/10.95 In some spe-cial sit-u-a-tions, the func-tion \T1/cmtt/m/
+n/10.95 IntoSomething([]) \T1/ptm/m/n/10.95 al-lows to con-vert [] into
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--407
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 409--412
+Underfull \hbox (badness 10000) in paragraph at lines 404--408
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--416
+Underfull \hbox (badness 10000) in paragraph at lines 410--413
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--422
+Underfull \hbox (badness 10000) in paragraph at lines 415--417
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--423
 
  []
 
 [12]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 450.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 451.
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--459
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 463--465
+Underfull \hbox (badness 10000) in paragraph at lines 454--460
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--470
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--471
 
  []
 
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 475.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 476.
 [13]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--545
+Underfull \hbox (badness 10000) in paragraph at lines 538--546
 
  []
 
 [14
 
 ] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 668--670
+Underfull \hbox (badness 10000) in paragraph at lines 669--671
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 762--768
+Underfull \hbox (badness 10000) in paragraph at lines 763--769
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 812--814
+Underfull \hbox (badness 10000) in paragraph at lines 813--815
 
  []
 
 [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 944--946
+Underfull \hbox (badness 10000) in paragraph at lines 945--947
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 983--989
+Underfull \hbox (badness 10000) in paragraph at lines 984--990
 
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 1000--1006
+Underfull \hbox (badness 2401) in paragraph at lines 1001--1007
 []\T1/ptm/b/n/10.95 Returns:  \T1/ptm/m/n/10.95 If [] is a de-clared magma that
  hap-pens to be a group, the cor-re-spond-
  []
@@ -625,83 +633,67 @@ Chapter 5.
 [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1164--1172
+Underfull \hbox (badness 10000) in paragraph at lines 1165--1173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1174--1189
+Underfull \hbox (badness 10000) in paragraph at lines 1175--1190
 
  []
 
-[23]pdfTeX warning (ext4): destination with the same identifier (name{L.X7E0849
-977869E53D}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1262 \hyperdef{L}{X7E0849977869E53D}{}
-                                         [24] [25]
+[23] [24] [25]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1364--1369
+Underfull \hbox (badness 10000) in paragraph at lines 1378--1383
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1387--1393
+Underfull \hbox (badness 10000) in paragraph at lines 1401--1407
 
  []
 
 [26
 
-]pdfTeX warning (ext4): destination with the same identifier (name{L.X83EDF04F7
-952143F}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1404 \hyperdef{L}{X83EDF04F7952143F}{}
-                                        
-Underfull \hbox (badness 10000) in paragraph at lines 1422--1423
-[]\T1/ptm/m/n/10.95 If [] is empty, \T1/cmtt/m/n/10.95 Subloop([],[]) \T1/ptm/m
-/n/10.95 re-turns the one-element subloop of [], while
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1435
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1446--1449
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1540--1548
+Underfull \hbox (badness 10000) in paragraph at lines 1554--1562
 
  []
 
 [28] [29]
-Underfull \hbox (badness 1221) in paragraph at lines 1671--1671
+Underfull \hbox (badness 1221) in paragraph at lines 1685--1685
 [][]\T1/ptm/b/n/12 LeftInnerMappingGroup, Right-In-nerMap-ping-Group, Mid-dleIn
 -nerMap-ping-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1694--1699
+Underfull \hbox (badness 10000) in paragraph at lines 1708--1713
 
  []
 
 [30] [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 2054--2058
+Underfull \hbox (badness 10000) in paragraph at lines 2068--2072
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 2125--2130
+Underfull \hbox (badness 10000) in paragraph at lines 2139--2144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2136--2137
+Underfull \hbox (badness 10000) in paragraph at lines 2150--2151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2159--2164
+Underfull \hbox (badness 10000) in paragraph at lines 2173--2178
 
  []
 
@@ -710,17 +702,17 @@ Chapter 7.
 [36
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2403--2405
+Underfull \hbox (badness 10000) in paragraph at lines 2419--2421
 
  []
 
 [37] [38] [39] [40]
-Underfull \hbox (badness 10000) in paragraph at lines 2753--2758
+Underfull \hbox (badness 10000) in paragraph at lines 2769--2774
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2764--2766
+Underfull \hbox (badness 10000) in paragraph at lines 2780--2782
 
  []
 
@@ -729,44 +721,39 @@ Chapter 8.
 [45
 
 ] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 3194--3197
+Underfull \hbox (badness 10000) in paragraph at lines 3224--3227
 
  []
 
 [47] [48]
 Chapter 9.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3331--3332
-[]\T1/cmtt/m/n/10.95 LOOPS_my_library_data[2][k] \T1/ptm/m/n/10.95 is the num-b
-er of loops of or-der
+Underfull \hbox (badness 10000) in paragraph at lines 3361--3362
+[][]\T1/cmtt/m/n/10.95 LOOPS_my_library_data[2][k] \T1/ptm/m/n/10.95 is the num
+-ber of loops of or-der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3353--3356
+Underfull \hbox (badness 10000) in paragraph at lines 3383--3386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3367--3372
+Underfull \hbox (badness 10000) in paragraph at lines 3397--3402
 
  []
 
 [49
 
 ] [50] [51]
-Underfull \hbox (badness 10000) in paragraph at lines 3558--3561
+Underfull \hbox (badness 10000) in paragraph at lines 3588--3591
 
  []
 
-[52]pdfTeX warning (ext4): destination with the same identifier (name{L.X793B22
-EA8643C667}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3664 \hyperdef{L}{X793B22EA8643C667}{}
-                                         [53] [54]
+[52] [53] [54]
 Appendix A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3756--3800
+Underfull \hbox (badness 10000) in paragraph at lines 3788--3833
 
  []
 
@@ -775,121 +762,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 3756--3800
 ] [56]
 Appendix B.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3809--3929
+Underfull \hbox (badness 10000) in paragraph at lines 3842--3962
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3809--3929
+Underfull \hbox (badness 10000) in paragraph at lines 3842--3962
 \T1/cmtt/m/n/10.95 ( HasAntiautomorphicInverseProperty, HasAutomorphicInversePr
 operty and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3809--3929
+Underfull \hbox (badness 10000) in paragraph at lines 3842--3962
 \T1/cmtt/m/n/10.95 ( HasAutomorphicInverseProperty, HasAntiautomorphicInversePr
 operty and
  []
 
 
-Overfull \hbox (21.33267pt too wide) in paragraph at lines 3809--3929
+Overfull \hbox (21.33267pt too wide) in paragraph at lines 3842--3962
 \T1/cmtt/m/n/10.95 ( HasInverseProperty, HasLeftInverseProperty and HasAntiauto
 morphicInverseProperty
  []
 
 
-Overfull \hbox (26.99104pt too wide) in paragraph at lines 3809--3929
+Overfull \hbox (26.99104pt too wide) in paragraph at lines 3842--3962
 \T1/cmtt/m/n/10.95 ( HasInverseProperty, HasRightInverseProperty and HasAntiaut
 omorphicInverseProperty
  []
 
 
-Overfull \hbox (21.33267pt too wide) in paragraph at lines 3809--3929
+Overfull \hbox (21.33267pt too wide) in paragraph at lines 3842--3962
 \T1/cmtt/m/n/10.95 ( HasInverseProperty, HasWeakInverseProperty and HasAntiauto
 morphicInverseProperty
  []
 
 
-Overfull \hbox (38.30779pt too wide) in paragraph at lines 3809--3929
+Overfull \hbox (38.30779pt too wide) in paragraph at lines 3842--3962
 \T1/cmtt/m/n/10.95 ( IsLeftAutomorphicLoop, IsRightAutomorphicLoop and HasAntia
 utomorphicInverseProperty
  []
 
 
-Overfull \hbox (38.30779pt too wide) in paragraph at lines 3809--3929
+Overfull \hbox (38.30779pt too wide) in paragraph at lines 3842--3962
 \T1/cmtt/m/n/10.95 ( IsRightAutomorphicLoop, IsLeftAutomorphicLoop and HasAntia
 utomorphicInverseProperty
  []
 
 [57
 
-] [58] (c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.bbl
-(c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.brf)
+] [58] (C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.bbl
+(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.brf)
 \tf@brf=\write8
- [59]
-Underfull \hbox (badness 1052) in paragraph at lines 77--77
-[]\T1/ptm/m/n/10.95 K. Kunen.  The struc-ture of con-ju-gacy closed loops.  \T1
-/ptm/m/it/10.95 Trans. Amer. Math. Soc.\T1/ptm/m/n/10.95 ,
- []
+ [59] [60
 
-[60
-
-]) [61] (c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.ind [62
+]) [61]
+(C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.ind [62
 
 
-] [63] [64]
-[65]
-Underfull \hbox (badness 10000) in paragraph at lines 428--430
-[]\T1/cmtt/m/n/10.95 Right\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Bol\T1/ptm/m/n/
-10.95 -\T1/cmtt/m/n/10.95 Loop\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m
-/n/10.95 -\T1/cmtt/m/n/10.95 Exact\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Group\T
-1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Factorization\T1/ptm/m/n/10.95 ,
+] [63] [64] [65]
+Underfull \hbox (badness 10000) in paragraph at lines 430--432
+[][]\T1/cmtt/m/n/10.95 Right\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Bol\T1/ptm/m/
+n/10.95 -\T1/cmtt/m/n/10.95 Loop\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm
+/m/n/10.95 -\T1/cmtt/m/n/10.95 Exact\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Group
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Factorization\T1/ptm/m/n/10.95 ,
  []
 
 [66])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3953.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3953.
- (c:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3953.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3953.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3986.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3986.
+ (C:\cygwin64\opt\gap4r7\pkg\loops\doc\loops.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3986.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3986.
 
 Package rerunfilecheck Info: File `loops.out' has not changed.
 (rerunfilecheck)             Checksum: B35AC9998206B5E4DDDBB0BB03F0A272;5893.
 Package rerunfilecheck Info: File `loops.brf' has not changed.
-(rerunfilecheck)             Checksum: 8DC22135B6CD01E3158796F2CB84C662;1160.
+(rerunfilecheck)             Checksum: C248D12B2C67B5CBC4D9D8FC93C1CB81;1554.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3953.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3986.
  ) 
 Here is how much of TeX's memory you used:
- 7985 strings out of 493921
- 119162 string characters out of 3147246
- 203563 words of memory out of 3000000
- 10566 multiletter control sequences out of 15000+200000
- 85356 words of font info for 107 fonts, out of 3000000 for 9000
+ 7134 strings out of 493922
+ 107334 string characters out of 3147269
+ 214990 words of memory out of 3000000
+ 10330 multiletter control sequences out of 15000+200000
+ 56657 words of font info for 68 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 32i,7n,28p,914b,621s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\petr.vojtechovsky\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
-n\ec\dpi600\ecst1095.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8
-r.enc} <C:\Users\petr.vojtechovsky\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
-appen\ec\dpi600\ectt1095.pk> <C:\Users\petr.vojtechovsky\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
-times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on loops.pdf (66 pages, 530064 bytes).
-PDF statistics:
- 1978 PDF objects out of 2073 (max. 8388607)
- 569 named destinations out of 1000 (max. 500000)
- 665 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 32i,7n,29p,918b,613s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+Output written on loops.dvi (66 pages, 548296 bytes).

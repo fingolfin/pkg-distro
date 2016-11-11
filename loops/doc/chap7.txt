@@ -29,18 +29,19 @@
   [1X7.1-3 IsPowerAssociative[101X
   
   [29X[2XIsPowerAssociative[102X( [3XQ[103X ) [32X property
-  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X if [3XQ[103X is a power associative loop.[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X if [3XQ[103X is a power associative quasigroup.[133X
   
-  [33X[0;0YA  loop [22XQ[122X is said to be [13Xpower associative[113X if every element of [22XQ[122X generates an
-  associative loop.[133X
+  [33X[0;0YA  quasigroup  [22XQ[122X  is  said  to  be  [13Xpower  associative[113X if every element of [22XQ[122X
+  generates an associative quasigroup, that is, a group.[133X
   
   [1X7.1-4 IsDiassociative[101X
   
   [29X[2XIsDiassociative[102X( [3XQ[103X ) [32X property
-  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X if [3XQ[103X is a diassociative loop.[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X if [3XQ[103X is a diassociative quasigroup.[133X
   
-  [33X[0;0YA  loop  [22XQ[122X  is said to be [13Xdiassociative[113X if any two elements of [22XQ[122X generate an
-  associative sublop.[133X
+  [33X[0;0YA quasigroup [22XQ[122X is said to be [13Xdiassociative[113X if any two elements of [22XQ[122X generate
+  an  associative  quasigroup,  that  is,  a  group. Note that a diassociative
+  quasigroup is necessarily a loop, but it need not be so declared in [5XLOOPS[105X.[133X
   
   
   [1X7.2 [33X[0;0YInverse Propeties[133X[101X
@@ -393,8 +394,33 @@
   [33X[0;0YAutomorphic  loops are also known as [13XA loops[113X, and similar terminology exists
   for left, right and middle automorphic loops.[133X
   
-  [33X[0;0YDiassociative  automorphic  loops  are  Moufang by [KKP02]. See the built-in
-  filters for additional properties of automorphic loops.[133X
+  [33X[0;0YThe following results hold for automorphic loops:[133X
+  
+  [30X    [33X[0;6Yautomorphic loops are power associative [BP56][133X
+  
+  [30X    [33X[0;6Yin  an  automorphic  loop  [22XQ[122X  we  have  [22XNuc(Q) = Nuc_λ(Q) = Nuc_ρ(Q)le
+        Nuc_μ(Q)[122X and all nuclei are normal [BP56][133X
+  
+  [30X    [33X[0;6Ya  loop  that  is left automorphic and right automorphic satisfies the
+        anti-automorphic inverse property and is automorphic [JKNV11][133X
+  
+  [30X    [33X[0;6Ydiassociative automorphic loops are Moufang [KKP02][133X
+  
+  [30X    [33X[0;6Yautomorphic loops of odd order are solvable [KKPV16][133X
+  
+  [30X    [33X[0;6Yfinite commutative automorphic loops are solvable [GKN14][133X
+  
+  [30X    [33X[0;6Ycommutative  automorphic  loops of order [22Xp[122X, [22X2p[122X, [22X4p[122X, [22Xp^2[122X, [22X2p^2[122X, [22X4p^2[122X ([22Xp[122X
+        an odd prime) are abelian groups [Voj15][133X
+  
+  [30X    [33X[0;6Ycommutative  automorphic  loops of odd prime power order are centrally
+        nilpotent [JKV12][133X
+  
+  [30X    [33X[0;6Yfor  any  prime  [22Xp[122X, there are [22X7[122X commutative automorphic loops of order
+        [22Xp^3[122X up to isomorphism [BGV12][133X
+  
+  [33X[0;0YSee the built-in filters and the survey [Voj15] for additional properties of
+  automorphic loops.[133X
   
   [1X7.7-1 IsLeftAutomorphicLoop[101X
   

@@ -9,6 +9,7 @@
   [33X[0;0Y[11XPackageInfo.g[111X (loading info for GAP 4.4)[133X
   [33X[0;0Y[11Xread.g[111X (implementations)[133X
   [33X[0;0Y[11Xdata/automorphic.tbl[111X (library of automorphic loops)[133X
+  [33X[0;0Y[11Xdata/automorphic/*.*[111X (addition files for the library of automorphic loops)[133X
   [33X[0;0Y[11Xdata/cc.tbl[111X (library of conjugacy closed loops)[133X
   [33X[0;0Y[11Xdata/code.tbl[111X (library of code loops)[133X
   [33X[0;0Y[11Xdata/interesting.tbl[111X (library of interesting loops)[133X

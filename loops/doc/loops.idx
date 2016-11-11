@@ -128,6 +128,7 @@
 \indexentry{GeneratorsOfQuasigroup@\texttt  {GeneratorsOfQuasigroup}|hyperpage}{24}
 \indexentry{GeneratorsOfLoop@\texttt  {GeneratorsOfLoop}|hyperpage}{24}
 \indexentry{GeneratorsSmallest@\texttt  {GeneratorsSmallest}|hyperpage}{25}
+\indexentry{SmallGeneratingSet@\texttt  {SmallGeneratingSet}|hyperpage}{25}
 \indexentry{Parent@\texttt  {Parent}|hyperpage}{26}
 \indexentry{Position@\texttt  {Position}|hyperpage}{26}
 \indexentry{PosInParent@\texttt  {PosInParent}|hyperpage}{27}
@@ -214,11 +215,11 @@
 \indexentry{IsAssociative@\texttt  {IsAssociative}|hyperpage}{36}
 \indexentry{IsCommutative@\texttt  {IsCommutative}|hyperpage}{36}
 \indexentry{IsPowerAssociative@\texttt  {IsPowerAssociative}|hyperpage}{36}
-\indexentry{loop!power associative|hyperpage}{36}
-\indexentry{power associative loop|hyperpage}{36}
+\indexentry{quasigroup!power associative|hyperpage}{36}
+\indexentry{power associative quasigroup|hyperpage}{36}
 \indexentry{IsDiassociative@\texttt  {IsDiassociative}|hyperpage}{36}
-\indexentry{loop!diassociative|hyperpage}{36}
-\indexentry{diassociative loop|hyperpage}{36}
+\indexentry{quasigroup!diassociative|hyperpage}{37}
+\indexentry{diassociative quasigroup|hyperpage}{37}
 \indexentry{inverse!left|hyperpage}{37}
 \indexentry{inverse!right|hyperpage}{37}
 \indexentry{HasLeftInverseProperty@\texttt  {HasLeftInverseProperty}|hyperpage}{37}
@@ -350,13 +351,13 @@
 \indexentry{IsLeftALoop@\texttt  {IsLeftALoop}|hyperpage}{43}
 \indexentry{IsMiddleAutomorphicLoop@\texttt  {IsMiddleAutomorphicLoop}|hyperpage}{43}
 \indexentry{IsMiddleALoop@\texttt  {IsMiddleALoop}|hyperpage}{43}
-\indexentry{IsRightAutomorphicLoop@\texttt  {IsRightAutomorphicLoop}|hyperpage}{43}
-\indexentry{IsRightALoop@\texttt  {IsRightALoop}|hyperpage}{43}
-\indexentry{IsAutomorphicLoop@\texttt  {IsAutomorphicLoop}|hyperpage}{43}
-\indexentry{IsALoop@\texttt  {IsALoop}|hyperpage}{43}
-\indexentry{IsCodeLoop@\texttt  {IsCodeLoop}|hyperpage}{43}
-\indexentry{code loop|hyperpage}{43}
-\indexentry{loop!code|hyperpage}{43}
+\indexentry{IsRightAutomorphicLoop@\texttt  {IsRightAutomorphicLoop}|hyperpage}{44}
+\indexentry{IsRightALoop@\texttt  {IsRightALoop}|hyperpage}{44}
+\indexentry{IsAutomorphicLoop@\texttt  {IsAutomorphicLoop}|hyperpage}{44}
+\indexentry{IsALoop@\texttt  {IsALoop}|hyperpage}{44}
+\indexentry{IsCodeLoop@\texttt  {IsCodeLoop}|hyperpage}{44}
+\indexentry{code loop|hyperpage}{44}
+\indexentry{loop!code|hyperpage}{44}
 \indexentry{IsSteinerLoop@\texttt  {IsSteinerLoop}|hyperpage}{44}
 \indexentry{Steiner loop|hyperpage}{44}
 \indexentry{loop!Steiner|hyperpage}{44}
@@ -420,7 +421,7 @@
 \indexentry{PaigeLoop@\texttt  {PaigeLoop}|hyperpage}{53}
 \indexentry{NilpotentLoop@\texttt  {NilpotentLoop}|hyperpage}{53}
 \indexentry{AutomorphicLoop@\texttt  {AutomorphicLoop}|hyperpage}{53}
-\indexentry{sedenion loop|hyperpage}{53}
-\indexentry{loop!sedenion|hyperpage}{53}
+\indexentry{sedenion loop|hyperpage}{54}
+\indexentry{loop!sedenion|hyperpage}{54}
 \indexentry{InterestingLoop@\texttt  {InterestingLoop}|hyperpage}{54}
 \indexentry{ItpSmallLoop@\texttt  {ItpSmallLoop}|hyperpage}{54}

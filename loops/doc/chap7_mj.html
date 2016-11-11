@@ -140,18 +140,18 @@
 <h5>7.1-3 IsPowerAssociative</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPowerAssociative</code>( <var class="Arg">Q</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns: <code class="code">true</code> if <var class="Arg">Q</var> is a power associative loop.</p>
+<p>Returns: <code class="code">true</code> if <var class="Arg">Q</var> is a power associative quasigroup.</p>
 
-<p>A loop <span class="SimpleMath">\(Q\)</span> is said to be <em>power associative</em> if every element of <span class="SimpleMath">\(Q\)</span> generates an associative loop.</p>
+<p>A quasigroup <span class="SimpleMath">\(Q\)</span> is said to be <em>power associative</em> if every element of <span class="SimpleMath">\(Q\)</span> generates an associative quasigroup, that is, a group.</p>
 
 <p><a id="X872DCA027E1A4A1D" name="X872DCA027E1A4A1D"></a></p>
 
 <h5>7.1-4 IsDiassociative</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDiassociative</code>( <var class="Arg">Q</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>Returns: <code class="code">true</code> if <var class="Arg">Q</var> is a diassociative loop.</p>
+<p>Returns: <code class="code">true</code> if <var class="Arg">Q</var> is a diassociative quasigroup.</p>
 
-<p>A loop <span class="SimpleMath">\(Q\)</span> is said to be <em>diassociative</em> if any two elements of <span class="SimpleMath">\(Q\)</span> generate an associative sublop.</p>
+<p>A quasigroup <span class="SimpleMath">\(Q\)</span> is said to be <em>diassociative</em> if any two elements of <span class="SimpleMath">\(Q\)</span> generate an associative quasigroup, that is, a group. Note that a diassociative quasigroup is necessarily a loop, but it need not be so declared in <strong class="pkg">LOOPS</strong>.</p>
 
 <p><a id="X853841C5820BFEA4" name="X853841C5820BFEA4"></a></p>
 
@@ -529,7 +529,39 @@
 
 <p>Automorphic loops are also known as <em>A loops</em>, and similar terminology exists for left, right and middle automorphic loops.</p>
 
-<p>Diassociative automorphic loops are Moufang by <a href="chapBib_mj.html#biBKiKuPh">[KKP02]</a>. See the built-in filters for additional properties of automorphic loops.</p>
+<p>The following results hold for automorphic loops:</p>
+
+
+<ul>
+<li><p>automorphic loops are power associative <a href="chapBib_mj.html#biBBrPa">[BP56]</a></p>
+
+</li>
+<li><p>in an automorphic loop <span class="SimpleMath">\(Q\)</span> we have <span class="SimpleMath">\({\rm Nuc}(Q) = {\rm Nuc}_{\lambda}(Q) = {\rm Nuc}_{\rho}(Q)\le {\rm Nuc}_{\mu}(Q)\)</span> and all nuclei are normal <a href="chapBib_mj.html#biBBrPa">[BP56]</a></p>
+
+</li>
+<li><p>a loop that is left automorphic and right automorphic satisfies the anti-automorphic inverse property and is automorphic <a href="chapBib_mj.html#biBJoKiNaVo">[JKNV11]</a></p>
+
+</li>
+<li><p>diassociative automorphic loops are Moufang <a href="chapBib_mj.html#biBKiKuPh">[KKP02]</a></p>
+
+</li>
+<li><p>automorphic loops of odd order are solvable <a href="chapBib_mj.html#biBKiKuPhVo">[KKPV16]</a></p>
+
+</li>
+<li><p>finite commutative automorphic loops are solvable <a href="chapBib_mj.html#biBGrKiNa">[GKN14]</a></p>
+
+</li>
+<li><p>commutative automorphic loops of order <span class="SimpleMath">\(p\)</span>, <span class="SimpleMath">\(2p\)</span>, <span class="SimpleMath">\(4p\)</span>, <span class="SimpleMath">\(p^2\)</span>, <span class="SimpleMath">\(2p^2\)</span>, <span class="SimpleMath">\(4p^2\)</span> (<span class="SimpleMath">\(p\)</span> an odd prime) are abelian groups <a href="chapBib_mj.html#biBVoQRS">[Voj15]</a></p>
+
+</li>
+<li><p>commutative automorphic loops of odd prime power order are centrally nilpotent <a href="chapBib_mj.html#biBJeKiVo">[JKV12]</a></p>
+
+</li>
+<li><p>for any prime <span class="SimpleMath">\(p\)</span>, there are <span class="SimpleMath">\(7\)</span> commutative automorphic loops of order <span class="SimpleMath">\(p^3\)</span> up to isomorphism <a href="chapBib_mj.html#biBBaGrVo">[BGV12]</a></p>
+
+</li>
+</ul>
+<p>See the built-in filters and the survey <a href="chapBib_mj.html#biBVoQRS">[Voj15]</a> for additional properties of automorphic loops.</p>
 
 <p><a id="X7F063914804659F1" name="X7F063914804659F1"></a></p>
 

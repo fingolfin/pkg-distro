@@ -163,3 +163,11 @@
   [6XReturns:[106X  [33X[0;10YA  generating  set  [22X{q_0[122X,  [22Xdots[122X, [22Xq_m}[122X of [3XQ[103X such that [22XQ_0=∅[122X, [22XQ_m=[122X[3XQ[103X,
             [22XQ_i=⟨ q_1[122X, [22Xdots[122X, [22Xq_i ⟩[122X, and [22Xq_i+1[122X is the least element of [3XQ[103X[22X∖ Q_i[122X.[133X
   
+  [1X5.5-3 SmallGeneratingSet[101X
+  
+  [29X[2XSmallGeneratingSet[102X( [3XQ[103X ) [32X attribute
+  [6XReturns:[106X  [33X[0;10YA  small generating set [22X{q_0[122X, [22Xdots[122X, [22Xq_m}[122X of [3XQ[103X obtained as follows:
+            [22Xq_0[122X  is  the  least  element for which [22X⟨ q_0⟩[122X is largest possible,
+            [22Xq_1[122X$ is the least element for which [22X⟨ q_0,q_1[122X is largest possible,
+            and so on.[133X
+  
